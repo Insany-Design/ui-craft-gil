@@ -1587,18 +1587,20 @@
               "analysis": "<p>O exemplo oficial separa a pergunta, a orientação de formato e a mensagem sobre uma data de emissão que precisa estar no passado. A análise útil é a divisão de trabalho: o rótulo identifica o dado; a orientação ajuda a preenchê-lo; o erro explica a restrição violada. A mensagem permite corrigir sem adivinhar uma regra interna. O padrão também preserva as respostas e associa o erro ao grupo de campos. Não copie a frase para uma falha do serviço: ali a pessoa não conseguiria resolver alterando a data. Abra o exemplo oficial para observar texto, código e associação semântica juntos.</p>"
             },
             {
-              "title": "GOV.UK: o texto do erro nomeia a ação de recuperação",
-              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "source": "GOV.UK Design System, captura de exemplo oficial",
-              "analysis": "<p>“Enter your full name” pode ser traduzido como informe seu nome completo. O verbo descreve a ação que falta e o objeto coincide com o rótulo do campo. O resumo e a mensagem local repetem o mesmo pedido, em vez de usar termos diferentes para o mesmo problema.</p><p>Essa captura de nome ausente complementa o exemplo de data: não devemos substituir ambos por “entrada inválida”. A aparência mostra contexto e proximidade; ela não demonstra expansão linguística nem tamanho de texto alterado. Para validar uma tradução mais longa, teste novamente o componente implementado com quebra de linha e ampliação.</p>",
-              "alt": "O erro Informe seu nome completo aparece como link no resumo e como mensagem imediatamente antes do campo Nome completo.",
+              "title": "GOV.UK: escolher o idioma sem abandonar a tarefa",
+              "url": "https://design-system.service.gov.uk/components/language-navigation/after-h1/",
+              "source": "GOV.UK Design System · Language navigation · 2026",
+              "analysis": "<p>Na captura, o título apresenta a tarefa antes da escolha de idioma. “English” identifica inglês; “Cymraeg” é o nome do galês em galês. A diferença entre o texto do idioma atual e o link alternativo permite reconhecer estado e ação sem acrescentar um seletor complexo.</p><p>Nossa leitura: o conteúdo localizado precisa continuar sendo a mesma tarefa. Um link visível não basta se a tradução omite informações, leva à página inicial ou apaga o formulário. Ao aplicar ao Rota, troque a descrição da visita sem perder data, quantidade e etapa selecionadas. Teste também títulos maiores e nomes de idiomas longos: a composição precisa absorver a mudança sem encobrir ações.</p><p>O componente está em fase experimental, chamada <em>Trial</em> na documentação. Ser recente não prova adequação ao seu público. Use-o para estudar a relação entre hierarquia, rótulo e continuidade; valide o comportamento no contexto do produto.</p>",
+              "alt": "Exemplo oficial GOV.UK: título sobre áreas naturais protegidas, seguido do idioma atual English e do link Cymraeg; abaixo, o texto da tarefa.",
               "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
               "license": "Open Government Licence v3.0",
               "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "visualAspect": "500 / 360",
+              "sourcePageUrl": "https://design-system.service.gov.uk/components/language-navigation/",
+              "visualAspect": "500 / 400",
+              "versionNote": "Introduzido em agosto de 2026 no GOV.UK Frontend 6.5.0. O histórico oficial ainda o identifica como Trial, ou fase experimental. Captura consultada em 17/10/2026.",
+              "versionUrl": "https://design-system.service.gov.uk/components/language-navigation/#recent-changes",
               "originalImageUrl": null,
-              "image": "real-assets/govuk-error.png"
+              "image": "real-assets/govuk-language-navigation-2026.png"
             }
           ],
           "exercise": {
@@ -1657,6 +1659,11 @@
               "title": "GOV.UK: referência visual — GOV.UK: o texto do erro nomeia a ação de recuperação",
               "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
               "note": "Página oficial e captura conferidas em 17/10/2026. Análise da aparência visível; comportamentos não observados são indicados como testes necessários."
+            },
+            {
+              "title": "GOV.UK — Language navigation, histórico e uso",
+              "url": "https://design-system.service.gov.uk/components/language-navigation/",
+              "note": "Componente introduzido em agosto de 2026, versão 6.5.0; fase experimental explicitada no exemplo."
             }
           ],
           "videos": [
@@ -1667,7 +1674,7 @@
               "note": "Vídeo oficial em inglês com transcrição. Em 6:00 começa a discussão de layouts dinâmicos; observe quando a disposição precisa mudar."
             }
           ],
-          "wordCount": 853
+          "wordCount": 898
         }
       ]
     },
@@ -1930,7 +1937,7 @@
           "id": "navegacao-tabs-back-home",
           "title": "Navegação, tab bar, voltar e Home",
           "summary": "Organize destinos e histórico sem confundir navegação do aplicativo com controles do sistema.",
-          "minutes": 4,
+          "minutes": 5,
           "objectives": [
             "Distinguir destino, ação e histórico de navegação.",
             "Separar Home interno, Home do sistema, voltar e subir na hierarquia.",
@@ -1960,23 +1967,27 @@
           ],
           "examples": [
             {
-              "title": "Figura oficial: anatomia da barra de navegação Material 3",
-              "url": "https://developer.android.com/develop/ui/compose/components/navigation-bar",
-              "source": "Android Developers",
-              "image": "real-assets/mobile-navigation-bar.png",
-              "alt": "Barra Material 3 com quatro destinos rotulados; o primeiro combina indicador de seleção arredondado, ícone preenchido e texto em destaque.",
-              "credit": "Android Developers / Android Open Source Project. Figura oficial reproduzida sem alterações. Marcas não incluídas na licença.",
-              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/components/navigation-bar",
-              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
-              "licenseUrl": "https://developer.android.com/license",
-              "analysis": "<p>A figura oficial isola quatro destinos, cada um com ícone e rótulo. O primeiro combina uma superfície arredondada, símbolo preenchido e texto mais destacado para comunicar seleção. Essa redundância ajuda a reconhecer o estado sem depender exclusivamente da cor. Os nomes “Label” e os símbolos geométricos são marcadores de demonstração, não rótulos apropriados para um produto. Ao aplicar o padrão, substitua-os por nomes que descrevam lugares reconhecíveis. Observe também o que a figura não mostra: histórico, troca entre áreas e resultado de voltar precisam ser especificados separadamente. A barra do aplicativo não substitui a navegação do sistema.</p>",
-              "originalImageUrl": "https://developer.android.com/static/develop/ui/compose/images/navigation-bar.png"
+              "title": "Material 3 Expressive: barra de navegação atualizada",
+              "url": "https://github.com/material-components/material-components-android/blob/master/docs/components/BottomNavigation.md",
+              "source": "Google / Material Components for Android",
+              "image": "real-assets/mobile-navigation-bar-expressive.png",
+              "alt": "Figura oficial Material 3 Expressive de uma interface musical: destinos Home, Music e Podcasts; Home está selecionado. A barra gestual do sistema aparece separada abaixo.",
+              "credit": "Google / Material Components for Android. Figura oficial Material 3 Expressive, reproduzida sem alterações, sob Apache License 2.0. Consulte a fonte e a licença.",
+              "sourcePageUrl": "https://github.com/material-components/material-components-android/blob/master/docs/components/BottomNavigation.md",
+              "license": "Apache License 2.0, conforme LICENSE do repositório oficial Material Components for Android; marcas não incluídas.",
+              "licenseUrl": "https://github.com/material-components/material-components-android/blob/master/LICENSE",
+              "analysis": "<p>A figura oficial mostra três destinos: Home, ou Início; Music, ou Música; e Podcasts. A superfície arredondada atrás da casa sinaliza a seleção, enquanto os rótulos continuam disponíveis. A pequena linha preta abaixo pertence ao sistema: não é outro destino do aplicativo. O exemplo permite separar navegação interna e gesto de saída do aparelho. A atualização Expressive introduz uma barra mais baixa e uma configuração horizontal dos itens para janelas médias, descrita na documentação; a imagem mostra a configuração compacta. Preserve nomes e estado ao adaptar a composição, em vez de copiar apenas suas proporções.</p>",
+              "versionNote": "Material 3 Expressive. O histórico oficial registra esta revisão do arquivo em 27/08/2025. É uma ilustração de documentação, não uma captura de um app comercial com versão identificada. Substitui aqui a figura do Material 3 anterior ao Expressive.",
+              "versionUrl": "https://github.com/material-components/material-components-android/commit/fca1418bf401b36ad67d37f8968c261cc3ebe2cd",
+              "originalImageUrl": "https://raw.githubusercontent.com/material-components/material-components-android/master/docs/components/assets/bottomnav/bottomnav-expressive.png"
             },
             {
               "title": "Slopes analisado na sessão oficial Apple sobre navegação",
               "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
               "source": "Apple Developer, WWDC22",
-              "analysis": "<p>A sessão oficial mostra o aplicativo Slopes e chama atenção para seus destinos com nomes específicos. A entrada pelo diário de atividades, situado no meio da barra apresentada, ilustra que a primeira aba visual não precisa concentrar todo o produto. O aprendizado é estrutural: nomes e agrupamentos explicam as possibilidades antes de ler o conteúdo. A interface mostrada pertence à sessão de 2022 e não deve ser apresentada como captura atual do aplicativo. Use o vídeo para observar a relação entre área inicial, organização e alternância; não copie o estilo nem conclua que toda aplicação precisa de uma aba central como entrada.</p>"
+              "analysis": "<p>A sessão oficial mostra o aplicativo Slopes e chama atenção para seus destinos com nomes específicos. A entrada pelo diário de atividades, situado no meio da barra apresentada, ilustra que a primeira aba visual não precisa concentrar todo o produto. O aprendizado é estrutural: nomes e agrupamentos explicam as possibilidades antes de ler o conteúdo. A interface mostrada pertence à sessão de 2022 e não deve ser apresentada como captura atual do aplicativo. Use o vídeo para observar a relação entre área inicial, organização e alternância; não copie o estilo nem conclua que toda aplicação precisa de uma aba central como entrada.</p><p>Para comparar com uma referência de 2026, veja <a href=\"https://developer.apple.com/videos/play/wwdc2026/251/\">Communicate your brand identity on iOS, da WWDC26</a>. A Apple analisa Gentler Streak: conteúdo com identidade própria e controles de navegação familiares na linguagem Liquid Glass. Compare os papéis do conteúdo e da navegação, sem assumir que a versão exata do app foi informada.</p>",
+              "versionNote": "Slopes apresentado na WWDC22 (2022). A sessão não identifica o número da versão do app; sua aparência não representa necessariamente o Slopes atual.",
+              "versionUrl": "https://developer.apple.com/videos/play/wwdc2022/10001/"
             }
           ],
           "exercise": {
@@ -2013,9 +2024,25 @@
               "title": "Apple: Explore navigation design for iOS",
               "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
               "note": "Referência audiovisual histórica com exemplo real Slopes."
+            },
+            {
+              "title": "Material Components: atualização Material 3 Expressive",
+              "url": "https://github.com/material-components/material-components-android/blob/master/docs/components/BottomNavigation.md",
+              "note": "Documentação oficial da variante Expressive; distinguir o sistema de design da versão da API usada na implementação."
+            },
+            {
+              "title": "Apple: exemplos contemporâneos de navegação e identidade, WWDC26",
+              "url": "https://developer.apple.com/videos/play/wwdc2026/251/",
+              "note": "Sessão oficial de 2026; complementa o caso histórico Slopes da WWDC22."
             }
           ],
           "videos": [
+            {
+              "title": "Communicate your brand identity on iOS",
+              "url": "https://developer.apple.com/videos/play/wwdc2026/251/",
+              "source": "Apple Developer — WWDC26 (2026)",
+              "note": "Referência oficial de 2026. No capítulo Components, a partir de 2:24, compare a navegação familiar de Gentler Streak com a identidade visual do conteúdo. A sessão não informa a versão exata do app."
+            },
             {
               "title": "Explore navigation design for iOS",
               "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
@@ -2023,7 +2050,7 @@
               "note": "Vídeo oficial verificado. Observe o exemplo Slopes e a diferença entre navegação hierárquica e apresentação modal. Interface apresentada em 2022."
             }
           ],
-          "wordCount": 792
+          "wordCount": 843
         },
         {
           "id": "sheets-modais-dialogos",
@@ -2128,7 +2155,7 @@
             },
             {
               "title": "Quando usar e quando evitar",
-              "body": "<p>Uma lateral persistente pode ajudar em produtos com muitas categorias e espaço suficiente, especialmente quando alternar entre elas é frequente. Uma gaveta modal libera largura em telas compactas, com o custo de ocultar seus destinos. Um menu ancorado ao objeto ajuda quando várias ações ocasionais disputariam espaço se aparecessem simultaneamente. A referência <a href=\"https://developer.android.com/develop/ui/compose/components/menu\">Menus do Compose</a> mostra uma superfície temporária acionada por um controle.</p><p>Evite colocar a principal tarefa do produto exclusivamente atrás de uma gaveta. Evite uma lateral permanente que comprima o conteúdo até ele perder legibilidade. Evite também menus com formulário longo, explicação extensa e decisões dependentes entre si: esse conjunto já se parece mais com uma tela ou painel. Quando a lista cresce, investigue agrupamento, busca e arquitetura antes de reduzir a fonte.</p>"
+              "body": "<p>Uma lateral persistente pode ajudar em produtos com muitas categorias e espaço suficiente, especialmente quando alternar entre elas é frequente. Uma gaveta modal libera largura em telas compactas, com o custo de ocultar seus destinos. Um menu ancorado ao objeto ajuda quando várias ações ocasionais disputariam espaço se aparecessem simultaneamente. A referência <a href=\"https://developer.android.com/develop/ui/compose/components/menu\">Menus do Compose</a> mostra uma superfície temporária acionada por um controle.</p><p>Evite colocar a principal tarefa do produto exclusivamente atrás de uma gaveta. Evite uma lateral permanente que comprima o conteúdo até ele perder legibilidade. Evite também menus com formulário longo, explicação extensa e decisões dependentes entre si: esse conjunto já se parece mais com uma tela ou painel. Quando a lista cresce, investigue agrupamento, busca e arquitetura antes de reduzir a fonte.</p><p><strong>Contexto de versão:</strong> em projetos que adotam <a href=\"https://github.com/material-components/material-components-android/blob/master/docs/components/NavigationDrawer.md\">Material 3 Expressive</a>, avalie a faixa de navegação expandida em lugar do drawer. A gaveta continua relevante para compreender e manter interfaces existentes e outros sistemas de design. A recomendação Expressive não é uma proibição universal de navegação lateral.</p>"
             },
             {
               "title": "Passo a passo para organizar as opções",
@@ -2145,17 +2172,19 @@
           ],
           "examples": [
             {
-              "title": "Figura oficial: navegação Mail em temas claro e escuro",
-              "url": "https://developer.android.com/develop/ui/compose/quick-guides/content/create-navigation-drawer",
-              "source": "Android Developers",
-              "analysis": "<p>A imagem publicada na página Android mostra um menu Mail em temas claro e escuro. Inbox está selecionado com uma superfície arredondada, enquanto Outbox e Favorites mantêm ícones e rótulos. A seleção é percebida pela forma e pela diferença de superfície, além da cor. Compare se a hierarquia permanece reconhecível nos dois temas e se as categorias continuam escaneáveis. A legenda da página descreve tipos de drawer, mas esta imagem específica não permite demonstrar comportamento modal versus persistente. Use-a para analisar seleção, consistência e organização; teste o comportamento de abertura em um protótipo ou na implementação.</p>",
-              "image": "real-assets/mobile-drawer.png",
-              "alt": "Menu Mail em tema claro e escuro, com Inbox selecionado e destinos Outbox e Favorites abaixo.",
-              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/quick-guides/content/create-navigation-drawer",
-              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
-              "licenseUrl": "https://developer.android.com/license",
-              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
-              "originalImageUrl": "https://developer.android.com/static/develop/ui/compose/images/layouts/material/m3-navigation-drawer.png"
+              "title": "Material 3 Expressive: navegação lateral recolhida e expandida",
+              "url": "https://github.com/material-components/material-components-android/blob/master/docs/components/NavigationRail.md",
+              "source": "Google / Material Components for Android",
+              "analysis": "<p>O navigation rail, ou faixa lateral de navegação, aparece recolhido à esquerda e expandido à direita. Alarm significa Alarme; Clock, Relógio; Timer, Temporizador; e Stopwatch, Cronômetro. O mesmo destino Timer permanece selecionado nas duas composições. Já Add timer, ou Adicionar temporizador, é uma ação destacada acima dos destinos. Essa separação evita confundir criar algo com visitar uma área. Ao expandir, rótulos passam para o lado dos ícones sem reorganizar o mapa do aplicativo. A figura demonstra a continuidade visual; não comprova duração da animação, ordem de foco ou comportamento modal. Esses aspectos exigem teste na implementação escolhida.</p>",
+              "image": "real-assets/mobile-navigation-rail-expressive.png",
+              "alt": "Figura oficial Material 3 Expressive com navegação lateral recolhida à esquerda e expandida à direita. Timer está selecionado; a ação Add timer fica separada dos destinos Alarm, Clock e Stopwatch.",
+              "sourcePageUrl": "https://github.com/material-components/material-components-android/blob/master/docs/components/NavigationRail.md",
+              "license": "Apache License 2.0, conforme LICENSE do repositório oficial Material Components for Android; marcas não incluídas.",
+              "licenseUrl": "https://github.com/material-components/material-components-android/blob/master/LICENSE",
+              "credit": "Google / Material Components for Android. Figura oficial Material 3 Expressive, reproduzida sem alterações, sob Apache License 2.0. Consulte a fonte e a licença.",
+              "versionNote": "Material 3 Expressive; revisão do arquivo registrada em 27/08/2025. A orientação oficial recomenda a faixa expandida no lugar do drawer para projetos que adotam Expressive. Isso não torna toda gaveta existente inválida nem significa que todas as APIs de drawer foram removidas.",
+              "versionUrl": "https://github.com/material-components/material-components-android/commit/2b29a266adaac3ea8cca0cc6027cead9723cc351",
+              "originalImageUrl": "https://raw.githubusercontent.com/material-components/material-components-android/master/docs/components/assets/navigationrail/navigation-rail-expressive.png"
             }
           ],
           "exercise": {
@@ -2187,10 +2216,20 @@
               "title": "Android: Window size classes",
               "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
               "note": "Espaço disponível como referência de adaptação, não apenas modelo do aparelho."
+            },
+            {
+              "title": "Material Components: atualização Material 3 Expressive",
+              "url": "https://github.com/material-components/material-components-android/blob/master/docs/components/NavigationRail.md",
+              "note": "Documentação oficial da variante Expressive; distinguir o sistema de design da versão da API usada na implementação."
+            },
+            {
+              "title": "Material Components: contexto do navigation drawer",
+              "url": "https://github.com/material-components/material-components-android/blob/master/docs/components/NavigationDrawer.md",
+              "note": "A recomendação de substituição por faixa expandida é específica da atualização Material 3 Expressive."
             }
           ],
           "videos": [],
-          "wordCount": 735
+          "wordCount": 783
         },
         {
           "id": "teclado-toque-gestos",
@@ -2339,13 +2378,17 @@
               "license": "Apache License 2.0 para documentação, conforme Android Developers. Marcas excluídas da licença; Gmail é marca da Google.",
               "licenseUrl": "https://developer.android.com/license",
               "analysis": "<p>A figura oficial usa o Gmail para mostrar quatro representações da mesma abertura: ícone central, fundo da janela, fundo circular opcional e limites de recorte. As linhas azuis e os números são anotações explicativas, não controles do aplicativo. Observe que não há instruções, campos ou tarefas para concluir: a composição comunica identidade durante uma transição técnica. Isso ajuda a distinguir splash de onboarding, que ensina ou configura algo. Ao adaptar o princípio, preserve simplicidade e contraste, verificando a área realmente visível do ícone. A imagem não comprova duração nem desempenho da abertura.</p>",
+              "versionNote": "A figura continua na documentação da API SplashScreen, disponível desde Android 12. A página foi atualizada em 01/10/2026, mas não informa quando esta figura foi criada nem a versão do Gmail representada.",
+              "versionUrl": "https://developer.android.com/develop/ui/views/launch/splash-screen",
               "originalImageUrl": "https://developer.android.com/static/images/guide/topics/ui/splash-screen/splash-screen-composition.png"
             },
             {
               "title": "Now in Android: escolher assuntos dentro da experiência inicial",
               "url": "https://github.com/android/nowinandroid",
               "source": "Google / Android Developers",
-              "analysis": "<p>O aplicativo oficial Now in Android permite acompanhar assuntos e receber conteúdo relacionado. Sua documentação de modularização identifica a orientação da primeira execução dentro da área “For You”, ou “Para você”. É um exemplo real de aplicativo de referência, não um produto fictício criado para esta aula. <a href=\"https://github.com/android/nowinandroid/blob/main/docs/ModularizationLearningJourney.md\">Veja a descrição da primeira execução</a>.</p><p>A leitura de design proposta aqui é ligar a escolha inicial a uma consequência compreensível: aquilo que a pessoa segue influencia o conteúdo que recebe. Ao estudar o caso, pergunte se cada escolha ajuda a primeira sessão e como seria a experiência sem seleção. O princípio transferível é a relação entre configuração e benefício, não a cópia de cores, assuntos ou número de opções.</p>"
+              "analysis": "<p>O aplicativo oficial Now in Android permite acompanhar assuntos e receber conteúdo relacionado. Sua documentação de modularização identifica a orientação da primeira execução dentro da área “For You”, ou “Para você”. É um exemplo real de aplicativo de referência, não um produto fictício criado para esta aula. <a href=\"https://github.com/android/nowinandroid/blob/main/docs/ModularizationLearningJourney.md\">Veja a descrição da primeira execução</a>.</p><p>A leitura de design proposta aqui é ligar a escolha inicial a uma consequência compreensível: aquilo que a pessoa segue influencia o conteúdo que recebe. Ao estudar o caso, pergunte se cada escolha ajuda a primeira sessão e como seria a experiência sem seleção. O princípio transferível é a relação entre configuração e benefício, não a cópia de cores, assuntos ou número de opções.</p>",
+              "versionNote": "Aplicativo de referência com documentação contínua. A última revisão do texto de modularização é de 04/12/2025; essa data não identifica uma versão visual do app. A documentação mantém o onboarding da primeira execução dentro de For You.",
+              "versionUrl": "https://github.com/android/nowinandroid/commit/426058b39c5a30c3611d03549fa9453ee64336ef"
             }
           ],
           "exercise": {
@@ -2385,7 +2428,7 @@
               "title": "Discoverable design",
               "url": "https://developer.apple.com/videos/play/wwdc2021/10126/",
               "source": "Apple Developer",
-              "note": "Vídeo oficial verificado. Observe como a interface pode ensinar durante a exploração; anote uma instrução que você substituiria por uma ação compreensível."
+              "note": "Sessão oficial WWDC21 (2021), mantida como fundamento de descoberta de ações. As interfaces pertencem ao contexto da apresentação; não são evidência de aparência atual."
             }
           ],
           "wordCount": 865
@@ -2434,13 +2477,17 @@
               "license": "Apache License 2.0. O ASSETS_LICENSE do Reply declara essa licença para todos os arquivos que não são fontes.",
               "licenseUrl": "https://github.com/android/compose-samples/blob/main/Reply/ASSETS_LICENSE",
               "analysis": "<p>Reply, aplicativo oficial de estudo, abre diretamente uma caixa de entrada: busca, mensagens e ação de escrever já estão disponíveis. A captura demonstra uma alternativa à home intermediária. A análise desta aula é a prioridade inicial: ler e responder ganham espaço antes de qualquer resumo decorativo. Em janelas amplas, a conversa aparece junto da coleção. Isso não transforma a tela em dashboard; mostra que a entrada pode ser a própria tarefa. Compare com o Fitness abaixo, cuja proposta de acompanhamento justifica um resumo de indicadores.</p>",
+              "versionNote": "Estudo histórico Material 3: a última revisão deste arquivo de imagem no histórico oficial é de 04/07/2022. O arquivo ainda é publicado no repositório Reply. Use-o para estudar organização adaptativa, não como retrato da aparência mais recente do Material 3 Expressive.",
+              "versionUrl": "https://github.com/android/compose-samples/commit/4d641b5255d31ec65c2bc6a59ecbbe115f5f1197",
               "originalImageUrl": "https://raw.githubusercontent.com/android/compose-samples/main/Reply/screenshots/compact_medium_large_displays.png"
             },
             {
               "title": "Apple Fitness: resumo com aprofundamento e personalização",
               "url": "https://support.apple.com/pt-br/guide/iphone/iph4c34a8a95/ios",
               "source": "Apple Support",
-              "analysis": "<p>O guia oficial do Fitness mostra o resumo de atividade, tendências, sessões e prêmios, além da possibilidade de reorganizar métricas. A própria documentação distingue o resumo do aprofundamento: tocar em uma área leva a detalhes. A referência é um aplicativo real; os dados ilustrativos da Apple não são dados pessoais deste curso.</p><p>A análise útil é observar duas decisões: o resumo permite acompanhar rapidamente, enquanto o detalhe suporta investigação; a personalização reconhece que nem todo indicador importa igualmente. Para outro produto, copie essa relação entre pergunta, sinal e aprofundamento, não os anéis de atividade. Um painel sem histórico suficiente deve explicar essa limitação. Não é possível concluir, apenas pela documentação, que a organização funcionará para todos os públicos.</p>"
+              "analysis": "<p>O guia oficial do Fitness mostra o resumo de atividade, tendências, sessões e prêmios, além da possibilidade de reorganizar métricas. A própria documentação distingue o resumo do aprofundamento: tocar em uma área leva a detalhes. A referência é um aplicativo real; os dados ilustrativos da Apple não são dados pessoais deste curso.</p><p>A análise útil é observar duas decisões: o resumo permite acompanhar rapidamente, enquanto o detalhe suporta investigação; a personalização reconhece que nem todo indicador importa igualmente. Para outro produto, copie essa relação entre pergunta, sinal e aprofundamento, não os anéis de atividade. Um painel sem histórico suficiente deve explicar essa limitação. Não é possível concluir, apenas pela documentação, que a organização funcionará para todos os públicos.</p>",
+              "versionNote": "Documentação contínua da Apple, atualmente apresentada no Manual de Uso do iPhone para iOS 27. A página não informa a data de criação das imagens nem uma versão separada do app Fitness. O seletor permite consultar versões anteriores do manual.",
+              "versionUrl": "https://support.apple.com/pt-br/guide/iphone/iph4c34a8a95/ios"
             }
           ],
           "exercise": {
@@ -2480,13 +2527,14 @@
               "title": "How to personalize the Summary tab in the Fitness app on iPhone and iPad",
               "url": "https://www.youtube.com/watch?v=-RSUkzo1cnI",
               "source": "Apple Support",
-              "note": "Vídeo oficial verificado. Compare a organização inicial e a reorganização dos cartões; registre qual pergunta cada cartão responde."
+              "note": "Publicado pelo Apple Support em 02/01/2025; título, autoria e data confirmados nos metadados oficiais do vídeo. Compare a organização e a personalização dos cartões. O vídeo não deve ser tratado como captura da versão mais recente do Fitness.",
+              "publishedDate": "2025-01-02"
             },
             {
               "title": "Design foundations from idea to interface",
               "url": "https://developer.apple.com/videos/play/wwdc2025/359/",
               "source": "Apple Developer",
-              "note": "Vídeo oficial verificado. Os capítulos Structure, Navigation e Content ajudam a revisar a relação entre estrutura, navegação e conteúdo."
+              "note": "Sessão oficial WWDC25 (2025). Os capítulos Structure, Navigation e Content ajudam a revisar estrutura, navegação e conteúdo. É uma referência datada de fundamentos, não comprovação da última versão dos apps mostrados."
             }
           ],
           "wordCount": 861
@@ -2612,6 +2660,8 @@
               "credit": "Copyright 2022 The Android Open Source Project. Screenshot oficial Reply, reproduzido sem alterações. Marcas pertencem a seus titulares; não há endosso ao curso.",
               "license": "Apache License 2.0. O arquivo ASSETS_LICENSE do Reply declara essa licença para todos os arquivos que não são fontes.",
               "licenseUrl": "https://github.com/android/compose-samples/blob/main/Reply/ASSETS_LICENSE",
+              "versionNote": "Estudo histórico Material 3: a última revisão deste arquivo de imagem no histórico oficial é de 04/07/2022. O arquivo ainda é publicado no repositório Reply. Use-o para estudar organização adaptativa, não como retrato da aparência mais recente do Material 3 Expressive.",
+              "versionUrl": "https://github.com/android/compose-samples/commit/4d641b5255d31ec65c2bc6a59ecbbe115f5f1197",
               "originalImageUrl": "https://raw.githubusercontent.com/android/compose-samples/main/Reply/screenshots/compact_medium_large_displays.png"
             }
           ],
@@ -2876,7 +2926,9 @@
               "title": "W3C: erros locais e resumo de problemas no formulário",
               "url": "https://www.w3.org/WAI/tutorials/forms/notifications/",
               "source": "W3C Web Accessibility Initiative",
-              "analysis": "<p>O tutorial oficial apresenta exemplos executáveis de retorno sobre formulários: um resumo de erros com links para os campos e mensagens próximas aos controles. Em um dos exemplos, o nome de usuário está aceito enquanto a data de validade precisa de correção. Assim, a interface consegue representar sucesso parcial sem declarar que a tarefa inteira terminou.</p><p>A análise transferível é preservar o que já está correto e orientar diretamente até o problema. O resumo ajuda a localizar; a mensagem local ajuda a corrigir. Não copie a aparência antiga do exemplo para um aplicativo moderno. Estude a relação entre alcance do erro, identificação do campo e próximo passo. A referência é Web; a implementação móvel deve usar os mecanismos de acessibilidade correspondentes da plataforma.</p>"
+              "analysis": "<p>O tutorial oficial apresenta exemplos executáveis de retorno sobre formulários: um resumo de erros com links para os campos e mensagens próximas aos controles. Em um dos exemplos, o nome de usuário está aceito enquanto a data de validade precisa de correção. Assim, a interface consegue representar sucesso parcial sem declarar que a tarefa inteira terminou.</p><p>A análise transferível é preservar o que já está correto e orientar diretamente até o problema. O resumo ajuda a localizar; a mensagem local ajuda a corrigir. Não copie a aparência antiga do exemplo para um aplicativo moderno. Estude a relação entre alcance do erro, identificação do campo e próximo passo. A referência é Web; a implementação móvel deve usar os mecanismos de acessibilidade correspondentes da plataforma.</p>",
+              "versionNote": "O tutorial informa atualização em 03/06/2022. Permanece uma referência de acessibilidade para retorno de formulários; o exemplo GOV.UK acima oferece a demonstração visual principal. A data do tutorial não é uma versão de aplicativo móvel.",
+              "versionUrl": "https://www.w3.org/WAI/tutorials/forms/notifications/"
             }
           ],
           "exercise": {

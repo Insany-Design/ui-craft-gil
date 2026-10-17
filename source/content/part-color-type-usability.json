@@ -479,17 +479,19 @@
               "analysis": "<p>O exemplo oficial separa a pergunta, a orientação de formato e a mensagem sobre uma data de emissão que precisa estar no passado. A análise útil é a divisão de trabalho: o rótulo identifica o dado; a orientação ajuda a preenchê-lo; o erro explica a restrição violada. A mensagem permite corrigir sem adivinhar uma regra interna. O padrão também preserva as respostas e associa o erro ao grupo de campos. Não copie a frase para uma falha do serviço: ali a pessoa não conseguiria resolver alterando a data. Abra o exemplo oficial para observar texto, código e associação semântica juntos.</p>"
             },
             {
-              "title": "GOV.UK: o texto do erro nomeia a ação de recuperação",
-              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "source": "GOV.UK Design System, captura de exemplo oficial",
-              "analysis": "<p>“Enter your full name” pode ser traduzido como informe seu nome completo. O verbo descreve a ação que falta e o objeto coincide com o rótulo do campo. O resumo e a mensagem local repetem o mesmo pedido, em vez de usar termos diferentes para o mesmo problema.</p><p>Essa captura de nome ausente complementa o exemplo de data: não devemos substituir ambos por “entrada inválida”. A aparência mostra contexto e proximidade; ela não demonstra expansão linguística nem tamanho de texto alterado. Para validar uma tradução mais longa, teste novamente o componente implementado com quebra de linha e ampliação.</p>",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-error.png",
-              "alt": "O erro Informe seu nome completo aparece como link no resumo e como mensagem imediatamente antes do campo Nome completo.",
+              "title": "GOV.UK: escolher o idioma sem abandonar a tarefa",
+              "url": "https://design-system.service.gov.uk/components/language-navigation/after-h1/",
+              "source": "GOV.UK Design System · Language navigation · 2026",
+              "analysis": "<p>Na captura, o título apresenta a tarefa antes da escolha de idioma. “English” identifica inglês; “Cymraeg” é o nome do galês em galês. A diferença entre o texto do idioma atual e o link alternativo permite reconhecer estado e ação sem acrescentar um seletor complexo.</p><p>Nossa leitura: o conteúdo localizado precisa continuar sendo a mesma tarefa. Um link visível não basta se a tradução omite informações, leva à página inicial ou apaga o formulário. Ao aplicar ao Rota, troque a descrição da visita sem perder data, quantidade e etapa selecionadas. Teste também títulos maiores e nomes de idiomas longos: a composição precisa absorver a mudança sem encobrir ações.</p><p>O componente está em fase experimental, chamada <em>Trial</em> na documentação. Ser recente não prova adequação ao seu público. Use-o para estudar a relação entre hierarquia, rótulo e continuidade; valide o comportamento no contexto do produto.</p>",
+              "localImagePath": "source/real-assets/govuk-language-navigation-2026.png",
+              "alt": "Exemplo oficial GOV.UK: título sobre áreas naturais protegidas, seguido do idioma atual English e do link Cymraeg; abaixo, o texto da tarefa.",
               "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
               "license": "Open Government Licence v3.0",
               "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "visualAspect": "500 / 360"
+              "sourcePageUrl": "https://design-system.service.gov.uk/components/language-navigation/",
+              "visualAspect": "500 / 400",
+              "versionNote": "Introduzido em agosto de 2026 no GOV.UK Frontend 6.5.0. O histórico oficial ainda o identifica como Trial, ou fase experimental. Captura consultada em 17/10/2026.",
+              "versionUrl": "https://design-system.service.gov.uk/components/language-navigation/#recent-changes"
             }
           ],
           "exercise": {
@@ -548,6 +550,11 @@
               "title": "GOV.UK: referência visual — GOV.UK: o texto do erro nomeia a ação de recuperação",
               "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
               "note": "Página oficial e captura conferidas em 17/10/2026. Análise da aparência visível; comportamentos não observados são indicados como testes necessários."
+            },
+            {
+              "title": "GOV.UK — Language navigation, histórico e uso",
+              "url": "https://design-system.service.gov.uk/components/language-navigation/",
+              "note": "Componente introduzido em agosto de 2026, versão 6.5.0; fase experimental explicitada no exemplo."
             }
           ],
           "videos": [
