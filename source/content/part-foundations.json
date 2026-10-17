@@ -1,0 +1,1089 @@
+{
+  "modules": [
+    {
+      "id": "fundamentos",
+      "title": "Fundamentos de UX e UI",
+      "description": "Defina problemas, transforme incertezas em investigação e projete interações compreensíveis antes de aperfeiçoar a aparência.",
+      "lessons": [
+        {
+          "id": "ux-ui-problema-objetivos",
+          "title": "UX, UI e a definição do problema",
+          "summary": "Distinga a experiência inteira da interface e transforme pedidos de telas em objetivos verificáveis.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir UX, UI, necessidade e solução.",
+            "Escrever um problema sem antecipar uma funcionalidade.",
+            "Definir um resultado observável e uma proteção contra efeitos indesejados."
+          ],
+          "sections": [
+            {
+              "title": "O que você está projetando, de verdade",
+              "body": "<p><strong>UX</strong> vem de <em>user experience</em>, experiência do usuário: o que a pessoa percebe, entende, sente e consegue fazer ao se relacionar com um produto ou serviço. Inclui descobrir sua existência, compreender condições, executar tarefas, lidar com falhas e receber o resultado prometido. <strong>UI</strong> vem de <em>user interface</em>, interface do usuário: os elementos por meio dos quais essa relação acontece, como textos, botões, campos, estados e gestos. A interface participa da experiência; não a esgota.</p><p>Uma compra pode ter telas elegantes e continuar ruim porque o prazo aparece tarde ou o suporte não resolve a entrega. Inversamente, uma tela simples pode prestar um excelente serviço quando oferece informação suficiente, ações claras e recuperação segura. Separar os conceitos ajuda a localizar o problema antes de redesenhar o que está visível.</p>"
+            },
+            {
+              "title": "Problema, necessidade, objetivo e solução",
+              "body": "<p>Problema é uma dificuldade situada: quem encontra qual obstáculo, em que contexto e com qual consequência. Necessidade é o resultado que essa pessoa procura alcançar. Objetivo de projeto é uma mudança observável nessa situação. Solução é uma proposta de intervenção, ainda sujeita a avaliação. “Precisamos de um carrossel” é solução; “as pessoas não descobrem atividades adequadas ao tempo disponível” é um problema a investigar.</p><p>Escreva uma cadeia simples: evidência observada, interpretação possível, pergunta em aberto e decisão. Se existem abandonos numa etapa, isso é um sinal, não uma explicação. A pessoa pode ter entendido que o serviço não serve para ela. Nesse caso, sair é uma decisão informada, e aumentar a conclusão indiscriminadamente seria uma meta inadequada.</p>"
+            },
+            {
+              "title": "Quando aplicar e o que não transformar em ritual",
+              "body": "<p>Use essa definição ao iniciar um produto, receber um pedido vago ou decidir entre melhorias concorrentes. Repita quando uma mudança de público ou contexto tornar antigas premissas frágeis. Não exija uma investigação extensa para corrigir um rótulo evidentemente incorreto; dimensione o esforço ao risco e à incerteza. Tampouco use uma declaração de problema para apresentar como fato uma opinião da equipe.</p><p>Princípios ajudam a resolver conflitos, mas precisam ser específicos. “Ser simples” permite quase qualquer decisão; “explicar requisitos antes de pedir cadastro” orienta uma escolha concreta. A <a href=\"https://principles.design/\">coletânea principles.design</a> reúne princípios de diferentes organizações. Ela serve para comparar decisões e valores declarados, não para provar que uma regra sempre melhora resultados.</p>"
+            },
+            {
+              "title": "Passo a passo: de um pedido a um compromisso de projeto",
+              "body": "<ol><li><strong>Descreva a tarefa fora da interface.</strong> O que precisa acontecer na vida da pessoa? Evite verbos dependentes de botões, como clicar.</li><li><strong>Delimite o contexto.</strong> Considere tempo, acesso à internet e conhecimentos prévios. Registre o que foi observado e o que ainda é hipótese.</li><li><strong>Mapeie o serviço inteiro.</strong> Inclua preparação, uso e consequências posteriores. Marque pontos em que outra pessoa ou organização precisa agir.</li><li><strong>Escolha uma mudança observável.</strong> Por exemplo, reconhecer uma condição antes de iniciar um processo. Defina como verificar isso e qual situação atual servirá de comparação.</li><li><strong>Defina uma proteção.</strong> A melhoria não deve esconder custos, dificultar cancelamento ou excluir quem usa recursos assistivos.</li><li><strong>Liste alternativas.</strong> Conteúdo melhor, reorganização de etapas e mudança operacional podem resolver mais que uma nova tela.</li></ol>"
+            },
+            {
+              "title": "Erros que tornam um bom desenho irrelevante",
+              "body": "<p>O primeiro erro é substituir investigação por gosto pessoal: “eu usaria” não descreve o público. O segundo é confundir entrega e efeito: publicar cinco telas não demonstra que alguém conseguiu terminar a tarefa. O terceiro é escolher apenas uma métrica comercial e ignorar entendimento, erro e confiança. Mais cadastros podem coexistir com mais arrependimento.</p><p>Antes de mudar, registre o comportamento atual ou uma expectativa explícita. Em projetos novos, trate o primeiro teste como aprendizado inicial, sem inventar números históricos. O <a href=\"https://www.gov.uk/service-manual/design\">Service Manual do GOV.UK</a> é uma referência prática para pensar serviços e protótipos além da aparência, com orientações próprias de seu contexto público.</p>"
+            },
+            {
+              "title": "Revisão: explique sua decisão sem mostrar a tela",
+              "body": "<p>Conte o projeto em um minuto: pessoa, contexto, obstáculo, consequência e resultado esperado. Se precisar mostrar um desenho para explicar por que o trabalho existe, a definição ainda pode estar presa à solução. Depois pergunte qual evidência faria você mudar de ideia. Uma proposta profissional precisa permitir revisão.</p><p>Como aprofundamento, <a href=\"https://www.hachettebookgroup.com/titles/don-norman/the-design-of-everyday-things/9780465050659/\">The Design of Everyday Things, de Don Norman</a>, é uma leitura sobre design de objetos cotidianos. Use-a como convite para observar relações entre intenção, ação e compreensão, formulando seus próprios diagnósticos. Aqui não reproduzimos capítulos nem tratamos a descrição editorial como pesquisa empírica.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: a confirmação como parte da experiência",
+              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/",
+              "source": "GOV.UK Design System — exemplo oficial documentado",
+              "analysis": "<p>Na captura, “Application complete” significa “Solicitação concluída”; o número permite identificar o pedido. Abaixo, a seção de próximos passos explica que outra equipe dará continuidade. O painel é UI; a relação entre envio, acompanhamento e resposta posterior pertence à UX. Nossa leitura: encerrar a tela com uma marca de sucesso, sem orientar a espera, deixaria parte da necessidade sem resposta. É uma demonstração oficial, não o comprovante de uma solicitação real.</p>",
+              "image": "real-assets/foundations-govuk-confirmation.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-confirmation.png",
+              "visualAspect": "500 / 520",
+              "alt": "Exemplo GOV.UK de confirmação: painel verde informa conclusão e número de referência; abaixo há confirmação de email e explicação dos próximos passos.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
+              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/"
+            },
+            {
+              "title": "GOV.UK: renovar ou substituir um passaporte",
+              "url": "https://www.gov.uk/renew-adult-passport",
+              "source": "GOV.UK, serviço público real",
+              "analysis": "<p>A página distingue renovação e substituição, explica elegibilidade, aponta situações de urgência e oferece acompanhamento posterior. A tarefa real não é apenas preencher um formulário: a pessoa precisa identificar o processo adequado e saber o que esperar depois. O conteúdo anterior à ação faz parte da experiência.</p><p>Nossa análise: esconder essas condições atrás de um botão chamativo poderia aumentar inícios sem aumentar pedidos adequados. Uma hipótese melhor seria verificar se o visitante identifica o caminho compatível com sua situação antes de começar. O exemplo ensina a avaliar clareza de decisão, e não somente destaque visual. Não inferimos uma taxa de sucesso da página nem recomendamos copiar requisitos desse serviço para outro contexto.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "Projeto fictício Rota: pessoas querem planejar uma visita cultural com tempo limitado. Defina o problema antes de desenhar.",
+            "steps": [
+              "Escreva uma declaração com público, contexto, obstáculo e consequência, distinguindo hipótese de evidência.",
+              "Liste três intervenções diferentes, incluindo uma sem nova funcionalidade.",
+              "Escolha um resultado observável e uma condição que a solução não pode piorar."
+            ],
+            "deliverable": "Uma página com problema, três alternativas e plano de verificação.",
+            "criteria": [
+              "Nenhuma funcionalidade é apresentada como necessidade.",
+              "Há uma tarefa observável e um contexto delimitado.",
+              "A avaliação considera entendimento e um possível efeito indesejado."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Design — Service Manual",
+              "url": "https://www.gov.uk/service-manual/design",
+              "note": "Orientação oficial de prática; não é estudo controlado."
+            },
+            {
+              "title": "Design Principles",
+              "url": "https://principles.design/",
+              "note": "Link original verificado. Coletânea curada por Ben Brignell; valores e exemplos, não evidência científica universal."
+            },
+            {
+              "title": "The Design of Everyday Things",
+              "url": "https://www.hachettebookgroup.com/titles/don-norman/the-design-of-everyday-things/9780465050659/",
+              "note": "Página oficial da editora. Leitura complementar; livro não reproduzido."
+            },
+            {
+              "title": "Renovar passaporte",
+              "url": "https://www.gov.uk/renew-adult-passport",
+              "note": "Fonte oficial do exemplo; análise de estrutura, sem orientação jurídica ou tarifas."
+            },
+            {
+              "title": "GOV.UK: a confirmação como parte da experiência",
+              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/",
+              "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "pesquisa-hipotese-teste",
+          "title": "Do problema à hipótese e ao teste",
+          "summary": "Construa um ciclo de aprendizagem que transforme observações em decisões e mantenha a incerteza visível.",
+          "minutes": 35,
+          "objectives": [
+            "Relacionar pergunta de pesquisa e método.",
+            "Formular uma hipótese refutável.",
+            "Distinguir observação, interpretação e resultado."
+          ],
+          "sections": [
+            {
+              "title": "Um processo é uma forma de reduzir incerteza",
+              "body": "<p>Projetar exige decidir sem conhecer tudo. Um processo útil torna explícito o que ainda não sabemos e escolhe maneiras proporcionais de aprender. Pesquisa procura entender contexto e comportamento; hipótese propõe uma explicação ou intervenção; protótipo permite experimentar antes de investir na implementação; teste observa o que acontece. A sequência se repete porque cada resposta pode revelar uma pergunta melhor.</p><p>O <a href=\"https://www.designcouncil.org.uk/resources/the-double-diamond/\">Double Diamond, do Design Council</a>, representa movimentos de ampliar e estreitar possibilidades. A tradução é “duplo diamante”. Use o modelo para lembrar que compreender o problema e desenvolver uma solução são trabalhos diferentes. Ele não exige seguir etapas uma única vez, nem garante qualidade por ter sido desenhado num quadro.</p>"
+            },
+            {
+              "title": "Escolha o método pela pergunta",
+              "body": "<p>Uma entrevista pode revelar como alguém organizou uma atividade recente, quais obstáculos encontrou e quais alternativas usou. Não demonstra, sozinha, que essa pessoa conseguirá operar uma interface futura. Um teste de usabilidade observa uma tarefa em uma solução; não mede automaticamente o tamanho de um mercado. Dados de acesso mostram frequências e percursos, mas raramente explicam motivos sem investigação adicional.</p><p>O <a href=\"https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service\">guia oficial de planejamento de pesquisa</a> recomenda partir de perguntas e escolher atividades coerentes com o que precisa ser aprendido. Escreva “esta atividade poderá responder…” e “esta atividade não poderá demonstrar…”. Essa disciplina reduz conclusões maiores do que as evidências permitem.</p>"
+            },
+            {
+              "title": "Quando testar e quando não testar desse jeito",
+              "body": "<p>Teste cedo quando o custo de uma decisão errada for relevante e houver uma pergunta concreta. Um rascunho pode bastar para avaliar compreensão de uma sequência. Para observar teclado, foco ou leitura assistiva, será necessário funcionamento compatível. A fidelidade deve servir à pergunta: aparência polida não compensa comportamento simulado incorretamente.</p><p>Não peça transações reais nem dados sensíveis apenas para testar um conceito. Use dados fictícios, explique o estudo e obtenha consentimento para registros. Também não apresente um teste pequeno e exploratório como estimativa estatística da população. Encontrar um obstáculo é útil; afirmar sua prevalência exige outro desenho de pesquisa.</p>"
+            },
+            {
+              "title": "Passo a passo: uma rodada com decisão ao final",
+              "body": "<ol><li><strong>Declare a incerteza.</strong> Separe “ninguém encontra a função” de “não sabemos onde esperam encontrá-la”. A segunda formulação abre investigação.</li><li><strong>Formule a hipótese.</strong> “Se apresentarmos determinada informação antes da escolha, esperamos que a pessoa explique sua consequência.” Inclua o motivo esperado.</li><li><strong>Defina a tarefa.</strong> Descreva uma situação plausível sem usar o texto do botão que entrega a resposta.</li><li><strong>Prepare o mínimo necessário.</strong> Inclua os estados relevantes, uma opção incorreta e um retorno quando ajudarem a responder à pergunta.</li><li><strong>Observe sem ensinar.</strong> Registre ações, hesitações e falas. Se precisar ajudar, marque a intervenção; a conclusão deixou de ser independente.</li><li><strong>Separe fato e interpretação.</strong> “Abriu três menus” é observação; “não entendeu a organização” é interpretação a confrontar com outras evidências.</li><li><strong>Decida.</strong> Mantenha, altere ou abandone a hipótese, explicando o que permanece em aberto.</li></ol>"
+            },
+            {
+              "title": "Erros de pesquisa que parecem boas práticas",
+              "body": "<p>Perguntar “você gostou?” pode produzir uma conversa simpática e pouco útil. Pergunte o que a pessoa esperava, observe o que consegue fazer e procure conflitos entre expectativa e comportamento. Evite demonstrar o fluxo antes da tarefa: você estaria testando memória de uma explicação, e não descoberta.</p><p>Selecionar apenas colegas familiarizados com o projeto não representa automaticamente o público. Eles podem encontrar defeitos preliminares, mas registre essa limitação. Também não descarte um problema porque ocorreu uma única vez: sua gravidade pode justificar correção mesmo sem estimativa confiável de frequência. Dê prioridade à consequência, além da recorrência.</p>"
+            },
+            {
+              "title": "Revisão: uma evidência precisa mudar alguma coisa",
+              "body": "<p>Ao concluir, organize observação, interpretação, consequência e decisão. Não transforme cada fala em funcionalidade. Se alguém pediu um tutorial, talvez a ação esteja mal nomeada; acrescentar explicação não é a única resposta. Compare intervenções antes de implementar.</p><p>Uma revisão honesta inclui o que contrariou a hipótese. Antes de apresentar resultados, pergunte: alguém conseguiria reconstruir a decisão a partir dos registros? O que permaneceria incerto mesmo se todas as tarefas fossem concluídas? Essas perguntas tornam o estudo útil e evitam que “testado” vire um selo vazio. A rodada seguinte deve responder à incerteza restante, e não repetir mecanicamente o roteiro anterior.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: uma revisão que pode ser investigada em teste",
+              "url": "https://design-system.service.gov.uk/patterns/check-answers/default/",
+              "source": "GOV.UK Design System — exemplo oficial documentado",
+              "analysis": "<p>Esta é a demonstração atual de revisão do GOV.UK, não a captura histórica do serviço DWP citado acima. “Change” significa “Alterar”. Observe como cada dado tem sua própria saída de correção. Nossa proposta de teste: pedir que alguém corrija uma informação e verificar se retorna à revisão sem repetir toda a sequência. A captura mostra a estrutura; somente um protótipo funcional permite observar preservação de dados e comportamento de retorno.</p>",
+              "image": "real-assets/foundations-govuk-review.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-review.png",
+              "visualAspect": "500 / 757",
+              "alt": "Trecho da revisão de respostas GOV.UK em tela estreita: título, grupo de dados pessoais e unidades com nome do dado, valor exemplificativo e link para alterar.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
+              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/check-answers/default/"
+            },
+            {
+              "title": "Carer’s Allowance: uma revisão surgiu de comportamento observado",
+              "url": "https://dwpdigital.blog.gov.uk/2016/07/08/a-live-service-is-not-the-end-of-the-story/",
+              "source": "DWP Digital, relato oficial da equipe",
+              "analysis": "<p>A equipe relatou que solicitantes voltavam às etapas anteriores antes de enviar o formulário. Acrescentou uma revisão final das respostas com acesso direto à correção e retorno ao resumo. O detalhe importante é a relação entre comportamento e intervenção: voltar não foi tratado automaticamente como erro; podia expressar a necessidade de conferir.</p><p>Nossa análise: uma hipótese plausível seria que reunir respostas permitiria revisão sem percorrer tudo novamente. O relato informa redução de tempo, mas não apresenta experimento que isole esse recurso de todas as mudanças do serviço. Portanto, serve como caso real de iteração, não como prova causal universal. Em outro produto, verificaríamos tanto facilidade de corrigir quanto entendimento de que a solicitação ainda precisa ser enviada.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "Projeto fictício Rota: descubra se as pessoas compreendem a duração total de um passeio antes de salvá-lo.",
+            "steps": [
+              "Crie uma hipótese com resultado observável.",
+              "Prepare duas telas e três tarefas sem mencionar os rótulos da interface.",
+              "Faça uma sessão-piloto consentida ou ensaie o roteiro, identificando ensaio como ensaio.",
+              "Registre um achado, uma interpretação alternativa e a próxima decisão."
+            ],
+            "deliverable": "Plano de rodada e relatório curto de evidências.",
+            "criteria": [
+              "A hipótese pode ser contrariada.",
+              "A tarefa não revela o caminho esperado.",
+              "Ajuda do moderador e limitações da amostra são registradas.",
+              "Nenhuma conclusão estatística é inventada."
+            ]
+          },
+          "sources": [
+            {
+              "title": "The Double Diamond",
+              "url": "https://www.designcouncil.org.uk/resources/the-double-diamond/",
+              "note": "Modelo oficial do Design Council; estrutura de processo, não garantia."
+            },
+            {
+              "title": "Plan user research",
+              "url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
+              "note": "Orientações oficiais sobre perguntas, métodos e inclusão."
+            },
+            {
+              "title": "A live service is not the end of the story",
+              "url": "https://dwpdigital.blog.gov.uk/2016/07/08/a-live-service-is-not-the-end-of-the-story/",
+              "note": "Relato primário de 2016. Resultados históricos autorrelatados; não é experimento controlado."
+            },
+            {
+              "title": "GOV.UK: uma revisão que pode ser investigada em teste",
+              "url": "https://design-system.service.gov.uk/patterns/check-answers/default/",
+              "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "usabilidade-modelos-mentais",
+          "title": "Usabilidade e modelos mentais",
+          "summary": "Projete ações que façam sentido, revelem seu estado e permitam recuperação quando a expectativa encontra um problema.",
+          "minutes": 35,
+          "objectives": [
+            "Identificar expectativas implícitas em uma interação.",
+            "Distinguir sinal de ação, estado e resposta.",
+            "Priorizar problemas pela consequência."
+          ],
+          "sections": [
+            {
+              "title": "Compreender antes de decorar heurísticas",
+              "body": "<p>Usabilidade diz respeito à possibilidade de pessoas específicas realizarem tarefas em um contexto com qualidade de resultado, esforço aceitável e experiência compreensível. Não significa simplesmente “poucos cliques”. Um passo adicional pode evitar um envio incorreto; um atalho pode economizar tempo para alguém experiente e esconder a função de quem está começando.</p><p>Modelo mental é uma explicação que a pessoa constrói sobre como algo funciona. Ela não precisa conhecer a tecnologia interna: precisa prever o que uma ação fará. Se um coração parece guardar um item, mas começa uma compra, a interface rompe uma expectativa importante. A pergunta profissional é quais sinais produziram aquela expectativa e como torná-los coerentes com o comportamento real.</p>"
+            },
+            {
+              "title": "Quatro partes de uma interação legível",
+              "body": "<p>Antes da ação, existe a intenção: o resultado procurado. A interface oferece sinais que sugerem possibilidades. Durante a ação, aparecem limites e condições. Depois, uma resposta informa o novo estado. Examine cada parte separadamente. Um botão pode ser fácil de encontrar e continuar ruim porque seu rótulo não explica o efeito; uma ação pode funcionar e parecer falha porque não confirma o resultado.</p><p>As <a href=\"https://www.nngroup.com/articles/ten-usability-heuristics/\">heurísticas publicadas por Jakob Nielsen</a> oferecem lentes para inspecionar estado, linguagem familiar, controle, consistência e prevenção de erros. Heurística é orientação prática, não lei matemática nem substituto de observação com o público. Use-a para formular diagnósticos específicos, em vez de apenas atribuir notas.</p>"
+            },
+            {
+              "title": "Quando usar convenções e quando questioná-las",
+              "body": "<p>Convenções são úteis em ações frequentes, situações de pressa e tarefas de maior consequência. Quem reconhece como voltar pode dedicar atenção ao conteúdo. Preserve esse aprendizado quando ajudar. Mas copiar sem entender o contexto cria problemas: um gesto escondido pode ser conhecido por parte do público e desconhecido pelo restante.</p><p>Não use familiaridade para justificar barreiras. Se um padrão depende só de cor ou exclui pessoas com limitações motoras, precisa de alternativas. Tampouco invente controles apenas para parecer original. Novidade tem um custo de aprendizagem que deve ser justificado por benefício real, sobretudo numa tela pequena e usada com interrupções.</p>"
+            },
+            {
+              "title": "Passo a passo: inspecione uma tarefa inteira",
+              "body": "<ol><li><strong>Defina pessoa e intenção.</strong> Inclua conhecimento prévio e condição de uso. Evite um usuário abstrato que conhece tudo.</li><li><strong>Antecipe a expectativa.</strong> Antes de cada toque, escreva o que o elemento promete. Compare com o que acontece.</li><li><strong>Observe o estado.</strong> A pessoa sabe se está editando, carregando, concluindo ou esperando? O que muda visualmente e o que é anunciado por tecnologia assistiva?</li><li><strong>Provoque uma falha plausível.</strong> Considere campo incompleto, resultado vazio ou conexão interrompida. Não limite o projeto ao percurso ideal.</li><li><strong>Examine recuperação e saída.</strong> Verifique preservação de dados, retorno, cancelamento e indicação da próxima ação.</li><li><strong>Classifique a consequência.</strong> Diferencie incômodo, atraso, impedimento e perda. Uma falha rara que destrói trabalho pode merecer prioridade alta.</li></ol>"
+            },
+            {
+              "title": "Diagnostique em vez de chamar tudo de confuso",
+              "body": "<p>“Está confuso” não informa a correção. “A pessoa interpretou o botão como salvar, mas ele enviou a solicitação sem revisão” descreve sinal, expectativa e consequência. A proposta pode ser renomear, separar ações ou acrescentar revisão. Cada solução atua sobre uma causa diferente.</p><p>Erros comuns incluem mostrar apenas um código técnico, apagar dados após falha e depender de animação passageira para confirmar algo importante. Há o excesso contrário: pedir confirmação para toda ação trivial. Isso pode ensinar as pessoas a ignorar confirmações justamente quando forem necessárias. Reserve interrupções para decisões cujo risco ou irreversibilidade justifique a pausa.</p>"
+            },
+            {
+              "title": "Revisão: o que a pessoa consegue prever?",
+              "body": "<p>Verifique três perguntas: o que posso fazer agora, o que aconteceu e como posso corrigir? Peça que alguém explique a consequência antes de executar uma ação. Depois observe se reconhece o resultado. Se o desenho só funciona acompanhado de sua explicação, ela ainda não foi incorporada à experiência.</p><p>Não confunda prevenção com proibição. Restrições podem impedir erros, mas também bloquear casos legítimos. Quando um campo rejeita um nome ou uma data, a regra precisa ter razão de serviço e mensagem útil. A interface deve ajudar a pessoa a cumprir a regra, sem culpá-la por desconhecer a implementação. Revise limites com dados variados, e não apenas com o exemplo ideal do protótipo.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: resumo de erros com caminho de correção",
+              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "source": "GOV.UK Design System — exemplo oficial documentado",
+              "analysis": "<p>“There is a problem” significa “Há um problema”; “Enter your full name” orienta a informar o nome completo. Na captura, a orientação aparece no resumo e junto ao campo. O link superior indica um caminho de correção, enquanto a mensagem local identifica a pendência.</p><p>Nossa análise: repetir a orientação conecta o estado geral ao ponto de ação sem exigir memorização. A borda reforça o problema, mas o texto comunica seu significado. A documentação associada descreve foco e ligação ao campo; a captura estática não comprova esse comportamento. Ao adaptar para um aplicativo nativo, preserve contexto e recuperação usando os recursos da plataforma.</p>",
+              "image": "real-assets/foundations-govuk-error.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-error.png",
+              "visualAspect": "500 / 360",
+              "alt": "Captura do exemplo GOV.UK com resumo de erro no alto, link para informar o nome completo e a mesma orientação junto ao campo de nome vazio.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
+              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/components/error-summary/linking/"
+            }
+          ],
+          "exercise": {
+            "brief": "Projeto fictício Rota: uma pessoa tenta salvar um roteiro, mas a conexão falha. Projete recuperação compreensível.",
+            "steps": [
+              "Descreva intenção, expectativa e consequência da falha.",
+              "Crie estados de salvando, falha e sucesso, incluindo o destino dos dados.",
+              "Escreva a mensagem e ação disponível em cada estado.",
+              "Peça que alguém explique o resultado esperado antes de tocar."
+            ],
+            "deliverable": "Fluxo de quatro estados e registro de inspeção.",
+            "criteria": [
+              "A falha não depende apenas de cor.",
+              "Os dados não desaparecem sem explicação.",
+              "Tentar novamente não cria duplicação silenciosa.",
+              "Cada estado explica a próxima ação."
+            ]
+          },
+          "sources": [
+            {
+              "title": "10 Usability Heuristics",
+              "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+              "note": "Fonte original de Nielsen; orientação de inspeção, sem promessa universal."
+            },
+            {
+              "title": "Error summary",
+              "url": "https://design-system.service.gov.uk/components/error-summary/",
+              "note": "Documentação oficial do componente, foco e recuperação."
+            },
+            {
+              "title": "GOV.UK: resumo de erros com caminho de correção",
+              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
+            }
+          ],
+          "videos": []
+        }
+      ]
+    },
+    {
+      "id": "arquitetura-informacao",
+      "title": "Arquitetura da informação",
+      "description": "Organize conceitos, conteúdo e caminhos de uso. Aprenda taxonomia, rótulos, mapas, fluxos e encontrabilidade como uma disciplina distinta da composição visual.",
+      "lessons": [
+        {
+          "id": "organizacao-taxonomia-rotulos",
+          "title": "Organização, taxonomia e rótulos",
+          "summary": "Dê nomes e relações ao conteúdo para que as pessoas encontrem o que procuram sem conhecer a estrutura da organização.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir conteúdo, categoria, atributo e rótulo.",
+            "Construir uma classificação com critérios explícitos.",
+            "Avaliar ambiguidades com exemplos concretos."
+          ],
+          "sections": [
+            {
+              "title": "Arquitetura não é posição na tela",
+              "body": "<p><strong>Arquitetura da informação</strong> é o trabalho de organizar, relacionar e nomear informação para que ela faça sentido e possa ser encontrada. Define quais coisas existem, como se relacionam, onde são procuradas e que palavras representam essas relações. Composição visual decide como apresentar elementos no espaço. Uma lista pode estar perfeitamente alinhada e continuar incompreensível porque as categorias se sobrepõem ou seus nomes não correspondem ao vocabulário do público.</p><p>Comece por entidades, ou tipos de coisa: um lugar, uma atividade e um agendamento não são equivalentes. Depois examine atributos, como localização, duração e data. Por fim, defina relações: uma atividade acontece em um lugar; um agendamento se refere a uma ocorrência. Essa distinção evita menus que misturam objetos, características e ações sem critério.</p>"
+            },
+            {
+              "title": "Taxonomia é uma escolha de classificação",
+              "body": "<p>Taxonomia é um sistema de categorias e relações. Um vocabulário controlado define nomes preferenciais e variações reconhecidas; um rótulo é a expressão exibida à pessoa. O nome interno de uma categoria não precisa ser o texto da interface. Ao organizar um acervo por tema, período ou autor, você oferece portas de entrada diferentes para os mesmos objetos.</p><p>Os <a href=\"https://www.gov.uk/government/publications/govuk-topic-taxonomy-principles/govuk-taxonomy-principles\">princípios de taxonomia do GOV.UK</a> descrevem uma organização por assuntos aplicada ao conteúdo existente. A lição transferível é explicitar a finalidade da classificação antes de criar categorias. “Diversos” pode ser útil temporariamente numa auditoria, mas costuma esconder decisões pendentes quando vira destino permanente de navegação.</p>"
+            },
+            {
+              "title": "Quando criar uma hierarquia e quando preferir atributos",
+              "body": "<p>Uma hierarquia funciona quando há relações compreensíveis de inclusão: um assunto amplo reúne assuntos mais específicos. Atributos combináveis funcionam quando as pessoas precisam cruzar critérios independentes, como localização e duração. Não force tudo a caber num único ramo se o mesmo conteúdo pode ser legitimamente encontrado por vários caminhos.</p><p>Também não transforme cada atributo em seção principal. “Gratuito”, por exemplo, pode ser uma condição temporária ou um filtro, enquanto a categoria do conteúdo permanece estável. Evite refletir o organograma da empresa apenas porque facilita a publicação interna. A pergunta é onde a pessoa procuraria a informação, e não qual departamento a produz.</p>"
+            },
+            {
+              "title": "Passo a passo: construa uma organização testável",
+              "body": "<ol><li><strong>Faça um inventário.</strong> Liste conteúdos existentes ou previstos, com título, finalidade, responsável e estado de atualização. Identifique duplicações e lacunas.</li><li><strong>Separe entidades e atributos.</strong> Marque o que é um objeto, uma característica ou uma ação. Resolva termos usados com sentidos diferentes.</li><li><strong>Proponha critérios de agrupamento.</strong> Explique por que dois itens pertencem ao mesmo grupo. Teste o critério nos casos difíceis, não apenas nos fáceis.</li><li><strong>Escreva rótulos provisórios.</strong> Prefira nomes que ajudem a prever o conteúdo. Evite títulos criativos que precisem de legenda para serem entendidos.</li><li><strong>Explore a organização com pessoas.</strong> Em uma organização de cartões, ou <em>card sorting</em>, participantes agrupam conteúdos e podem nomear conjuntos. O exercício revela expectativas, sem produzir automaticamente a estrutura final.</li><li><strong>Documente as regras.</strong> Inclua exemplos, exceções, sinônimos e quem decide sobre novas categorias.</li></ol>"
+            },
+            {
+              "title": "Erros frequentes e como detectá-los",
+              "body": "<p>Categorias muito amplas não ajudam a escolher; categorias específicas demais fragmentam a navegação. Rótulos paralelos com critérios diferentes tornam a decisão imprevisível: uma opção por público, outra por assunto e outra por formato podem disputar o mesmo conteúdo. Misturar critérios pode ser apropriado, mas precisa ser uma decisão consciente e verificada.</p><p>Outro erro é considerar toda discordância um defeito do participante. Pessoas podem ter objetivos legítimos diferentes. Registre caminhos alternativos em vez de exigir unanimidade. No entanto, multiplicar cópias do conteúdo em cada seção aumenta o risco de versões contraditórias. Prefira uma fonte canônica com entradas por diferentes caminhos, quando a tecnologia permitir.</p>"
+            },
+            {
+              "title": "Revisão e aprofundamento",
+              "body": "<p>Escolha cinco conteúdos difíceis de classificar e explique suas posições sem dizer “porque sempre foi assim”. Depois leia cada rótulo isoladamente e pergunte o que alguém esperaria encontrar ali. A capacidade de prever o destino importa mais do que a elegância do nome.</p><p><a href=\"https://www.oreilly.com/library/view/information-architecture-4th/9781491913529/\">Information Architecture, quarta edição, de Rosenfeld, Morville e Arango</a>, é uma referência editorial de aprofundamento. Use a leitura para examinar sistemas de organização, rotulagem e descoberta no seu próprio projeto. Não é necessário reproduzir diagramas do livro: produza seu inventário e explique por que cada relação existe.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: grupos de tarefas e rótulos de ação",
+              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/",
+              "source": "GOV.UK Design System — exemplo oficial documentado",
+              "analysis": "<p>Na captura, “Check before you start” reúne verificações anteriores ao início; “Prepare application” agrupa a preparação da solicitação. Os títulos organizam tarefas por momento, enquanto cada link nomeia uma ação. Nossa leitura: o agrupamento oferece uma hipótese compreensível de organização. A aparência ordenada não prova que esses rótulos serviriam a outro público. Antes de copiar a estrutura, classifique o conteúdo real e confirme quais dependências existem.</p>",
+              "image": "real-assets/foundations-govuk-tasks.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-tasks.png",
+              "visualAspect": "500 / 660",
+              "alt": "Exemplo GOV.UK de lista de tarefas em dois grupos, com links à esquerda, estados concluído ou incompleto à direita e botão final de envio.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
+              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/"
+            },
+            {
+              "title": "The Met: diferentes portas para uma coleção",
+              "url": "https://www.metmuseum.org/art/collection",
+              "source": "The Metropolitan Museum of Art, coleção oficial",
+              "analysis": "<p>A entrada da coleção combina destaques de obras com sugestões como cerâmicas coreanas, pinturas de Van Gogh e instrumentos musicais. Essas entradas não usam um único critério: misturam origem, autoria e tipo de objeto. O visitante não precisa começar pela estrutura interna dos departamentos do museu.</p><p>Nossa análise: essa variedade serve à exploração, porque oferece pistas concretas para interesses distintos. Não significa que a classificação de bastidores seja arbitrária. A mesma obra precisa manter identificação e metadados coerentes ao aparecer por caminhos diferentes. O princípio transferível é separar organização do acervo e portas de descoberta. Para uma busca muito específica, uma seleção editorial de destaques seria insuficiente; seria necessário outro mecanismo. Esta leitura não presume métricas de uso do museu.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "Projeto fictício Rota: organize 18 conteúdos, incluindo lugares, exposições, horários e roteiros salvos.",
+            "steps": [
+              "Separe entidades, atributos e ações.",
+              "Proponha categorias e escreva duas regras de inclusão para cada uma.",
+              "Inclua três casos ambíguos e explique como seriam encontrados.",
+              "Teste cinco rótulos sem mostrar as telas e registre expectativas."
+            ],
+            "deliverable": "Inventário, vocabulário inicial e proposta de classificação.",
+            "criteria": [
+              "Cada categoria tem critério explícito.",
+              "Horário e preço não são confundidos automaticamente com tipos de lugar.",
+              "Há solução para três casos ambíguos.",
+              "Os rótulos foram avaliados por previsão do conteúdo."
+            ]
+          },
+          "sources": [
+            {
+              "title": "GOV.UK Taxonomy principles",
+              "url": "https://www.gov.uk/government/publications/govuk-topic-taxonomy-principles/govuk-taxonomy-principles",
+              "note": "Fonte primária de regras editoriais e de organização."
+            },
+            {
+              "title": "The Met Collection",
+              "url": "https://www.metmuseum.org/art/collection",
+              "note": "Exemplo real de descoberta de acervo; conteúdo pode mudar."
+            },
+            {
+              "title": "Information Architecture, 4th Edition",
+              "url": "https://www.oreilly.com/library/view/information-architecture-4th/9781491913529/",
+              "note": "Página da O’Reilly. Livro complementar; conteúdo não reproduzido."
+            },
+            {
+              "title": "GOV.UK: grupos de tarefas e rótulos de ação",
+              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/",
+              "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "mapa-estrutura-fluxo",
+          "title": "Mapa de estrutura e fluxo de tarefas",
+          "summary": "Represente onde as coisas vivem e como uma tarefa atravessa lugares, decisões e estados.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir mapa, fluxo e sequência de telas.",
+            "Incluir caminhos alternativos e estados de falha.",
+            "Escolher entre navegação hierárquica e tarefa modal."
+          ],
+          "sections": [
+            {
+              "title": "Dois desenhos, duas perguntas",
+              "body": "<p>Um mapa de estrutura responde “quais áreas existem e como se relacionam?”. Um fluxo de tarefa responde “o que acontece enquanto alguém procura um resultado?”. O primeiro pode mostrar uma área de conta ligada a preferências e histórico. O segundo pode atravessar áreas diferentes, envolver decisões e terminar fora do aplicativo. Confundir os dois produz mapas cheios de setas que não explicam nem organização nem comportamento.</p><p>Uma sequência de telas é ainda outra representação. Ela mostra o que será apresentado, mas pode esconder regras importantes. A mesma tela pode ter estados vazios, carregando, erro e sucesso; um fluxo precisa reconhecer essas diferenças quando afetam a tarefa. Não conte apenas retângulos: descreva transições e consequências.</p>"
+            },
+            {
+              "title": "Representações são instrumentos de conversa",
+              "body": "<p>Use uma notação simples e mantenha uma legenda. Um retângulo pode representar uma etapa, um losango uma decisão e uma seta uma transição. O formato exato importa menos que a consistência. Escreva a condição sobre cada saída de uma decisão; “sim” e “não” só funcionam quando a pergunta anterior está explícita.</p><p>Em trabalho mobile, registre entradas além da tela inicial: notificação, link compartilhado, histórico ou reabertura do aplicativo. Um caminho profundo precisa oferecer contexto a quem não percorreu as etapas anteriores. Registre também o que é preservado ao voltar: filtros, posição da lista, dados editados e seleção atual são decisões de produto, não detalhes posteriores.</p>"
+            },
+            {
+              "title": "Quando usar cada modelo e quando parar de detalhar",
+              "body": "<p>Use o mapa para discutir escopo, seções e responsabilidades de conteúdo. Use o fluxo antes de prototipar uma tarefa com condições ou consequências relevantes. Para uma interação trivial, uma anotação pode bastar. Não desenhe um diagrama gigantesco apenas para demonstrar completude: se ninguém consegue revisá-lo, ele deixou de ajudar.</p><p>A <a href=\"https://developer.apple.com/videos/play/wwdc2022/10001/\">sessão oficial da Apple sobre navegação</a> distingue navegação hierárquica e apresentação modal. A primeira preserva a relação entre conteúdo principal e secundário; a segunda destaca uma tarefa ou contexto temporário. “Modal” não significa simplesmente uma caixa bonita: envolve entrada, conclusão, cancelamento e retorno. Não interrompa exploração comum com uma modalidade desnecessária.</p>"
+            },
+            {
+              "title": "Passo a passo: do mapa ao percurso verificável",
+              "body": "<ol><li><strong>Defina o escopo.</strong> Escreva resultado e condições de início e término. “A pessoa viu a tela” raramente é um resultado suficiente.</li><li><strong>Desenhe a estrutura mínima.</strong> Mostre áreas, objetos principais e relações. Separe seções estáveis de ações transitórias.</li><li><strong>Trace o percurso principal.</strong> Liste decisões necessárias, informações solicitadas e respostas do sistema, sem começar por cores ou ícones.</li><li><strong>Adicione alternativas relevantes.</strong> Inclua falta de resultados, item indisponível, edição, cancelamento e retorno após interrupção.</li><li><strong>Marque fronteiras.</strong> Aponte quando a tarefa depende de outro serviço, abre um aplicativo externo ou exige autenticação.</li><li><strong>Faça uma simulação verbal.</strong> Uma pessoa percorre o fluxo e outra interpreta o sistema. Toda pergunta sem resposta vira uma decisão pendente.</li><li><strong>Vincule as telas.</strong> Só então identifique quais estados precisam de representação no protótipo.</li></ol>"
+            },
+            {
+              "title": "Erros: o caminho ideal não é o serviço inteiro",
+              "body": "<p>O erro mais comum é desenhar apenas o <em>happy path</em>, expressão para o percurso em que tudo dá certo. Ele é útil como começo, mas insuficiente como especificação. Um fluxo que termina em “salvar” não informa o que acontece quando o pedido falha ou demora. Um botão de voltar sem destino definido pode perder o trabalho anterior.</p><p>Outro erro é fazer todas as decisões parecerem obrigatórias. Algumas pessoas exploram antes de escolher e precisam comparar opções. Forçar uma sequência linear pode resolver a documentação da equipe e prejudicar o uso real. Separe dependências necessárias de preferências de organização.</p>"
+            },
+            {
+              "title": "Revisão: percorra o desenho de trás para frente",
+              "body": "<p>Comece pelo resultado e pergunte quais informações precisavam existir para alcançá-lo. Isso revela coleta desnecessária e dependências esquecidas. Depois escolha uma interrupção em cada etapa e verifique como a pessoa retoma a tarefa. Por fim, tente entrar diretamente numa tela intermediária.</p><p>Seu mapa estará pronto para prototipar quando outra pessoa conseguir explicar onde está, por que chegou ali e quais saídas possui. Isso não significa que esteja validado com usuários. Significa que a proposta ficou suficientemente explícita para ser testada, discutida e implementada sem inventar regras silenciosamente.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: o fim da interface não encerra toda a jornada",
+              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/",
+              "source": "GOV.UK Design System — exemplo oficial documentado",
+              "analysis": "<p>A confirmação visível registra um resultado e apresenta o trabalho posterior de outra equipe. “What happens next” significa “O que acontece a seguir”. Nossa leitura: um fluxo pode terminar numa tela, enquanto a jornada do serviço continua. No diagrama, represente a transferência e o resultado esperado, sem inventar telas para atividades externas. A captura é útil para perguntar onde termina a responsabilidade do aplicativo e como a pessoa acompanhará o que ainda falta.</p>",
+              "image": "real-assets/foundations-govuk-confirmation.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-confirmation.png",
+              "visualAspect": "500 / 520",
+              "alt": "Exemplo GOV.UK de confirmação: painel verde informa conclusão e número de referência; abaixo há confirmação de email e explicação dos próximos passos.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
+              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/"
+            },
+            {
+              "title": "GOV.UK: navegação por etapas entre serviços",
+              "url": "https://design-system.service.gov.uk/patterns/step-by-step-navigation/",
+              "source": "GOV.UK Design System, padrão documentado",
+              "analysis": "<p>O padrão apresenta uma jornada com início e fim, reunindo orientações e ações em etapas lógicas. Pode incluir trabalho online e offline. A documentação distingue esse uso de uma lista de tarefas dentro de uma transação e alerta contra impor etapas quando não existe ordem útil.</p><p>Nossa análise: uma jornada pode atravessar várias páginas e organizações sem que cada etapa corresponda a uma tela. A sequência comunica dependências do mundo real, não a árvore do site. Para transferir o aprendizado ao mobile, pergunte quais passos realmente precisam ocorrer antes de outros. Numerar uma coleção de opções independentes criaria uma obrigação inexistente. O valor do exemplo está na relação entre objetivo, sequência e contexto, e não no formato visual dos números.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "Projeto fictício Rota: desenhe a estrutura do app e o fluxo de acrescentar uma visita a um roteiro.",
+            "steps": [
+              "Faça um mapa com no máximo três níveis.",
+              "Desenhe o fluxo principal separado do mapa.",
+              "Inclua item indisponível, cancelamento, retorno à lista e reabertura do app.",
+              "Indique o que permanece salvo em cada interrupção."
+            ],
+            "deliverable": "Dois diagramas com legenda e estados anotados.",
+            "criteria": [
+              "Mapa e fluxo respondem a perguntas diferentes.",
+              "Todas as decisões têm condições de saída.",
+              "Há pelo menos quatro alternativas ao percurso ideal.",
+              "Nenhuma transição importante termina sem resultado definido."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Explore navigation design for iOS",
+              "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
+              "note": "Fonte primária da Apple sobre padrões e contexto; convenções visuais de 2022 podem evoluir."
+            },
+            {
+              "title": "Step by step navigation",
+              "url": "https://design-system.service.gov.uk/patterns/step-by-step-navigation/",
+              "note": "Fonte oficial com limites de uso e exemplos de jornadas."
+            },
+            {
+              "title": "GOV.UK: o fim da interface não encerra toda a jornada",
+              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/",
+              "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
+            }
+          ],
+          "videos": [
+            {
+              "title": "Explore navigation design for iOS — WWDC22",
+              "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
+              "source": "Apple Developer",
+              "note": "Vídeo oficial, aproximadamente 25 minutos, em inglês. Observe o contraste entre aprofundar conteúdo e iniciar uma tarefa modal; registre a tradução de tab bar como barra de abas. Página e transcrição verificadas."
+            }
+          ]
+        },
+        {
+          "id": "navegacao-encontrabilidade",
+          "title": "Navegação e encontrabilidade",
+          "summary": "Construa caminhos de descoberta, busca e retorno que funcionem para intenções diferentes.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir navegação global, local e contextual.",
+            "Projetar busca e filtros com escopo compreensível.",
+            "Avaliar localização de conteúdo sem depender da aparência."
+          ],
+          "sections": [
+            {
+              "title": "Encontrar não é apenas enxergar um botão",
+              "body": "<p>Encontrabilidade é a capacidade de chegar à informação ou ação procurada. Depende de organização, palavras, mecanismos de descoberta e contexto. Uma função pode estar visível e ainda ser difícil de encontrar se seu nome não sugere o objetivo desejado. Outra pode estar num segundo nível e funcionar bem porque cada escolha comunica claramente seu destino.</p><p>Navegação global conecta áreas principais. Navegação local ajuda a explorar uma área. Navegação contextual oferece relações úteis dentro do conteúdo, como um autor ligado às suas obras. Busca permite formular uma intenção em palavras; filtros refinam um conjunto por atributos. Esses mecanismos podem se complementar, mas cada um precisa deixar claro seu alcance.</p>"
+            },
+            {
+              "title": "A intenção muda o caminho adequado",
+              "body": "<p>Quem sabe o nome exato de algo pode preferir busca. Quem conhece o tema, mas não o item, pode explorar categorias. Quem compara possibilidades pode precisar de filtros e ordenação. Quem retoma uma escolha anterior precisa de histórico ou itens salvos. Não existe uma única navegação “mais intuitiva” para todas essas situações.</p><p>A documentação oficial do <a href=\"https://designsystem.digital.gov/components/search/\">componente de busca do USWDS</a> fornece exemplos e orientações para esse controle. O campo é apenas a entrada: a experiência também depende de resultados, mensagens de ausência, manutenção da consulta e clareza de escopo. Uma lupa isolada não corrige conteúdo mal indexado.</p>"
+            },
+            {
+              "title": "Quando oferecer busca e quando ela não resolve",
+              "body": "<p>Busca ajuda em conjuntos extensos e quando as pessoas conhecem palavras relevantes. Pode ser excessiva num conjunto pequeno de opções estáveis. Não a use como desculpa para abandonar a navegação: quem desconhece o vocabulário do serviço não saberá o que digitar. Da mesma forma, filtros só ajudam se os atributos forem compreensíveis e os dados estiverem preenchidos de maneira consistente.</p><p>Não esconda o estado aplicado. Se uma lista mostra poucos itens porque há filtros ativos, a pessoa deve reconhecer e desfazer essa condição. Também diferencie ordenar de filtrar: ordenar muda a sequência; filtrar muda o conjunto. Misturar ambos sem explicação pode produzir a impressão de que informações desapareceram.</p>"
+            },
+            {
+              "title": "Passo a passo: desenhe caminhos por intenção",
+              "body": "<ol><li><strong>Liste tarefas de localização.</strong> Inclua procurar algo conhecido, descobrir possibilidades e recuperar algo já visto.</li><li><strong>Escolha entradas coerentes.</strong> Associe cada tarefa a busca, categoria, histórico ou relação contextual. Evite adicionar mecanismos sem tarefa correspondente.</li><li><strong>Escreva rótulos e resultados reais.</strong> Teste palavras longas, termos semelhantes e itens que precisam de informação adicional para serem distinguidos.</li><li><strong>Defina o escopo.</strong> Informe se a busca percorre todo o produto ou somente a área atual. Mantenha a consulta ao abrir e retornar de um resultado.</li><li><strong>Projete ausência e recuperação.</strong> Diferencie consulta sem resultados, conteúdo indisponível e falha de conexão. Cada situação exige uma resposta diferente.</li><li><strong>Teste a estrutura sem acabamento.</strong> Num <em>tree test</em>, ou teste de árvore, a pessoa procura destinos numa hierarquia textual. Observe primeira escolha, retornos e destino final.</li><li><strong>Verifique no dispositivo.</strong> O teclado, a rolagem e o espaço para filtros podem alterar um caminho que parecia simples no papel.</li></ol>"
+            },
+            {
+              "title": "Erros que mascaram problemas de organização",
+              "body": "<p>Adicionar uma aba “Mais” sem revisar conteúdo pode apenas transferir a ambiguidade para outro lugar. Um menu gigantesco também não demonstra transparência: pode exigir que a pessoa compreenda todas as opções antes de decidir. Agrupe por intenção reconhecível e dê pistas sobre o que vem a seguir.</p><p>Não avalie apenas tempo. Uma escolha rápida e incorreta é pior do que uma breve comparação bem-sucedida. Registre se o destino encontrado resolve a tarefa, quais rótulos induziram erro e como a pessoa tentou recuperar-se. Não existe uma regra universal de três cliques; a qualidade de cada escolha e sua consequência importam.</p>"
+            },
+            {
+              "title": "Revisão: encontre, reconheça e retorne",
+              "body": "<p>Selecione uma tarefa e avalie três momentos: encontrar um candidato, reconhecer se ele serve e voltar sem perder contexto. A página de resultado precisa conter informação suficiente para distinguir itens semelhantes; caso contrário, a pessoa terá de abrir cada um por tentativa e erro.</p><p>Teste também termos alternativos e nomes antigos. A organização interna pode preferir uma nomenclatura oficial, mas a interface precisa lidar com a linguagem usada pelas pessoas. Mantenha um registro de consultas sem resultado e de rótulos mal interpretados, respeitando privacidade. Esses sinais ajudam a revisar tanto a navegação quanto o próprio conteúdo.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: busca, menu e localização na mesma página",
+              "url": "https://design-system.service.gov.uk/styles/type-scale/",
+              "source": "GOV.UK Design System — exemplo oficial documentado",
+              "analysis": "<p>Na página real de documentação, a busca global aparece no alto; o menu oferece outra entrada; “Home” e “Styles” indicam início e estilos no caminho até “Type scale”, escala tipográfica. São mecanismos diferentes, não três cópias da mesma navegação. Nossa leitura: alguém pode procurar um termo, explorar a organização ou reconhecer onde está após receber um link direto. A captura demonstra essas entradas; não informa a qualidade dos resultados da busca, que exige avaliação separada.</p>",
+              "image": "real-assets/foundations-govuk-type-scale.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-type-scale.png",
+              "visualAspect": "500 / 757",
+              "alt": "Página real de escala tipográfica GOV.UK em tela estreita, mostrando busca global, menu, caminho de navegação, título e introdução da documentação.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
+              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/styles/type-scale/"
+            },
+            {
+              "title": "NHS: índice de medicamentos com nomes alternativos",
+              "url": "https://www.nhs.uk/medicines/",
+              "source": "NHS, índice oficial; análise de arquitetura, não aconselhamento de saúde",
+              "analysis": "<p>O índice organiza entradas alfabeticamente e inclui remissões entre nomes alternativos. Por exemplo, uma marca pode encaminhar ao nome usado na página principal. Alguns títulos acrescentam contexto para distinguir apresentações ou usos, evitando depender apenas do nome curto.</p><p>Nossa análise: a ordem alfabética beneficia quem já conhece um termo, enquanto as remissões diminuem a necessidade de adivinhar a nomenclatura escolhida pelo publicador. Isso ilustra a diferença entre manter um conteúdo principal e permitir múltiplas entradas. O padrão não é uma solução universal para exploração: quem não conhece nome algum precisa de outro caminho. O caso ensina a tratar sinônimos e desambiguação como parte da arquitetura, sem duplicar todas as páginas nem transformar um índice em ferramenta de decisão clínica.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "Projeto fictício Rota: encontre uma exposição conhecida, descubra opções próximas e recupere uma visita salva.",
+            "steps": [
+              "Escreva três tarefas de localização sem citar os menus esperados.",
+              "Defina caminhos e escopo da busca.",
+              "Crie resultados, filtros ativos e três estados vazios distintos.",
+              "Faça um teste de árvore ou ensaio documentado com cinco destinos."
+            ],
+            "deliverable": "Mapa de navegação, estados de busca e registros de escolhas.",
+            "criteria": [
+              "Cada tarefa tem ao menos um caminho coerente.",
+              "Filtros ativos são reconhecíveis e removíveis.",
+              "Ausência, indisponibilidade e erro são diferenciados.",
+              "O retorno preserva consulta e contexto relevante."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Search — USWDS",
+              "url": "https://designsystem.digital.gov/components/search/",
+              "note": "Documentação primária de componente; não mede a qualidade de indexação de um produto."
+            },
+            {
+              "title": "Medicines A to Z",
+              "url": "https://www.nhs.uk/medicines/",
+              "note": "Exemplo oficial de índice e remissões. Conteúdo clínico não é objeto desta análise."
+            },
+            {
+              "title": "GOV.UK: busca, menu e localização na mesma página",
+              "url": "https://design-system.service.gov.uk/styles/type-scale/",
+              "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
+            }
+          ],
+          "videos": []
+        }
+      ]
+    },
+    {
+      "id": "principios-visuais",
+      "title": "Princípios visuais",
+      "description": "Transforme prioridades em hierarquia, organize o espaço, controle contraste e agrupamento e estabeleça uma linguagem consistente sem reduzir design a decoração.",
+      "lessons": [
+        {
+          "id": "hierarquia-visual",
+          "title": "Hierarquia: decidir o que merece atenção",
+          "summary": "Faça a importância do conteúdo aparecer na interface, sem esconder condições essenciais nem transformar tudo em destaque.",
+          "minutes": 35,
+          "objectives": [
+            "Definir uma ordem de leitura ligada à tarefa.",
+            "Usar tamanho, posição, peso e espaço em conjunto.",
+            "Distinguir destaque legítimo de direcionamento enganoso."
+          ],
+          "sections": [
+            {
+              "title": "Hierarquia começa antes da escolha da fonte",
+              "body": "<p>Hierarquia visual é a relação de importância percebida entre elementos. Ela orienta o que tende a ser percebido primeiro, o que ajuda a interpretar o conjunto e o que pode ser consultado depois. Não equivale a aumentar um título. Uma imagem contrastante, um selo colorido ou uma região isolada pode dominar a tela mesmo ocupando menos espaço que o texto principal.</p><p>Antes de desenhar, escreva a tarefa da tela e ordene suas informações por necessidade. A pessoa precisa reconhecer o assunto, entender uma condição, comparar opções ou agir? A resposta define o que merece destaque. Hierarquia sem prioridade de conteúdo é apenas uma distribuição arbitrária de tamanhos.</p>"
+            },
+            {
+              "title": "Ferramentas que trabalham em conjunto",
+              "body": "<p>Tamanho cria relações de escala. Peso tipográfico diferencia intensidade. Posição sugere ordem. Espaço separa ou reúne. Cor pode destacar, desde que não seja a única pista relevante. Conteúdo também pesa: uma frase curta e específica pode orientar melhor que um parágrafo em letras grandes. O resultado depende do conjunto, não de uma propriedade isolada.</p><p>A documentação de <a href=\"https://designsystem.digital.gov/design-tokens/typesetting/overview/\">tipografia do USWDS</a> mostra que fontes com o mesmo tamanho nominal podem ter tamanhos aparentes diferentes. Portanto, não transplante números sem olhar a fonte e o contexto. Avalie a relação entre título, texto e controles no dispositivo, incluindo quando a pessoa aumenta o texto.</p>"
+            },
+            {
+              "title": "Quando destacar e quando conter o destaque",
+              "body": "<p>Destaque uma ação quando ela representa um próximo passo claro. Destaque uma condição quando ignorá-la pode comprometer a decisão. Em uma tela de comparação, duas opções podem precisar de importância equivalente. Não force uma ação principal quando a tarefa exige escolha equilibrada.</p><p>Não reduza custos, restrições ou consequências a um texto quase invisível para favorecer conversão. Hierarquia organiza atenção; também pode manipulá-la. Uma pergunta útil é: a pessoa ainda tomaria a mesma decisão se todas as condições relevantes fossem compreendidas? Se o desenho depende de uma informação passar despercebida, revise a proposta.</p>"
+            },
+            {
+              "title": "Passo a passo: uma hierarquia justificável",
+              "body": "<ol><li><strong>Faça a lista de conteúdo.</strong> Inclua títulos, dados, ações, instruções, estados e condições. Retire duplicações antes de estilizar.</li><li><strong>Defina prioridades.</strong> Marque o que identifica a tela, o que permite decidir e o que oferece apoio. Essas funções podem mudar conforme o estado.</li><li><strong>Crie uma primeira versão sem cor.</strong> Use poucas diferenças claras de tamanho, peso e espaço. Isso revela dependências excessivas da paleta.</li><li><strong>Escolha o foco.</strong> Pergunte qual elemento deve atrair atenção no momento atual e quais devem permanecer disponíveis sem competir.</li><li><strong>Adicione cor e imagens.</strong> Verifique se a fotografia ou selo passou a dominar algo mais importante.</li><li><strong>Teste reconhecimento e ação.</strong> Peça que alguém diga do que se trata, o que precisa saber e qual seria o próximo passo. Uma exposição breve ajuda a investigar impressão inicial, mas não substitui uma tarefa completa.</li><li><strong>Revise estados.</strong> Um erro relevante ou uma mudança de disponibilidade pode alterar legitimamente a prioridade.</li></ol>"
+            },
+            {
+              "title": "Erros: uma coleção de destaques não forma hierarquia",
+              "body": "<p>Negrito em tudo, várias cores saturadas e botões equivalentes transformam prioridades diferentes em ruído. O remédio não é sempre reduzir conteúdo: pode ser agrupar, sequenciar ou revelar detalhes no momento adequado. Outro erro é usar títulos gigantes que empurram a informação decisiva para longe, sobretudo numa tela pequena.</p><p>Evite confiar em um teste de desfoque como prova de usabilidade. Ele pode ajudar a perceber massas e competição visual, mas não verifica linguagem, entendimento nem operação. Também mantenha estrutura semântica coerente: um texto que parece título precisa ter função de título no produto acessível, e não apenas aparência distinta.</p>"
+            },
+            {
+              "title": "Como ler listas de princípios com espírito crítico",
+              "body": "<p>O <a href=\"https://www.toptal.com/designers/ui/principles-of-design\">artigo da Toptal indicado como referência</a> apresenta uma seleção editorial de princípios visuais. É útil para comparar vocabulário, mas sua revisão por especialistas da empresa não equivale a um estudo científico de eficácia. Não existe obrigação de aplicar doze recursos em toda tela.</p><p>Para revisar, explique por que cada nível existe e remova um destaque por vez. Se a compreensão melhora, o destaque estava competindo com a tarefa. A meta não é uma tela uniformemente calma; é uma distribuição de atenção que ajude a pessoa a reconhecer, decidir e agir com informação suficiente.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: duas ações com ênfase diferente",
+              "url": "https://design-system.service.gov.uk/components/button/secondary-combo/",
+              "source": "GOV.UK Design System — exemplo oficial documentado",
+              "analysis": "<p>Na captura, “Save and continue” significa “Salvar e continuar”; “Save as draft”, “Salvar como rascunho”. Os botões têm largura semelhante e seguem a mesma coluna, mas a superfície verde dá maior ênfase à continuidade. O rascunho permanece legível e disponível.</p><p>Nossa análise: a diferença de intensidade comunica prioridade sem apagar a alternativa. Os verbos também explicam destinos distintos. Se ambos tivessem o mesmo tratamento forte, competiriam; se a segunda ação fosse quase invisível, a pessoa poderia perder uma saída útil. A imagem demonstra uma relação visual, não prova qual opção pessoas escolherão. A decisão correta depende da tarefa e de entender o efeito de cada ação.</p>",
+              "image": "real-assets/foundations-govuk-buttons.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-buttons.png",
+              "visualAspect": "500 / 170",
+              "alt": "Dois botões do exemplo GOV.UK: a ação Salvar e continuar tem fundo verde; Salvar como rascunho tem fundo cinza-claro, com mesma largura.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
+              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/components/button/secondary-combo/"
+            }
+          ],
+          "exercise": {
+            "brief": "Projeto fictício Rota: uma tela de visita precisa mostrar nome, imagem, duração, horário, preço e ação de adicionar ao roteiro.",
+            "steps": [
+              "Ordene as informações por função e explique a prioridade.",
+              "Crie duas composições em escala de cinza, alterando apenas hierarquia.",
+              "Acrescente cor e verifique competição com a imagem.",
+              "Peça que alguém identifique assunto, condição importante e próxima ação."
+            ],
+            "deliverable": "Duas alternativas e justificativa da escolhida.",
+            "criteria": [
+              "Há prioridades discerníveis sem cor.",
+              "Preço e condição de horário permanecem legíveis.",
+              "O destaque principal é explicado pela tarefa.",
+              "O texto aumentado não elimina informação essencial."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Using type — USWDS",
+              "url": "https://designsystem.digital.gov/design-tokens/typesetting/overview/",
+              "note": "Fonte oficial sobre tamanho aparente e composição tipográfica."
+            },
+            {
+              "title": "Button — GOV.UK",
+              "url": "https://design-system.service.gov.uk/components/button/",
+              "note": "Exemplos reais de níveis de ação."
+            },
+            {
+              "title": "The Principles of Design — Toptal",
+              "url": "https://www.toptal.com/designers/ui/principles-of-design",
+              "note": "Link original verificado. Artigo editorial de especialistas; não tratado como evidência experimental."
+            },
+            {
+              "title": "GOV.UK: duas ações com ênfase diferente",
+              "url": "https://design-system.service.gov.uk/components/button/secondary-combo/",
+              "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
+            }
+          ],
+          "videos": [
+            {
+              "title": "Design foundations from idea to interface — WWDC25",
+              "url": "https://developer.apple.com/videos/play/wwdc2025/359/",
+              "source": "Apple Developer",
+              "note": "Vídeo oficial em inglês, aproximadamente 19 minutos. O capítulo Visual Design começa em 13:28. Observe como as decisões de conteúdo antecedem o acabamento. Página e capítulos verificados."
+            }
+          ]
+        },
+        {
+          "id": "composicao-grid-espacamento",
+          "title": "Composição, grid, alinhamento e espaço",
+          "summary": "Use relações espaciais para criar ordem, acomodar conteúdo real e adaptar a interface a diferentes larguras.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir margens, colunas, intervalos e espaço interno.",
+            "Aplicar alinhamento por relações, não por ajuste isolado.",
+            "Projetar reflow sem comprimir o conteúdo."
+          ],
+          "sections": [
+            {
+              "title": "Composição é organizar elementos no espaço",
+              "body": "<p>Composição visual é a distribuição de texto, imagens, controles e áreas vazias. Ela torna visíveis relações que já deveriam fazer sentido no conteúdo. Não substitui arquitetura da informação: aproximar duas categorias não resolve uma classificação incoerente. Aqui trabalhamos o espaço que apresenta relações, e não a definição das próprias categorias.</p><p>Um <em>grid</em>, ou grade de composição, oferece linhas e divisões de referência. Margens delimitam a distância às bordas; colunas organizam faixas; intervalos separam colunas; espaço interno protege o conteúdo dentro de um componente. O objetivo não é encaixar tudo em caixas iguais, mas tornar decisões repetíveis e previsíveis.</p>"
+            },
+            {
+              "title": "Alinhamento cria relações sem acrescentar elementos",
+              "body": "<p>Uma borda comum permite perceber que título, descrição e ação pertencem à mesma unidade. Alinhamentos concorrentes podem fazer elementos relacionados parecerem independentes. Para textos longos em português, uma borda inicial estável costuma facilitar a continuidade da leitura; centralização pode funcionar em blocos curtos, mas merece cuidado em parágrafos e listas. Verifique sempre o idioma e a direção de escrita.</p><p>Espaço vazio não é sobra. Ele separa conjuntos, cria pausas e evita contatos ambíguos. O <a href=\"https://www.carbondesignsystem.com/building-blocks/foundations/spacing/overview\">sistema Carbon</a> documenta uma escala de espaçamento para repetir relações. A lição é usar um vocabulário espacial limitado e intencional, sem transformar seus valores específicos em uma lei universal.</p>"
+            },
+            {
+              "title": "Quando usar grade e quando permitir exceções",
+              "body": "<p>Grades ajudam em listas, formulários, conteúdo editorial e interfaces com muitos elementos repetidos. Em uma tela mobile simples, uma coluna principal com margens coerentes pode resolver mais que uma grade complexa. Mais colunas não significam mais profissionalismo. Escolha divisões que acomodem o conteúdo, e não o contrário.</p><p>Permita exceções quando houver uma razão clara: uma imagem pode ocupar toda a largura, enquanto o texto permanece contido. Não use exceção para compensar um componente mal dimensionado. Tampouco imponha alturas fixas a cartões cujo texto varia; isso pode cortar informação ou deixar vazios desproporcionais. O sistema deve admitir crescimento.</p>"
+            },
+            {
+              "title": "Passo a passo: componha pela relação entre conteúdo e espaço",
+              "body": "<ol><li><strong>Comece com conteúdo representativo.</strong> Inclua título longo, ausência de imagem e descrição de várias linhas. Evite testar apenas nomes curtos.</li><li><strong>Defina uma borda principal.</strong> Alinhe os elementos que participam da mesma leitura. Identifique os poucos casos que precisam de outro eixo.</li><li><strong>Escolha uma escala provisória.</strong> Por exemplo, 4, 8, 16, 24 e 32 unidades podem servir a um exercício. Esses valores são uma convenção de trabalho, não requisito de acessibilidade.</li><li><strong>Relacione distâncias e significado.</strong> Elementos da mesma unidade devem ter uma relação espacial mais forte que unidades diferentes, salvo outra pista clara.</li><li><strong>Teste larguras e texto aumentado.</strong> Quando duas colunas deixam de comportar o conteúdo, reorganize em vez de reduzir a fonte indiscriminadamente.</li><li><strong>Revise sobreposições.</strong> Considere teclado, barras fixas e áreas reservadas pelo sistema. A ação inferior não pode encobrir o último conteúdo.</li><li><strong>Documente a regra.</strong> Registre quais espaços são internos ao componente e quais pertencem à composição da página.</li></ol>"
+            },
+            {
+              "title": "Erros: compensar estrutura com ajustes de um pixel",
+              "body": "<p>Um layout com dezenas de distâncias arbitrárias é difícil de manter e revisar. Antes de ajustar um item isolado, verifique se o problema está na regra do conjunto. Outro erro é confundir alinhamento geométrico com equilíbrio percebido: ícones de formas diferentes podem precisar de ajuste óptico, sem alterar o tamanho de sua área de interação.</p><p>Não comprima uma composição desktop inteira para caber no celular. <em>Reflow</em> significa reorganização do conteúdo quando o espaço muda. Uma relação lado a lado pode passar a vertical preservando ordem e proximidade. A <a href=\"https://design-system.service.gov.uk/styles/layout/\">documentação de layout do GOV.UK</a> oferece um exemplo de sistema responsivo; adapte o raciocínio ao conteúdo e à plataforma do projeto.</p>"
+            },
+            {
+              "title": "Revisão: espaço deve explicar, não impressionar",
+              "body": "<p>Percorra a tela e marque cada mudança de alinhamento. Todas têm motivo? Depois compare distâncias dentro e entre grupos. Se a legenda está mais perto do próximo bloco que de sua imagem, a composição pode comunicar uma relação errada. Verifique também o extremo oposto: espaço excessivo pode afastar a informação necessária da decisão.</p><p>Como estudo complementar, <a href=\"https://www.chroniclebooks.com/products/thinking-with-type-1\">Thinking with Type, de Ellen Lupton</a>, oferece uma entrada editorial para tipografia e composição. Use o livro para treinar análise e produzir seus próprios estudos; esta lição não reproduz suas páginas nem substitui a prática de testar conteúdo real em diferentes tamanhos.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: rótulo, valor e correção numa coluna estreita",
+              "url": "https://design-system.service.gov.uk/patterns/check-answers/default/",
+              "source": "GOV.UK Design System — exemplo oficial documentado",
+              "analysis": "<p>Na captura estreita, cada unidade empilha o nome do dado, seu valor e o link de alteração. As linhas horizontais separam unidades; uma borda inicial comum sustenta a leitura. Os dados são exemplificativos da documentação.</p><p>Nossa análise: o espaço permite distinguir o valor do próximo rótulo, enquanto a ação permanece no grupo correspondente. Essa organização evita comprimir três colunas numa largura insuficiente. Ao adaptar um resumo, preserve a relação entre dado e correção, mesmo quando as posições mudarem. O trecho mostra apenas a parte superior da página; não autoriza concluir que todo o fluxo foi avaliado. “Personal details” significa “Dados pessoais”.</p>",
+              "image": "real-assets/foundations-govuk-review.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-review.png",
+              "visualAspect": "500 / 757",
+              "alt": "Trecho da revisão de respostas GOV.UK em tela estreita: título, grupo de dados pessoais e unidades com nome do dado, valor exemplificativo e link para alterar.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
+              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/check-answers/default/"
+            }
+          ],
+          "exercise": {
+            "brief": "Projeto fictício Rota: componha a lista de visitas e o resumo de um roteiro em duas larguras.",
+            "steps": [
+              "Use conteúdos de comprimentos diferentes, incluindo um título com três linhas.",
+              "Defina margens, alinhamentos e cinco valores de espaçamento.",
+              "Apresente versões estreita e larga, explicando o que muda de posição.",
+              "Simule texto aumentado e presença do teclado onde houver entrada."
+            ],
+            "deliverable": "Duas telas em duas larguras e regras de composição.",
+            "criteria": [
+              "Nenhum conteúdo é cortado para manter altura decorativa.",
+              "As relações entre dados e ações permanecem claras.",
+              "Espaçamentos têm função documentada.",
+              "Controles fixos não encobrem conteúdo final."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Spacing — Carbon",
+              "url": "https://www.carbondesignsystem.com/building-blocks/foundations/spacing/overview",
+              "note": "Sistema oficial da IBM; escala contextual, não obrigação universal."
+            },
+            {
+              "title": "Layout — GOV.UK",
+              "url": "https://design-system.service.gov.uk/styles/layout/",
+              "note": "Referência oficial de organização responsiva."
+            },
+            {
+              "title": "Check answers",
+              "url": "https://design-system.service.gov.uk/patterns/check-answers/",
+              "note": "Fonte oficial do exemplo de composição."
+            },
+            {
+              "title": "Thinking with Type",
+              "url": "https://www.chroniclebooks.com/products/thinking-with-type-1",
+              "note": "Página da editora da terceira edição. Leitura complementar, sem reprodução do livro."
+            },
+            {
+              "title": "GOV.UK: rótulo, valor e correção numa coluna estreita",
+              "url": "https://design-system.service.gov.uk/patterns/check-answers/default/",
+              "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "contraste-visual-legibilidade",
+          "title": "Contraste visual e legibilidade",
+          "summary": "Diferencie elementos com intenção e verifique contraste de luminância sem confundir destaque estético com acessibilidade.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir contraste visual amplo e razão de luminância.",
+            "Aplicar os limites relevantes de texto e componentes.",
+            "Projetar informação que não dependa só de cor."
+          ],
+          "sections": [
+            {
+              "title": "Contraste é diferença a serviço da compreensão",
+              "body": "<p>Contraste visual é a diferença percebida entre elementos ou entre elemento e fundo. Pode ocorrer por tamanho, forma, peso, textura, direção ou cor. Ele ajuda a separar funções e estabelecer importância. Uma palavra em peso forte dentro de um parágrafo cria contraste tipográfico; um botão preenchido numa área de links cria contraste de forma e superfície.</p><p>Contraste de luminância é uma medida específica da diferença entre claros e escuros. Não mede toda a qualidade visual, mas é fundamental para verificar legibilidade. Duas cores muito diferentes em matiz podem ter luminâncias próximas. Portanto, “consigo distinguir azul de verde” não demonstra que um texto azul será legível sobre aquele verde.</p>"
+            },
+            {
+              "title": "O que os números exigem e o que não garantem",
+              "body": "<p>Na <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html\">WCAG 2.2, critério 1.4.3</a>, o nível AA exige pelo menos 4,5:1 para texto comum e 3:1 para texto grande, com exceções definidas no critério. Grande significa pelo menos 18 pontos regulares ou 14 pontos em negrito, aproximadamente 24 e 18,7 pixels CSS. Não classifique texto como grande apenas porque parece importante.</p><p>O <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html\">critério 1.4.11</a> trata de partes visuais necessárias para identificar componentes, estados e objetos gráficos, com razão mínima de 3:1 contra cores adjacentes nos casos aplicáveis. Isso não significa que toda linha decorativa precise desse contraste. Também não significa que passar nesses números torna uma interface inteiramente acessível: estrutura, operação e compreensão continuam necessárias.</p>"
+            },
+            {
+              "title": "Quando aumentar contraste e quando reduzir competição",
+              "body": "<p>Aumente a distinção quando texto, ação ou estado importante se confunde com o entorno. Reduza competição quando vários elementos irrelevantes disputam atenção. Isso pode significar remover um fundo decorativo, em vez de clarear texto essencial. Informação secundária continua sendo informação: menor prioridade não autoriza torná-la ilegível.</p><p>Não use cor sozinha para informar sucesso, erro ou seleção. O <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html\">critério de uso da cor</a> exige outro meio visual para transmitir a informação nesses casos. Acrescente texto, forma ou outra distinção apropriada. Uma borda vermelha sem mensagem não explica o que aconteceu nem como corrigir.</p>"
+            },
+            {
+              "title": "Passo a passo: audite pares, estados e contexto",
+              "body": "<ol><li><strong>Liste combinações reais.</strong> Registre texto principal, secundário, links, botões, ícones informativos, bordas necessárias e indicadores de foco sobre seus fundos.</li><li><strong>Meça cada par.</strong> Use os valores finais, considerando transparência e sobreposição. Uma cor aprovada sobre branco pode falhar sobre uma imagem.</li><li><strong>Classifique o requisito.</strong> Identifique se está avaliando texto comum, texto grande ou informação não textual. Não aplique a exceção de elemento inativo a algo que ainda está disponível.</li><li><strong>Examine estados.</strong> Inclua pressionado, selecionado, erro e foco. No mobile, o estado pressionado pode ser breve, mas seleção persistente precisa permanecer reconhecível.</li><li><strong>Revise fundos variáveis.</strong> Em fotografias e gradientes, verifique as regiões onde o conteúdo realmente aparece. Uma amostra favorável não representa a imagem inteira.</li><li><strong>Acrescente redundância.</strong> Faça estado e significado permanecerem claros quando a cor não for distinguida.</li><li><strong>Teste em contexto.</strong> Observe texto pequeno, brilho variável e aumento de texto, sem substituir medidas por impressão pessoal.</li></ol>"
+            },
+            {
+              "title": "Uma pequena diferença numérica pode mudar o resultado",
+              "body": "<p>Em cálculo de luminância sRGB sobre branco, o cinza #777777 produz aproximadamente 4,48:1; #767676 produz aproximadamente 4,54:1. O primeiro fica abaixo de 4,5:1 para texto comum. Não arredonde um valor insuficiente para declarar aprovação. Estes números foram calculados para cores sólidas, sem transparência.</p><p>Mesmo a segunda combinação merece margem de segurança quando há fontes finas, contextos difíceis ou fundos variáveis. O objetivo do projeto não deve ser procurar o cinza mais claro que passa por pouco. Pergunte se a distinção melhora leitura e se permanece consistente nos estados efetivamente usados.</p>"
+            },
+            {
+              "title": "Erros e revisão final",
+              "body": "<p>Erros frequentes incluem testar apenas a paleta, ignorar os pares usados na interface, esquecer o modo escuro e supor que sombra resolve qualquer texto sobre imagem. Uma captura em escala de cinza pode revelar competição e dependência da cor, mas não substitui um cálculo nem representa todas as diferenças de visão cromática.</p><p>Ao revisar, peça uma resposta para cada par: onde aparece, qual informação transmite, qual requisito se aplica e qual valor foi medido. Depois percorra os estados sem depender de seus nomes internos. Se “selecionado” só existe no arquivo de design e não pode ser reconhecido na tela, o trabalho ainda não terminou.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: cores de borda têm funções diferentes",
+              "url": "https://design-system.service.gov.uk/styles/colour/",
+              "source": "GOV.UK Design System — exemplo oficial documentado",
+              "analysis": "<p>Na captura, “border” identifica uma borda comum clara; “input-border” identifica a borda escura de campos. “Link” é link, “hover” é passagem do ponteiro, “visited” é visitado e “active” é ativo. Nossa leitura: o papel determina o tratamento. Não se deve copiar o cinza discreto de um separador para uma borda necessária à identificação de um campo sem medir o par resultante. A documentação mostra valores de referência; a captura isolada não certifica contraste em qualquer fundo ou estado do seu projeto.</p>",
+              "image": "real-assets/foundations-govuk-colour.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-colour.png",
+              "visualAspect": "485 / 734",
+              "alt": "Trecho da documentação de cores GOV.UK com amostras dos estados de links, bordas e fundo; a borda comum é clara e a borda de campos é escura.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
+              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/styles/colour/"
+            },
+            {
+              "title": "USWDS: alertas com significado além da cor",
+              "url": "https://designsystem.digital.gov/components/alert/",
+              "source": "U.S. Web Design System, componentes oficiais",
+              "analysis": "<p>O USWDS apresenta variantes de alerta informativo, aviso, sucesso, erro e emergência, combinando títulos, mensagens e tratamentos visuais. Também documenta versões mais compactas e sem ícone. O significado não precisa ficar concentrado na tonalidade de uma faixa.</p><p>Nossa análise: um título identifica a condição e a mensagem pode explicar a consequência. A cor reforça reconhecimento, enquanto texto preserva compreensão quando ela não é distinguida. Copiar somente o fundo colorido perderia a parte mais útil do padrão. O exemplo também ensina a conter urgência: se toda informação usa tratamento de emergência, o contraste deixa de comunicar prioridade. Não inferimos conformidade de uma implementação própria apenas por ela se parecer com o componente oficial.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "Projeto fictício Rota: audite a tela de visita e três mensagens de estado.",
+            "steps": [
+              "Liste seis pares de primeiro plano e fundo.",
+              "Meça razões e indique o requisito aplicável.",
+              "Crie estados de visita adicionada, indisponível e falha de conexão.",
+              "Remova mentalmente a cor e verifique se os estados continuam distintos."
+            ],
+            "deliverable": "Planilha ou lista de seis pares e três estados revisados.",
+            "criteria": [
+              "Nenhum valor abaixo do limite é arredondado para aprovação.",
+              "Há revisão de um fundo variável ou justificativa para evitá-lo.",
+              "Todos os estados têm identificação textual.",
+              "Contraste visual e conformidade são avaliados separadamente."
+            ]
+          },
+          "sources": [
+            {
+              "title": "WCAG 2.2 — Contrast Minimum",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+              "note": "Explicação oficial do critério 1.4.3; limites, definição de texto grande e exceções."
+            },
+            {
+              "title": "WCAG 2.2 — Non-text Contrast",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+              "note": "Explicação oficial do critério 1.4.11."
+            },
+            {
+              "title": "WCAG 2.2 — Use of Color",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+              "note": "Explicação oficial do critério 1.4.1."
+            },
+            {
+              "title": "Alert — USWDS",
+              "url": "https://designsystem.digital.gov/components/alert/",
+              "note": "Componente oficial usado como exemplo de redundância informativa."
+            },
+            {
+              "title": "GOV.UK: cores de borda têm funções diferentes",
+              "url": "https://design-system.service.gov.uk/styles/colour/",
+              "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "gestalt-agrupamento",
+          "title": "Gestalt e agrupamento: o que parece pertencer junto",
+          "summary": "Use proximidade, semelhança e regiões para comunicar relações sem criar associações falsas.",
+          "minutes": 35,
+          "objectives": [
+            "Reconhecer pistas perceptuais de agrupamento.",
+            "Diagnosticar conflito entre proximidade e significado.",
+            "Alinhar agrupamento visual e estrutura acessível."
+          ],
+          "sections": [
+            {
+              "title": "Um conjunto não é percebido como itens totalmente isolados",
+              "body": "<p>A tradição da Gestalt investiga como organizamos o que vemos em unidades e relações. Para interfaces, o ponto útil é que a disposição sugere agrupamentos antes mesmo de cada frase ser lida. Proximidade favorece associação entre elementos próximos; semelhança pode relacionar elementos de aparência parecida; uma região comum pode reunir o que está dentro de um limite. Continuidade ajuda a perceber sequências, e figura-fundo participa da distinção entre objeto e entorno.</p><p>A <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3482144/\">revisão acadêmica de Wagemans e colaboradores</a> discute agrupamento e organização figura-fundo, incluindo limites e avanços da pesquisa. Ela não estabelece uma receita automática de interface. Aqui usamos esses conceitos como lentes de análise; as aplicações ao produto precisam ser verificadas em seu contexto.</p>"
+            },
+            {
+              "title": "A relação visual precisa corresponder à relação de conteúdo",
+              "body": "<p>Um rótulo colocado entre dois campos pode parecer pertencer ao campo errado. Uma mensagem de ajuda muito próxima do próximo bloco pode ser interpretada como sua descrição. Uma moldura envolvendo elementos sem relação pode sugerir que formam uma unidade. O problema não é decorativo: a pessoa pode inserir informação no lugar incorreto ou interpretar uma opção como consequência de outra.</p><p>A análise de <a href=\"https://www.nngroup.com/articles/gestalt-proximity/\">proximidade do Nielsen Norman Group</a> oferece exemplos de aplicação visual. Nossa regra prática é começar pela associação desejada e conferir quais pistas a reforçam ou contradizem. Distância, alinhamento, aparência e contorno devem colaborar, sem depender de um único sinal.</p>"
+            },
+            {
+              "title": "Quando agrupar e quando deixar separado",
+              "body": "<p>Agrupe elementos que participam da mesma decisão ou descrevem o mesmo objeto: título e resumo, pergunta e respostas, valor e unidade. Separe grupos que devem ser avaliados independentemente. A distância necessária depende do contexto, da densidade e de outras pistas. Não existe uma medida mágica de espaço que resolva todos os agrupamentos.</p><p>Não envolva todo conteúdo em cartões apenas porque isso parece organizado. Caixas demais podem criar fronteiras que não existem ou exigir muitas superfícies competindo. Também não use semelhança para aproximar estados que precisam ser diferenciados. Ação disponível e item informativo podem compartilhar tipografia sem compartilhar todas as pistas de interação.</p>"
+            },
+            {
+              "title": "Passo a passo: audite as unidades percebidas",
+              "body": "<ol><li><strong>Marque unidades de significado.</strong> Liste quais textos, imagens e controles precisam ser entendidos juntos.</li><li><strong>Observe sem ler cada palavra.</strong> Circule os grupos que a composição sugere. Compare com as unidades pretendidas.</li><li><strong>Procure conflitos.</strong> Um elemento está mais próximo de outro grupo? Uma cor repetida sugere equivalência onde existe diferença? Uma linha conecta itens independentes?</li><li><strong>Ajuste primeiro o espaço.</strong> Antes de acrescentar bordas, tente aproximar o que pertence junto e aumentar a separação entre unidades.</li><li><strong>Acrescente outra pista quando necessário.</strong> Título de grupo, alinhamento ou região comum pode tornar a relação mais robusta.</li><li><strong>Verifique conteúdo variável.</strong> Mensagens de erro e títulos longos não devem migrar visualmente para o grupo seguinte.</li><li><strong>Revise a estrutura acessível.</strong> A ordem e os grupos precisam continuar compreensíveis quando a apresentação visual não é o principal meio de uso.</li></ol>"
+            },
+            {
+              "title": "Agrupamento visual não basta para tecnologia assistiva",
+              "body": "<p>Uma moldura desenhada não informa necessariamente a um leitor de tela que vários controles respondem à mesma pergunta. A <a href=\"https://www.w3.org/WAI/tutorials/forms/grouping/\">orientação do W3C sobre agrupamento de controles</a> apresenta agrupamento semântico, incluindo conjunto de campos e legenda em formulários web. Em aplicações nativas, use os recursos equivalentes da plataforma.</p><p>A responsabilidade do designer é especificar a relação, e não apenas entregar a aparência. Anote qual pergunta nomeia o grupo, em que ordem as opções são percorridas e se uma ou várias escolhas são permitidas. Isso permite que implementação e teste preservem o significado para diferentes formas de interação.</p>"
+            },
+            {
+              "title": "Erros e revisão: retire pistas para testar a robustez",
+              "body": "<p>Um erro comum é aprender nomes de princípios e aplicá-los depois como justificativa de qualquer desenho. Dizer “usei Gestalt” não explica por que um agrupamento ajuda. Descreva a relação concreta: a mensagem pertence a este campo; estes controles respondem à mesma pergunta; estas linhas representam itens independentes.</p><p>Remova mentalmente cor e bordas. A proximidade ainda sustenta a relação? Agora imagine texto aumentado e quebra de linha. O grupo continua identificável? Finalmente, peça que alguém diga quais itens pertencem juntos e por quê. Divergências revelam hipóteses de agrupamento a investigar, em vez de provar automaticamente que a pessoa “não entendeu”.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: uma pergunta e quatro unidades de escolha",
+              "url": "https://design-system.service.gov.uk/components/radios/default/",
+              "source": "GOV.UK Design System — exemplo oficial documentado",
+              "analysis": "<p>“Where do you live?” significa “Onde você mora?”. Cada círculo está próximo de seu rótulo; todas as opções repetem forma, alinhamento e intervalo. Assim, cada controle forma uma unidade com seu texto, e as quatro unidades pertencem à pergunta acima.</p><p>Nossa análise: aproximar um rótulo do círculo seguinte criaria uma associação concorrente. Afastar excessivamente a pergunta enfraqueceria a relação do conjunto. O exemplo evidencia dois níveis de agrupamento sem precisar colocar cada opção dentro de uma caixa. A documentação também reúne as opções semanticamente; isso não pode ser inferido apenas dos pixels. As opções nomeiam Inglaterra, Escócia, País de Gales e Irlanda do Norte.</p>",
+              "image": "real-assets/foundations-govuk-radios.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-radios.png",
+              "visualAspect": "500 / 340",
+              "alt": "Exemplo GOV.UK com uma pergunta sobre onde a pessoa mora e quatro opções de escolha única, cada uma com círculo à esquerda e nome à direita.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
+              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/components/radios/default/"
+            }
+          ],
+          "exercise": {
+            "brief": "Projeto fictício Rota: organize filtros de data, duração e tipo de lugar, cada um com instruções próprias.",
+            "steps": [
+              "Marque três grupos de significado e as relações internas.",
+              "Crie uma versão com conflito de proximidade intencional e outra corrigida.",
+              "Inclua uma mensagem de erro longa.",
+              "Anote nomes acessíveis, ordem e quantidade de escolhas de cada grupo."
+            ],
+            "deliverable": "Comparação antes/depois com justificativa de agrupamento.",
+            "criteria": [
+              "Cada instrução está associada ao grupo correto.",
+              "Texto longo não cria ligação com o grupo seguinte.",
+              "O agrupamento permanece compreensível sem cor.",
+              "Há especificação semântica além das bordas visuais."
+            ]
+          },
+          "sources": [
+            {
+              "title": "A Century of Gestalt Psychology in Visual Perception I",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3482144/",
+              "note": "Wagemans et al., Psychological Bulletin, 2012. Revisão científica; não experimento sobre esta interface."
+            },
+            {
+              "title": "Proximity Principle — NN/G",
+              "url": "https://www.nngroup.com/articles/gestalt-proximity/",
+              "note": "Aplicação profissional documentada pelo próprio publicador."
+            },
+            {
+              "title": "Grouping Controls — W3C",
+              "url": "https://www.w3.org/WAI/tutorials/forms/grouping/",
+              "note": "Orientação primária de acessibilidade semântica."
+            },
+            {
+              "title": "Radios — GOV.UK",
+              "url": "https://design-system.service.gov.uk/components/radios/",
+              "note": "Exemplo oficial do componente e de sua estrutura."
+            },
+            {
+              "title": "GOV.UK: uma pergunta e quatro unidades de escolha",
+              "url": "https://design-system.service.gov.uk/components/radios/default/",
+              "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "consistencia-ritmo",
+          "title": "Consistência e ritmo: uma linguagem que se aprende",
+          "summary": "Repita relações úteis, controle variações e dê previsibilidade ao produto sem produzir monotonia ou rigidez.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir consistência funcional, semântica e visual.",
+            "Criar regras de repetição e exceção.",
+            "Usar tokens como registro de decisões, não apenas valores."
+          ],
+          "sections": [
+            {
+              "title": "Consistência é uma promessa de comportamento",
+              "body": "<p>Consistência permite que o aprendizado de uma parte do produto ajude a usar outra. Ela é funcional quando ações semelhantes se comportam de maneira semelhante; semântica quando o mesmo termo mantém o mesmo significado; visual quando formas equivalentes sinalizam funções equivalentes. Uma interface pode parecer uniforme e ainda ser inconsistente se o mesmo ícone executa ações diferentes em cada tela.</p><p>Ritmo é a recorrência percebida de elementos e intervalos ao percorrer uma composição. Numa lista, a repetição de título, metadados e ação cria uma cadência que ajuda a comparar itens. Mudanças deliberadas podem marcar uma nova seção ou um acontecimento importante. Variação sem motivo torna a leitura menos previsível.</p>"
+            },
+            {
+              "title": "Repetir funções, não congelar dimensões",
+              "body": "<p>Uma unidade repetida precisa acomodar conteúdo real. Títulos variam, traduções crescem e estados mudam. Preservar a relação entre título e metadados é mais importante que manter todos os cartões com altura idêntica à custa de cortar informação. Consistência é estabilidade de significado e regra; não exige identidade geométrica em todas as situações.</p><p>Também há consistência com a plataforma. Uma ação de voltar deve se integrar às expectativas do ambiente. Você pode ter personalidade em cores e imagens sem reinventar cada comportamento. Ao introduzir uma diferença, explique qual necessidade ela atende e como a pessoa poderá reconhecê-la.</p>"
+            },
+            {
+              "title": "Quando repetir e quando criar exceções",
+              "body": "<p>Repita padrões em tarefas recorrentes, comparações e estados equivalentes. Crie uma exceção quando houver mudança real de função, risco ou contexto. Uma ação destrutiva pode merecer tratamento diferente; uma tarefa concluída pode exigir menos atenção que uma pendente. A exceção precisa ser reconhecível e limitada, para não perder seu valor.</p><p>Não force um padrão inadequado apenas porque ele já existe. Se o sistema anterior não acomoda conteúdo ampliado ou exclui uma forma de interação, revise a regra. Por outro lado, não crie uma variante nova para cada preferência local. Primeiro verifique se a necessidade já é atendida por uma regra existente.</p>"
+            },
+            {
+              "title": "Passo a passo: construa uma linguagem pequena e útil",
+              "body": "<ol><li><strong>Faça um inventário de decisões.</strong> Reúna tipos de texto, ações, estados, ícones, cores e intervalos. Procure duplicações com nomes diferentes.</li><li><strong>Defina papéis.</strong> Separe texto principal, apoio, link, erro e seleção. Nomeie pela função quando isso facilitar a manutenção.</li><li><strong>Crie unidades repetidas.</strong> Especifique estrutura, conteúdo opcional, estados e limites de cada componente. Um cartão não é apenas uma moldura.</li><li><strong>Estabeleça o ritmo.</strong> Escolha relações de espaçamento dentro da unidade e entre unidades. Permita crescimento de conteúdo sem trocar a ordem semântica.</li><li><strong>Documente exceções.</strong> Cada variante deve ter condição de uso, exemplo e caso em que não deve ser aplicada.</li><li><strong>Teste entre telas.</strong> Percorra a mesma ação em dois contextos e compare linguagem, resultado e resposta visual.</li><li><strong>Revise em conjunto.</strong> Quando uma decisão muda, verifique todas as ocorrências relacionadas, não apenas a tela atual.</li></ol>"
+            },
+            {
+              "title": "Tokens registram decisões compartilhadas",
+              "body": "<p>Um <em>design token</em> é um nome associado a um valor de design, como cor ou espaçamento. Um nome funcional pode representar uma intenção: texto secundário, superfície de alerta ou borda de foco. Isso ajuda a evitar que a mesma cor seja aplicada indiscriminadamente só porque está disponível.</p><p>O <a href=\"https://www.carbondesignsystem.com/building-blocks/foundations/color/overview\">Carbon documenta tokens com papéis que permanecem entre temas</a>, enquanto seus valores podem mudar. Nossa aplicação prática: revisar um tema escuro não deve ser uma inversão automática de todas as cores. É preciso preservar relações e funções. Para um projeto pequeno, poucos nomes bem definidos podem ser suficientes; criar centenas de tokens antes de haver necessidades reais apenas aumenta manutenção.</p>"
+            },
+            {
+              "title": "Erros: confundir sistema com catálogo",
+              "body": "<p>Um catálogo de componentes sem regras de uso não explica quando escolher cada um. Uma biblioteca visual também não garante que o produto implementado preserve comportamento e acessibilidade. Compare arquivo, código e tela real. Registre diferenças e decida se são defeitos, adaptações necessárias ou regras que precisam evoluir.</p><p>Outro erro é alternar espaçamentos para compensar conteúdo curto e longo sem critério. O ritmo se torna imprevisível. Prefira uma regra de crescimento clara e aceite que unidades diferentes possam ocupar alturas diferentes. O que deve permanecer estável é a capacidade de localizar informações equivalentes.</p>"
+            },
+            {
+              "title": "Revisão: uma regra deve sobreviver a outro exemplo",
+              "body": "<p>Escolha um componente e preencha-o com conteúdo que você ainda não havia usado. Se a regra só funciona no exemplo inicial, ela ainda não é um padrão robusto. Depois peça que outra pessoa produza uma nova tela usando apenas a documentação. As dúvidas mostram o que precisa ser explicado.</p><p>Finalize verificando termos, estados, espaços e ações em sequência. A experiência é percorrida ao longo do tempo; revisar capturas isoladas pode esconder inconsistências que só aparecem quando alguém aprende uma regra e encontra uma exceção inesperada logo depois.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: ritmo de tarefas e estados",
+              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/",
+              "source": "GOV.UK Design System — exemplo oficial documentado",
+              "analysis": "<p>“Completed” significa “Concluído”; “Incomplete”, “Incompleto”. Na captura, tarefas repetem alinhamento e divisão de linhas; estados ocupam uma posição previsível. O fundo azul-claro destaca pendências, enquanto a conclusão permanece identificada por texto.</p><p>Nossa análise: repetir a estrutura permite comparar progresso sem reaprender cada linha. Os grupos interrompem o ritmo para marcar uma mudança de fase, não para decorar. Uma marcação de estado não deveria parecer uma nova ação independente. O padrão ensina a manter posições e significados estáveis; não prova que uma sequência equivalente seria adequada a qualquer serviço.</p>",
+              "image": "real-assets/foundations-govuk-tasks.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-tasks.png",
+              "visualAspect": "500 / 660",
+              "alt": "Exemplo GOV.UK de lista de tarefas em dois grupos, com links à esquerda, estados concluído ou incompleto à direita e botão final de envio.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
+              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/"
+            }
+          ],
+          "exercise": {
+            "brief": "Projeto fictício Rota: estabeleça uma linguagem para cartões de visita, roteiro salvo e estados de planejamento.",
+            "steps": [
+              "Defina seis papéis visuais com nomes funcionais.",
+              "Crie um cartão com conteúdo curto, longo e indisponível.",
+              "Documente duas regras de repetição e duas exceções justificadas.",
+              "Revise a mesma ação em três telas."
+            ],
+            "deliverable": "Mini guia de componentes, estados e ritmo.",
+            "criteria": [
+              "Nomes iguais mantêm significado entre telas.",
+              "Conteúdo longo não é cortado para preservar aparência.",
+              "Toda variante tem condição de uso.",
+              "Estados e ações não compartilham pistas contraditórias."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Color — Carbon Design System",
+              "url": "https://www.carbondesignsystem.com/building-blocks/foundations/color/overview",
+              "note": "Fonte oficial de papéis, tokens e temas."
+            },
+            {
+              "title": "Task list — GOV.UK",
+              "url": "https://design-system.service.gov.uk/components/task-list/",
+              "note": "Componente oficial de tarefas e estados; análise autoral de repetição e variação."
+            },
+            {
+              "title": "GOV.UK: ritmo de tarefas e estados",
+              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/",
+              "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
+            }
+          ],
+          "videos": []
+        }
+      ]
+    }
+  ]
+}

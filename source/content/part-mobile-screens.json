@@ -1,0 +1,1241 @@
+{
+  "modules": [
+    {
+      "id": "design-mobile",
+      "title": "Design mobile: estrutura, navegação e interação",
+      "description": "Construa interfaces executáveis em diferentes janelas, métodos de entrada e estados do sistema. Sete aulas com critérios, procedimentos, exemplos oficiais e exercícios do projeto Rota.",
+      "lessons": [
+        {
+          "id": "safe-areas-insets-edge-to-edge",
+          "title": "Safe areas, insets e edge-to-edge",
+          "summary": "Projete a relação entre conteúdo, recortes físicos, barras do sistema e teclado sem esconder ações.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir área segura, fundo desenhável e área de gestos do sistema.",
+            "Especificar comportamento com teclado, rotação e navegação por gestos.",
+            "Testar sobreposição real em vez de adotar margens fixas."
+          ],
+          "sections": [
+            {
+              "title": "O que são e por que importam",
+              "body": "<p><strong>Safe area</strong> significa área segura: uma região de referência para posicionar conteúdo sem interferência indevida de elementos do aparelho ou do sistema. <strong>Insets</strong> são medidas de quanto cada borda está ocupada ou requer proteção. <strong>Edge-to-edge</strong>, de ponta a ponta, permite que o desenho use toda a janela. Essas ideias convivem: uma fotografia pode chegar à borda enquanto a legenda e o botão permanecem protegidos. A <a href=\"https://developer.android.com/design/ui/mobile/guides/layout-and-content/edge-to-edge\">orientação oficial Android</a> separa barras do sistema, gestos e recortes de tela.</p><p>O problema de design não é apenas um texto cortado. Um botão pode estar visível e, ainda assim, competir com o gesto de voltar. Uma lista pode permitir leitura de todos os itens, mas impedir o toque no último. Separe, portanto, três perguntas: onde o fundo aparece, onde o conteúdo precisa ser legível e onde a interação precisa funcionar. Um retângulo denominado “área útil” não responde sozinho às três.</p>"
+            },
+            {
+              "title": "Quando usar e quando evitar atalhos",
+              "body": "<p>Use proteção dinâmica em qualquer interface que encontre barras, câmeras, cantos, janelas redimensionáveis ou teclado. Em uma galeria, é razoável levar a imagem às bordas e revelar controles sob demanda. Em uma confirmação, a ação principal deve permanecer identificável e alcançável. A decisão depende do papel de cada camada, não de uma preferência geral por telas “limpas”.</p><p>Não copie a altura da barra de um aparelho e aplique a todos. Não trate paisagem como retrato girado. Evite criar uma grande faixa vazia acima de toda tela quando somente seus controles precisam de proteção. Também não conclua que o teclado equivale à área segura inferior: sua presença é temporária, pode variar e exige uma resposta própria do conteúdo.</p>"
+            },
+            {
+              "title": "Passo a passo de especificação",
+              "body": "<ol><li><strong>Mapeie camadas.</strong> Identifique fundo, rolagem, cabeçalho, ação fixa e elementos do sistema. Escreva quem pode ocupar cada região.</li><li><strong>Defina responsáveis.</strong> Combine com desenvolvimento qual componente aplica cada inset. Dois contêineres protegendo a mesma borda podem produzir espaço duplicado.</li><li><strong>Projete o início e o fim da rolagem.</strong> O primeiro título e o último item devem chegar a uma posição de leitura e toque confortável. O fundo pode continuar atrás das barras.</li><li><strong>Abra o teclado no último campo.</strong> Verifique se campo, erro e ação relacionada permanecem acessíveis por rolagem. Não basta testar o primeiro campo.</li><li><strong>Varie o ambiente.</strong> Compare retrato, paisagem, fonte ampliada, navegação por gestos e por botões. Inclua janela de pouca altura.</li><li><strong>Documente comportamento.</strong> Anote se a ação acompanha o teclado, entra na rolagem ou muda de posição. Prefira regras verificáveis a coordenadas de uma captura.</li></ol>"
+            },
+            {
+              "title": "A revisão que uma imagem estática não resolve",
+              "body": "<p>Faça uma pequena gravação da passagem entre teclado fechado e aberto. Observe se o conteúdo salta, se duas regiões animam em tempos diferentes e se o foco acaba escondido. A documentação de <a href=\"https://developer.android.com/develop/ui/compose/quick-guides/content/video/insets-in-compose\">insets em Compose</a> mostra que essas medidas podem mudar durante o uso. No projeto, isso se transforma em estados e transições que precisam ser discutidos, não em uma única tela final.</p><p>Para revisar, escolha uma tarefa completa: abrir, localizar um item, interagir com o fim da lista, editar, fechar o teclado e voltar. Registre exatamente em qual etapa ocorre a interferência. “O rodapé parece alto” é uma percepção; “o botão recebe o gesto do sistema em vez do toque” é um defeito reproduzível.</p>"
+            },
+            {
+              "title": "Erros frequentes e correções",
+              "body": "<ul><li><strong>Proteger tudo com o mesmo espaçamento:</strong> separa desnecessariamente o fundo das bordas. Proteja o conteúdo que precisa disso.</li><li><strong>Desenhar uma home indicator própria:</strong> a pequena barra de gestos é do sistema; não deve virar decoração duplicada do aplicativo.</li><li><strong>Validar só no protótipo:</strong> ferramentas de desenho não reproduzem integralmente os gestos e o teclado nativos. Inclua implementação ou simulador na revisão.</li><li><strong>Confundir aparência e funcionamento:</strong> confira os limites reais das áreas tocáveis, não apenas os ícones.</li></ul>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Figura oficial: regiões reservadas aos gestos",
+              "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/edge-to-edge",
+              "source": "Android Developers",
+              "analysis": "<p>Na figura Android, as faixas verdes nas bordas tornam visível uma restrição normalmente invisível. O centro continua disponível para o conteúdo, mas aproximar uma alça de arraste da lateral pode colocá-la em competição com o sistema. A leitura relevante não é copiar a largura aparente da faixa; é reconhecer que o sistema informa essa região. Use a figura para revisar controles que dependem de arrastar, principalmente em carrosséis e painéis. Ela demonstra regiões de gesto, não uma tabela universal de medidas nem uma tela de produto em produção.</p>",
+              "image": "https://developer.android.com/static/images/design/ui/mobile/e2e-gesture-insets.png",
+              "alt": "Diagrama oficial Android com regiões de gestos destacadas em verde nas bordas da tela.",
+              "sourcePageUrl": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/edge-to-edge",
+              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
+              "licenseUrl": "https://developer.android.com/license",
+              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-gesture-insets.png"
+            }
+          ],
+          "exercise": {
+            "brief": "No aplicativo fictício Rota, revise o detalhe de uma visita cultural com uma ação fixa de salvar.",
+            "steps": [
+              "Crie estados em retrato e paisagem, com teclado aberto ao adicionar uma observação.",
+              "Marque fundo, conteúdo, toque e gestos em camadas separadas.",
+              "Teste o último item, o último campo e a ação principal em todos os estados."
+            ],
+            "deliverable": "Quatro telas anotadas e uma gravação curta do fluxo com teclado.",
+            "criteria": [
+              "Nenhuma informação essencial fica oculta por barras ou teclado.",
+              "Todos os alvos continuam acionáveis sem depender da borda gestual.",
+              "A especificação identifica quem aplica cada proteção e evita duplicidade."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Android: edge-to-edge",
+              "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/edge-to-edge",
+              "note": "Tipos de interferência e proteção de conteúdo; referência consultada em 17/10/2026."
+            },
+            {
+              "title": "Android: system bars",
+              "url": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
+              "note": "Diferença entre interface do aplicativo e controles do sistema."
+            },
+            {
+              "title": "Android: insets em Compose",
+              "url": "https://developer.android.com/develop/ui/compose/system/insets",
+              "note": "Referência de implementação a revisar com desenvolvimento."
+            }
+          ],
+          "videos": [
+            {
+              "title": "Insets in Compose",
+              "url": "https://developer.android.com/develop/ui/compose/quick-guides/content/video/insets-in-compose",
+              "source": "Android Developers",
+              "note": "Vídeo oficial, cerca de seis minutos. Observe a mudança dos insets com teclado e barras; a página explica o objetivo e os pontos centrais."
+            }
+          ]
+        },
+        {
+          "id": "grid-responsividade-densidade",
+          "title": "Grid, escala de espaçamento e responsividade",
+          "summary": "Use relações e regras adaptáveis em vez de transformar uma tela desenhada em coordenadas rígidas.",
+          "minutes": 35,
+          "objectives": [
+            "Diferenciar unidades lógicas de pixels físicos.",
+            "Usar uma escala de espaçamento como ferramenta, sem torná-la dogma.",
+            "Definir adaptações por espaço disponível e conteúdo."
+          ],
+          "sections": [
+            {
+              "title": "O que o grid resolve, e o que não resolve",
+              "body": "<p>Um <strong>grid</strong> é uma estrutura de alinhamento: margens, colunas e intervalos organizam relações entre elementos. Uma escala de espaçamento é outra coisa: um repertório limitado para distâncias. O conhecido “grid de 8 pontos” costuma nomear uma escala baseada em múltiplos de oito, às vezes com meios passos de quatro. É um sistema opcional de projeto, não uma norma de usabilidade, nem uma exigência universal de Android ou Apple.</p><p>A escala reduz decisões arbitrárias e permite explicar por que título, texto e ação formam um grupo. Ela não determina a melhor largura de uma linha, o tamanho de um alvo ou o conteúdo necessário. Se uma regra de oito prejudica leitura, acessibilidade ou comportamento nativo, revise a regra. Consistência útil mantém relações reconhecíveis; consistência cega mantém números mesmo quando o contexto mudou.</p>"
+            },
+            {
+              "title": "Unidades e densidade sem confusão",
+              "body": "<p><strong>dp</strong> é a unidade Android independente da densidade; <strong>sp</strong> considera também a preferência de tamanho de texto. <strong>pt</strong>, nas interfaces Apple, é uma unidade lógica da plataforma. <strong>CSS px</strong> é a unidade de referência do layout web. Nenhuma dessas expressões significa automaticamente um pixel físico, e não se deve tratá-las como unidades intercambiáveis. A documentação Android sobre <a href=\"https://developer.android.com/training/multiscreen/screendensities\">densidades</a> explica por que medir uma interface em pixels físicos gera tamanhos inconsistentes.</p><p>Na entrega, declare a plataforma e a unidade. Uma imagem exportada com o dobro dos pixels não é uma tela com o dobro do espaço lógico. Separar resolução do recurso visual e dimensão do componente evita que uma fotografia nítida determine, por acidente, o tamanho do card.</p>"
+            },
+            {
+              "title": "Quando responder e quando mudar a composição",
+              "body": "<p>Um layout <strong>responsivo</strong> ajusta medidas de forma contínua; um layout <strong>adaptativo</strong> pode mudar sua organização quando o espaço permite. Uma lista pode ganhar margem gradualmente e depois passar a conviver com seu detalhe. Não é necessário esticar indefinidamente o mesmo card. Em uma janela curta, talvez seja melhor reduzir decoração antes de dividir a tela.</p><p>Use colunas quando elas ajudam comparar ou aproveitar espaço. Evite duas colunas só porque o aparelho é chamado de tablet. O Android classifica a <a href=\"https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes\">janela disponível</a>, que pode mudar durante o uso. Isso é mais útil do que associar um único layout a uma marca de aparelho. A altura também importa quando teclado, paisagem ou multitarefa deixam pouca área visível.</p>"
+            },
+            {
+              "title": "Passo a passo: transformar medidas em regras",
+              "body": "<ol><li><strong>Comece com conteúdo difícil.</strong> Inclua nomes longos, texto ampliado e imagens com proporções variadas. Conteúdo ideal esconde fragilidade.</li><li><strong>Escolha poucas distâncias.</strong> Defina tokens, isto é, valores nomeados reutilizáveis, para relação próxima, separação entre grupos e margem externa. Documente exceções.</li><li><strong>Defina limites.</strong> Para cada bloco, decida largura mínima, máxima e comportamento quando falta espaço. Um botão pode ocupar a linha inteira; dois textos podem empilhar.</li><li><strong>Encontre o ponto de quebra.</strong> Reduza a janela até a composição falhar. O breakpoint, ou ponto de mudança, deve responder a esse problema, não a uma lista de modelos populares.</li><li><strong>Teste ao redor do limite.</strong> Observe um pouco antes e depois da mudança. Nenhuma ação deve desaparecer ou mudar de significado.</li><li><strong>Preserve estado.</strong> Ao trocar de uma para duas áreas, mantenha item selecionado, rolagem e dados editados. Mudança de tamanho não é reinício da tarefa.</li></ol>"
+            },
+            {
+              "title": "Erros de densidade e revisão",
+              "body": "<p>Não aumente densidade removendo todos os espaços. Primeiro retire informação redundante e organize melhor a comparação. Densidade visual é a quantidade percebida de informação; densidade de pixels é uma propriedade da tela. São problemas diferentes. Uma interface compacta pode continuar legível quando a hierarquia é clara, mas um alvo apertado não fica mais preciso por parecer elegante.</p><p>Evite alturas fixas para blocos textuais e truncamento automático de informação decisiva. Revise se a margem externa está sendo contada duas vezes em componentes encaixados. Um bom teste é apresentar a mesma tarefa em três larguras sem mostrar o grid: o participante deve reconhecer a organização e concluir o objetivo, mesmo com distribuições diferentes.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Figura oficial: classes de largura de janela",
+              "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
+              "source": "Android Developers",
+              "analysis": "<p>A documentação Android representa classes de largura em cenários de dispositivos e janelas. A utilidade didática está na mudança de espaço disponível, não em transformar cada desenho em um molde obrigatório. Observe que uma janela estreita pode existir em uma tela fisicamente grande. Ao analisar um projeto, compare quais relações precisariam mudar: lista e detalhe simultâneos, navegação lateral ou largura de leitura limitada. Os valores de referência pertencem ao sistema Android; a regra profissional é validar a composição com o conteúdo do produto.</p>",
+              "image": "https://developer.android.com/static/develop/ui/compose/images/layouts/adaptive/window-size-classes/window_size_classes_width.png",
+              "alt": "Figura oficial Android com classes de largura e exemplos de janelas de diferentes tamanhos.",
+              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
+              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
+              "licenseUrl": "https://developer.android.com/license",
+              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-window-widths.png"
+            }
+          ],
+          "exercise": {
+            "brief": "Construa a lista de visitas do Rota em três larguras lógicas para uma plataforma declarada.",
+            "steps": [
+              "Escolha uma escala de espaçamento e justifique uma eventual exceção.",
+              "Use títulos curtos e longos e amplie o texto.",
+              "Registre uma mudança estrutural e o estado preservado ao redimensionar."
+            ],
+            "deliverable": "Três composições e uma tabela de regras de largura, altura e espaçamento.",
+            "criteria": [
+              "Unidades estão declaradas e não são confundidas com pixels exportados.",
+              "Nenhuma informação decisiva depende de corte do texto.",
+              "O ponto de mudança tem justificativa ligada ao conteúdo."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Android: densidades de pixels",
+              "url": "https://developer.android.com/training/multiscreen/screendensities",
+              "note": "Fundamenta dp, sp e recursos em diferentes densidades."
+            },
+            {
+              "title": "Android: classes de janela",
+              "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
+              "note": "Explica adaptação à janela disponível, não apenas ao tipo de aparelho."
+            },
+            {
+              "title": "Apple: Layout",
+              "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+              "note": "Referência nativa para revisão específica da plataforma; consulte a versão atual."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "header-top-app-bar",
+          "title": "Header e top app bar: orientação e ações",
+          "summary": "Construa cabeçalhos que expliquem onde a pessoa está e deixem claras as ações relevantes.",
+          "minutes": 35,
+          "objectives": [
+            "Diferenciar cabeçalho editorial, barra de navegação e barra do sistema.",
+            "Priorizar ações sem transformar a barra em um menu de tudo.",
+            "Especificar comportamento com rolagem e títulos longos."
+          ],
+          "sections": [
+            {
+              "title": "O que é uma barra superior",
+              "body": "<p><strong>Header</strong> é um termo amplo para cabeçalho. Pode incluir título, resumo, imagem e contexto. <strong>Top app bar</strong> é a barra superior do aplicativo, normalmente usada para orientação, navegação e ações da tela. A barra de status, que mostra hora e bateria, pertence ao sistema. Desenhar essas três regiões como se fossem um único componente costuma produzir espaçamentos duplicados e responsabilidades confusas.</p><p>A barra deve responder rapidamente: em que contexto estou, como saio dele e o que posso fazer aqui? Um título não precisa repetir o nome do aplicativo se a pessoa já sabe onde está. Em uma tela de edição, “Editar endereço” comunica mais que uma marca grande. O trabalho de orientação fica ainda mais importante quando alguém chega por notificação ou link e não percorreu as telas anteriores.</p>"
+            },
+            {
+              "title": "Quando usar cada composição",
+              "body": "<p>Uma barra compacta favorece tarefas frequentes e espaço de conteúdo. Um título maior pode marcar a entrada de uma seção e estabelecer hierarquia antes de reduzir com a rolagem. Uma composição centralizada não é inerentemente mais elegante ou mais correta: considere convenções da plataforma, extensão do título e equilíbrio das ações. A referência <a href=\"https://developer.android.com/develop/ui/compose/components/app-bars\">App bars do Android</a> apresenta variantes e comportamentos de rolagem, sem substituir a decisão sobre o conteúdo de cada produto.</p><p>Evite um cabeçalho monumental em uma tarefa curta com teclado. Evite esconder a única forma reconhecível de sair de um fluxo. Também não acrescente “voltar”, menu lateral e fechar juntos sem explicar seus destinos: três símbolos de saída podem representar três modelos mentais diferentes. Use uma ação textual quando a consequência não estiver clara em um ícone.</p>"
+            },
+            {
+              "title": "Passo a passo para distribuir a barra",
+              "body": "<ol><li><strong>Nomeie o contexto.</strong> Escolha um título que diferencie a tela das suas vizinhas. Se necessário, use um subtítulo para conta, seleção ou período.</li><li><strong>Defina a saída.</strong> Voltar, subir na hierarquia e cancelar edição não são sinônimos. Anote o destino e o tratamento de dados não salvos.</li><li><strong>Liste ações por necessidade.</strong> Separe a ação principal, ações recorrentes e opções ocasionais. A ordem deve refletir a tarefa, não a ordem de implementação.</li><li><strong>Reserve espaço para linguagem.</strong> Teste traduções e nomes extensos antes de preencher todas as posições com ícones. Um título importante precisa de alternativa legível quando truncado.</li><li><strong>Escolha a rolagem.</strong> Faça uma versão fixa, outra recolhível e compare quanto contexto cada uma preserva. Especifique também como a barra reaparece.</li><li><strong>Revise acessibilidade.</strong> Verifique rótulos de ícones, ordem de foco, contraste e área de toque. A imagem do ícone pode ser pequena; sua região acionável não precisa ser.</li></ol>"
+            },
+            {
+              "title": "Estados que precisam existir no projeto",
+              "body": "<p>Uma barra pode trocar de papel durante uma seleção múltipla: título e ações gerais dão lugar à quantidade selecionada e às operações possíveis. Desenhe como entrar e sair desse estado e o que acontece com a rolagem. Em uma edição, indique se salvar exige campos válidos, se há processamento e como recuperar uma falha. A barra não deve voltar prematuramente ao estado normal enquanto o usuário ainda espera o resultado.</p><p>Considere também conteúdo sob a barra. Transparência sobre fotografia exige proteção de contraste; um título legível sobre uma imagem clara pode desaparecer quando a imagem muda. Ao recolher um título grande, evite mostrá-lo duplicado por tempo suficiente para sugerir duas regiões distintas. A transição precisa continuar legível com movimento reduzido, sem depender da animação para explicar o destino.</p>"
+            },
+            {
+              "title": "Erros frequentes e um teste de orientação",
+              "body": "<p>Não use um ícone de três pontos como substituto de qualquer decisão de prioridade. Não aplique sombra forte por hábito: separação pode resultar de superfície, espaço ou borda. Não centralize apenas pelo desenho geométrico se ações assimétricas tornam o conjunto instável; use o componente nativo e revise casos reais.</p><p>No teste, abra a tela diretamente e pergunte o que ela representa, o que a pessoa faria para sair e o que espera da ação principal. Depois role até o fim e repita. Se as respostas mudarem porque a barra perdeu contexto, revise comportamento e rótulos. Esse ensaio produz evidência melhor do que discutir se o cabeçalho “parece moderno”.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Demonstração oficial: barra superior centralizada",
+              "url": "https://developer.android.com/develop/ui/compose/components/app-bars",
+              "source": "Android Developers",
+              "analysis": "<p>A demonstração Android coloca o título ao centro, um controle de navegação à esquerda e outro controle à direita. O resultado permite inspecionar alinhamento e distribuição sem conteúdo editorial complexo. É uma amostra técnica, portanto seus textos genéricos e ícones não são uma recomendação de nomenclatura para um produto final. Ao estudá-la, imagine o título duplicando de tamanho e substitua mentalmente os controles por ações concretas. A composição só se mantém útil se a pessoa compreender os rótulos, o destino da saída e o significado da ação oposta.</p>",
+              "image": "https://developer.android.com/static/develop/ui/compose/images/components/appbar-centered.png",
+              "alt": "Demonstração Android de barra superior com título centralizado, seta à esquerda e controle à direita.",
+              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/components/app-bars",
+              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
+              "licenseUrl": "https://developer.android.com/license",
+              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-appbar-centered.png"
+            }
+          ],
+          "exercise": {
+            "brief": "Projete os cabeçalhos da lista, do detalhe e da edição de uma visita no Rota.",
+            "steps": [
+              "Escolha títulos e ações específicos para os três contextos.",
+              "Mostre detalhe no início e após rolagem.",
+              "Crie uma variante com título longo e texto ampliado."
+            ],
+            "deliverable": "Cinco estados anotados com destino de cada controle.",
+            "criteria": [
+              "Cada saída tem destino e efeito sobre dados explicitados.",
+              "A ação principal é identificável sem depender de ícone ambíguo.",
+              "A barra não encobre o primeiro item nem perde contraste sobre imagem."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Android: App bars",
+              "url": "https://developer.android.com/develop/ui/compose/components/app-bars",
+              "note": "Variantes e estados de rolagem; a demonstração é técnica, não um produto de consumo."
+            },
+            {
+              "title": "Android: Material insets",
+              "url": "https://developer.android.com/develop/ui/compose/system/material-insets",
+              "note": "Ajuda a evitar aplicação duplicada de proteção do sistema."
+            },
+            {
+              "title": "Apple: UI Design Dos and Don’ts",
+              "url": "https://developer.apple.com/design/tips/",
+              "note": "Alinhamento, organização e alvos de toque na plataforma Apple."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "navegacao-tabs-back-home",
+          "title": "Navegação, tab bar, voltar e Home",
+          "summary": "Organize destinos e histórico sem confundir navegação do aplicativo com controles do sistema.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir destino, ação e histórico de navegação.",
+            "Separar Home interno, Home do sistema, voltar e subir na hierarquia.",
+            "Desenhar troca de abas e entrada por links sem perda de contexto."
+          ],
+          "sections": [
+            {
+              "title": "Navegação é um modelo, antes de ser uma barra",
+              "body": "<p>Navegação representa relações entre lugares do aplicativo. Uma <strong>tab bar</strong>, ou barra de abas, oferece acesso a áreas principais. No Material, a <strong>navigation bar</strong> do aplicativo atende a uma função semelhante, mas o mesmo termo “barra de navegação” também pode se referir aos controles do sistema Android. Declare de qual está falando. A orientação Android para o <a href=\"https://developer.android.com/develop/ui/compose/components/navigation-bar\">componente de navegação</a> apresenta três a cinco destinos principais em janelas compactas.</p><p>Um destino é um lugar, como biblioteca; uma ação muda algo, como criar ou compartilhar. Colocar “Excluir” no mesmo nível de “Biblioteca” mistura categorias e pode surpreender. A decisão sobre abas começa pela organização do produto: quais grupos têm conteúdo e tarefas próprios, quais precisam ser alternados e quais são apenas opções ocasionais?</p>"
+            },
+            {
+              "title": "Quatro ideias que não são sinônimos",
+              "body": "<p><strong>Voltar</strong> percorre o histórico ou encerra a camada ativa segundo o comportamento da plataforma. <strong>Subir</strong>, chamado <em>Up</em> no Android, leva à organização hierárquica do aplicativo e não deve sair dele. Os <a href=\"https://developer.android.com/guide/navigation/principles\">princípios Android</a> explicam diferenças importantes quando a entrada ocorre por link externo. Desenhe essa entrada, além do caminho iniciado na primeira tela.</p><p><strong>Home interno</strong> é um destino escolhido pelo produto, geralmente chamado Início. Já <strong>Home do sistema</strong> sai do aplicativo para a tela inicial do aparelho. A <strong>home indicator</strong> é a indicação gestual do sistema em determinados dispositivos, não um botão de Início do produto. Não a redesenhe como uma aba. Não acrescente um botão interno esperando substituir gestos ou botões do sistema.</p>"
+            },
+            {
+              "title": "Quando usar abas e quando escolher outra estrutura",
+              "body": "<p>Abas ajudam quando a pessoa alterna entre poucas áreas estáveis e de importância comparável. Uma hierarquia simples pode funcionar com lista e detalhe, sem uma barra permanente que nada acrescenta. Muitas categorias, nomes extensos ou diferentes níveis de profundidade podem pedir outra organização. Não elimine rótulos apenas para acomodar mais destinos: ícones sem contexto transferem o custo para a memória do usuário.</p><p>Uma aba Início merece existir quando reúne uma tarefa ou visão reconhecível. Se vira um depósito de atalhos de todas as áreas, avalie a arquitetura. Destinos vazios também precisam continuar compreensíveis: desaparecer com a aba porque ainda não há itens muda o mapa do produto justamente quando a pessoa precisa aprendê-lo.</p>"
+            },
+            {
+              "title": "Passo a passo do mapa ao protótipo",
+              "body": "<ol><li><strong>Liste os destinos.</strong> Escreva propósito, conteúdo e tarefa principal de cada um. Agrupe o que pertence à mesma área.</li><li><strong>Separe ações.</strong> Retire da lista comandos que não representam um lugar persistente. Dê a eles botões ou controles contextuais.</li><li><strong>Desenhe uma hierarquia por área.</strong> Mostre como lista, detalhe e edição se relacionam. Declare qual estado retorna ao fechar uma edição.</li><li><strong>Especifique a troca de abas.</strong> Decida o que acontece com rolagem, seleção e dados temporários. Preservar contexto evita refazer trabalho.</li><li><strong>Adicione entradas alternativas.</strong> Abra um detalhe por busca, notificação e link externo. Para cada entrada, indique o resultado de voltar e de subir.</li><li><strong>Prototipe um desvio.</strong> A pessoa começa uma tarefa, consulta outra área e retorna. Esse trajeto testa melhor a arquitetura que uma sequência linear perfeita.</li></ol>"
+            },
+            {
+              "title": "Erros comuns e revisão do histórico",
+              "body": "<p>Evite mudar de aba automaticamente após uma ação sem indicação clara. Não envie todo comando de voltar para o Início: isso pode destruir o histórico e surpreender quem veio de outro aplicativo. Não repita telas de introdução concluídas no caminho de retorno. Evite interceptar o gesto do sistema para preservar uma composição visual.</p><p>Na revisão, registre uma sequência de lugares visitados e compare o retorno esperado com o observado. Inclua uma camada aberta, como busca ou painel, para conferir o que fecha primeiro. Quando o sistema oferece <a href=\"https://developer.android.com/design/ui/mobile/guides/patterns/predictive-back\">voltar preditivo</a>, a prévia deve corresponder ao destino efetivo. É melhor adotar o comportamento nativo do que produzir uma animação bonita que promete um destino e entrega outro.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Figura oficial: anatomia da barra de navegação Material 3",
+              "url": "https://developer.android.com/develop/ui/compose/components/navigation-bar",
+              "source": "Android Developers",
+              "image": "https://developer.android.com/static/develop/ui/compose/images/navigation-bar.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-navigation-bar.png",
+              "alt": "Barra Material 3 com quatro destinos rotulados; o primeiro combina indicador de seleção arredondado, ícone preenchido e texto em destaque.",
+              "credit": "Android Developers / Android Open Source Project. Figura oficial reproduzida sem alterações. Marcas não incluídas na licença.",
+              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/components/navigation-bar",
+              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
+              "licenseUrl": "https://developer.android.com/license",
+              "analysis": "<p>A figura oficial isola quatro destinos, cada um com ícone e rótulo. O primeiro combina uma superfície arredondada, símbolo preenchido e texto mais destacado para comunicar seleção. Essa redundância ajuda a reconhecer o estado sem depender exclusivamente da cor. Os nomes “Label” e os símbolos geométricos são marcadores de demonstração, não rótulos apropriados para um produto. Ao aplicar o padrão, substitua-os por nomes que descrevam lugares reconhecíveis. Observe também o que a figura não mostra: histórico, troca entre áreas e resultado de voltar precisam ser especificados separadamente. A barra do aplicativo não substitui a navegação do sistema.</p>"
+            },
+            {
+              "title": "Slopes analisado na sessão oficial Apple sobre navegação",
+              "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
+              "source": "Apple Developer, WWDC22",
+              "analysis": "<p>A sessão oficial mostra o aplicativo Slopes e chama atenção para seus destinos com nomes específicos. A entrada pelo diário de atividades, situado no meio da barra apresentada, ilustra que a primeira aba visual não precisa concentrar todo o produto. O aprendizado é estrutural: nomes e agrupamentos explicam as possibilidades antes de ler o conteúdo. A interface mostrada pertence à sessão de 2022 e não deve ser apresentada como captura atual do aplicativo. Use o vídeo para observar a relação entre área inicial, organização e alternância; não copie o estilo nem conclua que toda aplicação precisa de uma aba central como entrada.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "Defina a navegação principal do Rota e o caminho até o detalhe de uma visita cultural.",
+            "steps": [
+              "Escreva propósito e limites de cada destino principal.",
+              "Crie o mesmo detalhe acessado pela lista e por link externo.",
+              "Simule trocar de área durante uma consulta e depois retornar."
+            ],
+            "deliverable": "Mapa de navegação e protótipo com dois caminhos de entrada.",
+            "criteria": [
+              "Ações e destinos não estão misturados na barra.",
+              "Voltar, subir e Início têm resultados documentados.",
+              "Trocar de área não apaga involuntariamente contexto útil."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Android: Navigation bar",
+              "url": "https://developer.android.com/develop/ui/compose/components/navigation-bar",
+              "note": "Destinos principais em janelas compactas."
+            },
+            {
+              "title": "Android: Principles of navigation",
+              "url": "https://developer.android.com/guide/navigation/principles",
+              "note": "Histórico, Up e entradas por deep links, isto é, links para telas internas."
+            },
+            {
+              "title": "Android: Predictive back",
+              "url": "https://developer.android.com/design/ui/mobile/guides/patterns/predictive-back",
+              "note": "Prévia e cancelamento do gesto de retorno."
+            },
+            {
+              "title": "Apple: Explore navigation design for iOS",
+              "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
+              "note": "Referência audiovisual histórica com exemplo real Slopes."
+            }
+          ],
+          "videos": [
+            {
+              "title": "Explore navigation design for iOS",
+              "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
+              "source": "Apple Developer — WWDC22",
+              "note": "Vídeo oficial verificado. Observe o exemplo Slopes e a diferença entre navegação hierárquica e apresentação modal. Interface apresentada em 2022."
+            }
+          ]
+        },
+        {
+          "id": "sheets-modais-dialogos",
+          "title": "Sheets, modais e diálogos",
+          "summary": "Escolha uma interrupção proporcional à tarefa e explicite como entrar, concluir, cancelar e retornar.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir formato visual de comportamento modal.",
+            "Escolher entre conteúdo na página, painel e diálogo.",
+            "Especificar foco, cancelamento, teclado e dados não salvos."
+          ],
+          "sections": [
+            {
+              "title": "Forma e comportamento são decisões diferentes",
+              "body": "<p><strong>Sheet</strong> significa painel; um <strong>bottom sheet</strong> aparece junto à parte inferior da tela. <strong>Modal</strong> descreve comportamento: uma camada que precisa ser tratada ou dispensada antes de continuar na interface atrás dela. <strong>Diálogo</strong> é uma superfície que apresenta informação ou pede uma decisão. Nem todo painel precisa ser modal, e uma tarefa modal pode ocupar a tela inteira. A aparência não determina, sozinha, o contrato de interação.</p><p>Esses componentes ajudam a manter uma tarefa contextual perto do ponto onde começou. Também têm um custo: interrompem a navegação e reduzem o espaço disponível. Antes de escolher um painel, escreva qual benefício ele traz em relação a mostrar a informação na própria página. “O layout fica bonito” não explica por que o usuário deve abandonar momentaneamente o que fazia.</p>"
+            },
+            {
+              "title": "Quando escolher cada alternativa",
+              "body": "<p>Um painel pode acomodar opções relacionadas ao conteúdo atual, como uma seleção curta ou um filtro. Uma página costuma funcionar melhor para leitura extensa, comparação entre muitas informações ou tarefas às quais será necessário retornar frequentemente. Um diálogo é adequado quando uma decisão importante precisa de atenção imediata; a documentação <a href=\"https://developer.android.com/develop/ui/compose/components/dialog\">Android Dialog</a> caracteriza essa natureza interruptiva.</p><p>Evite confirmar repetidamente ações triviais que podem ser desfeitas com segurança. Evite também trocar uma confirmação necessária por um aviso que desaparece antes de ser lido. Para uma ação destrutiva, a decisão considera reversibilidade e consequência. Um formulário longo em um painel baixo cria competição entre título, campos, teclado e ações; ampliar a superfície ou mudar de apresentação pode ser mais apropriado.</p>"
+            },
+            {
+              "title": "Passo a passo do contrato de interação",
+              "body": "<ol><li><strong>Declare a finalidade.</strong> Escreva uma frase que delimite o que a pessoa resolverá nessa camada. Se houver várias finalidades independentes, reavalie a estrutura.</li><li><strong>Escolha confirmação ou aplicação imediata.</strong> Um filtro pode atualizar ao tocar ou apenas ao pressionar Aplicar. Mostre esse comportamento e não misture os modelos sem motivo.</li><li><strong>Defina todas as saídas.</strong> Botão, gesto, toque fora, voltar e tecla de escape precisam ter consequências compatíveis. Diga quando uma saída cancela e quando preserva escolhas.</li><li><strong>Desenhe os extremos.</strong> Texto maior, lista longa e teclado aberto revelam se o painel precisa rolar ou expandir. Garanta acesso à última ação.</li><li><strong>Especifique foco.</strong> Determine o primeiro elemento anunciado, a navegação interna e o retorno ao controle de origem.</li><li><strong>Projete a conclusão.</strong> Após salvar, atualize o contexto de origem e mostre o resultado. Fechar o painel não prova que o trabalho foi concluído.</li></ol>"
+            },
+            {
+              "title": "Acessibilidade é parte da apresentação",
+              "body": "<p>No padrão web de <a href=\"https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/\">diálogo modal do W3C</a>, o foco entra na camada e a navegação por teclado permanece nela enquanto está aberta; ao fechar, retorna a um lugar lógico. Essa referência é específica de web e não substitui APIs nativas. O princípio de projeto é mais amplo: pessoas que usam leitor de tela precisam perceber a mudança de contexto e não interagir acidentalmente com o conteúdo bloqueado atrás.</p><p>Uma camada visualmente modal com fundo ainda acionável é incoerente. Uma camada não modal marcada como modal para tecnologia assistiva também é. Revise a semântica com desenvolvimento. Inclua título compreensível, saída identificável e anúncio do resultado quando relevante. Teste o fluxo completo sem depender de arrastar uma pequena alça.</p>"
+            },
+            {
+              "title": "Erros frequentes e teste de cancelamento",
+              "body": "<p>Um “X” não esclarece se alterações foram aplicadas ou descartadas. Use rótulos como Aplicar, Cancelar ou Concluir quando o efeito precisar de explicação. Evite empilhar painéis como substituto de uma arquitetura: cada nova camada aumenta o esforço para entender o caminho de volta. Um seletor do sistema dentro de uma edição pode ser justificável, mas precisa devolver a pessoa ao contexto certo.</p><p>Revise um cenário de desistência, não apenas o sucesso. Abra, altere um valor, interrompa, retorne e tente sair. Confira se a interface protege trabalho significativo sem exibir alertas desnecessários quando nada mudou. Registre o que é mantido em memória, salvo de fato ou descartado. Essas diferenças devem aparecer em linguagem clara, não ficar escondidas em decisões de implementação.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Figura oficial: leitura e filtros em painéis inferiores",
+              "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/common-layouts",
+              "source": "Android Developers",
+              "analysis": "<p>A figura Android compara duas finalidades na mesma forma de superfície. À esquerda, um painel apresenta nome, fotografia e cuidados de uma planta. À direita, o painel permite escolher ambiente, tipo de planta e cuidados, com ações Cancel e Apply. Essa diferença é essencial: leitura e edição não têm o mesmo contrato de saída. O segundo painel torna explícita a aplicação das escolhas; um simples “X” deixaria esse efeito menos claro. O conteúdo de origem continua parcialmente visível, preservando o contexto. A captura não comprova comportamento de foco, arraste ou teclado: esses aspectos precisam ser testados além da imagem.</p>",
+              "image": "https://developer.android.com/static/images/design/ui/mobile/layout-basics-25-bottom-sheets.webp",
+              "alt": "Figura oficial Android de dois painéis sobre uma galeria de plantas: detalhe à esquerda e filtros com Cancel e Apply à direita.",
+              "sourcePageUrl": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/common-layouts",
+              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
+              "licenseUrl": "https://developer.android.com/license",
+              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-sheets-context.webp"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota, projete um painel de filtros e a confirmação para descartar uma observação ainda não salva.",
+            "steps": [
+              "Defina se filtros são aplicados imediatamente ou por confirmação.",
+              "Mostre teclado aberto e texto ampliado.",
+              "Teste sair sem editar, sair após editar e concluir com sucesso."
+            ],
+            "deliverable": "Dois fluxos com regras de foco, saída e preservação de dados.",
+            "criteria": [
+              "Cada forma de fechar tem efeito definido e consistente.",
+              "A última ação fica acessível com teclado e fonte ampliada.",
+              "O conteúdo de fundo não recebe interação quando a camada é modal."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Android: Bottom sheets",
+              "url": "https://developer.android.com/develop/ui/compose/components/bottom-sheets",
+              "note": "Estrutura e estado de apresentação de painéis inferiores."
+            },
+            {
+              "title": "Android: Dialog",
+              "url": "https://developer.android.com/develop/ui/compose/components/dialog",
+              "note": "Diálogos como superfícies de interrupção e decisão."
+            },
+            {
+              "title": "W3C: Modal Dialog Pattern",
+              "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+              "note": "Referência web para foco, teclado e semântica; não é especificação nativa iOS/Android."
+            },
+            {
+              "title": "Android: Common layouts",
+              "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/common-layouts",
+              "note": "Figura oficial de painéis inferiores com conteúdo real de demonstração, consultada e inspecionada em 17/10/2026."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "menus-sidebar-drawer",
+          "title": "Menus, sidebar e navigation drawer",
+          "summary": "Escolha o lugar certo para destinos e comandos secundários sem esconder o essencial.",
+          "minutes": 35,
+          "objectives": [
+            "Diferenciar menu de ações e navegação lateral.",
+            "Escolher entre lateral persistente e drawer modal.",
+            "Organizar opções por contexto e frequência de uso."
+          ],
+          "sections": [
+            {
+              "title": "Uma palavra, várias estruturas",
+              "body": "<p>“Menu” é usado informalmente para quase toda lista de opções, mas as estruturas têm papéis diferentes. Um <strong>menu de ações</strong> oferece comandos relacionados à tela ou ao objeto. Uma <strong>sidebar</strong>, ou barra lateral, pode manter visíveis destinos e categorias. Um <strong>navigation drawer</strong>, ou gaveta de navegação, organiza destinos numa superfície lateral que pode compartilhar espaço com o conteúdo ou aparecer sobre ele. A documentação <a href=\"https://developer.android.com/develop/ui/compose/quick-guides/content/create-navigation-drawer\">Android</a> demonstra essa diferença de apresentação.</p><p>O ícone de três linhas não é a arquitetura; é um acionador. O ícone de três pontos costuma abrir opções adicionais, mas também precisa de um contexto claro. Uma lista escondida parece resolver falta de espaço, porém adiciona uma etapa e exige que a pessoa suspeite da existência do conteúdo. Antes de esconder, decida o que merece permanecer evidente.</p>"
+            },
+            {
+              "title": "Quando usar e quando evitar",
+              "body": "<p>Uma lateral persistente pode ajudar em produtos com muitas categorias e espaço suficiente, especialmente quando alternar entre elas é frequente. Uma gaveta modal libera largura em telas compactas, com o custo de ocultar seus destinos. Um menu ancorado ao objeto ajuda quando várias ações ocasionais disputariam espaço se aparecessem simultaneamente. A referência <a href=\"https://developer.android.com/develop/ui/compose/components/menu\">Menus do Compose</a> mostra uma superfície temporária acionada por um controle.</p><p>Evite colocar a principal tarefa do produto exclusivamente atrás de uma gaveta. Evite uma lateral permanente que comprima o conteúdo até ele perder legibilidade. Evite também menus com formulário longo, explicação extensa e decisões dependentes entre si: esse conjunto já se parece mais com uma tela ou painel. Quando a lista cresce, investigue agrupamento, busca e arquitetura antes de reduzir a fonte.</p>"
+            },
+            {
+              "title": "Passo a passo para organizar as opções",
+              "body": "<ol><li><strong>Classifique cada item.</strong> É destino, comando, mudança de conta ou configuração? Não agrupe todos apenas porque cabem no mesmo retângulo.</li><li><strong>Identifique o contexto.</strong> Um comando deve deixar claro a qual objeto se aplica. Um menu aberto em um item da lista não deve parecer controlar todos os itens.</li><li><strong>Ordene por uso e relação.</strong> Coloque próximos os itens que resolvem problemas relacionados. Evite separadores decorativos sem significado.</li><li><strong>Escreva rótulos concretos.</strong> Prefira verbos para ações e nomes reconhecíveis para destinos. Revise palavras vagas como Mais, Outros e Gerenciar.</li><li><strong>Defina seleção e saída.</strong> Destino atual deve ser identificável por mais que cor. Ao escolher outro, determine se a gaveta fecha e onde o foco vai.</li><li><strong>Adapte ao espaço.</strong> Mostre como a mesma estrutura muda de modal para persistente. Preserve nomes, ordem lógica e seleção, mesmo que a apresentação mude.</li></ol>"
+            },
+            {
+              "title": "Comportamento e acessibilidade na prática",
+              "body": "<p>Uma gaveta modal deve deixar evidente que a atenção mudou para ela. O foco e a leitura precisam acompanhar essa mudança, sem permitir ativação acidental de controles cobertos. Quando a lateral é persistente, conteúdo e navegação convivem; a pessoa precisa circular entre ambos. Não reutilize automaticamente as regras de foco de uma apresentação na outra.</p><p>Ofereça um acionador visível quando o acesso também aceita gesto. Arrastar da borda pode conflitar com navegação do sistema ou ser impossível para parte do público. Teste o fechamento por botão, retorno do sistema e toque externo quando o padrão permitir. Em menus de ações, garanta que a posição continue associada ao acionador após rolagem ou mudança de janela. Uma superfície sem origem perceptível gera dúvida sobre o objeto afetado.</p>"
+            },
+            {
+              "title": "Erros comuns e validação do conteúdo",
+              "body": "<p>Não espalhe a mesma configuração em locais diferentes com nomes diferentes. Não faça a seleção parecer um botão de confirmação quando ela navega imediatamente. Evite ícones que apenas preenchem espaço, sem aumentar reconhecimento. Não confunda uma opção indisponível com uma opção sem permissão: quando necessário, explique por que ela está bloqueada e como recuperar acesso.</p><p>Para revisar, peça que alguém encontre três destinos e duas ações sem apresentar o menu antes. Registre o primeiro lugar procurado, o rótulo escolhido e os retornos desnecessários. Se todos abrem a gaveta para uma tarefa diária, talvez a tarefa mereça um ponto de acesso visível. Se ninguém associa o rótulo ao destino, alterar a sombra do componente não resolverá. A evidência deve orientar organização e linguagem.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Figura oficial: navegação Mail em temas claro e escuro",
+              "url": "https://developer.android.com/develop/ui/compose/quick-guides/content/create-navigation-drawer",
+              "source": "Android Developers",
+              "analysis": "<p>A imagem publicada na página Android mostra um menu Mail em temas claro e escuro. Inbox está selecionado com uma superfície arredondada, enquanto Outbox e Favorites mantêm ícones e rótulos. A seleção é percebida pela forma e pela diferença de superfície, além da cor. Compare se a hierarquia permanece reconhecível nos dois temas e se as categorias continuam escaneáveis. A legenda da página descreve tipos de drawer, mas esta imagem específica não permite demonstrar comportamento modal versus persistente. Use-a para analisar seleção, consistência e organização; teste o comportamento de abertura em um protótipo ou na implementação.</p>",
+              "image": "https://developer.android.com/static/develop/ui/compose/images/layouts/material/m3-navigation-drawer.png",
+              "alt": "Menu Mail em tema claro e escuro, com Inbox selecionado e destinos Outbox e Favorites abaixo.",
+              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/quick-guides/content/create-navigation-drawer",
+              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
+              "licenseUrl": "https://developer.android.com/license",
+              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-drawer.png"
+            }
+          ],
+          "exercise": {
+            "brief": "Organize navegação e ações secundárias do Rota para telefone e janela ampla.",
+            "steps": [
+              "Classifique dez opções entre destinos, ações e configurações.",
+              "Escolha o que fica visível e justifique cada item escondido.",
+              "Prototipe a abertura, uma seleção e o retorno ao conteúdo."
+            ],
+            "deliverable": "Inventário de opções e duas apresentações da mesma arquitetura.",
+            "criteria": [
+              "A tarefa principal não depende exclusivamente da gaveta.",
+              "Destino selecionado é identificável sem depender só de cor.",
+              "Os rótulos e a ordem permanecem coerentes ao adaptar a tela."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Android: Navigation drawer",
+              "url": "https://developer.android.com/develop/ui/compose/quick-guides/content/create-navigation-drawer",
+              "note": "Demonstração oficial das apresentações padrão e modal."
+            },
+            {
+              "title": "Android: Menus",
+              "url": "https://developer.android.com/develop/ui/compose/components/menu",
+              "note": "Menu temporário associado a um acionador."
+            },
+            {
+              "title": "Android: Window size classes",
+              "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
+              "note": "Espaço disponível como referência de adaptação, não apenas modelo do aparelho."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "teclado-toque-gestos",
+          "title": "Teclado, toque e gestos: interação executável",
+          "summary": "Projete entradas e movimentos que funcionem com precisão, alternativas acessíveis e estados reais.",
+          "minutes": 35,
+          "objectives": [
+            "Diferenciar desenho visível e alvo real de toque.",
+            "Especificar o fluxo com teclado aberto, foco e validação.",
+            "Oferecer alternativas a gestos complexos ou ocultos."
+          ],
+          "sections": [
+            {
+              "title": "A interface é usada com o corpo",
+              "body": "<p>Uma interface mobile não é apenas uma composição em uma tela pequena. Ela é manipulada com precisão variável, em diferentes posturas e por diferentes tecnologias de entrada. O <strong>alvo de toque</strong> é a região que recebe a interação, não apenas o ícone visível. Um símbolo discreto pode ter uma área acionável maior, desde que essa área não se sobreponha indevidamente a controles vizinhos.</p><p>Como referência confortável, projete alvos de 44 × 44 pt em iOS e iPadOS e 48 × 48 dp em Android, verificando o componente e a orientação atual. A <a href=\"https://developer.apple.com/design/human-interface-guidelines/accessibility\">HIG atual</a> distingue tamanho padrão e mínimo; 44 pt não deve ser apresentado como limite legal universal. O <a href=\"https://developer.android.com/develop/ui/compose/accessibility/api-defaults\">Android</a> recomenda 48 dp. Para web, a <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html\">WCAG 2.2, critério 2.5.8</a>, usa CSS px e exceções próprias: não converta esses números em equivalências entre plataformas.</p>"
+            },
+            {
+              "title": "Quando usar gestos e quando manter controles visíveis",
+              "body": "<p>Gestos podem tornar frequente uma ação rápida: deslizar, ampliar, arrastar e reorganizar. Funcionam melhor quando o resultado acompanha a manipulação e o padrão é reconhecível. Não transforme um gesto oculto na única forma de realizar uma tarefa importante. As <a href=\"https://developer.apple.com/design/human-interface-guidelines/gestures\">orientações Apple</a> defendem alternativas e consistência com gestos conhecidos.</p><p>Uma alça sugere arraste, mas não ensina sozinha seu efeito. Para reorganizar itens, ofereça também comandos de mover ou outra operação simples. Na web, o <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html\">critério 2.5.7</a> trata de alternativas a movimentos de arrastar, com exceções específicas. No projeto mobile, use esse princípio como pergunta de inclusão, sem afirmar que o documento define todas as regras de uma aplicação nativa.</p>"
+            },
+            {
+              "title": "Passo a passo do fluxo com teclado",
+              "body": "<ol><li><strong>Classifique a entrada.</strong> Texto livre, número, email e busca pedem facilidades diferentes. Não force teclado numérico se caracteres válidos, como sinais ou letras, forem necessários.</li><li><strong>Defina avanço e conclusão.</strong> Determine a ação da tecla Próximo, Buscar ou Concluir e mantenha uma alternativa visível quando necessária.</li><li><strong>Abra no pior ponto.</strong> Ative o último campo, com texto maior e mensagem de erro. Campo, orientação e correção devem permanecer alcançáveis.</li><li><strong>Planeje a rolagem.</strong> O teclado ocupa área variável; responda aos insets informados pelo sistema. Evite somar duas vezes espaço inferior.</li><li><strong>Teste interrupção.</strong> Feche o teclado, troque temporariamente de aplicativo e retorne. Verifique seleção, conteúdo digitado e posição.</li><li><strong>Revise foco.</strong> A sequência deve acompanhar a tarefa; um erro precisa ser localizado sem apagar o que já foi preenchido.</li></ol>"
+            },
+            {
+              "title": "Passo a passo da interação por toque",
+              "body": "<p>Comece desenhando os alvos como regiões transparentes sobre o layout. Observe controles vizinhos e proximidade das bordas. Teste toques um pouco fora do centro para descobrir se o componente responde com tolerância razoável. Depois confira o nome anunciado por leitor de tela: dois ícones visualmente diferentes chamados apenas “botão” continuam indistinguíveis para parte das pessoas.</p><p>Para cada gesto, descreva início, movimento, confirmação, cancelamento e resultado. Uma exclusão ao deslizar precisa distinguir prévia de execução. Se o dedo voltar antes de completar o gesto, o estado deve corresponder à expectativa apresentada. Vibração pode complementar o feedback, isto é, a resposta da interface, mas não ser o único sinal de uma mudança importante. Considere configurações que reduzem movimento ou desativam efeitos.</p>"
+            },
+            {
+              "title": "Erros comuns e teste fora do cenário ideal",
+              "body": "<p>Não avalie precisão de toque só com mouse. Não aproxime várias pequenas ações porque os ícones parecem caber. Não bloqueie colar em um campo sem uma razão real de produto e acessibilidade. Não esconda uma ação essencial atrás de pressionamento prolongado, gesto de múltiplos dedos ou combinação que exige memória.</p><p>Na revisão, faça a mesma tarefa por toque, teclado externo quando suportado e leitor de tela. Compare se todas as formas chegam ao mesmo resultado e oferecem recuperação. Teste também com uma mão, sem impor uma suposta zona universal do polegar: alcance varia com pessoa, aparelho e postura. Registre erros de acionamento e gestos malsucedidos como observações de interação, não como falta de habilidade do participante.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Figura oficial: teclado e navegação do sistema Android",
+              "url": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
+              "source": "Android Developers",
+              "analysis": "<p>A figura mostra que o teclado não ocupa uma região isolada do resto da experiência: os controles de navegação do sistema convivem com ele. Isso ajuda a identificar dois planos que um protótipo simplificado costuma misturar, o conteúdo do aplicativo e a interface de entrada do sistema. A análise de projeto deve acompanhar a transição: qual campo conserva foco, qual parte pode rolar e como a pessoa dispensa o teclado. Não use a altura ilustrada como constante para todos os aparelhos; use-a para lembrar quais estados precisam existir na revisão.</p>",
+              "image": "https://developer.android.com/static/images/design/ui/mobile/system-bars-on-screen-keyboard.png",
+              "alt": "Recorte oficial de teclado Android com teclas inferiores e controles de navegação do sistema abaixo.",
+              "sourcePageUrl": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
+              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
+              "licenseUrl": "https://developer.android.com/license",
+              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-keyboard-system.png"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota, permita escrever uma observação e reorganizar três visitas de um roteiro.",
+            "steps": [
+              "Projete entrada com teclado aberto no menor espaço previsto.",
+              "Desenhe alvos reais e nomes acessíveis dos controles.",
+              "Ofereça arraste e uma alternativa sem arrastar para reordenar."
+            ],
+            "deliverable": "Fluxo testável por duas formas de entrada e relatório com três problemas encontrados.",
+            "criteria": [
+              "Texto digitado não se perde ao dispensar teclado ou corrigir erro.",
+              "Alvos têm dimensões declaradas na unidade da plataforma e não se sobrepõem.",
+              "A reordenação pode ser concluída sem gesto de arraste."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Apple: Accessibility",
+              "url": "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+              "note": "Tabela atual distingue tamanho padrão e mínimo; não confundir recomendação com exigência legal."
+            },
+            {
+              "title": "Apple: Gestures",
+              "url": "https://developer.apple.com/design/human-interface-guidelines/gestures",
+              "note": "Gestos familiares e alternativas de entrada."
+            },
+            {
+              "title": "Android: Accessibility API defaults",
+              "url": "https://developer.android.com/develop/ui/compose/accessibility/api-defaults",
+              "note": "Alvos de toque, semântica e componentes nativos."
+            },
+            {
+              "title": "Android: Window insets",
+              "url": "https://developer.android.com/develop/ui/compose/system/insets",
+              "note": "Inclui os insets do teclado virtual, também denominado IME: input method editor."
+            },
+            {
+              "title": "W3C: Target Size Minimum",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+              "note": "Critério web 2.5.8, em CSS px; inclui exceções."
+            },
+            {
+              "title": "W3C: Dragging Movements",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html",
+              "note": "Critério web 2.5.7 para alternativas ao arraste."
+            }
+          ],
+          "videos": []
+        }
+      ]
+    },
+    {
+      "id": "tipos-telas",
+      "title": "Tipos de telas e decisões de uso",
+      "description": "Sete lições para desenhar telas móveis a partir de tarefas, conteúdo e estados: entrada, início, coleções, detalhe, busca, formulários e continuidade. Os exemplos são referências reais e as atividades práticas utilizam um aplicativo fictício.",
+      "lessons": [
+        {
+          "id": "splash-onboarding",
+          "title": "Splash e onboarding: abrir, orientar e entregar valor",
+          "summary": "Separe a abertura técnica da orientação inicial e transforme a primeira experiência em uma tarefa útil, curta e recuperável.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir abertura técnica, apresentação e configuração inicial.",
+            "Decidir o que precisa acontecer antes da primeira tarefa útil.",
+            "Projetar primeira visita, retorno e recusa de permissões."
+          ],
+          "sections": [
+            {
+              "title": "O que são e por que separar",
+              "body": "<p><strong>Splash screen</strong> é a tela transitória de abertura enquanto o aplicativo prepara sua interface. <strong>Onboarding</strong> é a orientação inicial: ajuda a compreender uma proposta, aprender uma interação ou configurar algo necessário. A primeira pertence ao início técnico; o segundo pertence à experiência de uso. Misturá-los produz uma espera que parece tutorial e um tutorial que a pessoa não consegue interromper.</p><p>No Android, a abertura usa um mecanismo do sistema; a documentação descreve a passagem da identificação do aplicativo para sua interface quando ele está pronto. A implicação para o design é combinar marca e continuidade, sem transformar a abertura em uma apresentação obrigatória. Consulte a <a href=\"https://developer.android.com/develop/ui/views/launch/splash-screen\">referência oficial de splash screens</a>. O objetivo do primeiro contato deve ser observável: concluir uma primeira tarefa, reconhecer o resultado e saber voltar.</p>"
+            },
+            {
+              "title": "Quando orientar e quando deixar explorar",
+              "body": "<p>Uma orientação dedicada faz sentido quando existe uma interação pouco familiar, uma decisão inicial indispensável ou um risco real de interpretação. Antes de desenhá-la, escreva a frase: “Sem aprender ou escolher isto, a pessoa não consegue…”. Se o complemento for apenas “conhecer todos os recursos”, provavelmente a informação pode aparecer depois, no contexto.</p><p>Não use páginas de boas-vindas para compensar botões incompreensíveis. Também não peça cadastro, notificações e localização por hábito. Diferencie a permissão realmente necessária da conveniência comercial. Uma alternativa manual pode preservar o uso quando a pessoa recusa acesso. As <a href=\"https://developer.apple.com/design/human-interface-guidelines/onboarding\">orientações da Apple</a> favorecem experiências iniciais rápidas e opcionais e aprendizado por interação. Isso não significa tornar opcional uma obrigação legítima; significa não tratar toda apresentação como obrigação.</p>"
+            },
+            {
+              "title": "Passo a passo: desenhe o caminho mínimo",
+              "body": "<ol><li><strong>Defina a primeira conquista.</strong> Escolha uma ação pequena que já entregue valor. “Chegar à home” é uma transição; “encontrar e salvar um conteúdo” é uma conquista verificável.</li><li><strong>Liste dependências.</strong> Para cada dado ou escolha, registre por que é necessário agora, o que acontece sem ele e se pode ser alterado depois. Elimine dependências inventadas pelo desenho da interface.</li><li><strong>Separe quatro momentos.</strong> Abertura técnica, orientação, configuração e uso não precisam virar quatro telas. Podem ser estados de uma mesma experiência, desde que cada um tenha função clara.</li><li><strong>Ensine com uma ação real.</strong> Uma seleção que modifica o conteúdo seguinte demonstra a consequência imediatamente. Se houver ambiente de treino, explique que o resultado é demonstrativo e como sair.</li><li><strong>Ofereça continuidade.</strong> Pular deve levar a um lugar utilizável. Voltar deve preservar escolhas. Interromper e abrir novamente não deve obrigar a repetir todo o percurso.</li><li><strong>Peça permissões no contexto.</strong> Mostre o benefício concreto antes do pedido do sistema e desenhe também o caminho de recusa. Não simule um botão de recusa que repete a solicitação indefinidamente.</li></ol>"
+            },
+            {
+              "title": "Estados, texto e hierarquia",
+              "body": "<p>Desenhe três histórias: primeira visita, retorno de alguém já orientado e retorno depois de uma interrupção. Na primeira, a pessoa precisa descobrir o suficiente; no retorno, precisa retomar rapidamente. Use um título que explique a ação, uma justificativa curta e um botão com verbo específico. “Continuar” funciona quando o passo seguinte é evidente; “Escolher interesses” antecipa melhor uma decisão.</p><p>Se a abertura depende de rede, decida com a equipe o que pode aparecer localmente e qual mensagem substitui uma espera interminável. Uma animação bonita não explica uma falha. Verifique tamanho de texto ampliado, ordem de leitura e redução de movimento. Um indicador de etapas só é útil se representar etapas reais, inclusive quando uma escolha altera o caminho.</p>"
+            },
+            {
+              "title": "Erros frequentes e revisão",
+              "body": "<p>O erro clássico é medir sucesso pelo percentual que terminou o tutorial. Uma sequência obrigatória pode ter conclusão alta e ainda atrasar o benefício. Compare também tempo até a primeira conquista, abandono por etapa e capacidade de repetir a tarefa sem ajuda. Esses indicadores precisam de definição consistente e de contexto; números isolados não provam causalidade.</p><p>Outros problemas são esconder “Pular”, apagar escolhas ao voltar e apresentar cinco recursos antes de usar qualquer um. Faça uma revisão simples: retire uma etapa e observe o que realmente deixa de funcionar. Se nada essencial se perde, tente incorporá-la ao uso. A quantidade final de telas deve resultar dessa análise, e não de uma fórmula universal de três páginas.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Figura oficial: composição da abertura do Gmail",
+              "url": "https://developer.android.com/develop/ui/views/launch/splash-screen",
+              "source": "Android Developers",
+              "image": "https://developer.android.com/static/images/guide/topics/ui/splash-screen/splash-screen-composition.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/android-splash-composition.png",
+              "alt": "Quatro representações da abertura do Gmail, com ícone central, fundos claro e azulado, círculo opcional atrás do ícone e anotações numeradas sobre os elementos da composição.",
+              "credit": "Android Developers / Android Open Source Project. Figura oficial de composição da splash screen, reproduzida sem alterações. Gmail é marca da Google; reprodução documental sem indicação de endosso.",
+              "sourcePageUrl": "https://developer.android.com/develop/ui/views/launch/splash-screen",
+              "license": "Apache License 2.0 para documentação, conforme Android Developers. Marcas excluídas da licença; Gmail é marca da Google.",
+              "licenseUrl": "https://developer.android.com/license",
+              "analysis": "<p>A figura oficial usa o Gmail para mostrar quatro representações da mesma abertura: ícone central, fundo da janela, fundo circular opcional e limites de recorte. As linhas azuis e os números são anotações explicativas, não controles do aplicativo. Observe que não há instruções, campos ou tarefas para concluir: a composição comunica identidade durante uma transição técnica. Isso ajuda a distinguir splash de onboarding, que ensina ou configura algo. Ao adaptar o princípio, preserve simplicidade e contraste, verificando a área realmente visível do ícone. A imagem não comprova duração nem desempenho da abertura.</p>"
+            },
+            {
+              "title": "Now in Android: escolher assuntos dentro da experiência inicial",
+              "url": "https://github.com/android/nowinandroid",
+              "source": "Google / Android Developers",
+              "analysis": "<p>O aplicativo oficial Now in Android permite acompanhar assuntos e receber conteúdo relacionado. Sua documentação de modularização identifica a orientação da primeira execução dentro da área “For You”, ou “Para você”. É um exemplo real de aplicativo de referência, não um produto fictício criado para esta aula. <a href=\"https://github.com/android/nowinandroid/blob/main/docs/ModularizationLearningJourney.md\">Veja a descrição da primeira execução</a>.</p><p>A leitura de design proposta aqui é ligar a escolha inicial a uma consequência compreensível: aquilo que a pessoa segue influencia o conteúdo que recebe. Ao estudar o caso, pergunte se cada escolha ajuda a primeira sessão e como seria a experiência sem seleção. O princípio transferível é a relação entre configuração e benefício, não a cópia de cores, assuntos ou número de opções.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "No aplicativo fictício Rota, de descoberta e planejamento de visitas culturais, desenhe o primeiro uso até salvar uma visita. O exercício não descreve um produto real.",
+            "steps": [
+              "Mapeie abertura, escolha opcional de interesses, descoberta e salvamento. Justifique cada informação pedida.",
+              "Prototipe uma entrada completa e outra que pula a orientação. Inclua localização recusada e cidade escolhida manualmente.",
+              "Teste com três pessoas: peça para salvar uma visita e depois explicar como mudar seus interesses. Registre tempo, ajuda solicitada e falhas."
+            ],
+            "deliverable": "Fluxo com pelo menos seis estados, protótipo navegável e registro de três testes.",
+            "criteria": [
+              "Os três participantes chegam a um conteúdo utilizável pelo caminho de pular.",
+              "Nenhuma recusa de permissão impede escolher uma cidade manualmente.",
+              "Voltar ou interromper preserva todas as escolhas já confirmadas.",
+              "Ao menos dois participantes salvam uma visita sem orientação verbal; se não, documente a revisão."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Splash screens",
+              "url": "https://developer.android.com/develop/ui/views/launch/splash-screen",
+              "note": "Fonte primária sobre abertura no Android; consultada em 17/10/2026."
+            },
+            {
+              "title": "Onboarding — Human Interface Guidelines",
+              "url": "https://developer.apple.com/design/human-interface-guidelines/onboarding",
+              "note": "Referência de orientação inicial; a aula desenvolve seu próprio método de decisão."
+            },
+            {
+              "title": "Now in Android — modularização",
+              "url": "https://github.com/android/nowinandroid/blob/main/docs/ModularizationLearningJourney.md",
+              "note": "Confirma a orientação da primeira execução na área For You."
+            }
+          ],
+          "videos": [
+            {
+              "title": "Discoverable design",
+              "url": "https://developer.apple.com/videos/play/wwdc2021/10126/",
+              "source": "Apple Developer",
+              "note": "Vídeo oficial verificado. Observe como a interface pode ensinar durante a exploração; anote uma instrução que você substituiria por uma ação compreensível."
+            }
+          ]
+        },
+        {
+          "id": "home-dashboard",
+          "title": "Home e dashboard: escolher o que merece a primeira tela",
+          "summary": "Organize acesso, continuidade e resumo sem transformar a entrada do aplicativo em um catálogo de tudo que ele faz.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir home, painel de acompanhamento e fluxo direto.",
+            "Priorizar blocos por tarefas e decisões do usuário.",
+            "Relacionar cada indicador a contexto, atualização e ação."
+          ],
+          "sections": [
+            {
+              "title": "O que é uma tela inicial útil",
+              "body": "<p><strong>Home</strong> significa tela inicial: é um ponto de orientação e acesso às principais partes do aplicativo. <strong>Dashboard</strong> significa painel de acompanhamento: reúne sinais para entender uma situação e decidir o próximo passo. Uma mesma tela pode cumprir as duas funções, mas cada bloco precisa justificar seu papel. Uma saudação não é orientação suficiente; um conjunto de números não é necessariamente um painel.</p><p>Comece pela pergunta que a pessoa faz ao abrir o aplicativo. Ela quer continuar algo, verificar uma mudança ou iniciar uma tarefa? Desenhe a resposta mais importante antes de escolher cartões, banners e gráficos. Se o produto resolve uma tarefa única, abrir diretamente essa tarefa pode ser melhor que criar uma home intermediária. Uma calculadora não precisa de uma sala de espera para chegar ao cálculo.</p>"
+            },
+            {
+              "title": "Quando usar e quando evitar",
+              "body": "<p>Use uma home quando existirem destinos recorrentes e a pessoa precisar decidir entre eles. Use um painel quando houver acompanhamento contínuo, comparação ou necessidade de identificar exceções. O critério é uma decisão real: se alguém vê “12 pendências”, precisa saber quais exigem atenção e como resolvê-las. Um número sem período, significado ou consequência acrescenta pouco.</p><p>Evite um painel quando os dados são raramente atualizados, incompletos ou incapazes de mudar uma ação. Não transforme todas as funções do produto em atalhos iguais. Isso preserva a política interna de cada equipe, mas transfere a priorização para a pessoa. Também evite copiar uma página comercial para dentro do aplicativo: quem retorna já pode ter uma intenção mais específica que conhecer a proposta do serviço.</p>"
+            },
+            {
+              "title": "Passo a passo: priorização antes do layout",
+              "body": "<p>Layout é a organização visual dos elementos na tela. Antes de decidir posições e tamanhos, explicite o que deve receber prioridade.</p><ol><li><strong>Liste situações de abertura.</strong> Escreva cinco cenários concretos, incluindo primeiro acesso, retorno frequente e retorno após muito tempo. Não substitua situações por perfis vagos como “usuário comum”.</li><li><strong>Associe tarefas aos cenários.</strong> Registre frequência, urgência e consequência de atraso. Essas três dimensões ajudam a discutir prioridade, mas não precisam virar uma pontuação artificial.</li><li><strong>Escolha uma promessa central.</strong> Complete: “Ao abrir, a pessoa consegue perceber… e fazer…”. Use isso para decidir o primeiro bloco.</li><li><strong>Separe navegação de conteúdo.</strong> Destinos estáveis pertencem à estrutura de navegação; recomendações e continuidade variam. Não faça o mesmo destino mudar de nome a cada campanha.</li><li><strong>Ordene os blocos.</strong> Coloque ações urgentes e continuidade antes de informações secundárias quando o cenário justificar. Uma exceção importante pode ter prioridade sobre o conteúdo habitual.</li><li><strong>Desenhe conteúdo insuficiente.</strong> A home de quem chegou agora não pode depender de histórico inexistente. Ofereça uma primeira tarefa e explique quando um resumo passará a fazer sentido.</li></ol>"
+            },
+            {
+              "title": "Como construir um painel confiável",
+              "body": "<p>Para cada indicador, escreva uma pequena ficha: o que mede, unidade, período, origem, última atualização e ação disponível. “Concluídas: 8” muda de significado se o período é hoje ou o ano inteiro. Uma variação percentual também precisa de base de comparação. Se a informação ainda não chegou, mostre indisponibilidade; apresentar zero é uma afirmação diferente.</p><p>Um gráfico deve responder algo que o número sozinho não responde, como tendência ou distribuição. Não acrescente gráficos apenas para parecer analítico. Nas telas estreitas, preserve títulos, unidades e leitura de valores. Explique como abrir detalhes sem exigir um toque extremamente preciso em cada ponto. Para conteúdo em coleção, as <a href=\"https://developer.android.com/design/ui/mobile/guides/layout-and-content/common-layouts\">composições oficiais do Android</a> mostram possibilidades de lista e grade; a escolha continua dependendo da tarefa.</p>"
+            },
+            {
+              "title": "Erros e critérios de revisão",
+              "body": "<p>Uma tela pode ser bonita e ainda falhar por tratar todas as informações como urgentes. Revise cores, tamanhos, posição e repetição: quantos elementos disputam o primeiro olhar? Se há vários botões com destaque máximo, reavalie a hierarquia. Não esconda tarefas importantes em carrosséis que dependem de descoberta por tentativa.</p><p>Teste uma captura durante poucos segundos e pergunte o que a pessoa acredita poder fazer. Depois teste tarefas reais no protótipo. A primeira atividade avalia compreensão inicial; a segunda revela navegação e continuidade. Não confunda a lembrança de um bloco chamativo com utilidade. Por fim, simule dados antigos, um bloco com erro e texto ampliado. O resto da home deve continuar utilizável quando uma parte falha.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Reply: iniciar diretamente na tarefa principal",
+              "url": "https://github.com/android/compose-samples/tree/main/Reply",
+              "source": "Google / Android Open Source Project",
+              "image": "https://raw.githubusercontent.com/android/compose-samples/main/Reply/screenshots/compact_medium_large_displays.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/reply-adaptive-screens.png",
+              "alt": "Reply em três larguras, abrindo diretamente a caixa de entrada com busca, mensagens e ação de escrever; a janela ampla inclui a conversa selecionada.",
+              "credit": "Copyright 2022 The Android Open Source Project. Screenshot oficial Reply, reproduzido sem alterações. Marcas pertencem a seus titulares; não há endosso ao curso.",
+              "sourcePageUrl": "https://github.com/android/compose-samples/tree/main/Reply/screenshots",
+              "license": "Apache License 2.0. O ASSETS_LICENSE do Reply declara essa licença para todos os arquivos que não são fontes.",
+              "licenseUrl": "https://github.com/android/compose-samples/blob/main/Reply/ASSETS_LICENSE",
+              "analysis": "<p>Reply, aplicativo oficial de estudo, abre diretamente uma caixa de entrada: busca, mensagens e ação de escrever já estão disponíveis. A captura demonstra uma alternativa à home intermediária. A análise desta aula é a prioridade inicial: ler e responder ganham espaço antes de qualquer resumo decorativo. Em janelas amplas, a conversa aparece junto da coleção. Isso não transforma a tela em dashboard; mostra que a entrada pode ser a própria tarefa. Compare com o Fitness abaixo, cuja proposta de acompanhamento justifica um resumo de indicadores.</p>"
+            },
+            {
+              "title": "Apple Fitness: resumo com aprofundamento e personalização",
+              "url": "https://support.apple.com/pt-br/guide/iphone/iph4c34a8a95/ios",
+              "source": "Apple Support",
+              "analysis": "<p>O guia oficial do Fitness mostra o resumo de atividade, tendências, sessões e prêmios, além da possibilidade de reorganizar métricas. A própria documentação distingue o resumo do aprofundamento: tocar em uma área leva a detalhes. A referência é um aplicativo real; os dados ilustrativos da Apple não são dados pessoais deste curso.</p><p>A análise útil é observar duas decisões: o resumo permite acompanhar rapidamente, enquanto o detalhe suporta investigação; a personalização reconhece que nem todo indicador importa igualmente. Para outro produto, copie essa relação entre pergunta, sinal e aprofundamento, não os anéis de atividade. Um painel sem histórico suficiente deve explicar essa limitação. Não é possível concluir, apenas pela documentação, que a organização funcionará para todos os públicos.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota, desenhe uma home para quem está explorando e outra para quem já tem uma visita planejada para hoje.",
+            "steps": [
+              "Escreva cinco situações de abertura e selecione a tarefa prioritária de cada uma.",
+              "Desenhe até quatro blocos principais por variante e justifique a ordem. Inclua um bloco sem dados e um parcialmente indisponível.",
+              "Peça a três pessoas para localizar uma visita salva, descobrir algo novo e identificar o próximo compromisso. Registre o primeiro toque e o caminho seguido."
+            ],
+            "deliverable": "Duas telas iniciais, inventário dos blocos com justificativas e relatório de nove tentativas de tarefa.",
+            "criteria": [
+              "Cada bloco responde a uma pergunta explícita e tem um próximo passo identificável.",
+              "Todos os indicadores apresentam período ou contexto suficiente.",
+              "Pelo menos oito das nove tentativas terminam sem ajuda; falhas geram uma alteração documentada.",
+              "Uma falha de recomendação não bloqueia o acesso à visita já salva."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Resumo de atividade no Fitness",
+              "url": "https://support.apple.com/pt-br/guide/iphone/iph4c34a8a95/ios",
+              "note": "Caso real consultado em 17/10/2026. Imagens mantidas no site oficial."
+            },
+            {
+              "title": "Common layouts",
+              "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/common-layouts",
+              "note": "Referência de organização em lista e grade, sem prescrever a hierarquia da home."
+            },
+            {
+              "title": "Reply: iniciar diretamente na tarefa principal",
+              "url": "https://github.com/android/compose-samples/tree/main/Reply",
+              "note": "Figura oficial inspecionada e disponibilizada localmente, com atribuição e licença."
+            }
+          ],
+          "videos": [
+            {
+              "title": "How to personalize the Summary tab in the Fitness app on iPhone and iPad",
+              "url": "https://www.youtube.com/watch?v=-RSUkzo1cnI",
+              "source": "Apple Support",
+              "note": "Vídeo oficial verificado. Compare a organização inicial e a reorganização dos cartões; registre qual pergunta cada cartão responde."
+            },
+            {
+              "title": "Design foundations from idea to interface",
+              "url": "https://developer.apple.com/videos/play/wwdc2025/359/",
+              "source": "Apple Developer",
+              "note": "Vídeo oficial verificado. Os capítulos Structure, Navigation e Content ajudam a revisar a relação entre estrutura, navegação e conteúdo."
+            }
+          ]
+        },
+        {
+          "id": "listas-cards",
+          "title": "Listas e cards: facilitar comparação e escolha",
+          "summary": "Escolha a estrutura de coleção pela informação que precisa ser comparada e pelo comportamento de cada item.",
+          "minutes": 35,
+          "objectives": [
+            "Decidir entre linhas, cartões e grade.",
+            "Definir um contrato de conteúdo para itens repetidos.",
+            "Projetar ações secundárias e retorno sem perder contexto."
+          ],
+          "sections": [
+            {
+              "title": "O que a coleção precisa permitir",
+              "body": "<p>Uma lista organiza itens em sequência. Um <strong>card</strong>, ou cartão, agrupa informações relacionadas em uma unidade visual. Uma grade distribui unidades em linhas e colunas. Esses conceitos se combinam: cartões podem formar uma lista; uma grade pode conter imagens sem cartões. A escolha correta começa na pergunta que será respondida, não na preferência por cantos arredondados.</p><p>Se a pessoa compara nomes, datas e status, posições estáveis ajudam a localizar atributos. Se reconhece itens principalmente pela aparência, imagens podem merecer mais espaço. Se cada item reúne informações de naturezas diferentes, um cartão pode delimitar esse conjunto. O guia de <a href=\"https://developer.android.com/develop/ui/compose/components/card\">cartões do Android</a> mostra tratamentos preenchido, elevado e contornado; a diferença visual não substitui a definição do conteúdo e da interação.</p>"
+            },
+            {
+              "title": "Quando usar e quando não usar",
+              "body": "<p>Use linhas quando a coleção precisar ser percorrida rapidamente e os itens compartilharem atributos comparáveis. Use cartões quando a unidade se beneficiar de agrupamento explícito e houver conteúdo suficiente para justificar o espaço. Use grade quando a comparação visual for dominante e a largura disponível mantiver títulos e ações legíveis.</p><p>Evite cartões enormes para itens que contêm apenas um nome. Evite duas colunas quando cada título longo termina truncado e obriga a abrir tudo. Uma grade irregular pode funcionar para explorar imagens, mas prejudica comparações que exigem alinhar atributos. Não introduza separadores, borda, sombra e fundo diferente ao mesmo tempo sem uma razão: todos estão tentando resolver o mesmo problema de agrupamento.</p>"
+            },
+            {
+              "title": "Passo a passo: crie o contrato do item",
+              "body": "<ol><li><strong>Defina a decisão.</strong> Escreva o que a pessoa precisa saber para escolher um item sem abri-lo. Uma coleção é uma ferramenta de redução de alternativas.</li><li><strong>Separe atributos.</strong> Identidade responde “qual é”; discriminadores ajudam a comparar; status informa condição; ações permitem agir. Elimine informação que não contribui para nenhuma dessas funções.</li><li><strong>Estabeleça uma ordem estável.</strong> Título, metadados e status devem ocupar regiões previsíveis. Se um dado faltar, decida se a região some ou recebe uma indicação, sem inventar um valor.</li><li><strong>Escolha a unidade de toque.</strong> O corpo pode abrir o detalhe enquanto um controle separado salva o item. Desenhe limites claros para impedir que salvar abra o detalhe por acidente.</li><li><strong>Defina variações.</strong> Inclua item selecionado, indisponível, sem imagem, com título extenso e com ação em andamento. Esses casos pertencem ao componente, não a remendos de uma tela específica.</li><li><strong>Especifique continuidade.</strong> Ao voltar do detalhe, preserve a posição, a ordenação e os filtros. Se os dados mudarem, explique a mudança em vez de reorganizar silenciosamente o item sob o dedo.</li></ol>"
+            },
+            {
+              "title": "Densidade, acessibilidade e quantidade",
+              "body": "<p>Densidade é a quantidade de informação dentro do espaço disponível. Mais itens visíveis não significam automaticamente mais eficiência: texto pequeno e ações comprimidas aumentam o esforço. Compare duas versões usando uma tarefa concreta, como encontrar o item com determinado atributo. Registre erros e necessidade de abrir detalhes, além do tempo.</p><p>Para leitores de tela, um item precisa ter uma sequência compreensível. Evite anunciar a mesma informação na imagem, no título e no nome acessível do cartão. Ações diferentes precisam continuar distinguíveis. Não faça toda a coleção virar uma única área anunciada. Em coleções longas, defina carregamento adicional, fim da lista e retorno ao ponto anterior. Uma rolagem que parece infinita deve continuar oferecendo orientação sobre o que está sendo exibido.</p>"
+            },
+            {
+              "title": "Erros frequentes e revisão",
+              "body": "<p>Um erro comum é usar o título para carregar toda a informação: “Produto X disponível em promoção até sexta”. O texto deixa de ser escaneável e muda de forma a cada estado. Separe identidade, condição e prazo quando cada dado tiver função distinta. Outro erro é reservar um espaço imenso para uma imagem meramente decorativa, enquanto um atributo decisivo desaparece.</p><p>Revise a coleção com dados de verdade ou amostras realistas: cinco títulos longos consecutivos, ausência de imagens e itens muito semelhantes. Verifique se a escolha ainda pode acontecer sem abrir cada detalhe. Se não, falta um discriminador ou existe uma escolha inadequada de estrutura. Consistência não exige alturas idênticas a qualquer custo; exige relações previsíveis e conteúdo suficiente para decidir.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Cartão contornado no catálogo oficial do Jetpack Compose",
+              "url": "https://developer.android.com/develop/ui/compose/components/card",
+              "source": "Android Developers",
+              "analysis": "<p>A figura mostra uma implementação real do componente OutlinedCard, ou cartão contornado, publicada na documentação. O contorno delimita uma superfície sem depender de sombra. É um exemplo de componente executável, não uma captura de um aplicativo comercial. Seu conteúdo propositalmente simples permite estudar a função do recipiente.</p><p>A análise crítica começa justamente no que falta: o desenho não determina título, metadados, ações nem seleção. Ao adaptá-lo, não suponha que a borda torna o cartão clicável. A resposta ao toque, o nome acessível e o comportamento ainda precisam ser especificados. Compare esse tratamento com uma lista sem cartões e decida se a delimitação acrescenta informação ou apenas ocupa espaço.</p>",
+              "image": "https://developer.android.com/static/develop/ui/compose/images/components/card-outlined.png",
+              "alt": "Cartão da documentação Android com contorno fino e o texto Outlined, demonstrando uma superfície delimitada sem sombra pronunciada.",
+              "credit": "Android Developers / Android Open Source Project. Figura da documentação, reproduzida sem alterações. Consulte a licença e a página original vinculadas.",
+              "license": "Apache License 2.0, conforme a classificação de documentação da página Content License do Android Developers; marcas não incluídas.",
+              "licenseUrl": "https://developer.android.com/license",
+              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/components/card",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/listas-cards.png"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota, compare uma lista de visitas e uma grade de cartões usando exatamente os mesmos doze lugares culturais fictícios.",
+            "steps": [
+              "Crie conteúdo com nomes longos, horários diferentes, três imagens ausentes e duas opções indisponíveis.",
+              "Projete duas composições e documente o contrato do item: campos obrigatórios, opcionais e ação principal.",
+              "Teste com três pessoas a escolha de uma visita gratuita, disponível em determinado horário, e o salvamento sem abrir o detalhe."
+            ],
+            "deliverable": "Duas coleções, um componente com pelo menos cinco variações e uma comparação dos testes.",
+            "criteria": [
+              "Todos os itens preservam identidade e atributo decisivo com texto ampliado.",
+              "Ações de abrir e salvar não são confundidas em pelo menos cinco das seis tentativas.",
+              "Voltar do detalhe restaura posição, filtros e ordenação.",
+              "A escolha final entre lista e grade é justificada por observações, não apenas por gosto."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Card — Jetpack Compose",
+              "url": "https://developer.android.com/develop/ui/compose/components/card",
+              "note": "Componente e figura oficiais verificados em 17/10/2026."
+            },
+            {
+              "title": "Content License — Android Developers",
+              "url": "https://developer.android.com/license",
+              "note": "Distingue documentação sob Apache 2.0 de outros conteúdos; não se atribui CC BY 4.0 à figura."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "tela-detalhe",
+          "title": "Tela de detalhe: dar segurança para a próxima ação",
+          "summary": "Organize identidade, evidência, condições e ação para que uma pessoa consiga decidir sem perder o contexto de origem.",
+          "minutes": 35,
+          "objectives": [
+            "Construir uma hierarquia de perguntas para o detalhe.",
+            "Preservar contexto de navegação e seleção.",
+            "Relacionar ação principal, disponibilidade e informações obrigatórias."
+          ],
+          "sections": [
+            {
+              "title": "O que é e por que existe",
+              "body": "<p>A tela de detalhe aprofunda um item identificado em uma coleção, busca, notificação ou link. Ela precisa responder “é isto que eu procurei?”, “o que preciso saber?” e “o que posso fazer agora?”. Uma tela cheia de dados pode falhar nas três perguntas quando não existe hierarquia. Detalhamento significa fornecer a informação necessária para compreender e agir, não mostrar todos os campos disponíveis no banco de dados.</p><p>O detalhe também precisa funcionar fora do caminho ideal. Um <strong>deep link</strong>, ou link direto para um conteúdo específico, pode abrir a tela sem passar pela home. Nessa situação, título, contexto e navegação precisam bastar para orientar. Nunca dependa exclusivamente da memória da lista anterior para identificar o item ou entender sua condição atual.</p>"
+            },
+            {
+              "title": "Quando usar e quando simplificar",
+              "body": "<p>Use um detalhe dedicado quando a decisão exigir informações que não cabem no resumo, quando existirem ações próprias do item ou quando a leitura precisar de foco. Para uma escolha muito simples, expandir uma região ou abrir um painel breve pode ser suficiente. O número de campos não é o único critério: uma única condição importante pode justificar uma etapa de revisão.</p><p>Evite um detalhe que apenas repete o cartão e acrescenta um botão. Se não há informação nova nem mudança de contexto, a navegação pode ser um obstáculo. Também evite esconder condições decisivas atrás de expansões vagas como “Saiba mais”. Informações secundárias podem ser progressivamente reveladas; custo, disponibilidade e consequências da ação precisam estar acessíveis antes de uma decisão.</p>"
+            },
+            {
+              "title": "Passo a passo: das perguntas à tela",
+              "body": "<ol><li><strong>Defina a decisão.</strong> Escreva o resultado esperado: ler, comparar, salvar, responder, configurar ou contratar. Uma tela pode ter várias ações, mas precisa de uma principal coerente com o contexto.</li><li><strong>Ordene perguntas.</strong> Identidade vem antes de qualificação; condições vêm antes de compromisso. Agrupe respostas em seções com títulos informativos, não em blocos chamados apenas “Informações”.</li><li><strong>Separe resumo e evidência.</strong> Uma frase apresenta a proposta; dados, imagens e detalhes sustentam a decisão. Não permita que uma imagem grande esconda o nome ou uma restrição importante.</li><li><strong>Desenhe a ação e suas condições.</strong> Especifique quando está disponível, que efeito produz, como aparece durante o processamento e o que ocorre se falhar.</li><li><strong>Preserve a origem.</strong> Voltar de uma seleção deve recuperar o lugar anterior. Quando a abertura acontece por link, defina um retorno compreensível sem inventar uma história de navegação que não existiu.</li><li><strong>Teste acesso parcial.</strong> Inclua descrição longa, imagem ausente, informação desatualizada e item removido. A tela não pode prometer uma ação com base em dados que já sabe serem inválidos.</li></ol>"
+            },
+            {
+              "title": "Ação persistente e adaptação",
+              "body": "<p>Um botão persistente permanece disponível durante a rolagem. Ele é útil quando a ação continua pertinente ao longo da leitura, mas ocupa espaço e pode cobrir conteúdo ou competir com o teclado. Verifique se o último parágrafo e os controles continuam alcançáveis. Caso o botão dependa de uma escolha, mostre claramente o que falta; um controle desabilitado sem explicação parece defeito.</p><p>Em janelas amplas, lista e detalhe podem aparecer lado a lado; em janelas pequenas, uma área pode substituir a outra. A <a href=\"https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail\">documentação Android do padrão lista-detalhe</a> demonstra essa adaptação. O ponto de design é preservar qual item está selecionado e o significado de voltar, não apenas aumentar a largura da tela de telefone.</p>"
+            },
+            {
+              "title": "Erros e revisão da decisão",
+              "body": "<p>Uma descrição longa não compensa uma identidade ambígua. Se dois itens têm nomes parecidos, acrescente o discriminador relevante perto do título. Outro erro é apresentar várias ações com o mesmo destaque: compartilhar, excluir e executar não possuem a mesma importância nem o mesmo risco. Distribua ênfase segundo o objetivo e separe ações destrutivas.</p><p>Na revisão, peça que alguém explique a decisão antes de tocar no botão principal. Se a pessoa precisa adivinhar o efeito, o preço, a duração ou o destino, falta informação. Depois interrompa o fluxo e retome. O detalhe deve manter a seleção e refletir o estado atual. A qualidade está na continuidade da tarefa, e não apenas na beleza da primeira dobra, a porção inicialmente visível.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Reply: leitura de uma mensagem como detalhe",
+              "url": "https://github.com/android/compose-samples/tree/main/Reply",
+              "source": "Google / Android Developers",
+              "analysis": "<p>Reply é uma implementação oficial de estudo de design adaptativo para e-mail, não um serviço de correio em produção. A captura mostra três larguras. No telefone, a lista ocupa a área principal e a navegação fica embaixo. Na janela média, aparece uma faixa lateral de destinos. Na ampla, navegação, lista e conversa convivem; a mensagem selecionada ganha destaque e o conteúdo detalhado aparece à direita.</p><p>A análise útil é acompanhar o mesmo objeto entre composições: o detalhe não vira apenas uma versão esticada do telefone. A seleção explica a relação entre lista e leitura. Ao aplicar o padrão, preserve o item aberto e defina como voltar se comporta quando duas áreas estão visíveis. A captura demonstra a organização espacial; o comportamento durante redimensionamento ainda precisa ser verificado em execução.</p>",
+              "image": "https://raw.githubusercontent.com/android/compose-samples/main/Reply/screenshots/compact_medium_large_displays.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/reply-adaptive-screens.png",
+              "sourcePageUrl": "https://github.com/android/compose-samples/tree/main/Reply/screenshots",
+              "alt": "Captura oficial Reply em três larguras: telefone com lista, janela média com navegação lateral e janela ampla com lista e conversa lado a lado.",
+              "credit": "Copyright 2022 The Android Open Source Project. Screenshot oficial Reply, reproduzido sem alterações. Marcas pertencem a seus titulares; não há endosso ao curso.",
+              "license": "Apache License 2.0. O arquivo ASSETS_LICENSE do Reply declara essa licença para todos os arquivos que não são fontes.",
+              "licenseUrl": "https://github.com/android/compose-samples/blob/main/Reply/ASSETS_LICENSE"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota, desenhe o detalhe de uma visita cultural fictícia aberta por uma lista e por um link compartilhado.",
+            "steps": [
+              "Ordene as perguntas necessárias para decidir: identificação, data, duração, condições de acesso e disponibilidade.",
+              "Prototipe detalhe, salvamento em andamento, sucesso e indisponibilidade. Inclua título longo e imagem ausente.",
+              "Crie versões estreita e ampla, preservando o mesmo item selecionado. Teste a volta para a lista e a entrada por link com três pessoas."
+            ],
+            "deliverable": "Dois layouts, quatro estados de ação e um mapa de entrada e retorno.",
+            "criteria": [
+              "Os três participantes identificam o item e explicam o efeito do botão principal antes de acioná-lo.",
+              "Nenhuma condição decisiva depende de abrir uma seção com título genérico.",
+              "A versão ampla preserva a seleção ao retornar à estreita.",
+              "Todos os caminhos possuem retorno definido e conteúdo final não fica coberto pelo botão persistente."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Reply sample",
+              "url": "https://github.com/android/compose-samples/tree/main/Reply",
+              "note": "Caso oficial de aplicativo adaptativo; imagens permanecem no repositório."
+            },
+            {
+              "title": "Build a list-detail layout",
+              "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail",
+              "note": "Fonte primária para relação entre painéis, seleção e navegação."
+            },
+            {
+              "title": "Reply: licença dos recursos",
+              "url": "https://github.com/android/compose-samples/blob/main/Reply/ASSETS_LICENSE",
+              "note": "Licença explícita dos recursos do exemplo: Apache 2.0 para arquivos que não são fontes; fontes têm licença própria."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "busca-filtros",
+          "title": "Busca, filtros e ordenação: reduzir alternativas com clareza",
+          "summary": "Desenhe a consulta como um processo completo, com sugestões, refinamento, resultados e recuperação quando nada corresponde.",
+          "minutes": 40,
+          "objectives": [
+            "Distinguir consulta, filtro e ordenação.",
+            "Definir a lógica de combinação dos filtros.",
+            "Projetar resultados, ausência de resultados e falha sem confundi-los."
+          ],
+          "sections": [
+            {
+              "title": "Três mecanismos, três perguntas",
+              "body": "<p><strong>Busca</strong> procura conteúdo a partir de uma consulta. <strong>Filtro</strong> restringe o conjunto segundo condições. <strong>Ordenação</strong> muda a sequência do conjunto. “Tênis azul” pode ser uma consulta, “tamanho 39” um filtro e “menor preço” uma ordenação. Se mudar a ordenação remove itens, provavelmente existe também um filtro que precisa ser comunicado.</p><p>Uma experiência de busca começa antes de digitar e continua depois de abrir um resultado. O campo é apenas uma parte. É necessário mostrar o escopo, ajudar a formular a consulta e permitir revisar condições. <strong>Chip</strong> é o pequeno controle compacto usado, entre outros fins, para representar uma condição selecionada. Sua função precisa ser reconhecível pelo texto e pelo estado, não apenas pela cor.</p>"
+            },
+            {
+              "title": "Quando usar e quando evitar",
+              "body": "<p>Busca é valiosa quando existe uma coleção grande ou quando a pessoa chega com intenção específica. Filtros ajudam quando os itens têm atributos comparáveis e relevantes para a decisão. Ordenação é útil quando há mais de uma maneira legítima de priorizar resultados. Não acrescente uma busca a uma coleção pequena apenas porque outros aplicativos a possuem.</p><p>Evite filtros cujos valores não correspondem à linguagem das pessoas ou cujas combinações são incompreensíveis. “Relevância” também exige cuidado: se a lista usa um critério diferente de proximidade ou preço, não faça a interface sugerir o contrário. Uma categoria de navegação pode iniciar uma busca, mas precisa deixar claro qual conjunto está sendo explorado.</p>"
+            },
+            {
+              "title": "Passo a passo: especifique a lógica",
+              "body": "<ol><li><strong>Defina o escopo.</strong> A busca consulta todos os conteúdos, apenas uma coleção ou a área atualmente visível? Torne isso explícito quando houver risco de confusão.</li><li><strong>Modele a consulta.</strong> Inclua campo vazio, texto em edição, sugestões, envio, carregamento, resultado e falha. Defina se escolher uma sugestão preenche o campo ou executa a pesquisa.</li><li><strong>Escolha filtros úteis.</strong> Priorize atributos que mudam a decisão. Para cada um, defina valores disponíveis, padrão, seleção única ou múltipla e forma de limpar.</li><li><strong>Documente combinações.</strong> Uma regra comum é aceitar qualquer valor escolhido dentro de uma categoria e exigir todas as categorias selecionadas. Não a presuma: escreva exemplos concretos e confira a implementação.</li><li><strong>Defina quando aplicar.</strong> Atualização imediata facilita ajustes simples. Um botão de aplicar pode ajudar quando há várias condições e processamento demorado. Se houver rascunho de seleção, cancelar deve preservar o conjunto anteriormente aplicado.</li><li><strong>Mostre o resultado do refinamento.</strong> Exiba condições ativas, possibilidade de remover uma por vez e uma maneira clara de limpar todas. A contagem precisa corresponder ao conjunto exibido, não a uma consulta anterior.</li></ol>"
+            },
+            {
+              "title": "Sugestões e estados sem resposta",
+              "body": "<p>Sugestões podem economizar digitação, mas não devem substituir a intenção silenciosamente. Se corrigir uma palavra, mostre o que foi pesquisado e permita retornar à consulta original. Histórico de busca também merece cuidado em aparelhos compartilhados: não exponha consultas sensíveis como decoração permanente. A <a href=\"https://developer.android.com/develop/ui/compose/components/search-bar\">documentação de SearchBar do Android</a> distingue o campo e a apresentação de sugestões; o comportamento precisa ser especificado pelo produto.</p><p>“Nenhum resultado” significa que uma consulta válida foi processada e não encontrou correspondências. Não use a mesma mensagem para falta de conexão ou falha do servidor. No primeiro caso, proponha remover uma condição ou reformular o texto. Nos demais, preserve consulta e filtros, explique a falha e ofereça uma tentativa apropriada. Limpar tudo automaticamente destrói o trabalho já feito.</p>"
+            },
+            {
+              "title": "Erros e revisão prática",
+              "body": "<p>Um painel de filtros pode ser completo e ainda deixar a pessoa perdida se esconder as condições depois de fechado. Outro problema é usar apenas um contador, como “Filtros: 3”, sem revelar quais condições estão atuando. Para os filtros mais importantes, uma representação textual removível costuma facilitar a revisão.</p><p>Teste combinações extremas e o retorno do detalhe. Verifique se abrir um resultado e voltar mantém consulta, posição e filtros. Faça também um teste de explicação: peça à pessoa para dizer por que um item apareceu. Se ela não consegue identificar quais regras estão ativas, a lógica ou sua apresentação precisa mudar. Um resultado correto tecnicamente pode continuar incompreensível para quem o recebe.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "SearchBar: sugestões no exemplo oficial do Android",
+              "url": "https://developer.android.com/develop/ui/compose/components/search-bar",
+              "source": "Android Developers",
+              "analysis": "<p>A figura oficial apresenta uma busca com uma letra digitada e seis sugestões abaixo. Ela torna visível a diferença entre editar uma consulta e escolher um candidato. É uma demonstração real do componente, com implementação publicada na mesma página.</p><p>Analise a continuidade visual: o texto digitado permanece como referência enquanto as alternativas aparecem próximas. Isso permite comparar o que foi escrito com o que o sistema oferece. A figura sozinha não resolve navegação por teclado, anúncio das sugestões ou comportamento ao selecionar; esses detalhes pertencem à especificação. Ao usar o padrão, decida se a pessoa está escolhendo um termo ou abrindo diretamente um conteúdo. São ações diferentes, mesmo quando parecem visualmente semelhantes.</p>",
+              "image": "https://developer.android.com/static/develop/ui/compose/images/components/search%20bar%20with%20suggestions%20displayed.png",
+              "alt": "Exemplo oficial de barra de busca Android com a letra a digitada e uma lista de seis sugestões logo abaixo.",
+              "credit": "Android Developers / Android Open Source Project. Figura da documentação, reproduzida sem alterações. Consulte a licença e a página original vinculadas.",
+              "license": "Apache License 2.0, conforme a classificação de documentação da página Content License do Android Developers; marcas não incluídas.",
+              "licenseUrl": "https://developer.android.com/license",
+              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/components/search-bar",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/busca-filtros.png"
+            },
+            {
+              "title": "Google Maps: categorias como ponto de partida",
+              "url": "https://support.google.com/maps/answer/4610185?co=GENIE.Platform%3DAndroid&hl=pt-BR",
+              "source": "Google Maps Help",
+              "analysis": "<p>A ajuda oficial mostra categorias como restaurantes e cafés abaixo da busca, com acesso a mais categorias. O caso demonstra como iniciar uma exploração sem exigir que a pessoa formule uma consulta. A interpretação de design é reduzir o esforço inicial mantendo um caminho para interesses menos frequentes. Não confunda esses atalhos com uma especificação completa de filtros: a referência documenta a entrada por categorias.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota, permita buscar visitas por nome e combinar região, dia e gratuidade. Use dados fictícios suficientes para produzir resultados e ausência de resultados.",
+            "steps": [
+              "Crie vinte itens e escreva o resultado esperado de cinco combinações de consulta e filtros.",
+              "Desenhe campo vazio, sugestões, carregamento, resultados, nenhum resultado e falha de conexão.",
+              "Teste com três pessoas uma busca específica, um refinamento e a remoção de apenas uma condição."
+            ],
+            "deliverable": "Protótipo com seis estados, conjunto de dados e tabela de cinco regras verificáveis.",
+            "criteria": [
+              "As cinco combinações mostram exatamente o conjunto esperado.",
+              "Todos os filtros ativos podem ser identificados e removidos individualmente.",
+              "Nenhuma falha de rede aparece como ausência de correspondências.",
+              "Ao menos oito de nove tarefas são concluídas sem ajuda e nenhuma volta do detalhe apaga a consulta."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Search bar — Jetpack Compose",
+              "url": "https://developer.android.com/develop/ui/compose/components/search-bar",
+              "note": "Componente, comportamento de sugestões e figura oficial verificados."
+            },
+            {
+              "title": "Pesquisar lugares por perto",
+              "url": "https://support.google.com/maps/answer/4610185?co=GENIE.Platform%3DAndroid&hl=pt-BR",
+              "note": "Caso real de início por categoria, sem atribuir filtros não documentados."
+            },
+            {
+              "title": "Content License — Android Developers",
+              "url": "https://developer.android.com/license",
+              "note": "Licença da documentação e exceção de marcas."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "formularios",
+          "title": "Formulários: pedir o necessário e ajudar a concluir",
+          "summary": "Transforme uma sequência de campos em uma conversa clara sobre finalidade, preenchimento, revisão e resultado.",
+          "minutes": 40,
+          "objectives": [
+            "Justificar cada campo antes de desenhá-lo.",
+            "Projetar rótulos, ajuda, teclado e validação.",
+            "Preservar trabalho e oferecer correção acessível."
+          ],
+          "sections": [
+            {
+              "title": "O que um formulário realmente faz",
+              "body": "<p>Um formulário coleta informações para produzir um resultado. Cada campo representa uma exigência de esforço, compreensão e, às vezes, confiança. Por isso, a primeira decisão de design é se o dado precisa ser pedido. Escrever um rótulo melhor não corrige uma pergunta desnecessária. Para cada campo, registre quem usa a resposta, em que momento e o que acontece quando ela falta.</p><p>Um bom formulário também comunica um acordo: o que será feito, quais informações são obrigatórias e como a pessoa saberá que concluiu. O <a href=\"https://www.w3.org/WAI/tutorials/forms/\">tutorial de formulários da W3C</a>, organização que desenvolve padrões para a Web, relaciona simplicidade, identificação dos controles e retorno sobre o resultado. Em aplicativos nativos, os princípios continuam úteis, embora a implementação técnica utilize recursos da plataforma.</p>"
+            },
+            {
+              "title": "Quando usar e quando substituir",
+              "body": "<p>Use campos quando a pessoa precisa fornecer informação que o sistema não tem e não pode inferir com segurança. Antes disso, avalie seleção entre opções, preenchimento automático autorizado e reaproveitamento de dados já confirmados. Uma escolha entre duas possibilidades não precisa virar um campo de texto livre.</p><p>Evite formulários longos antes de demonstrar qualquer benefício, perguntas obrigatórias sem finalidade e formatos que transferem limitações técnicas para o usuário. Nem todo nome tem sobrenome; nem todo endereço segue a mesma estrutura. Não aplique uma máscara de telefone de um único país a um público internacional. Separar em etapas ajuda quando existem grupos lógicos ou decisões dependentes, mas não torna menos extensa uma coleta excessiva.</p>"
+            },
+            {
+              "title": "Passo a passo: de perguntas a controles",
+              "body": "<ol><li><strong>Faça um inventário.</strong> Liste finalidade, obrigatoriedade, formato aceito e sensibilidade de cada dado. Remova o que não participa do resultado solicitado.</li><li><strong>Agrupe por sentido.</strong> Organize informações relacionadas e use títulos que antecipem o objetivo. Se houver etapas, mostre progresso real e permita revisar respostas anteriores.</li><li><strong>Escolha o controle.</strong> Texto, seleção única, múltipla escolha, data e quantidade exigem interações diferentes. Use componentes conhecidos quando atenderem à necessidade.</li><li><strong>Escreva rótulos persistentes.</strong> O rótulo identifica o campo; a ajuda explica requisito ou exemplo. <strong>Placeholder</strong> é o texto temporário dentro do campo vazio e não deve ser o único identificador.</li><li><strong>Prepare a entrada.</strong> Escolha teclado adequado, ação de avançar entre campos e tratamento de colagem. Não bloqueie facilidades de preenchimento por uma ideia abstrata de controle.</li><li><strong>Projete validação e envio.</strong> Diferencie erro de formato, dado não aceito e falha de comunicação. Preserve respostas válidas e indique onde corrigir antes de reenviar.</li></ol>"
+            },
+            {
+              "title": "O momento certo de corrigir",
+              "body": "<p>Validar significa verificar se uma resposta atende às regras. Um campo vazio enquanto a pessoa ainda vai preenchê-lo não precisa começar em vermelho. Para muitos requisitos, faz sentido verificar ao sair do campo ou ao enviar. Depois que um erro foi apresentado, atualize o retorno quando a correção se torna válida. Regras complexas podem ser explicadas antes da digitação, evitando tentativa e erro.</p><p>A mensagem precisa dizer o que ocorreu e como resolver. “Inválido” é insuficiente. “Use dia, mês e ano” orienta, mas só ajuda se esse formato for realmente necessário. A <a href=\"https://www.w3.org/WAI/tutorials/forms/labels/\">W3C explica a associação entre rótulo e controle</a>; uma aparência próxima não garante que leitores de tela entendam a relação. Especifique também associação entre campo e erro, sequência de foco e anúncio do resultado.</p>"
+            },
+            {
+              "title": "Envio, continuidade e erros frequentes",
+              "body": "<p>Ao enviar, mostre processamento e evite submissões duplicadas. Isso não significa deixar a pessoa presa indefinidamente: defina como uma falha recupera o controle. Se o sistema não sabe se uma operação foi concluída, não afirme fracasso e incentive repetição indiscriminada. Uma confirmação durável deve refletir um resultado confirmado, com resumo quando necessário.</p><p>Erros frequentes incluem apagar tudo após uma falha, esconder o motivo de um botão desabilitado e depender apenas de cor para marcar problemas. Revise também o teclado cobrindo o último campo e o botão de envio. Salvar um rascunho pode ajudar em tarefas longas, mas exige decidir o que é apropriado conservar e por quanto tempo. Não preserve dados sensíveis automaticamente sem considerar o contexto e a expectativa de privacidade.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Campo contornado do Android e rótulo persistente",
+              "url": "https://developer.android.com/develop/ui/compose/text/user-input",
+              "source": "Android Developers",
+              "analysis": "<p>A figura da documentação mostra um campo de texto contornado com rótulo integrado. É uma implementação real de OutlinedTextField, o campo contornado do Jetpack Compose, sistema de construção de interfaces Android. O exemplo serve para examinar a separação entre identificação e área de entrada.</p><p>O rótulo não deve depender de um texto temporário que desaparece quando se começa a digitar. Porém, usar o componente não resolve sozinho a qualidade da pergunta, a obrigatoriedade, a mensagem de erro ou o teclado. Estude a figura como parte de uma interação completa: vazio, foco, preenchido, erro e correção. A decisão de usar contorno ou preenchimento tem menos importância que a continuidade dessa explicação.</p>",
+              "image": "https://developer.android.com/static/develop/ui/compose/images/text-outlinedtextfield.png",
+              "alt": "Campo de texto contornado da documentação Android com borda e rótulo roxos, mostrando a área editável e sua identificação.",
+              "credit": "Android Developers / Android Open Source Project. Figura da documentação, reproduzida sem alterações. Consulte a licença e a página original vinculadas.",
+              "license": "Apache License 2.0, conforme a classificação de documentação da página Content License do Android Developers; marcas não incluídas.",
+              "licenseUrl": "https://developer.android.com/license",
+              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/text/user-input",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/formularios.png"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota, crie o formulário fictício para planejar uma visita com título, data, quantidade de pessoas e observação opcional.",
+            "steps": [
+              "Justifique cada campo e escolha o controle correspondente. Não peça dados pessoais sem relação com o planejamento.",
+              "Desenhe vazio, preenchimento, erro de data, envio, falha de conexão e confirmação.",
+              "Teste três pessoas: uma usa uma data inválida, outra volta para editar e outra perde a conexão ao enviar."
+            ],
+            "deliverable": "Formulário com seis estados, inventário dos campos e registro das três situações de teste.",
+            "criteria": [
+              "Todos os controles têm rótulo persistente e obrigatoriedade compreensível.",
+              "Cada erro explica a correção e está associado ao campo correspondente.",
+              "Nenhuma resposta válida se perde ao voltar ou após a falha simulada.",
+              "Os três participantes conseguem corrigir ou retomar sem ajuda; nenhum teste cria um planejamento duplicado."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Forms Tutorial — W3C WAI",
+              "url": "https://www.w3.org/WAI/tutorials/forms/",
+              "note": "Fundamentos de formulários acessíveis; WAI significa Iniciativa de Acessibilidade na Web."
+            },
+            {
+              "title": "Labeling Controls — W3C WAI",
+              "url": "https://www.w3.org/WAI/tutorials/forms/labels/",
+              "note": "Associação entre identificação e controle."
+            },
+            {
+              "title": "Configure text fields",
+              "url": "https://developer.android.com/develop/ui/compose/text/user-input",
+              "note": "Figura oficial e distinção entre tipos de campo."
+            },
+            {
+              "title": "Content License — Android Developers",
+              "url": "https://developer.android.com/license",
+              "note": "Licença registrada para a figura da documentação."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "estados-interface",
+          "title": "Vazio, carregando, erro, sucesso e offline: projetar continuidade",
+          "summary": "Trate estados como partes da tarefa, com causa, alcance, informação preservada e próximo passo definido.",
+          "minutes": 45,
+          "objectives": [
+            "Distinguir ausência de conteúdo, processamento e falha.",
+            "Projetar estados locais e de tela inteira.",
+            "Separar salvamento local, sincronização e conclusão confirmada."
+          ],
+          "sections": [
+            {
+              "title": "O que é um estado de interface",
+              "body": "<p>Um estado é uma condição observável do sistema e da tarefa em determinado momento. A tela principal com dados é apenas uma possibilidade. Uma interface completa também comunica espera, ausência, falha, conclusão e limites de conexão. Esses estados não são ilustrações para preencher espaço: cada um precisa responder o que aconteceu, o que permanece disponível e qual é o próximo passo.</p><p>Defina o alcance do problema. Se uma imagem falha, talvez somente aquela região precise de substituição. Se uma recomendação não carrega, a navegação e os dados salvos podem continuar funcionando. Trocar toda a tela por um erro amplia artificialmente uma falha pequena. O desenho deve corresponder ao que o sistema realmente consegue oferecer naquele momento.</p>"
+            },
+            {
+              "title": "Vazio e carregamento: causas diferentes",
+              "body": "<p>Um estado vazio pode significar primeira utilização, coleção limpa, ausência de correspondências ou falta de acesso. Cada causa pede uma resposta. “Você ainda não salvou itens” orienta uma primeira ação. “Nenhum item corresponde aos filtros” sugere revisar condições. “Você não tem acesso” não deve parecer uma coleção vazia: isso faria a pessoa procurar uma solução que não existe naquele fluxo.</p><p>Carregamento significa trabalho em andamento. Um indicador determinado mostra uma quantidade conhecida de progresso; um indeterminado sinaliza atividade sem afirmar quanto falta. A <a href=\"https://developer.android.com/develop/ui/compose/components/progress\">documentação Android de progresso</a> diferencia esses casos. <strong>Skeleton</strong>, ou esqueleto de carregamento, antecipa a estrutura do conteúdo com formas provisórias. Use-o quando a estrutura já é conhecida; não o mantenha como substituto indefinido de uma resposta.</p>"
+            },
+            {
+              "title": "Erro, sucesso e ausência de conexão",
+              "body": "<p>Um erro precisa de causa compreensível e possibilidade de recuperação. Não exponha códigos internos como única explicação. Diferencie algo corrigível pela pessoa de uma indisponibilidade do serviço. “Tentar novamente” só é útil se repetir puder resolver. Se existe risco de duplicar uma operação já recebida, o sistema deve verificar o resultado antes de incentivar outro envio.</p><p>Sucesso é a confirmação de uma mudança realmente concluída. A intensidade do retorno depende da consequência: salvar uma preferência pode pedir uma indicação discreta; concluir uma operação importante pode exigir resumo persistente. <strong>Offline</strong> significa sem conexão disponível. Isso não implica que tudo esteja inutilizável. Dados locais podem continuar acessíveis, mas sua atualização precisa ser clara. “Salvo no aparelho” e “Sincronizado” são afirmações diferentes; a <a href=\"https://developer.android.com/topic/architecture/data-layer/offline-first\">orientação Android para funcionamento offline</a> trata dessa separação entre fontes locais e rede.</p>"
+            },
+            {
+              "title": "Passo a passo: modele transições",
+              "body": "<ol><li><strong>Escolha uma tarefa completa.</strong> Mapeie entrada, consulta, decisão, ação e retorno. Para cada etapa, pergunte o que pode demorar, faltar ou falhar.</li><li><strong>Registre cada estado.</strong> Anote gatilho, alcance, mensagem, controles disponíveis, dados preservados e condição de saída. Isso transforma uma coleção de telas em comportamento.</li><li><strong>Defina prioridade.</strong> Uma mesma tela pode ter conteúdo salvo, atualização em andamento e uma imagem quebrada. Determine o que exige atenção sem ocultar o que ainda funciona.</li><li><strong>Desenhe recuperação.</strong> Tentar novamente preserva entrada? Remover um filtro altera quais condições? Cancelar interrompe o trabalho ou apenas fecha a tela? Especifique essas diferenças.</li><li><strong>Planeje reconexão.</strong> Mostre o que está aguardando envio e o que já foi confirmado. Se houver conflito entre versões, decida como explicar e resolver sem sobrescrever silenciosamente.</li><li><strong>Valide transições.</strong> Teste a passagem entre estados, inclusive duas falhas consecutivas. Uma tela isolada pode estar clara enquanto o salto até ela continua confuso.</li></ol>"
+            },
+            {
+              "title": "Quando não usar cada tratamento e como revisar",
+              "body": "<p>Não use um vazio para mascarar falha. Não use porcentagens inventadas para tranquilizar. Não bloqueie toda a interface por uma atualização secundária. Não celebre sucesso antes de haver confirmação suficiente. Não transforme toda perda momentânea de conexão em um aviso intrusivo se a tarefa continua íntegra e nenhuma decisão depende da rede naquele instante.</p><p>Revise também a acessibilidade: mudança de estado precisa ser percebida por quem não está olhando para a região alterada. Use os recursos de anúncio da plataforma sem interromper a leitura a cada pequena atualização. Preserve foco e contexto quando possível. O teste decisivo é pedir que a pessoa explique o que já foi concluído, o que ainda falta e o que fazer em seguida. Se as respostas divergem do estado real, a mensagem precisa mudar.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: erro resumido e orientação junto ao campo",
+              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "source": "GOV.UK Design System",
+              "image": "real-assets/mobile-states-govuk-error.png",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-states-govuk-error.png",
+              "visualAspect": "500 / 360",
+              "alt": "Exemplo oficial GOV.UK: resumo Há um problema com link Informe seu nome completo; a mesma orientação aparece junto ao campo Nome completo marcado com borda vermelha.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura do exemplo oficial para estudo, sem alterações; conteúdo disponível sob Open Government Licence v3.0. Não implica endosso.",
+              "sourcePageUrl": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "license": "Open Government Licence v3.0, conforme rodapé da documentação GOV.UK Design System, salvo exceções indicadas.",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "analysis": "<p>Na captura oficial, “There is a problem” significa “Há um problema”; o link “Enter your full name” orienta a informar o nome completo. A mesma orientação aparece ao lado do campo, chamado “Full name”. O resumo ajuda a localizar a pendência e a mensagem local explica como corrigi-la. A borda reforça o estado, mas o texto também comunica o problema: a pessoa não depende apenas do vermelho. Trata-se de uma demonstração web com campo vazio, não de dados de alguém. A lição transferível é conectar causa, localização e recuperação. Em um aplicativo nativo, preserve essa clareza usando os mecanismos de foco e anúncio da plataforma.</p>"
+            },
+            {
+              "title": "W3C: erros locais e resumo de problemas no formulário",
+              "url": "https://www.w3.org/WAI/tutorials/forms/notifications/",
+              "source": "W3C Web Accessibility Initiative",
+              "analysis": "<p>O tutorial oficial apresenta exemplos executáveis de retorno sobre formulários: um resumo de erros com links para os campos e mensagens próximas aos controles. Em um dos exemplos, o nome de usuário está aceito enquanto a data de validade precisa de correção. Assim, a interface consegue representar sucesso parcial sem declarar que a tarefa inteira terminou.</p><p>A análise transferível é preservar o que já está correto e orientar diretamente até o problema. O resumo ajuda a localizar; a mensagem local ajuda a corrigir. Não copie a aparência antiga do exemplo para um aplicativo moderno. Estude a relação entre alcance do erro, identificação do campo e próximo passo. A referência é Web; a implementação móvel deve usar os mecanismos de acessibilidade correspondentes da plataforma.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota, modele uma pessoa que salva uma visita, perde a conexão, edita o planejamento e recupera a conexão.",
+            "steps": [
+              "Crie estados para primeiro uso vazio, busca sem resultados, carregamento, erro local, erro geral, salvo localmente, aguardando sincronização, sincronizado e conflito.",
+              "Para cada estado, registre gatilho, mensagem, ação, dados preservados e condição de saída.",
+              "Prototipe uma sequência com falha de rede antes do envio e outra depois de o servidor receber a operação. Teste a compreensão com três pessoas."
+            ],
+            "deliverable": "Mapa com pelo menos nove estados e doze transições, acompanhado de mensagens e registro de testes.",
+            "criteria": [
+              "Nenhuma falha de rede é apresentada como ausência de resultados.",
+              "Os três participantes distinguem salvo localmente de sincronizado.",
+              "Cada estado recuperável possui próximo passo e preservação de dados especificados.",
+              "Repetir uma tentativa não cria duplicação no comportamento descrito.",
+              "Todos os estados possuem saída definida ou explicação honesta de por que a pessoa precisa aguardar."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Progress indicators",
+              "url": "https://developer.android.com/develop/ui/compose/components/progress",
+              "note": "Diferença entre progresso determinado e indeterminado."
+            },
+            {
+              "title": "Build an offline-first app",
+              "url": "https://developer.android.com/topic/architecture/data-layer/offline-first",
+              "note": "Referência primária sobre leitura local, rede e sincronização."
+            },
+            {
+              "title": "User Notification — W3C WAI",
+              "url": "https://www.w3.org/WAI/tutorials/forms/notifications/",
+              "note": "Exemplo real de erro localizado, resumo e confirmação."
+            },
+            {
+              "title": "GOV.UK: Error summary",
+              "url": "https://design-system.service.gov.uk/components/error-summary/",
+              "note": "Referência oficial de resumo vinculado aos campos, com licença OGL v3.0 declarada no rodapé."
+            }
+          ],
+          "videos": []
+        }
+      ]
+    }
+  ]
+}

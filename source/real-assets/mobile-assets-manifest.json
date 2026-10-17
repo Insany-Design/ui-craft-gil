@@ -1,0 +1,58 @@
+[
+  {
+    "name": "mobile-gesture-insets.png",
+    "url": "https://developer.android.com/static/images/design/ui/mobile/e2e-gesture-insets.png",
+    "path": "/workspace/shared/design-course-content/real-assets/mobile-gesture-insets.png",
+    "bytes": 1548646,
+    "mime": "image/png"
+  },
+  {
+    "name": "mobile-appbar-centered.png",
+    "url": "https://developer.android.com/static/develop/ui/compose/images/components/appbar-centered.png",
+    "path": "/workspace/shared/design-course-content/real-assets/mobile-appbar-centered.png",
+    "bytes": 46248,
+    "mime": "image/png"
+  },
+  {
+    "name": "mobile-window-widths.png",
+    "url": "https://developer.android.com/static/develop/ui/compose/images/layouts/adaptive/window-size-classes/window_size_classes_width.png",
+    "path": "/workspace/shared/design-course-content/real-assets/mobile-window-widths.png",
+    "bytes": 69373,
+    "mime": "image/png"
+  },
+  {
+    "name": "mobile-bottom-sheet.png",
+    "url": "https://developer.android.com/static/develop/ui/compose/images/layouts/material/m3-bottom-sheet.png",
+    "path": "/workspace/shared/design-course-content/real-assets/mobile-bottom-sheet.png",
+    "bytes": 51818,
+    "mime": "image/png"
+  },
+  {
+    "name": "mobile-drawer.png",
+    "url": "https://developer.android.com/static/develop/ui/compose/images/layouts/material/m3-navigation-drawer.png",
+    "path": "/workspace/shared/design-course-content/real-assets/mobile-drawer.png",
+    "bytes": 26502,
+    "mime": "image/png"
+  },
+  {
+    "name": "mobile-keyboard-system.png",
+    "url": "https://developer.android.com/static/images/design/ui/mobile/system-bars-on-screen-keyboard.png",
+    "path": "/workspace/shared/design-course-content/real-assets/mobile-keyboard-system.png",
+    "bytes": 17724,
+    "mime": "image/png"
+  },
+  {
+    "name": "mobile-navigation-bar.png",
+    "url": "https://developer.android.com/static/develop/ui/compose/images/navigation-bar.png",
+    "path": "/workspace/shared/design-course-content/real-assets/mobile-navigation-bar.png",
+    "bytes": 32174,
+    "mime": "image/png"
+  },
+  {
+    "name": "mobile-checkbox-padding.png",
+    "url": "https://developer.android.com/static/develop/ui/compose/images/a11y-checkbox-padding.png",
+    "path": "/workspace/shared/design-course-content/real-assets/mobile-checkbox-padding.png",
+    "bytes": 1337,
+    "mime": "image/png"
+  }
+]

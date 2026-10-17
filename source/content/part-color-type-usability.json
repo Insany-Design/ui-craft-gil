@@ -1,0 +1,1099 @@
+{
+  "modules": [
+    {
+      "id": "cores",
+      "title": "Cor que orienta e inclui",
+      "description": "Percepção, paleta, estados, temas e uma verificação cromática documentada.",
+      "lessons": [
+        {
+          "id": "cor-percepcao-paleta",
+          "title": "Cor como estrutura: percepção, contraste e paleta",
+          "summary": "Construir uma paleta que organize decisões e preserve leitura, sem transformar gosto ou associações culturais em leis.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir matiz, saturação e luminosidade na decisão visual.",
+            "Definir funções antes de escolher valores de cor.",
+            "Avaliar contraste em pares reais e justificar a paleta."
+          ],
+          "sections": [
+            {
+              "title": "O que a cor faz na interface",
+              "body": "<p>Cor ajuda a estabelecer relações: duas ações com a mesma aparência podem parecer equivalentes; uma área diferente pode parecer selecionada ou excepcional. Também expressa identidade. Esses papéis competem. Se toda região recebe a cor mais intensa da marca, a interface perde uma forma de indicar prioridade. Comece pela pergunta “o que a pessoa precisa distinguir?”, antes de perguntar “qual combinação está bonita?”.</p><p>Matiz é a família cromática que chamamos de azul, verde ou vermelho. Saturação descreve a intensidade cromática; luminosidade descreve o quão clara ou escura a cor parece. Na prática, duas cores de matizes diferentes podem ter luminosidades próximas e produzir pouca separação. A razão WCAG é calculada com luminância relativa, uma grandeza definida, e não pelo nome da cor. <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html\">Consulte a definição e o cálculo no W3C.</a> Não confunda um controle visualmente vibrante com texto legível.</p>"
+            },
+            {
+              "title": "Escolher relações, não significados universais",
+              "body": "<p>Associações como vermelho para problema e verde para confirmação podem ser convenções úteis em certos produtos. Não são uma linguagem universal, nem uma licença para dispensar palavras. Verde também pode significar uma categoria, uma linha de transporte ou a identidade da marca. Registre o significado dentro do produto e procure conflitos: uma marca vermelha pode continuar vermelha, mas um botão destrutivo precisa de outros sinais que o diferenciem de um botão comum.</p><p>Uma paleta funcional costuma precisar de superfícies, texto, contornos, ações, seleção e estados. Isso não obriga a criar uma cor inédita para cada papel. A disciplina está em preservar relações previsíveis. Tons neutros podem sustentar a leitura; uma família cromática pode destacar ações; categorias adicionais só ganham cores quando distinguir essas categorias ajuda uma tarefa real.</p>"
+            },
+            {
+              "title": "Quando usar e quando conter",
+              "body": "<p>Use cor para facilitar varredura de grupos recorrentes, localizar uma ação e revelar mudanças. Evite usá-la como compensação para uma estrutura confusa. Se o usuário não entende a diferença entre dois planos, pintar cada um de uma cor não esclarece a diferença. Também evite atribuir dez cores a dez categorias raramente comparadas: a legenda vira uma tarefa adicional.</p><p>Paletas complementares ou análogas são instrumentos de composição, não testes de usabilidade. Uma combinação agradável em um cartaz pode falhar num formulário. Fotos são particularmente instáveis: uma mesma legenda pode ficar sobre céu claro, prédio escuro ou vegetação. Quando a leitura é indispensável, prefira uma superfície estável ou proteção visual cuja eficácia seja medida no pior caso.</p>"
+            },
+            {
+              "title": "Procedimento: da tarefa à matriz de pares",
+              "body": "<ol><li>Inventarie três telas representativas e descreva quais diferenças precisam ser percebidas: ação principal, item escolhido, erro e informação de apoio.</li><li>Desenhe primeiro uma hierarquia que funcione com espaço, peso e posição. Isso revela o que a cor está acrescentando de fato.</li><li>Escolha uma família para identidade e uma sequência de neutros. Crie variações claras e escuras suficientes para os papéis, sem gerar dezenas de valores sem uso.</li><li>Monte uma matriz de pares permitidos: texto sobre superfície, texto sobre botão, ícone sobre seleção e erro sobre fundo. Uma cor sozinha nunca é “acessível”.</li><li>Teste os pares nas telas reais. Um pequeno detalhe pode precisar de um tratamento diferente de uma grande área decorativa.</li><li>Nomeie cada decisão pela função e registre onde não pode ser usada. Uma mudança futura passa a ser verificável, em vez de depender da memória do autor.</li></ol>"
+            },
+            {
+              "title": "Contraste e erros de julgamento",
+              "body": "<p>Para texto, WCAG 2.2 AA estabelece 4,5:1; texto grande admite 3:1. Nesse critério, grande significa pelo menos 18 pt regular ou 14 pt em negrito, no contexto CSS. Não arredonde um resultado abaixo do limite para aprovar. Há exceções, como logotipos e componentes inativos, mas texto funcional de marca não recebe dispensa automática. <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html\">Veja o escopo de 1.4.3.</a></p><p>Os erros recorrentes são aprovar amostras isoladas, clarear texto secundário até desaparecer, escolher branco para qualquer botão colorido e testar somente o tema claro. Uma correção profissional não consiste necessariamente em escurecer tudo. Pode ser trocar o par, reservar a cor para uma borda ou separar marca e leitura. Explique o custo de cada alternativa: menor expressão visual, maior densidade ou mudança de destaque.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: uma paleta organizada pelo trabalho que a cor faz",
+              "url": "https://design-system.service.gov.uk/styles/colour/",
+              "source": "GOV.UK Design System",
+              "analysis": "<p>A documentação separa cores funcionais de texto, links, foco, erro e sucesso. A distinção entre contorno de campo e contorno genérico é especialmente instrutiva: ambos podem ser chamados de “borda”, mas não cumprem o mesmo trabalho. O foco recebe amarelo acompanhado de texto escuro, e o sistema orienta usar nomes funcionais em vez de espalhar valores hexadecimais.</p><p>A análise transferível é organizacional: a equipe documenta decisões de uso, não apenas amostras bonitas. Ao estudar a página, escolha duas funções e explique o que se perderia se fossem trocadas. Não copie a paleta para qualquer marca nem conclua que todos os pares possíveis da página são aprovados; os valores fazem sentido dentro das combinações previstas.</p><p><strong>Leia a captura:</strong> link é a cor do vínculo; hover indica passagem do ponteiro, visited indica visitado e active indica ativação. Essa passagem do ponteiro não é um estado permanente disponível no toque. Compare sobretudo border, borda genérica clara, e input-border, borda de campo escura: funções distintas justificam contraste visual distinto. O recorte não mostra os estados de foco mencionados na documentação.</p>",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-colour.png",
+              "alt": "Trecho da paleta GOV.UK: quatro cores de links, borda cinza clara e borda de campo quase preta; cada amostra acompanha um nome e um valor hexadecimal.",
+              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/styles/colour/"
+            }
+          ],
+          "exercise": {
+            "brief": "No projeto fictício Rota, defina a paleta de uma lista de visitas e da tela de detalhes.",
+            "steps": [
+              "Identifique seis papéis funcionais antes de escolher valores.",
+              "Produza duas propostas com o mesmo conteúdo e hierarquia.",
+              "Meça oito pares reais; registre cores, função, tamanho do texto e razão.",
+              "Escolha uma proposta e explique duas trocas que recusou."
+            ],
+            "deliverable": "Prancha de duas telas, matriz de oito pares e justificativa de até 200 palavras.",
+            "criteria": [
+              "Todos os pares necessários à leitura têm resultado registrado, sem arredondamento para aprovação.",
+              "A ação prioritária é distinguível por mais de um recurso visual.",
+              "Os nomes da paleta indicam função e incluem pelo menos duas restrições de uso."
+            ]
+          },
+          "sources": [
+            {
+              "title": "W3C: contraste mínimo",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+              "note": "Critério 1.4.3, nível AA; limites e definição de texto grande. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: Colour",
+              "url": "https://design-system.service.gov.uk/styles/colour/",
+              "note": "Exemplo real de funções cromáticas; valores podem mudar com o sistema. Conteúdo oficial verificado em 17/10/2026."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "cor-semantica-estados-temas",
+          "title": "Cores semânticas, estados e temas",
+          "summary": "Projetar o significado da cor ao longo do tempo, incluindo seleção, foco, falha e aparência clara ou escura.",
+          "minutes": 35,
+          "objectives": [
+            "Organizar tokens por função e pares compatíveis.",
+            "Distinguir estados que costumam ser confundidos.",
+            "Especificar temas sem inverter cores mecanicamente."
+          ],
+          "sections": [
+            {
+              "title": "Uma cor precisa sobreviver às mudanças",
+              "body": "<p>Uma tela estática apresenta apenas uma combinação de conteúdo, estado e ambiente. O produto precisa continuar compreensível quando um botão é pressionado, um campo recebe foco, uma opção fica selecionada ou a pessoa muda a aparência do sistema. Cor semântica significa que o nome expressa o papel: texto principal, superfície elevada, ação destrutiva. O valor concreto pode mudar sem alterar esse significado.</p><p>Token é um nome reutilizável para uma decisão de design. Pense em três camadas: valores básicos, como uma família de azuis; funções, como texto de ação; e aplicações específicas, como o texto do botão destacado. Não é obrigatório manter três arquivos ou uma arquitetura complexa. A separação conceitual evita que “azul 600” vire sinônimo acidental de cinco comportamentos incompatíveis.</p>"
+            },
+            {
+              "title": "Pares e estados que não são sinônimos",
+              "body": "<p>Defina pares: superfície de ação e conteúdo sobre essa superfície. Trocar só o fundo no tema escuro pode deixar o texto invisível. Faça o mesmo com bordas, ícones e foco. Se um componente possui texto secundário, ele também precisa de um par deliberado; não obtenha tudo diminuindo opacidade, porque transparência muda conforme o fundo.</p><p>Selecionado indica uma escolha que permanece. Pressionado informa um contato em andamento. Foco indica onde uma entrada por teclado ou outro mecanismo atua. Desabilitado significa indisponível. Carregando informa uma operação em curso. Uma opção pode estar selecionada e focada ao mesmo tempo. Se o mesmo sinal representa todos esses estados, a pessoa precisa adivinhar o que mudou. Desenhe combinações relevantes, não apenas estados isolados em uma linha de biblioteca.</p>"
+            },
+            {
+              "title": "Tema escuro e personalização",
+              "body": "<p>Tema escuro é uma composição própria de relações, e não uma fotografia invertida. Reavalie destaque, separação de superfícies, imagens, mapas e sombras. Uma cor que funciona como pequeno acento pode ser cansativa como área inteira. Preserve o significado sem exigir que a intensidade aparente de cada valor seja idêntica nos dois temas.</p><p>No Material 3, cores possuem papéis com seus conteúdos correspondentes; o exemplo oficial Reply demonstra temas claro, escuro e dinâmico. A cor dinâmica está disponível a partir do Android 12 e precisa de alternativa quando não estiver disponível. <a href=\"https://developer.android.com/develop/ui/compose/designsystems/material3\">Veja a implementação oficial.</a> A lição para o projeto é preparar variação com limites: personalização não deve apagar uma distinção necessária entre erro, seleção e ação.</p>"
+            },
+            {
+              "title": "Quando vale a abstração e quando ela atrapalha",
+              "body": "<p>Use funções semânticas desde o primeiro conjunto reutilizável. Elas são particularmente valiosas quando várias equipes alteram o produto ou quando há temas. Evite criar um token novo para cada ocorrência apenas para parecer sistemático. Se dois elementos são realmente equivalentes, podem compartilhar uma função. Se só têm o mesmo valor por coincidência, devem continuar semanticamente separados.</p><p>Também não use aparência desabilitada como única explicação de uma impossibilidade. Um botão apagado sem motivo informado transforma a interface em enigma. Às vezes faz sentido manter a ação disponível e explicar a pendência ao acioná-la; em outras, bloquear evita uma consequência ruim. Essa escolha depende da tarefa, da recuperabilidade e do custo de uma tentativa, não de uma preferência por botões cinza.</p>"
+            },
+            {
+              "title": "Construção e revisão em seis passos",
+              "body": "<ol><li>Escolha três componentes com funções diferentes: botão, campo e item de lista.</li><li>Liste estado inicial, foco, pressionamento, seleção, indisponibilidade e falha, marcando quais realmente se aplicam a cada componente.</li><li>Especifique os pares de conteúdo e superfície em cada estado. Acrescente sinais textuais ou de forma para mudanças importantes.</li><li>Produza versões clara e escura com conteúdo idêntico. Compare a ordem de atenção, não apenas a beleza de cada versão.</li><li>Force combinações difíceis: campo com erro e foco; item selecionado e indisponível; carregamento com falha parcial.</li><li>Teste a implementação e a troca de tema durante o uso. Registre componentes que ficaram presos ao tema anterior ou perderam contexto.</li></ol><p>Esse procedimento transforma uma coleção de telas em um contrato de comportamento. Entregue a regra junto com a aparência: o que muda, o que permanece e qual evento leva ao próximo estado.</p>"
+            },
+            {
+              "title": "Erros que uma boa biblioteca ainda permite",
+              "body": "<p>Copiar um componente pronto reduz trabalho, mas personalizações podem romper seus pares. Outro erro é usar “sucesso” como decoração permanente: quando tudo é verde, o resultado positivo deixa de ser um evento discernível. Não use um indicador de foco tão parecido com seleção que uma pessoa imagine ter confirmado algo apenas por navegar. Revise ainda a coerência verbal: “Salvando” e “Salvo” precisam representar momentos diferentes, mesmo que o desenho seja semelhante.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Reply, do Android: a seleção usa um par completo",
+              "url": "https://developer.android.com/develop/ui/compose/designsystems/material3",
+              "source": "Android Developers, exemplo oficial Reply",
+              "analysis": "<p>No exemplo documentado, o item selecionado recebe a superfície primaryContainer e o conteúdo correspondente onPrimaryContainer. “On” significa aqui conteúdo desenhado sobre aquela superfície. A página também apresenta a mesma aplicação com esquemas distintos.</p><p>O ponto importante é a relação, não o verde específico da demonstração. Se a equipe substituísse apenas o fundo por uma cor da marca, deixaria de aproveitar o par planejado. Ao analisar a referência, acompanhe um item selecionado e pergunte quais sinais o identificam, como o texto se mantém legível e o que precisaria ser revalidado depois de uma personalização. A demonstração oficial é um ponto de partida, não uma certificação para qualquer adaptação.</p>"
+            },
+            {
+              "title": "GOV.UK: duas ações, duas ênfases cromáticas",
+              "url": "https://design-system.service.gov.uk/components/button/secondary-combo/",
+              "source": "GOV.UK Design System, captura de exemplo oficial",
+              "analysis": "<p>A captura apresenta “Save and continue”, salvar e continuar, com superfície verde e texto claro; “Save as draft”, salvar como rascunho, usa uma superfície neutra e texto escuro. A diferença de cor organiza prioridade entre ações disponíveis. Ela não representa sucesso versus erro, nem habilitado versus desabilitado.</p><p>Observe que cada superfície mantém seu próprio par de conteúdo. Este é um exemplo concreto de função semântica, complementar ao Reply: ele não demonstra tema escuro. Para criar outro tema, seria necessário preservar a distinção e revalidar os pares, em vez de inverter automaticamente a captura.</p>",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-buttons.png",
+              "alt": "Dois botões empilhados: Salvar e continuar em verde, acima de Salvar como rascunho em cinza claro.",
+              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/components/button/secondary-combo/",
+              "visualAspect": "500 / 170"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota fictício, documente a seleção de uma visita e o salvamento de um roteiro.",
+            "steps": [
+              "Crie doze nomes funcionais e os pares claro/escuro correspondentes.",
+              "Desenhe pelo menos oito combinações de componente e estado.",
+              "Inclua erro com foco e seleção com indisponibilidade.",
+              "Peça a alguém para explicar cada estado sem consultar sua legenda."
+            ],
+            "deliverable": "Matriz de estados, dois temas e registro de três ambiguidades encontradas ou descartadas.",
+            "criteria": [
+              "Cada estado tem evento de entrada, sinal perceptível e próximo passo.",
+              "Nenhuma combinação importante depende exclusivamente da cor.",
+              "Texto e ícones são reavaliados depois da troca de tema."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Android: Material Design 3 em Compose",
+              "url": "https://developer.android.com/develop/ui/compose/designsystems/material3",
+              "note": "Referência oficial de papéis, pares e tema dinâmico; exemplo Reply. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: referência visual — GOV.UK: duas ações, duas ênfases cromáticas",
+              "url": "https://design-system.service.gov.uk/components/button/secondary-combo/",
+              "note": "Página oficial e captura conferidas em 17/10/2026. Análise da aparência visível; comportamentos não observados são indicados como testes necessários."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "cor-acessibilidade-verificacao",
+          "title": "Acessibilidade de cor: da intenção à verificação",
+          "summary": "Combinar contraste, redundância de sinais e testes de estados sem confundir simuladores com certificação.",
+          "minutes": 35,
+          "objectives": [
+            "Aplicar os critérios de texto e conteúdo não textual nos elementos corretos.",
+            "Verificar informação sem depender da distinção entre matizes.",
+            "Documentar resultados e limitações de uma auditoria cromática."
+          ],
+          "sections": [
+            {
+              "title": "Três perguntas diferentes",
+              "body": "<p>Uma interface pode ter texto legível e ainda ser incompreensível para quem não distingue determinadas cores. Também pode oferecer ícones e palavras, mas torná-los claros demais para enxergar. Separe três perguntas: consigo perceber o elemento, consigo distinguir seu estado e consigo compreender o significado? Um teste de contraste responde apenas parte da primeira.</p><p>O critério <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html\">WCAG 1.4.1, Uso de cor</a>, impede que cor seja o único meio visual para transmitir informação, solicitar uma ação ou distinguir um elemento. Isso não proíbe usar cor. Exige que o significado sobreviva por outros meios. Um texto “Indisponível” pode completar uma cor de aviso; uma forma marcada pode completar uma seleção; nomes junto às séries podem reduzir a dependência de uma legenda colorida.</p>"
+            },
+            {
+              "title": "Contraste não textual: identificar a informação necessária",
+              "body": "<p>Em <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html\">1.4.11, nível AA</a>, a informação visual necessária para identificar controles, estados e partes relevantes de gráficos exige 3:1 em relação às cores adjacentes, com exceções previstas. Nem toda borda de cartão é necessária. Já o contorno que é a única pista de um campo pode ser essencial. Pergunte o que deixaria de ser reconhecível se aquele detalhe desaparecesse.</p><p>Não aplique mecanicamente 3:1 à superfície inteira de qualquer botão. A identificação pode vir de texto, contorno e contexto. O texto continua sujeito ao seu próprio critério. Também não confunda texto secundário com texto dispensável. Se informa prazo, preço, restrição ou instrução, sua importância funcional não diminui porque o designer o chamou de secundário.</p>"
+            },
+            {
+              "title": "Como testar sem se enganar",
+              "body": "<ol><li>Inventarie todas as combinações usadas, incluindo links, placeholders, mensagens, indicadores e ícones essenciais. Não deixe estados raros fora da planilha.</li><li>Obtenha os valores efetivamente definidos na implementação. Opacidade, sobreposição e tema podem mudar o resultado final. Em fotos e gradientes, procure o trecho menos favorável onde o conteúdo aparece.</li><li>Meça a razão e registre o critério aplicável. Quando houver exceção, escreva a razão específica em vez de simplesmente marcar “não se aplica”.</li><li>Remova mentalmente a cor: há palavra, forma, posição contextual ou padrão suficiente para recuperar o significado? Use uma versão monocromática como apoio, sem tratá-la como diagnóstico completo.</li><li>Simule diferentes condições de visão de cores para encontrar combinações suspeitas. Depois teste tarefas com pessoas do público, incluindo quem usa ajustes e recursos de acessibilidade.</li><li>Corrija a origem do problema: token, componente ou conteúdo. Repita o teste nos outros lugares que compartilham essa origem.</li></ol><p>Ferramentas são úteis para repetir verificações objetivas. A responsabilidade de decidir qual informação importa continua sendo da equipe. Um relatório automático sem problemas pode significar apenas que aquela ferramenta não consegue avaliar o caso.</p>"
+            },
+            {
+              "title": "Quando usar sinais redundantes e quando reduzir ruído",
+              "body": "<p>Priorize redundância para seleção, erros, disponibilidade, andamento, risco e dados comparados. Um mapa com pontos de categorias diferentes precisa permitir descobrir a categoria sem distinguir somente matiz. Isso pode envolver ícone, nome ou filtro, dependendo da densidade. Não transforme cada ponto em um bloco de texto permanente se isso destrói a leitura do conjunto; organize camadas de informação com acesso claro.</p><p>Em gráficos, diferencie linhas com rótulos diretos, marcadores ou padrões. A redundância deve esclarecer, não multiplicar códigos arbitrários. Se a pessoa precisa decorar que círculo significa aberto e triângulo significa fechado, a forma pode apenas substituir um problema por outro. Teste se o sinal é compreendido no contexto e se há explicação acessível.</p>"
+            },
+            {
+              "title": "Erros e decisões de correção",
+              "body": "<p>Os erros mais comuns são avaliar somente a tela inicial, confiar no simulador como se representasse todas as pessoas e comunicar erro apenas com borda vermelha. Outro é usar um ícone sem nome acessível: a alternativa visual existe, mas não chega a quem navega por leitor de tela. Cor acessível faz parte de um sistema multissensorial; o trabalho não termina na captura de tela.</p><p>Ao corrigir um par reprovado, compare três alternativas: mudar o tom, trocar a superfície ou alterar a forma de comunicar a função. Escurecer um fundo pode resolver texto branco e prejudicar um ícone escuro. Revise o componente inteiro. Registre também o que não foi verificado: uma análise cromática não confirma teclado, ordem de leitura, alvos nem conclusão da tarefa.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: erro de data com mensagem e associação ao campo",
+              "url": "https://design-system.service.gov.uk/components/error-message/",
+              "source": "GOV.UK Design System",
+              "analysis": "<p>O exemplo oficial de data de emissão de passaporte combina mensagem explicativa, contornos e associação estrutural ao grupo de campos.</p><p>Analise a divisão do trabalho: a cor chama atenção; a mensagem permite agir; a proximidade localiza o problema; a associação programática leva a explicação para outra modalidade de leitura. Retirar a cor não destrói o diagnóstico. Copiar só o contorno vermelho perderia quase todo esse sistema. Inspecione o exemplo no link, sem presumir resultados de testes que a página não apresenta.</p>"
+            },
+            {
+              "title": "GOV.UK: um erro continua compreensível sem vermelho",
+              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "source": "GOV.UK Design System, captura de exemplo oficial",
+              "analysis": "<p>O resumo diz “There is a problem”, há um problema, e o link pede “Enter your full name”, informe seu nome completo. A instrução reaparece junto ao campo. Diferentemente do exemplo de passaporte acima, esta captura mostra um nome ausente.</p><p>A cor conecta visualmente as regiões, mas a mensagem ainda identifica a correção sem depender do vermelho. O sublinhado ajuda a reconhecer o link do resumo. Retirar a cor preservaria essas pistas; isso é uma análise da composição. Para comprovar o caminho de recuperação, ainda é preciso acionar o link e testar o foco e a leitura assistiva.</p>",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-error.png",
+              "alt": "Resumo com o título Há um problema e o link Informe seu nome completo. Abaixo, o campo Nome completo repete a mensagem; bordas vermelhas indicam o grupo e a entrada.",
+              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "visualAspect": "500 / 360"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota fictício, revise uma seleção de horários, um erro de formulário e um mapa de visitas.",
+            "steps": [
+              "Liste nove mensagens ou estados que hoje usam cor.",
+              "Crie uma alternativa compreensível para cada significado essencial.",
+              "Meça dez pares em dois temas e registre eventuais exceções.",
+              "Faça uma tarefa sem cores e anote onde houve hesitação."
+            ],
+            "deliverable": "Relatório com matriz de contraste, três componentes corrigidos e limites do teste.",
+            "criteria": [
+              "A pessoa identifica seleção, falha e indisponibilidade sem depender do matiz.",
+              "As medidas indicam par, função, estado, tema e critério.",
+              "O relatório distingue simulação, medição e observação com participante."
+            ]
+          },
+          "sources": [
+            {
+              "title": "W3C: Uso de cor",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+              "note": "Critério 1.4.1, nível A; informação não pode depender apenas de cor. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "W3C: Contraste não textual",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+              "note": "Critério 1.4.11, nível AA; partes necessárias e exceções. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: Error message",
+              "url": "https://design-system.service.gov.uk/components/error-message/",
+              "note": "Exemplo real de estado inválido com linguagem e associação estrutural. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: referência visual — GOV.UK: um erro continua compreensível sem vermelho",
+              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "note": "Página oficial e captura conferidas em 17/10/2026. Análise da aparência visível; comportamentos não observados são indicados como testes necessários."
+            }
+          ],
+          "videos": [
+            {
+              "title": "Make your app visually accessible",
+              "url": "https://developer.apple.com/videos/play/wwdc2020/10020/",
+              "source": "Apple Developer, WWDC20",
+              "note": "Vídeo oficial em inglês. Observe as adaptações de cor e aparência; compare as demonstrações com os critérios atuais, sem tratar a data do vídeo como uma nova versão normativa."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tipografia",
+      "title": "Tipografia que sustenta a experiência",
+      "description": "Da forma das letras à adaptação do conteúdo: escolha, hierarquia, ritmo, linguagem e validação em situações reais.",
+      "lessons": [
+        {
+          "id": "typography-anatomy-selection-reading",
+          "title": "Anatomia, escolha de fontes e qualidade de leitura",
+          "summary": "Aprenda a comparar desenhos de letras pelo trabalho que precisam realizar, considerando palavras reais, idiomas, números, tamanho aparente e condições de leitura.",
+          "minutes": 32,
+          "objectives": [
+            "Distinguir família, peso, anatomia e tamanho aparente sem reduzir a escolha a serifada versus sem serifa.",
+            "Comparar duas fontes usando o mesmo conteúdo e registrar evidências observáveis.",
+            "Definir uma escolha funcional, suas limitações e uma alternativa de carregamento."
+          ],
+          "sections": [
+            {
+              "title": "O texto é uma interface de decisão",
+              "body": "<p>Tipografia transforma linguagem em algo que pode ser localizado, reconhecido e lido. Em uma interface, não basta uma fonte parecer interessante no título: ela precisa sustentar instruções, nomes, horários, valores e estados. Separe <strong>legibilidade dos caracteres</strong>, como distinguir zero de O, de <strong>qualidade da leitura</strong>, que envolve a composição inteira. Uma fonte pode desenhar letras claras e ainda produzir um parágrafo cansativo quando recebe linhas longas, pouco espaço ou peso inadequado.</p><p>Família tipográfica reúne desenhos relacionados; peso descreve variações como regular e negrito. O número atribuído ao peso não garante que duas famílias terão a mesma densidade. Serifas são pequenos prolongamentos em terminais; sua presença, isoladamente, não determina qualidade em telas. Escolha a partir da tarefa: identificar um código exige diferenciação de sinais; ler uma explicação exige continuidade; percorrer resultados exige reconhecer nomes rapidamente.</p>"
+            },
+            {
+              "title": "Anatomia que ajuda a diagnosticar problemas",
+              "body": "<p>A <strong>linha de base</strong> organiza o assentamento das letras. Altura-x é a altura aproximada das minúsculas sem ascendentes, como x; ascendentes sobem, como em b, e descendentes passam abaixo da linha, como em p. Contraformas são os espaços internos das letras, fechados ou abertos conforme o desenho. Em tamanhos pequenos, observe se esses espaços continuam distintos. O corpo especificado não é a altura visível de cada letra: fontes no mesmo tamanho podem ocupar alturas e profundidades diferentes, como explica a <a href=\"https://learn.microsoft.com/en-us/typography/opentype/spec/base\">documentação OpenType da Microsoft</a>.</p><p>Observe também largura, terminais, acentos e sinais numéricos. Um desenho estreito cabe em mais lugares, mas isso não prova que será melhor para leitura prolongada. Caracteres muito semelhantes podem passar despercebidos numa amostra bonita e falhar num identificador. Em vez de memorizar dezenas de nomes anatômicos, use cada conceito para formular uma pergunta: qual detalhe está causando a confusão e em que condição ele aparece?</p>"
+            },
+            {
+              "title": "Quando escolher expressão e quando priorizar continuidade",
+              "body": "<p>Uma fonte expressiva pode dar identidade a aberturas e títulos curtos. Evite estender automaticamente esse tratamento a mensagens de erro, instruções longas ou dados densos. Uma família funcional pode resolver uma tela inteira; acrescentar outra deve atender a uma função reconhecível. Se o projeto tem voz editorial, uma combinação pode distinguir narrativa e operação. Se a combinação só cria diferenças difíceis de manter, simplifique.</p><p>Não existe mínimo universal de 16 px imposto pela WCAG; o critério de <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html\">ampliação de texto</a> trata de sua capacidade de crescer. Um tamanho inicial é decisão de projeto, dependente da família, função, público e contexto; a adaptação será examinada na terceira lição. Também não escolha uma fonte apenas por um catálogo: confirme licença, idiomas e pesos disponíveis. Defina <em>fallback</em>, a fonte alternativa usada quando a principal falta, e teste se a substituição altera quebras, alinhamento e altura dos controles.</p>"
+            },
+            {
+              "title": "Procedimento: compare antes de padronizar",
+              "body": "<ol><li><strong>Monte uma amostra de trabalho.</strong> Reúna um título longo, um parágrafo, uma instrução, um erro, horários e identificadores. Inclua acentos, pontuação, I/l/1 e O/0. Use o conteúdo que o produto realmente receberá.</li><li><strong>Controle a comparação.</strong> Mostre duas candidatas com o mesmo conteúdo, largura e contraste. Compare primeiro no tamanho previsto; depois ajuste o tamanho para aproximar a altura aparente e registre a mudança. Assim você distingue efeito do desenho e efeito da escala.</li><li><strong>Observe no destino.</strong> Abra em um aparelho, sem ampliar a captura para impressionar. Verifique luz, distância, idioma e peso. Peça que outra pessoa encontre três informações e copie dois códigos; anote trocas e hesitações.</li><li><strong>Inspecione números.</strong> Em colunas comparativas, experimente algarismos tabulares, que ocupam larguras uniformes quando a fonte oferece esse recurso. Não transforme todo parágrafo em texto monoespaçado para alinhar apenas valores.</li><li><strong>Documente a escolha.</strong> Registre família, pesos, usos permitidos, cobertura linguística, alternativa e problemas encontrados. Uma justificativa profissional conecta desenho, tarefa e evidência; “moderna” ou “bonita” descreve impressão, não desempenho.</li></ol><p>Erros comuns: escolher pelo logotipo; usar peso muito leve e tentar compensar aumentando contraste; reduzir texto para evitar uma quebra; aprovar apenas frases curtas. Corrija a composição antes de concluir que toda a família é inadequada.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Apple: tamanhos ópticos na família San Francisco",
+              "url": "https://developer.apple.com/videos/play/wwdc2020/10175/",
+              "source": "Apple Developer, The details of UI typography, WWDC20",
+              "analysis": "<p>Na demonstração oficial, a Apple compara desenhos preparados para escalas diferentes e explica a evolução para fontes variáveis. <strong>Tamanho óptico</strong> significa ajustar o desenho à escala de uso; não é simplesmente ampliar o mesmo contorno. Observe como espaços e detalhes delicados precisam continuar distinguíveis. A lição transferível é um método: avalie a letra no tamanho em que será lida. Não copie limites numéricos históricos do vídeo como regra atual para qualquer família. Uma fonte de exibição pode funcionar num título e perder distinção no corpo, mesmo mantendo identidade visual. A página oficial contém vídeo e transcrição para examinar a demonstração.</p>"
+            },
+            {
+              "title": "GOV.UK: a fonte em título, parágrafo e link reais",
+              "url": "https://design-system.service.gov.uk/styles/type-scale/",
+              "source": "GOV.UK Design System, captura de exemplo oficial",
+              "analysis": "<p>Esta captura permite observar a mesma família tipográfica em trabalho: “Type scale” significa escala tipográfica; “How it works” significa como funciona. Compare o título curto em negrito com as linhas contínuas dos parágrafos. Repare em contraformas, densidade e espaçamento no corpo, sem ampliar a imagem para fazê-la parecer artificialmente confortável.</p><p>O aviso sobre atualização da escala ocupa várias linhas, preservando o conteúdo. Ele fornece uma amostra mais exigente que uma palavra isolada. A captura permite analisar composição e desenho aparente; não determina sozinha tamanho físico, licença da fonte ou desempenho de leitura para todos os públicos.</p>",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-type-scale.png",
+              "alt": "Abertura da página Escala tipográfica do GOV.UK em largura compacta, com título em negrito, aviso de atualização, parágrafos, links sublinhados e o subtítulo Como funciona.",
+              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/styles/type-scale/"
+            }
+          ],
+          "exercise": {
+            "brief": "Exercício fictício: selecione a tipografia do Rota, aplicativo de descoberta e planejamento de visitas culturais.",
+            "steps": [
+              "Compare duas famílias com o mesmo título de 65 caracteres, descrição de 90 palavras, três horários e quatro códigos com caracteres semelhantes.",
+              "Monte uma versão em tamanho previsto e outra com altura aparente aproximada; preserve a largura disponível.",
+              "Peça a três pessoas que encontrem um horário e transcrevam dois códigos em cada versão, alternando a ordem. Registre erros e dúvidas, sem apresentar a amostra como pesquisa conclusiva.",
+              "Escolha uma família e documente os pesos, a alternativa de carregamento e duas limitações."
+            ],
+            "deliverable": "Prancha comparativa, registro de observações e justificativa de 150 palavras.",
+            "criteria": [
+              "Todos os acentos e sinais aparecem sem substituição inesperada.",
+              "Nenhuma instrução é cortada nas duas larguras testadas.",
+              "A decisão cita pelo menos duas observações da comparação e uma limitação do teste.",
+              "Os seis registros de transcrição por versão permitem conferir erros, sem promessas estatísticas."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Microsoft — OpenType BASE",
+              "url": "https://learn.microsoft.com/en-us/typography/opentype/spec/base",
+              "note": "Fonte primária sobre métricas, alinhamento e diferenças entre desenhos no mesmo tamanho. Verificada em 17/10/2026."
+            },
+            {
+              "title": "Apple — The details of UI typography",
+              "url": "https://developer.apple.com/videos/play/wwdc2020/10175/",
+              "note": "Demonstração oficial de tamanhos ópticos e recursos tipográficos; contexto histórico explicitado. Verificada em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: referência visual — GOV.UK: a fonte em título, parágrafo e link reais",
+              "url": "https://design-system.service.gov.uk/styles/type-scale/",
+              "note": "Página oficial e captura conferidas em 17/10/2026. Análise da aparência visível; comportamentos não observados são indicados como testes necessários."
+            }
+          ],
+          "videos": [
+            {
+              "title": "The details of UI typography",
+              "url": "https://developer.apple.com/videos/play/wwdc2020/10175/",
+              "source": "Apple Developer / WWDC20",
+              "note": "Vídeo oficial em inglês com transcrição. Observe a comparação de tamanhos ópticos e anote o que muda além do tamanho."
+            }
+          ]
+        },
+        {
+          "id": "typography-scale-hierarchy-rhythm",
+          "title": "Escala, hierarquia e ritmo: organizar a leitura",
+          "summary": "Construa um conjunto pequeno de papéis tipográficos e aprenda a usar tamanho, peso, espaço e estrutura para tornar relações de conteúdo perceptíveis.",
+          "minutes": 34,
+          "objectives": [
+            "Diferenciar escala numérica, papel semântico e hierarquia percebida.",
+            "Ajustar entrelinha e agrupamentos sem transformar uma convenção de sistema em lei universal.",
+            "Verificar hierarquia com conteúdo longo e explicitar tolerância a espaçamentos personalizados."
+          ],
+          "sections": [
+            {
+              "title": "Escala organiza valores; hierarquia organiza sentido",
+              "body": "<p>Uma <strong>escala tipográfica</strong> é um conjunto controlado de tamanhos e entrelinhas. <strong>Hierarquia</strong> é a relação de importância percebida entre partes do conteúdo. Uma escala bonita não produz hierarquia sozinha: se preço, título, descrição e aviso recebem destaque igual, a pessoa ainda precisa descobrir onde começar. Antes de desenhar, escreva o que ela precisa identificar primeiro, compreender em seguida e consultar apenas quando necessário.</p><p>Crie papéis como título da página, título de seção, corpo, rótulo e informação auxiliar. Um <em>token</em> é um nome reutilizável para uma decisão de estilo. Nomear um papel por função, em vez de apenas “texto 24”, permite mudar seu tamanho sem perder significado. Hierarquia visual também não substitui estrutura semântica: um parágrafo grande não vira um título para tecnologias assistivas apenas por parecer título.</p>"
+            },
+            {
+              "title": "Ritmo nasce de relações, não de uma fórmula mágica",
+              "body": "<p>Entrelinha organiza a passagem entre linhas; espaço entre parágrafos separa unidades de pensamento. <em>Tracking</em> é o ajuste geral entre letras; <em>kerning</em> corrige pares específicos. Não aumente tudo indiscriminadamente: letras muito separadas podem fragmentar palavras, enquanto entrelinhas exageradas podem dissolver o parágrafo. Compare os ajustes no texto inteiro e no idioma previsto. Uma linha curta demais cria muitas interrupções; uma linha extensa demais dificulta reencontrar o início seguinte. Encontre uma largura adequada ao conteúdo e valide a leitura, sem apresentar uma contagem única como regra para toda interface.</p><p>Use espaço para indicar relações. Um título de seção deve parecer ligado ao conteúdo que apresenta, não ao final da seção anterior. Pesos e tamanhos próximos podem funcionar quando posição e espaço ajudam; diferenças enormes podem gerar ruído em telas operacionais. Não é obrigatório adotar uma progressão matemática como 1,25 entre tamanhos: essa razão é uma hipótese de projeto que precisa servir às funções existentes.</p>"
+            },
+            {
+              "title": "Quando aplicar e quando simplificar",
+              "body": "<p>Uma escala compartilhada é útil quando há várias telas, autores e componentes: reduz decisões acidentais e torna correções reutilizáveis. Não crie dez níveis para preencher uma tabela se a interface só precisa de cinco papéis. Em uma apresentação editorial, saltos de escala podem construir expressão; em um formulário compacto, excesso de saltos compete com a tarefa. Uma exceção bem documentada pode ser mais clara que forçar todo conteúdo no mesmo molde.</p><p>Também não esconda informação importante tornando-a pequena ou clara demais. “Secundária” significa menor prioridade, não dispensável. Uma condição necessária à decisão pode usar menor destaque que o título, mas precisa continuar encontrável e legível. Pergunte o que aconteceria se a pessoa não a percebesse antes de agir.</p>"
+            },
+            {
+              "title": "Procedimento: da ordem de leitura ao sistema",
+              "body": "<ol><li><strong>Retire o estilo.</strong> Liste todas as unidades de conteúdo e atribua uma função. Una estilos que cumprem a mesma função; separe funções diferentes que parecem iguais sem motivo.</li><li><strong>Escolha a base.</strong> Componha o parágrafo mais representativo. Ajuste largura, corpo e entrelinha juntos. Depois derive títulos, rótulos e informações auxiliares, sem diminuir a base apenas para acomodar o título.</li><li><strong>Use poucos sinais de destaque.</strong> Experimente tamanho e peso antes de acrescentar cor, caixa alta e sublinhado. Cada sinal adicional precisa esclarecer uma relação.</li><li><strong>Confira agrupamento.</strong> Insira títulos em duas linhas, listas e descrições longas. Observe se os espaços ainda indicam começo, continuidade e mudança de assunto.</li><li><strong>Teste sem explicar.</strong> Peça a outra pessoa que aponte o assunto, a informação decisiva e o próximo passo. Registre a ordem percebida; não pergunte somente qual versão ela prefere.</li><li><strong>Especifique.</strong> Para cada papel, anote tamanho, peso, entrelinha, espaçamento, unidade e comportamento com conteúdo maior. Mantenha a semântica dos títulos coerente com a organização real.</li></ol>"
+            },
+            {
+              "title": "O teste de espaçamento não é o estilo obrigatório",
+              "body": "<p>No conteúdo web aplicável, WCAG 2.2, critério 1.4.12 AA, exige tolerar ajustes sem perda: entrelinha de 1,5 vezes o corpo; espaço após parágrafos de 2 vezes; entreletras de 0,12; entrepalavras de 0,16. As exceções de escrita e idioma estão no <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html\">texto oficial explicado pelo W3C</a>. Esses valores testam adaptabilidade; não obrigam a usar esse estilo inicial. Evite caixas de altura fixa, recortes e botões que escondem palavras quando o usuário modifica a apresentação.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: escala tipográfica com comportamento responsivo",
+              "url": "https://design-system.service.gov.uk/styles/type-scale/",
+              "source": "GOV.UK Design System, Type scale",
+              "analysis": "<p>O sistema oficial documenta tamanhos e entrelinhas para janelas grandes e pequenas. Na versão consultada, o corpo permanece em 19 CSS px, enquanto alguns títulos mudam. Isso revela uma escolha importante: adaptação não precisa reduzir proporcionalmente todos os textos. A escala coordena papéis, mas preserva necessidades distintas. Compare também a <a href=\"https://design-system.service.gov.uk/styles/headings/\">demonstração de títulos</a>, que distingue nível semântico e classe visual. Use a documentação como referência de raciocínio, não como licença para copiar a marca ou declarar que 19 é um mínimo universal. A evidência disponível descreve esse sistema; não mede o desempenho do seu produto.</p><p><strong>Na imagem:</strong> o título “Type scale”, escala tipográfica, estabelece o assunto; o aviso possui uma borda lateral; os parágrafos mantêm ritmo; “How it works”, como funciona, abre outra seção. Essa hierarquia é visível sem ler cada frase. Os tamanhos numéricos citados acima vêm da documentação completa: a tabela de medidas está fora deste recorte. A imagem também não comprova o comportamento sob ampliação.</p>",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-type-scale.png",
+              "alt": "Página oficial de escala tipográfica: título principal maior, aviso com borda lateral, parágrafos separados, links sublinhados e um subtítulo em negrito.",
+              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/styles/type-scale/"
+            }
+          ],
+          "exercise": {
+            "brief": "Exercício fictício: organize a página de detalhes de uma visita cultural no Rota.",
+            "steps": [
+              "Use título de 70 caracteres, apresentação de 100 palavras, horários, duração, condição de acesso e ação de planejar visita.",
+              "Crie até seis papéis tipográficos e aplique-os em larguras de 360 e 768 CSS px para a versão web do exercício.",
+              "Teste os quatro ajustes de espaçamento simultaneamente e corrija perdas.",
+              "Com três pessoas, peça que localizem duração, restrição de acesso e próximo passo; anote onde procuraram primeiro."
+            ],
+            "deliverable": "Duas composições, tabela de papéis e registro antes/depois do teste de espaçamento.",
+            "criteria": [
+              "Todo texto tem um papel identificado e nenhuma exceção fica sem justificativa.",
+              "Os ajustes de espaçamento não cortam conteúdo nem impedem ações.",
+              "Título, condição de acesso e ação permanecem identificáveis com conteúdo longo.",
+              "As nove buscas observadas são registradas, incluindo falhas e correções propostas."
+            ]
+          },
+          "sources": [
+            {
+              "title": "GOV.UK — Type scale",
+              "url": "https://design-system.service.gov.uk/styles/type-scale/",
+              "note": "Escala oficial e comportamento por largura; números são decisões desse sistema. Verificada em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK — Headings",
+              "url": "https://design-system.service.gov.uk/styles/headings/",
+              "note": "Exemplos reais de relação entre títulos semânticos e estilos visuais. Verificada em 17/10/2026."
+            },
+            {
+              "title": "W3C — Understanding 1.4.12 Text Spacing",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html",
+              "note": "Interpretação oficial do critério AA; distingue tolerância a ajustes e apresentação inicial. Verificada em 17/10/2026."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "typography-adaptation-localization-writing",
+          "title": "Texto adaptável, localização e escrita de interface",
+          "summary": "Projete textos que sobrevivem a ampliação, tradução e situações de falha, preservando o significado e a capacidade de agir.",
+          "minutes": 38,
+          "objectives": [
+            "Separar os testes web de ampliação, reflow e espaçamento dos comportamentos nativos.",
+            "Projetar conteúdo para tamanho de texto variável, idiomas e formas de escrita diferentes.",
+            "Escrever rótulos e mensagens de recuperação verificáveis pela tarefa."
+          ],
+          "sections": [
+            {
+              "title": "Conteúdo é variável, mesmo quando o desenho está pronto",
+              "body": "<p>Uma interface tipográfica robusta preserva informação e ação quando o texto muda. Ele pode crescer porque a pessoa escolheu outra escala, porque uma tradução é mais longa ou porque um nome real ultrapassa a amostra. <strong>Localização</strong> adapta linguagem e convenções culturais, incluindo datas, números e direção de escrita. <em>UX writing</em>, ou escrita de interface, define palavras que ajudam a compreender o estado e executar a tarefa. Nenhum dos dois deve entrar somente depois de fechar o desenho.</p><p>Use adaptação em todo conteúdo necessário para concluir uma tarefa. Truncar pode funcionar numa prévia quando existe acesso claro ao conteúdo completo; não use esse recurso para esconder consequências, erros ou a única identificação de opções semelhantes. Diminuir automaticamente a fonte até tudo caber transfere para a pessoa o custo de uma restrição do layout.</p>"
+            },
+            {
+              "title": "Três situações técnicas que não são equivalentes",
+              "body": "<p><strong>Web:</strong> WCAG 2.2, 1.4.4 AA, trata da ampliação do texto até 200% sem perda de conteúdo ou função, ressalvadas legendas e imagens de texto. Já 1.4.10 AA, <em>reflow</em> ou redistribuição do conteúdo, considera largura equivalente a 320 CSS px para páginas com rolagem vertical, sem exigir rolagem nas duas dimensões, salvo partes essencialmente bidimensionais. Faça os testes separadamente; veja <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html\">ampliação</a> e <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/reflow.html\">reflow</a>.</p><p><strong>iOS:</strong> estilos semânticos com Dynamic Type acompanham a preferência de tamanho. Fontes próprias também precisam suportar esse comportamento. A <a href=\"https://developer.apple.com/design/human-interface-guidelines/typography\">orientação da Apple</a> inclui adaptar o layout e testar tamanhos de acessibilidade. <strong>Android:</strong> use sp para texto; desde Android 14 há escala não linear até 200%. Textos grandes e pequenos podem crescer diferentemente; evite multiplicação manual por um fator único e não use sp indiscriminadamente para margens. Consulte a <a href=\"https://developer.android.com/about/versions/14/features#non-linear-font-scaling\">documentação oficial</a>. WCAG é normativa para web; sua aplicação a software nativo usa a orientação informativa <a href=\"https://www.w3.org/TR/wcag2ict-22/\">WCAG2ICT</a>, sem equivalência automática de conformidade.</p>"
+            },
+            {
+              "title": "Escreva para alguém conseguir agir",
+              "body": "<p>Um bom rótulo reduz a incerteza sobre o que acontecerá. Prefira verbo e objeto quando isso diferencia ações: salvar uma alteração, enviar uma solicitação e reservar um horário não são o mesmo compromisso. Antes de uma ação importante, explicite consequência e possibilidade de reversão. Concisão é retirar o que não ajuda; não é retirar informações que a pessoa precisa para decidir.</p><p>Uma mensagem de falha deve apresentar o problema conhecido e um próximo passo possível. Não atribua tudo à conexão sem evidência. Não culpe a pessoa por indisponibilidade do serviço. Preserve o que já foi preenchido e mantenha a mensagem junto do contexto relevante. Em estados vazios, explique o que está ausente e como começar, quando houver uma ação útil. Tom acolhedor não exige piada: em situações de perda ou bloqueio, precisão costuma ajudar mais.</p>"
+            },
+            {
+              "title": "Procedimento: desenhe a variação, depois teste a tarefa",
+              "body": "<ol><li><strong>Monte um inventário.</strong> Para cada texto, registre função, estado, informação indispensável e responsável por mantê-lo. Separe dados variáveis da mensagem, mas entregue frases completas à tradução; evite montar sentenças concatenando fragmentos.</li><li><strong>Defina limites honestos.</strong> Se existe um limite real de armazenamento, explique-o. Se o limite existe só para caber no desenho, tente novas linhas, maior altura ou outra disposição antes de abreviar.</li><li><strong>Prepare extremos.</strong> Use nomes longos, plural, ausência de dados, números grandes e idiomas previstos. A <a href=\"https://developer.android.com/guide/topics/resources/pseudolocales\">pseudolocalização do Android</a> simula características linguísticas para revelar expansão, fragmentação de mensagens e problemas bidirecionais; não substitui revisão por falantes.</li><li><strong>Adapte relações.</strong> Transforme linha horizontal em pilha quando necessário. Preserve a ordem de leitura e a associação entre rótulo, valor e ação. Permitir rolagem é melhor que remover conteúdo essencial para manter a altura original.</li><li><strong>Valide em execução.</strong> Ative os maiores tamanhos suportados, abra o teclado e percorra o fluxo completo. Um protótipo estático verifica intenção visual; não comprova o comportamento das APIs, a navegação assistiva ou o layout implementado.</li><li><strong>Teste entendimento.</strong> Peça que alguém explique o resultado esperado antes de tocar e que recupere uma falha. Registre interpretação e ação efetiva; uma frase gramaticalmente correta ainda pode induzir uma decisão errada.</li></ol><p>Erros recorrentes: tradução tratada como troca palavra por palavra; datas ambíguas; mensagem genérica para falhas diferentes; conteúdo crítico limitado a uma linha; texto ampliado acompanhado de um botão que continua cortando o rótulo.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: erro de data de emissão do passaporte",
+              "url": "https://design-system.service.gov.uk/components/error-message/",
+              "source": "GOV.UK Design System, Error message",
+              "analysis": "<p>O exemplo oficial separa a pergunta, a orientação de formato e a mensagem sobre uma data de emissão que precisa estar no passado. A análise útil é a divisão de trabalho: o rótulo identifica o dado; a orientação ajuda a preenchê-lo; o erro explica a restrição violada. A mensagem permite corrigir sem adivinhar uma regra interna. O padrão também preserva as respostas e associa o erro ao grupo de campos. Não copie a frase para uma falha do serviço: ali a pessoa não conseguiria resolver alterando a data. Abra o exemplo oficial para observar texto, código e associação semântica juntos.</p>"
+            },
+            {
+              "title": "GOV.UK: o texto do erro nomeia a ação de recuperação",
+              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "source": "GOV.UK Design System, captura de exemplo oficial",
+              "analysis": "<p>“Enter your full name” pode ser traduzido como informe seu nome completo. O verbo descreve a ação que falta e o objeto coincide com o rótulo do campo. O resumo e a mensagem local repetem o mesmo pedido, em vez de usar termos diferentes para o mesmo problema.</p><p>Essa captura de nome ausente complementa o exemplo de data: não devemos substituir ambos por “entrada inválida”. A aparência mostra contexto e proximidade; ela não demonstra expansão linguística nem tamanho de texto alterado. Para validar uma tradução mais longa, teste novamente o componente implementado com quebra de linha e ampliação.</p>",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-error.png",
+              "alt": "O erro Informe seu nome completo aparece como link no resumo e como mensagem imediatamente antes do campo Nome completo.",
+              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "visualAspect": "500 / 360"
+            }
+          ],
+          "exercise": {
+            "brief": "Exercício fictício: torne o planejamento de visita do Rota resistente a conteúdo variável.",
+            "steps": [
+              "Escreva rótulo, orientação, estado vazio, sucesso e dois erros com causas diferentes.",
+              "Crie uma versão com nome de local de 90 caracteres e uma tradução revisada ou pseudolocalizada. Identifique claramente qual foi usada.",
+              "Na versão web, teste texto a 200% e reflow a 320 CSS px. Para projeto nativo, registre plataforma e teste o maior tamanho disponível no sistema.",
+              "Peça a três pessoas que expliquem uma ação e recuperem um erro; revise os textos que produzirem interpretações diferentes da intenção."
+            ],
+            "deliverable": "Matriz de textos e estados, evidências dos testes e lista de problemas corrigidos.",
+            "criteria": [
+              "Nenhuma consequência necessária à decisão fica truncada.",
+              "Os dois erros têm causa e recuperação diferentes, sem perder entrada válida.",
+              "Cada teste identifica plataforma, tamanho, largura e resultado observado.",
+              "Três interpretações e três tentativas de recuperação estão registradas; falhas restantes têm encaminhamento."
+            ]
+          },
+          "sources": [
+            {
+              "title": "W3C — Understanding 1.4.4 Resize Text",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html",
+              "note": "Ampliação web a 200%; não define mínimo universal de tamanho inicial. Verificada em 17/10/2026."
+            },
+            {
+              "title": "W3C — Understanding 1.4.10 Reflow",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+              "note": "Redistribuição em 320 CSS px para conteúdo de rolagem vertical e exceções. Verificada em 17/10/2026."
+            },
+            {
+              "title": "W3C — WCAG2ICT",
+              "url": "https://www.w3.org/TR/wcag2ict-22/",
+              "note": "Orientação informativa para aplicação a documentos e software não web. Verificada em 17/10/2026."
+            },
+            {
+              "title": "Apple — Typography",
+              "url": "https://developer.apple.com/design/human-interface-guidelines/typography",
+              "note": "Conteúdo oficial conferido também pelo endpoint documental da Apple; estilos e Dynamic Type. Verificada em 17/10/2026."
+            },
+            {
+              "title": "Android — Non-linear font scaling",
+              "url": "https://developer.android.com/about/versions/14/features#non-linear-font-scaling",
+              "note": "Escala não linear desde Android 14, sp e cuidados de implementação. Verificada em 17/10/2026."
+            },
+            {
+              "title": "Android — Test your app with pseudolocales",
+              "url": "https://developer.android.com/guide/topics/resources/pseudolocales",
+              "note": "Testes de expansão, concatenação e direção de texto. Verificada em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK — Error message",
+              "url": "https://design-system.service.gov.uk/components/error-message/",
+              "note": "Exemplo real analisado e distinção entre erro corrigível de entrada e falha do serviço. Verificada em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: referência visual — GOV.UK: o texto do erro nomeia a ação de recuperação",
+              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "note": "Página oficial e captura conferidas em 17/10/2026. Análise da aparência visível; comportamentos não observados são indicados como testes necessários."
+            }
+          ],
+          "videos": [
+            {
+              "title": "Get started with Dynamic Type",
+              "url": "https://developer.apple.com/videos/play/wwdc2024/10074/",
+              "source": "Apple Developer / WWDC24",
+              "note": "Vídeo oficial em inglês com transcrição. Em 6:00 começa a discussão de layouts dinâmicos; observe quando a disposição precisa mudar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usabilidade-acessibilidade",
+      "title": "Avaliar usabilidade e acessibilidade",
+      "description": "As dez heurísticas aplicadas a fluxos, pesquisa com evidência e um plano de verificação acessível.",
+      "lessons": [
+        {
+          "id": "heuristicas-estado-linguagem-controle",
+          "title": "Heurísticas 1–3: estado, linguagem e controle",
+          "summary": "Inspecionar o diálogo entre pessoa e sistema: o que está acontecendo, o que significa e como mudar de direção.",
+          "minutes": 35,
+          "objectives": [
+            "Reconhecer falhas de comunicação de estado em um fluxo completo.",
+            "Relacionar linguagem de interface à tarefa e ao modelo mental.",
+            "Projetar retorno, cancelamento e desfazer com limites honestos."
+          ],
+          "sections": [
+            {
+              "title": "Heurística é uma lente, não um certificado",
+              "body": "<p>As <a href=\"https://www.nngroup.com/articles/ten-usability-heuristics/\">dez heurísticas de Nielsen</a> são princípios amplos para identificar riscos de uso. Uma inspeção aplica essas lentes a tarefas concretas e gera problemas que precisam de evidência e priorização. Não atribua uma nota de “usabilidade comprovada” porque a tela parece obedecer aos títulos. Nesta lição, as três primeiras lentes formam um diálogo: o sistema informa, a pessoa interpreta e decide o próximo passo.</p>"
+            },
+            {
+              "title": "1. Visibilidade do estado do sistema",
+              "body": "<p>A pessoa precisa saber se sua ação foi recebida, se está em andamento e qual resultado produziu. <a href=\"https://www.nngroup.com/articles/visibility-system-status/\">A primeira heurística</a> trata desse entendimento. Feedback significa retorno perceptível da interface. Pode ser uma mudança local de estado, uma confirmação persistente ou um indicador de progresso, conforme a consequência.</p><p>Considere a diferença entre “arquivo selecionado”, “enviando arquivo” e “arquivo recebido”. Um sinal positivo prematuro produz uma crença falsa sobre o que está seguro. Durante uma operação, preserve o objeto envolvido e esclareça se é possível sair. Um spinner, o indicador giratório, mostra atividade, mas não explica duração nem resultado. Use percentual somente quando houver uma base real de progresso.</p><p>Não transforme toda atualização em alerta que interrompe a tarefa. Um indicador local pode bastar para uma ação pequena. Já uma falha que impede continuar precisa ser encontrada e compreendida. Pergunte: qual decisão a pessoa consegue tomar graças a esta informação?</p>"
+            },
+            {
+              "title": "2. Correspondência com o mundo real",
+              "body": "<p><a href=\"https://www.nngroup.com/articles/match-system-real-world/\">A segunda heurística</a> aproxima o sistema das palavras, relações e expectativas do público. Isso inclui sequência e unidade, não apenas vocabulário. Uma pessoa pode pensar em “visita de domingo”, enquanto o banco de dados organiza disponibilidade por identificadores e intervalos. Expor a organização técnica transfere trabalho de interpretação para quem está tentando resolver outra coisa.</p><p>Investigue como as pessoas descrevem a tarefa, quais informações consultam primeiro e o que consideram uma etapa concluída. Escreva rótulos que permitam prever o destino ou a consequência. Se o público é especializado, um termo técnico preciso pode ser mais claro que uma simplificação vaga. Não confunda linguagem acessível com linguagem infantilizada.</p><p>Metáforas também têm limites. Uma lixeira sugere descarte, mas não informa se existe recuperação ou compartilhamento. Não imite restrições do mundo físico quando o software pode oferecer algo melhor. Use familiaridade para orientar; explique diferenças que afetam expectativas.</p>"
+            },
+            {
+              "title": "3. Controle e liberdade",
+              "body": "<p><a href=\"https://www.nngroup.com/articles/user-control-and-freedom/\">A terceira heurística</a> pede caminhos para sair de uma situação indesejada e corrigir escolhas. Voltar, fechar, cancelar e desfazer não são sinônimos. Voltar muda a localização; cancelar interrompe uma operação; desfazer tenta reverter um efeito; fechar pode apenas ocultar uma superfície. O desenho e a linguagem precisam deixar essas diferenças claras.</p><p>Mapeie o que acontece com dados, seleção e posição de rolagem em cada saída. Se voltar apaga um formulário, a navegação passa a ter uma consequência destrutiva. Se a ação é reversível com segurança, desfazer pode evitar uma confirmação a cada tentativa. Quando a consequência não pode ser revertida, informe-a antes e adote proteção proporcional ao risco.</p><p>Não prometa uma saída que o sistema não consegue oferecer. Um pedido já processado pode permitir solicitar cancelamento, sem garantir que será cancelado. Controle inclui saber o limite da própria ação.</p>"
+            },
+            {
+              "title": "Roteiro de inspeção e erros frequentes",
+              "body": "<ol><li>Escolha uma tarefa com início, operação e resultado. Percorra também a falha e a interrupção.</li><li>Em cada transição, registre o que a pessoa fez, o que o sistema sabe e o que a interface comunica.</li><li>Compare os três registros. Marque lacunas, promessas prematuras e termos que exigem interpretação técnica.</li><li>Teste todas as saídas com dados preenchidos. Verifique preservação, confirmação e possibilidade real de recuperação.</li><li>Escreva cada problema como situação, consequência provável e alteração verificável. Evite observações vagas como “falta feedback”.</li></ol><p>Erros comuns incluem mensagens de sucesso antes da resposta definitiva, progresso fictício, botões “OK” que ocultam a consequência e confirmação em toda ação. Também é um erro concluir que uma animação bonita resolveu comunicação. Peça a alguém para explicar o estado atual e o próximo passo; registre a resposta antes de ensinar como funciona.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Gmail no Android: envio e oportunidade de desfazer",
+              "url": "https://support.google.com/mail/answer/2819488?co=GENIE.Platform%3DAndroid&hl=en",
+              "source": "Ajuda oficial do Gmail",
+              "analysis": "<p>A documentação do Gmail para Android descreve uma indicação após o envio acompanhada da opção de desfazer. O padrão reúne retorno de estado e uma oportunidade próxima à ação para corrigir um engano.</p><p>A análise exige cuidado: essa oportunidade não deve ser interpretada como poder ilimitado de recolher qualquer mensagem já entregue. Ao estudar o fluxo, pergunte quando a ação deixa de estar disponível, como a pessoa percebe a mudança e o que acontece com o texto recuperado. A utilidade do exemplo está no acoplamento temporal entre ação e recuperação. Ele não justifica substituir toda confirmação de alto risco por um aviso transitório. A documentação confirma a função; não representa um teste nosso do aplicativo em todas as versões.</p>"
+            },
+            {
+              "title": "GOV.UK: confirmação distingue envio e resultado posterior",
+              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/",
+              "source": "GOV.UK Design System, captura de exemplo oficial",
+              "analysis": "<p>O painel “Application complete”, solicitação concluída, confirma a etapa atual e destaca uma referência. Abaixo, “What happens next”, o que acontece a seguir, explica a continuação. Observe a distinção: o texto informa encaminhamento ao órgão responsável; não diz que o registro já foi aprovado.</p><p>Essa diferença é central à visibilidade de estado. Uma confirmação pode ser verdadeira sobre o envio e ainda exigir explicação sobre a decisão posterior. O número permite reconhecer o caso ao retomar contato. A captura não mostra um controle de desfazer: use o Gmail acima para estudar essa função, sem atribuí-la a esta página.</p>",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-confirmation.png",
+              "alt": "Página de confirmação com painel verde Solicitação concluída, número de referência, confirmação de e-mail e seção O que acontece a seguir, explicando que um órgão analisará o registro.",
+              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/"
+            }
+          ],
+          "exercise": {
+            "brief": "Inspecione o fluxo fictício de salvar e alterar um roteiro no Rota.",
+            "steps": [
+              "Desenhe seis estados, incluindo demora, falha e retomada.",
+              "Diferencie claramente voltar, cancelar e desfazer.",
+              "Registre três achados com consequência e proposta de verificação."
+            ],
+            "deliverable": "Fluxo anotado e três registros de problemas, com evidência observável.",
+            "criteria": [
+              "Nenhuma mensagem afirma conclusão antes do evento correspondente.",
+              "As saídas declaram o que acontece com o trabalho.",
+              "Os achados distinguem hipótese de problema observado."
+            ]
+          },
+          "sources": [
+            {
+              "title": "Nielsen: dez heurísticas",
+              "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+              "note": "Origem e escopo dos princípios de inspeção. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "NN/g: visibilidade",
+              "url": "https://www.nngroup.com/articles/visibility-system-status/",
+              "note": "Heurística 1. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "NN/g: mundo real",
+              "url": "https://www.nngroup.com/articles/match-system-real-world/",
+              "note": "Heurística 2. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "NN/g: controle e liberdade",
+              "url": "https://www.nngroup.com/articles/user-control-and-freedom/",
+              "note": "Heurística 3. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "Gmail: enviar e desfazer",
+              "url": "https://support.google.com/mail/answer/2819488?co=GENIE.Platform%3DAndroid&hl=en",
+              "note": "Referência oficial específica para Android. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: referência visual — GOV.UK: confirmação distingue envio e resultado posterior",
+              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/",
+              "note": "Página oficial e captura conferidas em 17/10/2026. Análise da aparência visível; comportamentos não observados são indicados como testes necessários."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "heuristicas-consistencia-prevencao-reconhecimento",
+          "title": "Heurísticas 4–6: consistência, prevenção e reconhecimento",
+          "summary": "Reduzir surpresas, erros evitáveis e trabalho de memória sem tornar a interface rígida ou excessivamente confirmatória.",
+          "minutes": 35,
+          "objectives": [
+            "Distinguir consistência visual, semântica e comportamental.",
+            "Prevenir erros de maneira proporcional à consequência.",
+            "Externalizar o contexto necessário para comparar e decidir."
+          ],
+          "sections": [
+            {
+              "title": "4. Consistência e padrões",
+              "body": "<p><a href=\"https://www.nngroup.com/articles/consistency-and-standards/\">Consistência</a> significa que sinais equivalentes mantêm significados previsíveis. Há consistência interna, entre partes do produto, e externa, com convenções familiares da plataforma ou do domínio. Um ícone de lupa que busca numa tela e amplia imagem em outra pode ser legítimo em certos contextos, mas exige que o contexto torne a diferença evidente.</p><p>Separe aparência, vocabulário e comportamento. Dois botões iguais podem agir de maneiras incompatíveis; dois controles visualmente diferentes podem cumprir uma mesma função em plataformas distintas. A inspeção deve perguntar o que a pessoa prevê antes de agir e o que acontece depois, não apenas comparar pixels.</p><p>Use componentes compartilhados e um vocabulário de ações para reduzir variação acidental. Não force uniformidade quando o risco muda. Uma exclusão definitiva merece tratamento diferente de remover um filtro. Também não preserve um padrão ruim só porque ele já existe: proponha migração e aprendizagem, em vez de perpetuar o problema em nome da consistência.</p>"
+            },
+            {
+              "title": "5. Prevenção de erros",
+              "body": "<p><a href=\"https://www.nngroup.com/articles/slips/\">Prevenir erros</a> é mudar as condições que tornam um equívoco provável. Um deslize acontece quando a intenção era adequada, mas a execução falha, como tocar no controle vizinho. Um erro de entendimento nasce de uma interpretação incorreta, como acreditar que “remover” só esconde um item quando o apaga. As correções não são iguais: aumentar a área de toque não esclarece uma consequência ambígua.</p><p>Comece eliminando exigências desnecessárias. Aceitar formatos razoáveis de um telefone pode ser melhor que rejeitar espaços. Apresente restrições antes da entrada quando forem indispensáveis. Em escolhas com custo alto, mostre objeto, quantidade, destino e consequência no momento apropriado. A confirmação precisa trazer informação útil para detectar o engano.</p><p>Não bloqueie pessoas com validação excessiva nem faça o formulário acusar erro enquanto elas ainda estão digitando. “Tem certeza?” repetido sem contexto treina aceitação automática. Compare proteção com atrito: o que está sendo evitado, com que frequência e a que custo?</p>"
+            },
+            {
+              "title": "6. Reconhecimento em vez de memorização",
+              "body": "<p><a href=\"https://www.nngroup.com/articles/recognition-and-recall/\">Reconhecimento</a> permite identificar algo disponível; recordação exige recuperar algo sem esse apoio. Em uma tarefa distribuída por telas, a pessoa não deveria memorizar nomes, valores e escolhas para interpretar a etapa seguinte. Resumos, seleção visível, histórico apropriado e rótulos persistentes funcionam como memória externa.</p><p>Isso não manda mostrar tudo ao mesmo tempo. Excesso de informação pode dificultar encontrar o que importa. Preserve o contexto necessário à decisão atual e ofereça acesso claro ao restante. Um resumo compacto pode mostrar data, quantidade e total; detalhes extensos podem ser consultados sem perder o trabalho. Um placeholder desaparece durante a digitação e não substitui, por si só, um rótulo persistente.</p><p>Não transforme pesquisas sobre memória em limite universal de itens por menu. Uma lista visível e familiar não exige decorar todas as opções. Organize por significado, frequência ou tarefa, e teste localização e comparação em vez de aplicar um número mágico.</p>"
+            },
+            {
+              "title": "Inspecione o caminho, não uma tela congelada",
+              "body": "<ol><li>Selecione duas tarefas que compartilham objetos, como criar e editar. Liste os verbos usados para a mesma operação.</li><li>Compare componentes equivalentes, incluindo o que acontece ao voltar e ao confirmar. Registre diferenças intencionais e acidentais.</li><li>Localize decisões com consequências relevantes. Pergunte se o erro pode ser impedido pela estrutura, detectado antes ou recuperado depois.</li><li>Liste tudo o que a pessoa precisa lembrar de uma etapa anterior. Traga para a tela atual somente o contexto necessário à decisão.</li><li>Teste com dados semelhantes, nomes longos e duas opções plausíveis. Um protótipo com alternativas óbvias esconde problemas de comparação.</li></ol><p>A saída da inspeção deve explicar a falha: “a edição usa excluir para retirar do roteiro, enquanto a lista usa excluir para apagar definitivamente”. Esse registro é acionável. “Padronizar botões” não informa qual risco precisa ser resolvido.</p>"
+            },
+            {
+              "title": "Quando as heurísticas entram em tensão",
+              "body": "<p>Prevenção pode exigir uma revisão extra; eficiência pode favorecer menos etapas. Reconhecimento pode adicionar um resumo; minimalismo pode pedir redução. Resolva pelo contexto e pela consequência, documentando a escolha. Não existe uma heurística vencedora em todos os casos. Em uma comparação de alternativas, mantenha conteúdo e tarefa iguais para descobrir se a mudança realmente reduz erros, em vez de apenas agradar ao avaliador.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: revisar respostas antes de enviar",
+              "url": "https://design-system.service.gov.uk/patterns/check-answers/",
+              "source": "GOV.UK Design System",
+              "analysis": "<p>O padrão oficial apresenta respostas agrupadas e ações de alteração junto a cada informação. Os nomes acessíveis das ações incluem o assunto correspondente, mesmo quando o texto visual é curto. Assim, a revisão trabalha com reconhecimento: a pessoa vê o que informou em vez de reconstruir o percurso.</p><p>O padrão também permite corrigir um ponto sem recomeçar toda a tarefa. O ganho depende de preservar dados e retornar à revisão, portanto não está apenas no formato da lista. Para mobile, analise se pergunta, resposta e ação continuam associadas quando a linha se reorganiza. Não acrescente uma revisão longa a toda ação trivial; ela é mais defensável quando ajuda a detectar um equívoco que teria consequência real.</p><p><strong>Observe o recorte:</strong> “Check your answers” pede revisar respostas; “Change” significa alterar; “Not provided” informa que um dado não foi fornecido. Em largura compacta, pergunta, valor e ação ocupam linhas sucessivas. O padrão repetido torna a revisão previsível e evita memorizar a tela anterior. Os dados pertencem ao exemplo didático oficial. A imagem não prova o retorno correto depois da edição, que precisa ser testado.</p>",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-review.png",
+              "alt": "Revisão de respostas com nome e data fictícios do exemplo oficial, referência não informada e endereço. Cada informação tem um link Alterar associado visualmente.",
+              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/check-answers/default/"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota fictício, revise a seleção de data, visitantes e locais antes de concluir o planejamento.",
+            "steps": [
+              "Crie um vocabulário de seis ações e aplique-o em duas telas.",
+              "Identifique três erros possíveis e escolha uma prevenção proporcional para cada um.",
+              "Desenhe o resumo e a volta de uma edição sem perder dados."
+            ],
+            "deliverable": "Duas telas, um fluxo de correção e tabela de risco/prevenção.",
+            "criteria": [
+              "O mesmo verbo mantém significado nas duas telas.",
+              "A revisão contém o necessário para detectar os três erros previstos.",
+              "Alterar uma resposta não exige refazer entradas válidas."
+            ]
+          },
+          "sources": [
+            {
+              "title": "NN/g: consistência",
+              "url": "https://www.nngroup.com/articles/consistency-and-standards/",
+              "note": "Heurística 4 e distinção entre padrões internos e externos. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "NN/g: prevenção de deslizes",
+              "url": "https://www.nngroup.com/articles/slips/",
+              "note": "Condições que favorecem erros de execução. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "NN/g: reconhecimento e recordação",
+              "url": "https://www.nngroup.com/articles/recognition-and-recall/",
+              "note": "Heurística 6; apoios à memória no contexto. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: Check answers",
+              "url": "https://design-system.service.gov.uk/patterns/check-answers/",
+              "note": "Padrão real de revisão e alteração de respostas. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: página do exemplo visual",
+              "url": "https://design-system.service.gov.uk/patterns/check-answers/default/",
+              "note": "Página oficial correspondente à captura; conferida em 17/10/2026."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "heuristicas-eficiencia-recuperacao-ajuda",
+          "title": "Heurísticas 7–10: eficiência, foco, recuperação e ajuda",
+          "summary": "Atender diferentes níveis de experiência e construir caminhos de recuperação que respeitem o esforço da pessoa.",
+          "minutes": 35,
+          "objectives": [
+            "Oferecer atalhos sem ocultar a operação básica.",
+            "Distinguir minimalismo de ausência de informação necessária.",
+            "Escrever recuperação e ajuda vinculadas a uma tarefa."
+          ],
+          "sections": [
+            {
+              "title": "7. Flexibilidade e eficiência de uso",
+              "body": "<p><a href=\"https://www.nngroup.com/articles/flexibility-efficiency-heuristic/\">A sétima heurística</a> reconhece que pessoas iniciantes e experientes não precisam seguir sempre o mesmo caminho. Um atalho reduz esforço recorrente: busca, itens recentes, operação em lote ou uma ação contextual podem evitar navegação repetida. O percurso básico deve continuar descobrível.</p><p>Antes de criar um gesto, identifique uma tarefa realmente frequente e meça onde está o trabalho. Um atalho para uma ação rara aumenta a superfície de aprendizagem sem benefício claro. Gestos escondidos podem complementar um botão, mas não devem ser o único caminho para uma função essencial. Permita conferir e corrigir ações em lote; rapidez sem visibilidade amplia o custo de um engano. Não personalize a navegação de modo tão instável que a experiência acumulada deixe de ajudar.</p>"
+            },
+            {
+              "title": "8. Estética e design minimalista",
+              "body": "<p><a href=\"https://www.nngroup.com/articles/aesthetic-minimalist-design/\">Minimalismo</a> consiste em concentrar atenção no que serve à tarefa. Não significa reduzir a interface ao menor número de palavras ou remover todos os contornos. Um prazo decisivo, um custo adicional ou uma explicação de erro podem ser mais importantes que uma fotografia, mesmo que ocupem mais espaço.</p><p>Para decidir o que retirar, atribua uma função a cada elemento: orientar, comparar, agir, confirmar ou oferecer contexto. Se nada se perde ao removê-lo, há uma boa hipótese de simplificação. Se a remoção obriga a abrir outra tela ou adivinhar, talvez tenha deslocado o esforço. Use divulgação progressiva, isto é, mostrar detalhes quando ficam relevantes, sem esconder condições que mudam a decisão. Minimalismo é redução de competição, não redução de responsabilidade.</p>"
+            },
+            {
+              "title": "9. Reconhecer, diagnosticar e recuperar erros",
+              "body": "<p><a href=\"https://www.nngroup.com/articles/error-message-guidelines/\">Uma mensagem de erro útil</a> informa o problema e ajuda a continuar. Separe entrada inválida, indisponibilidade temporária, perda de conexão confirmada e impedimento de regra do serviço. Não atribua a falha à internet se o sistema não sabe a causa. Um diagnóstico inventado pode mandar a pessoa tentar correções inúteis.</p><p>Preserve os dados válidos e identifique o ponto afetado. Ofereça uma próxima ação segura: corrigir, tentar novamente, escolher alternativa ou contatar suporte com contexto. Antes de permitir repetição, determine se a operação anterior pode ter sido concluída; reenviar às cegas pode duplicar uma ação. Códigos técnicos podem ajudar suporte, mas não devem ser a única explicação. A mensagem pertence ao fluxo de recuperação, que precisa funcionar com teclado, leitor de tela e texto ampliado.</p>"
+            },
+            {
+              "title": "10. Ajuda e documentação",
+              "body": "<p><a href=\"https://www.nngroup.com/articles/help-and-documentation/\">Ajuda</a> complementa uma interface compreensível quando a tarefa ainda exige conhecimento. Ela deve responder à dúvida concreta, no momento e local em que surge. Diferencie orientação preventiva, explicação sob demanda e suporte para um caso que a pessoa não consegue resolver sozinha.</p><p>Comece com a pergunta do usuário, não com o nome do departamento responsável. Explique pré-requisitos, passos, consequência e o que fazer se a orientação não funcionar. Evite tutoriais obrigatórios longos antes de qualquer experiência: o leitor ainda não tem contexto para lembrar tudo. Também não esconda instruções fundamentais em uma central remota só para manter a tela limpa. Uma boa ajuda deixa a pessoa retomar a tarefa no ponto útil.</p>"
+            },
+            {
+              "title": "Procedimento integrado e erros a evitar",
+              "body": "<ol><li>Compare uma primeira utilização com uma tarefa repetida. Descreva onde cada pessoa precisa de apoio ou aceleração.</li><li>Para cada elemento, escreva qual decisão ele sustenta. Retire redundâncias e preserve condições relevantes.</li><li>Simule duas falhas diferentes. Especifique diagnóstico conhecido, dados preservados e próxima ação possível.</li><li>Crie uma ajuda curta para uma dúvida real. Teste a descoberta da ajuda e a retomada da tarefa.</li><li>Verifique se atalhos, mensagens e suporte têm nomes acessíveis e não dependem de um gesto exclusivo.</li></ol><p>Os erros recorrentes são esconder o básico em nome da eficiência, chamar uma tela vazia de minimalista, oferecer “tente novamente” indefinidamente e tratar suporte como destino final de qualquer problema. Uma melhoria precisa reduzir trabalho total, incluindo recuperação e necessidade de pedir ajuda.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Atalhos da Apple: ação rápida com continuidade explícita",
+              "url": "https://support.apple.com/en-gb/guide/shortcuts/apd029b36d05/ios",
+              "source": "Guia oficial Atalhos da Apple",
+              "analysis": "<p>O widget de Atalhos permite executar uma rotina fora do aplicativo, indica andamento e oferece cancelamento. Quando uma etapa não pode terminar no widget, o aplicativo é aberto; quando faltam dados, a execução pede informação.</p><p>O exemplo mostra que eficiência não exige fingir que tudo cabe na superfície compacta. A análise transferível é projetar a continuidade: qual contexto acompanha a mudança de lugar e como a pessoa sabe que ainda está na mesma tarefa? Não estamos afirmando que qualquer atalho criado por terceiros é seguro ou acessível.</p>"
+            },
+            {
+              "title": "GOV.UK: o resumo de erros também é navegação",
+              "url": "https://design-system.service.gov.uk/components/error-summary/",
+              "source": "GOV.UK Design System",
+              "analysis": "<p>O componente oficial reúne os problemas e liga cada um à resposta correspondente. A orientação prevê foco no resumo e mensagens coerentes entre resumo e campo. Isso combina diagnóstico com um caminho de correção.</p><p>Observe a diferença entre dizer “há erros” e levar ao ponto onde agir. A mesma estrutura pode inspirar formulários compactos, desde que foco e rolagem não ocultem o campo. Não se deve copiar o componente isoladamente e presumir que a recuperação inteira ficou resolvida.</p><p><strong>Na captura:</strong> “There is a problem” significa há um problema; “Enter your full name” indica informe seu nome completo. O resumo oferece orientação global; a repetição junto à entrada mantém a instrução no ponto de ação. Esse texto adicional tem função, portanto removê-lo apenas para reduzir a tela seria um minimalismo contraproducente. A navegação e o anúncio do erro exigem teste em execução.</p>",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-error.png",
+              "alt": "Resumo de erro com um link para corrigir o nome completo, seguido do campo correspondente e da mesma mensagem de correção.",
+              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "visualAspect": "500 / 360"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota fictício, projete um acesso rápido a roteiros salvos e a recuperação de uma falha de salvamento.",
+            "steps": [
+              "Mantenha uma rota visível equivalente ao atalho.",
+              "Defina dois tipos de falha com mensagens e próximos passos diferentes.",
+              "Escreva uma ajuda de até 80 palavras e o retorno à tarefa."
+            ],
+            "deliverable": "Fluxo de eficiência e recuperação com uma ficha de ajuda contextual.",
+            "criteria": [
+              "A pessoa consegue executar a função sem conhecer o atalho.",
+              "A mensagem não inventa uma causa técnica.",
+              "A ajuda produz uma ação verificável e preserva o contexto."
+            ]
+          },
+          "sources": [
+            {
+              "title": "NN/g: flexibilidade e eficiência",
+              "url": "https://www.nngroup.com/articles/flexibility-efficiency-heuristic/",
+              "note": "Heurística 7; página oficial confirmada também pelo índice das dez heurísticas. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "NN/g: minimalismo",
+              "url": "https://www.nngroup.com/articles/aesthetic-minimalist-design/",
+              "note": "Heurística 8. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "NN/g: mensagens de erro",
+              "url": "https://www.nngroup.com/articles/error-message-guidelines/",
+              "note": "Aplicação da heurística 9. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "NN/g: ajuda",
+              "url": "https://www.nngroup.com/articles/help-and-documentation/",
+              "note": "Heurística 10. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "Apple: Atalhos em widget",
+              "url": "https://support.apple.com/en-gb/guide/shortcuts/apd029b36d05/ios",
+              "note": "Exemplo real de aceleração e continuidade. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: Error summary",
+              "url": "https://design-system.service.gov.uk/components/error-summary/",
+              "note": "Exemplo real de recuperação orientada. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: página do exemplo visual",
+              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "note": "Página oficial correspondente à captura; conferida em 17/10/2026."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "teste-usabilidade-evidencia",
+          "title": "Teste de usabilidade e cuidado com a evidência",
+          "summary": "Observar tarefas reais, transformar achados em decisões e reconhecer o que uma amostra ou protótipo não permite concluir.",
+          "minutes": 35,
+          "objectives": [
+            "Preparar um teste com pergunta, tarefa e critérios observáveis.",
+            "Distinguir comportamento, interpretação e preferência.",
+            "Relatar resultados sem falsa precisão nem generalização indevida."
+          ],
+          "sections": [
+            {
+              "title": "O que o teste responde",
+              "body": "<p>Teste de usabilidade observa pessoas tentando realizar tarefas com uma interface. Ele ajuda a descobrir onde encontram dificuldades, como interpretam o produto e quais caminhos usam. Não é uma votação sobre a tela mais bonita nem uma demonstração em que o designer ensina cada passo. <a href=\"https://www.nngroup.com/articles/usability-testing-101/\">A introdução do NN/g</a> distingue participantes, tarefas e facilitação como partes do método.</p><p>Comece com uma pergunta que possa mudar uma decisão. “A pessoa entende o que foi salvo quando perde conexão?” é mais útil que “o aplicativo está bom?”. Escolha a fidelidade do protótipo conforme a pergunta. Um fluxo clicável pode investigar rótulos e sequência; não prova desempenho de rede, semântica de leitor de tela ou comportamento do teclado real.</p>"
+            },
+            {
+              "title": "Preparação: público, tarefa e segurança",
+              "body": "<p>Recrute pessoas com características relevantes para a tarefa, não apenas colegas disponíveis. Familiaridade com o domínio, experiência digital, idioma e recursos de acessibilidade podem mudar o que será observado. O <a href=\"https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing\">Service Manual do GOV.UK</a> orienta trabalhar com usuários reais ou prováveis, tarefas plausíveis e instruções que não entreguem a solução.</p><ol><li>Escreva a pergunta de pesquisa e a decisão que ela informa.</li><li>Defina o perfil necessário e as diferenças que precisam aparecer na amostra.</li><li>Crie um cenário com objetivo, contexto e restrições. Evite citar o nome do botão que deseja testar.</li><li>Defina conclusão, conclusão com ajuda, desistência e erro crítico antes de observar as sessões.</li><li>Prepare consentimento, tratamento de gravações e dados de teste. Não coloque participantes diante de uma compra, envio ou exposição real sem controle apropriado.</li><li>Faça um piloto para descobrir instruções ambíguas, links quebrados e limitações do protótipo.</li></ol>"
+            },
+            {
+              "title": "Condução: observar antes de explicar",
+              "body": "<p>Apresente o objetivo sem defender a solução. Deixe claro que a interface está sendo avaliada. Peça à pessoa que diga o que está tentando fazer, mas não transforme a verbalização em interrogatório contínuo. Se ela hesitar, registre onde e o que fez. Perguntas como “o que você espera que aconteça?” podem esclarecer entendimento sem indicar o caminho.</p><p>Não intervenha imediatamente para salvar o protótipo de uma crítica. Se precisar ajudar para explorar uma etapa posterior, registre a intervenção e não conte a tarefa como concluída independentemente. Observe comportamento e depois investigue interpretação. “Você gostou?” pode produzir uma resposta cordial enquanto a pessoa falhou na tarefa.</p><p>Em testes com tecnologia assistiva, dê espaço para configurações e estratégias próprias. Um avaliador iniciante em leitor de tela não representa a experiência de quem o utiliza diariamente. Ao mesmo tempo, a equipe deve conhecer o básico para não atribuir ao participante uma falha de implementação.</p>"
+            },
+            {
+              "title": "Análise e cautelas científicas",
+              "body": "<p>Separe três camadas no registro: observação, interpretação e proposta. “A pessoa abriu duas vezes a mesma seção” é observação. “O nome não comunica o conteúdo” é interpretação. “Trocar o nome” é proposta. Uma boa análise liga essas camadas, procura alternativas e torna possível discordar com base em evidência.</p><p>Uma amostra pequena pode revelar problemas valiosos, mas não permite afirmar que uma porcentagem representa todos os usuários. Cinco participantes não são um número mágico que cobre qualquer público, tarefa ou risco. Grupos com necessidades diferentes e fluxos distintos exigem planejamento próprio. Ausência de problema observado não prova ausência de problema.</p><p>Ao comparar versões, considere aprendizagem, ordem das tarefas, diferença entre cenários e ajuda do moderador. Se a segunda versão parece mais rápida, talvez a pessoa já tenha aprendido o domínio. Controle essas condições quando a pergunta exige comparação e declare as limitações quando não puder controlá-las. Não converta uma heurística, uma preferência estética ou uma lei experimental em promessa causal de conversão.</p>"
+            },
+            {
+              "title": "Priorizar, corrigir e testar novamente",
+              "body": "<p>Avalie consequência, frequência observada, alcance provável e capacidade de recuperação. Um bloqueio raro pode merecer prioridade sobre um incômodo frequente. Não invente precisão ao multiplicar notas subjetivas. Explique por que um problema impede a tarefa ou gera custo, e indique quão segura é a interpretação.</p><p>Atribua uma ação verificável a cada achado importante. Após a alteração, repita a tarefa e procure efeitos colaterais. Use teste qualitativo para entender mecanismos; use estudos quantitativos planejados quando precisar estimar taxas ou comparar desempenho com confiança estatística. Nenhum deles substitui automaticamente o outro. O relatório deve informar versão, data, perfis, tarefas, ajuda recebida e limites da conclusão.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GDS e governos locais: pesquisa que alterou a jornada",
+              "url": "https://designnotes.blog.gov.uk/2017/10/16/designing-the-first-service-patterns-for-local-government/",
+              "source": "Relato oficial Design in Government, 2017",
+              "analysis": "<p>O relato histórico descreve pesquisa colaborativa para serviços de estacionamento e passe de ônibus, seis rodadas centrais de teste e avaliações locais. Algumas melhorias envolveram retirar etapas e revisar exigências do serviço, além de mudanças de interface.</p><p>A análise importante é que o problema observado nem sempre se resolve dentro de um componente. Se uma exigência desnecessária obriga a pessoa a obter um documento, um formulário mais bonito não elimina esse trabalho. O relato é um caso real de processo, não evidência de que seis rodadas sejam suficientes para qualquer projeto. Também não o tratamos como descrição do serviço atual: ele documenta o trabalho de 2017, útil para estudar como decisões foram vinculadas à pesquisa.</p>"
+            },
+            {
+              "title": "GOV.UK: uma lista de tarefas para formular perguntas testáveis",
+              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/",
+              "source": "GOV.UK Design System, captura de exemplo oficial",
+              "analysis": "<p>“Completed” significa concluído; “Incomplete”, incompleto; “Apply”, enviar solicitação neste contexto. A captura mostra estados em cada linha e uma ação final. A aparência suscita uma pergunta concreta de pesquisa: a pessoa entende o que ainda precisa fazer e quando pode enviar?</p><p>Um cenário neutro poderia pedir retomar uma solicitação interrompida, sem nomear o link correto. Observe então a primeira escolha, a interpretação dos estados e a tentativa de envio. Isso é uma proposta de teste para a interface de exemplo, não um resultado observado. A imagem não prova que o botão esteja bloqueado, nem que todas as etapas sejam obrigatórias.</p>",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-tasks.png",
+              "alt": "Lista oficial de etapas agrupadas em Antes de começar e Preparar solicitação. Links têm estados Concluído ou Incompleto; o botão Enviar solicitação aparece abaixo.",
+              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/"
+            }
+          ],
+          "exercise": {
+            "brief": "Prepare e execute uma rodada formativa para o Rota fictício, com pessoas que plausivelmente planejariam uma visita cultural.",
+            "steps": [
+              "Defina duas perguntas e três tarefas sem pistas de interface.",
+              "Faça um piloto e revise o roteiro.",
+              "Observe pelo menos três sessões como exercício de aprendizagem, sem alegar representatividade estatística.",
+              "Registre achados e redesenhe o problema de maior consequência."
+            ],
+            "deliverable": "Plano, registros anonimizados, três achados rastreáveis e proposta de reteste.",
+            "criteria": [
+              "Cada conclusão distingue comportamento observado e interpretação.",
+              "Ajudas do moderador e limites do protótipo são registrados.",
+              "O tamanho da amostra não é usado para prometer cobertura universal."
+            ]
+          },
+          "sources": [
+            {
+              "title": "NN/g: Usability Testing 101",
+              "url": "https://www.nngroup.com/articles/usability-testing-101/",
+              "note": "Introdução metodológica; não converter recomendações de amostra em regra universal. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: teste moderado",
+              "url": "https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing",
+              "note": "Planejamento, tarefas, facilitação e inclusão de tecnologia assistiva. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GDS: padrões para governos locais",
+              "url": "https://designnotes.blog.gov.uk/2017/10/16/designing-the-first-service-patterns-for-local-government/",
+              "note": "Caso histórico primário publicado em 2017, com pesquisa e iterações. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: referência visual — GOV.UK: uma lista de tarefas para formular perguntas testáveis",
+              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/",
+              "note": "Página oficial e captura conferidas em 17/10/2026. Análise da aparência visível; comportamentos não observados são indicados como testes necessários."
+            }
+          ],
+          "videos": [
+            {
+              "title": "Usability Testing 101",
+              "url": "https://www.nngroup.com/videos/usability-testing-101/",
+              "source": "Nielsen Norman Group",
+              "note": "Vídeo oficial em inglês. Após assistir, escreva uma pergunta de pesquisa e uma tarefa neutra; não use o vídeo como substituto de um plano de estudo."
+            }
+          ]
+        },
+        {
+          "id": "acessibilidade-plano-verificacao",
+          "title": "Acessibilidade: um plano de verificação executável",
+          "summary": "Passar de uma lista de boas intenções para evidências sobre percepção, operação, compreensão e robustez.",
+          "minutes": 35,
+          "objectives": [
+            "Delimitar o escopo de uma avaliação sem prometer certificação indevida.",
+            "Distinguir requisitos WCAG e recomendações nativas com unidades corretas.",
+            "Combinar inspeção, ferramentas, tecnologia assistiva e teste com pessoas."
+          ],
+          "sections": [
+            {
+              "title": "Acessibilidade é comportamento verificável",
+              "body": "<p>Acessibilidade permite que pessoas com diferentes capacidades percebam, compreendam e operem o produto. Não é uma camada que se aplica no fim nem uma versão especial para um usuário imaginário. Uma tela pode parecer clara e ter botões sem nome acessível; pode passar no contraste e impedir a tarefa quando o texto cresce.</p><p>Defina plataforma, versão, fluxos, estados e tecnologias assistivas incluídos na avaliação. WCAG 2.2 trata de conteúdo web. Para software não web, <a href=\"https://www.w3.org/TR/wcag2ict-22/\">WCAG2ICT</a> fornece orientação informativa de aplicação, sem criar uma nova norma de conformidade. Não declare um aplicativo “AA” porque mediu contraste e área de toque. Uma conclusão de conformidade exige avaliar todo o escopo aplicável.</p>"
+            },
+            {
+              "title": "Alvos: quatro números, contextos diferentes",
+              "body": "<p>Na web, <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html\">WCAG 2.2, 2.5.8, AA</a> prevê alvos de pelo menos 24 × 24 CSS px, com exceções. A de espaçamento usa círculos de 24 CSS px centrados nos alvos pequenos: eles não podem interceptar outro alvo nem o círculo de outro alvo pequeno. Há ainda exceções para equivalência, conteúdo em linha, controle pelo agente do usuário e apresentação essencial. Não resuma isso como uma folga fixa que sempre aprova qualquer ícone.</p><p><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html\">2.5.5, AAA</a> usa 44 × 44 CSS px e suas próprias exceções. A <a href=\"https://developer.apple.com/design/human-interface-guidelines/accessibility\">HIG atual da Apple</a> distingue 44 × 44 pt como padrão e 28 × 28 pt como mínimo na tabela para iOS/iPadOS. Adote 44 pt como base confortável de projeto, sem chamar esse valor de mínimo universal da HIG. As <a href=\"https://developer.apple.com/design/tips/\">dicas de UI da Apple</a> também recomendam 44 × 44 pt. O <a href=\"https://support.google.com/accessibility/android/answer/7101858?hl=en\">Android recomenda 48 × 48 dp</a>. CSS px, pt de plataforma Apple e dp Android são unidades lógicas diferentes. Separe desenho visível, área acionável e distância para vizinhos. Aumentar uma região invisível sem espaço suficiente pode causar sobreposição e novas falhas.</p>"
+            },
+            {
+              "title": "Uma sequência de verificação",
+              "body": "<ol><li>Escolha fluxos completos e dados representativos. Inclua erro, carregamento, vazio, permissão negada e retomada, além do caminho de sucesso.</li><li>Revise percepção: contraste, significado sem cor, alternativas para imagens relevantes e conteúdo audiovisual quando existir.</li><li>Aumente texto e altere a janela. Observe cortes, sobreposição, perda de instruções e ações inacessíveis. Um layout pode precisar mudar de horizontal para vertical.</li><li>Percorra o fluxo com leitor de tela da plataforma. Verifique nome, função, estado, ordem e anúncios de mudanças importantes. Ouvir palavras não basta: a tarefa precisa fazer sentido.</li><li>Use teclado e mecanismos alternativos pertinentes. Verifique foco, retorno após diálogos, operação dos controles e acesso a ações que normalmente aparecem por gesto.</li><li>Execute ferramentas automáticas, investigue cada achado e teste novamente depois da correção. Registre o que a ferramenta não consegue avaliar.</li></ol><p>Faça a primeira inspeção com recursos nativos antes de inventar componentes personalizados. Eles oferecem comportamentos de partida úteis, mas uma personalização pode alterar semântica, tamanho e leitura. O componente não garante a acessibilidade do fluxo em que foi inserido.</p>"
+            },
+            {
+              "title": "Foco, gestos e contexto",
+              "body": "<p>Na web, <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html\">2.4.11, AA</a> exige que o componente focado não fique inteiramente oculto por conteúdo criado pelo autor. Uma meta de projeto mais confortável é manter o foco totalmente visível. Teste barras fixas, diálogos e teclado aberto. O fato de o usuário ainda enxergar um fragmento não transforma uma experiência ruim em boa.</p><p><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html\">2.5.7, AA</a> trata de alternativa de ponteiro simples a movimentos de arrastar, salvo exceções. Em um roteiro reordenável, botões para mover um item podem oferecer um caminho alternativo. Não confunda esse critério com todas as regras sobre gestos. Identifique a operação específica, preserve o resultado e teste se a alternativa é descobrível.</p>"
+            },
+            {
+              "title": "Quando usar cada método e como registrar",
+              "body": "<p>Inspeção encontra riscos conhecidos rapidamente. Automação repete verificações detectáveis por código. Tecnologia assistiva revela a experiência operacional. Pesquisa com pessoas ajuda a compreender dificuldades e estratégias reais. Use esses métodos em conjunto; nenhum produz sozinho uma garantia total. Simuladores de deficiência e uso ocasional de leitor de tela não substituem participação de pessoas com deficiência.</p><p>Registre cada problema com ambiente, passos, resultado observado, resultado esperado, impacto e evidência. Diferencie falha normativa, recomendação de plataforma e melhoria de experiência. Anexe uma captura quando ajudar, mas não deixe a captura como única evidência de um problema de interação. Depois de corrigir o componente, reveja os outros fluxos que o utilizam.</p><p>Erros frequentes incluem encerrar a avaliação após um scanner, verificar apenas o desenho e considerar um anúncio tecnicamente presente como compreensível. Termine com uma declaração de escopo honesta: o que foi testado, o que falhou, o que foi corrigido e o que ainda precisa ser observado.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Apple: auditoria automatizada de um aplicativo de demonstração",
+              "url": "https://developer.apple.com/videos/play/wwdc2023/10035/",
+              "source": "Apple Developer, WWDC23",
+              "analysis": "<p>Na sessão oficial, a Apple demonstra auditorias de acessibilidade em testes de interface e discute resultados que precisam de interpretação. O aplicativo de demonstração inclui conteúdo sobre uma imagem e elementos decorativos, tornando visível a diferença entre algo presente na tela e algo que precisa participar da leitura assistiva.</p><p>A lição é definir cobertura e significado: auditar uma tela não percorre automaticamente todos os estados do aplicativo. Um elemento decorativo pode ficar fora da leitura sem ser excluído de verificações de teste. A própria sessão ressalta que auditorias não substituem testes com tecnologia assistiva. Use a demonstração como exemplo de integração ao processo, sem extrapolar para uma promessa de certificação automática.</p>"
+            },
+            {
+              "title": "GOV.UK: opções visíveis e comportamento a verificar",
+              "url": "https://design-system.service.gov.uk/components/radios/default/",
+              "source": "GOV.UK Design System, captura de exemplo oficial",
+              "analysis": "<p>“Where do you live?” significa onde você mora. A captura apresenta quatro opções com rótulos ao lado e contornos perceptíveis. A análise visual pode verificar associação, espaçamento e presença dos nomes. Não permite comprovar a área acionável real: o desenho do círculo e a região que recebe entrada podem diferir.</p><p>Para completar a avaliação, teste se tocar no rótulo seleciona a opção, se teclado e leitor de tela identificam o grupo e se a seleção é anunciada. Amplie o texto e observe o rótulo mais longo, Irlanda do Norte. A referência torna explícita a fronteira entre evidência visual e comportamento ainda a verificar.</p>",
+              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-radios.png",
+              "alt": "Grupo de quatro opções circulares sob a pergunta Onde você mora?, com Inglaterra, Escócia, País de Gales e Irlanda do Norte.",
+              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "sourcePageUrl": "https://design-system.service.gov.uk/components/radios/default/"
+            }
+          ],
+          "exercise": {
+            "brief": "No Rota fictício, prepare o aceite de acessibilidade para buscar uma visita, salvá-la e alterar a ordem do roteiro.",
+            "steps": [
+              "Defina plataforma, versões, três fluxos e pelo menos seis estados.",
+              "Execute inspeção visual, texto ampliado e navegação com recurso assistivo no protótipo implementado.",
+              "Se o protótipo for apenas visual, marque testes operacionais como pendentes.",
+              "Documente cinco achados ou verificações com evidência e responsável pelo próximo passo."
+            ],
+            "deliverable": "Plano de testes, evidências e declaração do escopo realmente verificado.",
+            "criteria": [
+              "As unidades e níveis normativos estão corretos.",
+              "Nenhum teste não executado aparece como aprovado.",
+              "As ações essenciais têm nome, estado e caminho de operação compreensíveis.",
+              "A revisão inclui reteste após correção."
+            ]
+          },
+          "sources": [
+            {
+              "title": "W3C: avaliação de acessibilidade",
+              "url": "https://www.w3.org/WAI/test-evaluate/",
+              "note": "Visão geral da combinação de métodos e avaliação humana. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "W3C: WCAG2ICT",
+              "url": "https://www.w3.org/TR/wcag2ict-22/",
+              "note": "Orientação informativa para conteúdo e software não web. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "W3C: alvo mínimo",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+              "note": "WCAG 2.2, 2.5.8, AA, 24 CSS px e exceções. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "W3C: alvo aprimorado",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html",
+              "note": "2.5.5, AAA, 44 CSS px e exceções. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "Apple: Accessibility HIG",
+              "url": "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+              "note": "Tabela atual conferida no conteúdo documental oficial: padrão 44 pt e mínimo 28 pt para iOS/iPadOS; referência de projeto contextual. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "Apple: UI Design Tips",
+              "url": "https://developer.apple.com/design/tips/",
+              "note": "Recomendação de 44 pt no contexto da página. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "Android: área de toque",
+              "url": "https://support.google.com/accessibility/android/answer/7101858?hl=en",
+              "note": "Recomendação de 48 dp e distinção entre desenho e área interativa. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "W3C: foco não encoberto",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html",
+              "note": "2.4.11, AA. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "W3C: arrastar",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html",
+              "note": "2.5.7, AA. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "Apple: auditorias",
+              "url": "https://developer.apple.com/videos/play/wwdc2023/10035/",
+              "note": "Demonstração oficial e limites da automação. Conteúdo oficial verificado em 17/10/2026."
+            },
+            {
+              "title": "GOV.UK: referência visual — GOV.UK: opções visíveis e comportamento a verificar",
+              "url": "https://design-system.service.gov.uk/components/radios/default/",
+              "note": "Página oficial e captura conferidas em 17/10/2026. Análise da aparência visível; comportamentos não observados são indicados como testes necessários."
+            }
+          ],
+          "videos": [
+            {
+              "title": "Perform accessibility audits for your app",
+              "url": "https://developer.apple.com/videos/play/wwdc2023/10035/",
+              "source": "Apple Developer, WWDC23",
+              "note": "Vídeo oficial em inglês. Observe a cobertura por tela, a interpretação de resultados e a necessidade de testar com tecnologia assistiva."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

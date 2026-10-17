@@ -1,0 +1,24 @@
+[
+  {
+    "url": "https://developer.android.com/static/develop/ui/compose/images/components/card-outlined.png",
+    "path": "/workspace/shared/design-course-content/real-assets/listas-cards.png",
+    "bytes": 11238,
+    "mime": "image/png"
+  },
+  {
+    "url": "https://developer.android.com/static/develop/ui/compose/images/components/search%20bar%20with%20suggestions%20displayed.png",
+    "path": "/workspace/shared/design-course-content/real-assets/busca-filtros.png",
+    "bytes": 17181,
+    "mime": "image/png"
+  },
+  {
+    "url": "https://developer.android.com/static/develop/ui/compose/images/text-outlinedtextfield.png",
+    "path": "/workspace/shared/design-course-content/real-assets/formularios.png",
+    "bytes": 13731,
+    "mime": "image/png"
+  },
+  {
+    "url": "https://developer.android.com/static/develop/ui/compose/images/layouts/material/modal_bottom_sheet.png",
+    "error": "HTTP Error 404: Not Found"
+  }
+]

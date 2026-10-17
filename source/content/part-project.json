@@ -1,0 +1,360 @@
+{
+  "modules": [
+    {
+      "id": "construcao-completa",
+      "title": "Construção completa de interfaces",
+      "description": "Una a trilha em um projeto: problema, arquitetura, sistema visual, protótipo, revisão e entrega.",
+      "lessons": [
+        {
+          "id": "projeto-enquadrar-problema",
+          "title": "1. Enquadrar o problema e definir o fluxo",
+          "summary": "Transforme um pedido amplo de aplicativo em um recorte de produto, um inventário de conteúdo e um fluxo que você consegue testar.",
+          "minutes": 12,
+          "objectives": [
+            "Separar fatos, hipóteses e decisões no briefing.",
+            "Definir uma tarefa principal com começo, fim e caminhos de recuperação.",
+            "Organizar conteúdo e prioridades antes de desenhar telas."
+          ],
+          "sections": [
+            {
+              "title": "O projeto: Rota, um estudo completo e fictício",
+              "body": "<p>O Rota é um aplicativo fictício para descobrir visitas culturais e organizar um passeio. O pedido inicial é amplo: “quero um app bonito para conhecer lugares”. Isso não basta para decidir a navegação. Vamos adotar um recorte explícito: uma pessoa tem uma tarde livre, quer comparar duas opções culturais e salvar um plano com horário e endereço. Todos os dados e decisões deste exercício são didáticos; não representam pesquisa realizada nem resultados medidos.</p><p>O resultado do primeiro ciclo não será vender ingressos, acompanhar transporte ou criar uma rede social. Será permitir escolher uma visita e registrar um plano compreensível. Delimitar o recorte reduz dependências e permite observar um problema inteiro. Não significa que funções futuras sejam ruins; significa que ainda não temos uma razão suficiente para incluí-las na primeira versão.</p>"
+            },
+            {
+              "title": "Do pedido ao quadro de evidências",
+              "body": "<p>Crie três colunas. Em <strong>fatos</strong>, registre apenas o que foi observado ou confirmado. Em <strong>hipóteses</strong>, escreva o que precisa ser investigado. Em <strong>decisões provisórias</strong>, indique uma escolha de projeto e o motivo. “Pessoas comparam duração antes de escolher” é hipótese até haver evidência; “o conteúdo disponível inclui duração” pode ser fato; “vamos mostrar duração na lista” é decisão.</p><p>Para este exercício, investigue três perguntas: que informações fazem alguém descartar uma visita; em que momento endereço e horário se tornam necessários; como a pessoa guarda um plano hoje. Uma entrevista contextual pode revelar linguagem e restrições, mas não mede sozinha a frequência de um comportamento. O <a href=\"https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works\">Service Manual do GOV.UK</a> oferece um exemplo de descoberta orientada ao problema antes de assumir uma solução.</p>"
+            },
+            {
+              "title": "Inventário antes de wireframe",
+              "body": "<p>Para cada visita, defina os campos: nome, categoria, duração estimada, faixa de preço, horários, endereço, informações de acessibilidade, imagem com crédito e origem dos dados. Diferencie “não informado” de “não disponível”. Se uma instituição não publicou informações sobre acesso sem degraus, o Rota não deve inventar um selo de acessibilidade. Determine também quem atualiza horários e como indicar informação possivelmente desatualizada.</p><p>Faça o mesmo com as ações: comparar, abrir detalhes, salvar uma visita e adicionar ao plano. Uma ação de salvar não equivale a uma reserva. O texto e a confirmação precisam preservar essa diferença. Este é um exemplo de como a arquitetura da informação afeta confiança antes de qualquer escolha de cor.</p>"
+            },
+            {
+              "title": "Fluxo principal, alternativas e contratos",
+              "body": "<ol><li>A pessoa abre Explorar e encontra opções com nome, duração e custo visíveis.</li><li>Abre um detalhe para conferir endereço, horário e restrições relevantes.</li><li>Escolhe “Adicionar ao plano”, define um horário e revisa a escolha.</li><li>Confirma o plano e encontra um resumo persistente em “Meu plano”.</li></ol><p>Desenhe ao lado os caminhos alternativos: nenhuma opção atende; a pessoa muda de ideia; o horário escolhido conflita com outro item; a conexão falha; a visita foi retirada; a pessoa sai sem concluir. Para cada transição, escreva o que permanece salvo e o que pode ser descartado. Um fluxo é um contrato de comportamento, não apenas setas entre telas bonitas.</p><p>“Voltar ao detalhe preserva o horário digitado enquanto a montagem está aberta” é um contrato verificável. “A experiência deve ser intuitiva” não é. Antes de detalhar componentes, tente executar o fluxo em papel com um colega e peça que ele diga o que espera acontecer a cada ação.</p>"
+            },
+            {
+              "title": "Prioridade e critério de sucesso",
+              "body": "<p>Ordene decisões pela tarefa e pelo risco. O nome de uma visita e sua disponibilidade devem aparecer antes de uma coleção promocional. Se o custo não estiver confirmado, a interface deve comunicar a incerteza. Evite inventar uma pontuação de confiança ou um selo “recomendado” sem explicar a origem.</p><p>Defina sucesso observável: o participante consegue escolher uma visita compatível com suas restrições, interpretar corretamente o que foi salvo e reencontrar o plano. Registre ajuda necessária, erros e interpretações equivocadas. Não transforme um teste pequeno em uma porcentagem de sucesso da população. O objetivo inicial é descobrir falhas e orientar a próxima versão.</p>"
+            },
+            {
+              "title": "Erros que comprometem o projeto inteiro",
+              "body": "<p>Começar pela tela inicial sem conhecer o final do fluxo costuma produzir navegação sem propósito. Copiar o menu de um concorrente pode importar categorias que não existem no seu conteúdo. Criar personas sem dados pode dar uma aparência de pesquisa a suposições. Incluir pagamento, chat e geolocalização antes de demonstrar a tarefa principal aumenta a superfície de erro sem necessariamente melhorar o aprendizado.</p><p>Use este enquadramento quando o problema ainda está aberto ou quando uma interface perdeu clareza ao acumular funções. Não transforme o processo em burocracia: um reparo pequeno e bem compreendido pode precisar de uma página de contexto, em vez de um projeto de descoberta completo. A profundidade da investigação deve acompanhar a incerteza e a consequência da decisão.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: uma lista de tarefas mostra o estado do serviço",
+              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/",
+              "source": "GOV.UK Design System",
+              "analysis": "<p>O exemplo oficial separa grupos de tarefas e mostra quais foram concluídas. Isso permite retomar uma transação longa sem exigir que a pessoa memorize o que já fez. O padrão também define quando uma tarefa ainda não pode começar.</p><p>Observe o limite de aplicação: um passeio simples do Rota não precisa receber uma lista administrativa inteira. A transferência útil é mostrar estado e permitir retomada. Compare o tamanho da tarefa, a quantidade de sessões e a dependência entre passos antes de escolher a mesma forma visual.</p><p>Na captura, “Completed” significa concluído e “Incomplete”, incompleto. O grupo “Check before you start” reúne verificações antes de começar; “Prepare application” reúne a preparação do pedido. O botão “Apply” envia a solicitação neste exemplo demonstrativo.</p>",
+              "image": "real-assets/govuk-tasks.png",
+              "alt": "Lista de tarefas com grupos e estados de conclusão.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura de exemplo oficial para estudo, em outubro de 2026. Dados demonstrativos fictícios.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+            }
+          ],
+          "exercise": {
+            "brief": "Enquadre o Rota como um projeto de produto, mantendo explícitas as hipóteses ainda não pesquisadas.",
+            "steps": [
+              "Escreva uma frase de problema sem mencionar um componente ou estilo visual.",
+              "Liste oito campos de conteúdo e cinco perguntas que precisam ser respondidas.",
+              "Desenhe o fluxo principal e quatro saídas alternativas.",
+              "Defina três observações que indicariam um problema no teste."
+            ],
+            "deliverable": "Uma página de briefing, inventário de conteúdo e fluxograma com estados e decisões.",
+            "criteria": [
+              "Fatos e hipóteses estão separados; nenhuma pesquisa fictícia é apresentada como realizada.",
+              "Cada ação do fluxo tem destino, consequência e caminho de saída.",
+              "Salvar uma visita e fazer uma reserva não são confundidos.",
+              "O escopo excluído está explícito e não impede concluir a tarefa principal."
+            ]
+          },
+          "sources": [
+            {
+              "title": "GOV.UK: How the discovery phase works",
+              "url": "https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works",
+              "note": "Referência de processo; adapte a profundidade ao risco do projeto."
+            },
+            {
+              "title": "GOV.UK: Using in-depth interviews",
+              "url": "https://www.gov.uk/service-manual/user-research/using-in-depth-interviews",
+              "note": "Orientação para investigar contexto e experiência, sem tratar entrevista como levantamento estatístico."
+            },
+            {
+              "title": "GOV.UK: Complete multiple tasks",
+              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/",
+              "note": "Exemplo real de agrupamento, dependência e estado de tarefas."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "projeto-estrutura-componentes",
+          "title": "2. Construir a estrutura e o sistema visual",
+          "summary": "Converta o fluxo em telas coerentes, com conteúdo realista, decisões reutilizáveis e regras de adaptação.",
+          "minutes": 12,
+          "objectives": [
+            "Montar a anatomia de uma tela a partir da prioridade da tarefa.",
+            "Definir componentes e tokens com responsabilidades claras.",
+            "Projetar adaptação, texto ampliado e estados antes do acabamento."
+          ],
+          "sections": [
+            {
+              "title": "A estrutura nasce do conteúdo",
+              "body": "<p>Comece pelas telas Explorar, Detalhe e Meu plano. Faça três esboços para a mesma tarefa, usando o mesmo conteúdo. Uma opção pode priorizar lista; outra, mapa; outra, coleções editoriais. Compare o que cada uma torna fácil e o que esconde. Para o recorte do Rota, adotaremos a lista como ponto de partida: ela permite comparar nome, duração e custo sem depender da precisão geográfica. Essa é uma decisão didática, ainda sujeita a teste.</p><p>Um wireframe é um esboço estrutural. Ele não precisa ser cinza para ser útil, mas deve permitir discutir prioridade e sequência sem o acabamento dominar a conversa. Use nomes longos, valores ausentes e textos plausíveis desde o começo. “Lorem ipsum” não revela que o nome real da exposição ocupa três linhas.</p>"
+            },
+            {
+              "title": "Uma anatomia de tela que pode ser explicada",
+              "body": "<p>Em Explorar, proponha: título que confirma o contexto; busca rotulada; filtros relevantes; número de resultados; lista comparável; navegação para os destinos principais. Não inclua carrossel só porque há espaço no topo. Em Detalhe, mostre nome, informações que afetam a decisão, descrição, endereço e ação “Adicionar ao plano”. Coloque a informação necessária antes da ação que depende dela.</p><p>Em Meu plano, agrupe itens pela sequência do passeio e permita editar ou remover cada um. Mostre explicitamente que o plano não é uma reserva. O estado vazio precisa explicar o próximo passo. Em telas grandes, lista e detalhe podem conviver; em telas compactas, podem ocupar rotas separadas. A relação entre entidades permanece, enquanto a composição se adapta.</p>"
+            },
+            {
+              "title": "Da tela isolada ao vocabulário reutilizável",
+              "body": "<p>Crie um pequeno conjunto de tokens, nomes que representam decisões: superfície principal, texto principal, texto de apoio, ação, erro, foco, espaço entre grupos e raio de contêiner. Os valores pertencem ao projeto, não a uma lei universal. Um sistema de espaçamento baseado em oito unidades pode ser um ponto de partida; ajustes de quatro unidades podem atender alinhamentos menores. Tipografia e ícones nem sempre se encaixam mecanicamente nessa conta.</p><p>Separe componentes pelo trabalho que fazem. O cartão de visita apresenta uma entidade; o botão dispara uma ação; o campo recebe um dado; o aviso comunica uma condição. Um cartão não deve ganhar três botões indistinguíveis só para reduzir o número de componentes. A reutilização deve preservar comportamento e significado, não apenas a mesma borda.</p>"
+            },
+            {
+              "title": "Especificação mínima do cartão de visita",
+              "body": "<table><thead><tr><th>Parte</th><th>Decisão no Rota</th><th>Variação a testar</th></tr></thead><tbody><tr><td>Nome</td><td>Primeira informação textual; até várias linhas sem truncar conteúdo crítico.</td><td>Nome muito longo e texto ampliado.</td></tr><tr><td>Duração e custo</td><td>Metadados comparáveis com rótulos compreensíveis.</td><td>Valor não informado; visita gratuita.</td></tr><tr><td>Imagem</td><td>Complementa identificação; não carrega a única informação.</td><td>Imagem ausente, lenta ou indisponível.</td></tr><tr><td>Ação</td><td>Abrir detalhe como destino principal; salvar como ação distinta e nomeada.</td><td>Foco, toque, estado salvo e leitor de tela.</td></tr></tbody></table><p>Documente a ordem de leitura e o nome acessível. Se o cartão inteiro abre o detalhe, a ação de salvar não pode criar uma área de toque ambígua ou uma estrutura de controles interativos aninhados incorretamente. Combine a solução com quem implementa, porque a aparência não determina a semântica.</p>"
+            },
+            {
+              "title": "Passo a passo do acabamento",
+              "body": "<ol><li>Resolva alinhamento, agrupamento e hierarquia com conteúdo realista.</li><li>Escolha estilos de texto por função e teste nomes, números e parágrafos extensos.</li><li>Aplique cor semântica e meça os pares efetivamente usados.</li><li>Defina áreas de interação, foco e estados desabilitados quando necessários.</li><li>Verifique safe areas, recuos do teclado e barras do sistema na plataforma escolhida.</li><li>Reduza a largura, amplie o texto e confira se o fluxo continua realizável.</li></ol><p>Não reduza a fonte para fazer uma tela caber. Reorganize, permita crescimento ou reveja a densidade. Uma versão compacta pode precisar de outro arranjo, não de uma miniatura da versão ampla.</p>"
+            },
+            {
+              "title": "Quando sistematizar e quando não abstrair",
+              "body": "<p>Vale criar uma regra quando a decisão reaparece, quando inconsistências prejudicam a tarefa ou quando várias pessoas precisam trabalhar juntas. Não crie dezenas de variantes para situações que ainda não existem. Um sistema mínimo bem documentado é mais útil que uma biblioteca extensa sem critérios de uso.</p><p>Os erros mais caros são ligar identidade visual a valores espalhados, criar variações sem nome, esquecer estados e aprovar somente a tela ideal. Outro erro é confundir consistência com uniformidade: detalhe e busca podem precisar de estruturas diferentes. A pergunta é se a diferença responde à tarefa e continua compreensível.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Designing Interfaces: estudar padrões sem copiar uma tela",
+              "url": "https://www.oreilly.com/library/view/designing-interfaces-3rd/9781492051954/",
+              "source": "O’Reilly · Jenifer Tidwell, Charles Brewer e Aynne Valencia",
+              "analysis": "<p>O livro organiza soluções de interface em padrões, incluindo listas, navegação, formulários e sistemas de componentes. A página da editora permite conhecer o escopo e o sumário, sem precisar reproduzir capítulos protegidos.</p><p>Use a referência para ampliar alternativas. Para um mesmo fluxo do Rota, compare uma lista com um arranjo de dois painéis e escreva a condição em que cada opção funciona. O aprendizado está em relacionar problema e solução, e não em reproduzir uma aparência fora do contexto.</p>"
+            },
+            {
+              "title": "GOV.UK: revisar respostas antes de confirmar",
+              "url": "https://design-system.service.gov.uk/patterns/check-answers/",
+              "source": "GOV.UK Design System",
+              "analysis": "<p>O exemplo apresenta dados em pares de rótulo e valor, com ações de alteração próximas de cada item. A leitura revela o que será enviado e oferece correção localizada antes da confirmação.</p><p>No Rota, uma revisão curta pode mostrar visita, data e horário. Não copie uma longa página de formulário se só há uma escolha simples. A decisão a preservar é permitir compreender e corrigir a consequência, com esforço proporcional ao risco.</p><p>“Check your answers” significa conferir suas respostas; “Change” permite alterar o dado correspondente. Os nomes e endereços são dados fictícios do exemplo oficial. Observe a relação entre título de grupo, rótulo, valor e ação localizada.</p>",
+              "image": "real-assets/govuk-review.png",
+              "alt": "Página de revisão com rótulos, valores fictícios e links para alterar cada resposta.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura de exemplo oficial para estudo, em outubro de 2026. Dados demonstrativos fictícios.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+            }
+          ],
+          "exercise": {
+            "brief": "Produza as três telas estruturais e um conjunto pequeno de componentes para o Rota.",
+            "steps": [
+              "Faça três alternativas de Explorar com o mesmo conteúdo e escolha uma por critérios da tarefa.",
+              "Desenhe Detalhe e Meu plano, incluindo o estado vazio.",
+              "Defina seis tokens semânticos e quatro componentes com estados.",
+              "Teste a composição em largura compacta e com texto ampliado."
+            ],
+            "deliverable": "Três telas, duas variações de conteúdo extremo e uma página de especificação dos componentes.",
+            "criteria": [
+              "A ação principal de cada tela corresponde ao fluxo definido.",
+              "Os mesmos dados aparecem com rótulos consistentes na lista, detalhe e plano.",
+              "Nenhuma informação crítica desaparece quando o texto cresce.",
+              "As áreas de interação e a ordem de foco estão especificadas."
+            ]
+          },
+          "sources": [
+            {
+              "title": "O’Reilly: Designing Interfaces, 3rd Edition",
+              "url": "https://www.oreilly.com/library/view/designing-interfaces-3rd/9781492051954/",
+              "note": "Livro de referência sobre padrões. Link da editora; conteúdo integral pode exigir compra ou assinatura."
+            },
+            {
+              "title": "NNGroup: Content Standards in Design Systems",
+              "url": "https://www.nngroup.com/articles/content-design-systems/",
+              "note": "Integração de regras editoriais e componentes."
+            },
+            {
+              "title": "GOV.UK: Check answers",
+              "url": "https://design-system.service.gov.uk/patterns/check-answers/",
+              "note": "Exemplo de revisão e correção localizada."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "projeto-prototipo-estados",
+          "title": "3. Prototipar o fluxo e suas falhas",
+          "summary": "Faça a interface responder a escolhas reais. Inclua recuperação, interrupção, teclado e conteúdo incompleto no que será testado.",
+          "minutes": 12,
+          "objectives": [
+            "Escolher a fidelidade do protótipo pela pergunta de pesquisa.",
+            "Definir uma matriz de estados e transições verificáveis.",
+            "Preparar tarefas de teste sem indicar os controles corretos."
+          ],
+          "sections": [
+            {
+              "title": "Protótipo é um instrumento de investigação",
+              "body": "<p>Uma sequência de imagens pode verificar entendimento de conteúdo e fluxo. Um protótipo clicável pode revelar expectativas de navegação. Um protótipo implementado pode investigar teclado, rolagem, foco e redimensionamento com mais realismo. Escolha a fidelidade pela pergunta que precisa responder, não pelo desejo de impressionar.</p><p>Para o Rota, a primeira pergunta é se a pessoa entende como comparar uma visita, adicioná-la e reencontrar o plano. Um fluxo clicável pode ajudar. Se a pergunta passa a ser “a ação continua acessível com teclado aberto e texto ampliado?”, é necessário um ambiente que represente esses comportamentos. O <a href=\"https://www.gov.uk/service-manual/design/making-prototypes\">GOV.UK Service Manual</a> diferencia tipos de protótipo e alerta que código de protótipo não deve ser tratado automaticamente como código de produção.</p>"
+            },
+            {
+              "title": "Um percurso completo tem contratos",
+              "body": "<p>Construa o caminho Explorar → Detalhe → Definir horário → Revisar → Meu plano. Em cada passo, defina o evento de entrada, os dados disponíveis e o resultado das ações. “Adicionar ao plano” deve produzir uma mudança observável. Se abre uma folha para definir horário, o botão ainda não significa que o plano foi salvo.</p><p>Ao cancelar a folha, a pessoa deve entender o que aconteceu com o que digitou. Ao voltar de Meu plano para Explorar, não deve perder inadvertidamente filtros e posição. Se optar por descartar alguma informação, documente a razão e investigue se a pessoa percebe a consequência. Estado preservado sem explicação pode confundir tanto quanto perda de estado.</p>"
+            },
+            {
+              "title": "Matriz de estados: o que desenhar além da tela ideal",
+              "body": "<table><thead><tr><th>Situação</th><th>O que comunicar</th><th>O que a pessoa pode fazer</th></tr></thead><tbody><tr><td>Carregamento inicial</td><td>O sistema está buscando visitas; conteúdo ainda não é definitivo.</td><td>Esperar, sair ou tentar novamente se houver falha.</td></tr><tr><td>Nenhum resultado</td><td>A combinação de filtros não encontrou opções.</td><td>Rever filtros, ampliar a busca ou limpar a seleção.</td></tr><tr><td>Sem conexão</td><td>Informações recentes podem não estar disponíveis.</td><td>Consultar dados já salvos, se existirem, e tentar novamente.</td></tr><tr><td>Conflito de horário</td><td>Dois itens do plano se sobrepõem.</td><td>Alterar horário ou remover um item conscientemente.</td></tr><tr><td>Sucesso</td><td>A visita foi adicionada ao plano; isso não confirma ingresso.</td><td>Ver o plano, editar ou continuar explorando.</td></tr></tbody></table><p>Esses estados são propostas para o exercício. Um produto real precisa de regras de negócio, limites de infraestrutura e revisão de conteúdo próprios. Não prometa uso offline apenas porque existe uma tela desenhada para ele.</p>"
+            },
+            {
+              "title": "Interrupções fazem parte do produto",
+              "body": "<p>Teste abrir e fechar a mesma folha repetidamente; tocar duas vezes na confirmação; mudar a data; voltar pelo sistema; abandonar o fluxo e retornar; tentar confirmar enquanto a operação está em andamento. A interface deve impedir duplicidade quando houver risco, sem bloquear o usuário indefinidamente. Uma ação desabilitada precisa de uma razão compreensível quando não for evidente.</p><p>Inclua o teclado: o campo ativo e a mensagem de erro devem continuar acessíveis, e o botão de confirmação não pode ficar permanentemente coberto. Verifique também o foco depois de fechar um modal. Um protótipo visual que não simula foco não prova que a implementação será acessível; registre esse limite em vez de tratar a ausência de erro aparente como aprovação.</p>"
+            },
+            {
+              "title": "Do protótipo ao roteiro de teste",
+              "body": "<p>Escreva uma tarefa contextual: “Você tem uma tarde livre e quer incluir uma visita de até duas horas no seu passeio. Escolha uma opção e deixe o plano pronto para consultar depois.” Evite “toque no filtro de duração e depois no botão Adicionar”, porque isso entrega a solução que você quer investigar.</p><p>Prepare perguntas neutras: “o que você espera que aconteça agora?”, “o que esta mensagem significa para você?” e “como faria para mudar essa escolha?”. Observe antes de explicar. Registre hesitação, retorno, ajuda e interpretação. Diferencie uma falha do protótipo de uma falha de desenho: um botão sem ligação por descuido não demonstra que o rótulo é ruim, mas impede avaliar o fluxo.</p>"
+            },
+            {
+              "title": "Quando parar de polir",
+              "body": "<p>Se a dúvida é estrutural, investir em animações refinadas pode atrasar a descoberta de um problema fundamental. Se a dúvida depende de uma transição ou gesto, o movimento pode ser essencial à pergunta. A fidelidade certa é a menor que permite observar o comportamento relevante sem introduzir distrações desproporcionais.</p><p>Não simule segurança, persistência ou dados atualizados sem avisar. Apresente o Rota como protótipo fictício e não solicite informações reais dos participantes. Registre limitações: sem pagamento, sem localização real, sem consulta de horários e sem garantia de disponibilidade. Transparência mantém o teste focado e evita transformar uma demonstração em promessa de serviço.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "GOV.UK: confirmação com consequência e próximo passo",
+              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/",
+              "source": "GOV.UK Design System",
+              "analysis": "<p>O exemplo de confirmação não se limita a um símbolo verde. Ele organiza a informação de que a ação terminou e o que acontece depois, incluindo referência e próximos passos quando pertinentes.</p><p>No Rota, a confirmação deve dizer que o item entrou no plano e esclarecer que não houve reserva. “Tudo certo!” sozinho deixa a consequência ambígua. Observe a relação entre estado e compromisso, e adapte a quantidade de conteúdo ao que realmente aconteceu.</p><p>“Application complete” informa que a solicitação foi concluída. “What happens next” apresenta os próximos passos. Na tela, resultado imediato e etapa posterior são comunicados em blocos diferentes.</p>",
+              "image": "real-assets/govuk-confirmation.png",
+              "alt": "Página de confirmação com resultado, referência fictícia e próximos passos.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura de exemplo oficial para estudo, em outubro de 2026. Dados demonstrativos fictícios.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+            }
+          ],
+          "exercise": {
+            "brief": "Monte e teste um protótipo do percurso completo, incluindo duas falhas e uma interrupção.",
+            "steps": [
+              "Ligue as cinco etapas do fluxo e as ações de cancelar ou voltar.",
+              "Inclua nenhum resultado, conflito de horário e retorno após abandono.",
+              "Escreva três tarefas contextuais sem mencionar nomes dos botões.",
+              "Faça um piloto para descobrir ligações ausentes e problemas no roteiro."
+            ],
+            "deliverable": "Protótipo navegável, matriz de estados e roteiro de teste com limitações explícitas.",
+            "criteria": [
+              "Cada botão ativo produz uma resposta coerente e cada saída preserva ou descarta dados de forma definida.",
+              "O protótipo não representa planejamento como reserva confirmada.",
+              "As tarefas permitem observar decisões sem ensinar a sequência correta.",
+              "As limitações de foco, teclado, rede e persistência estão documentadas."
+            ]
+          },
+          "sources": [
+            {
+              "title": "GOV.UK: Making prototypes",
+              "url": "https://www.gov.uk/service-manual/design/making-prototypes",
+              "note": "Tipos de protótipo e limites de código experimental."
+            },
+            {
+              "title": "GOV.UK: Confirmation pages",
+              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/",
+              "note": "Referência real para consequência e próximos passos."
+            },
+            {
+              "title": "GOV.UK: Plan user research for your service",
+              "url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
+              "note": "Planejamento de perguntas, métodos e atividades de pesquisa."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "projeto-revisar-entregar",
+          "title": "4. Revisar, testar e entregar com critérios",
+          "summary": "Conclua o projeto com evidências, problemas priorizados e uma especificação que outra pessoa consegue implementar sem adivinhar.",
+          "minutes": 12,
+          "objectives": [
+            "Separar revisão heurística, teste com pessoas e verificação técnica.",
+            "Priorizar problemas por consequência e contexto.",
+            "Entregar comportamento, conteúdo, estados e critérios de aceite."
+          ],
+          "sections": [
+            {
+              "title": "Concluir não é apenas alinhar pixels",
+              "body": "<p>A última etapa reúne três formas de avaliação. A revisão heurística procura possíveis problemas a partir de princípios. O teste de usabilidade observa pessoas realizando tarefas em um contexto. A verificação técnica examina implementação, semântica, contraste, foco e outros requisitos. Elas se complementam. Uma não autoriza dizer que as demais foram realizadas.</p><p>Faça uma revisão do Rota começando pelo fluxo principal, depois pelos estados e, por fim, pelo acabamento. Isso evita gastar o tempo todo corrigindo diferenças mínimas de espaço enquanto uma pessoa ainda não entende se reservou um ingresso. Documente o que foi verificado, em qual versão, dispositivo, tamanho de texto e condição de rede.</p>"
+            },
+            {
+              "title": "Uma lista de aceite que pode falhar",
+              "body": "<ul><li><strong>Compreensão:</strong> os rótulos distinguem explorar, salvar e planejar; o plano não parece uma reserva.</li><li><strong>Fluxo:</strong> existe caminho de saída em cada etapa; o comportamento de voltar é previsível no contexto.</li><li><strong>Conteúdo:</strong> campos ausentes não viram informações inventadas; preço e horário incluem a precisão disponível.</li><li><strong>Estados:</strong> carregamento, vazio, falha e sucesso têm mensagens e ações coerentes.</li><li><strong>Adaptação:</strong> conteúdo essencial permanece disponível em largura compacta, texto ampliado e orientação alternativa.</li><li><strong>Acessibilidade:</strong> nomes, relações, foco e áreas de interação são verificados na implementação apropriada à plataforma.</li></ul><p>“A interface está agradável” é uma avaliação possível, mas não substitui os critérios. “A ação fica visível ou alcançável quando o teclado está aberto” pode ser testado e reprovado. Procure frases que permitam a outra pessoa repetir a verificação.</p>"
+            },
+            {
+              "title": "Registrar um problema sem exagerar a evidência",
+              "body": "<p>Use um registro curto: tarefa, observação, consequência, evidência, hipótese de causa e proposta de correção. Exemplo fictício: “Ao terminar o plano, duas pessoas no piloto interpretaram a mensagem como reserva de ingresso. A frase ‘visita confirmada’ apareceu antes do aviso. Vamos alterar a mensagem principal e repetir essa tarefa.” Isso é mais útil que “o modal é confuso”.</p><p>Não reporte dados simulados como resultados reais. Se você só fez uma revisão pessoal, escreva “risco identificado em inspeção”. Se observou um participante, descreva aquela ocorrência sem convertê-la em estatística da população. A causa continua sendo hipótese até ser investigada; uma correção plausível ainda precisa de verificação.</p>"
+            },
+            {
+              "title": "Prioridade: consequência, frequência e alcance",
+              "body": "<p>Primeiro trate bloqueios que impedem concluir a tarefa, perdas de informação e interpretações de alto impacto. Em seguida, considere esforço desnecessário, repetição e desconforto. Frequência observada em um estudo pequeno não é estimativa confiável de ocorrência geral, mas ajuda a descrever o que aconteceu naquele estudo. Considere também quantas pessoas e contextos podem ser afetados.</p><p>Evite transformar uma matriz numérica em certeza artificial. Um problema raro pode ter consequência grave; um pequeno desvio visual pode ser inofensivo. Registre por que a equipe escolheu uma prioridade, o que precisa ser corrigido antes de publicar e o que exige nova investigação.</p>"
+            },
+            {
+              "title": "O pacote de entrega do Rota",
+              "body": "<ol><li><strong>Contexto:</strong> problema, público investigado ou hipotético, recorte e restrições.</li><li><strong>Arquitetura:</strong> entidades, destinos, rótulos e fluxo completo.</li><li><strong>Interface:</strong> telas representativas, variantes e regras de adaptação.</li><li><strong>Componentes:</strong> anatomia, conteúdo, tokens, estados, nomes acessíveis e comportamento.</li><li><strong>Interação:</strong> abrir, fechar, confirmar, cancelar, voltar, carregar e recuperar.</li><li><strong>Evidência:</strong> o que foi testado, problemas encontrados, mudanças e limites.</li><li><strong>Aceite:</strong> passos de verificação e resultado esperado para cada fluxo crítico.</li></ol><p>Não entregue apenas um arquivo com telas soltas. Uma pessoa implementando precisa saber o que acontece quando há pouco conteúdo, muito conteúdo, falha, lentidão e interrupção. Quando uma decisão depende da plataforma, identifique a diferença em vez de forçar iOS, Android e web a compartilhar exatamente o mesmo comportamento.</p>"
+            },
+            {
+              "title": "Revisão acessível e continuidade",
+              "body": "<p>As <a href=\"https://www.w3.org/WAI/test-evaluate/preliminary/\">Easy Checks do W3C</a> são um ponto de partida para avaliação inicial, não uma auditoria completa. Combine verificações automáticas com inspeção manual e participação de pessoas com deficiência quando apropriado. Um resultado sem alertas em uma ferramenta não demonstra conformidade integral.</p><p>Depois de corrigir, repita os fluxos afetados e confira regressões. Uma alteração no botão pode resolver contraste e quebrar largura; uma reorganização pode melhorar a composição e piorar a ordem de foco. Registre a versão final avaliada. Ao levar o projeto adiante, mantenha uma lista de perguntas abertas em vez de apresentar o produto como definitivamente resolvido.</p><p>O resultado desta trilha é uma capacidade de justificar decisões, observar consequências e revisar o trabalho. Use o próximo projeto para ampliar o contexto: outra plataforma, outro tipo de conteúdo ou outra restrição. Repetir o processo com uma pergunta nova ensina mais que aplicar a mesma composição a todos os produtos.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "Um erro que precisa passar pela revisão técnica",
+              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "source": "GOV.UK Design System",
+              "image": "real-assets/govuk-error.png",
+              "visualAspect": "500 / 360",
+              "alt": "Resumo de erro no topo e mensagem ao lado do campo de nome.",
+              "credit": "© Crown copyright / GOV.UK Design System. Captura de exemplo oficial para estudo, em outubro de 2026.",
+              "license": "Open Government Licence v3.0",
+              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+              "analysis": "<p>“There is a problem” significa que há um problema; “Enter your full name” orienta a informar o nome completo. A captura mostra o resumo e o erro junto ao campo, ligados pela mesma linguagem. Cor, contorno, posição e texto trabalham juntos.</p><p>Para a entrega, a imagem é só parte da evidência. Abra o exemplo e verifique se o link leva ao campo, se o foco é visível e se a mensagem é associada ao controle. A revisão profissional separa o que a aparência sugere do comportamento realmente testado.</p>"
+            },
+            {
+              "title": "W3C: verificações iniciais com limites explícitos",
+              "url": "https://www.w3.org/WAI/test-evaluate/preliminary/",
+              "source": "W3C Web Accessibility Initiative",
+              "analysis": "<p>A página organiza verificações iniciais de acessibilidade e deixa claro que elas não cobrem todos os problemas. Essa combinação de passos verificáveis e limite de escopo é um modelo útil para documentar QA.</p><p>Na entrega do Rota, escreva quais verificações foram executadas e quais não foram. “Foco por teclado verificado no protótipo web” é uma afirmação delimitada. “Aplicativo acessível” sem plataforma, método ou cobertura não informa o que foi realmente avaliado.</p>"
+            }
+          ],
+          "exercise": {
+            "brief": "Feche o projeto Rota com uma revisão reproduzível e um pacote de entrega compreensível.",
+            "steps": [
+              "Inspecione o fluxo pelas dez heurísticas e registre riscos sem fingir teste realizado.",
+              "Execute um teste ou piloto autorizado; se não houver participantes, registre a limitação e prepare o roteiro.",
+              "Priorize três problemas e justifique a ordem pelas consequências.",
+              "Corrija, repita os cenários afetados e organize a especificação de entrega."
+            ],
+            "deliverable": "Relatório de revisão, evidências disponíveis, três decisões de correção e especificação final do fluxo.",
+            "criteria": [
+              "Cada conclusão identifica se veio de inspeção, teste ou verificação técnica.",
+              "Problemas têm contexto, consequência e proposta verificável.",
+              "A versão final inclui estados e regras de adaptação, além das telas ideais.",
+              "Pendências, limitações e perguntas abertas estão visíveis para quem recebe o projeto."
+            ]
+          },
+          "sources": [
+            {
+              "title": "W3C: Easy Checks",
+              "url": "https://www.w3.org/WAI/test-evaluate/preliminary/",
+              "note": "Verificações iniciais de acessibilidade; não equivalem a avaliação completa."
+            },
+            {
+              "title": "W3C: Planning and Policies",
+              "url": "https://www.w3.org/WAI/planning/",
+              "note": "Acessibilidade como atividade contínua no processo."
+            },
+            {
+              "title": "GOV.UK: Plan user research for your service",
+              "url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
+              "note": "Referência de planejamento e continuidade da pesquisa."
+            }
+          ],
+          "videos": []
+        }
+      ]
+    }
+  ]
+}
