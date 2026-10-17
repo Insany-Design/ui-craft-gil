@@ -72,3 +72,6 @@
 .demo-step::after{display:none}
 .demo-card.is-selected{border-color:var(--ui-blue);background:var(--ui-tonal)}
 .demo-stage .ui-list>.ui-divider{padding:0;margin:0;height:1px;border:0}
+/* Field groups without a layout wrapper still follow the label/help rhythm. */
+.demo-stage div:not([class])>.ui-label+.ui-input{margin-top:8px}
+.demo-stage div:not([class])>.ui-input+:is(.ui-copy,.ui-muted,.ui-small){margin-top:8px}

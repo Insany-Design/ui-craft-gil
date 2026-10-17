@@ -19,6 +19,7 @@ for m in modules:
             assert '<script' not in s['body'].lower() and not re.search(r'\bon\w+\s*=',s['body'],re.I),l['id']
             assert '<details' not in s['body'].lower(), l['id']
         for e in l['examples']:
+            e.pop('designNote',None)
             assert e['url'].startswith('https://'),l['id']
             if e.get('visualHtml'):
                 assert '<script' not in e['visualHtml'].lower() and not re.search(r'\bon\w+\s*=',e['visualHtml'],re.I),l['id']
