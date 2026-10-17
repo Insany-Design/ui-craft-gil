@@ -39,16 +39,13 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: uma paleta organizada pelo trabalho que a cor faz",
-              "url": "https://design-system.service.gov.uk/styles/colour/",
-              "source": "GOV.UK Design System",
-              "analysis": "<p>A documentação separa cores funcionais de texto, links, foco, erro e sucesso. A distinção entre contorno de campo e contorno genérico é especialmente instrutiva: ambos podem ser chamados de “borda”, mas não cumprem o mesmo trabalho. O foco recebe amarelo acompanhado de texto escuro, e o sistema orienta usar nomes funcionais em vez de espalhar valores hexadecimais.</p><p>A análise transferível é organizacional: a equipe documenta decisões de uso, não apenas amostras bonitas. Ao estudar a página, escolha duas funções e explique o que se perderia se fossem trocadas. Não copie a paleta para qualquer marca nem conclua que todos os pares possíveis da página são aprovados; os valores fazem sentido dentro das combinações previstas.</p><p><strong>Leia a captura:</strong> link é a cor do vínculo; hover indica passagem do ponteiro, visited indica visitado e active indica ativação. Essa passagem do ponteiro não é um estado permanente disponível no toque. Compare sobretudo border, borda genérica clara, e input-border, borda de campo escura: funções distintas justificam contraste visual distinto. O recorte não mostra os estados de foco mencionados na documentação.</p>",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-colour.png",
-              "alt": "Trecho da paleta GOV.UK: quatro cores de links, borda cinza clara e borda de campo quase preta; cada amostra acompanha um nome e um valor hexadecimal.",
-              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/styles/colour/"
+              "title": "Uma paleta organizada pelo trabalho da cor",
+              "visualHtml": "<div class=\"demo-compare\"><div class=\"demo-card\"><p class=\"ui-kicker\">1 · Decisões reutilizáveis</p><h4 class=\"ui-subtitle\">Cada cor tem uma função</h4><div class=\"demo-grid\"><div class=\"demo-column\"><div class=\"palette-swatch swatch-ink\"></div><span class=\"ui-label\">Texto principal</span><span class=\"ui-small\">#171717</span></div><div class=\"demo-column\"><div class=\"palette-swatch swatch-muted\"></div><span class=\"ui-label\">Texto de apoio</span><span class=\"ui-small\">#5C5C5C</span></div><div class=\"demo-column\"><div class=\"palette-swatch swatch-action\"></div><span class=\"ui-label\">Ação</span><span class=\"ui-small\">#335CFF</span></div><div class=\"demo-column\"><div class=\"palette-swatch swatch-surface\"></div><span class=\"ui-label\">Superfície</span><span class=\"ui-small\">#F7F7F7</span></div></div><div class=\"ui-notice\"><p class=\"ui-copy\">Uma cor não é aprovada sozinha. O par e a função importam.</p></div></div><div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Estudo fictício</span></div><div class=\"demo-body\"><p class=\"ui-kicker\">Composição estática</p><h4 class=\"ui-title\">Forma &amp; luz</h4><p class=\"ui-muted\">Galeria Horizonte · exposição</p><div class=\"demo-card\"><div class=\"demo-row\"><span class=\"ui-label\">Duração estimada</span><span class=\"ui-copy\">1h30</span></div><div class=\"ui-divider\"></div><div class=\"demo-row\"><span class=\"ui-label\">Entrada</span><span class=\"ui-copy\">Gratuita</span></div></div><div class=\"ui-button is-primary\">Salvar no meu plano</div><p class=\"ui-small\">Salvar organiza sua visita. Não reserva ingresso.</p></div></div></div>",
+              "analysis": "<p>À esquerda, os nomes vinculam as cores a funções. À direita, a aplicação usa a cor de ação em uma área pequena e preserva neutros para a maior parte da leitura. Isso permite reconhecer prioridade sem colorir cada informação. As amostras são decisões reutilizáveis, frequentemente chamadas de tokens.</p><p>A superfície suave agrupa duração e entrada; a divisória apenas separa visualmente os dados. Ela não está identificando um campo editável. Se o mesmo traço fosse a única pista de um controle, sua exigência de contraste precisaria ser reavaliada.</p><p>O benefício esperado é reduzir competição visual, mas uma única ação destacada não serve a toda tarefa. Uma tela de comparação pode precisar equilibrar várias escolhas. Teste pedindo à pessoa que localize a duração e explique o efeito de salvar, antes de mostrar qualquer legenda de cores. A composição é fictícia e não representa resultado de pesquisa.</p>",
+              "alt": "Paleta funcional com quatro amostras ao lado da ficha fictícia Forma & luz. Texto escuro, apoio cinza e uma única ação azul separam leitura e operação.",
+              "designNote": "Adicionar .palette-swatch com altura 48px, largura 100%, raio 10px; .swatch-ink fundo #171717; .swatch-muted #5C5C5C; .swatch-action #335CFF; .swatch-surface #F7F7F7 com borda decorativa #EBEBEB. Rótulos ficam fora das amostras. demo-grid deve recolher para uma coluna quando necessário. Todos os controles são divs estáticas, sem role=button.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -114,27 +111,21 @@
             {
               "title": "Erros que uma boa biblioteca ainda permite",
               "body": "<p>Copiar um componente pronto reduz trabalho, mas personalizações podem romper seus pares. Outro erro é usar “sucesso” como decoração permanente: quando tudo é verde, o resultado positivo deixa de ser um evento discernível. Não use um indicador de foco tão parecido com seleção que uma pessoa imagine ter confirmado algo apenas por navegar. Revise ainda a coerência verbal: “Salvando” e “Salvo” precisam representar momentos diferentes, mesmo que o desenho seja semelhante.</p>"
+            },
+            {
+              "title": "Teste de mudança: a intenção sobrevive ao novo valor?",
+              "body": "<p>Uma matriz pode estar correta e ainda esconder dependências acidentais. Faça uma mudança controlada depois de documentá-la: substitua somente a família usada para ações de marca e observe quais componentes mudam. O objetivo é verificar se a ligação entre valor, função e componente existe de fato, em vez de apenas na legenda da biblioteca.</p><p>No Rota fictício, o botão Salvar plano e o link Editar plano podem acompanhar a nova identidade. A mensagem de falha não deve mudar apenas porque antes usava, por coincidência, o mesmo hexadecimal. Se uma cor de categoria também mudou, investigue se ela compartilha a intenção ou apenas o valor antigo. Um vínculo inesperado é um problema de dependência; um vínculo esperado com contraste insuficiente é um problema do novo par. As correções são diferentes.</p><ol><li>Registre quais usos devem e quais não devem mudar antes da substituição.</li><li>Altere a origem compartilhada, sem retocar cada tela para esconder falhas.</li><li>Compare o resultado com a previsão nos dois temas e nos estados pertinentes.</li><li>Meça novamente os pares afetados e reverta a alteração após o exercício, se ela era apenas diagnóstica.</li></ol><p>Não crie uma camada adicional de tokens só para passar no teste. Separe funções quando elas precisarem variar de forma independente; mantenha juntas as decisões que realmente possuem o mesmo contrato de uso.</p>"
             }
           ],
           "examples": [
             {
-              "title": "Reply, do Android: a seleção usa um par completo",
-              "url": "https://developer.android.com/develop/ui/compose/designsystems/material3",
-              "source": "Android Developers, exemplo oficial Reply",
-              "analysis": "<p>No exemplo documentado, o item selecionado recebe a superfície primaryContainer e o conteúdo correspondente onPrimaryContainer. “On” significa aqui conteúdo desenhado sobre aquela superfície. A página também apresenta a mesma aplicação com esquemas distintos.</p><p>O ponto importante é a relação, não o verde específico da demonstração. Se a equipe substituísse apenas o fundo por uma cor da marca, deixaria de aproveitar o par planejado. Ao analisar a referência, acompanhe um item selecionado e pergunte quais sinais o identificam, como o texto se mantém legível e o que precisaria ser revalidado depois de uma personalização. A demonstração oficial é um ponto de partida, não uma certificação para qualquer adaptação.</p>"
-            },
-            {
-              "title": "GOV.UK: duas ações, duas ênfases cromáticas",
-              "url": "https://design-system.service.gov.uk/components/button/secondary-combo/",
-              "source": "GOV.UK Design System, captura de exemplo oficial",
-              "analysis": "<p>A captura apresenta “Save and continue”, salvar e continuar, com superfície verde e texto claro; “Save as draft”, salvar como rascunho, usa uma superfície neutra e texto escuro. A diferença de cor organiza prioridade entre ações disponíveis. Ela não representa sucesso versus erro, nem habilitado versus desabilitado.</p><p>Observe que cada superfície mantém seu próprio par de conteúdo. Este é um exemplo concreto de função semântica, complementar ao Reply: ele não demonstra tema escuro. Para criar outro tema, seria necessário preservar a distinção e revalidar os pares, em vez de inverter automaticamente a captura.</p>",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-buttons.png",
-              "alt": "Dois botões empilhados: Salvar e continuar em verde, acima de Salvar como rascunho em cinza claro.",
-              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/components/button/secondary-combo/",
-              "visualAspect": "500 / 170"
+              "title": "O mesmo significado em duas aparências",
+              "visualHtml": "<div class=\"demo-compare\"><div class=\"demo-column\"><span class=\"ui-badge\">Aparência clara</span><div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Estudo fictício</span></div><div class=\"demo-body\"><p class=\"ui-kicker\">Composição estática</p><h4 class=\"ui-title\">Quando você quer ir?</h4><p class=\"ui-muted\">Forma &amp; luz · Galeria Horizonte</p><p class=\"ui-label\">Horário planejado</p><div class=\"demo-row\"><div class=\"ui-chip\">14h</div><div class=\"ui-chip is-selected\">15h · escolhido</div><div class=\"ui-chip\">16h</div></div><p class=\"ui-label\">Nome do plano</p><div class=\"ui-input is-focus\">Sábado cultural</div><span class=\"ui-small\">Campo em foco</span><div class=\"ui-button is-tonal\">Salvar no meu plano</div><p class=\"ui-small\">O plano não reserva a visita.</p></div></div></div><div class=\"demo-column\"><span class=\"ui-badge\">Aparência escura</span><div class=\"demo-screen demo-dark\"><div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Estudo fictício</span></div><div class=\"demo-body\"><p class=\"ui-kicker\">Composição estática</p><h4 class=\"ui-title\">Quando você quer ir?</h4><p class=\"ui-muted\">Forma &amp; luz · Galeria Horizonte</p><p class=\"ui-label\">Horário planejado</p><div class=\"demo-row\"><div class=\"ui-chip\">14h</div><div class=\"ui-chip is-selected\">15h · escolhido</div><div class=\"ui-chip\">16h</div></div><p class=\"ui-label\">Nome do plano</p><div class=\"ui-input is-focus\">Sábado cultural</div><span class=\"ui-small\">Campo em foco</span><div class=\"ui-button is-tonal\">Salvar no meu plano</div><p class=\"ui-small\">O plano não reserva a visita.</p></div></div></div></div>",
+              "analysis": "<p>As duas composições mostram o mesmo conteúdo e o mesmo estado. “15h · escolhido” indica uma seleção que permanece; o contorno do campo indica onde a entrada está direcionada. A palavra escolhido impede que a seleção dependa apenas do azul. O campo em foco não significa que o plano já foi salvo.</p><p>O tema escuro precisa trocar pares de superfície e conteúdo, preservando essas relações. Não basta inverter o fundo. No botão tonal claro, o azul de texto deve ser mais escuro que o azul usado como preenchimento da ação principal, para manter uma combinação adequada sobre a superfície azulada.</p><p>Essa composição ajuda a discutir os estados, mas não testa a troca real de tema nem foco por teclado. Na implementação, altere o tema durante a edição e confirme que texto, seleção e posição de entrada permanecem. Teste também erro com foco: dois estados podem coexistir e continuar distinguíveis.</p>",
+              "alt": "Duas versões da mesma edição de plano, clara e escura. O horário de 15h está marcado como escolhido e o campo Sábado cultural aparece em foco em ambas.",
+              "designNote": "Nenhuma classe nova. Para .is-tonal no tema claro: fundo #EBEFFF e texto #2547D0, não #335CFF. Em .demo-dark usar superfície principal #171717, cartões #242424, texto principal #FFFFFF e apoio #B0B0B0; seleção e foco precisam de variantes próprias. .is-focus deve acrescentar contorno perceptível e halo, sem remover borda. Usar a configuração global de temas do integrador; não inverter imagens nem todas as cores mecanicamente.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -149,7 +140,9 @@
             "criteria": [
               "Cada estado tem evento de entrada, sinal perceptível e próximo passo.",
               "Nenhuma combinação importante depende exclusivamente da cor.",
-              "Texto e ícones são reavaliados depois da troca de tema."
+              "Texto e ícones são reavaliados depois da troca de tema.",
+              "Uma mudança experimental de identidade tem lista prévia de usos que devem mudar e de usos que devem permanecer estáveis; o resultado é comparado a essa lista.",
+              "Um vínculo semântico indevido e um par de contraste inadequado, caso encontrados, recebem diagnósticos separados; nenhuma tela é corrigida isoladamente para ocultar a origem compartilhada."
             ]
           },
           "sources": [
@@ -164,7 +157,23 @@
               "note": "Página oficial e captura conferidas em 17/10/2026. Análise da aparência visível; comportamentos não observados são indicados como testes necessários."
             }
           ],
-          "videos": []
+          "videos": [],
+          "books": [
+            {
+              "title": "Dive into UI Design Systems: Theory and Practice",
+              "authors": "Dima Groshev",
+              "edition": "Versão 0.5, 24/10/2024; amostra gratuita",
+              "pages": "Páginas físicas do PDF: 22–25",
+              "note": "Referência sobre funções e estrutura de tokens. O teste de mudança do Rota é uma aplicação autoral, não uma reprodução do exemplo do livro."
+            },
+            {
+              "title": "Design System 2026: uma Visão sobre Design, Tokens, Desenvolvimento, IA & ROI Friendly",
+              "authors": "Raquel Kiss",
+              "edition": "2026 na capa; número de edição não confirmado internamente",
+              "pages": "Páginas físicas do PDF: 12–19",
+              "note": "Aproveitamento restrito à distinção entre valor e intenção. Não se transfere ao curso qualquer promessa de retorno financeiro; a edição permanece incerta."
+            }
+          ]
         },
         {
           "id": "cor-acessibilidade-verificacao",
@@ -196,27 +205,21 @@
             {
               "title": "Erros e decisões de correção",
               "body": "<p>Os erros mais comuns são avaliar somente a tela inicial, confiar no simulador como se representasse todas as pessoas e comunicar erro apenas com borda vermelha. Outro é usar um ícone sem nome acessível: a alternativa visual existe, mas não chega a quem navega por leitor de tela. Cor acessível faz parte de um sistema multissensorial; o trabalho não termina na captura de tela.</p><p>Ao corrigir um par reprovado, compare três alternativas: mudar o tom, trocar a superfície ou alterar a forma de comunicar a função. Escurecer um fundo pode resolver texto branco e prejudicar um ícone escuro. Revise o componente inteiro. Registre também o que não foi verificado: uma análise cromática não confirma teclado, ordem de leitura, alvos nem conclusão da tarefa.</p>"
+            },
+            {
+              "title": "Registre qual modelo produziu o número",
+              "body": "<p>Dois relatórios podem usar a palavra contraste e apresentar medidas que não são intercambiáveis. Acrescente ao registro o modelo de cálculo, a ferramenta e sua versão quando disponível, além dos valores efetivos de primeiro plano e fundo. Um número sem método não permite reproduzir a conclusão nem comparar revisões com segurança.</p><p>Para verificar o critério de contraste textual da WCAG 2.2, use a razão e as condições definidas nessa versão. Uma avaliação complementar por APCA, algoritmo de contraste perceptual, não deve ocupar a mesma coluna nem ser apresentada como prova de atendimento à WCAG 2.2. Identifique-a separadamente, com sua escala, versão e finalidade. A própria <a href=\"https://www.w3.org/TR/2026/WD-wcag-3.0-20260910/\">WCAG 3 publicada em 10 de setembro de 2026</a> é um rascunho de trabalho; não substitui a base normativa adotada nesta trilha.</p><p>No Rota, a ficha de uma mensagem de erro pode registrar o par, o estado, o tema, o tamanho e peso do texto, o método WCAG 2.2 e o resultado bruto. Uma investigação perceptual adicional pode motivar melhora mesmo quando o par atende ao critério, mas não muda retroativamente o limiar usado. Se ferramentas divergirem, investigue primeiro transparência, fundo efetivo e modelo; não escolha simplesmente o resultado mais favorável. Consulte a <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html\">explicação oficial do contraste mínimo</a> ao classificar o caso.</p>"
             }
           ],
           "examples": [
             {
-              "title": "GOV.UK: erro de data com mensagem e associação ao campo",
-              "url": "https://design-system.service.gov.uk/components/error-message/",
-              "source": "GOV.UK Design System",
-              "analysis": "<p>O exemplo oficial de data de emissão de passaporte combina mensagem explicativa, contornos e associação estrutural ao grupo de campos.</p><p>Analise a divisão do trabalho: a cor chama atenção; a mensagem permite agir; a proximidade localiza o problema; a associação programática leva a explicação para outra modalidade de leitura. Retirar a cor não destrói o diagnóstico. Copiar só o contorno vermelho perderia quase todo esse sistema. Inspecione o exemplo no link, sem presumir resultados de testes que a página não apresenta.</p>"
-            },
-            {
-              "title": "GOV.UK: um erro continua compreensível sem vermelho",
-              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "source": "GOV.UK Design System, captura de exemplo oficial",
-              "analysis": "<p>O resumo diz “There is a problem”, há um problema, e o link pede “Enter your full name”, informe seu nome completo. A instrução reaparece junto ao campo. Diferentemente do exemplo de passaporte acima, esta captura mostra um nome ausente.</p><p>A cor conecta visualmente as regiões, mas a mensagem ainda identifica a correção sem depender do vermelho. O sublinhado ajuda a reconhecer o link do resumo. Retirar a cor preservaria essas pistas; isso é uma análise da composição. Para comprovar o caminho de recuperação, ainda é preciso acionar o link e testar o foco e a leitura assistiva.</p>",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-error.png",
-              "alt": "Resumo com o título Há um problema e o link Informe seu nome completo. Abaixo, o campo Nome completo repete a mensagem; bordas vermelhas indicam o grupo e a entrada.",
-              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "visualAspect": "500 / 360"
+              "title": "Contraste medido no par que será usado",
+              "visualHtml": "<div class=\"demo-compare\"><div class=\"demo-card demo-bad\"><p class=\"ui-kicker\">Problema simulado</p><h4 class=\"ui-subtitle\">Apoio que quase desaparece</h4><div class=\"contrast-sample\"><p class=\"ui-copy contrast-fail\">Forma &amp; luz · Galeria Horizonte</p><p class=\"ui-copy contrast-fail\">Entrada gratuita · duração de 1h30</p></div><div class=\"ui-notice\"><span class=\"ui-label\">#A3A3A3 sobre #FFFFFF</span><p class=\"ui-copy\">2,5225:1 · abaixo de 4,5:1</p></div></div><div class=\"demo-card demo-good\"><p class=\"ui-kicker\">Par revisto</p><h4 class=\"ui-subtitle\">Menos destaque, ainda legível</h4><div class=\"contrast-sample\"><p class=\"ui-copy contrast-pass\">Forma &amp; luz · Galeria Horizonte</p><p class=\"ui-copy contrast-pass\">Entrada gratuita · duração de 1h30</p></div><div class=\"ui-notice\"><span class=\"ui-label\">#5C5C5C sobre #FFFFFF</span><p class=\"ui-copy\">6,6869:1 · supera 4,5:1</p></div></div></div><div class=\"ui-notice\"><p class=\"ui-copy\">Comparação para texto normal. Resultado destes pares, sem aprovação global da interface.</p></div>",
+              "analysis": "<p>O conteúdo e o fundo são iguais nas duas versões. A variável alterada é a cor do texto de apoio. O primeiro par produz razão de 2,5225:1; o segundo, 6,6869:1, calculadas com luminância relativa sRGB pela fórmula WCAG. A comparação usa texto normal e o limiar de 4,5:1 do critério 1.4.3 AA.</p><p>O texto revisto ainda pode ter menos destaque que o título, sem desaparecer. Diminuir prioridade não exige diminuir legibilidade. A composição rotula explicitamente a falha para que ninguém confunda o lado esquerdo com uma recomendação do sistema.</p><p>As razões descrevem somente os pares definidos. Elas não aprovam foco, leitura assistiva, tamanho de alvo ou compreensão da mensagem. Na implementação, confirme os valores computados e o fundo efetivo; opacidade, sobreposição ou troca de tema mudam o resultado. A impressão visual também deve ser revista no tamanho real de leitura.</p>",
+              "alt": "Comparação do mesmo texto em cinza claro e cinza escuro sobre branco. O primeiro par mede 2,5225 para 1; o segundo, 6,6869 para 1. A falha e a correção estão identificadas por texto.",
+              "designNote": "Classes novas: .contrast-sample {background:#FFFFFF;padding:16px;border-radius:10px}; .contrast-fail {color:#A3A3A3!important}; .contrast-pass {color:#5C5C5C!important}. Manter esses fundos brancos inclusive no tema do curso. Texto de amostra 16px regular; as demais legendas usam texto principal. Não aplicar opacidade. Valores brutos calculados: 2.522506792995304 e 6.686913890305268; números exibidos arredondados para comunicação, sem usar arredondamento para aprovar limites.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -231,7 +234,9 @@
             "criteria": [
               "A pessoa identifica seleção, falha e indisponibilidade sem depender do matiz.",
               "As medidas indicam par, função, estado, tema e critério.",
-              "O relatório distingue simulação, medição e observação com participante."
+              "O relatório distingue simulação, medição e observação com participante.",
+              "O registro identifica modelo de contraste, ferramenta e valores efetivamente comparados; resultados de modelos diferentes não são fundidos em uma única aprovação.",
+              "Qualquer método complementar é rotulado como tal e não substitui a verificação do critério WCAG 2.2 aplicável."
             ]
           },
           "sources": [
@@ -262,6 +267,15 @@
               "url": "https://developer.apple.com/videos/play/wwdc2020/10020/",
               "source": "Apple Developer, WWDC20",
               "note": "Vídeo oficial em inglês. Observe as adaptações de cor e aparência; compare as demonstrações com os critérios atuais, sem tratar a data do vídeo como uma nova versão normativa."
+            }
+          ],
+          "books": [
+            {
+              "title": "Design System 2026: uma Visão sobre Design, Tokens, Desenvolvimento, IA & ROI Friendly",
+              "authors": "Raquel Kiss",
+              "edition": "2026 na capa; número de edição não confirmado internamente",
+              "pages": "Páginas físicas do PDF: 38, 68–71",
+              "note": "Ponto de partida para leitura crítica de métodos de contraste. O status normativo foi conferido em fontes atuais do W3C; a distinção operacional acrescentada é autoral."
             }
           ]
         }
@@ -302,22 +316,13 @@
           ],
           "examples": [
             {
-              "title": "Apple: tamanhos ópticos na família San Francisco",
-              "url": "https://developer.apple.com/videos/play/wwdc2020/10175/",
-              "source": "Apple Developer, The details of UI typography, WWDC20",
-              "analysis": "<p>Na demonstração oficial, a Apple compara desenhos preparados para escalas diferentes e explica a evolução para fontes variáveis. <strong>Tamanho óptico</strong> significa ajustar o desenho à escala de uso; não é simplesmente ampliar o mesmo contorno. Observe como espaços e detalhes delicados precisam continuar distinguíveis. A lição transferível é um método: avalie a letra no tamanho em que será lida. Não copie limites numéricos históricos do vídeo como regra atual para qualquer família. Uma fonte de exibição pode funcionar num título e perder distinção no corpo, mesmo mantendo identidade visual. A página oficial contém vídeo e transcrição para examinar a demonstração.</p>"
-            },
-            {
-              "title": "GOV.UK: a fonte em título, parágrafo e link reais",
-              "url": "https://design-system.service.gov.uk/styles/type-scale/",
-              "source": "GOV.UK Design System, captura de exemplo oficial",
-              "analysis": "<p>Esta captura permite observar a mesma família tipográfica em trabalho: “Type scale” significa escala tipográfica; “How it works” significa como funciona. Compare o título curto em negrito com as linhas contínuas dos parágrafos. Repare em contraformas, densidade e espaçamento no corpo, sem ampliar a imagem para fazê-la parecer artificialmente confortável.</p><p>O aviso sobre atualização da escala ocupa várias linhas, preservando o conteúdo. Ele fornece uma amostra mais exigente que uma palavra isolada. A captura permite analisar composição e desenho aparente; não determina sozinha tamanho físico, licença da fonte ou desempenho de leitura para todos os públicos.</p>",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-type-scale.png",
-              "alt": "Abertura da página Escala tipográfica do GOV.UK em largura compacta, com título em negrito, aviso de atualização, parágrafos, links sublinhados e o subtítulo Como funciona.",
-              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/styles/type-scale/"
+              "title": "Teste a fonte com o conteúdo difícil",
+              "visualHtml": "<div class=\"demo-card\"><p class=\"ui-kicker\">Rota · prova tipográfica fictícia</p><h4 class=\"ui-title\">Forma &amp; luz</h4><p class=\"ui-copy\">Encontros entre matéria, espaço e luz na Galeria Horizonte. Uma visita de 1h30, com entrada gratuita.</p><div class=\"ui-divider\"></div><div class=\"demo-grid\"><div class=\"demo-card\"><span class=\"ui-label\">Sinais parecidos</span><p class=\"type-proof\">I l 1 · O 0 · B 8</p><p class=\"ui-small\">Observe o desenho, não só o tamanho.</p></div><div class=\"demo-card\"><span class=\"ui-label\">Acentos e pontuação</span><p class=\"type-proof\">ação · manhã · às 15h</p><p class=\"ui-small\">Confira cobertura do idioma.</p></div></div><div class=\"demo-row\"><div class=\"demo-grow\"><span class=\"ui-label\">Horários em comparação</span><p class=\"type-tabular ui-copy\">09:00 · 11:30 · 15:00</p></div><div class=\"ui-badge\">Mesmo conteúdo, vários usos</div></div></div>",
+              "analysis": "<p>A prova coloca a família em quatro situações: título curto, parágrafo, sinais semelhantes e horários. O título sozinho seria uma amostra fraca, porque não revela se acentos, pontuação e números funcionam na rotina do produto. Os conteúdos são inventados para testar a tipografia do Rota.</p><p>A sequência de sinais não prova que esta fonte seja superior a outra. Ela ajuda a localizar diferenças entre caracteres e a formular uma comparação controlada. Nos horários, algarismos tabulares ocupam larguras consistentes quando o recurso existe na fonte; esse ajuste não transforma o texto inteiro em monoespaçado.</p><p>Use a prova para comparar candidatas com o mesmo conteúdo, largura e contraste. Faça depois uma segunda comparação com tamanho aparente aproximado. Peça a alguém para transcrever os sinais e localizar um horário; registre confusões, sem atribuir desempenho universal a poucas tentativas. A ampliação decorativa da prova não substitui a verificação do corpo pequeno no aparelho.</p>",
+              "alt": "Prova de Inter com título Forma & luz, parágrafo em português, sequência de letras e números semelhantes, palavras acentuadas e três horários.",
+              "designNote": "Adicionar .type-proof {font-size:24px;line-height:1.5;font-weight:500;overflow-wrap:anywhere} e .type-tabular {font-variant-numeric:tabular-nums}. Usar Inter local do sistema aprovado, sem fonte remota. Não acrescentar linhas anatômicas fictícias sobre a fonte. Tamanho grande é uma área de inspeção, não demonstração de tamanho mínimo de leitura.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -396,16 +401,13 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: escala tipográfica com comportamento responsivo",
-              "url": "https://design-system.service.gov.uk/styles/type-scale/",
-              "source": "GOV.UK Design System, Type scale",
-              "analysis": "<p>O sistema oficial documenta tamanhos e entrelinhas para janelas grandes e pequenas. Na versão consultada, o corpo permanece em 19 CSS px, enquanto alguns títulos mudam. Isso revela uma escolha importante: adaptação não precisa reduzir proporcionalmente todos os textos. A escala coordena papéis, mas preserva necessidades distintas. Compare também a <a href=\"https://design-system.service.gov.uk/styles/headings/\">demonstração de títulos</a>, que distingue nível semântico e classe visual. Use a documentação como referência de raciocínio, não como licença para copiar a marca ou declarar que 19 é um mínimo universal. A evidência disponível descreve esse sistema; não mede o desempenho do seu produto.</p><p><strong>Na imagem:</strong> o título “Type scale”, escala tipográfica, estabelece o assunto; o aviso possui uma borda lateral; os parágrafos mantêm ritmo; “How it works”, como funciona, abre outra seção. Essa hierarquia é visível sem ler cada frase. Os tamanhos numéricos citados acima vêm da documentação completa: a tabela de medidas está fora deste recorte. A imagem também não comprova o comportamento sob ampliação.</p>",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-type-scale.png",
-              "alt": "Página oficial de escala tipográfica: título principal maior, aviso com borda lateral, parágrafos separados, links sublinhados e um subtítulo em negrito.",
-              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/styles/type-scale/"
+              "title": "O mesmo conteúdo, duas ordens de leitura",
+              "visualHtml": "<div class=\"demo-compare\"><div class=\"demo-card demo-bad\"><p class=\"ui-kicker\">Hierarquia achatada</p><p class=\"ui-copy\">Forma &amp; luz</p><p class=\"ui-copy\">Galeria Horizonte</p><p class=\"ui-copy\">Encontros entre matéria, espaço e luz.</p><p class=\"ui-copy\">Duração estimada: 1h30</p><p class=\"ui-copy\">Entrada gratuita</p><p class=\"ui-copy\">Salvar no meu plano</p><p class=\"ui-copy\">Salvar não reserva ingresso.</p></div><div class=\"demo-card demo-good\"><p class=\"ui-kicker\">Relações explícitas</p><h4 class=\"ui-title\">Forma &amp; luz</h4><p class=\"ui-muted\">Galeria Horizonte</p><p class=\"ui-copy\">Encontros entre matéria, espaço e luz.</p><div class=\"demo-row\"><span class=\"ui-chip\">1h30 de visita</span><span class=\"ui-chip\">Entrada gratuita</span></div><div class=\"ui-divider\"></div><div class=\"ui-button is-primary\">Salvar no meu plano</div><p class=\"ui-small\">Salvar não reserva ingresso.</p></div></div>",
+              "analysis": "<p>As duas versões contêm a mesma informação. No lado esquerdo, o peso visual e a organização quase não diferenciam assunto, contexto, dados e ação. No lado direito, título, texto de apoio, grupo de dados e ação cumprem papéis distintos. A melhoria proposta combina tipografia e espaço, em vez de depender apenas de aumentar o título.</p><p>O aviso sobre ingresso continua visível, apesar de ter menos destaque. Sua consequência é importante: salvar o plano não produz uma reserva. A escala pode direcionar atenção, mas não deve retirar informação necessária à decisão nem transformar conteúdo indispensável em texto ilegível.</p><p>O conjunto da direita é uma hipótese de organização, não um resultado validado. Peça que a pessoa identifique a exposição, a duração e o efeito da ação. Depois teste títulos em duas linhas e espaçamentos personalizados. Se o conteúdo quebrar, revise as relações antes de reduzir a fonte para caber.</p>",
+              "alt": "Duas fichas fictícias com o mesmo conteúdo. A primeira usa texto uniforme; a segunda distingue título, local, descrição, dados de visita, ação principal e aviso sobre reserva.",
+              "designNote": "Nenhuma classe nova. Manter .ui-copy igual nos dois lados para controlar a base. .ui-title 24/32 peso500; .ui-muted 14/20 ou16/24 conforme sistema, sem baixo contraste; .ui-small 12/16 somente para nota complementar que permanece visível. A versão achatada não deve receber destaque adicional acidental pelo CSS de demo-bad.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -421,7 +423,8 @@
               "Todo texto tem um papel identificado e nenhuma exceção fica sem justificativa.",
               "Os ajustes de espaçamento não cortam conteúdo nem impedem ações.",
               "Título, condição de acesso e ação permanecem identificáveis com conteúdo longo.",
-              "As nove buscas observadas são registradas, incluindo falhas e correções propostas."
+              "As nove buscas observadas são registradas, incluindo falhas e correções propostas.",
+              "Os mesmos papéis tipográficos são aplicados à ficha da exposição, à lista de visitas e a um campo de formulário. Uma diferença entre contextos é corrigida no papel compartilhado ou justificada por uma função distinta, sem criar um tamanho novo apenas para a ocorrência."
             ]
           },
           "sources": [
@@ -441,7 +444,23 @@
               "note": "Interpretação oficial do critério AA; distingue tolerância a ajustes e apresentação inicial. Verificada em 17/10/2026."
             }
           ],
-          "videos": []
+          "videos": [],
+          "books": [
+            {
+              "title": "Refactoring UI",
+              "authors": "Adam Wathan e Steve Schoger",
+              "edition": "Edição e ano não declarados nas páginas bibliográficas do exemplar",
+              "pages": "Páginas físicas do PDF: 102–107",
+              "note": "A discussão sobre escalas foi comparada ao conteúdo existente, que já rejeita progressões matemáticas obrigatórias. O acréscimo limita-se a verificar a transferência dos papéis entre contextos."
+            },
+            {
+              "title": "UI Design Systems Mastery",
+              "authors": "Marina Budarina",
+              "edition": "Versão 3.0; atualização de 08/07/2023",
+              "pages": "Páginas físicas do PDF: 87, 230",
+              "note": "Referência de tipografia integrada a um sistema. Os valores do exemplar não são adotados como mínimos ou tamanhos universais."
+            }
+          ]
         },
         {
           "id": "typography-adaptation-localization-writing",
@@ -469,29 +488,21 @@
             {
               "title": "Procedimento: desenhe a variação, depois teste a tarefa",
               "body": "<ol><li><strong>Monte um inventário.</strong> Para cada texto, registre função, estado, informação indispensável e responsável por mantê-lo. Separe dados variáveis da mensagem, mas entregue frases completas à tradução; evite montar sentenças concatenando fragmentos.</li><li><strong>Defina limites honestos.</strong> Se existe um limite real de armazenamento, explique-o. Se o limite existe só para caber no desenho, tente novas linhas, maior altura ou outra disposição antes de abreviar.</li><li><strong>Prepare extremos.</strong> Use nomes longos, plural, ausência de dados, números grandes e idiomas previstos. A <a href=\"https://developer.android.com/guide/topics/resources/pseudolocales\">pseudolocalização do Android</a> simula características linguísticas para revelar expansão, fragmentação de mensagens e problemas bidirecionais; não substitui revisão por falantes.</li><li><strong>Adapte relações.</strong> Transforme linha horizontal em pilha quando necessário. Preserve a ordem de leitura e a associação entre rótulo, valor e ação. Permitir rolagem é melhor que remover conteúdo essencial para manter a altura original.</li><li><strong>Valide em execução.</strong> Ative os maiores tamanhos suportados, abra o teclado e percorra o fluxo completo. Um protótipo estático verifica intenção visual; não comprova o comportamento das APIs, a navegação assistiva ou o layout implementado.</li><li><strong>Teste entendimento.</strong> Peça que alguém explique o resultado esperado antes de tocar e que recupere uma falha. Registre interpretação e ação efetiva; uma frase gramaticalmente correta ainda pode induzir uma decisão errada.</li></ol><p>Erros recorrentes: tradução tratada como troca palavra por palavra; datas ambíguas; mensagem genérica para falhas diferentes; conteúdo crítico limitado a uma linha; texto ampliado acompanhado de um botão que continua cortando o rótulo.</p>"
+            },
+            {
+              "title": "Ampliação no meio da tarefa: teste também a continuidade",
+              "body": "<p>Comparar duas telas prontas revela cortes, mas não demonstra o que acontece com trabalho em andamento. Acrescente uma transição ao teste: iniciar uma edição, alterar a preferência de tamanho de texto pelo mecanismo da plataforma e retornar à tarefa. Essa sequência verifica uma condição que a comparação estática não mostra: o conteúdo se reorganiza sem transformar uma adaptação de apresentação em perda de trabalho?</p><p>No Rota fictício, comece a renomear um plano e mantenha uma alteração ainda não salva. Registre o texto digitado, a escolha atual e a ação pendente. Depois do ajuste, confira a continuidade da edição, a associação entre campo e rótulo, a presença das instruções e o acesso a Salvar plano. Não exija que o conteúdo permaneça na mesma coordenada nem que a tela mantenha a mesma altura: crescimento e rolagem podem ser a resposta adequada.</p><p>O resultado depende da implementação e do ciclo de vida da plataforma. Se o aplicativo reiniciar ou reconstruir a tela, registre o que ocorreu e avalie a recuperação dos dados, sem afirmar que o ajuste tipográfico foi sua causa técnica. Em iOS, identifique a categoria de Dynamic Type usada; no Android, registre a configuração real. Se houver apenas um protótipo visual, documente o comportamento esperado e mantenha a verificação operacional pendente.</p>"
             }
           ],
           "examples": [
             {
-              "title": "GOV.UK: escolher o idioma sem abandonar a tarefa",
-              "url": "https://design-system.service.gov.uk/components/language-navigation/after-h1/",
-              "source": "GOV.UK Design System · Language navigation · 2026",
-              "analysis": "<p>Na captura, o título apresenta a tarefa antes da escolha de idioma. “English” identifica inglês; “Cymraeg” é o nome do galês em galês. A diferença entre o texto do idioma atual e o link alternativo permite reconhecer estado e ação sem acrescentar um seletor complexo.</p><p>Nossa leitura: o conteúdo localizado precisa continuar sendo a mesma tarefa. Um link visível não basta se a tradução omite informações, leva à página inicial ou apaga o formulário. Ao aplicar ao Rota, troque a descrição da visita sem perder data, quantidade e etapa selecionadas. Teste também títulos maiores e nomes de idiomas longos: a composição precisa absorver a mudança sem encobrir ações.</p><p>O componente está em fase experimental, chamada <em>Trial</em> na documentação. Ser recente não prova adequação ao seu público. Use-o para estudar a relação entre hierarquia, rótulo e continuidade; valide o comportamento no contexto do produto.</p>",
-              "localImagePath": "source/real-assets/govuk-language-navigation-2026.png",
-              "alt": "Exemplo oficial GOV.UK: título sobre áreas naturais protegidas, seguido do idioma atual English e do link Cymraeg; abaixo, o texto da tarefa.",
-              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/components/language-navigation/",
-              "visualAspect": "500 / 400",
-              "versionNote": "Introduzido em agosto de 2026 no GOV.UK Frontend 6.5.0. O histórico oficial ainda o identifica como Trial, ou fase experimental. Captura consultada em 17/10/2026.",
-              "versionUrl": "https://design-system.service.gov.uk/components/language-navigation/#recent-changes"
-            },
-            {
-              "title": "GOV.UK: erro de data de emissão do passaporte",
-              "url": "https://design-system.service.gov.uk/components/error-message/",
-              "source": "GOV.UK Design System, Error message",
-              "analysis": "<p>O exemplo oficial separa a pergunta, a orientação de formato e a mensagem sobre uma data de emissão que precisa estar no passado. A análise útil é a divisão de trabalho: o rótulo identifica o dado; a orientação ajuda a preenchê-lo; o erro explica a restrição violada. A mensagem permite corrigir sem adivinhar uma regra interna. O padrão também preserva as respostas e associa o erro ao grupo de campos. Não copie a frase para uma falha do serviço: ali a pessoa não conseguiria resolver alterando a data. Abra o exemplo oficial para observar texto, código e associação semântica juntos.</p>"
+              "title": "Texto longo pede uma nova disposição",
+              "visualHtml": "<div class=\"demo-compare\"><div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Estudo fictício</span></div><div class=\"demo-body\"><p class=\"ui-kicker\">Composição estática</p><h4 class=\"ui-title\">Seu plano</h4><div class=\"demo-card\"><p class=\"ui-label\">Exposição</p><p class=\"ui-copy\">Forma &amp; luz: encontros entre matéria, espaço e a cidade que habitamos</p><p class=\"ui-muted\">Galeria Horizonte</p></div><div class=\"demo-row\"><span class=\"ui-label\">Chegada planejada</span><span class=\"ui-copy\">Domingo, às 15h</span></div><div class=\"ui-button is-primary\">Salvar no meu plano</div><p class=\"ui-small\">Salvar não reserva ingresso.</p></div></div><div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Estudo fictício</span></div><div class=\"demo-body\"><p class=\"ui-kicker\">Composição estática</p><h4 class=\"ui-title\">Seu plano</h4><span class=\"ui-badge\">Composição com texto maior</span><div class=\"demo-card\"><p class=\"ui-label\">Exposição</p><p class=\"ui-copy type-expanded\">Forma &amp; luz: encontros entre matéria, espaço e a cidade que habitamos</p><p class=\"ui-muted\">Galeria Horizonte</p></div><div class=\"demo-column\"><span class=\"ui-label\">Chegada planejada</span><span class=\"ui-copy type-expanded\">Domingo, às 15h</span></div><div class=\"ui-button is-primary type-wrap-action\">Salvar no meu plano</div><p class=\"ui-copy\">Salvar não reserva ingresso.</p></div></div></div>",
+              "analysis": "<p>O título longo é deliberado. Na primeira composição, rótulo e horário dividem uma linha; na segunda, a informação cresce e passa a uma pilha. O texto da exposição continua completo e a ação aceita altura determinada pelo conteúdo. A estrutura absorve a variação, em vez de diminuir a fonte ou cortar a consequência de salvar.</p><p>A versão ampliada é um estudo estático de reorganização. Ela não comprova Dynamic Type, escala Android, ampliação web a 200% ou reflow a 320 CSS px. Esses comportamentos dependem da implementação e precisam de testes separados. A legenda evita confundir intenção visual com aprovação técnica.</p><p>O mesmo raciocínio vale para tradução: textos de ação e nomes podem crescer em proporções diferentes. Teste os idiomas previstos, mensagens completas e a presença do teclado. Quando houver pouco espaço, prefira uma quebra clara ou rolagem à perda do nome que distingue uma visita de outra.</p>",
+              "alt": "Duas versões de um plano com nome de exposição longo. A versão com texto maior mantém todo o nome e coloca o horário abaixo do rótulo, sem cortar a ação.",
+              "designNote": "Adicionar .type-expanded {font-size:24px;line-height:1.45} e .type-wrap-action {font-size:20px;line-height:1.4;white-space:normal;height:auto;min-height:48px}. Não definir altura fixa no card, nem clamp/ellipsis para o nome. A versão maior é representação estática, sem alegação de porcentagem de ampliação. demo-row deve permitir wrap em telas estreitas.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -507,7 +518,9 @@
               "Nenhuma consequência necessária à decisão fica truncada.",
               "Os dois erros têm causa e recuperação diferentes, sem perder entrada válida.",
               "Cada teste identifica plataforma, tamanho, largura e resultado observado.",
-              "Três interpretações e três tentativas de recuperação estão registradas; falhas restantes têm encaminhamento."
+              "Três interpretações e três tentativas de recuperação estão registradas; falhas restantes têm encaminhamento.",
+              "Uma edição com conteúdo ainda não salvo é verificada antes e depois de alterar o tamanho de texto; o registro distingue reorganização visual, continuidade dos dados e acesso à ação.",
+              "Se a alteração de tamanho não puder ser executada no ambiente disponível, o teste aparece como pendente, com o comportamento esperado, sem resultado simulado apresentado como observação."
             ]
           },
           "sources": [
@@ -555,6 +568,11 @@
               "title": "GOV.UK — Language navigation, histórico e uso",
               "url": "https://design-system.service.gov.uk/components/language-navigation/",
               "note": "Componente introduzido em agosto de 2026, versão 6.5.0; fase experimental explicitada no exemplo."
+            },
+            {
+              "title": "GOV.UK: escolher o idioma sem abandonar a tarefa",
+              "url": "https://design-system.service.gov.uk/components/language-navigation/after-h1/",
+              "note": "Referência complementar de análise. O exemplo visual desta lição é uma composição original do Rota."
             }
           ],
           "videos": [
@@ -563,6 +581,22 @@
               "url": "https://developer.apple.com/videos/play/wwdc2024/10074/",
               "source": "Apple Developer / WWDC24",
               "note": "Vídeo oficial em inglês com transcrição. Em 6:00 começa a discussão de layouts dinâmicos; observe quando a disposição precisa mudar."
+            }
+          ],
+          "books": [
+            {
+              "title": "The UI Professional’s Design Manual: the Ultimate Guide to Master Mobile Design",
+              "authors": "AdrianK / Adrian Kuleszo; colaboração de Natalie apresentada no exemplar",
+              "edition": "Exemplar © 2022, em desenvolvimento; sem número de edição declarado",
+              "pages": "Páginas físicas do PDF: 39–44",
+              "note": "Referência histórica sobre adaptação e crescimento de contêineres. O teste de alteração durante a edição é uma extensão autoral; não se atribuem APIs atuais ao exemplar de 2022."
+            },
+            {
+              "title": "UI Design Systems Mastery",
+              "authors": "Marina Budarina",
+              "edition": "Versão 3.0; atualização de 08/07/2023",
+              "pages": "Páginas físicas do PDF: 247–248",
+              "note": "A contribuição é convertida em verificação de comportamento implementado. Uma composição ou Auto Layout no Figma continua insuficiente para aprovar o teste."
             }
           ]
         }
@@ -607,22 +641,13 @@
           ],
           "examples": [
             {
-              "title": "Gmail no Android: envio e oportunidade de desfazer",
-              "url": "https://support.google.com/mail/answer/2819488?co=GENIE.Platform%3DAndroid&hl=en",
-              "source": "Ajuda oficial do Gmail",
-              "analysis": "<p>A documentação do Gmail para Android descreve uma indicação após o envio acompanhada da opção de desfazer. O padrão reúne retorno de estado e uma oportunidade próxima à ação para corrigir um engano.</p><p>A análise exige cuidado: essa oportunidade não deve ser interpretada como poder ilimitado de recolher qualquer mensagem já entregue. Ao estudar o fluxo, pergunte quando a ação deixa de estar disponível, como a pessoa percebe a mudança e o que acontece com o texto recuperado. A utilidade do exemplo está no acoplamento temporal entre ação e recuperação. Ele não justifica substituir toda confirmação de alto risco por um aviso transitório. A documentação confirma a função; não representa um teste nosso do aplicativo em todas as versões.</p>"
-            },
-            {
-              "title": "GOV.UK: confirmação distingue envio e resultado posterior",
-              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/",
-              "source": "GOV.UK Design System, captura de exemplo oficial",
-              "analysis": "<p>O painel “Application complete”, solicitação concluída, confirma a etapa atual e destaca uma referência. Abaixo, “What happens next”, o que acontece a seguir, explica a continuação. Observe a distinção: o texto informa encaminhamento ao órgão responsável; não diz que o registro já foi aprovado.</p><p>Essa diferença é central à visibilidade de estado. Uma confirmação pode ser verdadeira sobre o envio e ainda exigir explicação sobre a decisão posterior. O número permite reconhecer o caso ao retomar contato. A captura não mostra um controle de desfazer: use o Gmail acima para estudar essa função, sem atribuí-la a esta página.</p>",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-confirmation.png",
-              "alt": "Página de confirmação com painel verde Solicitação concluída, número de referência, confirmação de e-mail e seção O que acontece a seguir, explicando que um órgão analisará o registro.",
-              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/"
+              "title": "Salvar, confirmar e desfazer são momentos diferentes",
+              "visualHtml": "<div class=\"demo-flow\"><div class=\"demo-step\"><p class=\"ui-kicker\">1 · Operação em andamento</p><h4 class=\"ui-subtitle\">Salvando seu plano…</h4><p class=\"ui-copy\">Forma &amp; luz · domingo, 15h</p><div class=\"ui-notice\"><p class=\"ui-copy\">Aguarde a confirmação para saber se o plano foi salvo.</p></div><span class=\"ui-badge\">Ainda não é sucesso</span></div><div class=\"demo-step\"><p class=\"ui-kicker\">2 · Resposta recebida</p><h4 class=\"ui-subtitle\">Plano salvo</h4><p class=\"ui-copy\">Forma &amp; luz está no seu Plano cultural.</p><div class=\"ui-button is-secondary\">Ver meu plano</div><p class=\"ui-small\">O ingresso não foi reservado.</p></div><div class=\"demo-step\"><p class=\"ui-kicker\">3 · Depois de remover a visita</p><h4 class=\"ui-subtitle\">Visita removida do plano</h4><p class=\"ui-copy\">Você pode recolocá-la.</p><div class=\"ui-button is-tonal\">Desfazer remoção</div><span class=\"ui-badge\">Ação posterior e reversível</span></div></div>",
+              "analysis": "<p>Os três cartões representam momentos sucessivos, não mensagens simultâneas. Primeiro, o sistema recebeu uma tentativa e ainda aguarda o resultado. Depois, confirma que o plano foi salvo. A terceira situação ocorre somente após outra ação: remover a visita. A exposição e o ingresso não são apagados ou cancelados por essa remoção.</p><p>“Desfazer remoção” nomeia a recuperação oferecida. Um simples “OK” não deixaria a consequência tão clara. Também evitamos inventar uma porcentagem de progresso quando o sistema não teria como calculá-la. O retorno da operação deve descrever o que realmente ficou garantido.</p><p>Essa proposta pressupõe que remover do plano seja reversível na implementação. Se houver prazo para desfazer, ele precisa ser definido e acessível, sem uma mensagem que desapareça antes de ser encontrada. Teste o fluxo com atraso, falha e retorno após interrupção; confirme que o usuário distingue tentativa, conclusão e recuperação.</p>",
+              "alt": "Três etapas fictícias: salvando o plano, plano salvo e, após uma remoção posterior, opção de desfazer a remoção. As mensagens explicam que o ingresso não foi reservado.",
+              "designNote": "Nenhuma classe nova. demo-flow precisa empilhar os passos em largura compacta e nunca colocar setas que sugiram que a remoção ocorre automaticamente. Desfazer é div estática sem evento.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -707,16 +732,13 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: revisar respostas antes de enviar",
-              "url": "https://design-system.service.gov.uk/patterns/check-answers/",
-              "source": "GOV.UK Design System",
-              "analysis": "<p>O padrão oficial apresenta respostas agrupadas e ações de alteração junto a cada informação. Os nomes acessíveis das ações incluem o assunto correspondente, mesmo quando o texto visual é curto. Assim, a revisão trabalha com reconhecimento: a pessoa vê o que informou em vez de reconstruir o percurso.</p><p>O padrão também permite corrigir um ponto sem recomeçar toda a tarefa. O ganho depende de preservar dados e retornar à revisão, portanto não está apenas no formato da lista. Para mobile, analise se pergunta, resposta e ação continuam associadas quando a linha se reorganiza. Não acrescente uma revisão longa a toda ação trivial; ela é mais defensável quando ajuda a detectar um equívoco que teria consequência real.</p><p><strong>Observe o recorte:</strong> “Check your answers” pede revisar respostas; “Change” significa alterar; “Not provided” informa que um dado não foi fornecido. Em largura compacta, pergunta, valor e ação ocupam linhas sucessivas. O padrão repetido torna a revisão previsível e evita memorizar a tela anterior. Os dados pertencem ao exemplo didático oficial. A imagem não prova o retorno correto depois da edição, que precisa ser testado.</p>",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-review.png",
-              "alt": "Revisão de respostas com nome e data fictícios do exemplo oficial, referência não informada e endereço. Cada informação tem um link Alterar associado visualmente.",
-              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/check-answers/default/"
+              "title": "Revisar é reconhecer o que foi escolhido",
+              "visualHtml": "<div class=\"demo-compare\"><div class=\"demo-card demo-bad\"><p class=\"ui-kicker\">Contexto ausente</p><h4 class=\"ui-subtitle\">Confirmar escolhas?</h4><p class=\"ui-copy\">Tudo pronto para continuar.</p><div class=\"ui-button is-primary\">Confirmar</div><p class=\"ui-muted\">Qual local? Que dia? O que será confirmado?</p></div><div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Estudo fictício</span></div><div class=\"demo-body\"><p class=\"ui-kicker\">Composição estática</p><h4 class=\"ui-title\">Revise seu plano</h4><div class=\"ui-list\"><div class=\"demo-card\"><p class=\"ui-label\">Visita</p><p class=\"ui-copy\">Forma &amp; luz · Galeria Horizonte</p><div class=\"ui-button is-secondary\">Alterar visita</div></div><div class=\"demo-card\"><p class=\"ui-label\">Chegada planejada</p><p class=\"ui-copy\">Domingo, 18 de outubro · 15h</p><div class=\"ui-button is-secondary\">Alterar horário</div></div></div><div class=\"ui-notice\"><p class=\"ui-copy\">Isso salva um plano. Não compra nem reserva ingresso.</p></div><div class=\"ui-button is-primary\">Salvar este plano</div></div></div></div>",
+              "analysis": "<p>A versão resumida demais pede uma confirmação sem mostrar o objeto da decisão. A revisão à direita traz visita e horário para o presente da tarefa. A pessoa pode reconhecer o que escolheu, em vez de reconstruir mentalmente telas anteriores. Os verbos também esclarecem o alcance: alterar visita, alterar horário e salvar plano.</p><p>Essa revisão é justificável quando ajuda a detectar um equívoco relevante. Ela adiciona uma etapa, portanto não deve ser aplicada automaticamente a ações triviais. O mesmo produto pode permitir salvar um favorito com retorno imediato e exigir uma revisão mais explícita ao organizar vários horários.</p><p>Teste se alterar um item retorna ao resumo sem apagar outras escolhas. Verifique também se nomes longos mantêm a ação associada ao dado correto. A composição não demonstra esse comportamento; ela define a informação necessária para implementá-lo e avaliá-lo.</p>",
+              "alt": "Comparação entre uma confirmação vaga e um resumo que mostra visita, horário, ações de alteração e aviso de que salvar não compra nem reserva ingresso.",
+              "designNote": "Nenhuma classe nova. Evitar rolagem horizontal; cada linha da revisão é um bloco vertical em telas compactas. Os controles de alteração são divs, não links reais. A amostra de 18 de outubro é dado fictício, não recomendação de visita atual.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -796,23 +818,13 @@
           ],
           "examples": [
             {
-              "title": "Atalhos da Apple: ação rápida com continuidade explícita",
-              "url": "https://support.apple.com/en-gb/guide/shortcuts/apd029b36d05/ios",
-              "source": "Guia oficial Atalhos da Apple",
-              "analysis": "<p>O widget de Atalhos permite executar uma rotina fora do aplicativo, indica andamento e oferece cancelamento. Quando uma etapa não pode terminar no widget, o aplicativo é aberto; quando faltam dados, a execução pede informação.</p><p>O exemplo mostra que eficiência não exige fingir que tudo cabe na superfície compacta. A análise transferível é projetar a continuidade: qual contexto acompanha a mudança de lugar e como a pessoa sabe que ainda está na mesma tarefa? Não estamos afirmando que qualquer atalho criado por terceiros é seguro ou acessível.</p>"
-            },
-            {
-              "title": "GOV.UK: o resumo de erros também é navegação",
-              "url": "https://design-system.service.gov.uk/components/error-summary/",
-              "source": "GOV.UK Design System",
-              "analysis": "<p>O componente oficial reúne os problemas e liga cada um à resposta correspondente. A orientação prevê foco no resumo e mensagens coerentes entre resumo e campo. Isso combina diagnóstico com um caminho de correção.</p><p>Observe a diferença entre dizer “há erros” e levar ao ponto onde agir. A mesma estrutura pode inspirar formulários compactos, desde que foco e rolagem não ocultem o campo. Não se deve copiar o componente isoladamente e presumir que a recuperação inteira ficou resolvida.</p><p><strong>Na captura:</strong> “There is a problem” significa há um problema; “Enter your full name” indica informe seu nome completo. O resumo oferece orientação global; a repetição junto à entrada mantém a instrução no ponto de ação. Esse texto adicional tem função, portanto removê-lo apenas para reduzir a tela seria um minimalismo contraproducente. A navegação e o anúncio do erro exigem teste em execução.</p>",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-error.png",
-              "alt": "Resumo de erro com um link para corrigir o nome completo, seguido do campo correspondente e da mesma mensagem de correção.",
-              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "visualAspect": "500 / 360"
+              "title": "Um atalho útil também precisa de recuperação",
+              "visualHtml": "<div class=\"demo-grid\"><div class=\"demo-card\"><p class=\"ui-kicker\">Acesso recorrente</p><h4 class=\"ui-subtitle\">Seu plano recente</h4><p class=\"ui-copy\">Plano cultural</p><p class=\"ui-muted\">Forma &amp; luz · Galeria Horizonte</p><div class=\"ui-button is-secondary\">Abrir plano salvo</div><p class=\"ui-small\">Também disponível em Planos.</p></div><div class=\"demo-card\"><p class=\"ui-kicker\">Falha simulada</p><h4 class=\"ui-subtitle\">Não foi possível salvar agora</h4><p class=\"ui-copy\">Suas escolhas continuam aqui.</p><div class=\"ui-notice is-error\"><span class=\"ui-label\">Chegada: domingo, 15h</span><p class=\"ui-copy\">Nota: encontrar o grupo na entrada.</p></div><div class=\"ui-button is-primary\">Tentar salvar novamente</div><p class=\"ui-small\">O motivo técnico ainda não foi confirmado.</p></div><div class=\"demo-card\"><p class=\"ui-kicker\">Ajuda no contexto</p><h4 class=\"ui-subtitle\">O que fica no plano?</h4><p class=\"ui-copy\">O local, o horário que você pretende ir e suas notas.</p><p class=\"ui-copy\">Salvar não reserva ingresso. Confirme condições de entrada com a galeria.</p><div class=\"ui-button is-tonal\">Voltar ao meu plano</div></div></div>",
+              "analysis": "<p>O acesso recente acelera uma tarefa recorrente sem substituir a seção Planos. O caminho visível continua disponível para quem não reconhece o atalho. A mensagem de falha preserva dados e não inventa uma causa, como culpar a conexão sem confirmação. Isso mantém a recuperação ligada ao trabalho que a pessoa já realizou.</p><p>A ajuda responde a uma dúvida específica sobre o plano, em poucas frases. Ela não é um tutorial obrigatório antes de qualquer uso. A informação sobre ingresso permanece explícita porque muda a expectativa sobre a ação; retirá-la para parecer mais minimalista reduziria compreensão.</p><p>A repetição de salvamento pressupõe prevenção de duplicidade na implementação. Antes de oferecer nova tentativa, o sistema precisa conhecer ou reconciliar o resultado anterior. Teste a retomada após uma resposta atrasada e verifique se a pessoa recupera o plano sem perder as notas. Os cartões são situações demonstrativas, não uma sequência executável.</p>",
+              "alt": "Três situações fictícias: atalho para um plano recente, falha de salvamento com escolhas preservadas e ajuda explicando o que o plano guarda e que não reserva ingresso.",
+              "designNote": "Nenhuma classe nova. demo-grid deve permitir uma coluna; não forçar três colunas em mobile. .is-error não pode depender só de vermelho, pois o título já identifica a falha. Os três cartões são independentes; não conectar com setas de fluxo.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -898,26 +910,21 @@
             {
               "title": "Priorizar, corrigir e testar novamente",
               "body": "<p>Avalie consequência, frequência observada, alcance provável e capacidade de recuperação. Um bloqueio raro pode merecer prioridade sobre um incômodo frequente. Não invente precisão ao multiplicar notas subjetivas. Explique por que um problema impede a tarefa ou gera custo, e indique quão segura é a interpretação.</p><p>Atribua uma ação verificável a cada achado importante. Após a alteração, repita a tarefa e procure efeitos colaterais. Use teste qualitativo para entender mecanismos; use estudos quantitativos planejados quando precisar estimar taxas ou comparar desempenho com confiança estatística. Nenhum deles substitui automaticamente o outro. O relatório deve informar versão, data, perfis, tarefas, ajuda recebida e limites da conclusão.</p>"
+            },
+            {
+              "title": "Antes de retestar, escreva o que poderia contrariar sua hipótese",
+              "body": "<p>O reteste perde valor quando qualquer comportamento é interpretado como confirmação da nova tela. Antes da próxima sessão, registre uma previsão observável e um resultado que faria a equipe reconsiderar a solução. Isso não transforma uma rodada formativa em experimento controlado; torna a interpretação discutível e reduz a tentação de explicar o resultado somente depois de vê-lo.</p><p>Considere uma hipótese fictícia do Rota: a expressão Salvar plano foi confundida com uma reserva confirmada. A revisão acrescenta a consequência explícita perto da ação. A previsão não é “as pessoas vão gostar mais”, mas conseguir explicar o que foi salvo e se ainda existe alguma providência fora do Rota. Uma resposta que continua afirmando haver ingresso reservado contraria a suficiência da revisão. Também pode haver nova dificuldade: a explicação ficou distante da ação ou passou a competir com outra informação.</p><ol><li>Vincule o problema original à versão revisada e descreva exatamente a mudança.</li><li>Registre a previsão e o comportamento que a contrariaria, sem entregar essa resposta ao participante.</li><li>Execute a tarefa e preserve também resultados inesperados, ajuda recebida e dúvidas sem resolução.</li><li>Conclua com corrigido no escopo observado, ainda presente ou inconclusivo, justificando a escolha.</li></ol><p>Se participantes, cenário ou instruções mudaram, declare a diferença. Uma rodada pode orientar a próxima decisão sem isolar a causa da melhora. Não apague o achado antigo: ligue-o ao novo registro para que outra pessoa consiga reconstruir por que a decisão mudou.</p>"
             }
           ],
           "examples": [
             {
-              "title": "GDS e governos locais: pesquisa que alterou a jornada",
-              "url": "https://designnotes.blog.gov.uk/2017/10/16/designing-the-first-service-patterns-for-local-government/",
-              "source": "Relato oficial Design in Government, 2017",
-              "analysis": "<p>O relato histórico descreve pesquisa colaborativa para serviços de estacionamento e passe de ônibus, seis rodadas centrais de teste e avaliações locais. Algumas melhorias envolveram retirar etapas e revisar exigências do serviço, além de mudanças de interface.</p><p>A análise importante é que o problema observado nem sempre se resolve dentro de um componente. Se uma exigência desnecessária obriga a pessoa a obter um documento, um formulário mais bonito não elimina esse trabalho. O relato é um caso real de processo, não evidência de que seis rodadas sejam suficientes para qualquer projeto. Também não o tratamos como descrição do serviço atual: ele documenta o trabalho de 2017, útil para estudar como decisões foram vinculadas à pesquisa.</p>"
-            },
-            {
-              "title": "GOV.UK: uma lista de tarefas para formular perguntas testáveis",
-              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/",
-              "source": "GOV.UK Design System, captura de exemplo oficial",
-              "analysis": "<p>“Completed” significa concluído; “Incomplete”, incompleto; “Apply”, enviar solicitação neste contexto. A captura mostra estados em cada linha e uma ação final. A aparência suscita uma pergunta concreta de pesquisa: a pessoa entende o que ainda precisa fazer e quando pode enviar?</p><p>Um cenário neutro poderia pedir retomar uma solicitação interrompida, sem nomear o link correto. Observe então a primeira escolha, a interpretação dos estados e a tentativa de envio. Isso é uma proposta de teste para a interface de exemplo, não um resultado observado. A imagem não prova que o botão esteja bloqueado, nem que todas as etapas sejam obrigatórias.</p>",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-tasks.png",
-              "alt": "Lista oficial de etapas agrupadas em Antes de começar e Preparar solicitação. Links têm estados Concluído ou Incompleto; o botão Enviar solicitação aparece abaixo.",
-              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/"
+              "title": "Da observação à hipótese, sem pular a evidência",
+              "visualHtml": "<div class=\"demo-card\"><div class=\"demo-row\"><h4 class=\"ui-title\">Registro de uma sessão</h4><span class=\"ui-badge\">Dados inteiramente fictícios</span></div><p class=\"ui-copy\">Tarefa demonstrativa: organizar uma visita à exposição Forma &amp; luz.</p><div class=\"demo-flow\"><div class=\"demo-step\"><p class=\"ui-kicker\">1 · Observação simulada</p><p class=\"ui-copy\">A pessoa abre Horários, volta à ficha e pergunta se salvar garante a entrada.</p><span class=\"ui-badge\">Comportamento + fala inventados</span></div><div class=\"demo-step\"><p class=\"ui-kicker\">2 · Interpretação possível</p><p class=\"ui-copy\">O efeito de salvar pode estar ambíguo.</p><p class=\"ui-small\">Hipótese, não diagnóstico comprovado.</p></div><div class=\"demo-step\"><p class=\"ui-kicker\">3 · Próximo teste</p><p class=\"ui-copy\">Explicitar “Salvar no meu plano” e informar que não reserva ingresso.</p><p class=\"ui-small\">Observar entendimento antes do toque.</p></div></div><div class=\"ui-divider\"></div><div class=\"ui-notice\"><p class=\"ui-copy\">Nenhuma sessão foi realizada para esta demonstração. Não há taxa de sucesso nem resultado de pesquisa.</p></div></div>",
+              "analysis": "<p>O registro é inteiramente inventado para ensinar o método. A primeira coluna descreve algo que poderia ser observado; a segunda propõe uma explicação; a terceira escolhe uma mudança a investigar. Separar essas camadas evita transformar interpretação do designer em fato sobre usuários.</p><p>A pergunta sobre ingresso poderia ter outras causas: conhecimento prévio, contexto da tarefa ou conteúdo visto antes. Por isso, a proposta não afirma que o novo rótulo resolverá o problema. Ela define o que observar na próxima avaliação: o entendimento da consequência antes da ação.</p><p>Em um estudo real, acrescente versão, perfil pertinente, cenário, intervenção do moderador e evidência autorizada. Evite calcular uma porcentagem geral com esta ficha ou apresentar uma frase ilustrativa como depoimento. O valor da composição está na rastreabilidade do raciocínio, não na aparência de precisão científica.</p>",
+              "alt": "Registro de pesquisa explicitamente fictício, separado em observação simulada, interpretação possível e próximo teste. O exemplo trata da dúvida entre salvar um plano e reservar ingresso.",
+              "designNote": "Nenhuma classe nova. Tornar o rótulo Dados inteiramente fictícios e a nota final visíveis em todas as larguras. Não substituir esses rótulos por tooltip nem usar números, gráficos ou avatares que aparentem participantes reais. demo-flow empilha sem perda de ordem.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -932,7 +939,9 @@
             "criteria": [
               "Cada conclusão distingue comportamento observado e interpretação.",
               "Ajudas do moderador e limites do protótipo são registrados.",
-              "O tamanho da amostra não é usado para prometer cobertura universal."
+              "O tamanho da amostra não é usado para prometer cobertura universal.",
+              "O plano de reteste inclui uma previsão observável e pelo menos um resultado que contrariaria a hipótese; esses itens são registrados antes da nova observação.",
+              "Quando o reteste é executado, o resultado é ligado à versão original e inclui evidências contraditórias ou inconclusivas. Se não for executado, permanece identificado como plano, sem conclusão inventada."
             ]
           },
           "sources": [
@@ -963,6 +972,15 @@
               "url": "https://www.nngroup.com/videos/usability-testing-101/",
               "source": "Nielsen Norman Group",
               "note": "Vídeo oficial em inglês. Após assistir, escreva uma pergunta de pesquisa e uma tarefa neutra; não use o vídeo como substituto de um plano de estudo."
+            }
+          ],
+          "books": [
+            {
+              "title": "Ergodesign e Arquitetura de Informação: Trabalhando com o Usuário",
+              "authors": "Luiz Agner",
+              "edition": "2ª edição, Quartet, 2009",
+              "pages": "Páginas físicas do PDF: 124–129",
+              "note": "Referência sobre avaliação com usuários e tarefas plausíveis. O registro prévio de previsão, contraevidência e vínculo entre versões é uma extensão metodológica autoral. A afirmação histórica de cinco participantes/80% não é adotada como garantia."
             }
           ]
         },
@@ -1000,22 +1018,13 @@
           ],
           "examples": [
             {
-              "title": "Apple: auditoria automatizada de um aplicativo de demonstração",
-              "url": "https://developer.apple.com/videos/play/wwdc2023/10035/",
-              "source": "Apple Developer, WWDC23",
-              "analysis": "<p>Na sessão oficial, a Apple demonstra auditorias de acessibilidade em testes de interface e discute resultados que precisam de interpretação. O aplicativo de demonstração inclui conteúdo sobre uma imagem e elementos decorativos, tornando visível a diferença entre algo presente na tela e algo que precisa participar da leitura assistiva.</p><p>A lição é definir cobertura e significado: auditar uma tela não percorre automaticamente todos os estados do aplicativo. Um elemento decorativo pode ficar fora da leitura sem ser excluído de verificações de teste. A própria sessão ressalta que auditorias não substituem testes com tecnologia assistiva. Use a demonstração como exemplo de integração ao processo, sem extrapolar para uma promessa de certificação automática.</p>"
-            },
-            {
-              "title": "GOV.UK: opções visíveis e comportamento a verificar",
-              "url": "https://design-system.service.gov.uk/components/radios/default/",
-              "source": "GOV.UK Design System, captura de exemplo oficial",
-              "analysis": "<p>“Where do you live?” significa onde você mora. A captura apresenta quatro opções com rótulos ao lado e contornos perceptíveis. A análise visual pode verificar associação, espaçamento e presença dos nomes. Não permite comprovar a área acionável real: o desenho do círculo e a região que recebe entrada podem diferir.</p><p>Para completar a avaliação, teste se tocar no rótulo seleciona a opção, se teclado e leitor de tela identificam o grupo e se a seleção é anunciada. Amplie o texto e observe o rótulo mais longo, Irlanda do Norte. A referência torna explícita a fronteira entre evidência visual e comportamento ainda a verificar.</p>",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/govuk-radios.png",
-              "alt": "Grupo de quatro opções circulares sob a pergunta Onde você mora?, com Inglaterra, Escócia, País de Gales e Irlanda do Norte.",
-              "credit": "© Crown copyright · GOV.UK Design System. Captura do exemplo oficial para estudo; conteúdo sob Open Government Licence v3.0.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/components/radios/default/"
+              "title": "O que o desenho especifica e o que o teste comprova",
+              "visualHtml": "<div class=\"demo-compare\"><div class=\"demo-card\"><p class=\"ui-kicker\">Especificação visual</p><h4 class=\"ui-subtitle\">Salvar Forma &amp; luz</h4><div class=\"demo-row\"><div class=\"demo-target-48\"><span class=\"demo-glyph-24\">+</span></div><div class=\"demo-grow\"><p class=\"ui-label\">Área planejada: 48 × 48 CSS px</p><p class=\"ui-small\">Símbolo desenhado dentro de 24 × 24 CSS px</p></div></div><div class=\"ui-notice\"><p class=\"ui-label\">Nome previsto para tecnologia assistiva</p><p class=\"ui-copy\">Salvar Forma &amp; luz no meu plano</p></div><div class=\"ui-input is-focus\">Nota para a visita</div><p class=\"ui-small\">Foco visível é uma intenção de design.</p></div><div class=\"demo-card\"><p class=\"ui-kicker\">Verificação em execução</p><h4 class=\"ui-subtitle\">Ainda precisa ser testado</h4><div class=\"ui-list\"><div class=\"demo-row\"><span class=\"ui-badge\">Pendente</span><p class=\"ui-copy\">A região real de toque corresponde à área planejada?</p></div><div class=\"demo-row\"><span class=\"ui-badge\">Pendente</span><p class=\"ui-copy\">Nome, função e estado são anunciados?</p></div><div class=\"demo-row\"><span class=\"ui-badge\">Pendente</span><p class=\"ui-copy\">Texto maior preserva a ação?</p></div><div class=\"demo-row\"><span class=\"ui-badge\">Pendente</span><p class=\"ui-copy\">Teclado e foco alcançam o fluxo inteiro?</p></div></div><p class=\"ui-small\">Esta composição não é um controle funcional nem um laudo de conformidade.</p></div></div>",
+              "analysis": "<p>O quadrado externo representa uma área planejada de 48 × 48 CSS px para este exemplo web; o símbolo ocupa uma caixa menor. A separação explica por que desenho e região acionável são decisões diferentes. Não converta esse número em pt de iOS ou dp Android, nem o apresente como mínimo universal da WCAG.</p><p>Ao lado, o nome previsto descreve ação e objeto. Ele é uma especificação para implementação, não um nome acessível já testado. Da mesma maneira, o contorno de foco indica uma intenção visual; a composição estática não comprova ordem, acionamento, retorno de diálogos ou visibilidade com teclado aberto.</p><p>O quadro de pendências evita uma aprovação baseada apenas na aparência. Na implementação, confirme área real, semântica, texto ampliado e conclusão da tarefa com os recursos assistivos pertinentes. Acessibilidade exige evidências do fluxo, e não a soma de alguns números corretos em uma ficha.</p>",
+              "alt": "Diagrama de área planejada de 48 por 48 CSS px com símbolo de 24 por 24, nome acessível previsto e foco visual, acompanhado de quatro verificações ainda pendentes.",
+              "designNote": "Classes novas: .demo-target-48 {width:48px;height:48px;flex:0 0 48px;box-sizing:border-box;border:2px solid #335CFF;border-radius:10px;display:grid;place-items:center;background:#FFFFFF}; .demo-glyph-24 {display:grid;place-items:center;width:24px;height:24px;font-size:22px;line-height:1;background:#F7F7F7;color:#171717}. Não adicionar role=button ou tabindex. Rótulo diz área planejada porque não existe interação nesta composição. Preservar a dimensão CSS real na renderização; não escalar o diagrama com transform.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {

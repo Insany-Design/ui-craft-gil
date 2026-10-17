@@ -39,19 +39,21 @@
             {
               "title": "Erros que comprometem o projeto inteiro",
               "body": "<p>Começar pela tela inicial sem conhecer o final do fluxo costuma produzir navegação sem propósito. Copiar o menu de um concorrente pode importar categorias que não existem no seu conteúdo. Criar personas sem dados pode dar uma aparência de pesquisa a suposições. Incluir pagamento, chat e geolocalização antes de demonstrar a tarefa principal aumenta a superfície de erro sem necessariamente melhorar o aprendizado.</p><p>Use este enquadramento quando o problema ainda está aberto ou quando uma interface perdeu clareza ao acumular funções. Não transforme o processo em burocracia: um reparo pequeno e bem compreendido pode precisar de uma página de contexto, em vez de um projeto de descoberta completo. A profundidade da investigação deve acompanhar a incerteza e a consequência da decisão.</p>"
+            },
+            {
+              "title": "Briefing estratégico: ligar objetivos, escolhas e evidência",
+              "body": "<p>O briefing também precisa explicar por que este problema merece ser resolvido. Separe <strong>objetivo da organização</strong>, <strong>resultado para a pessoa</strong> e <strong>hipótese de design</strong>. No Rota, “ser lembrado como ferramenta de planejamento cultural” poderia ser um objetivo hipotético do produto. “Reencontrar endereço e horário sem refazer a busca” é um resultado para a pessoa. “Um resumo persistente em Meu plano ajuda nessa retomada” é uma hipótese sobre a solução. Uma frase não comprova a outra.</p><p>Registre a ligação em uma sequência curta: objetivo → decisão → observação necessária. Por exemplo: facilitar retomada → manter o plano e o contexto de origem → observar se alguém encontra o passeio salvo e entende o que está confirmado. Se o produto futuramente medir retorno de uso, isso será um indicador separado, dependente de consentimento, instrumentação e contexto. Não invente um ganho de retenção ou retorno financeiro para justificar a tela.</p><p>Inclua no briefing quem decide, que restrições são reais e o que exige nova aprovação. Se surgir a proposta de vender ingressos, ela altera suporte, transação, disponibilidade e responsabilidade do fluxo. Não é apenas um botão novo. Registre a mudança de escopo, seu motivo e a evidência ainda necessária. Para um exercício individual, esse registro pode caber em cinco linhas; para um serviço de maior risco, precisará de profundidade maior.</p>"
             }
           ],
           "examples": [
             {
-              "title": "GOV.UK: uma lista de tarefas mostra o estado do serviço",
-              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/",
-              "source": "GOV.UK Design System",
-              "analysis": "<p>O exemplo oficial separa grupos de tarefas e mostra quais foram concluídas. Isso permite retomar uma transação longa sem exigir que a pessoa memorize o que já fez. O padrão também define quando uma tarefa ainda não pode começar.</p><p>Observe o limite de aplicação: um passeio simples do Rota não precisa receber uma lista administrativa inteira. A transferência útil é mostrar estado e permitir retomada. Compare o tamanho da tarefa, a quantidade de sessões e a dependência entre passos antes de escolher a mesma forma visual.</p><p>Na captura, “Completed” significa concluído e “Incomplete”, incompleto. O grupo “Check before you start” reúne verificações antes de começar; “Prepare application” reúne a preparação do pedido. O botão “Apply” envia a solicitação neste exemplo demonstrativo.</p>",
-              "image": "real-assets/govuk-tasks.png",
-              "alt": "Lista de tarefas com grupos e estados de conclusão.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura de exemplo oficial para estudo, em outubro de 2026. Dados demonstrativos fictícios.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+              "title": "Do objetivo ao primeiro fluxo do Rota",
+              "visualHtml": "<div class=\"demo-column\"><div class=\"demo-card\"><div class=\"demo-row\"><div class=\"ui-avatar\">R</div><div class=\"demo-grow\"><div class=\"ui-kicker\">Briefing de estudo · hipótese inicial</div><div class=\"ui-title\">Uma tarde cultural, sem perder o contexto</div></div></div><div class=\"demo-grid\"><div><div class=\"ui-label\">Resultado para a pessoa</div><p class=\"ui-copy\">Comparar visitas de até duas horas e reencontrar o plano com endereço e horário.</p></div><div><div class=\"ui-label\">Recorte deste ciclo</div><p class=\"ui-copy\">Descobrir, detalhar e salvar. Sem venda de ingresso ou reserva de vaga.</p></div></div></div><div class=\"demo-flow\"><div class=\"demo-step\"><span class=\"ui-number\">1</span><span class=\"ui-label\">Descobrir</span><span class=\"ui-muted\">Filtrar por duração e custo.</span></div><div class=\"demo-step\"><span class=\"ui-number\">2</span><span class=\"ui-label\">Conferir</span><span class=\"ui-muted\">Ler o detalhe de Forma &amp; luz, na Galeria Horizonte.</span></div><div class=\"demo-step\"><span class=\"ui-number\">3</span><span class=\"ui-label\">Planejar</span><span class=\"ui-muted\">Definir horário e salvar para consultar.</span></div></div><div class=\"ui-notice\"><strong>Pergunta para o teste</strong><span>A pessoa distingue um plano pessoal de uma reserva de ingresso?</span></div></div>",
+              "analysis": "<p>O briefing começa pelo resultado e pela restrição da tarde, não por um pedido de três abas. “Até duas horas” é uma condição da tarefa; por isso duração aparece antes de enfeites na busca. O fluxo seleciona três decisões que podem ser investigadas separadamente: encontrar, conferir e guardar.</p><p>Há duas entidades explícitas: <strong>Forma &amp; luz é a exposição; Galeria Horizonte é o local</strong>. Manter essa distinção no inventário evita que a lista, o detalhe e o plano usem nomes diferentes como se fossem o mesmo campo. O exemplo é fictício, inclusive seus dados e sua pergunta de pesquisa.</p><p>O recorte exclui reserva. Isso reduz dependências, mas também exige uma limitação visível: salvar não garante disponibilidade. Teste pedindo a alguém que deixe o passeio pronto para consultar e depois explique o que acredita ter obtido. Se a resposta for “garanti minha entrada”, a mensagem falhou, mesmo que o fluxo tenha poucos passos.</p>",
+              "alt": "Briefing fictício, três etapas da tarefa e pergunta sobre a diferença entre plano e reserva.",
+              "designNote": "Briefing e fluxo, não uma tela de produção. Cada etapa responde a uma decisão.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -67,7 +69,8 @@
               "Fatos e hipóteses estão separados; nenhuma pesquisa fictícia é apresentada como realizada.",
               "Cada ação do fluxo tem destino, consequência e caminho de saída.",
               "Salvar uma visita e fazer uma reserva não são confundidos.",
-              "O escopo excluído está explícito e não impede concluir a tarefa principal."
+              "O escopo excluído está explícito e não impede concluir a tarefa principal.",
+              "O briefing distingue objetivo da organização, resultado para a pessoa e hipótese de solução; nenhuma métrica é inventada."
             ]
           },
           "sources": [
@@ -87,7 +90,23 @@
               "note": "Exemplo real de agrupamento, dependência e estado de tarefas."
             }
           ],
-          "videos": []
+          "videos": [],
+          "books": [
+            {
+              "title": "Briefing: a Gestão do Projeto de Design",
+              "authors": "Peter L. Phillips",
+              "edition": "Edição brasileira Blücher; ficha 2007, direitos 2008, 1ª reimpressão 2009.",
+              "pages": "PDF, páginas físicas 57–60.",
+              "note": "Objetivos, estratégia, escopo e critérios de avaliação."
+            },
+            {
+              "title": "O Design como Diferencial Competitivo: o Processo de Design Desenvolvido sob o Enfoque da Qualidade e da Gestão Estratégica",
+              "authors": "Flávio Anthero dos Santos",
+              "edition": "Editora da Univali, 2000.",
+              "pages": "PDF, páginas físicas 22–23 e 53–55.",
+              "note": "Necessidades, planejamento e registro das decisões; não transplantar a estrutura de gestão para qualquer equipe."
+            }
+          ]
         },
         {
           "id": "projeto-estrutura-componentes",
@@ -123,25 +142,21 @@
             {
               "title": "Quando sistematizar e quando não abstrair",
               "body": "<p>Vale criar uma regra quando a decisão reaparece, quando inconsistências prejudicam a tarefa ou quando várias pessoas precisam trabalhar juntas. Não crie dezenas de variantes para situações que ainda não existem. Um sistema mínimo bem documentado é mais útil que uma biblioteca extensa sem critérios de uso.</p><p>Os erros mais caros são ligar identidade visual a valores espalhados, criar variações sem nome, esquecer estados e aprovar somente a tela ideal. Outro erro é confundir consistência com uniformidade: detalhe e busca podem precisar de estruturas diferentes. A pergunta é se a diferença responde à tarefa e continua compreensível.</p>"
+            },
+            {
+              "title": "Quando o componente muda: decidir, registrar e revisar",
+              "body": "<p>Um sistema de design precisa continuar coerente depois da primeira entrega. Imagine que o cartão do Rota passou a receber exposições com nome extenso e sem duração informada. Antes de criar “Cartão 2”, confira se é o mesmo trabalho com outro conteúdo. Se for, amplie o contrato existente: título cresce, metadado ausente ganha mensagem própria e ação continua com o mesmo nome. Uma variante só merece existir quando sua diferença de uso ou comportamento pode ser explicada.</p><p>Faça um inventário das telas que usam o cartão e registre uma pequena decisão: problema encontrado, regra anterior, regra nova, exemplos afetados e como verificar. Teste lista, detalhe relacionado e plano, com texto ampliado e metadados ausentes. A mudança pode resolver o corte e aumentar demais a altura de uma lista; essa consequência precisa ser avaliada, não escondida.</p><p>Para este projeto, uma página compartilhada e uma numeração simples de versão são suficientes. Uma biblioteca grande sem responsável, critério de uso ou revisão não se torna um sistema completo. A contribuição de livros sobre sistemas está na relação entre padrões e práticas de trabalho, não em exigir centenas de tokens. Se a implementação adotar um formato de troca de tokens, confira a especificação e a versão utilizadas; nomes privados de ferramentas não são automaticamente um padrão interoperável.</p>"
             }
           ],
           "examples": [
             {
-              "title": "Designing Interfaces: estudar padrões sem copiar uma tela",
-              "url": "https://www.oreilly.com/library/view/designing-interfaces-3rd/9781492051954/",
-              "source": "O’Reilly · Jenifer Tidwell, Charles Brewer e Aynne Valencia",
-              "analysis": "<p>O livro organiza soluções de interface em padrões, incluindo listas, navegação, formulários e sistemas de componentes. A página da editora permite conhecer o escopo e o sumário, sem precisar reproduzir capítulos protegidos.</p><p>Use a referência para ampliar alternativas. Para um mesmo fluxo do Rota, compare uma lista com um arranjo de dois painéis e escreva a condição em que cada opção funciona. O aprendizado está em relacionar problema e solução, e não em reproduzir uma aparência fora do contexto.</p>"
-            },
-            {
-              "title": "GOV.UK: revisar respostas antes de confirmar",
-              "url": "https://design-system.service.gov.uk/patterns/check-answers/",
-              "source": "GOV.UK Design System",
-              "analysis": "<p>O exemplo apresenta dados em pares de rótulo e valor, com ações de alteração próximas de cada item. A leitura revela o que será enviado e oferece correção localizada antes da confirmação.</p><p>No Rota, uma revisão curta pode mostrar visita, data e horário. Não copie uma longa página de formulário se só há uma escolha simples. A decisão a preservar é permitir compreender e corrigir a consequência, com esforço proporcional ao risco.</p><p>“Check your answers” significa conferir suas respostas; “Change” permite alterar o dado correspondente. Os nomes e endereços são dados fictícios do exemplo oficial. Observe a relação entre título de grupo, rótulo, valor e ação localizada.</p>",
-              "image": "real-assets/govuk-review.png",
-              "alt": "Página de revisão com rótulos, valores fictícios e links para alterar cada resposta.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura de exemplo oficial para estudo, em outubro de 2026. Dados demonstrativos fictícios.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+              "title": "O mesmo cartão precisa suportar dados diferentes",
+              "visualHtml": "<div class=\"demo-compare\"><div class=\"demo-card\"><div class=\"ui-kicker\">Conteúdo completo</div><div class=\"ui-art\">FORMA &amp; LUZ</div><div><div class=\"ui-subtitle\">Forma &amp; luz</div><div class=\"ui-muted\">Galeria Horizonte · Centro</div></div><div class=\"demo-row\"><span class=\"ui-chip\">Duração: 1h30</span><span class=\"ui-badge is-success\">Gratuito</span></div><div class=\"ui-button is-primary\">Ver visita</div></div><div class=\"demo-card\"><div class=\"ui-kicker\">Conteúdo incompleto</div><div class=\"ui-notice\"><span class=\"ui-label\">Imagem indisponível</span><span>O nome e os dados da visita continuam disponíveis.</span></div><div><div class=\"ui-subtitle\">Memórias da cidade: caminhos e encontros</div><div class=\"ui-muted\">Casa do Bairro · Zona Oeste</div></div><div class=\"demo-row\"><span class=\"ui-chip\">Duração não informada</span><span class=\"ui-badge\">Preço não informado</span></div><div class=\"ui-button is-primary\">Ver visita</div></div></div><div class=\"demo-card\"><div class=\"ui-label\">Contrato do componente</div><div class=\"ui-copy\">O nome cresce sem corte. Custo ausente não vira “grátis”. A imagem complementa o conteúdo. “Ver visita” abre o detalhe em todas as variantes.</div></div>",
+              "analysis": "<p>Os dois cartões compartilham hierarquia, cantos, estilos de texto e ação. A diferença não foi resolvida com dois componentes sem relação: o segundo recebe nome longo, ausência de imagem e metadados desconhecidos. O contêiner cresce e os rótulos explicam a ausência.</p><p>Este é o ganho de um contrato: “preço não informado” não pode virar “gratuito” para caber em um selo verde. Cor semântica depende do significado do dado. A borda suave organiza o cartão; o botão tem forma e contraste próprios para comunicar ação.</p><p>Usar a mesma altura em todos os cartões pode facilitar uma grade, mas não deve cortar informação necessária. Aqui a composição aceita alturas diferentes. Se a tarefa exigir comparação linha a linha, uma lista com campos alinhados pode ser melhor. Teste com três nomes extensos, texto ampliado e imagem ausente antes de criar novas variantes.</p>",
+              "alt": "Dois cartões originais com a mesma estrutura, um completo e outro com nome longo e dados ausentes.",
+              "designNote": "Comparação de variantes reais do conteúdo; não duplicar conteúdo só para obter simetria.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -157,7 +172,8 @@
               "A ação principal de cada tela corresponde ao fluxo definido.",
               "Os mesmos dados aparecem com rótulos consistentes na lista, detalhe e plano.",
               "Nenhuma informação crítica desaparece quando o texto cresce.",
-              "As áreas de interação e a ordem de foco estão especificadas."
+              "As áreas de interação e a ordem de foco estão especificadas.",
+              "Uma alteração compartilhada identifica as telas afetadas e inclui um cenário de regressão."
             ]
           },
           "sources": [
@@ -177,7 +193,30 @@
               "note": "Exemplo de revisão e correção localizada."
             }
           ],
-          "videos": []
+          "videos": [],
+          "books": [
+            {
+              "title": "Design Systems: A Practical Guide to Creating Design Languages for Digital Products",
+              "authors": "Alla Kholmatova",
+              "edition": "Smashing Media, 2017.",
+              "pages": "PDF, páginas físicas 19–22, 185–190 e 255–260.",
+              "note": "Padrões compartilhados, inventário e documentação usados proporcionalmente ao projeto."
+            },
+            {
+              "title": "Dive into UI Design Systems: Theory and Practice",
+              "authors": "Dima Groshev",
+              "edition": "Amostra gratuita, versão 0.5, 24/10/2024.",
+              "pages": "PDF, páginas físicas 12–13 e 36–37.",
+              "note": "Escopo proporcional; a amostra não equivale à leitura do livro integral."
+            },
+            {
+              "title": "UI Design Systems Mastery",
+              "authors": "Marina Budarina",
+              "edition": "Versão 3.0; atualização 08/07/2023.",
+              "pages": "PDF, páginas físicas 58–70 e 229–230.",
+              "note": "Inventário e composição; ferramentas e integrações devem ser conferidas na versão atual."
+            }
+          ]
         },
         {
           "id": "projeto-prototipo-estados",
@@ -213,19 +252,21 @@
             {
               "title": "Quando parar de polir",
               "body": "<p>Se a dúvida é estrutural, investir em animações refinadas pode atrasar a descoberta de um problema fundamental. Se a dúvida depende de uma transição ou gesto, o movimento pode ser essencial à pergunta. A fidelidade certa é a menor que permite observar o comportamento relevante sem introduzir distrações desproporcionais.</p><p>Não simule segurança, persistência ou dados atualizados sem avisar. Apresente o Rota como protótipo fictício e não solicite informações reais dos participantes. Registre limitações: sem pagamento, sem localização real, sem consulta de horários e sem garantia de disponibilidade. Transparência mantém o teste focado e evita transformar uma demonstração em promessa de serviço.</p>"
+            },
+            {
+              "title": "Recuperação precisa de um contrato de dados",
+              "body": "<p>Complete a matriz de estados com três perguntas: <strong>o que disparou a transição?</strong>, <strong>o que está preservado?</strong> e <strong>qual saída é realmente possível?</strong> Em uma falha ao salvar o Rota, conservar o horário apenas na memória da tela é diferente de ter um rascunho persistente. A primeira opção pode funcionar ao tentar novamente, mas perder tudo ao fechar o aplicativo. A segunda exige armazenamento e regras de recuperação. Escreva qual delas existe no protótipo e qual é requisito do produto.</p><p>Uma resposta de rede incerta também difere de uma falha confirmada. A operação pode ter sido concluída sem a resposta chegar à interface. Por isso, “tente de novo” precisa ser combinado com quem implementa para evitar duplicidade ou recuperar o estado verdadeiro. O desenho pode mostrar o problema, mas não comprova que o serviço sabe resolvê-lo.</p><p>Ao testar, comece pela mesma tarefa e introduza uma interrupção específica. Observe se a pessoa reconhece o estado, encontra a saída e continua com dados coerentes. Evite ensaiar apenas mensagens isoladas. O critério é a continuidade da tarefa, com uma explicação honesta do que foi ou não salvo.</p>"
             }
           ],
           "examples": [
             {
-              "title": "GOV.UK: confirmação com consequência e próximo passo",
-              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/",
-              "source": "GOV.UK Design System",
-              "analysis": "<p>O exemplo de confirmação não se limita a um símbolo verde. Ele organiza a informação de que a ação terminou e o que acontece depois, incluindo referência e próximos passos quando pertinentes.</p><p>No Rota, a confirmação deve dizer que o item entrou no plano e esclarecer que não houve reserva. “Tudo certo!” sozinho deixa a consequência ambígua. Observe a relação entre estado e compromisso, e adapte a quantidade de conteúdo ao que realmente aconteceu.</p><p>“Application complete” informa que a solicitação foi concluída. “What happens next” apresenta os próximos passos. Na tela, resultado imediato e etapa posterior são comunicados em blocos diferentes.</p>",
-              "image": "real-assets/govuk-confirmation.png",
-              "alt": "Página de confirmação com resultado, referência fictícia e próximos passos.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura de exemplo oficial para estudo, em outubro de 2026. Dados demonstrativos fictícios.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+              "title": "Salvar o plano: transições, dados preservados e recuperação",
+              "visualHtml": "<div class=\"demo-grid\"><div class=\"demo-card\"><div class=\"demo-row\"><span class=\"ui-number\">1</span><span class=\"ui-kicker\">Pronto para salvar</span></div><div class=\"ui-subtitle\">Forma &amp; luz</div><div class=\"ui-muted\">Galeria Horizonte · sábado, 15h</div><div class=\"ui-button is-primary\">Salvar no meu plano</div><div class=\"ui-small\">Entrada: dados revisados pela pessoa.</div></div><div class=\"demo-card\"><div class=\"demo-row\"><span class=\"ui-number\">2</span><span class=\"ui-kicker\">Processando</span></div><div class=\"ui-subtitle\">Salvando seu plano…</div><div class=\"ui-copy\">O horário e a nota permanecem na tela.</div><div class=\"ui-button is-tonal\">Salvamento em andamento</div><div class=\"ui-small\">Uma segunda ativação não cria outro plano.</div></div><div class=\"demo-card\"><div class=\"demo-row\"><span class=\"ui-number\">3</span><span class=\"ui-kicker\">Falha recuperável</span></div><div class=\"ui-notice is-error\"><strong>Não foi possível salvar agora</strong><span>Seu horário e sua nota continuam preenchidos. Tente novamente.</span></div><div class=\"ui-button is-secondary\">Tentar salvar novamente</div><div class=\"ui-small\">Estado de falha simulado para estudar o fluxo.</div></div><div class=\"demo-card\"><div class=\"demo-row\"><span class=\"ui-number\">4</span><span class=\"ui-kicker\">Conclusão</span></div><div class=\"ui-badge is-success\">Plano salvo</div><div class=\"ui-subtitle\">Sábado, às 15h</div><div class=\"ui-copy\">Forma &amp; luz · Galeria Horizonte</div><div class=\"ui-notice\">Você organizou um plano pessoal. Nenhum ingresso foi reservado.</div><div class=\"ui-button is-primary\">Ver meu plano</div></div></div>",
+              "analysis": "<p>A sequência não é uma animação decorativa: cada quadro tem uma condição de entrada e uma consequência. Pronto para salvar permite ativação; processando informa a espera; falha conserva o trabalho; sucesso confirma exatamente o que mudou. Esses estados são simulados, não evidência de uma infraestrutura real.</p><p>O caso de erro não devolve a pessoa ao início. Data, horário e nota permanecem disponíveis, reduzindo reconstrução e risco de divergência. A saída “tentar salvar novamente” só é honesta se a implementação impedir duplicidade ou conferir o resultado da tentativa anterior. Isso é um requisito técnico a discutir, não algo que a tela prova.</p><p>Na conclusão, a mensagem principal usa “plano salvo”, enquanto o aviso delimita o que não aconteceu. Essa relação de hierarquia evita uma confirmação vistosa que induza a pessoa a acreditar em reserva. Verifique o fluxo normal, uma falha, uma dupla ativação e uma interrupção; registre quais desses comportamentos o protótipo consegue representar.</p>",
+              "alt": "Quatro estados de salvamento com entrada, processamento, erro recuperável e conclusão limitada a um plano pessoal.",
+              "designNote": "Matriz visual de transições; feedback não deve fingir funcionamento real.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -241,7 +282,8 @@
               "Cada botão ativo produz uma resposta coerente e cada saída preserva ou descarta dados de forma definida.",
               "O protótipo não representa planejamento como reserva confirmada.",
               "As tarefas permitem observar decisões sem ensinar a sequência correta.",
-              "As limitações de foco, teclado, rede e persistência estão documentadas."
+              "As limitações de foco, teclado, rede e persistência estão documentadas.",
+              "Para cada falha, está explícito o que permanece na tela, o que persiste após sair e o que a recuperação pode garantir."
             ]
           },
           "sources": [
@@ -261,7 +303,23 @@
               "note": "Planejamento de perguntas, métodos e atividades de pesquisa."
             }
           ],
-          "videos": []
+          "videos": [],
+          "books": [
+            {
+              "title": "Guia de Boas Práticas Aplicáveis para a Criação de Interfaces",
+              "authors": "Andrey Knabbenn",
+              "edition": "Versão 2.0, 2022.",
+              "pages": "PDF, páginas físicas 73–74 e 163–164.",
+              "note": "Estados e vazio como ponto de partida; contrato de dados e recuperação são aplicação autoral ampliada."
+            },
+            {
+              "title": "Refactoring UI",
+              "authors": "Adam Wathan e Steve Schoger",
+              "edition": "Edição e ano não declarados nas páginas bibliográficas do exemplar consultado.",
+              "pages": "PDF, páginas físicas 234–236.",
+              "note": "Estados vazios; causas e transições do Rota foram elaboradas para este curso."
+            }
+          ]
         },
         {
           "id": "projeto-revisar-entregar",
@@ -297,26 +355,21 @@
             {
               "title": "Revisão acessível e continuidade",
               "body": "<p>As <a href=\"https://www.w3.org/WAI/test-evaluate/preliminary/\">Easy Checks do W3C</a> são um ponto de partida para avaliação inicial, não uma auditoria completa. Combine verificações automáticas com inspeção manual e participação de pessoas com deficiência quando apropriado. Um resultado sem alertas em uma ferramenta não demonstra conformidade integral.</p><p>Depois de corrigir, repita os fluxos afetados e confira regressões. Uma alteração no botão pode resolver contraste e quebrar largura; uma reorganização pode melhorar a composição e piorar a ordem de foco. Registre a versão final avaliada. Ao levar o projeto adiante, mantenha uma lista de perguntas abertas em vez de apresentar o produto como definitivamente resolvido.</p><p>O resultado desta trilha é uma capacidade de justificar decisões, observar consequências e revisar o trabalho. Use o próximo projeto para ampliar o contexto: outra plataforma, outro tipo de conteúdo ou outra restrição. Repetir o processo com uma pergunta nova ensina mais que aplicar a mesma composição a todos os produtos.</p>"
+            },
+            {
+              "title": "Entregar relações, conferir a implementação",
+              "body": "<p>Traduza cada captura em regras que continuem válidas fora dela. Para o detalhe do Rota: o título pode ocupar várias linhas; os metadados vêm depois do título; a área de conteúdo permite rolagem; o botão não encobre a última informação; o retorno preserva a busca de origem. Informe o que muda na janela ampla, no texto ampliado e com teclado aberto. Medidas ajudam a reproduzir o acabamento, mas não explicam essas relações.</p><p>Peça a outra pessoa que implemente ou reconstrua uma condição que você não desenhou, como um nome mais longo e uma largura intermediária. As perguntas que surgirem revelam ambiguidades no pacote. Acrescente apenas as regras necessárias para resolver essas dúvidas, mantendo rastreável a decisão e a versão.</p><p>Depois da implementação, compare intenção e comportamento real. Confira nomes acessíveis, ordem de leitura, foco após fechar sobreposições, dados preservados e mensagens de falha. Se uma tecnologia assistiva ou condição de dispositivo não foi testada, ela continua pendente. Nem um arquivo organizado no Figma nem uma inspeção automática encerram essa responsabilidade.</p>"
             }
           ],
           "examples": [
             {
-              "title": "Um erro que precisa passar pela revisão técnica",
-              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "source": "GOV.UK Design System",
-              "image": "real-assets/govuk-error.png",
-              "visualAspect": "500 / 360",
-              "alt": "Resumo de erro no topo e mensagem ao lado do campo de nome.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura de exemplo oficial para estudo, em outubro de 2026.",
-              "license": "Open Government Licence v3.0",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "analysis": "<p>“There is a problem” significa que há um problema; “Enter your full name” orienta a informar o nome completo. A captura mostra o resumo e o erro junto ao campo, ligados pela mesma linguagem. Cor, contorno, posição e texto trabalham juntos.</p><p>Para a entrega, a imagem é só parte da evidência. Abra o exemplo e verifique se o link leva ao campo, se o foco é visível e se a mensagem é associada ao controle. A revisão profissional separa o que a aparência sugere do comportamento realmente testado.</p>"
-            },
-            {
-              "title": "W3C: verificações iniciais com limites explícitos",
-              "url": "https://www.w3.org/WAI/test-evaluate/preliminary/",
-              "source": "W3C Web Accessibility Initiative",
-              "analysis": "<p>A página organiza verificações iniciais de acessibilidade e deixa claro que elas não cobrem todos os problemas. Essa combinação de passos verificáveis e limite de escopo é um modelo útil para documentar QA.</p><p>Na entrega do Rota, escreva quais verificações foram executadas e quais não foram. “Foco por teclado verificado no protótipo web” é uma afirmação delimitada. “Aplicativo acessível” sem plataforma, método ou cobertura não informa o que foi realmente avaliado.</p>"
+              "title": "Uma entrega que explica como a tela se comporta",
+              "visualHtml": "<div class=\"demo-column\"><div class=\"demo-screen\"><div class=\"demo-topbar\"><span>Meu plano</span><span class=\"ui-badge\">Exemplo de entrega</span></div><div class=\"demo-body\"><div class=\"ui-kicker\">Sábado · 17 de outubro</div><div class=\"ui-title\">Memórias da cidade: caminhos e encontros</div><div class=\"ui-muted\">Casa do Bairro · visita de 2 horas</div><div class=\"ui-divider\"></div><div class=\"demo-row\"><div class=\"ui-number\">15h</div><div class=\"demo-grow\"><div class=\"ui-label\">Horário planejado</div><div class=\"ui-muted\">Você pode alterar antes do passeio.</div></div></div><div class=\"ui-button is-secondary\">Editar horário</div><div class=\"ui-notice\">Confira as condições da visita com o local. Este plano não reserva ingresso.</div></div></div><div class=\"demo-grid\"><div class=\"demo-card\"><div class=\"ui-kicker\">Regra de comportamento</div><div class=\"ui-label\">Conteúdo maior faz a tela crescer</div><p class=\"ui-copy\">O título não recebe altura fixa. A ação vem depois do conteúdo e permanece alcançável por rolagem.</p></div><div class=\"demo-card\"><div class=\"ui-kicker\">Critério de aceite</div><div class=\"ui-label\">Repetir com texto ampliado</div><p class=\"ui-copy\">Ler nome, local e horário; alcançar “Editar horário”; voltar ao plano sem perder os dados.</p></div></div></div>",
+              "analysis": "<p>A tela tem um nome de exposição longo de propósito. O pacote de entrega diz o que cresce e onde a ação fica, em vez de entregar apenas a medida de uma captura. A interface usa a mesma linguagem dos exemplos anteriores, mas a verificação testa um caso que uma imagem ideal costuma esconder.</p><p>O critério de aceite é reproduzível: ampliar texto, ler os dados necessários, editar e retornar sem perda. Ele pode falhar por corte, sobreposição, foco perdido ou descarte inesperado. Não é equivalente a “ficou igual ao Figma”. Uma implementação visualmente fiel ainda pode falhar no uso.</p><p>Essa abordagem exige mais especificação do que uma prancha estática, mas reduz decisões implícitas na implementação. Não tente descrever todos os pixels: registre relações, estados e exceções que mudam a tarefa. Identifique a plataforma e valide de novo quando a implementação, o conteúdo ou o componente compartilhado mudar.</p>",
+              "alt": "Tela com nome extenso e cartões de regra de comportamento e critério de aceite reproduzível.",
+              "designNote": "Relação entre especificação e verificação, sem simular certificação.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -332,7 +385,8 @@
               "Cada conclusão identifica se veio de inspeção, teste ou verificação técnica.",
               "Problemas têm contexto, consequência e proposta verificável.",
               "A versão final inclui estados e regras de adaptação, além das telas ideais.",
-              "Pendências, limitações e perguntas abertas estão visíveis para quem recebe o projeto."
+              "Pendências, limitações e perguntas abertas estão visíveis para quem recebe o projeto.",
+              "A especificação permite reconstruir uma largura não desenhada sem adivinhar crescimento, rolagem e preservação de contexto."
             ]
           },
           "sources": [
@@ -350,9 +404,30 @@
               "title": "GOV.UK: Plan user research for your service",
               "url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
               "note": "Referência de planejamento e continuidade da pesquisa."
+            },
+            {
+              "title": "Um erro que precisa passar pela revisão técnica",
+              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "note": "Referência complementar de análise. O exemplo visual desta lição é uma composição original do Rota."
             }
           ],
-          "videos": []
+          "videos": [],
+          "books": [
+            {
+              "title": "The UI Professional’s Design Manual: the Ultimate Guide to Master Mobile Design",
+              "authors": "AdrianK / Adrian Kuleszo; colaboração de Natalie apresentada no exemplar",
+              "edition": "Exemplar © 2022, em desenvolvimento; sem número de edição declarado.",
+              "pages": "PDF, páginas físicas 302–305.",
+              "note": "Relações e entrega; medidas e convenções do exemplar precisam de atualização por plataforma."
+            },
+            {
+              "title": "UI Design Systems Mastery",
+              "authors": "Marina Budarina",
+              "edition": "Versão 3.0; atualização 08/07/2023.",
+              "pages": "PDF, páginas físicas 247–252 e 269–270.",
+              "note": "Teste de componentes com conteúdo variável e documentação."
+            }
+          ]
         }
       ]
     }

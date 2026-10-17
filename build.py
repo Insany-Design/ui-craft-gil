@@ -20,6 +20,9 @@ for m in modules:
             assert '<details' not in s['body'].lower(), l['id']
         for e in l['examples']:
             assert e['url'].startswith('https://'),l['id']
+            if e.get('visualHtml'):
+                assert '<script' not in e['visualHtml'].lower() and not re.search(r'\bon\w+\s*=',e['visualHtml'],re.I),l['id']
+                assert not re.search(r'<(?:button|input|a|iframe|details|style)\b', e['visualHtml'], re.I),l['id']
             if e.get('localImagePath'):
                 name=Path(e['localImagePath']).name
                 assert (ROOT/'source'/'real-assets'/name).exists(),name
@@ -34,7 +37,7 @@ for m in modules:
         l['wordCount']=words
 course={'title':'UI mobile — Do fundamento à interface','edition':'2026-10','modules':modules}
 (ROOT/'dist').mkdir(exist_ok=True)
-for name in ['index.html','styles.css','app.js']:shutil.copy2(ROOT/'source'/name,ROOT/'dist'/name)
+for name in ['index.html','styles.css','examples.css','app.js']:shutil.copy2(ROOT/'source'/name,ROOT/'dist'/name)
 (ROOT/'dist'/'course.js').write_text('window.COURSE = '+json.dumps(course,ensure_ascii=False).replace('</','<\\/')+';\n')
 (ROOT/'dist'/'course.json').write_text(json.dumps(course,ensure_ascii=False,indent=2))
 if (ROOT/'source'/'real-assets').exists():shutil.copytree(ROOT/'source'/'real-assets',ROOT/'dist'/'real-assets',dirs_exist_ok=True)

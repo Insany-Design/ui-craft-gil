@@ -43,24 +43,13 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: a confirmação como parte da experiência",
-              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/",
-              "source": "GOV.UK Design System — exemplo oficial documentado",
-              "analysis": "<p>Na captura, “Application complete” significa “Solicitação concluída”; o número permite identificar o pedido. Abaixo, a seção de próximos passos explica que outra equipe dará continuidade. O painel é UI; a relação entre envio, acompanhamento e resposta posterior pertence à UX. Nossa leitura: encerrar a tela com uma marca de sucesso, sem orientar a espera, deixaria parte da necessidade sem resposta. É uma demonstração oficial, não o comprovante de uma solicitação real.</p>",
-              "image": "real-assets/foundations-govuk-confirmation.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-confirmation.png",
-              "visualAspect": "500 / 520",
-              "alt": "Exemplo GOV.UK de confirmação: painel verde informa conclusão e número de referência; abaixo há confirmação de email e explicação dos próximos passos.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
-              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/"
-            },
-            {
-              "title": "GOV.UK: renovar ou substituir um passaporte",
-              "url": "https://www.gov.uk/renew-adult-passport",
-              "source": "GOV.UK, serviço público real",
-              "analysis": "<p>A página distingue renovação e substituição, explica elegibilidade, aponta situações de urgência e oferece acompanhamento posterior. A tarefa real não é apenas preencher um formulário: a pessoa precisa identificar o processo adequado e saber o que esperar depois. O conteúdo anterior à ação faz parte da experiência.</p><p>Nossa análise: esconder essas condições atrás de um botão chamativo poderia aumentar inícios sem aumentar pedidos adequados. Uma hipótese melhor seria verificar se o visitante identifica o caminho compatível com sua situação antes de começar. O exemplo ensina a avaliar clareza de decisão, e não somente destaque visual. Não inferimos uma taxa de sucesso da página nem recomendamos copiar requisitos desse serviço para outro contexto.</p>"
+              "title": "Da tarde disponível à decisão de interface",
+              "visualHtml": "\n<div class=\"demo-compare\">\n <div class=\"demo-column\">\n  <div class=\"demo-card\"><p class=\"ui-kicker\">Situação de uso</p><h3 class=\"ui-title\">Uma tarde livre. Duas decisões.</h3><p class=\"ui-copy\">Escolher uma visita cultural e entender se ela cabe antes das 17h.</p><div class=\"ui-divider\"></div><p class=\"ui-label\">Necessidade</p><p class=\"ui-copy\">Comparar duração, deslocamento e horário de abertura.</p></div>\n  <div class=\"ui-notice\"><p class=\"ui-label\">Resultado a verificar</p><p class=\"ui-copy\">A pessoa consegue explicar por que o passeio cabe na tarde.</p><p class=\"ui-small\">Hipótese de projeto, ainda não testada.</p></div>\n </div>\n <div class=\"demo-screen\">\n  <div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Descobrir</span></div>\n  <div class=\"demo-body\"><p class=\"ui-kicker\">Galeria Horizonte · Centro</p><h3 class=\"ui-title\">Forma &amp; luz</h3><p class=\"ui-copy\">Uma exposição de instalações e percursos luminosos.</p><div class=\"ui-art\"><p class=\"ui-kicker\">Exposição fictícia</p><p class=\"ui-title\">FORMA<br>&amp; LUZ</p></div><div class=\"demo-grid\"><div><p class=\"ui-label\">Visita estimada</p><p class=\"ui-copy\">1h30</p></div><div><p class=\"ui-label\">Aberta até</p><p class=\"ui-copy\">18h</p></div></div><p class=\"ui-muted\">Considere também o tempo de ida e volta.</p><div class=\"ui-button is-primary\">Adicionar ao plano</div><p class=\"ui-small\">Salvar o plano não reserva entrada.</p></div>\n </div>\n</div>",
+              "analysis": "<p>Observe o caminho entre os dois lados. À esquerda há uma situação da vida da pessoa e um resultado que pode ser verificado. À direita, duração e abertura recebem espaço porque ajudam nessa decisão. A arte apresenta a exposição, mas não substitui os dados necessários para planejar. A escolha visual ganha uma razão que pode ser discutida.</p><p>O limite entre UX e UI fica concreto: os textos e a representação do botão pertencem à interface; saber se a visita realmente cabe na tarde depende também de deslocamento, disponibilidade e expectativas. O aviso sobre reserva evita que salvar seja interpretado como garantia de entrada. O cartão não resolve sozinho toda a experiência.</p><p>Use esse tipo de ligação ao receber um pedido de tela sem objetivo claro. A contrapartida é escolher quais informações merecem estar presentes: acrescentar todas as condições possíveis pode esconder as decisivas. Neste exemplo, o deslocamento permanece como informação a considerar, sem inventar uma localização ou consultar um serviço externo.</p><p>Para testar a proposta, apresente um cenário com ponto de partida e horário limite conhecidos. Peça que a pessoa decida se a visita cabe e explique seu raciocínio. Verifique quais dados usou e o que precisou supor. Não conte apenas o toque em adicionar: uma decisão baseada numa suposição incorreta não demonstra que o objetivo foi atendido.</p>",
+              "alt": "Duas áreas relacionam uma situação de planejamento antes das 17h a uma tela de exposição com duração de uma hora e meia, abertura até 18h e aviso de que salvar não reserva entrada.",
+              "designNote": "Composição autoral em duas colunas, empilhadas em largura estreita. O bloco de situação não imita uma tela de aplicativo. A arte ui-art é abstrata e original; duração e abertura usam a mesma escala, sem falsa medição de resultados.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -144,24 +133,13 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: uma revisão que pode ser investigada em teste",
-              "url": "https://design-system.service.gov.uk/patterns/check-answers/default/",
-              "source": "GOV.UK Design System — exemplo oficial documentado",
-              "analysis": "<p>Esta é a demonstração atual de revisão do GOV.UK, não a captura histórica do serviço DWP citado acima. “Change” significa “Alterar”. Observe como cada dado tem sua própria saída de correção. Nossa proposta de teste: pedir que alguém corrija uma informação e verificar se retorna à revisão sem repetir toda a sequência. A captura mostra a estrutura; somente um protótipo funcional permite observar preservação de dados e comportamento de retorno.</p>",
-              "image": "real-assets/foundations-govuk-review.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-review.png",
-              "visualAspect": "500 / 757",
-              "alt": "Trecho da revisão de respostas GOV.UK em tela estreita: título, grupo de dados pessoais e unidades com nome do dado, valor exemplificativo e link para alterar.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
-              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/check-answers/default/"
-            },
-            {
-              "title": "Carer’s Allowance: uma revisão surgiu de comportamento observado",
-              "url": "https://dwpdigital.blog.gov.uk/2016/07/08/a-live-service-is-not-the-end-of-the-story/",
-              "source": "DWP Digital, relato oficial da equipe",
-              "analysis": "<p>A equipe relatou que solicitantes voltavam às etapas anteriores antes de enviar o formulário. Acrescentou uma revisão final das respostas com acesso direto à correção e retorno ao resumo. O detalhe importante é a relação entre comportamento e intervenção: voltar não foi tratado automaticamente como erro; podia expressar a necessidade de conferir.</p><p>Nossa análise: uma hipótese plausível seria que reunir respostas permitiria revisão sem percorrer tudo novamente. O relato informa redução de tempo, mas não apresenta experimento que isole esse recurso de todas as mudanças do serviço. Portanto, serve como caso real de iteração, não como prova causal universal. Em outro produto, verificaríamos tanto facilidade de corrigir quanto entendimento de que a solicitação ainda precisa ser enviada.</p>"
+              "title": "Uma hipótese, duas formas de apresentar o tempo",
+              "visualHtml": "\n<div class=\"demo-column\">\n <div class=\"ui-notice\"><p class=\"ui-kicker\">Hipótese a testar</p><p class=\"ui-label\">Separar visita e deslocamento ajuda a estimar a tarde?</p><p class=\"ui-small\">Os tempos abaixo pertencem ao cenário fictício. Nenhuma pesquisa foi realizada.</p></div>\n <div class=\"demo-compare\">\n  <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Protótipo A</span><span class=\"ui-badge\">Informação isolada</span></div><div class=\"demo-body\"><p class=\"ui-kicker\">Galeria Horizonte</p><h3 class=\"ui-title\">Forma &amp; luz</h3><div class=\"demo-card\"><p class=\"ui-label\">Duração</p><p class=\"ui-title\">1h30</p></div><div class=\"ui-button is-primary\">Adicionar ao plano</div><p class=\"ui-small\">Salvar não reserva entrada.</p></div></div>\n  <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Protótipo B</span><span class=\"ui-badge\">Informação explicada</span></div><div class=\"demo-body\"><p class=\"ui-kicker\">Galeria Horizonte</p><h3 class=\"ui-title\">Forma &amp; luz</h3><div class=\"demo-card\"><div class=\"demo-row\"><span class=\"ui-label demo-grow\">Na exposição</span><span class=\"ui-copy\">1h30</span></div><div class=\"demo-row\"><span class=\"ui-label demo-grow\">Ida, neste cenário</span><span class=\"ui-copy\">25 min</span></div><div class=\"ui-divider\"></div><div class=\"demo-row\"><span class=\"ui-label demo-grow\">Até terminar a visita</span><span class=\"ui-label\">1h55</span></div><p class=\"ui-small\">A volta não está incluída.</p></div><div class=\"ui-button is-primary\">Adicionar ao plano</div><p class=\"ui-small\">Salvar não reserva entrada.</p></div></div>\n </div>\n <div class=\"demo-card\"><p class=\"ui-kicker\">Roteiro de observação</p><p class=\"ui-copy\">“Você pode sair às 14h e precisa estar de volta às 17h. Como decidiria se este passeio cabe?”</p><p class=\"ui-muted\">Registrar: informações consultadas, suposições e necessidade de ajuda.</p><span class=\"ui-badge\">Resultado ainda não observado</span></div>\n</div>",
+              "analysis": "<p>As duas versões mantêm a mesma exposição e ação. A diferença é a explicação do tempo. Na versão A, uma duração isolada pode ser interpretada de formas diferentes. Na B, o subtotal explicita seu alcance e informa que a volta não foi incluída. Isso torna uma hipótese de compreensão visível sem anunciar uma vencedora.</p><p>Observe que o roteiro pede uma decisão sobre a tarde, sem instruir a pessoa a procurar o subtotal. A pergunta permite descobrir quais informações ela consulta espontaneamente. O espaço para registrar suposições importa tanto quanto a conclusão: acertar por acaso ou depois de receber ajuda é diferente de compreender a proposta.</p><p>Use a comparação quando uma dúvida específica justificar duas alternativas. A versão mais detalhada ocupa mais espaço e pode exigir uma estimativa de deslocamento que o produto ainda não possui. Neste cenário, os 25 minutos são fornecidos pelo exercício; não vieram de localização real nem de integração. Uma solução implementada precisaria explicar a origem e a incerteza dessa estimativa.</p><p>O critério de teste é a capacidade de diferenciar duração da visita, ida e volta ao justificar a decisão. Registre interpretações erradas e dados ausentes. Não transforme uma pequena rodada exploratória em uma taxa populacional de sucesso. Se a volta impedir a decisão em ambas as versões, esse resultado revela uma lacuna do conteúdo, e não apenas uma disputa visual entre A e B.</p>",
+              "alt": "Dois protótipos da mesma visita comparam duração isolada de uma hora e meia com visita, ida fictícia de 25 minutos e subtotal de uma hora e 55 minutos sem a volta. Abaixo há uma tarefa de pesquisa ainda não executada.",
+              "designNote": "Comparação neutra: não usar demo-bad/demo-good, pois o resultado não foi testado. Manter ações e título equivalentes para isolar o recorte informativo. A altura diferente dos cartões é parte da contrapartida de conteúdo, sem preenchimento artificial.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -238,22 +216,21 @@
             {
               "title": "Revisão: o que a pessoa consegue prever?",
               "body": "<p>Verifique três perguntas: o que posso fazer agora, o que aconteceu e como posso corrigir? Peça que alguém explique a consequência antes de executar uma ação. Depois observe se reconhece o resultado. Se o desenho só funciona acompanhado de sua explicação, ela ainda não foi incorporada à experiência.</p><p>Não confunda prevenção com proibição. Restrições podem impedir erros, mas também bloquear casos legítimos. Quando um campo rejeita um nome ou uma data, a regra precisa ter razão de serviço e mensagem útil. A interface deve ajudar a pessoa a cumprir a regra, sem culpá-la por desconhecer a implementação. Revise limites com dados variados, e não apenas com o exemplo ideal do protótipo.</p>"
+            },
+            {
+              "title": "Compare o esforço que cada solução transfere para a pessoa",
+              "body": "<p>Para transformar “menos esforço” em uma decisão verificável, decomponha o <strong>custo de interação</strong>. Além de tocar, a pessoa precisa localizar informação, ler, interpretar, lembrar, preencher, esperar e corrigir. Esses esforços se combinam. Uma alternativa pode retirar uma tela e, ao mesmo tempo, exigir que alguém memorize um horário enquanto escolhe a data. A contagem de toques não revela essa troca.</p><p>No Rota fictício, imagine escolher um horário para visitar Forma &amp; luz. Na alternativa A, a duração da visita aparece apenas na página da exposição; a escolha acontece depois, sem esse contexto. Na B, a duração permanece junto das opções de horário para o próprio plano, respeitando o funcionamento da galeria. Salvar esse plano não reserva entrada. B reduz uma exigência de memória, mas ocupa espaço que poderia mostrar mais opções. Se o resumo crescer demais, a pessoa poderá precisar rolar mais e comparar horários separados. Essa é uma hipótese de benefício acompanhada de um custo possível, não uma vitória demonstrada pelo desenho.</p><ol><li><strong>Fixe a mesma tarefa e condição inicial.</strong> Compare alternativas para escolher um horário compatível, sem mudar também a quantidade de opções ou as informações disponíveis.</li><li><strong>Descreva o esforço por etapa.</strong> Anote o que precisa ser procurado, lembrado, digitado ou conferido. Marque separadamente o que você prevê e o que foi observado.</li><li><strong>Procure transferências de custo.</strong> Um resumo poupa memória, mas pode aumentar leitura; uma confirmação acrescenta uma ação, mas pode permitir corrigir uma consequência importante.</li><li><strong>Observe resultado e recuperação.</strong> Registre se a pessoa escolhe uma opção compatível, retorna para consultar dados, corrige decisões ou espera sem compreender o estado.</li></ol><p>Não some categorias diferentes numa nota arbitrária, como se um toque equivalesse sempre a uma dúvida ou a um erro. Priorize pela tarefa, pela frequência e pela consequência. Uma pessoa nova e outra experiente também podem pagar custos diferentes. A comparação fica defensável quando explica qual esforço mudou, quem se beneficia, qual desvantagem apareceu e que comportamento ainda precisa ser testado.</p>"
             }
           ],
           "examples": [
             {
-              "title": "GOV.UK: resumo de erros com caminho de correção",
-              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "source": "GOV.UK Design System — exemplo oficial documentado",
-              "analysis": "<p>“There is a problem” significa “Há um problema”; “Enter your full name” orienta a informar o nome completo. Na captura, a orientação aparece no resumo e junto ao campo. O link superior indica um caminho de correção, enquanto a mensagem local identifica a pendência.</p><p>Nossa análise: repetir a orientação conecta o estado geral ao ponto de ação sem exigir memorização. A borda reforça o problema, mas o texto comunica seu significado. A documentação associada descreve foco e ligação ao campo; a captura estática não comprova esse comportamento. Ao adaptar para um aplicativo nativo, preserve contexto e recuperação usando os recursos da plataforma.</p>",
-              "image": "real-assets/foundations-govuk-error.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-error.png",
-              "visualAspect": "500 / 360",
-              "alt": "Captura do exemplo GOV.UK com resumo de erro no alto, link para informar o nome completo e a mesma orientação junto ao campo de nome vazio.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
-              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/components/error-summary/linking/"
+              "title": "O que a palavra salvar promete?",
+              "visualHtml": "\n<div class=\"demo-compare\">\n <div class=\"demo-column demo-bad\"><p class=\"ui-kicker\">Promessa ambígua</p><div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Plano pessoal</span></div><div class=\"demo-body\"><h3 class=\"ui-subtitle\">Forma &amp; luz</h3><p class=\"ui-copy\">Galeria Horizonte</p><div class=\"ui-input\">Sábado, 24 de outubro · 15h</div><div class=\"ui-button is-primary\">Confirmar visita</div><div class=\"ui-notice\"><p class=\"ui-label\">Tudo certo!</p><p class=\"ui-copy\">Sua visita está confirmada.</p></div></div></div><p class=\"ui-small\">A linguagem pode sugerir uma reserva que o Rota não faz.</p></div>\n <div class=\"demo-column demo-good\"><p class=\"ui-kicker\">Promessa delimitada</p><div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Plano pessoal</span></div><div class=\"demo-body\"><h3 class=\"ui-subtitle\">Forma &amp; luz</h3><p class=\"ui-copy\">Galeria Horizonte</p><div class=\"ui-input\">Sábado, 24 de outubro · 15h</div><div class=\"ui-button is-primary\">Salvar no meu plano</div><div class=\"ui-notice\"><p class=\"ui-label\">Plano salvo</p><p class=\"ui-copy\">Você pode editar a data depois.</p><p class=\"ui-copy\">Nenhuma entrada foi reservada.</p></div></div></div><p class=\"ui-small\">A resposta confirma exatamente o efeito da ação.</p></div>\n</div>",
+              "analysis": "<p>Compare o verbo antes da ação e a resposta depois dela. Na versão ambígua, “confirmar visita” e “visita confirmada” podem sugerir que o local garantiu a entrada. O Rota deste projeto apenas organiza planos. Na alternativa delimitada, salvar e plano descrevem o efeito disponível, enquanto a resposta informa o que permanece editável.</p><p>A distinção não depende de redesenhar todo o cartão. O mesmo horário e a mesma exposição podem sustentar expectativas muito diferentes quando a linguagem muda. O aviso de que nenhuma entrada foi reservada protege uma decisão posterior: a pessoa ainda precisa conferir as condições do local. A composição mostra estados para estudo; não realizou um salvamento.</p><p>Use esse raciocínio quando o produto se aproxima de ações com consequências externas, como reservar, pagar, enviar ou publicar. A contrapartida é a quantidade de explicação. Repetir longos avisos em cada etapa pode perder eficácia; a informação essencial precisa aparecer antes da ação e a resposta deve confirmar seu efeito sem criar uma nova promessa.</p><p>Antes de uma pessoa tocar no protótipo, pergunte o que espera acontecer e quem receberá a informação. Depois da resposta, peça que explique o que já está garantido e o que ainda precisa fazer. O critério é distinguir planejamento pessoal de reserva, sem intervenção do moderador. Se essa diferença não ficar clara, alterar a cor do botão não resolverá a causa principal.</p>",
+              "alt": "Comparação de duas mensagens para o mesmo plano: uma promete confirmar a visita; a outra salva apenas no plano pessoal, permite editar e informa que nenhuma entrada foi reservada.",
+              "designNote": "Dois estados representados lado a lado, sem interação real. O marcador demo-bad indica ambiguidade sem tornar o texto ilegível. Evitar ícones de confirmação que possam sugerir execução verdadeira; a mensagem está contida na composição demonstrativa.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -269,7 +246,9 @@
               "A falha não depende apenas de cor.",
               "Os dados não desaparecem sem explicação.",
               "Tentar novamente não cria duplicação silenciosa.",
-              "Cada estado explica a próxima ação."
+              "Cada estado explica a próxima ação.",
+              "A recuperação após falha é comparada com uma alternativa que preserva os mesmos dados; a análise identifica esforço de leitura, memória, espera ou correção, além dos toques.",
+              "A justificativa distingue custo previsto de comportamento observado e registra pelo menos uma desvantagem possível da solução escolhida."
             ]
           },
           "sources": [
@@ -289,7 +268,16 @@
               "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
             }
           ],
-          "videos": []
+          "videos": [],
+          "books": [
+            {
+              "title": "Practical UI",
+              "authors": "Adham Dannaway",
+              "edition": "Free Preview, © 2023",
+              "pages": "Páginas físicas do PDF 5–7, contadas a partir de 1.",
+              "note": "Leitura complementar sobre custo de interação. A aplicação ao Rota e o procedimento de comparação são elaboração didática original; os números de página não representam paginação editorial impressa. A amostra não corresponde ao livro completo."
+            }
+          ]
         }
       ]
     },
@@ -332,28 +320,21 @@
             {
               "title": "Revisão e aprofundamento",
               "body": "<p>Escolha cinco conteúdos difíceis de classificar e explique suas posições sem dizer “porque sempre foi assim”. Depois leia cada rótulo isoladamente e pergunte o que alguém esperaria encontrar ali. A capacidade de prever o destino importa mais do que a elegância do nome.</p><p><a href=\"https://www.oreilly.com/library/view/information-architecture-4th/9781491913529/\">Information Architecture, quarta edição, de Rosenfeld, Morville e Arango</a>, é uma referência editorial de aprofundamento. Use a leitura para examinar sistemas de organização, rotulagem e descoberta no seu próprio projeto. Não é necessário reproduzir diagramas do livro: produza seu inventário e explique por que cada relação existe.</p>"
+            },
+            {
+              "title": "Use os quatro sistemas de IA para localizar a causa do problema",
+              "body": "<p>Organização, rotulagem, navegação e busca oferecem quatro lentes complementares para diagnosticar encontrabilidade. <strong>Organização</strong> define relações e critérios de agrupamento. <strong>Rotulagem</strong> representa essas coisas por nomes compreensíveis. <strong>Navegação</strong> oferece percursos e orientação entre elas. <strong>Busca</strong> recebe uma necessidade expressa pela pessoa e apresenta resultados que ela consiga reconhecer. As lentes se relacionam: não são quatro equipes isoladas nem uma sequência obrigatória de trabalho.</p><p>Considere a tarefa fictícia de encontrar uma exposição gratuita no Centro. Forma &amp; luz pode existir no catálogo do Rota e continuar difícil de encontrar por causas diferentes. Se “gratuito” foi tratado como um tipo de lugar, há uma decisão de organização a rever. Se a categoria correta recebeu um nome que o público não compreende, o problema pode estar no rótulo. Se a exposição só é alcançada por um percurso distante da intenção apresentada, investigue os caminhos. Se a busca ignora uma expressão equivalente que faz sentido nesse catálogo, investigue o vocabulário e a recuperação de resultados.</p><p>Faça o diagnóstico mantendo um registro do mesmo item: seu tipo, atributos, relações, nome visível, caminhos de acesso e expressões de busca previstas. Depois descreva uma falha concreta e proponha a menor mudança coerente com a causa. Renomear uma categoria não altera necessariamente o que pertence a ela; mover um item não corrige automaticamente um nome ambíguo; aumentar o campo de busca não faz o mecanismo reconhecer sinônimos. Essa separação evita tratar todo problema de informação como um ajuste de composição.</p><p>Use o modelo para escolher o que investigar, sem concluir a causa apenas pela primeira tentativa frustrada. A pessoa pode procurar por um termo inadequado porque o próprio produto o ensinou, por exemplo. Teste a expectativa sobre nomes, a escolha de caminhos e o reconhecimento dos resultados conforme a hipótese. Não é obrigatório acrescentar busca a um conjunto pequeno só para completar as quatro lentes: documente por que os caminhos disponíveis atendem à tarefa e o que mudaria com o crescimento do conteúdo.</p>"
             }
           ],
           "examples": [
             {
-              "title": "GOV.UK: grupos de tarefas e rótulos de ação",
-              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/",
-              "source": "GOV.UK Design System — exemplo oficial documentado",
-              "analysis": "<p>Na captura, “Check before you start” reúne verificações anteriores ao início; “Prepare application” agrupa a preparação da solicitação. Os títulos organizam tarefas por momento, enquanto cada link nomeia uma ação. Nossa leitura: o agrupamento oferece uma hipótese compreensível de organização. A aparência ordenada não prova que esses rótulos serviriam a outro público. Antes de copiar a estrutura, classifique o conteúdo real e confirme quais dependências existem.</p>",
-              "image": "real-assets/foundations-govuk-tasks.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-tasks.png",
-              "visualAspect": "500 / 660",
-              "alt": "Exemplo GOV.UK de lista de tarefas em dois grupos, com links à esquerda, estados concluído ou incompleto à direita e botão final de envio.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
-              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/"
-            },
-            {
-              "title": "The Met: diferentes portas para uma coleção",
-              "url": "https://www.metmuseum.org/art/collection",
-              "source": "The Metropolitan Museum of Art, coleção oficial",
-              "analysis": "<p>A entrada da coleção combina destaques de obras com sugestões como cerâmicas coreanas, pinturas de Van Gogh e instrumentos musicais. Essas entradas não usam um único critério: misturam origem, autoria e tipo de objeto. O visitante não precisa começar pela estrutura interna dos departamentos do museu.</p><p>Nossa análise: essa variedade serve à exploração, porque oferece pistas concretas para interesses distintos. Não significa que a classificação de bastidores seja arbitrária. A mesma obra precisa manter identificação e metadados coerentes ao aparecer por caminhos diferentes. O princípio transferível é separar organização do acervo e portas de descoberta. Para uma busca muito específica, uma seleção editorial de destaques seria insuficiente; seria necessário outro mecanismo. Esta leitura não presume métricas de uso do museu.</p>"
+              "title": "Separar o que existe de como filtrar",
+              "visualHtml": "\n<div class=\"demo-column\">\n <div class=\"demo-card\"><p class=\"ui-kicker\">Modelo de conteúdo do Rota</p><h3 class=\"ui-title\">Lugar, exposição e plano são coisas diferentes.</h3><p class=\"ui-muted\">As relações definem a estrutura antes do desenho da tela.</p></div>\n <div class=\"demo-flow\">\n  <div class=\"demo-step\"><span class=\"ui-badge\">Lugar</span><h4 class=\"ui-subtitle\">Galeria Horizonte</h4><p class=\"ui-copy\">Endereço e abertura</p><p class=\"ui-small\">Recebe a exposição</p></div>\n  <div class=\"demo-step\"><span class=\"ui-badge\">Exposição</span><h4 class=\"ui-subtitle\">Forma &amp; luz</h4><p class=\"ui-copy\">Descrição e período</p><p class=\"ui-small\">Pode entrar em um plano</p></div>\n  <div class=\"demo-step\"><span class=\"ui-badge\">Plano pessoal</span><h4 class=\"ui-subtitle\">Sábado cultural</h4><p class=\"ui-copy\">Data e visitas escolhidas</p><p class=\"ui-small\">Não reserva entradas</p></div>\n </div>\n <div class=\"demo-compare\">\n  <div class=\"demo-card\"><p class=\"ui-kicker\">Portas de entrada</p><div class=\"ui-list\"><div class=\"demo-row\"><span class=\"ui-label demo-grow\">Lugares</span><span class=\"ui-muted\">Onde visitar</span></div><div class=\"demo-row\"><span class=\"ui-label demo-grow\">Exposições</span><span class=\"ui-muted\">O que conhecer</span></div><div class=\"demo-row\"><span class=\"ui-label demo-grow\">Meus planos</span><span class=\"ui-muted\">O que organizei</span></div></div></div>\n  <div class=\"demo-card\"><p class=\"ui-kicker\">Atributos para refinar</p><p class=\"ui-label\">Preço</p><span class=\"ui-chip\">Gratuito</span><p class=\"ui-label\">Duração</p><span class=\"ui-chip\">Até 2 horas</span><p class=\"ui-label\">Região</p><span class=\"ui-chip\">Centro</span></div>\n </div>\n</div>",
+              "analysis": "<p>O diagrama separa três tipos de coisa. O lugar possui informações de acesso; a exposição descreve um conteúdo que acontece ali; o plano pessoal reúne escolhas para uma data. As frases entre essas unidades explicam relações. O mesmo nome de exposição pode aparecer na descoberta e num plano sem exigir duas cópias independentes de seu conteúdo.</p><p>Na parte inferior, os caminhos de entrada foram separados dos atributos. Gratuidade, duração e região ajudam a refinar um conjunto; não precisam disputar espaço no mesmo nível de lugares e planos. Essa é uma decisão de arquitetura da informação. Mudar margens ou cores não corrigiria uma classificação em que os conceitos fossem confundidos.</p><p>Use o modelo ao preparar uma navegação ou organizar conteúdo que será reutilizado em contextos diferentes. O limite é que esta classificação não serve automaticamente a todo produto cultural. Uma exposição itinerante pode passar por vários lugares; horários e preços podem depender de cada ocorrência. Nesse caso, seria necessário acrescentar uma entidade ou relação, em vez de forçar uma exceção silenciosa.</p><p>Para avaliar, entregue cartões com novos conteúdos e peça que as pessoas expliquem onde os procurariam. Inclua um caso ambíguo, como uma oficina dentro de uma exposição. Verifique tanto a previsão dos rótulos quanto a capacidade do modelo de representar o caso sem duplicar informações contraditórias. O diagrama é uma proposta autoral, não uma taxonomia validada.</p>",
+              "alt": "Modelo de conteúdo relaciona Galeria Horizonte como lugar, Forma e luz como exposição e Sábado cultural como plano. Abaixo, entradas por tipo de conteúdo estão separadas de filtros por preço, duração e região.",
+              "designNote": "Visual de classificação, não tela de app. Manter as três entidades com peso equivalente e relações expressas em texto. demo-flow deve empilhar em largura estreita. Não usar a grade visual para sugerir que atributos são entidades equivalentes.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -369,7 +350,9 @@
               "Cada categoria tem critério explícito.",
               "Horário e preço não são confundidos automaticamente com tipos de lugar.",
               "Há solução para três casos ambíguos.",
-              "Os rótulos foram avaliados por previsão do conteúdo."
+              "Os rótulos foram avaliados por previsão do conteúdo.",
+              "Para um dos conteúdos ambíguos, o inventário relaciona organização, nome visível, caminhos de acesso e termos de busca previstos, ou justifica por que a busca não faz parte do escopo.",
+              "Uma falha hipotética recebe diagnóstico específico: a proposta distingue mudança de rótulo, de relação entre conteúdos e de caminho, sem tratar essas intervenções como equivalentes."
             ]
           },
           "sources": [
@@ -394,7 +377,16 @@
               "note": "Captura oficial inspecionada, com atribuição, licença e análise específica; demonstração, não teste de usabilidade."
             }
           ],
-          "videos": []
+          "videos": [],
+          "books": [
+            {
+              "title": "Ergodesign e Arquitetura de Informação: Trabalhando com o Usuário",
+              "authors": "Luiz Agner",
+              "edition": "2ª edição, Quartet, 2009",
+              "pages": "Páginas físicas do PDF 98–103, contadas a partir de 1.",
+              "note": "Referência conceitual para os quatro sistemas de arquitetura da informação. A data da edição limita a transferência de ferramentas e convenções de interface; o exemplo e o diagnóstico do Rota são originais. Paginação física do PDF, não paginação editorial impressa."
+            }
+          ]
         },
         {
           "id": "mapa-estrutura-fluxo",
@@ -434,24 +426,13 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: o fim da interface não encerra toda a jornada",
-              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/",
-              "source": "GOV.UK Design System — exemplo oficial documentado",
-              "analysis": "<p>A confirmação visível registra um resultado e apresenta o trabalho posterior de outra equipe. “What happens next” significa “O que acontece a seguir”. Nossa leitura: um fluxo pode terminar numa tela, enquanto a jornada do serviço continua. No diagrama, represente a transferência e o resultado esperado, sem inventar telas para atividades externas. A captura é útil para perguntar onde termina a responsabilidade do aplicativo e como a pessoa acompanhará o que ainda falta.</p>",
-              "image": "real-assets/foundations-govuk-confirmation.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-confirmation.png",
-              "visualAspect": "500 / 520",
-              "alt": "Exemplo GOV.UK de confirmação: painel verde informa conclusão e número de referência; abaixo há confirmação de email e explicação dos próximos passos.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
-              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/confirmation-pages/default/"
-            },
-            {
-              "title": "GOV.UK: navegação por etapas entre serviços",
-              "url": "https://design-system.service.gov.uk/patterns/step-by-step-navigation/",
-              "source": "GOV.UK Design System, padrão documentado",
-              "analysis": "<p>O padrão apresenta uma jornada com início e fim, reunindo orientações e ações em etapas lógicas. Pode incluir trabalho online e offline. A documentação distingue esse uso de uma lista de tarefas dentro de uma transação e alerta contra impor etapas quando não existe ordem útil.</p><p>Nossa análise: uma jornada pode atravessar várias páginas e organizações sem que cada etapa corresponda a uma tela. A sequência comunica dependências do mundo real, não a árvore do site. Para transferir o aprendizado ao mobile, pergunte quais passos realmente precisam ocorrer antes de outros. Numerar uma coleção de opções independentes criaria uma obrigação inexistente. O valor do exemplo está na relação entre objetivo, sequência e contexto, e não no formato visual dos números.</p>"
+              "title": "Onde a informação vive e o que acontece ao salvar",
+              "visualHtml": "\n<div class=\"demo-compare\">\n <div class=\"demo-card\"><p class=\"ui-kicker\">Mapa de estrutura</p><h3 class=\"ui-subtitle\">Quais áreas existem?</h3><div class=\"ui-list\"><div class=\"demo-card\"><p class=\"ui-label\">Descobrir</p><p class=\"ui-copy\">Lugares e exposições</p><div class=\"ui-notice\"><p class=\"ui-small\">Detalhe: Forma &amp; luz</p></div></div><div class=\"demo-card\"><p class=\"ui-label\">Salvos</p><p class=\"ui-copy\">Ideias para visitar depois</p></div><div class=\"demo-card\"><p class=\"ui-label\">Planos</p><p class=\"ui-copy\">Sábado cultural</p><p class=\"ui-small\">Visitas organizadas por data</p></div></div></div>\n <div class=\"demo-card\"><p class=\"ui-kicker\">Fluxo da tarefa</p><h3 class=\"ui-subtitle\">Como uma visita entra no plano?</h3><div class=\"demo-flow\"><div class=\"demo-step\"><span class=\"ui-number\">1</span><p class=\"ui-label\">Abrir Forma &amp; luz</p><p class=\"ui-small\">Entrada pela descoberta ou por um link</p></div><div class=\"demo-step\"><span class=\"ui-number\">2</span><p class=\"ui-label\">Escolher data e horário</p><p class=\"ui-small\">Rascunho permanece editável</p></div><div class=\"demo-step\"><span class=\"ui-number\">3</span><p class=\"ui-label\">Salvar no plano</p><p class=\"ui-small\">Resultado: visita listada em Sábado cultural</p></div></div><div class=\"ui-notice is-error\"><p class=\"ui-label\">Se a gravação falhar</p><p class=\"ui-copy\">Preservar escolhas, explicar a falha e oferecer nova tentativa.</p></div><p class=\"ui-small\">Concluir este fluxo não reserva entrada no local.</p></div>\n</div>",
+              "analysis": "<p>À esquerda, as áreas não formam uma sequência obrigatória. Elas mostram onde tipos de informação podem ser encontrados. À direita, os números descrevem uma tarefa com início, decisões e resultado. Um percurso pode atravessar áreas do mapa; transformar cada área numa etapa faria o diagrama comunicar uma obrigação inexistente.</p><p>A entrada por link explicita que a pessoa pode chegar ao detalhe sem passar pela tela inicial. O resultado também é definido: a visita deve aparecer no plano escolhido. A observação sobre falha impede que a especificação termine no momento do toque. O sistema ainda precisa informar se conseguiu guardar a escolha.</p><p>Use as duas representações quando a equipe confundir estrutura com navegação passo a passo. O custo é manter mais de um desenho coerente. Não é necessário registrar cada detalhe visual no fluxo: inclua apenas as decisões e os estados que afetam a tarefa. A composição não representa armazenamento real nem uma integração de reservas.</p><p>Faça uma simulação verbal com três condições: entrada direta por link, mudança da data antes de salvar e falha na gravação. Peça que outra pessoa descreva o destino, os dados preservados e o estado final. Uma resposta ausente indica uma regra pendente. Depois teste a proposta num protótipo funcional; a clareza do diagrama não demonstra que os controles são encontráveis.</p>",
+              "alt": "Comparação entre um mapa com Descobrir, Salvos e Planos e um fluxo numerado para abrir uma exposição, escolher data e salvar. Uma alternativa explica a preservação das escolhas se a gravação falhar.",
+              "designNote": "Dois diagramas autorais com perguntas diferentes. As etapas podem ficar verticais mesmo em desktop para evitar setas ou uma faixa larga. O aviso de falha é um ramo conceitual explícito, não uma quarta etapa obrigatória.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -534,24 +515,13 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: busca, menu e localização na mesma página",
-              "url": "https://design-system.service.gov.uk/styles/type-scale/",
-              "source": "GOV.UK Design System — exemplo oficial documentado",
-              "analysis": "<p>Na página real de documentação, a busca global aparece no alto; o menu oferece outra entrada; “Home” e “Styles” indicam início e estilos no caminho até “Type scale”, escala tipográfica. São mecanismos diferentes, não três cópias da mesma navegação. Nossa leitura: alguém pode procurar um termo, explorar a organização ou reconhecer onde está após receber um link direto. A captura demonstra essas entradas; não informa a qualidade dos resultados da busca, que exige avaliação separada.</p>",
-              "image": "real-assets/foundations-govuk-type-scale.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-type-scale.png",
-              "visualAspect": "500 / 757",
-              "alt": "Página real de escala tipográfica GOV.UK em tela estreita, mostrando busca global, menu, caminho de navegação, título e introdução da documentação.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
-              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/styles/type-scale/"
-            },
-            {
-              "title": "NHS: índice de medicamentos com nomes alternativos",
-              "url": "https://www.nhs.uk/medicines/",
-              "source": "NHS, índice oficial; análise de arquitetura, não aconselhamento de saúde",
-              "analysis": "<p>O índice organiza entradas alfabeticamente e inclui remissões entre nomes alternativos. Por exemplo, uma marca pode encaminhar ao nome usado na página principal. Alguns títulos acrescentam contexto para distinguir apresentações ou usos, evitando depender apenas do nome curto.</p><p>Nossa análise: a ordem alfabética beneficia quem já conhece um termo, enquanto as remissões diminuem a necessidade de adivinhar a nomenclatura escolhida pelo publicador. Isso ilustra a diferença entre manter um conteúdo principal e permitir múltiplas entradas. O padrão não é uma solução universal para exploração: quem não conhece nome algum precisa de outro caminho. O caso ensina a tratar sinônimos e desambiguação como parte da arquitetura, sem duplicar todas as páginas nem transformar um índice em ferramenta de decisão clínica.</p>"
+              "title": "Encontrar um resultado e voltar sem perder o contexto",
+              "visualHtml": "\n<div class=\"demo-compare\">\n <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Busca</span></div><div class=\"demo-body\"><h3 class=\"ui-title\">Buscar exposições</h3><p class=\"ui-label\">Termo procurado</p><div class=\"ui-input\">luz</div><p class=\"ui-small\">A busca percorre exposições, não seus planos pessoais.</p><div class=\"demo-row\"><span class=\"ui-chip is-selected\">Centro · aplicado</span><span class=\"ui-chip is-selected\">Gratuito · aplicado</span></div><div class=\"demo-row\"><p class=\"ui-label demo-grow\">1 resultado no cenário</p><div class=\"ui-button is-secondary\">Limpar filtros</div></div><div class=\"demo-card\"><h4 class=\"ui-subtitle\">Forma &amp; luz</h4><p class=\"ui-copy\">Galeria Horizonte · Centro</p><p class=\"ui-muted\">Instalações luminosas · visita estimada de 1h30</p><div class=\"ui-button is-tonal\">Ver exposição</div></div></div><div class=\"ui-nav\"><span class=\"is-selected\">Descobrir</span><span>Planos</span><span>Salvos</span></div></div>\n <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Voltar aos resultados</span><span class=\"ui-badge\">Detalhe</span></div><div class=\"demo-body\"><p class=\"ui-kicker\">Exposições · Galeria Horizonte</p><h3 class=\"ui-title\">Forma &amp; luz</h3><div class=\"ui-art\"><p class=\"ui-title\">FORMA<br>&amp; LUZ</p></div><p class=\"ui-copy\">Visita estimada de 1h30, com entrada gratuita neste cenário.</p><div class=\"ui-notice\"><p class=\"ui-label\">Contexto preservado ao voltar</p><p class=\"ui-copy\">Busca: luz</p><p class=\"ui-copy\">Filtros: Centro e Gratuito</p><p class=\"ui-small\">Retomar a lista no ponto anterior.</p></div></div></div>\n</div>",
+              "analysis": "<p>A busca declara seu escopo no título e no texto de apoio. Os filtros ativos permanecem visíveis e o resultado oferece informações suficientes para reconhecer a exposição. O nome do lugar e a duração ajudam a distinguir o item antes de abrir o detalhe. A contagem é parte do cenário demonstrativo, não resultado de uma consulta real.</p><p>Na segunda composição, o destino do retorno é nomeado. A anotação destaca os dados que a implementação deve preservar: consulta, filtros e posição da lista. Esse bloco é uma explicação didática para o projeto, não uma mensagem que necessariamente apareceria ao visitante. Sua função é tornar explícito um comportamento que uma captura isolada costuma esconder.</p><p>Use o padrão quando a pessoa compara alternativas e precisa ir e voltar. A contrapartida é persistir contexto de maneira previsível: filtros antigos não devem reaparecer silenciosamente depois de um intervalo longo ou numa nova tarefa. A arquitetura deve definir quando manter, limpar ou comunicar o estado. Busca também não substitui categorias para quem ainda não sabe o que procurar.</p><p>Teste uma tarefa em que a pessoa abre um resultado, conclui que não serve e retorna para comparar outro. Observe se entende o escopo, reconhece os filtros e consegue retomar o trabalho sem redigitar. Inclua ainda uma consulta sem resultado. O critério é recuperar o contexto útil, e não simplesmente fazer o botão de voltar existir.</p>",
+              "alt": "Duas telas ilustradas mostram uma busca por luz em exposições, com filtros Centro e Gratuito, e o detalhe de Forma e luz. A segunda explica que consulta, filtros e posição da lista devem ser preservados ao voltar.",
+              "designNote": "Representação estática de dois momentos, sem navegação implementada. O bloco de contexto é uma anotação didática, visualmente separado do conteúdo da visita. A ui-nav mantém três destinos e seleção textual, sem ícones.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -630,22 +600,21 @@
             {
               "title": "Como ler listas de princípios com espírito crítico",
               "body": "<p>O <a href=\"https://www.toptal.com/designers/ui/principles-of-design\">artigo da Toptal indicado como referência</a> apresenta uma seleção editorial de princípios visuais. É útil para comparar vocabulário, mas sua revisão por especialistas da empresa não equivale a um estudo científico de eficácia. Não existe obrigação de aplicar doze recursos em toda tela.</p><p>Para revisar, explique por que cada nível existe e remova um destaque por vez. Se a compreensão melhora, o destaque estava competindo com a tarefa. A meta não é uma tela uniformemente calma; é uma distribuição de atenção que ajude a pessoa a reconhecer, decidir e agir com informação suficiente.</p>"
+            },
+            {
+              "title": "Destaque visual e estrutura semântica precisam de decisões próprias",
+              "body": "<p>A <strong>hierarquia visual</strong> distribui atenção; a <strong>estrutura semântica</strong> expressa o papel e as relações do conteúdo. Elas devem se apoiar, mas não precisam usar a mesma escala. Um título de seção pode ser visualmente discreto e continuar sendo título. Um dado pode ocupar o maior corpo de texto sem se transformar em título. Portanto, “parecer título” deve significar introduzir e identificar uma seção, e não simplesmente ter letras grandes.</p><p>No Rota fictício, “Forma &amp; luz” identifica a página da exposição. A seção “Planeje a visita” reúne duração, horário escolhido e orientação sobre o plano. Dentro dela, “15h” pode receber destaque porque ajuda a conferir a escolha. Esse número continua sendo o valor do horário; não passa a introduzir uma nova seção. O vínculo com “Horário escolhido” precisa permanecer compreensível, inclusive quando o conteúdo é lido em sequência. Já “Planeje a visita” mantém sua função estrutural mesmo que apareça menor que o horário.</p><p>Antes de estilizar, escreva um esquema simples: título da página, títulos das seções, dados, instruções e ações. Na implementação web, os níveis dos títulos devem expressar essa estrutura, em vez de serem escolhidos pelo tamanho visual que o navegador oferece. Em uma interface nativa, comunique os papéis e a ordem de leitura com os recursos de acessibilidade da plataforma. A regra não é transformar todo destaque em título, nem retirar a identificação de um título para deixá-lo menor.</p><p>Revise por dois caminhos. Primeiro, observe se a composição torna perceptíveis o assunto, a condição decisiva e o próximo passo. Depois, percorra a estrutura e a leitura sequencial: a pessoa ainda sabe a que o horário pertence e onde começa outra seção? Um esquema escrito ajuda a especificar a intenção, mas não comprova a semântica implementada. Essa segunda verificação exige o produto ou um protótipo que exponha de fato seus papéis e sua ordem às tecnologias assistivas.</p>"
             }
           ],
           "examples": [
             {
-              "title": "GOV.UK: duas ações com ênfase diferente",
-              "url": "https://design-system.service.gov.uk/components/button/secondary-combo/",
-              "source": "GOV.UK Design System — exemplo oficial documentado",
-              "analysis": "<p>Na captura, “Save and continue” significa “Salvar e continuar”; “Save as draft”, “Salvar como rascunho”. Os botões têm largura semelhante e seguem a mesma coluna, mas a superfície verde dá maior ênfase à continuidade. O rascunho permanece legível e disponível.</p><p>Nossa análise: a diferença de intensidade comunica prioridade sem apagar a alternativa. Os verbos também explicam destinos distintos. Se ambos tivessem o mesmo tratamento forte, competiriam; se a segunda ação fosse quase invisível, a pessoa poderia perder uma saída útil. A imagem demonstra uma relação visual, não prova qual opção pessoas escolherão. A decisão correta depende da tarefa e de entender o efeito de cada ação.</p>",
-              "image": "real-assets/foundations-govuk-buttons.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-buttons.png",
-              "visualAspect": "500 / 170",
-              "alt": "Dois botões do exemplo GOV.UK: a ação Salvar e continuar tem fundo verde; Salvar como rascunho tem fundo cinza-claro, com mesma largura.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
-              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/components/button/secondary-combo/"
+              "title": "A mesma visita, duas distribuições de atenção",
+              "visualHtml": "\n<div class=\"demo-compare\">\n <div class=\"demo-column demo-bad\"><p class=\"ui-kicker\">Muitas prioridades equivalentes</p><div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Visita</span></div><div class=\"demo-body\"><h3 class=\"ui-title\">Forma &amp; luz</h3><p class=\"ui-title\">Galeria Horizonte</p><p class=\"ui-title\">Gratuito</p><p class=\"ui-title\">1h30</p><p class=\"ui-title\">Aberta até 18h</p><div class=\"ui-button is-primary\">Adicionar ao plano</div><div class=\"ui-button is-primary\">Ver como chegar</div><p class=\"ui-small\">Salvar não reserva entrada.</p></div></div></div>\n <div class=\"demo-column demo-good\"><p class=\"ui-kicker\">Uma ordem ligada à decisão</p><div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Visita</span></div><div class=\"demo-body\"><p class=\"ui-kicker\">Galeria Horizonte</p><h3 class=\"ui-title\">Forma &amp; luz</h3><div class=\"ui-art\"><p class=\"ui-kicker\">Exposição fictícia</p><p class=\"ui-title\">FORMA &amp; LUZ</p></div><div class=\"demo-row\"><span class=\"ui-badge\">Gratuito</span><span class=\"ui-copy\">Visita estimada · 1h30</span></div><p class=\"ui-label\">Aberta até 18h</p><div class=\"ui-button is-primary\">Adicionar ao plano</div><div class=\"ui-button is-secondary\">Ver como chegar</div><p class=\"ui-small\">Salvar não reserva entrada.</p></div></div></div>\n</div>",
+              "analysis": "<p>O conteúdo decisivo aparece nas duas composições: exposição, lugar, preço, duração e abertura. Na primeira, quase tudo recebe o tratamento de título e ambas as ações usam a mesma intensidade. A repetição não cria uma ordem clara de importância. Na segunda, o lugar contextualiza, o nome identifica e as condições apoiam a decisão.</p><p>A ação de adicionar ganha ênfase porque este recorte trata de organizar o plano. Como chegar permanece disponível com menor intensidade. Essa prioridade não é universal: durante o deslocamento, chegar ao lugar poderia ser a ação principal. A hierarquia deve responder ao momento da tarefa, e não a uma preferência fixa do designer.</p><p>A arte acrescentada na segunda versão também cria uma contrapartida. Ela comunica a personalidade da exposição e ocupa espaço que poderia mostrar mais conteúdo. Se a imagem empurrar a condição de abertura para longe da decisão, o acabamento terá prejudicado o objetivo. Um título menor ou uma arte mais contida pode funcionar melhor em algumas larguras.</p><p>Teste reconhecimento e tarefa separadamente. Primeiro, peça que alguém diga do que trata a tela e quais condições percebeu. Depois apresente uma situação de planejamento e observe a escolha. O critério é compreender informação e ação, não apenas recordar a imagem. Este contraste autoral explica intenções; não comprova que a segunda versão produziu resultados superiores.</p>",
+              "alt": "Duas composições da visita Forma e luz: a primeira destaca quase todos os dados e ações igualmente; a segunda diferencia nome, contexto, condições e a ação principal de adicionar ao plano.",
+              "designNote": "A diferença central é de escala tipográfica e intensidade das ações, sem tornar a primeira ilegível. A arte da segunda é uma variável adicional discutida como contrapartida; não apresentar como experimento controlado. Rótulos de comparação ficam fora das telas.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -661,7 +630,9 @@
               "Há prioridades discerníveis sem cor.",
               "Preço e condição de horário permanecem legíveis.",
               "O destaque principal é explicado pela tarefa.",
-              "O texto aumentado não elimina informação essencial."
+              "O texto aumentado não elimina informação essencial.",
+              "As alternativas visuais acompanham um esquema de títulos, dados e ações; o nível estrutural de um título não é escolhido pelo tamanho desejado da fonte.",
+              "Um dado destacado mantém associação explícita com seu significado, e a revisão distingue a ordem de leitura especificada daquela efetivamente verificada no protótipo ou produto."
             ]
           },
           "sources": [
@@ -692,6 +663,15 @@
               "url": "https://developer.apple.com/videos/play/wwdc2025/359/",
               "source": "Apple Developer",
               "note": "Vídeo oficial em inglês, aproximadamente 19 minutos. O capítulo Visual Design começa em 13:28. Observe como as decisões de conteúdo antecedem o acabamento. Página e capítulos verificados."
+            }
+          ],
+          "books": [
+            {
+              "title": "Refactoring UI",
+              "authors": "Adam Wathan e Steve Schoger",
+              "edition": "Edição e ano não declarados nas páginas bibliográficas do exemplar.",
+              "pages": "Páginas físicas do PDF 36–46 e 54–62, contadas a partir de 1.",
+              "note": "Leitura complementar sobre destaque relativo, peso, contraste e separação entre estrutura e aparência. A aplicação acessível ao Rota é síntese didática original; não se deve interpretar o uso de “semantics” (semântica) no livro como autorização para remover papéis acessíveis. Paginação física do PDF, não paginação editorial impressa."
             }
           ]
         },
@@ -733,18 +713,13 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: rótulo, valor e correção numa coluna estreita",
-              "url": "https://design-system.service.gov.uk/patterns/check-answers/default/",
-              "source": "GOV.UK Design System — exemplo oficial documentado",
-              "analysis": "<p>Na captura estreita, cada unidade empilha o nome do dado, seu valor e o link de alteração. As linhas horizontais separam unidades; uma borda inicial comum sustenta a leitura. Os dados são exemplificativos da documentação.</p><p>Nossa análise: o espaço permite distinguir o valor do próximo rótulo, enquanto a ação permanece no grupo correspondente. Essa organização evita comprimir três colunas numa largura insuficiente. Ao adaptar um resumo, preserve a relação entre dado e correção, mesmo quando as posições mudarem. O trecho mostra apenas a parte superior da página; não autoriza concluir que todo o fluxo foi avaliado. “Personal details” significa “Dados pessoais”.</p>",
-              "image": "real-assets/foundations-govuk-review.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-review.png",
-              "visualAspect": "500 / 757",
-              "alt": "Trecho da revisão de respostas GOV.UK em tela estreita: título, grupo de dados pessoais e unidades com nome do dado, valor exemplificativo e link para alterar.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
-              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/check-answers/default/"
+              "title": "A relação permanece quando o espaço muda",
+              "visualHtml": "\n<div class=\"demo-column\">\n <div class=\"demo-card\"><p class=\"ui-kicker\">Mesmos dados, duas composições</p><h3 class=\"ui-title\">Preparar a visita</h3><p class=\"ui-copy\">Forma &amp; luz · Galeria Horizonte</p></div>\n <div class=\"demo-compare\">\n  <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Campos lado a lado</span></div><div class=\"demo-body\"><h3 class=\"ui-subtitle\">Seu plano</h3><div class=\"demo-grid\"><div class=\"demo-column\"><p class=\"ui-label\">Data</p><div class=\"ui-input\">24 de outubro</div></div><div class=\"demo-column\"><p class=\"ui-label\">Chegada</p><div class=\"ui-input\">15h</div></div></div><div class=\"demo-column\"><p class=\"ui-label\">Nota para o passeio</p><div class=\"ui-input\">Encontrar o grupo na entrada principal.</div><p class=\"ui-small\">Só aparece no seu plano.</p></div><div class=\"ui-divider\"></div><div class=\"ui-button is-primary\">Salvar no meu plano</div><p class=\"ui-small\">Sem compra ou reserva de entrada.</p></div></div>\n  <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Campos empilhados</span></div><div class=\"demo-body\"><h3 class=\"ui-subtitle\">Seu plano</h3><div class=\"demo-column\"><p class=\"ui-label\">Data</p><div class=\"ui-input\">24 de outubro</div></div><div class=\"demo-column\"><p class=\"ui-label\">Chegada</p><div class=\"ui-input\">15h</div></div><div class=\"demo-column\"><p class=\"ui-label\">Nota para o passeio</p><div class=\"ui-input\">Encontrar o grupo na entrada principal.</div><p class=\"ui-small\">Só aparece no seu plano.</p></div><div class=\"ui-divider\"></div><div class=\"ui-button is-primary\">Salvar no meu plano</div><p class=\"ui-small\">Sem compra ou reserva de entrada.</p></div></div>\n </div>\n <div class=\"ui-notice\"><p class=\"ui-label\">A regra que deve sobreviver</p><p class=\"ui-copy\">Rótulo junto ao valor; ajuda junto ao campo; ação depois da revisão.</p></div>\n</div>",
+              "analysis": "<p>Compare as relações, não apenas as alturas. Nas duas composições, cada rótulo permanece junto ao seu valor e a ajuda acompanha a nota. O alinhamento inicial sustenta a leitura. A diferença é a distribuição de data e chegada: dividir uma linha pode aproveitar espaço; empilhar pode acomodar melhor texto e larguras menores.</p><p>Esta é uma demonstração de reorganização, não uma exigência de usar duas colunas no celular. Quando os valores deixam de caber confortavelmente, comprimir a fonte para manter a linha prejudica a leitura. A decisão deve considerar a largura útil depois das margens, o texto aumentado e conteúdos mais longos que o exemplo.</p><p>Use o raciocínio em formulários, resumos e cartões que precisam crescer. A contrapartida do empilhamento é uma tela mais longa; a contrapartida das colunas é uma relação horizontal mais exigente. A consistência importante está na proximidade entre elementos relacionados, não na manutenção de uma altura idêntica para todas as versões.</p><p>Substitua a nota por três linhas e aumente o texto no protótipo. Verifique se cada campo continua associado ao rótulo correto, se nenhuma informação foi cortada e se a ação permanece depois do conteúdo que precisa ser revisado. No exemplo publicado, as composições são estáticas e podem empilhar para caber no curso; uma implementação real ainda precisará ser testada nas larguras pretendidas.</p>",
+              "alt": "Duas versões de um formulário de plano apresentam os mesmos campos: data, chegada e nota. Uma dispõe data e chegada lado a lado; a outra empilha tudo, preservando rótulos, ajuda e ordem da ação.",
+              "designNote": "demo-grid interno pode usar duas colunas quando houver largura, com min-width:0 e empilhamento responsivo definido pela coordenação. Não usar alturas fixas de campo para conter a nota. Os dois arranjos são alternativas ilustradas, não larguras físicas de dispositivos.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -830,24 +805,13 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: cores de borda têm funções diferentes",
-              "url": "https://design-system.service.gov.uk/styles/colour/",
-              "source": "GOV.UK Design System — exemplo oficial documentado",
-              "analysis": "<p>Na captura, “border” identifica uma borda comum clara; “input-border” identifica a borda escura de campos. “Link” é link, “hover” é passagem do ponteiro, “visited” é visitado e “active” é ativo. Nossa leitura: o papel determina o tratamento. Não se deve copiar o cinza discreto de um separador para uma borda necessária à identificação de um campo sem medir o par resultante. A documentação mostra valores de referência; a captura isolada não certifica contraste em qualquer fundo ou estado do seu projeto.</p>",
-              "image": "real-assets/foundations-govuk-colour.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-colour.png",
-              "visualAspect": "485 / 734",
-              "alt": "Trecho da documentação de cores GOV.UK com amostras dos estados de links, bordas e fundo; a borda comum é clara e a borda de campos é escura.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
-              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/styles/colour/"
-            },
-            {
-              "title": "USWDS: alertas com significado além da cor",
-              "url": "https://designsystem.digital.gov/components/alert/",
-              "source": "U.S. Web Design System, componentes oficiais",
-              "analysis": "<p>O USWDS apresenta variantes de alerta informativo, aviso, sucesso, erro e emergência, combinando títulos, mensagens e tratamentos visuais. Também documenta versões mais compactas e sem ícone. O significado não precisa ficar concentrado na tonalidade de uma faixa.</p><p>Nossa análise: um título identifica a condição e a mensagem pode explicar a consequência. A cor reforça reconhecimento, enquanto texto preserva compreensão quando ela não é distinguida. Copiar somente o fundo colorido perderia a parte mais útil do padrão. O exemplo também ensina a conter urgência: se toda informação usa tratamento de emergência, o contraste deixa de comunicar prioridade. Não inferimos conformidade de uma implementação própria apenas por ela se parecer com o componente oficial.</p>"
+              "title": "Separador, campo e estado não têm a mesma função",
+              "visualHtml": "\n<div class=\"demo-column\">\n <div class=\"demo-compare\">\n  <div class=\"demo-card\"><p class=\"ui-kicker\">Separar conteúdo</p><h3 class=\"ui-subtitle\">Resumo da visita</h3><div class=\"demo-row\"><span class=\"ui-label demo-grow\">Forma &amp; luz</span><span class=\"ui-copy\">1h30</span></div><div class=\"ui-divider\"></div><div class=\"demo-row\"><span class=\"ui-copy demo-grow\">Galeria Horizonte</span><span class=\"ui-badge\">Gratuito</span></div><p class=\"ui-small\">A divisória é apoio: os textos e espaços já distinguem as informações.</p></div>\n  <div class=\"demo-card\"><p class=\"ui-kicker\">Reconhecer um controle</p><p class=\"ui-label\">Nome do plano</p><div class=\"ui-input is-focus\">Sábado cultural</div><p class=\"ui-small\">O limite do campo e o foco precisam ser reconhecíveis.</p><p class=\"ui-label\">Horário de chegada</p><div class=\"demo-row\"><span class=\"ui-chip\">14h</span><span class=\"ui-chip is-selected\">15h · Selecionado</span><span class=\"ui-chip\">16h</span></div></div>\n </div>\n <div class=\"ui-notice is-error\"><div class=\"demo-row\"><span class=\"ui-badge\">Erro</span><p class=\"ui-label demo-grow\">Escolha uma data para salvar o plano.</p></div><p class=\"ui-copy\">A mensagem identifica a pendência mesmo sem distinguir a cor da borda.</p></div>\n <p class=\"ui-small\">Amostras de papéis visuais. As razões de contraste devem ser medidas nos pares efetivamente implementados.</p>\n</div>",
+              "analysis": "<p>A linha do resumo e o limite do campo têm papéis diferentes. No resumo, texto, posição e espaço já identificam as informações; a divisória apenas reforça a separação. No campo, o contorno participa do reconhecimento da área editável. Usar o mesmo cinza discreto para ambos pode retirar uma pista necessária do controle.</p><p>O foco acrescenta uma marca própria, enquanto a seleção de horário combina tratamento visual e texto explícito. A mensagem de erro também informa a pendência em palavras. Essas redundâncias evitam concentrar significado na cor. O exemplo não exige que toda seleção repita literalmente “Selecionado”; ele torna a distinção explícita para o estudo.</p><p>Use a comparação ao revisar tokens de borda, superfícies e estados. A contrapartida é conter ruído: um contorno forte em toda divisão faria as regiões competirem como se todas fossem controles. É preciso escolher intensidade pela função. O foco e o erro mostrados são amostras estáticas, não uma sessão de edição em andamento.</p><p>Na implementação, registre primeiro plano, fundo e estado de cada par relevante e calcule a razão aplicável. Depois verifique se foco, seleção e erro continuam identificáveis em contexto e sem depender só da cor. O critério combina medição e compreensão. A aparência desta composição ou o uso de uma paleta conhecida, isoladamente, não certifica acessibilidade.</p>",
+              "alt": "Uma divisória suave separa informações de uma visita; ao lado, um campo tem contorno de foco e um horário é identificado como selecionado. Abaixo, um erro combina identificação textual, mensagem e borda.",
+              "designNote": "Usar ui-divider apenas decorativa. ui-input deve ter borda necessária com contraste suficiente e is-focus deve acrescentar contorno escuro mais halo. Não informar razões numéricas sem medir a renderização. ui-badge com texto Erro substitui símbolo potencialmente ambíguo.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -933,18 +897,13 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: uma pergunta e quatro unidades de escolha",
-              "url": "https://design-system.service.gov.uk/components/radios/default/",
-              "source": "GOV.UK Design System — exemplo oficial documentado",
-              "analysis": "<p>“Where do you live?” significa “Onde você mora?”. Cada círculo está próximo de seu rótulo; todas as opções repetem forma, alinhamento e intervalo. Assim, cada controle forma uma unidade com seu texto, e as quatro unidades pertencem à pergunta acima.</p><p>Nossa análise: aproximar um rótulo do círculo seguinte criaria uma associação concorrente. Afastar excessivamente a pergunta enfraqueceria a relação do conjunto. O exemplo evidencia dois níveis de agrupamento sem precisar colocar cada opção dentro de uma caixa. A documentação também reúne as opções semanticamente; isso não pode ser inferido apenas dos pixels. As opções nomeiam Inglaterra, Escócia, País de Gales e Irlanda do Norte.</p>",
-              "image": "real-assets/foundations-govuk-radios.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-radios.png",
-              "visualAspect": "500 / 340",
-              "alt": "Exemplo GOV.UK com uma pergunta sobre onde a pessoa mora e quatro opções de escolha única, cada uma com círculo à esquerda e nome à direita.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
-              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/components/radios/default/"
+              "title": "Quando uma caixa cria a relação errada",
+              "visualHtml": "\n<div class=\"demo-compare\">\n <div class=\"demo-column demo-bad\"><p class=\"ui-kicker\">A fronteira corta a unidade</p><div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Organizar Forma &amp; luz</span></div><div class=\"demo-body\"><div class=\"demo-card\"><p class=\"ui-label\">Horário de chegada</p><div class=\"ui-input\">15h</div><p class=\"ui-label\">Nota para o passeio</p></div><div class=\"demo-card\"><div class=\"ui-input\">Encontrar o grupo na entrada.</div><p class=\"ui-small\">O horário não reserva uma entrada.</p></div></div></div><p class=\"ui-small\">A nota foi separada do próprio rótulo; a ajuda sobre horário ficou junto ao conteúdo errado.</p></div>\n <div class=\"demo-column demo-good\"><p class=\"ui-kicker\">Cada campo mantém sua unidade</p><div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Organizar Forma &amp; luz</span></div><div class=\"demo-body\"><div class=\"demo-card\"><p class=\"ui-label\">Horário de chegada</p><div class=\"ui-input\">15h</div><p class=\"ui-small\">O horário não reserva uma entrada.</p></div><div class=\"demo-card\"><p class=\"ui-label\">Nota para o passeio</p><div class=\"ui-input\">Encontrar o grupo na entrada.</div></div></div></div><p class=\"ui-small\">Rótulo, valor e ajuda ficam no grupo que explica seu significado.</p></div>\n</div>",
+              "analysis": "<p>O problema da primeira composição não é a presença de caixas. A primeira região reúne o horário com o rótulo da nota, enquanto a segunda contém o valor da nota e uma explicação sobre o horário. Proximidade e região comum passam a sugerir associações concorrentes. A pessoa precisa usar o conteúdo das frases para desfazer uma relação que o desenho criou.</p><p>Na segunda versão, cada região corresponde a uma unidade de significado. O horário permanece com sua condição; a nota permanece com seu rótulo. As formas dos campos continuam semelhantes porque ambos representam entradas, mas essa semelhança não precisa apagar a distinção entre suas funções. Diferentes pistas agora colaboram.</p><p>Use a inspeção quando campos, mensagens e conteúdo variável começam a se aproximar de grupos vizinhos. A contrapartida é evitar transformar toda frase numa caixa. Em uma interface menos densa, espaço e alinhamento podem delimitar as unidades com menos elementos. As bordas foram mantidas aqui para tornar o conflito visível no estudo.</p><p>Teste com uma nota de várias linhas e uma mensagem de erro adicional. Peça que alguém associe cada ajuda ao campo correspondente, sem explicar o agrupamento antes. Na implementação, verifique também a relação semântica e a ordem de leitura assistiva. Um arranjo visual coerente não garante, por si só, que a estrutura programática expressará as mesmas unidades.</p>",
+              "alt": "Comparação mostra um agrupamento incorreto que separa a nota de seu rótulo e coloca a ajuda de horário junto dela. A versão revista reúne rótulo, valor e ajuda de cada campo na mesma região.",
+              "designNote": "As caixas da comparação são deliberadas para expor conflito de região comum e proximidade. Manter a mesma tipografia e conteúdos nas duas versões. Não corrigir automaticamente a primeira estrutura no CSS: ela é o contraexemplo didático rotulado.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -1034,18 +993,13 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: ritmo de tarefas e estados",
-              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/",
-              "source": "GOV.UK Design System — exemplo oficial documentado",
-              "analysis": "<p>“Completed” significa “Concluído”; “Incomplete”, “Incompleto”. Na captura, tarefas repetem alinhamento e divisão de linhas; estados ocupam uma posição previsível. O fundo azul-claro destaca pendências, enquanto a conclusão permanece identificada por texto.</p><p>Nossa análise: repetir a estrutura permite comparar progresso sem reaprender cada linha. Os grupos interrompem o ritmo para marcar uma mudança de fase, não para decorar. Uma marcação de estado não deveria parecer uma nova ação independente. O padrão ensina a manter posições e significados estáveis; não prova que uma sequência equivalente seria adequada a qualquer serviço.</p>",
-              "image": "real-assets/foundations-govuk-tasks.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/foundations-govuk-tasks.png",
-              "visualAspect": "500 / 660",
-              "alt": "Exemplo GOV.UK de lista de tarefas em dois grupos, com links à esquerda, estados concluído ou incompleto à direita e botão final de envio.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura da página oficial para estudo, sem alterações; conteúdo sob Open Government Licence v3.0, salvo exceções indicadas. Não implica endosso.",
-              "license": "Open Government Licence v3.0, conforme o rodapé oficial; marcas e símbolos sujeitos às ressalvas da licença.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "sourcePageUrl": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/default/"
+              "title": "Uma estrutura repetida que admite diferenças reais",
+              "visualHtml": "\n<div class=\"demo-screen\">\n <div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><span class=\"ui-badge\">Ideias salvas</span></div>\n <div class=\"demo-body\"><p class=\"ui-kicker\">Seu repertório cultural</p><h3 class=\"ui-title\">Para uma próxima tarde</h3><p class=\"ui-muted\">Três visitas fictícias com a mesma estrutura de informação.</p><div class=\"ui-list\">\n  <div class=\"demo-card\"><div class=\"demo-row\"><span class=\"ui-number\">01</span><div class=\"demo-grow\"><h4 class=\"ui-subtitle\">Forma &amp; luz</h4><p class=\"ui-muted\">Galeria Horizonte · Centro</p></div></div><div class=\"demo-row\"><span class=\"ui-copy demo-grow\">Visita estimada · 1h30</span><span class=\"ui-badge\">Gratuito</span></div><div class=\"ui-button is-tonal\">Ver visita</div></div>\n  <div class=\"demo-card\"><div class=\"demo-row\"><span class=\"ui-number\">02</span><div class=\"demo-grow\"><h4 class=\"ui-subtitle\">Memórias da cidade em papel</h4><p class=\"ui-muted\">Arquivo das Artes · Centro</p></div></div><div class=\"demo-row\"><span class=\"ui-copy demo-grow\">Visita estimada · 45 min</span><span class=\"ui-badge\">Gratuito</span></div><div class=\"ui-button is-tonal\">Ver visita</div></div>\n  <div class=\"demo-card\"><div class=\"demo-row\"><span class=\"ui-number\">03</span><div class=\"demo-grow\"><h4 class=\"ui-subtitle\">Oficina de gravura</h4><p class=\"ui-muted\">Ateliê Campo · Vila Nova</p></div></div><div class=\"demo-row\"><span class=\"ui-copy demo-grow\">Duração ainda não informada</span><span class=\"ui-badge\">Agenda a confirmar</span></div><p class=\"ui-small\">Neste cenário, faltam horários para incluir a oficina em um plano.</p><div class=\"ui-button is-tonal\">Ver visita</div></div>\n </div><p class=\"ui-small\">Salvar uma ideia não compra nem reserva entrada.</p></div>\n</div>",
+              "analysis": "<p>Os três cartões repetem a ordem de título, lugar, informações de decisão e ação. O segundo título pode ocupar mais linhas sem mudar essa sequência. O ritmo vem de relações estáveis entre elementos, não de cortar nomes para produzir retângulos com alturas idênticas. A numeração ajuda a referenciar os itens durante o estudo, sem indicar uma ordem obrigatória de visita.</p><p>A terceira unidade introduz uma diferença real: duração e horários ainda não estão informados. O estado aparece em texto e ganha uma explicação local. A ação continua sendo ver a visita, porque consultar detalhes permanece possível. Desabilitar todo o cartão esconderia um caminho ainda útil apenas por falta de dados para planejar.</p><p>Use uma estrutura repetida para listas em que as pessoas comparam itens. A contrapartida é distinguir informações equivalentes de situações que precisam de tratamento próprio. Um selo de gratuidade e um estado de agenda têm significados diferentes; a implementação deve manter essa diferença compreensível e pode separá-los em posições distintas conforme a necessidade do conteúdo.</p><p>Para avaliar, troque os títulos, introduza um nome longo e retire um dado de cada vez. Verifique se a pessoa continua encontrando duração, condição e ação sem reaprender a estrutura. Depois peça que identifique qual item ainda não está pronto para planejar e o que pode fazer com ele. O critério é previsibilidade com exceções explicadas, não uniformidade visual a qualquer custo.</p>",
+              "alt": "Lista de três visitas fictícias mantém título, lugar, informações e ação na mesma ordem. Um título longo cresce naturalmente; o terceiro cartão informa ausência de duração e agenda sem impedir consultar a visita.",
+              "designNote": "Tela única mais longa, com crescimento natural dos cartões e sem truncamento de títulos. ui-list deve manter ritmo vertical; todas as ações representadas têm o mesmo papel. O estado pendente não deve receber aparência de botão nem reduzir legibilidade da unidade inteira.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {

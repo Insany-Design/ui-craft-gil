@@ -39,17 +39,13 @@
           ],
           "examples": [
             {
-              "title": "Figura oficial: regiões reservadas aos gestos",
-              "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/edge-to-edge",
-              "source": "Android Developers",
-              "analysis": "<p>Na figura Android, as faixas verdes nas bordas tornam visível uma restrição normalmente invisível. O centro continua disponível para o conteúdo, mas aproximar uma alça de arraste da lateral pode colocá-la em competição com o sistema. A leitura relevante não é copiar a largura aparente da faixa; é reconhecer que o sistema informa essa região. Use a figura para revisar controles que dependem de arrastar, principalmente em carrosséis e painéis. Ela demonstra regiões de gesto, não uma tabela universal de medidas nem uma tela de produto em produção.</p>",
-              "image": "https://developer.android.com/static/images/design/ui/mobile/e2e-gesture-insets.png",
-              "alt": "Diagrama oficial Android com regiões de gestos destacadas em verde nas bordas da tela.",
-              "sourcePageUrl": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/edge-to-edge",
-              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
-              "licenseUrl": "https://developer.android.com/license",
-              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-gesture-insets.png"
+              "title": "Fundo até a borda, ações fora da interferência do sistema",
+              "visualHtml": "<div class=\"demo-compare\">\n  <div class=\"demo-screen\">\n    <div class=\"demo-system-zone\"><span class=\"ui-small\">Área superior do sistema · esquema</span></div>\n    <div class=\"ui-art\"><span class=\"ui-kicker\">Exposição fictícia</span><span class=\"ui-title\">Forma &amp; luz</span><span class=\"ui-copy\">Galeria Horizonte</span></div>\n    <div class=\"demo-body\">\n      <div class=\"demo-row\"><div class=\"ui-button is-secondary\">‹ Voltar</div><div class=\"demo-grow\"></div><div class=\"ui-chip\">1 de 3</div></div>\n      <div class=\"demo-column\"><div class=\"ui-title\">Um encontro com a luz</div><div class=\"ui-copy\">A composição visual continua até a borda. A leitura e as ações ocupam uma região protegida.</div></div>\n      <div class=\"demo-card\"><div class=\"ui-label\">Forma &amp; luz</div><div class=\"ui-muted\">Centro · visita de 1h30 · gratuito</div></div>\n      <div class=\"ui-button is-primary\">Salvar no meu plano</div><div class=\"ui-small\">Salvar um plano não reserva entrada.</div>\n    </div>\n    <div class=\"demo-system-zone\"><span class=\"ui-small\">Área inferior de gesto do sistema · esquema</span></div>\n  </div>\n  <div class=\"demo-column\">\n    <div class=\"ui-kicker\">Leitura da composição</div>\n    <div class=\"demo-card\"><div class=\"ui-number\">1</div><div class=\"ui-subtitle\">A superfície pode continuar</div><div class=\"ui-copy\">A arte original ocupa toda a largura; informação essencial não depende de suas extremidades.</div></div>\n    <div class=\"demo-card\"><div class=\"ui-number\">2</div><div class=\"ui-subtitle\">O controle precisa permanecer alcançável</div><div class=\"ui-copy\">Voltar e salvar ficam afastados das regiões reservadas pelo sistema.</div></div>\n    <div class=\"ui-notice\">Estudo estático. Faixas ilustrativas, sem medidas universais e sem reprodução de uma tela do Android ou iOS.</div>\n  </div>\n</div>",
+              "analysis": "<p>A arte atravessa a largura da superfície, enquanto Voltar, os textos e Salvar no meu plano permanecem em uma região de conteúdo protegida. Essa separação mostra o sentido de edge-to-edge: permitir continuidade visual até as bordas sem obrigar controles importantes a disputar espaço com barras e gestos do sistema. As faixas nomeadas tornam a restrição legível neste estudo; não representam uma captura de aparelho.</p><p>Na implementação, as margens de proteção vêm dos insets, isto é, dos afastamentos informados pela plataforma, e podem mudar com orientação, recorte da tela, barras ou teclado. Não se deve medir a faixa desta composição e copiá-la como constante. O fundo pode alcançar uma área em que o texto principal ou a ação não deveriam ficar.</p><p>A decisão preserva a presença visual da exposição, mas consome altura útil para proteger interação e leitura. Uma imagem decorativa pode ser recortada; o título da exposição, o retorno e a ação de salvar não podem depender desse recorte. Salvar continua significando organizar uma intenção de visita, sem reservar ingresso.</p><p>Teste a versão executável com texto ampliado, navegação por gestos e por botões, rotação e teclado aberto. Verifique se o último conteúdo pode rolar para uma posição legível e se nenhum alvo fica encoberto. As medidas desta página são CSS px; os valores nativos em pt ou dp exigem tratamento próprio.</p>",
+              "alt": "Composição estática de Rota com arte da exposição até a borda, conteúdo protegido e faixas nomeando as áreas superior e inferior do sistema.",
+              "designNote": "Classe extra demo-system-zone: faixa discreta de anotação, com fundo tonal, contorno tracejado e texto legível; sua altura é apenas ilustrativa. Não desenhar relógio, bateria ou home indicator reais. ui-art deve receber a arte abstrata autoral já aprovada, com texto acima da decoração. Usar a largura disponível e empilhar as duas colunas em telas estreitas.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -126,17 +122,13 @@
           ],
           "examples": [
             {
-              "title": "Figura oficial: classes de largura de janela",
-              "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
-              "source": "Android Developers",
-              "analysis": "<p>A documentação Android representa classes de largura em cenários de dispositivos e janelas. A utilidade didática está na mudança de espaço disponível, não em transformar cada desenho em um molde obrigatório. Observe que uma janela estreita pode existir em uma tela fisicamente grande. Ao analisar um projeto, compare quais relações precisariam mudar: lista e detalhe simultâneos, navegação lateral ou largura de leitura limitada. Os valores de referência pertencem ao sistema Android; a regra profissional é validar a composição com o conteúdo do produto.</p>",
-              "image": "https://developer.android.com/static/develop/ui/compose/images/layouts/adaptive/window-size-classes/window_size_classes_width.png",
-              "alt": "Figura oficial Android com classes de largura e exemplos de janelas de diferentes tamanhos.",
-              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
-              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
-              "licenseUrl": "https://developer.android.com/license",
-              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-window-widths.png"
+              "title": "A mesma escolha, duas distribuições de espaço",
+              "visualHtml": "<div class=\"demo-column\">\n  <div class=\"ui-notice\">Estudo estático · estrutura compacta e estrutura para área ampliada · dados fictícios</div>\n  <div class=\"demo-column\">\n    <div class=\"demo-screen\">\n      <div class=\"demo-topbar\"><div class=\"ui-subtitle\">Descobrir</div><div class=\"ui-chip\">Compacto</div></div>\n      <div class=\"demo-body\">\n        <div class=\"ui-input\">Buscar lugar ou exposição</div>\n        <div class=\"demo-row\"><div class=\"ui-chip is-selected\">Gratuito</div><div class=\"ui-chip\">Até 2 horas</div></div>\n        <div class=\"demo-card\"><div class=\"ui-art\"><span class=\"ui-title\">Forma &amp; luz</span></div><div class=\"ui-subtitle\">Galeria Horizonte</div><div class=\"ui-muted\">Centro · 1h30</div><div class=\"ui-button is-primary\">Ver visita</div></div>\n        <div class=\"ui-small\">Escolha uma visita antes de abrir seus detalhes.</div>\n      </div>\n    </div>\n    <div class=\"demo-screen demo-wide\">\n      <div class=\"demo-topbar\"><div class=\"ui-subtitle\">Descobrir</div><div class=\"ui-chip\">Ampliado</div></div>\n      <div class=\"demo-body\">\n        <div class=\"ui-input\">Buscar lugar ou exposição</div>\n        <div class=\"demo-grid\">\n          <div class=\"demo-column\"><div class=\"ui-kicker\">Resultados</div><div class=\"demo-card is-selected\"><div class=\"ui-label\">Forma &amp; luz</div><div class=\"ui-muted\">Galeria Horizonte · gratuito</div><div class=\"ui-badge\">Selecionado</div></div><div class=\"demo-card\"><div class=\"ui-label\">Linhas do cotidiano</div><div class=\"ui-muted\">Casa do Desenho · gratuito</div></div></div>\n          <div class=\"demo-column\"><div class=\"ui-kicker\">Visita selecionada</div><div class=\"ui-art\"><span class=\"ui-title\">Forma &amp; luz</span></div><div class=\"ui-copy\">Galeria Horizonte · Centro · 1h30</div><div class=\"ui-button is-primary\">Salvar no meu plano</div><div class=\"ui-small\">Não é uma reserva.</div></div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>",
+              "analysis": "<p>Na versão compacta, a pessoa escolhe um resultado e depois entra no detalhe. Na ampliada, a lista permanece ao lado da visita selecionada. Não se trata de esticar todos os elementos: a composição passa a usar o espaço adicional para manter contexto e reduzir idas e voltas. A seleção continua explícita por contorno, superfície e rótulo, não apenas pelo azul.</p><p>Os mesmos papéis de texto, raios e distâncias entre elementos se repetem nas duas vistas. Neste projeto, grupos têm separação maior que os itens de um grupo; rótulos ficam próximos de seu conteúdo. O sistema admite pequenos ajustes ópticos e não impõe que toda medida seja múltipla de oito. Mais largura não exige aumentar todas as fontes ou preencher cada vazio.</p><p>A vista lado a lado beneficia comparação, mas aumenta a densidade e requer uma ordem de leitura clara. Ela só deve aparecer quando lista e detalhe couberem de forma útil; um ponto de quebra escolhido pelo nome de um aparelho não garante isso. Ao reduzir a área disponível, preserve consulta, filtros e seleção, mesmo que a apresentação volte a ser sequencial.</p><p>Teste larguras intermediárias e texto ampliado, não só dois extremos. Observe títulos longos, quebra de rótulos e se a ação principal ainda pertence visualmente ao detalhe. As unidades desta demonstração são CSS px; dp e pt de interfaces nativas não são conversões automáticas de uma grade web.</p><p>Nesta documentação, a estrutura ampliada também se reorganiza quando falta espaço para mostrá-la com texto legível. Em uma janela larga, observe a relação entre lista e detalhe; em uma janela estreita, observe a ordem preservada após a reorganização.</p>",
+              "alt": "Comparação de Rota compacto com resultado em card e Rota ampliado com lista de resultados ao lado do detalhe selecionado.",
+              "designNote": "Somente classes do contrato. demo-grid deve usar colunas fluidas com min-width:0 e empilhar quando o conteúdo não couber; o rótulo Ampliado identifica uma composição, não fixa largura de dispositivo. Não reduzir a tela inteira por transform:scale. demo-compare também empilha em telas estreitas.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -206,17 +198,13 @@
           ],
           "examples": [
             {
-              "title": "Demonstração oficial: barra superior centralizada",
-              "url": "https://developer.android.com/develop/ui/compose/components/app-bars",
-              "source": "Android Developers",
-              "analysis": "<p>A demonstração Android coloca o título ao centro, um controle de navegação à esquerda e outro controle à direita. O resultado permite inspecionar alinhamento e distribuição sem conteúdo editorial complexo. É uma amostra técnica, portanto seus textos genéricos e ícones não são uma recomendação de nomenclatura para um produto final. Ao estudá-la, imagine o título duplicando de tamanho e substitua mentalmente os controles por ações concretas. A composição só se mantém útil se a pessoa compreender os rótulos, o destino da saída e o significado da ação oposta.</p>",
-              "image": "https://developer.android.com/static/develop/ui/compose/images/components/appbar-centered.png",
-              "alt": "Demonstração Android de barra superior com título centralizado, seta à esquerda e controle à direita.",
-              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/components/app-bars",
-              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
-              "licenseUrl": "https://developer.android.com/license",
-              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-appbar-centered.png"
+              "title": "O cabeçalho acompanha o nível da tarefa",
+              "visualHtml": "<div class=\"demo-column\">\n  <div class=\"ui-notice\">Três recortes estáticos do Rota · controles ilustrativos</div>\n  <div class=\"demo-flow\">\n    <div class=\"demo-step\"><div class=\"ui-kicker\">1 · Destino principal</div><div class=\"demo-screen\"><div class=\"demo-topbar\"><div class=\"ui-title\">rota</div><div class=\"ui-button is-secondary\">Ajuda</div></div><div class=\"demo-body\"><div class=\"ui-subtitle\">Sua próxima pausa</div><div class=\"ui-copy\">Encontre uma visita para a sua tarde.</div><div class=\"ui-input\">Buscar lugar ou exposição</div></div></div><div class=\"ui-small\">A marca cabe na entrada. Não há tela anterior inventada.</div></div>\n    <div class=\"demo-step\"><div class=\"ui-kicker\">2 · Detalhe de uma visita</div><div class=\"demo-screen\"><div class=\"demo-topbar\"><div class=\"ui-button is-secondary\">‹ Voltar</div><div class=\"demo-grow ui-label\">Forma &amp; luz</div><div class=\"ui-button is-secondary\">Salvar</div></div><div class=\"demo-body\"><div class=\"ui-art\"><span class=\"ui-subtitle\">Galeria Horizonte</span></div><div class=\"ui-copy\">Centro · visita de 1h30</div></div></div><div class=\"ui-small\">Voltar recupera a tela de origem; salvar refere-se à visita.</div></div>\n    <div class=\"demo-step\"><div class=\"ui-kicker\">3 · Edição com fim definido</div><div class=\"demo-screen\"><div class=\"demo-topbar\"><div class=\"ui-button is-secondary\">Cancelar</div><div class=\"demo-grow ui-label\">Editar plano</div><div class=\"ui-button is-tonal\">Concluir</div></div><div class=\"demo-body\"><div class=\"ui-label\">Nome do plano</div><div class=\"ui-input\">Sábado cultural</div><div class=\"ui-small\">Alterações ainda não salvas</div></div></div><div class=\"ui-small\">A saída e a conclusão explicam como encerrar a tarefa.</div></div>\n  </div>\n</div>",
+              "analysis": "<p>Os três cabeçalhos não recebem o mesmo conteúdo por hábito. Na entrada, a marca identifica o produto e a busca começa no corpo. No detalhe, o título localiza a pessoa e Voltar indica a relação com a origem. Na edição, Cancelar e Concluir expressam os dois desfechos de uma tarefa delimitada. A estrutura visual é comum, mas o significado das ações acompanha o contexto.</p><p>A hierarquia dá prioridade ao título e a poucas ações relevantes. Uma ação no cabeçalho precisa de nome compreensível; acrescentar ícones sem rótulo apenas para preencher os cantos reduziria a clareza. Salvar, no detalhe, adiciona a visita a uma coleção; Concluir, na edição, confirma alterações do plano. Esses verbos não são intercambiáveis.</p><p>O espaço horizontal é limitado. Com título longo ou texto ampliado, não se deve esmagar Voltar e Concluir para manter uma simetria decorativa. Uma solução possível é separar o título em outra linha ou deslocar uma ação secundária; a escolha depende da plataforma. Também é necessário decidir o que Cancelar faz quando há alterações, evitando descarte silencioso.</p><p>Teste se pessoas conseguem prever o resultado de cada ação antes de acioná-la. Experimente nomes de exposições maiores, tradução e ampliação de texto. A avaliação principal é orientação e conclusão segura, não se todos os cabeçalhos mantêm exatamente a mesma altura.</p>",
+              "alt": "Três cabeçalhos do Rota: marca e Ajuda na entrada; Voltar, Forma e luz e Salvar no detalhe; Cancelar, Editar plano e Concluir na edição.",
+              "designNote": "Somente classes do contrato. demo-flow deve permitir que recortes empilhem; demo-topbar precisa de quebra de linha quando necessário. Os divs ui-button são representações estáticas, sem role=button ou tabindex. Não criar áreas clicáveis sem comportamento.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -286,27 +274,13 @@
           ],
           "examples": [
             {
-              "title": "Material 3 Expressive: barra de navegação atualizada",
-              "url": "https://github.com/material-components/material-components-android/blob/master/docs/components/BottomNavigation.md",
-              "source": "Google / Material Components for Android",
-              "image": "https://raw.githubusercontent.com/material-components/material-components-android/master/docs/components/assets/bottomnav/bottomnav-expressive.png",
-              "localImagePath": "/workspace/shared/mobile-design-presentation/source/real-assets/mobile-navigation-bar-expressive.png",
-              "alt": "Figura oficial Material 3 Expressive de uma interface musical: destinos Home, Music e Podcasts; Home está selecionado. A barra gestual do sistema aparece separada abaixo.",
-              "credit": "Google / Material Components for Android. Figura oficial Material 3 Expressive, reproduzida sem alterações, sob Apache License 2.0. Consulte a fonte e a licença.",
-              "sourcePageUrl": "https://github.com/material-components/material-components-android/blob/master/docs/components/BottomNavigation.md",
-              "license": "Apache License 2.0, conforme LICENSE do repositório oficial Material Components for Android; marcas não incluídas.",
-              "licenseUrl": "https://github.com/material-components/material-components-android/blob/master/LICENSE",
-              "analysis": "<p>A figura oficial mostra três destinos: Home, ou Início; Music, ou Música; e Podcasts. A superfície arredondada atrás da casa sinaliza a seleção, enquanto os rótulos continuam disponíveis. A pequena linha preta abaixo pertence ao sistema: não é outro destino do aplicativo. O exemplo permite separar navegação interna e gesto de saída do aparelho. A atualização Expressive introduz uma barra mais baixa e uma configuração horizontal dos itens para janelas médias, descrita na documentação; a imagem mostra a configuração compacta. Preserve nomes e estado ao adaptar a composição, em vez de copiar apenas suas proporções.</p>",
-              "versionNote": "Material 3 Expressive. O histórico oficial registra esta revisão do arquivo em 27/08/2025. É uma ilustração de documentação, não uma captura de um app comercial com versão identificada. Substitui aqui a figura do Material 3 anterior ao Expressive.",
-              "versionUrl": "https://github.com/material-components/material-components-android/commit/fca1418bf401b36ad67d37f8968c261cc3ebe2cd"
-            },
-            {
-              "title": "Slopes analisado na sessão oficial Apple sobre navegação",
-              "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
-              "source": "Apple Developer, WWDC22",
-              "analysis": "<p>A sessão oficial mostra o aplicativo Slopes e chama atenção para seus destinos com nomes específicos. A entrada pelo diário de atividades, situado no meio da barra apresentada, ilustra que a primeira aba visual não precisa concentrar todo o produto. O aprendizado é estrutural: nomes e agrupamentos explicam as possibilidades antes de ler o conteúdo. A interface mostrada pertence à sessão de 2022 e não deve ser apresentada como captura atual do aplicativo. Use o vídeo para observar a relação entre área inicial, organização e alternância; não copie o estilo nem conclua que toda aplicação precisa de uma aba central como entrada.</p><p>Para comparar com uma referência de 2026, veja <a href=\"https://developer.apple.com/videos/play/wwdc2026/251/\">Communicate your brand identity on iOS, da WWDC26</a>. A Apple analisa Gentler Streak: conteúdo com identidade própria e controles de navegação familiares na linguagem Liquid Glass. Compare os papéis do conteúdo e da navegação, sem assumir que a versão exata do app foi informada.</p>",
-              "versionNote": "Slopes apresentado na WWDC22 (2022). A sessão não identifica o número da versão do app; sua aparência não representa necessariamente o Slopes atual.",
-              "versionUrl": "https://developer.apple.com/videos/play/wwdc2022/10001/"
+              "title": "Voltar recupera o contexto; abas mudam de destino",
+              "visualHtml": "<div class=\"demo-column\">\n  <div class=\"ui-notice\">Sequência estática · busca e detalhe dentro de Descobrir</div>\n  <div class=\"demo-flow\">\n    <div class=\"demo-step\"><div class=\"ui-kicker\">1 · Busca preservada</div><div class=\"demo-screen\"><div class=\"demo-topbar\"><div class=\"ui-subtitle\">Descobrir</div></div><div class=\"demo-body\"><div class=\"ui-input\">luz</div><div class=\"demo-row\"><div class=\"ui-chip is-selected\">Gratuito · remover ×</div><div class=\"ui-small\">2 resultados fictícios</div></div><div class=\"demo-card\"><div class=\"ui-subtitle\">Forma &amp; luz</div><div class=\"ui-muted\">Galeria Horizonte · Centro</div><div class=\"ui-button is-secondary\">Ver visita ›</div></div></div><div class=\"ui-nav\"><div class=\"is-selected\">Descobrir</div><div>Planos</div><div>Salvos</div></div></div></div>\n    <div class=\"demo-step\"><div class=\"ui-kicker\">2 · Detalhe na mesma seção</div><div class=\"demo-screen\"><div class=\"demo-topbar\"><div class=\"ui-button is-secondary\">‹ Voltar à busca</div><div class=\"ui-label\">Visita</div></div><div class=\"demo-body\"><div class=\"ui-art\"><span class=\"ui-title\">Forma &amp; luz</span></div><div class=\"ui-copy\">Galeria Horizonte · gratuito · 1h30</div><div class=\"ui-button is-primary\">Salvar no meu plano</div><div class=\"ui-small\">Salvar não reserva entrada.</div></div><div class=\"ui-nav\"><div class=\"is-selected\">Descobrir</div><div>Planos</div><div>Salvos</div></div><div class=\"demo-system-zone\"><span class=\"ui-small\">Gesto de início do sistema · fora da navegação do Rota</span></div></div></div>\n  </div>\n  <div class=\"demo-card\"><div class=\"ui-label\">Ao voltar, recuperar</div><div class=\"demo-row\"><div class=\"ui-chip\">Consulta: luz</div><div class=\"ui-chip\">Filtro: gratuito</div><div class=\"ui-chip\">Posição na lista</div></div></div>\n</div>",
+              "analysis": "<p>A aba Descobrir permanece selecionada ao abrir Forma &amp; luz: um detalhe não vira um novo destino principal. Voltar à busca comunica a relação hierárquica e recupera a consulta luz, o filtro Gratuito e a posição na lista. As abas Planos e Salvos representam outras áreas do produto; não substituem a ação de voltar.</p><p>Neste desenho, a barra inferior permanece visível porque o detalhe ainda é uma consulta dentro de Descobrir. Isso facilita mudar de área, mas reduz a altura disponível para conteúdo. Uma tarefa concentrada, como editar um plano, pode justificar outra apresentação. A escolha precisa ser consistente com a plataforma e com o que se conserva ao alternar entre destinos.</p><p>A faixa final é uma anotação sobre o sistema, não um botão do aplicativo. O gesto de início leva para fora da experiência do Rota; um destino interno chamado Início, caso existisse, abriria uma tela do próprio produto. Misturar essas funções ou desenhar um falso indicador do sistema tornaria a orientação enganosa.</p><p>Teste percursos de ida, retorno, troca de aba e abertura por link direto. No link direto, não prometa voltar a uma busca que a pessoa nunca realizou: defina uma saída coerente para a entrada real. Verifique também anúncios da aba selecionada e se a navegação por teclado conserva uma ordem compreensível.</p>",
+              "alt": "Busca por luz com filtro Gratuito e detalhe de Forma e luz, ambos na aba Descobrir; anotação distingue o gesto de início do sistema do retorno interno.",
+              "designNote": "Classe extra demo-system-zone: anotação esquemática legível, não reprodução da barra de gestos. ui-nav com três itens de largura flexível, rótulos visíveis e seleção por superfície mais marcador; divs estáticos sem semântica falsa de navegação funcional. Empilhar a sequência no estreito.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -404,17 +378,13 @@
           ],
           "examples": [
             {
-              "title": "Figura oficial: leitura e filtros em painéis inferiores",
-              "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/common-layouts",
-              "source": "Android Developers",
-              "analysis": "<p>A figura Android compara duas finalidades na mesma forma de superfície. À esquerda, um painel apresenta nome, fotografia e cuidados de uma planta. À direita, o painel permite escolher ambiente, tipo de planta e cuidados, com ações Cancel e Apply. Essa diferença é essencial: leitura e edição não têm o mesmo contrato de saída. O segundo painel torna explícita a aplicação das escolhas; um simples “X” deixaria esse efeito menos claro. O conteúdo de origem continua parcialmente visível, preservando o contexto. A captura não comprova comportamento de foco, arraste ou teclado: esses aspectos precisam ser testados além da imagem.</p>",
-              "image": "https://developer.android.com/static/images/design/ui/mobile/layout-basics-25-bottom-sheets.webp",
-              "alt": "Figura oficial Android de dois painéis sobre uma galeria de plantas: detalhe à esquerda e filtros com Cancel e Apply à direita.",
-              "sourcePageUrl": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/common-layouts",
-              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
-              "licenseUrl": "https://developer.android.com/license",
-              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-sheets-context.webp"
+              "title": "Filtrar pede contexto; remover pede uma decisão clara",
+              "visualHtml": "<div class=\"demo-column\">\n  <div class=\"ui-notice\">Comparação estática de duas sobreposições · nenhum dado é alterado</div>\n  <div class=\"demo-compare\">\n    <div class=\"demo-screen\"><div class=\"ui-kicker\">Painel inferior modal · explorar opções</div><div class=\"demo-overlay-scene\"><div class=\"demo-body\"><div class=\"ui-subtitle\">Descobrir</div><div class=\"demo-card\"><div class=\"ui-label\">Forma &amp; luz</div><div class=\"ui-muted\">Galeria Horizonte · gratuito</div></div></div><div class=\"demo-sheet\"><div class=\"demo-row\"><div class=\"ui-subtitle demo-grow\">Filtrar visitas</div><div class=\"ui-button is-secondary\">Fechar</div></div><div class=\"demo-column\"><div class=\"ui-label\">Duração</div><div class=\"demo-row\"><div class=\"ui-chip\">Qualquer</div><div class=\"ui-chip is-selected\">Até 2 horas</div></div><div class=\"ui-label\">Entrada</div><div class=\"demo-row\"><div class=\"ui-chip is-selected\">Gratuita</div><div class=\"ui-chip\">Qualquer valor</div></div></div><div class=\"ui-button is-primary\">Mostrar 2 visitas</div><div class=\"ui-small\">Alterações passam a valer ao aplicar.</div></div></div></div>\n    <div class=\"demo-screen\"><div class=\"ui-kicker\">Diálogo modal · confirmar consequência</div><div class=\"demo-overlay-scene\"><div class=\"demo-body\"><div class=\"ui-subtitle\">Sábado cultural</div><div class=\"demo-card\"><div class=\"ui-label\">Forma &amp; luz</div><div class=\"ui-muted\">No seu plano · 15h</div></div></div><div class=\"demo-dialog\"><div class=\"ui-subtitle\">Remover esta visita do plano?</div><div class=\"ui-copy\">Forma &amp; luz sairá de Sábado cultural. Você poderá adicioná-la novamente.</div><div class=\"ui-small\">Nenhum ingresso ou reserva será cancelado.</div><div class=\"demo-column\"><div class=\"ui-button is-secondary\">Manter visita</div><div class=\"ui-button is-error\">Remover do plano</div></div></div></div></div>\n  </div>\n</div>",
+              "analysis": "<p>O painel inferior agrupa opções relacionadas e conserva uma pista da lista que será filtrada. Seu título explica a tarefa e Mostrar 2 visitas informa o efeito esperado da aplicação. As escolhas são provisórias até esse comando; Fechar descarta apenas essa edição dos filtros. Essa política precisa ser explícita e consistente, não variar entre abrir e fechar o mesmo painel.</p><p>O diálogo à direita reduz a tarefa a uma decisão sobre uma consequência nomeada: retirar Forma &amp; luz de Sábado cultural. Manter visita e Remover do plano são mais específicos que Não e Sim. A mensagem separa remover um planejamento de cancelar uma reserva, já que o Rota fictício não comercializa ingressos nem reserva entrada.</p><p>Painel e diálogo são modais nesta proposta: enquanto abertos, o conteúdo de trás não recebe interação. A forma inferior ou central não determina sozinha esse comportamento. Use o painel para poucas escolhas com contexto; use o diálogo para uma interrupção justificada. Conteúdo longo ou edição extensa pode precisar de uma tela própria, em vez de sucessivas camadas.</p><p>No produto executável, teste entrada e retorno de foco, fechamento pelo mecanismo da plataforma, texto ampliado e teclado. Um gesto de arrastar não pode ser a única saída do painel. Para remoções frequentes e reversíveis, compare esta confirmação com remover e oferecer Desfazer: interromper toda ação também tem custo.</p>",
+              "alt": "Painel inferior com filtros de duração e entrada, ao lado de diálogo que confirma remover Forma e luz de um plano sem cancelar qualquer reserva.",
+              "designNote": "Classes extras: demo-overlay-scene delimita o contexto da sobreposição; aplicar atenuação visual só ao contexto e impedir que isso reduza o contraste do painel. demo-sheet é superfície elevada inferior, raio superior 20, padding consistente; demo-dialog é superfície central elevada, raio 20. Priorizar fluxo relativo/grade para conteúdo crescer, sem altura fixa ou corte. Nenhum foco real é capturado neste HTML estático.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -485,23 +455,21 @@
             {
               "title": "Erros comuns e validação do conteúdo",
               "body": "<p>Não espalhe a mesma configuração em locais diferentes com nomes diferentes. Não faça a seleção parecer um botão de confirmação quando ela navega imediatamente. Evite ícones que apenas preenchem espaço, sem aumentar reconhecimento. Não confunda uma opção indisponível com uma opção sem permissão: quando necessário, explique por que ela está bloqueada e como recuperar acesso.</p><p>Para revisar, peça que alguém encontre três destinos e duas ações sem apresentar o menu antes. Registre o primeiro lugar procurado, o rótulo escolhido e os retornos desnecessários. Se todos abrem a gaveta para uma tarefa diária, talvez a tarefa mereça um ponto de acesso visível. Se ninguém associa o rótulo ao destino, alterar a sombra do componente não resolverá. A evidência deve orientar organização e linguagem.</p>"
+            },
+            {
+              "title": "Configurações: o alcance da mudança também organiza o menu",
+              "body": "<p>Além de separar destinos de comandos, diferencie <strong>o alcance e a consequência das configurações</strong>. Ajustar a aparência muda a experiência de uso; sair encerra uma sessão; excluir uma conta pode afetar acesso e dados. A proximidade visual não deve sugerir que essas operações têm a mesma reversibilidade. Agrupá-las apenas por pertencerem à área Conta esconde uma diferença decisiva.</p><p>Para cada opção, escreva a frase “muda o quê, para quem e onde?”. Uma preferência pode valer só no aparelho, em uma conta sincronizada ou no produto inteiro. A interface precisa explicar o alcance relevante antes que ele surpreenda. Esse contrato também ajuda a evitar dois controles com nomes diferentes alterando a mesma preferência em lugares distintos.</p><p>Use nomes que antecipem a tarefa e apresente ações de alto impacto em um contexto que permita compreender consequências e recuperação. Não dependa de uma palavra vermelha para comunicar risco. Também não enterre uma opção necessária sob vários níveis apenas para evitar que alguém a encontre. Organização e salvaguardas resolvem problemas diferentes.</p><p>No exercício, acrescente a cada item do inventário seu alcance, reversibilidade e destino de retorno. Peça a alguém para encontrar uma preferência simples e uma ação de maior consequência, explicar seus efeitos e desistir antes de confirmar. O teste deve revelar se os rótulos orientam e se a saída continua clara, sem executar mudanças reais.</p>"
             }
           ],
           "examples": [
             {
-              "title": "Material 3 Expressive: navegação lateral recolhida e expandida",
-              "url": "https://github.com/material-components/material-components-android/blob/master/docs/components/NavigationRail.md",
-              "source": "Google / Material Components for Android",
-              "analysis": "<p>O navigation rail, ou faixa lateral de navegação, aparece recolhido à esquerda e expandido à direita. Alarm significa Alarme; Clock, Relógio; Timer, Temporizador; e Stopwatch, Cronômetro. O mesmo destino Timer permanece selecionado nas duas composições. Já Add timer, ou Adicionar temporizador, é uma ação destacada acima dos destinos. Essa separação evita confundir criar algo com visitar uma área. Ao expandir, rótulos passam para o lado dos ícones sem reorganizar o mapa do aplicativo. A figura demonstra a continuidade visual; não comprova duração da animação, ordem de foco ou comportamento modal. Esses aspectos exigem teste na implementação escolhida.</p>",
-              "image": "https://raw.githubusercontent.com/material-components/material-components-android/master/docs/components/assets/navigationrail/navigation-rail-expressive.png",
-              "alt": "Figura oficial Material 3 Expressive com navegação lateral recolhida à esquerda e expandida à direita. Timer está selecionado; a ação Add timer fica separada dos destinos Alarm, Clock e Stopwatch.",
-              "sourcePageUrl": "https://github.com/material-components/material-components-android/blob/master/docs/components/NavigationRail.md",
-              "license": "Apache License 2.0, conforme LICENSE do repositório oficial Material Components for Android; marcas não incluídas.",
-              "licenseUrl": "https://github.com/material-components/material-components-android/blob/master/LICENSE",
-              "credit": "Google / Material Components for Android. Figura oficial Material 3 Expressive, reproduzida sem alterações, sob Apache License 2.0. Consulte a fonte e a licença.",
-              "localImagePath": "/workspace/shared/mobile-design-presentation/source/real-assets/mobile-navigation-rail-expressive.png",
-              "versionNote": "Material 3 Expressive; revisão do arquivo registrada em 27/08/2025. A orientação oficial recomenda a faixa expandida no lugar do drawer para projetos que adotam Expressive. Isso não torna toda gaveta existente inválida nem significa que todas as APIs de drawer foram removidas.",
-              "versionUrl": "https://github.com/material-components/material-components-android/commit/2b29a266adaac3ea8cca0cc6027cead9723cc351"
+              "title": "Ações do item e caminhos do produto ocupam lugares diferentes",
+              "visualHtml": "<div class=\"demo-column\">\n  <div class=\"ui-notice\">Três recortes estáticos · um menu de ações, um painel auxiliar e uma navegação persistente</div>\n  <div class=\"demo-column\">\n    <div class=\"demo-step\"><div class=\"ui-kicker\">Menu do plano</div><div class=\"demo-screen\"><div class=\"demo-body\"><div class=\"demo-row\"><div class=\"ui-subtitle demo-grow\">Sábado cultural</div><div class=\"ui-button is-secondary\">Mais opções</div></div><div class=\"demo-card\"><div class=\"ui-list\"><div class=\"ui-label\">Renomear plano</div><div class=\"ui-divider\"></div><div class=\"ui-label\">Duplicar plano</div><div class=\"ui-divider\"></div><div class=\"ui-label\">Remover plano…</div></div></div><div class=\"ui-small\">Ações referentes a este plano</div></div></div></div>\n    <div class=\"demo-step\"><div class=\"ui-kicker\">Painel auxiliar aberto</div><div class=\"demo-screen\"><div class=\"demo-topbar\"><div class=\"ui-subtitle demo-grow\">Conta e ajuda</div><div class=\"ui-button is-secondary\">Fechar</div></div><div class=\"demo-body\"><div class=\"ui-list\"><div class=\"demo-row\"><div class=\"ui-label\">Preferências</div><div>›</div></div><div class=\"ui-divider\"></div><div class=\"demo-row\"><div class=\"ui-label\">Ajuda</div><div>›</div></div><div class=\"ui-divider\"></div><div class=\"demo-row\"><div class=\"ui-label\">Sobre o Rota</div><div>›</div></div></div><div class=\"ui-small\">Ferramentas ocasionais, sem esconder as três áreas principais</div></div></div></div>\n    <div class=\"demo-step\"><div class=\"ui-kicker\">Navegação em área ampliada</div><div class=\"demo-screen demo-wide\"><div class=\"demo-topbar\"><div class=\"ui-subtitle\">rota</div></div><div class=\"demo-body demo-grid\"><div class=\"demo-column\"><div class=\"ui-button is-secondary\">Descobrir</div><div class=\"ui-button is-tonal is-selected\">Planos · atual</div><div class=\"ui-button is-secondary\">Salvos</div></div><div class=\"demo-column\"><div class=\"ui-subtitle\">Seus planos</div><div class=\"demo-card\"><div class=\"ui-label\">Sábado cultural</div><div class=\"ui-muted\">2 visitas · rascunho</div></div></div></div></div></div>\n  </div>\n</div>",
+              "analysis": "<p>O menu do primeiro recorte contém verbos que agem sobre Sábado cultural. Sua posição junto ao nome do plano delimita o alvo. O painel Conta e ajuda reúne caminhos ocasionais. A navegação lateral do terceiro recorte apresenta destinos permanentes, com Planos identificado como atual. Misturar esses três papéis em uma lista indiferenciada tornaria imprevisível o resultado da escolha.</p><p>Com apenas Descobrir, Planos e Salvos como destinos principais, o Rota compacto pode mantê-los visíveis na barra inferior. Não há motivo para esconder essas áreas em um menu apenas porque o padrão de gaveta existe. Em espaço ampliado, a navegação lateral persistente permite mostrar nomes e localização atual sem exigir uma abertura extra.</p><p>Uma gaveta de navegação, ou navigation drawer, ainda pode fazer sentido em produtos com hierarquia mais extensa ou em transições para larguras menores. Ela troca espaço permanente por um passo de descoberta e abertura. O painel auxiliar mostrado aqui é outro uso possível de uma superfície lateral; não deve virar depósito para ações importantes sem lugar definido.</p><p>Teste se alguém consegue distinguir uma mudança de destino de uma ação sobre o plano antes de escolher. Verifique o alinhamento do menu ao acionador, a identificação do item atual e o fechamento do painel sem depender de tocar fora dele. Remover plano deve seguir uma política de consequência e recuperação, nunca executar algo diferente do que o rótulo anuncia.</p>",
+              "alt": "Menu com ações de um plano, painel Conta e ajuda com opções auxiliares e navegação lateral com Planos selecionado em uma composição ampliada.",
+              "designNote": "Somente classes existentes. No terceiro recorte, demo-grid deve manter hierarquia visual entre coluna de destinos e conteúdo enquanto couber, empilhando sem criar rolagem horizontal. Os três recortes demonstram papéis, não uma única tela real nem três menus obrigatórios para Rota.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -515,7 +483,9 @@
             "criteria": [
               "A tarefa principal não depende exclusivamente da gaveta.",
               "Destino selecionado é identificável sem depender só de cor.",
-              "Os rótulos e a ordem permanecem coerentes ao adaptar a tela."
+              "Os rótulos e a ordem permanecem coerentes ao adaptar a tela.",
+              "O inventário declara alcance e reversibilidade das configurações, distinguindo preferências simples de ações de maior consequência.",
+              "A pessoa consegue explicar o efeito da opção e desistir antes de confirmar, sem depender apenas de cor para reconhecer risco."
             ]
           },
           "sources": [
@@ -545,7 +515,23 @@
               "note": "A recomendação de substituição por faixa expandida é específica da atualização Material 3 Expressive."
             }
           ],
-          "videos": []
+          "videos": [],
+          "books": [
+            {
+              "title": "The UI Professional’s Design Manual: the Ultimate Guide to Master Mobile Design",
+              "authors": "AdrianK / Adrian Kuleszo; colaboração de Natalie apresentada no exemplar",
+              "edition": "Exemplar © 2022, em desenvolvimento; sem número de edição declarado",
+              "pages": "Páginas físicas do PDF: 286–287",
+              "note": "Apoio para categorias e configurações. A análise de alcance, consequência e reversibilidade é extensão autoral, sem importar fluxos financeiros ou exigências de conta do exemplo histórico."
+            },
+            {
+              "title": "Ergodesign e Arquitetura de Informação: Trabalhando com o Usuário",
+              "authors": "Luiz Agner",
+              "edition": "2ª edição, Quartet, 2009",
+              "pages": "Páginas físicas do PDF: 100–103, 135",
+              "note": "Apoio para nomeação, organização e compreensão de opções. A edição consultada é de 2009; padrões de plataforma permanecem nas referências atuais da lição."
+            }
+          ]
         },
         {
           "id": "teclado-toque-gestos",
@@ -577,21 +563,21 @@
             {
               "title": "Erros comuns e teste fora do cenário ideal",
               "body": "<p>Não avalie precisão de toque só com mouse. Não aproxime várias pequenas ações porque os ícones parecem caber. Não bloqueie colar em um campo sem uma razão real de produto e acessibilidade. Não esconda uma ação essencial atrás de pressionamento prolongado, gesto de múltiplos dedos ou combinação que exige memória.</p><p>Na revisão, faça a mesma tarefa por toque, teclado externo quando suportado e leitor de tela. Compare se todas as formas chegam ao mesmo resultado e oferecem recuperação. Teste também com uma mão, sem impor uma suposta zona universal do polegar: alcance varia com pessoa, aparelho e postura. Registre erros de acionamento e gestos malsucedidos como observações de interação, não como falta de habilidade do participante.</p>"
+            },
+            {
+              "title": "Contrato do controle: pressionar, selecionar e processar não são o mesmo estado",
+              "body": "<p>Para completar a especificação de toque e foco, registre o <strong>contrato do controle</strong>: qual ação aceita, em que condição, que resposta oferece e como termina. Uma variação de cor sem essas regras é uma aparência disponível, não um comportamento definido. A distinção é importante porque vários estados podem coexistir.</p><ul><li><strong>Pressionado:</strong> resposta transitória durante o acionamento. Termina quando a interação é concluída ou cancelada.</li><li><strong>Selecionado:</strong> escolha que permanece depois que o dedo sai. Um filtro Gratuito continua aplicado até ser removido.</li><li><strong>Com foco:</strong> posição atual da navegação por teclado ou outra entrada compatível. Pode coexistir com seleção e precisa continuar reconhecível.</li><li><strong>Processando:</strong> operação aceita, mas ainda sem resultado confirmado. O retorno precisa comunicar atividade e definir o tratamento de novas tentativas.</li></ul><p>Descreva um caso concreto: a pessoa aciona Salvar; o sistema aceita uma operação; a resposta visual muda para Salvando; um segundo acionamento não cria outra gravação; confirmação ou falha recuperável encerra a espera. Não use uma aparência desabilitada como única explicação de processamento. Tampouco atribua resultado persistente ao estado pressionado.</p><p>Inclua ponteiro quando a plataforma o admitir: <em>hover</em>, a passagem do ponteiro sem ativação, não existe no toque direto, mas pode existir em um dispositivo móvel com mouse ou trackpad. Teste a tarefa sem depender desse estado. A entrega está completa quando outra pessoa consegue reconstruir as transições e combinar foco, seleção e processamento sem adivinhar.</p>"
             }
           ],
           "examples": [
             {
-              "title": "Figura oficial: teclado e navegação do sistema Android",
-              "url": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
-              "source": "Android Developers",
-              "analysis": "<p>A figura mostra que o teclado não ocupa uma região isolada do resto da experiência: os controles de navegação do sistema convivem com ele. Isso ajuda a identificar dois planos que um protótipo simplificado costuma misturar, o conteúdo do aplicativo e a interface de entrada do sistema. A análise de projeto deve acompanhar a transição: qual campo conserva foco, qual parte pode rolar e como a pessoa dispensa o teclado. Não use a altura ilustrada como constante para todos os aparelhos; use-a para lembrar quais estados precisam existir na revisão.</p>",
-              "image": "https://developer.android.com/static/images/design/ui/mobile/system-bars-on-screen-keyboard.png",
-              "alt": "Recorte oficial de teclado Android com teclas inferiores e controles de navegação do sistema abaixo.",
-              "sourcePageUrl": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
-              "license": "Apache License 2.0, conforme a classificação de documentação na política Android Developers; marcas não incluídas.",
-              "licenseUrl": "https://developer.android.com/license",
-              "credit": "Android Developers / Android Open Source Project. Figura reproduzida sem alterações; consulte a licença e a página original.",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-keyboard-system.png"
+              "title": "O teclado muda o espaço; o gesto precisa de alternativa",
+              "visualHtml": "<div class=\"demo-compare\">\n  <div class=\"demo-screen\">\n    <div class=\"demo-topbar\"><div class=\"ui-button is-secondary\">‹ Voltar</div><div class=\"ui-subtitle\">Nota do passeio</div></div>\n    <div class=\"demo-body\"><div class=\"demo-card\"><div class=\"ui-label\">Forma &amp; luz</div><div class=\"ui-muted\">Galeria Horizonte · no plano Sábado cultural</div></div><div class=\"demo-column\"><div class=\"ui-label\">Nota para a visita · opcional</div><div class=\"ui-input is-focus\">Encontrar a Marina na entrada.</div><div class=\"ui-small\">Campo em foco; o início e o fim do texto permanecem visíveis.</div></div><div class=\"ui-button is-primary\">Salvar nota</div><div class=\"ui-small\">A ação ocupa a área disponível acima do teclado.</div></div>\n    <div class=\"demo-keyboard-zone\"><div class=\"ui-label\">Teclado do sistema · esquema</div><div class=\"demo-row\"><div class=\"ui-chip\">Letras</div><div class=\"ui-chip\">Espaço</div><div class=\"ui-chip\">Concluir</div></div><div class=\"ui-small\">Não é uma captura nem uma reprodução de teclado nativo.</div></div>\n  </div>\n  <div class=\"demo-column\">\n    <div class=\"ui-kicker\">Mesmo plano · outra forma de agir</div>\n    <div class=\"demo-card\"><div class=\"ui-subtitle\">Alternativa visível ao deslizar</div><div class=\"demo-row\"><div class=\"demo-grow\"><div class=\"ui-label\">Forma &amp; luz</div><div class=\"ui-muted\">Sábado · 15h</div></div><div class=\"ui-button is-secondary\">Mais opções</div></div><div class=\"ui-divider\"></div><div class=\"ui-button is-secondary\">Remover do plano…</div><div class=\"ui-copy\">Um gesto de deslizar pode revelar a mesma ação, mas não é a única maneira de encontrá-la.</div></div>\n    <div class=\"ui-notice\">Estudo estático. Controles principais dimensionados para 48 CSS px nesta demonstração web; isso não converte medidas nativas em pt ou dp.</div>\n    <div class=\"demo-card\"><div class=\"ui-label\">Ao concluir a edição</div><div class=\"ui-copy\">Fechar o teclado preserva a nota. Salvar confirma a alteração do plano, sem reservar entrada.</div></div>\n  </div>\n</div>",
+              "analysis": "<p>O campo em foco e Salvar nota permanecem acima da região ocupada pelo teclado. O restante da tela pode rolar quando o espaço disponível diminui; não se tenta conservar uma composição de altura fixa. O teclado desta figura é uma região nomeada e simplificada. Em uma implementação, seu tamanho e suas transições vêm do ambiente, não de uma medida copiada do desenho.</p><p>O afastamento provocado pelo teclado deve ser coordenado com os demais insets para não somar a mesma proteção duas vezes. O alvo é manter cursor, mensagem relevante e próxima ação utilizáveis. Fechar o teclado não deve apagar uma nota em edição nem equivaler automaticamente a salvar; são acontecimentos diferentes, explicitados no comportamento proposto.</p><p>À direita, Mais opções oferece uma rota visível para remover a visita. Um gesto de deslizar pode ser um atalho para a mesma operação, mas não seu único acesso. Esse arranjo ajuda quem não conhece o gesto ou usa outra forma de entrada. O custo é algum espaço adicional e um passo a mais para quem escolhe o menu.</p><p>Teste digitação com teclado de alturas diferentes, texto ampliado, leitor de tela e teclado físico. Confira alcance e separação dos alvos, não só o tamanho do ícone. Os controles principais deste estudo web usam 48 CSS px; referências nativas de 44 pt ou 48 dp pertencem a sistemas de medida distintos e precisam ser avaliadas no contexto adequado.</p>",
+              "alt": "Campo de nota do Rota em foco com ação acima de um teclado esquemático; ao lado, menu oferece alternativa visível ao gesto de deslizar para remover visita.",
+              "designNote": "Classe extra demo-keyboard-zone: região neutra claramente rotulada, sem reproduzir teclado real, com conteúdo em fluxo normal e altura flexível. is-focus deve ter contorno escuro e halo visível. Não usar autofocus, tabindex, input real nem capturar foco: o exemplo é estático. demo-compare empilha no estreito.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -605,7 +591,9 @@
             "criteria": [
               "Texto digitado não se perde ao dispensar teclado ou corrigir erro.",
               "Alvos têm dimensões declaradas na unidade da plataforma e não se sobrepõem.",
-              "A reordenação pode ser concluída sem gesto de arraste."
+              "A reordenação pode ser concluída sem gesto de arraste.",
+              "O contrato distingue pressionado, selecionado, foco e processamento, incluindo pelo menos um caso em que dois estados coexistem.",
+              "Um acionamento repetido durante o processamento tem consequência definida e não produz duplicação no comportamento especificado."
             ]
           },
           "sources": [
@@ -638,9 +626,37 @@
               "title": "W3C: Dragging Movements",
               "url": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html",
               "note": "Critério web 2.5.7 para alternativas ao arraste."
+            },
+            {
+              "title": "Figura oficial: teclado e navegação do sistema Android",
+              "url": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
+              "note": "Referência complementar de análise. O exemplo visual desta lição é uma composição original do Rota."
             }
           ],
-          "videos": []
+          "videos": [],
+          "books": [
+            {
+              "title": "UI Design Systems Mastery",
+              "authors": "Marina Budarina",
+              "edition": "Versão 3.0; atualização de 08/07/2023",
+              "pages": "Páginas físicas do PDF: 228–230, 247–252",
+              "note": "Apoio para composição, propriedades e verificação de componentes. O contrato e o exemplo de salvamento apresentados na aula são elaboração autoral."
+            },
+            {
+              "title": "Guia de Boas Práticas Aplicáveis para a Criação de Interfaces",
+              "authors": "Andrey Knabbenn",
+              "edition": "Versão 2.0, 2022",
+              "pages": "Páginas físicas do PDF: 73–74",
+              "note": "Referência histórica sobre estados. A ausência de hover deve ser entendida no contexto do toque direto, não como proibição de suporte a ponteiro em dispositivos móveis."
+            },
+            {
+              "title": "Design Systems: A Practical Guide to Creating Design Languages for Digital Products",
+              "authors": "Alla Kholmatova",
+              "edition": "Smashing Media, 2017; sem número de edição declarado",
+              "pages": "Páginas físicas do PDF: 64–68, 203–208",
+              "note": "Apoio ao propósito compartilhado e à documentação dos padrões, sem reprodução de páginas ou exemplos da obra."
+            }
+          ]
         }
       ]
     },
@@ -679,31 +695,21 @@
             {
               "title": "Erros frequentes e revisão",
               "body": "<p>O erro clássico é medir sucesso pelo percentual que terminou o tutorial. Uma sequência obrigatória pode ter conclusão alta e ainda atrasar o benefício. Compare também tempo até a primeira conquista, abandono por etapa e capacidade de repetir a tarefa sem ajuda. Esses indicadores precisam de definição consistente e de contexto; números isolados não provam causalidade.</p><p>Outros problemas são esconder “Pular”, apagar escolhas ao voltar e apresentar cinco recursos antes de usar qualquer um. Faça uma revisão simples: retire uma etapa e observe o que realmente deixa de funcionar. Se nada essencial se perde, tente incorporá-la ao uso. A quantidade final de telas deve resultar dessa análise, e não de uma fórmula universal de três páginas.</p>"
+            },
+            {
+              "title": "Atualização de plataforma: launch screen Apple e SplashScreen Android",
+              "body": "<p>A palavra <em>splash</em> não nomeia exatamente a mesma fase em todos os guias. Na <a href=\"https://developer.apple.com/design/human-interface-guidelines/launching\">orientação Apple sobre lançamento</a>, a <strong>launch screen</strong> de iOS e iPadOS é uma apresentação transitória do sistema, próxima da primeira tela, voltada à continuidade visual. Não é uma oportunidade de anúncio ou tutorial. A Apple distingue dela uma eventual imagem de marca, chamada splash screen, que pode aparecer depois do lançamento, inclusive no início de uma orientação quando justificada.</p><p>No <a href=\"https://developer.android.com/develop/ui/views/launch/splash-screen\">Android, SplashScreen</a> é o mecanismo de abertura do sistema, com ícone, fundo e passagem para o aplicativo. Portanto, uma composição de marca adequada ao exemplo Android não deve ser transplantada automaticamente para uma launch screen Apple. Declare plataforma, fase e responsabilidade de cada tela antes de comparar aparências.</p><p>O exemplar de 2022 citado na bibliografia é útil para discutir intenções, mas seus tempos fixos não devem virar requisito. Defina a saída por prontidão e necessidade real, sem aguardar para completar uma apresentação decorativa. Compare primeira abertura, reabertura e retomada de uma tarefa; orientação já dispensada não deve reaparecer como pedágio.</p><p>As páginas Apple também possuem versões oficiais em <a href=\"https://developer.apple.com/design/human-interface-guidelines/launching.md\">Markdown para lançamento</a> e <a href=\"https://developer.apple.com/design/human-interface-guidelines/onboarding.md\">Markdown para onboarding</a>. O histórico registra o esclarecimento sobre splash em 10 de junho de 2024. Essa é a data da alteração informada, não a versão do aplicativo ilustrado nem a data desta consulta.</p>"
             }
           ],
           "examples": [
             {
-              "title": "Figura oficial: composição da abertura do Gmail",
-              "url": "https://developer.android.com/develop/ui/views/launch/splash-screen",
-              "source": "Android Developers",
-              "image": "https://developer.android.com/static/images/guide/topics/ui/splash-screen/splash-screen-composition.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/android-splash-composition.png",
-              "alt": "Quatro representações da abertura do Gmail, com ícone central, fundos claro e azulado, círculo opcional atrás do ícone e anotações numeradas sobre os elementos da composição.",
-              "credit": "Android Developers / Android Open Source Project. Figura oficial de composição da splash screen, reproduzida sem alterações. Gmail é marca da Google; reprodução documental sem indicação de endosso.",
-              "sourcePageUrl": "https://developer.android.com/develop/ui/views/launch/splash-screen",
-              "license": "Apache License 2.0 para documentação, conforme Android Developers. Marcas excluídas da licença; Gmail é marca da Google.",
-              "licenseUrl": "https://developer.android.com/license",
-              "analysis": "<p>A figura oficial usa o Gmail para mostrar quatro representações da mesma abertura: ícone central, fundo da janela, fundo circular opcional e limites de recorte. As linhas azuis e os números são anotações explicativas, não controles do aplicativo. Observe que não há instruções, campos ou tarefas para concluir: a composição comunica identidade durante uma transição técnica. Isso ajuda a distinguir splash de onboarding, que ensina ou configura algo. Ao adaptar o princípio, preserve simplicidade e contraste, verificando a área realmente visível do ícone. A imagem não comprova duração nem desempenho da abertura.</p>",
-              "versionNote": "A figura continua na documentação da API SplashScreen, disponível desde Android 12. A página foi atualizada em 01/10/2026, mas não informa quando esta figura foi criada nem a versão do Gmail representada.",
-              "versionUrl": "https://developer.android.com/develop/ui/views/launch/splash-screen"
-            },
-            {
-              "title": "Now in Android: escolher assuntos dentro da experiência inicial",
-              "url": "https://github.com/android/nowinandroid",
-              "source": "Google / Android Developers",
-              "analysis": "<p>O aplicativo oficial Now in Android permite acompanhar assuntos e receber conteúdo relacionado. Sua documentação de modularização identifica a orientação da primeira execução dentro da área “For You”, ou “Para você”. É um exemplo real de aplicativo de referência, não um produto fictício criado para esta aula. <a href=\"https://github.com/android/nowinandroid/blob/main/docs/ModularizationLearningJourney.md\">Veja a descrição da primeira execução</a>.</p><p>A leitura de design proposta aqui é ligar a escolha inicial a uma consequência compreensível: aquilo que a pessoa segue influencia o conteúdo que recebe. Ao estudar o caso, pergunte se cada escolha ajuda a primeira sessão e como seria a experiência sem seleção. O princípio transferível é a relação entre configuração e benefício, não a cópia de cores, assuntos ou número de opções.</p>",
-              "versionNote": "Aplicativo de referência com documentação contínua. A última revisão do texto de modularização é de 04/12/2025; essa data não identifica uma versão visual do app. A documentação mantém o onboarding da primeira execução dentro de For You.",
-              "versionUrl": "https://github.com/android/nowinandroid/commit/426058b39c5a30c3611d03549fa9453ee64336ef"
+              "title": "Abertura e apresentação cumprem trabalhos diferentes",
+              "visualHtml": "<div class=\"demo-flow\">\n  <div class=\"demo-step\">\n    <p class=\"ui-kicker\">01 · Abertura Android · esquema</p>\n    <div class=\"demo-screen\">\n      <div class=\"demo-body demo-column\">\n        <div class=\"ui-avatar\" aria-hidden=\"true\">r</div>\n      </div>\n    </div>\n    <p class=\"ui-small\">Esquema da abertura Android com a marca. A interface abre assim que estiver pronta, sem etapa obrigatória nem espera artificial.</p>\n  </div>\n  <div class=\"demo-step\">\n    <p class=\"ui-kicker\">02 · Apresentação opcional</p>\n    <div class=\"demo-screen\">\n      <div class=\"demo-topbar\"><span class=\"ui-label\">rota</span><div class=\"ui-chip\">Pular apresentação</div></div>\n      <div class=\"demo-body demo-column\">\n        <p class=\"ui-kicker\">1 de 2 · Descobrir</p>\n        <h3 class=\"ui-title\">Encontre uma visita que caiba no seu dia.</h3>\n        <div class=\"ui-art\"><p class=\"ui-kicker\">Exposição</p><p class=\"ui-title\">Forma &amp; luz</p><p class=\"ui-copy\">Galeria Horizonte</p></div>\n        <p class=\"ui-copy\">Compare duração, bairro e custo antes de escolher.</p>\n        <div class=\"demo-row\"><span class=\"ui-badge\">1h30</span><span class=\"ui-badge\">Centro</span><span class=\"ui-badge\">Gratuito</span></div>\n        <div class=\"ui-button is-primary\">Próximo</div>\n      </div>\n    </div>\n  </div>\n  <div class=\"demo-step\">\n    <p class=\"ui-kicker\">03 · Apresentação opcional</p>\n    <div class=\"demo-screen\">\n      <div class=\"demo-topbar\"><div class=\"ui-chip\">Voltar</div><div class=\"ui-chip\">Pular apresentação</div></div>\n      <div class=\"demo-body demo-column\">\n        <p class=\"ui-kicker\">2 de 2 · Organizar</p>\n        <h3 class=\"ui-title\">Guarde a ideia. Ajuste os detalhes depois.</h3>\n        <div class=\"demo-card\"><p class=\"ui-label\">Seu sábado cultural</p><h4 class=\"ui-subtitle\">Forma &amp; luz</h4><p class=\"ui-copy\">Galeria Horizonte · 15h</p><p class=\"ui-muted\">Uma visita no plano</p></div>\n        <p class=\"ui-copy\">Adicione um horário e uma nota para lembrar como quer fazer o passeio.</p>\n        <div class=\"ui-notice\"><p class=\"ui-label\">Salvar um plano não reserva entrada.</p><p class=\"ui-copy\">Confirme horário e ingresso com o local.</p></div>\n        <div class=\"ui-button is-primary\">Começar a explorar</div>\n      </div>\n    </div>\n  </div>\n</div>",
+              "analysis": "<p>A sequência distingue a abertura Android de uma apresentação opcional dentro do Rota. O primeiro recorte é um esquema de lançamento com a marca, sem slogan ou ação de avançar. A explicação fica fora dessa superfície. A launch screen Apple tem orientação própria e precisa de especificação separada; este recorte não representa uma solução universal.</p><p>O primeiro passo da apresentação usa Forma &amp; luz para explicar comparação; o segundo mostra o resultado de organizar uma visita. “1 de 2” e “2 de 2” informam o tamanho do percurso. Pular permanece visível, e o último rótulo descreve o destino: começar a explorar. O limite de salvar aparece junto ao benefício.</p><p>A apresentação pode reduzir dúvidas iniciais, mas acrescenta esforço antes da tarefa. Duas telas ainda são uma hipótese, não uma quantidade ideal. Se as pessoas entenderem a lista e o plano ao usá-los, orientação contextual pode bastar. Não condicione a exploração a cadastro, permissões ou leitura destes quadros.</p><p>Teste primeira abertura, abertura seguinte e escolha de pular em cada plataforma. Pergunte o que salvar faz antes de mostrar a confirmação. Na implementação, confira se voltar mantém o passo, se a interface abre sem atraso artificial e se uma falha oferece recuperação. A sequência estática não comprova transições nem substitui a revisão das orientações nativas.</p>",
+              "alt": "Três quadros: esquema de abertura Android apenas com a marca; apresentação opcional sobre comparar visitas; apresentação sobre salvar um plano, com aviso de que não há reserva.",
+              "designNote": "No primeiro recorte, ui-avatar representa apenas um ícone autoral sobre superfície simples, sem cartaz da exposição ou slogan. Os cartazes ui-art ficam somente na orientação após a abertura. Sequência em demo-flow, com passos identificados por texto; controles div estáticos. Classes extras: nenhuma. Não inferir alturas ou medidas nativas da composição web.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -718,7 +724,9 @@
               "Os três participantes chegam a um conteúdo utilizável pelo caminho de pular.",
               "Nenhuma recusa de permissão impede escolher uma cidade manualmente.",
               "Voltar ou interromper preserva todas as escolhas já confirmadas.",
-              "Ao menos dois participantes salvam uma visita sem orientação verbal; se não, documente a revisão."
+              "Ao menos dois participantes salvam uma visita sem orientação verbal; se não, documente a revisão.",
+              "Cada quadro informa se pertence ao lançamento do sistema, à comunicação de marca ou à orientação; diferenças entre Apple e Android estão explicitadas.",
+              "A sequência não acrescenta duração mínima para exibir marca e a reabertura permite retomar a tarefa sem repetir orientação dispensada."
             ]
           },
           "sources": [
@@ -736,6 +744,11 @@
               "title": "Now in Android — modularização",
               "url": "https://github.com/android/nowinandroid/blob/main/docs/ModularizationLearningJourney.md",
               "note": "Confirma a orientação da primeira execução na área For You."
+            },
+            {
+              "title": "Now in Android: escolher assuntos dentro da experiência inicial",
+              "url": "https://github.com/android/nowinandroid",
+              "note": "Referência complementar de análise. O exemplo visual desta lição é uma composição original do Rota."
             }
           ],
           "videos": [
@@ -744,6 +757,15 @@
               "url": "https://developer.apple.com/videos/play/wwdc2021/10126/",
               "source": "Apple Developer",
               "note": "Sessão oficial WWDC21 (2021), mantida como fundamento de descoberta de ações. As interfaces pertencem ao contexto da apresentação; não são evidência de aparência atual."
+            }
+          ],
+          "books": [
+            {
+              "title": "The UI Professional’s Design Manual: the Ultimate Guide to Master Mobile Design",
+              "authors": "AdrianK / Adrian Kuleszo; colaboração de Natalie apresentada no exemplar",
+              "edition": "Exemplar © 2022, em desenvolvimento; sem número de edição declarado",
+              "pages": "Páginas físicas do PDF: 122–137",
+              "note": "Referência histórica para lançamento e orientação inicial. A distinção de fases e as regras de plataforma são atualizadas pelas fontes oficiais indicadas na seção; não se adota espera artificial de duração fixa."
             }
           ]
         },
@@ -777,31 +799,21 @@
             {
               "title": "Erros e critérios de revisão",
               "body": "<p>Uma tela pode ser bonita e ainda falhar por tratar todas as informações como urgentes. Revise cores, tamanhos, posição e repetição: quantos elementos disputam o primeiro olhar? Se há vários botões com destaque máximo, reavalie a hierarquia. Não esconda tarefas importantes em carrosséis que dependem de descoberta por tentativa.</p><p>Teste uma captura durante poucos segundos e pergunte o que a pessoa acredita poder fazer. Depois teste tarefas reais no protótipo. A primeira atividade avalia compreensão inicial; a segunda revela navegação e continuidade. Não confunda a lembrança de um bloco chamativo com utilidade. Por fim, simule dados antigos, um bloco com erro e texto ampliado. O resto da home deve continuar utilizável quando uma parte falha.</p>"
+            },
+            {
+              "title": "Contrato de aparição: quando um bloco entra, muda ou sai",
+              "body": "<p>O inventário dos blocos também precisa explicar <strong>quando cada um existe</strong>. Uma prioridade correta no primeiro acesso pode estar errada no retorno. Complete a ficha de cada região com condição de aparição, informação necessária, prioridade diante de outros blocos e condição de retirada. Isso evita transformar a home em uma sequência permanente de campanhas e resumos que já perderam a função.</p><p>No Rota, considere três regras autorais: a orientação para começar aparece quando ainda não há plano; a continuação do rascunho aparece quando existe trabalho não concluído; uma visita planejada para hoje ganha prioridade quando há um plano correspondente. Ter uma visita marcada no plano não comprova que o local esteja aberto nem que exista ingresso reservado. A mensagem deve preservar essa diferença.</p><p>Defina ainda o que acontece quando a informação envelhece. Ao terminar o dia, o bloco de hoje não pode continuar afirmando urgência por inércia. Se a atualização falha, apresente o que está salvo e sua limitação em vez de fabricar um novo status. Uma recomendação secundária indisponível não deve substituir nem bloquear uma continuação válida.</p><p>Teste colisões, não só condições isoladas: rascunho pendente e visita para hoje; retorno após vários dias; conteúdo salvo com rede indisponível. Peça que a pessoa identifique a próxima ação e explique em quais informações confia. A regra de prioridade precisa produzir uma ordem justificável nesses cenários, não apenas uma boa captura de primeiro uso.</p>"
             }
           ],
           "examples": [
             {
-              "title": "Reply: iniciar diretamente na tarefa principal",
-              "url": "https://github.com/android/compose-samples/tree/main/Reply",
-              "source": "Google / Android Open Source Project",
-              "image": "https://raw.githubusercontent.com/android/compose-samples/main/Reply/screenshots/compact_medium_large_displays.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/reply-adaptive-screens.png",
-              "alt": "Reply em três larguras, abrindo diretamente a caixa de entrada com busca, mensagens e ação de escrever; a janela ampla inclui a conversa selecionada.",
-              "credit": "Copyright 2022 The Android Open Source Project. Screenshot oficial Reply, reproduzido sem alterações. Marcas pertencem a seus titulares; não há endosso ao curso.",
-              "sourcePageUrl": "https://github.com/android/compose-samples/tree/main/Reply/screenshots",
-              "license": "Apache License 2.0. O ASSETS_LICENSE do Reply declara essa licença para todos os arquivos que não são fontes.",
-              "licenseUrl": "https://github.com/android/compose-samples/blob/main/Reply/ASSETS_LICENSE",
-              "analysis": "<p>Reply, aplicativo oficial de estudo, abre diretamente uma caixa de entrada: busca, mensagens e ação de escrever já estão disponíveis. A captura demonstra uma alternativa à home intermediária. A análise desta aula é a prioridade inicial: ler e responder ganham espaço antes de qualquer resumo decorativo. Em janelas amplas, a conversa aparece junto da coleção. Isso não transforma a tela em dashboard; mostra que a entrada pode ser a própria tarefa. Compare com o Fitness abaixo, cuja proposta de acompanhamento justifica um resumo de indicadores.</p>",
-              "versionNote": "Estudo histórico Material 3: a última revisão deste arquivo de imagem no histórico oficial é de 04/07/2022. O arquivo ainda é publicado no repositório Reply. Use-o para estudar organização adaptativa, não como retrato da aparência mais recente do Material 3 Expressive.",
-              "versionUrl": "https://github.com/android/compose-samples/commit/4d641b5255d31ec65c2bc6a59ecbbe115f5f1197"
-            },
-            {
-              "title": "Apple Fitness: resumo com aprofundamento e personalização",
-              "url": "https://support.apple.com/pt-br/guide/iphone/iph4c34a8a95/ios",
-              "source": "Apple Support",
-              "analysis": "<p>O guia oficial do Fitness mostra o resumo de atividade, tendências, sessões e prêmios, além da possibilidade de reorganizar métricas. A própria documentação distingue o resumo do aprofundamento: tocar em uma área leva a detalhes. A referência é um aplicativo real; os dados ilustrativos da Apple não são dados pessoais deste curso.</p><p>A análise útil é observar duas decisões: o resumo permite acompanhar rapidamente, enquanto o detalhe suporta investigação; a personalização reconhece que nem todo indicador importa igualmente. Para outro produto, copie essa relação entre pergunta, sinal e aprofundamento, não os anéis de atividade. Um painel sem histórico suficiente deve explicar essa limitação. Não é possível concluir, apenas pela documentação, que a organização funcionará para todos os públicos.</p>",
-              "versionNote": "Documentação contínua da Apple, atualmente apresentada no Manual de Uso do iPhone para iOS 27. A página não informa a data de criação das imagens nem uma versão separada do app Fitness. O seletor permite consultar versões anteriores do manual.",
-              "versionUrl": "https://support.apple.com/pt-br/guide/iphone/iph4c34a8a95/ios"
+              "title": "Uma home editorial orientada à próxima visita",
+              "visualHtml": "<div class=\"demo-screen\">\n  <div class=\"demo-topbar\"><span class=\"ui-title\">rota</span><span class=\"ui-badge\">Descobrir</span></div>\n  <div class=\"demo-body demo-column\">\n    <div><p class=\"ui-kicker\">Ideias para uma pausa</p><h3 class=\"ui-title\">Sua próxima tarde cultural.</h3><p class=\"ui-copy\">Escolha uma visita pelo tempo que você tem.</p></div>\n    <div class=\"ui-input\">Buscar lugar, exposição ou bairro</div>\n    <div class=\"demo-row\"><div class=\"ui-chip is-selected\">Até 2 horas · selecionado</div><div class=\"ui-chip\">Gratuito</div><div class=\"ui-chip\">Todos os bairros</div></div>\n    <div class=\"demo-column\">\n      <p class=\"ui-kicker\">Escolha da edição · Uma visita sem pressa</p>\n      <div class=\"demo-card demo-column\">\n        <div class=\"ui-art\"><p class=\"ui-kicker\">Galeria Horizonte apresenta</p><h4 class=\"ui-title\">Forma<br>&amp; luz</h4><p class=\"ui-copy\">Um encontro entre matéria e sombra</p></div>\n        <div><h4 class=\"ui-subtitle\">Forma &amp; luz</h4><p class=\"ui-muted\">Galeria Horizonte · Centro</p></div>\n        <p class=\"ui-copy\">Observe como esculturas e luz transformam a mesma sala.</p>\n        <div class=\"demo-row\"><span class=\"ui-badge\">Visita de 1h30</span><span class=\"ui-badge\">Entrada gratuita</span></div>\n        <div class=\"ui-button is-primary\">Conhecer a visita</div>\n      </div>\n    </div>\n    <div class=\"demo-card\"><p class=\"ui-kicker\">Retome de onde parou</p><div class=\"demo-row\"><div class=\"demo-grow\"><h4 class=\"ui-subtitle\">Seu sábado cultural</h4><p class=\"ui-copy\">1 visita salva · horário a definir</p></div><div class=\"ui-chip\">Ver plano</div></div></div>\n    <p class=\"ui-small\">Seleção editorial fictícia. Salvar um plano não reserva entrada.</p>\n  </div>\n  <div class=\"ui-nav\"><div class=\"ui-label is-selected\">Descobrir · atual</div><div class=\"ui-label\">Planos</div><div class=\"ui-label\">Salvos</div></div>\n</div>",
+              "analysis": "<p>A home responde primeiro “o que posso fazer?” e depois “como retomo meu plano?”. O título editorial apresenta a proposta; a busca atende quem já sabe o que procura. O destaque possui nome, lugar, duração e custo antes da ação. A ilustração tipográfica cria identidade, mas não substitui os dados necessários à escolha.</p><p>A cor de ação fica concentrada em conhecer a visita, enquanto o plano existente aparece como continuidade secundária. O filtro selecionado está escrito, não apenas colorido. “Escolha da edição” explica por que a exposição ganhou destaque; não sugere uma recomendação personalizada baseada em localização ou histórico inexistentes.</p><p>Esse arranjo serve à descoberta cultural, não a um painel de monitoramento. Inserir contadores e gráficos sem decisão associada aumentaria a densidade. Em compensação, uma única exposição recebe bastante espaço e reduz a variedade inicial. A equipe precisaria decidir quando trocar o destaque, como mostrar alternativas e o que apresentar a quem retorna apenas para consultar um plano.</p><p>Teste duas tarefas: encontrar uma visita gratuita de até duas horas e continuar um plano já iniciado. Observe a primeira escolha e se a pessoa confunde conhecer com salvar. Compare a versão editorial com uma entrada mais compacta para usuários recorrentes. Amplie texto e reduza a janela para conferir se a ação e os dados continuam agrupados sem cortes.</p>",
+              "alt": "Home editorial do Rota com busca, filtro até duas horas selecionado, exposição Forma & luz em destaque e um cartão secundário para retomar o sábado cultural.",
+              "designNote": "Uma única home, sem métricas de dashboard inseridas por decoração. O bloco ui-art é um cartaz tipográfico autoral. A navegação inferior é apenas um esquema estático de destinos. Classes extras: nenhuma. Usa apenas as classes do contrato visual; todos os controles são divs sem semântica de interação.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -816,7 +828,9 @@
               "Cada bloco responde a uma pergunta explícita e tem um próximo passo identificável.",
               "Todos os indicadores apresentam período ou contexto suficiente.",
               "Pelo menos oito das nove tentativas terminam sem ajuda; falhas geram uma alteração documentada.",
-              "Uma falha de recomendação não bloqueia o acesso à visita já salva."
+              "Uma falha de recomendação não bloqueia o acesso à visita já salva.",
+              "Cada bloco tem condição de aparição e retirada, além da justificativa de prioridade.",
+              "A combinação de rascunho pendente, visita para hoje e atualização indisponível mantém uma ordem explicável, sem sugerir reserva ou funcionamento confirmado."
             ]
           },
           "sources": [
@@ -849,6 +863,22 @@
               "url": "https://developer.apple.com/videos/play/wwdc2025/359/",
               "source": "Apple Developer",
               "note": "Sessão oficial WWDC25 (2025). Os capítulos Structure, Navigation e Content ajudam a revisar estrutura, navegação e conteúdo. É uma referência datada de fundamentos, não comprovação da última versão dos apps mostrados."
+            }
+          ],
+          "books": [
+            {
+              "title": "The UI Professional’s Design Manual: the Ultimate Guide to Master Mobile Design",
+              "authors": "AdrianK / Adrian Kuleszo; colaboração de Natalie apresentada no exemplar",
+              "edition": "Exemplar © 2022, em desenvolvimento; sem número de edição declarado",
+              "pages": "Páginas físicas do PDF: 246–253",
+              "note": "Apoio para home conforme momento de uso. As regras de aparição e expiração de blocos do Rota são elaboração autoral; o caso didático do livro não é evidência de desempenho de um produto real."
+            },
+            {
+              "title": "Refactoring UI",
+              "authors": "Adam Wathan e Steve Schoger",
+              "edition": "Edição e ano não declarados nas páginas bibliográficas do exemplar",
+              "pages": "Páginas físicas do PDF: 36–46",
+              "note": "Leitura complementar sobre priorização visual. Edição e ano permanecem não confirmados no exemplar; não se atribuem métricas de resultado à organização proposta."
             }
           ]
         },
@@ -886,17 +916,13 @@
           ],
           "examples": [
             {
-              "title": "Cartão contornado no catálogo oficial do Jetpack Compose",
-              "url": "https://developer.android.com/develop/ui/compose/components/card",
-              "source": "Android Developers",
-              "analysis": "<p>A figura mostra uma implementação real do componente OutlinedCard, ou cartão contornado, publicada na documentação. O contorno delimita uma superfície sem depender de sombra. É um exemplo de componente executável, não uma captura de um aplicativo comercial. Seu conteúdo propositalmente simples permite estudar a função do recipiente.</p><p>A análise crítica começa justamente no que falta: o desenho não determina título, metadados, ações nem seleção. Ao adaptá-lo, não suponha que a borda torna o cartão clicável. A resposta ao toque, o nome acessível e o comportamento ainda precisam ser especificados. Compare esse tratamento com uma lista sem cartões e decida se a delimitação acrescenta informação ou apenas ocupa espaço.</p>",
-              "image": "https://developer.android.com/static/develop/ui/compose/images/components/card-outlined.png",
-              "alt": "Cartão da documentação Android com contorno fino e o texto Outlined, demonstrando uma superfície delimitada sem sombra pronunciada.",
-              "credit": "Android Developers / Android Open Source Project. Figura da documentação, reproduzida sem alterações. Consulte a licença e a página original vinculadas.",
-              "license": "Apache License 2.0, conforme a classificação de documentação da página Content License do Android Developers; marcas não incluídas.",
-              "licenseUrl": "https://developer.android.com/license",
-              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/components/card",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/listas-cards.png"
+              "title": "Comparar visitas exige campos estáveis",
+              "visualHtml": "<div class=\"demo-screen\">\n  <div class=\"demo-topbar\"><div class=\"ui-chip\">Voltar</div><span class=\"ui-label\">Visitas no Centro</span><span class=\"ui-badge\">3 opções</span></div>\n  <div class=\"demo-body demo-column\">\n    <div><h3 class=\"ui-title\">Quanto tempo você tem?</h3><p class=\"ui-copy\">Mesmos dados, na mesma ordem, para comparar.</p></div>\n    <div class=\"demo-row\"><div class=\"ui-chip is-selected\">Centro · ativo</div><div class=\"ui-chip\">Ordenar por duração</div></div>\n    <ol class=\"ui-list\">\n      <li class=\"demo-card demo-column\">\n        <div class=\"demo-row\"><span class=\"ui-number\" aria-hidden=\"true\">01</span><div class=\"demo-grow\"><h4 class=\"ui-subtitle\">Ateliê aberto</h4><p class=\"ui-muted\">Casa das Linhas · Centro</p></div><span class=\"ui-badge\">Oficina</span></div>\n        <div class=\"demo-grid\"><div><p class=\"ui-label\">Duração</p><p class=\"ui-copy\">45 min</p></div><div><p class=\"ui-label\">Entrada</p><p class=\"ui-copy\">Gratuita</p></div><div><p class=\"ui-label\">Funcionamento</p><p class=\"ui-copy\">10h–17h</p></div></div>\n        <div class=\"ui-button is-secondary\">Ver Ateliê aberto</div>\n      </li>\n      <li class=\"demo-card demo-column\">\n        <div class=\"demo-row\"><span class=\"ui-number\" aria-hidden=\"true\">02</span><div class=\"demo-grow\"><h4 class=\"ui-subtitle\">Forma &amp; luz</h4><p class=\"ui-muted\">Galeria Horizonte · Centro</p></div><span class=\"ui-badge\">Exposição</span></div>\n        <div class=\"demo-grid\"><div><p class=\"ui-label\">Duração</p><p class=\"ui-copy\">1h30</p></div><div><p class=\"ui-label\">Entrada</p><p class=\"ui-copy\">Gratuita</p></div><div><p class=\"ui-label\">Funcionamento</p><p class=\"ui-copy\">10h–18h</p></div></div>\n        <div class=\"ui-button is-secondary\">Ver Forma &amp; luz</div>\n      </li>\n      <li class=\"demo-card demo-column\">\n        <div class=\"demo-row\"><span class=\"ui-number\" aria-hidden=\"true\">03</span><div class=\"demo-grow\"><h4 class=\"ui-subtitle\">Histórias em movimento</h4><p class=\"ui-muted\">Museu da Travessia · Centro</p></div><span class=\"ui-badge\">Exposição</span></div>\n        <div class=\"demo-grid\"><div><p class=\"ui-label\">Duração</p><p class=\"ui-copy\">2 horas</p></div><div><p class=\"ui-label\">Entrada</p><p class=\"ui-copy\">R$ 20</p></div><div><p class=\"ui-label\">Funcionamento</p><p class=\"ui-copy\">11h–19h</p></div></div>\n        <div class=\"ui-button is-secondary\">Ver Histórias em movimento</div>\n      </li>\n    </ol>\n    <p class=\"ui-small\">Valores, lugares e horários fictícios. Duração estimada da visita; deslocamento não incluído.</p>\n  </div>\n</div>",
+              "analysis": "<p>Os três itens repetem duração, entrada e horário na mesma ordem. A sequência cresce de 45 minutos a duas horas, coerente com a ordenação apresentada. Essa estabilidade permite comparar sem abrir cada detalhe. Nome da experiência e nome do lugar têm papéis diferentes; a categoria complementa a leitura sem disputar o título.</p><p>A composição usa uma lista de cartões compactos, sem imagens grandes. Para esta tarefa, a duração e o custo ajudam mais do que três capas decorativas. Cada item tem uma única ação de detalhe com nome específico. Evitar salvar diretamente nesta lista reduz ações concorrentes, mas acrescenta uma etapa para quem já conhece a visita.</p><p>Os rótulos se repetem de propósito: ajudam quando os dados quebram em várias linhas na janela estreita. Essa redundância custa espaço vertical. Uma lista muito longa poderia precisar de tratamento mais compacto, carregamento em partes e manutenção da posição ao voltar. Não resolva densidade escondendo custo ou trocando todos os dados por ícones sem explicação.</p><p>Peça que alguém encontre uma opção gratuita que caiba em uma hora, depois compare as duas exposições. Observe se confunde duração da visita com horário de funcionamento ou deslocamento. Teste nomes compridos, preço indisponível e texto ampliado. Se um dado não existir, mostre “não informado” no mesmo campo em vez de deslocar os demais.</p>",
+              "alt": "Lista de três visitas fictícias ordenadas por duração, com os mesmos campos de duração, entrada e horário; Forma & luz ocupa a posição intermediária.",
+              "designNote": "Lista sem tabela horizontal e sem capas repetitivas. demo-grid agrupa campos comparáveis dentro de cada item; a ordem de leitura permanece título, local, duração, entrada, horário e detalhe. Classes extras: nenhuma. Usa apenas as classes do contrato visual; todos os controles são divs sem semântica de interação.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -962,19 +988,13 @@
           ],
           "examples": [
             {
-              "title": "Reply: leitura de uma mensagem como detalhe",
-              "url": "https://github.com/android/compose-samples/tree/main/Reply",
-              "source": "Google / Android Developers",
-              "analysis": "<p>Reply é uma implementação oficial de estudo de design adaptativo para e-mail, não um serviço de correio em produção. A captura mostra três larguras. No telefone, a lista ocupa a área principal e a navegação fica embaixo. Na janela média, aparece uma faixa lateral de destinos. Na ampla, navegação, lista e conversa convivem; a mensagem selecionada ganha destaque e o conteúdo detalhado aparece à direita.</p><p>A análise útil é acompanhar o mesmo objeto entre composições: o detalhe não vira apenas uma versão esticada do telefone. A seleção explica a relação entre lista e leitura. Ao aplicar o padrão, preserve o item aberto e defina como voltar se comporta quando duas áreas estão visíveis. A captura demonstra a organização espacial; o comportamento durante redimensionamento ainda precisa ser verificado em execução.</p>",
-              "image": "https://raw.githubusercontent.com/android/compose-samples/main/Reply/screenshots/compact_medium_large_displays.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/reply-adaptive-screens.png",
-              "sourcePageUrl": "https://github.com/android/compose-samples/tree/main/Reply/screenshots",
-              "alt": "Captura oficial Reply em três larguras: telefone com lista, janela média com navegação lateral e janela ampla com lista e conversa lado a lado.",
-              "credit": "Copyright 2022 The Android Open Source Project. Screenshot oficial Reply, reproduzido sem alterações. Marcas pertencem a seus titulares; não há endosso ao curso.",
-              "license": "Apache License 2.0. O arquivo ASSETS_LICENSE do Reply declara essa licença para todos os arquivos que não são fontes.",
-              "licenseUrl": "https://github.com/android/compose-samples/blob/main/Reply/ASSETS_LICENSE",
-              "versionNote": "Estudo histórico Material 3: a última revisão deste arquivo de imagem no histórico oficial é de 04/07/2022. O arquivo ainda é publicado no repositório Reply. Use-o para estudar organização adaptativa, não como retrato da aparência mais recente do Material 3 Expressive.",
-              "versionUrl": "https://github.com/android/compose-samples/commit/4d641b5255d31ec65c2bc6a59ecbbe115f5f1197"
+              "title": "O detalhe sustenta a decisão de salvar",
+              "visualHtml": "<div class=\"demo-screen\">\n  <div class=\"demo-topbar\"><div class=\"ui-chip\">Voltar às visitas</div><span class=\"ui-label\">Detalhe da visita</span></div>\n  <div class=\"demo-body demo-column\">\n    <div class=\"ui-art\"><p class=\"ui-kicker\">Exposição · Galeria Horizonte</p><p class=\"ui-title\">Forma<br>&amp; luz</p><p class=\"ui-copy\">Matéria, sombra e espaço</p></div>\n    <div><p class=\"ui-kicker\">Centro · Exposição</p><h3 class=\"ui-title\">Forma &amp; luz</h3><p class=\"ui-copy\">Galeria Horizonte</p></div>\n    <div class=\"demo-row\"><span class=\"ui-badge\">Visita estimada: 1h30</span><span class=\"ui-badge\">Entrada gratuita</span></div>\n    <div><h4 class=\"ui-subtitle\">O que você vai encontrar</h4><p class=\"ui-copy\">Esculturas, recortes e fontes de luz criam sombras que mudam conforme você percorre a sala. A visita pode ser feita no seu ritmo.</p></div>\n    <div class=\"demo-card demo-column\">\n      <h4 class=\"ui-subtitle\">Planeje a visita</h4>\n      <div><p class=\"ui-label\">Funcionamento</p><p class=\"ui-copy\">Terça a domingo, das 10h às 18h.</p><p class=\"ui-muted\">Última entrada às 17h. Segunda-feira: fechado.</p></div>\n      <div class=\"ui-divider\"></div>\n      <div><p class=\"ui-label\">Onde</p><p class=\"ui-copy\">Praça dos Encontros, 12 · Centro</p><p class=\"ui-small\">Endereço fictício; não é um destino de navegação.</p></div>\n      <div class=\"ui-divider\"></div>\n      <div><p class=\"ui-label\">Acesso ao espaço</p><p class=\"ui-copy\">Entrada sem degraus. Há bancos em duas salas.</p><p class=\"ui-muted\">Outros recursos de acessibilidade: não informados.</p></div>\n    </div>\n    <div class=\"ui-notice\"><p class=\"ui-label\">Um plano organiza a ideia.</p><p class=\"ui-copy\">Salvar não reserva entrada nem emite ingresso. Confirme as condições com o local antes de ir.</p></div>\n    <div class=\"ui-button is-primary\">Adicionar ao meu plano</div>\n    <p class=\"ui-small\">Informações demonstrativas. Na versão real, horário, ingresso e acesso precisam de fonte e atualização.</p>\n  </div>\n</div>",
+              "analysis": "<p>A tela responde às dúvidas que a lista deixou em aberto. O começo confirma nome, local, custo e duração; a descrição explica a experiência; o bloco seguinte reúne as condições práticas. A arte mantém a identidade da exposição, mas o conteúdo que sustenta a decisão continua disponível em texto, sem depender de ler o cartaz.</p><p>Funcionamento e última entrada aparecem juntos porque descrevem limites diferentes. O endereço está identificado como fictício. Acessibilidade é descrita por recursos concretos, como entrada sem degraus, e admite o que não está informado. Um selo genérico de “acessível” esconderia necessidades distintas e poderia prometer mais do que os dados permitem.</p><p>A ação fica depois das informações e do aviso sobre reserva, dentro do fluxo. Isso favorece uma leitura completa, mas pode exigir rolagem para quem já decidiu. Um controle persistente poderia reduzir esse esforço; também ocuparia área e exigiria testes com teclado, ampliação de texto e barras do sistema. Esta composição não prescreve rodapé fixo.</p><p>Teste se a pessoa consegue decidir quando chegar, quanto tempo separar e o que acontece ao adicionar a visita. Inclua uma dúvida sobre recurso de acesso não informado. Na implementação real, verifique a origem e a data dos dados, a recuperação de falhas e a volta à mesma posição da lista. Nenhum horário fictício deve virar informação de serviço.</p>",
+              "alt": "Detalhe de Forma & luz com descrição da exposição, duração, preço, funcionamento, última entrada, endereço fictício, recursos de acesso e aviso antes de adicionar ao plano.",
+              "designNote": "Página de detalhe rica em texto, com grupos de informação próprios e ação ao final do fluxo. ui-art contém cartaz tipográfico original; não se usa uma fotografia como prova do espaço. Classes extras: nenhuma. Usa apenas as classes do contrato visual; todos os controles são divs sem semântica de interação.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -1045,23 +1065,13 @@
           ],
           "examples": [
             {
-              "title": "SearchBar: sugestões no exemplo oficial do Android",
-              "url": "https://developer.android.com/develop/ui/compose/components/search-bar",
-              "source": "Android Developers",
-              "analysis": "<p>A figura oficial apresenta uma busca com uma letra digitada e seis sugestões abaixo. Ela torna visível a diferença entre editar uma consulta e escolher um candidato. É uma demonstração real do componente, com implementação publicada na mesma página.</p><p>Analise a continuidade visual: o texto digitado permanece como referência enquanto as alternativas aparecem próximas. Isso permite comparar o que foi escrito com o que o sistema oferece. A figura sozinha não resolve navegação por teclado, anúncio das sugestões ou comportamento ao selecionar; esses detalhes pertencem à especificação. Ao usar o padrão, decida se a pessoa está escolhendo um termo ou abrindo diretamente um conteúdo. São ações diferentes, mesmo quando parecem visualmente semelhantes.</p>",
-              "image": "https://developer.android.com/static/develop/ui/compose/images/components/search%20bar%20with%20suggestions%20displayed.png",
-              "alt": "Exemplo oficial de barra de busca Android com a letra a digitada e uma lista de seis sugestões logo abaixo.",
-              "credit": "Android Developers / Android Open Source Project. Figura da documentação, reproduzida sem alterações. Consulte a licença e a página original vinculadas.",
-              "license": "Apache License 2.0, conforme a classificação de documentação da página Content License do Android Developers; marcas não incluídas.",
-              "licenseUrl": "https://developer.android.com/license",
-              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/components/search-bar",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/busca-filtros.png"
-            },
-            {
-              "title": "Google Maps: categorias como ponto de partida",
-              "url": "https://support.google.com/maps/answer/4610185?co=GENIE.Platform%3DAndroid&hl=pt-BR",
-              "source": "Google Maps Help",
-              "analysis": "<p>A ajuda oficial mostra categorias como restaurantes e cafés abaixo da busca, com acesso a mais categorias. O caso demonstra como iniciar uma exploração sem exigir que a pessoa formule uma consulta. A interpretação de design é reduzir o esforço inicial mantendo um caminho para interesses menos frequentes. Não confunda esses atalhos com uma especificação completa de filtros: a referência documenta a entrada por categorias.</p>"
+              "title": "Consulta, filtros ativos e resultado visível",
+              "visualHtml": "<div class=\"demo-screen\">\n  <div class=\"demo-topbar\"><div class=\"ui-chip\">Voltar</div><span class=\"ui-label\">Buscar visitas</span></div>\n  <div class=\"demo-body demo-column\">\n    <div><p class=\"ui-label\">O que você quer visitar?</p><div class=\"ui-input is-focus\">Exposição</div><p class=\"ui-small\">Consulta demonstrativa: “Exposição”</p></div>\n    <div class=\"demo-row\"><div class=\"ui-button is-secondary\">Editar filtros · 3 ativos</div><div class=\"ui-chip\">Limpar filtros</div></div>\n    <div class=\"demo-column\"><p class=\"ui-label\">Filtros aplicados</p><div class=\"demo-row\"><div class=\"ui-chip is-selected\">Centro · remover ×</div><div class=\"ui-chip is-selected\">Gratuito · remover ×</div><div class=\"ui-chip is-selected\">Até 2h · remover ×</div></div></div>\n    <div class=\"ui-divider\"></div>\n    <div class=\"demo-row\"><div class=\"demo-grow\"><h3 class=\"ui-subtitle\">1 visita encontrada</h3><p class=\"ui-muted\">Com todos os filtros aplicados</p></div><div class=\"ui-chip\">Relevância</div></div>\n    <div class=\"demo-card demo-column\">\n      <div><p class=\"ui-kicker\">Exposição</p><h4 class=\"ui-title\">Forma &amp; luz</h4><p class=\"ui-copy\">Galeria Horizonte · Centro</p></div>\n      <p class=\"ui-copy\">Esculturas e luz para observar com calma.</p>\n      <div class=\"demo-row\"><span class=\"ui-badge\">1h30</span><span class=\"ui-badge\">Gratuita</span></div>\n      <div class=\"ui-button is-primary\">Ver visita</div>\n    </div>\n    <div class=\"ui-notice\"><p class=\"ui-label\">Quer ampliar a busca?</p><p class=\"ui-copy\">Remova “Centro” para manter gratuidade e duração em outros bairros.</p><div class=\"ui-button is-tonal\">Remover filtro Centro</div></div>\n    <p class=\"ui-small\">Resultado fictício. Limpar filtros mantém a consulta “Exposição”; remover um filtro mantém os demais.</p>\n  </div>\n</div>",
+              "analysis": "<p>A composição mostra a busca depois da aplicação de três filtros. A consulta “Exposição” permanece no campo; bairro, preço e duração aparecem como condições separadas. O contador informa que existe um resultado com todas elas. Assim, a pessoa consegue explicar por que vê essa visita sem reabrir um painel escondido.</p><p>Cada chip exibe a condição e a possibilidade de remoção por texto, além do sinal visual. “Limpar filtros” tem escopo explícito: conserva a consulta. A sugestão inferior remove somente Centro, preservando gratuidade e duração. Essa proposta evita um recomeço completo, mas só deve aparecer quando ampliar a região fizer sentido para a tarefa.</p><p>As condições visíveis ocupam espaço e podem quebrar em várias linhas. Esse custo costuma ser aceitável quando ajuda a entender uma lista muito restrita; dezenas de chips exigiriam outra organização. Relevância é uma ordenação, não um quarto filtro. Na implementação, explique critérios relevantes e não invente contagens de alternativas antes de consultar os dados.</p><p>Teste a remoção de um filtro, a limpeza de todos e a edição da consulta. Verifique se a seleção sobrevive à ida ao detalhe e à volta. Inclua zero resultados e falha de rede: ausência de correspondência não significa falha técnica. Observe também se o leitor de tela recebe a atualização do total sem perder o foco ou ouvir anúncios repetidos.</p>",
+              "alt": "Busca por Exposição com três filtros ativos e removíveis: Centro, gratuito e até duas horas; um resultado Forma & luz e sugestão para ampliar a busca removendo apenas o bairro.",
+              "designNote": "Recorte de uma busca já filtrada, com estado de consulta e contagem explícitos. Chips e campo são divs demonstrativas, não entradas reais; is-focus representa apenas a aparência de foco. Classes extras: nenhuma. Usa apenas as classes do contrato visual; todos os controles são divs sem semântica de interação.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -1132,17 +1142,13 @@
           ],
           "examples": [
             {
-              "title": "Campo contornado do Android e rótulo persistente",
-              "url": "https://developer.android.com/develop/ui/compose/text/user-input",
-              "source": "Android Developers",
-              "analysis": "<p>A figura da documentação mostra um campo de texto contornado com rótulo integrado. É uma implementação real de OutlinedTextField, o campo contornado do Jetpack Compose, sistema de construção de interfaces Android. O exemplo serve para examinar a separação entre identificação e área de entrada.</p><p>O rótulo não deve depender de um texto temporário que desaparece quando se começa a digitar. Porém, usar o componente não resolve sozinho a qualidade da pergunta, a obrigatoriedade, a mensagem de erro ou o teclado. Estude a figura como parte de uma interação completa: vazio, foco, preenchido, erro e correção. A decisão de usar contorno ou preenchimento tem menos importância que a continuidade dessa explicação.</p>",
-              "image": "https://developer.android.com/static/develop/ui/compose/images/text-outlinedtextfield.png",
-              "alt": "Campo de texto contornado da documentação Android com borda e rótulo roxos, mostrando a área editável e sua identificação.",
-              "credit": "Android Developers / Android Open Source Project. Figura da documentação, reproduzida sem alterações. Consulte a licença e a página original vinculadas.",
-              "license": "Apache License 2.0, conforme a classificação de documentação da página Content License do Android Developers; marcas não incluídas.",
-              "licenseUrl": "https://developer.android.com/license",
-              "sourcePageUrl": "https://developer.android.com/develop/ui/compose/text/user-input",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/formularios.png"
+              "title": "Um erro de horário com contexto para corrigir",
+              "visualHtml": "<div class=\"demo-screen\">\n  <div class=\"demo-topbar\"><div class=\"ui-chip\">Voltar ao detalhe</div><span class=\"ui-label\">Salvar plano</span></div>\n  <div class=\"demo-body demo-column\">\n    <div><p class=\"ui-kicker\">Organize sua visita</p><h3 class=\"ui-title\">Quando você quer ir?</h3><p class=\"ui-copy\">O plano reúne suas escolhas para consultar depois.</p></div>\n    <div class=\"demo-card\"><h4 class=\"ui-subtitle\">Forma &amp; luz</h4><p class=\"ui-copy\">Galeria Horizonte · Centro</p><p class=\"ui-muted\">Visita estimada: 1h30 · entrada gratuita</p></div>\n    <div class=\"demo-column\">\n      <div><p class=\"ui-label\">Data da visita</p><div class=\"ui-input\">Sábado, 17 de outubro</div><p class=\"ui-muted\">Aberto das 10h às 18h neste dia.</p></div>\n      <div><p class=\"ui-label\">Horário de chegada</p><div class=\"ui-input is-error\">08:00 · horário inválido</div><p class=\"ui-copy is-error\">! Escolha entre 10h e 17h. A última entrada é às 17h.</p></div>\n      <div><p class=\"ui-label\">Horários dentro do funcionamento</p><div class=\"demo-row\"><div class=\"ui-chip\">10:00</div><div class=\"ui-chip\">14:00</div><div class=\"ui-chip\">15:00</div></div></div>\n      <div><p class=\"ui-label\">Nota para o passeio · opcional</p><div class=\"ui-input\">Levar um caderno para anotar ideias.</div><p class=\"ui-small\">A nota permanece preenchida enquanto você corrige o horário.</p></div>\n    </div>\n    <div class=\"ui-notice\"><p class=\"ui-label\">Falta ajustar um campo.</p><p class=\"ui-copy\">Corrija o horário de chegada para salvar este plano. A data e a nota foram mantidas.</p></div>\n    <div class=\"ui-button is-primary\">Salvar no meu plano</div>\n    <p class=\"ui-copy\">Salvar não compra ingresso nem reserva entrada.</p>\n    <p class=\"ui-small\">Estado demonstrativo após uma tentativa de salvar. Datas e horários são fictícios.</p>\n  </div>\n</div>",
+              "analysis": "<p>O formulário mantém a visita escolhida no topo para que data e horário tenham contexto. Os campos seguem a ordem de decisão: escolher o dia, definir a chegada e acrescentar uma nota opcional. O horário de funcionamento fica perto da data; a última entrada aparece junto ao campo que falhou. São informações relacionadas, mas não equivalentes.</p><p>O estado representa uma tentativa de salvar às 08h, antes da abertura. A mensagem informa o problema e uma faixa válida, com texto e sinal além da borda. As sugestões são horários dentro do funcionamento, não vagas disponíveis. Data e nota permanecem preenchidas, evitando que corrigir um campo obrigue a refazer o restante.</p><p>A ação de salvar continua identificável enquanto a mensagem explica o que falta. Na implementação, uma nova tentativa deve orientar para o campo inválido, sem concluir o salvamento nem apagar conteúdo. Validar apenas ao enviar reduz interrupções durante a digitação, mas pode descobrir problemas tarde. Uma checagem ao sair do campo precisa respeitar entradas ainda incompletas.</p><p>Teste erro, correção e sucesso com teclado aberto e texto ampliado. Confira se o foco chega ao campo, se a mensagem é associada a ele e se permanece visível ao rolar. Pergunte se salvar garante entrada; a resposta deve ser não. Em um produto real, mudanças de data também precisam revalidar funcionamento e chegada sem descartar a nota.</p>",
+              "alt": "Formulário para salvar Forma & luz: data válida, chegada às 08h marcada como inválida, orientação de 10h a 17h, sugestões de horário, nota preservada e aviso de que salvar não reserva.",
+              "designNote": "Estado pós-validação de um único campo. is-error aplica borda e mensagem; o erro também é explícito em texto. ui-input e horários são representações estáticas sem inputs, labels vinculados ou eventos. Classes extras: nenhuma. Usa apenas as classes do contrato visual; todos os controles são divs sem semântica de interação.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -1214,30 +1220,21 @@
             {
               "title": "Quando não usar cada tratamento e como revisar",
               "body": "<p>Não use um vazio para mascarar falha. Não use porcentagens inventadas para tranquilizar. Não bloqueie toda a interface por uma atualização secundária. Não celebre sucesso antes de haver confirmação suficiente. Não transforme toda perda momentânea de conexão em um aviso intrusivo se a tarefa continua íntegra e nenhuma decisão depende da rede naquele instante.</p><p>Revise também a acessibilidade: mudança de estado precisa ser percebida por quem não está olhando para a região alterada. Use os recursos de anúncio da plataforma sem interromper a leitura a cada pequena atualização. Preserve foco e contexto quando possível. O teste decisivo é pedir que a pessoa explique o que já foi concluído, o que ainda falta e o que fazer em seguida. Se as respostas divergem do estado real, a mensagem precisa mudar.</p>"
+            },
+            {
+              "title": "Matriz preenchida: a mesma ausência visual pode exigir saídas opostas",
+              "body": "<p>Uma matriz útil liga <strong>causa conhecida → informação preservada → mensagem → ação possível → condição de saída</strong>. Preencha-a antes de desenhar uma ilustração de vazio. Os casos abaixo são um desenvolvimento autoral para Rota; não são uma classificação oficial de plataforma.</p><ul><li><strong>Nenhuma visita adicionada:</strong> o plano existe e está vazio. Preserve seu nome e convide a explorar visitas. A saída ocorre quando um item é incluído, não quando a rede é reconectada.</li><li><strong>Busca concluída sem correspondências:</strong> preserve consulta e filtros. Informe que nada corresponde ao conjunto e permita remover uma condição. Não peça para recriar o plano.</li><li><strong>Localização não autorizada:</strong> não conclua que não existem lugares próximos. Explique o recurso indisponível e ofereça escolha manual de bairro, se essa capacidade existir. A saída pode ocorrer por uma escolha manual; conceder permissão não precisa ser a única solução.</li><li><strong>Resultado de gravação desconhecido:</strong> a conexão caiu depois do envio e ainda não há confirmação. Preserve os dados e informe que o resultado está sendo verificado. A saída depende de descobrir se a operação foi concluída; um novo envio cego pode duplicá-la.</li></ul><p>Rede, conteúdo e operação são dimensões diferentes. Estar sem conexão pode coexistir com um plano salvo no aparelho. Uma recomendação pode falhar enquanto o plano continua legível. Para essas combinações, prefira uma mensagem localizada e verdadeira a substituir toda a tela por um erro genérico. Prometa consulta local, retomada ou sincronização apenas quando o produto realmente oferecer essas capacidades.</p><p>Revise cada linha com uma pergunta contrária: “O que aconteceria se esta mensagem fosse mostrada na outra causa?”. Se Tentar novamente não puder mudar a condição, falta uma saída adequada. No teste, peça à pessoa para explicar o que já está concluído e o que permanece incerto; use a divergência para corrigir o contrato, não só a redação.</p>"
             }
           ],
           "examples": [
             {
-              "title": "GOV.UK: erro resumido e orientação junto ao campo",
-              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "source": "GOV.UK Design System",
-              "image": "real-assets/mobile-states-govuk-error.png",
-              "localImagePath": "/workspace/shared/design-course-content/real-assets/mobile-states-govuk-error.png",
-              "visualAspect": "500 / 360",
-              "alt": "Exemplo oficial GOV.UK: resumo Há um problema com link Informe seu nome completo; a mesma orientação aparece junto ao campo Nome completo marcado com borda vermelha.",
-              "credit": "© Crown copyright / GOV.UK Design System. Captura do exemplo oficial para estudo, sem alterações; conteúdo disponível sob Open Government Licence v3.0. Não implica endosso.",
-              "sourcePageUrl": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "license": "Open Government Licence v3.0, conforme rodapé da documentação GOV.UK Design System, salvo exceções indicadas.",
-              "licenseUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
-              "analysis": "<p>Na captura oficial, “There is a problem” significa “Há um problema”; o link “Enter your full name” orienta a informar o nome completo. A mesma orientação aparece ao lado do campo, chamado “Full name”. O resumo ajuda a localizar a pendência e a mensagem local explica como corrigi-la. A borda reforça o estado, mas o texto também comunica o problema: a pessoa não depende apenas do vermelho. Trata-se de uma demonstração web com campo vazio, não de dados de alguém. A lição transferível é conectar causa, localização e recuperação. Em um aplicativo nativo, preserve essa clareza usando os mecanismos de foco e anúncio da plataforma.</p>"
-            },
-            {
-              "title": "W3C: erros locais e resumo de problemas no formulário",
-              "url": "https://www.w3.org/WAI/tutorials/forms/notifications/",
-              "source": "W3C Web Accessibility Initiative",
-              "analysis": "<p>O tutorial oficial apresenta exemplos executáveis de retorno sobre formulários: um resumo de erros com links para os campos e mensagens próximas aos controles. Em um dos exemplos, o nome de usuário está aceito enquanto a data de validade precisa de correção. Assim, a interface consegue representar sucesso parcial sem declarar que a tarefa inteira terminou.</p><p>A análise transferível é preservar o que já está correto e orientar diretamente até o problema. O resumo ajuda a localizar; a mensagem local ajuda a corrigir. Não copie a aparência antiga do exemplo para um aplicativo moderno. Estude a relação entre alcance do erro, identificação do campo e próximo passo. A referência é Web; a implementação móvel deve usar os mecanismos de acessibilidade correspondentes da plataforma.</p>",
-              "versionNote": "O tutorial informa atualização em 03/06/2022. Permanece uma referência de acessibilidade para retorno de formulários; o exemplo GOV.UK acima oferece a demonstração visual principal. A data do tutorial não é uma versão de aplicativo móvel.",
-              "versionUrl": "https://www.w3.org/WAI/tutorials/forms/notifications/"
+              "title": "Seis estados com significados e próximos passos próprios",
+              "visualHtml": "<div class=\"demo-compare\">\n  <div class=\"demo-step\">\n    <p class=\"ui-kicker\">A · Carregamento</p>\n    <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Descobrir visitas</span></div><div class=\"demo-body demo-column\">\n      <span class=\"ui-number\" aria-hidden=\"true\">…</span>\n      <h3 class=\"ui-subtitle\">Buscando visitas no Centro</h3>\n      <p class=\"ui-copy\">Sua busca está em andamento.</p>\n      <div class=\"demo-row\"><span class=\"ui-chip is-selected\">Centro · ativo</span><span class=\"ui-chip is-selected\">Gratuito · ativo</span></div>\n      <div class=\"ui-button is-secondary\">Cancelar busca</div>\n      <p class=\"ui-small\">Sem porcentagem inventada. Se a tentativa falhar, mostre uma saída.</p>\n    </div></div>\n  </div>\n  <div class=\"demo-step\">\n    <p class=\"ui-kicker\">B · Plano ainda vazio</p>\n    <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Sábado cultural</span></div><div class=\"demo-body demo-column\">\n      <span class=\"ui-number\" aria-hidden=\"true\">0</span>\n      <h3 class=\"ui-subtitle\">Seu plano ainda não tem visitas</h3>\n      <p class=\"ui-copy\">Escolha uma primeira ideia. Você poderá ajustar o horário depois.</p>\n      <div class=\"ui-button is-primary\">Explorar visitas</div>\n      <p class=\"ui-small\">O plano existe; falta adicionar conteúdo.</p>\n    </div></div>\n  </div>\n  <div class=\"demo-step\">\n    <p class=\"ui-kicker\">C · Busca sem resultados</p>\n    <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Buscar visitas</span></div><div class=\"demo-body demo-column\">\n      <span class=\"ui-badge\">0 resultados</span>\n      <h3 class=\"ui-subtitle\">Nenhuma visita combina com estes filtros</h3>\n      <p class=\"ui-copy\">A busca foi concluída, mas não há exposições gratuitas de até 30 minutos no Centro.</p>\n      <div class=\"demo-row\"><span class=\"ui-chip is-selected\">Centro · ativo</span><span class=\"ui-chip is-selected\">Gratuito · ativo</span><span class=\"ui-chip is-selected\">Até 30 min · ativo</span></div>\n      <div class=\"ui-button is-primary\">Remover limite de duração</div>\n      <div class=\"ui-button is-secondary\">Editar filtros</div>\n      <p class=\"ui-small\">A consulta e os demais filtros serão mantidos.</p>\n    </div></div>\n  </div>\n  <div class=\"demo-step\">\n    <p class=\"ui-kicker\">D · Falha recuperável</p>\n    <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Atualizar visitas</span></div><div class=\"demo-body demo-column\">\n      <span class=\"ui-badge is-error\">! Falha de conexão</span>\n      <h3 class=\"ui-subtitle\">Não foi possível atualizar a busca</h3>\n      <p class=\"ui-copy\">A conexão foi interrompida. Seus filtros foram mantidos.</p>\n      <div class=\"demo-row\"><span class=\"ui-chip is-selected\">Centro · ativo</span><span class=\"ui-chip is-selected\">Gratuito · ativo</span></div>\n      <div class=\"ui-button is-primary\">Tentar novamente</div>\n      <div class=\"ui-button is-secondary\">Voltar à descoberta</div>\n      <p class=\"ui-small\">Não confundir falha com “nenhuma visita encontrada”.</p>\n    </div></div>\n  </div>\n  <div class=\"demo-step\">\n    <p class=\"ui-kicker\">E · Offline com dados locais</p>\n    <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Sábado cultural</span></div><div class=\"demo-body demo-column\">\n      <span class=\"ui-badge\">Sem conexão · cópia local</span>\n      <h3 class=\"ui-subtitle\">Seu plano está disponível neste aparelho</h3>\n      <div class=\"demo-card\"><p class=\"ui-label\">Forma &amp; luz</p><p class=\"ui-copy\">Galeria Horizonte · sábado, 15h</p><p class=\"ui-copy\">Salvo no aparelho · sincronização pendente</p></div>\n      <p class=\"ui-copy\">Você pode consultar esta cópia offline. Ela ainda não está confirmada em outros aparelhos.</p>\n      <div class=\"ui-button is-primary\">Ver plano local</div>\n      <div class=\"ui-notice\"><p class=\"ui-label\">Para sincronizar</p><p class=\"ui-copy\">Quando houver conexão, tente sincronizar e confira o resultado.</p></div>\n    </div></div>\n  </div>\n  <div class=\"demo-step\">\n    <p class=\"ui-kicker\">F · Sucesso confirmado</p>\n    <div class=\"demo-screen\"><div class=\"demo-topbar\"><span class=\"ui-label\">Sábado cultural</span></div><div class=\"demo-body demo-column\">\n      <span class=\"ui-badge\">✓ Plano salvo neste aparelho</span>\n      <h3 class=\"ui-subtitle\">Sua visita está no plano</h3>\n      <div class=\"demo-card\"><p class=\"ui-label\">Forma &amp; luz</p><p class=\"ui-copy\">Galeria Horizonte</p><p class=\"ui-copy\">Sábado, 17 de outubro · 15h</p></div>\n      <p class=\"ui-copy\">O salvamento neste aparelho foi concluído. Isso não confirma sincronização. Nenhum ingresso ou reserva foi emitido.</p>\n      <div class=\"ui-button is-primary\">Ver meu plano</div>\n      <div class=\"ui-button is-secondary\">Continuar explorando</div>\n    </div></div>\n  </div>\n</div>",
+              "analysis": "<p>Os seis quadros distinguem andamento, primeiro uso, busca sem correspondências, falha técnica, disponibilidade offline e conclusão. São situações independentes, não uma sequência obrigatória. Um plano vazio precisa receber conteúdo; uma busca sem resultados já foi executada e pede revisão das condições. Nenhum dos dois deve ser apresentado como erro de conexão.</p><p>Carregamento preserva os filtros e oferece cancelamento sem porcentagem inventada. A busca vazia sugere remover somente o limite de duração. A falha conserva a seleção e oferece nova tentativa. Cada ação responde à causa apresentada, em vez de usar “tentar novamente” para qualquer ausência de conteúdo. Uma busca concluída continua distinta de uma tentativa interrompida.</p><p>Offline, uma cópia local permite consultar Forma &amp; luz, mas “salvo no aparelho” não significa “sincronizado”. O quadro identifica a pendência e não promete envio automático quando a rede voltar. A confirmação final também delimita o resultado ao salvamento local. Nenhum estado implica reserva ou emissão de ingresso; esses compromissos exigiriam outro fluxo.</p><p>Teste rede lenta, cancelamento, zero resultados, primeiro uso e abertura com cópia local sem conexão. Verifique que sincronização pendente não seja anunciada como concluída e que repetir não duplique dados. Anuncie mudanças relevantes sem roubar foco. Se o produto não garantir armazenamento local, o quadro offline precisa mudar; a composição não cria essa capacidade por si só.</p>",
+              "alt": "Seis estados do Rota: carregando, plano de primeiro uso vazio, busca concluída sem resultados, falha de conexão, plano disponível offline com sincronização pendente e salvamento local confirmado.",
+              "designNote": "Comparação responsiva de seis situações independentes em demo-compare, identificadas por letra, título e mensagem. Diferencia primeiro uso de zero resultados e cópia local de sincronização. Não promete sincronização automática nem usa aria-live em conteúdo estático. Classes extras: nenhuma. Usa apenas as classes do contrato visual; todos os controles são divs sem semântica de interação.",
+              "source": "Rota · estudo original",
+              "url": "https://alignui.com/docs/v1.2/introduction"
             }
           ],
           "exercise": {
@@ -1253,7 +1250,9 @@
               "Os três participantes distinguem salvo localmente de sincronizado.",
               "Cada estado recuperável possui próximo passo e preservação de dados especificados.",
               "Repetir uma tentativa não cria duplicação no comportamento descrito.",
-              "Todos os estados possuem saída definida ou explicação honesta de por que a pessoa precisa aguardar."
+              "Todos os estados possuem saída definida ou explicação honesta de por que a pessoa precisa aguardar.",
+              "A matriz distingue ausência inicial, ausência de correspondência e falta de permissão, com uma saída própria para cada causa.",
+              "O cenário de resultado desconhecido não incentiva reenvio antes da verificação e distingue dados preservados de operação confirmada."
             ]
           },
           "sources": [
@@ -1276,9 +1275,37 @@
               "title": "GOV.UK: Error summary",
               "url": "https://design-system.service.gov.uk/components/error-summary/",
               "note": "Referência oficial de resumo vinculado aos campos, com licença OGL v3.0 declarada no rodapé."
+            },
+            {
+              "title": "GOV.UK: erro resumido e orientação junto ao campo",
+              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
+              "note": "Referência complementar de análise. O exemplo visual desta lição é uma composição original do Rota."
             }
           ],
-          "videos": []
+          "videos": [],
+          "books": [
+            {
+              "title": "Refactoring UI",
+              "authors": "Adam Wathan e Steve Schoger",
+              "edition": "Edição e ano não declarados nas páginas bibliográficas do exemplar",
+              "pages": "Páginas físicas do PDF: 234–236",
+              "note": "Ponto de partida para estados vazios úteis. A matriz de causas, permissões e resultado incerto é elaboração autoral, não reprodução ou classificação atribuída à obra."
+            },
+            {
+              "title": "Guia de Boas Práticas Aplicáveis para a Criação de Interfaces",
+              "authors": "Andrey Knabbenn",
+              "edition": "Versão 2.0, 2022",
+              "pages": "Páginas físicas do PDF: 163–164",
+              "note": "Leitura complementar sobre ausência de conteúdo e orientação de continuidade; as mensagens apresentadas são originais."
+            },
+            {
+              "title": "The UI Professional’s Design Manual: the Ultimate Guide to Master Mobile Design",
+              "authors": "AdrianK / Adrian Kuleszo; colaboração de Natalie apresentada no exemplar",
+              "edition": "Exemplar © 2022, em desenvolvimento; sem número de edição declarado",
+              "pages": "Páginas físicas do PDF: 248–249, 300–301",
+              "note": "Referência histórica de estados de home e exceções. Não se importam exemplos financeiros, tempos fixos ou garantias de recuperação do caso didático."
+            }
+          ]
         }
       ]
     }
