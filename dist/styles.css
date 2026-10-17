@@ -18,3 +18,8 @@
 @media print{.inline-examples{display:block}.inline-examples .example-card{break-inside:auto}.inline-examples .example-analysis{font-size:11pt}}
 
 .book-method{font-size:13px;line-height:1.75;color:var(--muted)}.book-list{list-style:none!important;padding:0!important}.book-list li{margin:20px 0!important;padding:0 0 18px!important;border-bottom:1px solid var(--line);font-size:14px;line-height:1.7}.book-list cite{font-style:normal;font-weight:650;display:block;color:var(--ink)}.book-list span,.book-list small{display:block;color:var(--muted)}.book-list small{font-size:12px}.book-list a{font-size:13px}
+
+/* Official Design Boost asset, unchanged, on a dark backing for its white lettering. */
+.brand{gap:16px;min-height:44px}.brand-logo-frame{display:flex;align-items:center;justify-content:center;flex:0 0 auto;padding:10px 12px;background:#171717;border-radius:10px;min-height:44px}.brand-logo{display:block;width:146px;height:24px;object-fit:contain}.brand-copy{display:block}
+@media(max-width:800px){.brand-copy{display:none}.brand{gap:0}}
+@media(max-width:380px){.brand-logo-frame{padding:10px}.brand-logo{width:128px;height:auto}.header-progress{width:72px;flex:0 0 72px}.topbar{gap:8px}}
