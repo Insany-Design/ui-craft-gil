@@ -31,3 +31,14 @@ Amostra autoral criada em 17/10/2026. Referência de acabamento escolhida pelo u
 - Não transformar toda demonstração em tela com ações falsas. Quando estático, dizer claramente que é uma composição demonstrativa; quando interativo, só mostrar botões com comportamento implementado.
 - Análise: o que observar, decisão, benefício esperado, limite/tradeoff, como testar. Não inventar evidência de resultado.
 - Preservar IDs, ordem, conteúdo teórico, progresso ui-mobile-study-v2 e exemplos inline. Alterar rótulo “Exemplos reais analisados” para “Exemplos aplicados” ao integrar as composições autorais.
+
+## Revisão didática — 17/10/2026
+
+- 40 lições, 85 telas contextualizadas de celular. Cada exemplo explicita a tarefa (`scenario`) e a variável ou sequência (`comparisonFocus`) antes da UI.
+- Pares A/B mantêm dados e contexto quando a comparação pretende isolar uma decisão. Sequências T0–T3 nomeiam ações da pessoa e respostas do sistema; não confundem alternativas com etapas.
+- Molduras originais representam contexto mobile, sem alegar um aparelho específico. Comparações empilham em contêineres compactos, sem miniaturizar a UI.
+- Amostras `amostras.html`/`amostras.css` ficam apenas em source; não entram no build publicado. O curso integra os estudos nas lições existentes.
+- Hierarquia usa Inter local nos pesos reais 400 e 500; o estudo de contraste usa #A3A3A3/#FFFFFF (2,52:1) e #525866/#FFFFFF (7,13:1), com transcrição legível do conteúdo de baixo contraste.
+- Leitura focal adicional do PDF fornecido de Michael Filipiuk: páginas físicas 30–31 e77 (hierarquia), formulários e286–292 (feedback). Documento baixado apenas para consulta; nenhum PDF, figura ou trecho longo foi incorporado ao site. Recomendações autorais não substituem WCAG ou normas de plataforma.
+- Validação executada: build de9módulos/40lições; teste DOM de40rotas, persistência e importação do progresso; HTML dos exemplos balanceado e sem controles falsamente interativos; comparação de todos os campos não relacionados a exemplos com HEAD.
+- Limitação desta revisão: Chromium local não iniciou devido a restrição de socket; rota ampliada falhou em infraestrutura bwrap antes de executar. Não houve inspeção visual ou screenshot nesta sessão. Responsividade foi revisada no CSS e na estrutura, não demonstrada em navegador.

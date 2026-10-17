@@ -10,7 +10,7 @@ Trilha educacional estática, autoral, em português. 9 módulos e 40 lições c
 - `node test-app.cjs`: testa renderização e lógica de progresso com DOM simulado. Não substitui QA visual no navegador.
 - `node --check dist/app.js`: valida sintaxe.
 
-O conteúdo de cada lição fica integralmente aberto. Não há accordions ou modais que escondam explicações. Em telas compactas, exemplos aparecem antes do exercício; em telas amplas, ficam à direita.
+O conteúdo de cada lição fica integralmente aberto. Não há accordions ou modais que escondam explicações. Os exemplos aparecem no fluxo da leitura, após a explicação pertinente e antes do exercício. Ocupam a largura do conteúdo, sem coluna lateral. Composições de celular comparam decisões controladas ou mostram estados em sequência explícita.
 
 ## Progresso e privacidade
 Apenas localStorage neste navegador, chave `ui-mobile-study-v2`. Sem conta, backend, analytics próprios, identificação por IP ou sincronização. Marcação manual por lição, porcentagem por módulo e total, última lição e posição de leitura, exportação/importação JSON local. Importação mescla lições concluídas e filtra identificadores desconhecidos. Limpar dados do site pode apagar o progresso.
