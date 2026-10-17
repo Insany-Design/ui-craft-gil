@@ -1,4 +1,5 @@
 // Read-only HTTP smoke test. Run only AFTER root confirms the intended deployment.
+// Valid for stages 1 and 2 while course_config is empty.
 // No credentials, cookies, passwords, request-body logging or admin setup.
 // Usage from repo root: node scripts/smoke-hosted-stage1.mjs
 import assert from 'node:assert/strict';
@@ -20,12 +21,12 @@ for(const path of paths)for(const method of ['GET','HEAD']){
  assert(!text.includes('window.COURSE')&&!text.includes('password_hash'),'Unexpected private marker');
 }
 const home=await request('/');assert.equal(home.response.status,303);assert.equal(home.response.headers.get('location'),'/login');
-const login=await request('/login');assert.equal(login.response.status,200);assert(login.text.includes('Use a senha compartilhada pelo professor para continuar.'));assert(login.response.headers.get('cache-control')?.includes('no-store'));
+const login=await request('/login');assert.equal(login.response.status,200);assert(login.text.includes('Acesso em preparação'));assert(!login.text.includes('<form'));assert(!login.text.includes('type="password"'));assert(!login.response.headers.get('set-cookie')?.includes('__Host-course_csrf='));assert(login.response.headers.get('cache-control')?.includes('no-store'));
 for(const headers of [{},{'oai-authenticated-user-email':'gilberto@insany.com.br','oai-authenticated-user-id':'untrusted-smoke-probe'}]){
  const result=await request('/admin/password','GET',headers);
  assert([303,401,403].includes(result.response.status),'Anonymous/spoofed caller reached administrator diagnostics');
  if(result.response.status===303)assert(result.response.headers.get('location')?.startsWith('/signin-with-chatgpt'),'Unexpected administrator redirect');
- assert(!result.text.includes('Sua identidade administrativa foi verificada'),'Dispatch identity boundary failed');
+ assert(!result.text.includes('Sua identidade administrativa foi verificada')&&!result.text.includes('Nova senha compartilhada')&&!result.text.includes('name="csrf"'),'Dispatch identity boundary failed');
 }
 console.log('PASS: anonymous/direct-asset HTTP checks and forged-header rejection. No password or administrator created.');
 console.log('Still required: real owner and different-user browser checks, no alternate Worker hostname, no pre-existing DB config, historical URLs/cache review and hosted resource/cost review.');

@@ -20,10 +20,13 @@ export function response(body,status=200,extra={}){
 }
 const redirect=path=>response(null,303,{Location:path});
 const page=(title,content)=>`<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escape(title)}</title><style>body{font:18px system-ui;max-width:460px;margin:10vh auto;padding:24px;background:#fafafa;color:#1d1d1f}label,input,button{display:block;width:100%;box-sizing:border-box;margin:12px 0}input,button{padding:14px;font:inherit}button{background:#335CFF;color:white;border:0;border-radius:8px}input[type=checkbox]{width:auto;display:inline}a{color:#335CFF}</style><main><h1>${escape(title)}</h1>${content}</main></html>`;
+const passwordNotice='Crie uma senha exclusiva para este material. Não use a senha da sua conta ChatGPT.';
+const preparation=()=>response(page('Acesso em preparação','<p>O professor está preparando o acesso ao material. Aguarde a senha compartilhada por ele.</p><a href="/login">Verificar novamente</a>'));
+function errorPage(message,status,back='/login',extra={}){return response(page('Não foi possível continuar',`<p role="alert">${escape(message)}</p><a href="${back}">Voltar e tentar novamente</a>`),status,extra);}
 function form(admin){
  const token=randomToken();
  return response(page(admin?'Definir acesso dos alunos':'Seu guia de UI mobile',
- `<p>${admin?'Defina uma senha compartilhada com pelo menos 16 caracteres. A alteração encerra os acessos existentes.':'Use a senha compartilhada pelo professor para continuar.'}</p><form method="post" action="${admin?'/admin/password':'/login'}"><input type="hidden" name="csrf" value="${token}"><label>Senha<input type="password" name="password" autocomplete="${admin?'new-password':'current-password'}" required minlength="16" maxlength="256"></label>${admin?'<label>Confirme a senha<input type="password" name="confirm" autocomplete="new-password" required minlength="16" maxlength="256"></label><label><input type="checkbox" name="acknowledge" value="yes" required>Confirmo definir a senha compartilhada dos alunos e vincular esta conta ChatGPT como administradora deste acesso.</label>':''}<button>${admin?'Salvar senha':'Entrar'}</button></form>`),200,{'Set-Cookie':setCookie(CSRF,token,1800)});
+ `<p>${admin?passwordNotice+' Use pelo menos 16 caracteres. A alteração encerra os acessos existentes.':'Use a senha compartilhada pelo professor para continuar.'}</p><form method="post" action="${admin?'/admin/password':'/login'}"><input type="hidden" name="csrf" value="${token}"><label>${admin?'Nova senha compartilhada':'Senha compartilhada'}<input type="password" name="password" autocomplete="${admin?'new-password':'current-password'}" required minlength="16" maxlength="256"></label>${admin?'<label>Confirme a nova senha compartilhada<input type="password" name="confirm" autocomplete="new-password" required minlength="16" maxlength="256"></label><label><input type="checkbox" name="acknowledge" value="yes" required>Confirmo definir a senha compartilhada dos alunos e vincular esta conta ChatGPT como administradora deste acesso.</label>':''}<button>${admin?'Salvar senha':'Entrar'}</button></form>`),200,{'Set-Cookie':setCookie(CSRF,token,1800)});
 }
 async function readForm(req){
  if(!req.headers.get('content-type')?.startsWith('application/x-www-form-urlencoded')||Number(req.headers.get('content-length'))>2048)return null;
@@ -59,7 +62,7 @@ export function createGate({db,assets,getIdentity,setupEnabled=false,now=()=>Mat
   try{
    const url=new URL(req.url);
    if(url.origin!==ORIGIN)return response('Origem inválida.',400);
-   if(!db)return response('Acesso temporariamente indisponível.',503);
+   if(!db)return errorPage('Acesso temporariamente indisponível.',503);
    const seconds=now();
    if(url.pathname==='/login'||url.pathname==='/admin/password'){
     const admin=url.pathname==='/admin/password',row=await config(db);
@@ -67,31 +70,32 @@ export function createGate({db,assets,getIdentity,setupEnabled=false,now=()=>Mat
     if(admin){
      identity=await getIdentity();
      if(!identity)return redirect('/signin-with-chatgpt?return_to=%2Fadmin%2Fpassword');
-     if(!owner(identity,row))return response('Acesso restrito ao professor.',403);
-     if(!setupEnabled)return req.method==='GET'?response(page('Identidade verificada','<p>Sua identidade administrativa foi verificada. A definição da senha ainda está desabilitada enquanto concluímos a validação de segurança.</p>')):response('Configuração administrativa desabilitada.',503);
+     if(!owner(identity,row))return errorPage('Acesso restrito ao professor.',403);
+     if(!setupEnabled)return req.method==='GET'?response(page('Identidade verificada',`<p>Sua identidade administrativa foi verificada. A definição da senha ainda está desabilitada enquanto concluímos a validação de segurança.</p><p>${passwordNotice}</p>`)):errorPage('Configuração administrativa desabilitada.',503,'/admin/password');
     }
-    if(req.method==='GET')return form(admin);
+    if(req.method==='GET')return !admin&&!row?preparation():form(admin);
     if(req.method!=='POST')return response('Método não permitido.',405,{Allow:'GET, POST'});
     const data=await readForm(req);
-    if(!data||!validCsrf(req,data))return response('Reabra o formulário e tente novamente.',403);
-    if(!await takeRate(db,admin?'admin':'login',admin?5:30,60,seconds))return response('Aguarde um minuto e tente novamente.',429,{'Retry-After':'60'});
+    if(!data||!validCsrf(req,data))return errorPage('Reabra o formulário e tente novamente.',403,admin?'/admin/password':'/login');
+    if(!await takeRate(db,admin?'admin':'login',admin?5:30,60,seconds))return errorPage('Aguarde um minuto e tente novamente.',429,admin?'/admin/password':'/login',{'Retry-After':'60'});
     const password=data.get('password');
     if(admin){
-     if(data.get('acknowledge')!=='yes')return response('Confirme a definição do acesso administrativo.',400);
-     if(!validPassword(password)||password!==data.get('confirm'))return response('Use ao menos 16 caracteres e confirme a mesma senha.',400);
+     if(data.get('acknowledge')!=='yes')return errorPage('Confirme a definição do acesso administrativo.',400,'/admin/password');
+     if(!validPassword(password))return errorPage('A senha não atende ao tamanho permitido. Use pelo menos 16 caracteres.',400,'/admin/password');
+     if(password!==data.get('confirm'))return errorPage('A confirmação não coincide. Digite a mesma nova senha nos dois campos.',400,'/admin/password');
      const hashed=await hashPassword(password),epoch=randomToken();
      const saved=await db.batch([
       db.prepare(`INSERT INTO course_config (id,owner_id,password_hash,epoch) VALUES(1,?,?,?) ON CONFLICT(id) DO UPDATE SET password_hash=excluded.password_hash,epoch=excluded.epoch WHERE course_config.owner_id=excluded.owner_id`).bind(identity.userId,hashed,epoch),
       db.prepare('DELETE FROM course_sessions WHERE EXISTS (SELECT 1 FROM course_config WHERE id=1 AND owner_id=? AND epoch=?)').bind(identity.userId,epoch),
      ]);
-     if(saved[0].meta.changes!==1)return response('Configuração alterada. Reabra a página administrativa.',409);
+     if(saved[0].meta.changes!==1)return errorPage('Configuração alterada. Reabra a página administrativa.',409,'/admin/password');
      return response(page('Senha salva','<p>Compartilhe a senha com seus alunos pelo canal escolhido. Os acessos anteriores foram encerrados.</p><a href="/login">Abrir guia</a>'),200,{'Set-Cookie':setCookie(CSRF,'',0)});
     }
-    if(!row)return response('O professor ainda está preparando o acesso.',503);
-    if(!await verifyPassword(password,row.password_hash))return response('Senha inválida. Volte e tente novamente.',401);
+    if(!row)return errorPage('O professor ainda está preparando o acesso. Aguarde a senha compartilhada por ele.',503);
+    if(!await verifyPassword(password,row.password_hash))return errorPage('Senha inválida. Confira a senha compartilhada pelo professor e tente novamente.',401);
     const token=randomToken();
     const result=await db.prepare('INSERT INTO course_sessions (token_hash,epoch,expires) SELECT ?,epoch,? FROM course_config WHERE id=1 AND epoch=?').bind(digest(token),seconds+TTL,row.epoch).run();
-    if(result.meta.changes!==1)return response('O acesso foi atualizado. Tente novamente.',409);
+    if(result.meta.changes!==1)return errorPage('O acesso foi atualizado. Tente novamente.',409);
     await db.prepare('DELETE FROM course_sessions WHERE expires<?').bind(seconds).run();
     const out=redirect('/');out.headers.append('Set-Cookie',setCookie(SESSION,token,TTL));out.headers.append('Set-Cookie',setCookie(CSRF,'',0));return out;
    }
@@ -100,7 +104,7 @@ export function createGate({db,assets,getIdentity,setupEnabled=false,now=()=>Mat
      const token=randomToken();return response(page('Sair do guia',`<form method="post"><input type="hidden" name="csrf" value="${token}"><button>Sair</button></form>`),200,{'Set-Cookie':setCookie(CSRF,token,1800)});
     }
     if(req.method!=='POST')return response('Método não permitido.',405);
-    const data=await readForm(req);if(!data||!validCsrf(req,data))return response('Reabra o formulário.',403);
+    const data=await readForm(req);if(!data||!validCsrf(req,data))return errorPage('Reabra o formulário.',403,'/logout');
     const token=cookie(req,SESSION);if(/^[a-f0-9]{64}$/.test(token))await db.prepare('DELETE FROM course_sessions WHERE token_hash=?').bind(digest(token)).run();
     const out=redirect('/login');out.headers.append('Set-Cookie',setCookie(SESSION,'',0));out.headers.append('Set-Cookie',setCookie(CSRF,'',0));return out;
    }
@@ -113,7 +117,7 @@ export function createGate({db,assets,getIdentity,setupEnabled=false,now=()=>Mat
    return response(req.method==='HEAD'?null:Buffer.from(asset.base64,'base64'),200,{'Content-Type':asset.type});
   }catch{
    // No error object, request body, password, hash, token or cookie logging.
-   return response('Acesso temporariamente indisponível.',503);
+   return errorPage('Acesso temporariamente indisponível.',503);
   }
  };
 }
