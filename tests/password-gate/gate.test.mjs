@@ -4,7 +4,7 @@ import {DatabaseSync} from 'node:sqlite';
 import {readFileSync} from 'node:fs';
 import {createGate,ORIGIN} from '../../server/gate.mjs';
 import {ADMIN_SETUP_ENABLED} from '../../server/config.mjs';
-import {hashPassword,verifyPassword,randomToken} from '../../server/password.mjs';
+import {hashPassword,verifyPassword,randomToken,validPassword} from '../../server/password.mjs';
 const owner={email:'gilberto@insany.com.br',userId:'ephemeral-test-owner'};
 function fixture(user=null,setupEnabled=true){
  const sql=new DatabaseSync(':memory:');sql.exec(readFileSync(new URL('./schema.sql',import.meta.url),'utf8'));
@@ -42,3 +42,5 @@ test('stage-two deployment explicitly enables manual owner setup',()=>{assert.eq
 
 test('logout confirmation explains browser access and preserves progress with return option',async()=>{const f=fixture();const r=await f.gate(req('/logout'));const html=await r.text();assert.equal(r.status,200);assert(html.includes('encerra o acesso neste navegador'));assert(html.includes('Seu progresso salvo não será apagado.'));assert(html.includes('href="/">Continuar estudando'));assert(html.includes('<form method="post">'));assert(/name="csrf" value="[a-f0-9]{64}"/.test(html));});
 test('guide has ordinary logout navigation and no public-access footer claim',()=>{const html=readFileSync('source/index.html','utf8');assert(html.includes('<a href="/logout">Sair do guia</a>'));assert(html.includes('Estude no seu ritmo.'));assert(!html.includes('Conteúdo aberto.'));const app=readFileSync('source/app.js','utf8');assert(app.includes(`closest('a[href^="#"]')`));});
+
+test('eight-character boundary enforced by server and forms',async()=>{const p=randomToken().slice(0,8);assert.equal(validPassword(p.slice(0,7)),false);assert.equal(validPassword(p),true);assert.equal(validPassword('x'.repeat(257)),false);const f=fixture(owner),t=await form(f,'/admin/password');let r=await post(f,'/admin/password',t,p.slice(0,7));assert.equal(r.status,400);assert((await r.text()).includes('Use pelo menos 8 caracteres.'));assert.equal(f.sql.prepare('SELECT count(*) c FROM course_config').get().c,0);r=await post(f,'/admin/password',t,p);assert.equal(r.status,200);assert.equal(f.sql.prepare('SELECT count(*) c FROM course_config').get().c,1);const login=await form(f,'/login');assert.equal((await post(f,'/login',login,p)).status,303);for(const path of ['/admin/password','/login']){const html=await(await f.gate(req(path))).text();assert(html.includes('minlength="8"'));assert(!html.includes('minlength="16"'));}});
