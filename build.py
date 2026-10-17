@@ -2,8 +2,9 @@
 import json,re,shutil
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
+GUIDE_DIST=ROOT/'guide-dist'
 CONTENT=ROOT/'source'/'content'
-ORDER=['fundamentos','arquitetura-informacao','principios-visuais','cores','tipografia','design-mobile','tipos-telas','usabilidade-acessibilidade','construcao-completa']
+ORDER=['fundamentos','principios-visuais','tipografia','cores','arquitetura-informacao','design-mobile','tipos-telas','usabilidade-acessibilidade','construcao-completa']
 modules=[]
 for f in sorted(CONTENT.glob('part-*.json')):
     d=json.loads(f.read_text()); modules.extend(d['modules'])
@@ -36,10 +37,27 @@ for m in modules:
         words=len(re.findall(r'\S+',re.sub('<[^>]+>',' ',text)))
         l['minutes']=max(4,round(words/180))
         l['wordCount']=words
-course={'title':'UI mobile — Do fundamento à interface','edition':'2026-10','modules':modules}
-(ROOT/'dist').mkdir(exist_ok=True)
-for name in ['index.html','styles.css','examples.css','app.js']:shutil.copy2(ROOT/'source'/name,ROOT/'dist'/name)
-(ROOT/'dist'/'course.js').write_text('window.COURSE = '+json.dumps(course,ensure_ascii=False).replace('</','<\\/')+';\n')
-(ROOT/'dist'/'course.json').write_text(json.dumps(course,ensure_ascii=False,indent=2))
-if (ROOT/'source'/'real-assets').exists():shutil.copytree(ROOT/'source'/'real-assets',ROOT/'dist'/'real-assets',dirs_exist_ok=True)
-print(json.dumps({'modules':len(modules),'lessons':len(ids),'words':sum(l['wordCount'] for m in modules for l in m['lessons']),'files':len(list((ROOT/'dist').rglob('*')))},ensure_ascii=False))
+course={'title':'Fundamentos de UI — Do fundamento à interface','edition':'2026-10','modules':modules}
+(GUIDE_DIST).mkdir(exist_ok=True)
+for name in ['index.html','styles.css','examples.css','realistic-examples.css','app.js']:shutil.copy2(ROOT/'source'/name,GUIDE_DIST/name)
+(GUIDE_DIST/'course.js').write_text('window.COURSE = '+json.dumps(course,ensure_ascii=False).replace('</','<\\/')+';\n')
+(GUIDE_DIST/'course.json').write_text(json.dumps(course,ensure_ascii=False,indent=2))
+# Restrict published output to referenced assets and their required licenses.
+asset_source=ROOT/'source'/'real-assets'
+asset_dist=GUIDE_DIST/'real-assets'
+asset_dist.mkdir(exist_ok=True)
+public_names=['index.html','styles.css','examples.css','realistic-examples.css','app.js','course.js','course.json']
+asset_text='\n'.join((GUIDE_DIST/name).read_text() for name in public_names)
+asset_names=set(re.findall(r'real-assets/([A-Za-z0-9._-]+)',asset_text))
+asset_names.update(['AlignUI-MIT.txt','Inter-OFL.txt'])
+for name in asset_names:
+    assert (asset_source/name).is_file(),('Missing published asset',name)
+    shutil.copy2(asset_source/name,asset_dist/name)
+expected=set(public_names)|{'real-assets/'+name for name in asset_names}
+for output in (GUIDE_DIST).rglob('*'):
+    if output.is_file() and output.relative_to(GUIDE_DIST).as_posix() not in expected:
+        output.unlink() # Derived output only; source originals remain untouched.
+for directory in sorted((GUIDE_DIST).rglob('*'),reverse=True):
+    if directory.is_dir() and not any(directory.iterdir()):directory.rmdir()
+assert len(expected)==12,('Unexpected public output count',expected)
+print(json.dumps({'modules':len(modules),'lessons':len(ids),'words':sum(l['wordCount'] for m in modules for l in m['lessons']),'publicFiles':len(expected)},ensure_ascii=False))

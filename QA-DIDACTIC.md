@@ -1,3 +1,5 @@
+> Documento histórico anterior ao snapshot restaurado e à curadoria de 41 lições. Não usar como relatório ou protocolo da edição atual; consulte EDITORIAL-CHANGES-AND-QA.md.
+
 # Revisão didática das 40 lições
 
 ## Entregue

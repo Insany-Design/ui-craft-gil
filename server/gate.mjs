@@ -1,0 +1,119 @@
+import {randomToken,digest,equal,validPassword,hashPassword,verifyPassword} from './password.mjs';
+export const ORIGIN='https://fundamentos-ui-mobile.insany-team-1573.chatgpt.site';
+const OWNER_EMAIL='gilberto@insany.com.br'; // Verified by root using Sites get_site.
+const SESSION='__Host-course_session',CSRF='__Host-course_csrf',TTL=8*60*60;
+const escape=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+function cookie(req,name){
+ const matches=(req.headers.get('cookie')||'').split(';').map(v=>v.trim()).filter(v=>v.startsWith(name+'='));
+ return matches.length===1?matches[0].slice(name.length+1):'';
+}
+const setCookie=(name,value,age)=>`${name}=${value}; Path=/; Max-Age=${age}; HttpOnly; Secure; SameSite=Strict`;
+export function response(body,status=200,extra={}){
+ return new Response(body,{status,headers:{
+  'Content-Type':'text/html; charset=utf-8','Cache-Control':'private, no-store, max-age=0',
+  'CDN-Cache-Control':'no-store','Cloudflare-CDN-Cache-Control':'no-store','Pragma':'no-cache',
+  'Vary':'Cookie','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer',
+  'X-Robots-Tag':'noindex, nofollow, noarchive',
+  'Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'",
+  ...extra,
+ }});
+}
+const redirect=path=>response(null,303,{Location:path});
+const page=(title,content)=>`<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${escape(title)}</title><style>body{font:18px system-ui;max-width:460px;margin:10vh auto;padding:24px;background:#fafafa;color:#1d1d1f}label,input,button{display:block;width:100%;box-sizing:border-box;margin:12px 0}input,button{padding:14px;font:inherit}button{background:#335CFF;color:white;border:0;border-radius:8px}input[type=checkbox]{width:auto;display:inline}a{color:#335CFF}</style><main><h1>${escape(title)}</h1>${content}</main></html>`;
+function form(admin){
+ const token=randomToken();
+ return response(page(admin?'Definir acesso dos alunos':'Seu guia de UI mobile',
+ `<p>${admin?'Defina uma senha compartilhada com pelo menos 16 caracteres. A alteração encerra os acessos existentes.':'Use a senha compartilhada pelo professor para continuar.'}</p><form method="post" action="${admin?'/admin/password':'/login'}"><input type="hidden" name="csrf" value="${token}"><label>Senha<input type="password" name="password" autocomplete="${admin?'new-password':'current-password'}" required minlength="16" maxlength="256"></label>${admin?'<label>Confirme a senha<input type="password" name="confirm" autocomplete="new-password" required minlength="16" maxlength="256"></label><label><input type="checkbox" name="acknowledge" value="yes" required>Confirmo definir a senha compartilhada dos alunos e vincular esta conta ChatGPT como administradora deste acesso.</label>':''}<button>${admin?'Salvar senha':'Entrar'}</button></form>`),200,{'Set-Cookie':setCookie(CSRF,token,1800)});
+}
+async function readForm(req){
+ if(!req.headers.get('content-type')?.startsWith('application/x-www-form-urlencoded')||Number(req.headers.get('content-length'))>2048)return null;
+ const reader=req.body?.getReader();if(!reader)return null;
+ let size=0;const chunks=[];
+ while(true){const {value,done}=await reader.read();if(done)break;size+=value.byteLength;if(size>2048){await reader.cancel();return null}chunks.push(value)}
+ const bytes=new Uint8Array(size);let offset=0;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.length}
+ const data=new URLSearchParams(new TextDecoder().decode(bytes));
+ for(const key of ['csrf','password','confirm','acknowledge'])if(data.getAll(key).length>1)return null;
+ return data;
+}
+function validCsrf(req,data){
+ return req.headers.get('origin')===ORIGIN&&['same-origin',null].includes(req.headers.get('sec-fetch-site'))&&/^[a-f0-9]{64}$/.test(data?.get('csrf')||'')&&equal(data.get('csrf'),cookie(req,CSRF));
+}
+async function takeRate(db,scope,limit,seconds,now){
+ // Fixed number of rows: one per scope. Atomic reset and increment; never trusts
+ // undocumented X-Forwarded-For/visitor-controlled headers. Saturate counter.
+ const end=(Math.floor(now/seconds)+1)*seconds;
+ const row=await db.prepare(`INSERT INTO course_rate (key,count,expires) VALUES (?,1,?) ON CONFLICT(key) DO UPDATE SET count=CASE WHEN course_rate.expires<=? THEN 1 ELSE MIN(course_rate.count+1,?) END, expires=CASE WHEN course_rate.expires<=? THEN excluded.expires ELSE course_rate.expires END RETURNING count`).bind(scope,end,now,limit+1,now).first();
+ return row.count<=limit;
+}
+const config=db=>db.prepare('SELECT * FROM course_config WHERE id=1').first();
+function owner(user,row){
+ // user must come from official getChatGPTUser()/trusted dispatch, never forms.
+ return !!user&&typeof user.userId==='string'&&user.userId.length>0&&user.email===OWNER_EMAIL&&(!row||row.owner_id===user.userId);
+}
+async function authenticated(db,req,now){
+ const token=cookie(req,SESSION);if(!/^[a-f0-9]{64}$/.test(token))return false;
+ return !!await db.prepare('SELECT s.token_hash FROM course_sessions s JOIN course_config c ON c.id=1 AND c.epoch=s.epoch WHERE s.token_hash=? AND s.expires>?').bind(digest(token),now).first();
+}
+export function createGate({db,assets,getIdentity,setupEnabled=false,now=()=>Math.floor(Date.now()/1000)}){
+ return async function handle(req){
+  try{
+   const url=new URL(req.url);
+   if(url.origin!==ORIGIN)return response('Origem inválida.',400);
+   if(!db)return response('Acesso temporariamente indisponível.',503);
+   const seconds=now();
+   if(url.pathname==='/login'||url.pathname==='/admin/password'){
+    const admin=url.pathname==='/admin/password',row=await config(db);
+    let identity=null;
+    if(admin){
+     identity=await getIdentity();
+     if(!identity)return redirect('/signin-with-chatgpt?return_to=%2Fadmin%2Fpassword');
+     if(!owner(identity,row))return response('Acesso restrito ao professor.',403);
+     if(!setupEnabled)return req.method==='GET'?response(page('Identidade verificada','<p>Sua identidade administrativa foi verificada. A definição da senha ainda está desabilitada enquanto concluímos a validação de segurança.</p>')):response('Configuração administrativa desabilitada.',503);
+    }
+    if(req.method==='GET')return form(admin);
+    if(req.method!=='POST')return response('Método não permitido.',405,{Allow:'GET, POST'});
+    const data=await readForm(req);
+    if(!data||!validCsrf(req,data))return response('Reabra o formulário e tente novamente.',403);
+    if(!await takeRate(db,admin?'admin':'login',admin?5:30,60,seconds))return response('Aguarde um minuto e tente novamente.',429,{'Retry-After':'60'});
+    const password=data.get('password');
+    if(admin){
+     if(data.get('acknowledge')!=='yes')return response('Confirme a definição do acesso administrativo.',400);
+     if(!validPassword(password)||password!==data.get('confirm'))return response('Use ao menos 16 caracteres e confirme a mesma senha.',400);
+     const hashed=await hashPassword(password),epoch=randomToken();
+     const saved=await db.batch([
+      db.prepare(`INSERT INTO course_config (id,owner_id,password_hash,epoch) VALUES(1,?,?,?) ON CONFLICT(id) DO UPDATE SET password_hash=excluded.password_hash,epoch=excluded.epoch WHERE course_config.owner_id=excluded.owner_id`).bind(identity.userId,hashed,epoch),
+      db.prepare('DELETE FROM course_sessions WHERE EXISTS (SELECT 1 FROM course_config WHERE id=1 AND owner_id=? AND epoch=?)').bind(identity.userId,epoch),
+     ]);
+     if(saved[0].meta.changes!==1)return response('Configuração alterada. Reabra a página administrativa.',409);
+     return response(page('Senha salva','<p>Compartilhe a senha com seus alunos pelo canal escolhido. Os acessos anteriores foram encerrados.</p><a href="/login">Abrir guia</a>'),200,{'Set-Cookie':setCookie(CSRF,'',0)});
+    }
+    if(!row)return response('O professor ainda está preparando o acesso.',503);
+    if(!await verifyPassword(password,row.password_hash))return response('Senha inválida. Volte e tente novamente.',401);
+    const token=randomToken();
+    const result=await db.prepare('INSERT INTO course_sessions (token_hash,epoch,expires) SELECT ?,epoch,? FROM course_config WHERE id=1 AND epoch=?').bind(digest(token),seconds+TTL,row.epoch).run();
+    if(result.meta.changes!==1)return response('O acesso foi atualizado. Tente novamente.',409);
+    await db.prepare('DELETE FROM course_sessions WHERE expires<?').bind(seconds).run();
+    const out=redirect('/');out.headers.append('Set-Cookie',setCookie(SESSION,token,TTL));out.headers.append('Set-Cookie',setCookie(CSRF,'',0));return out;
+   }
+   if(url.pathname==='/logout'){
+    if(req.method==='GET'){
+     const token=randomToken();return response(page('Sair do guia',`<form method="post"><input type="hidden" name="csrf" value="${token}"><button>Sair</button></form>`),200,{'Set-Cookie':setCookie(CSRF,token,1800)});
+    }
+    if(req.method!=='POST')return response('Método não permitido.',405);
+    const data=await readForm(req);if(!data||!validCsrf(req,data))return response('Reabra o formulário.',403);
+    const token=cookie(req,SESSION);if(/^[a-f0-9]{64}$/.test(token))await db.prepare('DELETE FROM course_sessions WHERE token_hash=?').bind(digest(token)).run();
+    const out=redirect('/login');out.headers.append('Set-Cookie',setCookie(SESSION,'',0));out.headers.append('Set-Cookie',setCookie(CSRF,'',0));return out;
+   }
+   if(!['GET','HEAD'].includes(req.method))return response('Método não permitido.',405);
+   // Authorization precedes every course asset, including HTML, JSON, JS and fonts.
+   if(!await authenticated(db,req,seconds))return url.pathname==='/'?redirect('/login'):response('Autenticação necessária.',401);
+   const path=url.pathname==='/'?'/index.html':url.pathname;
+   const asset=Object.hasOwn(assets,path)?assets[path]:null;
+   if(!asset)return response('Não encontrado.',404);
+   return response(req.method==='HEAD'?null:Buffer.from(asset.base64,'base64'),200,{'Content-Type':asset.type});
+  }catch{
+   // No error object, request body, password, hash, token or cookie logging.
+   return response('Acesso temporariamente indisponível.',503);
+  }
+ };
+}

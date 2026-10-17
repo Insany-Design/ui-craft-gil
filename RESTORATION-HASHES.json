@@ -1,0 +1,17 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "realistic-examples.css": "ea38b57790d87cd3aa253d5ce8c1237fac6eeb39471f033bf0e48ef28e63bf46",
+    "styles.css": "0bed5c0548b3cd367b2f278382358e82ebd020233b2aaa0b4b71d1f171f0af28",
+    "examples.css": "b059bd480ec20dccf465db8d6c583debb31a6fe1ed4e9537ae766ccce190322c",
+    "course.js": "9e8a09775e21458f0471c24ec9265916752a9a4b94659efca7f05503213c1314",
+    "course.json": "f4d2e56414342d777053e4b01dd0873b66b6cfd0b3225af639ee33a20fc81e71",
+    "index.html": "1783e1ed4772a6ab0634d1ced8d8bcd5c8bb07ea8a8f443902821d7bd398fe5b",
+    "app.js": "b79b4138a8948903510fec8f363687bfb7f8d65b0ef326ef231a3aa82ba9936b",
+    "real-assets/design-boost-logo.svg": "655093761c47d5b2f59247ad72f771920351dcab3211da4a59a895d923864597",
+    "real-assets/AlignUI-MIT.txt": "044631d65dfceea93e40628513c8f479d618ab57505e7d4227fc64620f15d4a9",
+    "real-assets/inter-medium.woff2": "0ff3e94614e1493eb556314fd247ae6c4a85a7783b4cc86be539940cf83f2a48",
+    "real-assets/Inter-OFL.txt": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a",
+    "real-assets/inter-regular.woff2": "e06f6b1bc553aaea4e4668023ed0ab0a147129c3107f511bc7d03d361b0ae085"
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "parts": {
+    "part-color-type-usability.json": [
+      {
+        "id": "cores",
+        "lessons": [
+          {
+            "id": "cor-percepcao-paleta",
+            "title": "Cor como estrutura: percepção, contraste e paleta"
+          },
+          {
+            "id": "cor-semantica-estados-temas",
+            "title": "Cores semânticas, estados e temas"
+          },
+          {
+            "id": "cor-acessibilidade-verificacao",
+            "title": "Acessibilidade de cor: da intenção à verificação"
+          }
+        ]
+      },
+      {
+        "id": "tipografia",
+        "lessons": [
+          {
+            "id": "typography-anatomy-selection-reading",
+            "title": "Anatomia, escolha de fontes e qualidade de leitura"
+          },
+          {
+            "id": "typography-scale-hierarchy-rhythm",
+            "title": "Escala, hierarquia e ritmo: organizar a leitura"
+          },
+          {
+            "id": "typography-adaptation-localization-writing",
+            "title": "Texto adaptável, localização e escrita de interface"
+          }
+        ]
+      },
+      {
+        "id": "usabilidade-acessibilidade",
+        "lessons": [
+          {
+            "id": "heuristicas-estado-linguagem-controle",
+            "title": "Heurísticas 1–3: estado, linguagem e controle"
+          },
+          {
+            "id": "heuristicas-consistencia-prevencao-reconhecimento",
+            "title": "Heurísticas 4–6: consistência, prevenção e reconhecimento"
+          },
+          {
+            "id": "heuristicas-eficiencia-recuperacao-ajuda",
+            "title": "Heurísticas 7–10: eficiência, foco, recuperação e ajuda"
+          },
+          {
+            "id": "teste-usabilidade-evidencia",
+            "title": "Teste de usabilidade e cuidado com a evidência"
+          },
+          {
+            "id": "acessibilidade-plano-verificacao",
+            "title": "Acessibilidade: um plano de verificação executável"
+          }
+        ]
+      }
+    ],
+    "part-mobile-screens.json": [
+      {
+        "id": "design-mobile",
+        "lessons": [
+          {
+            "id": "safe-areas-insets-edge-to-edge",
+            "title": "Safe areas, insets e edge-to-edge"
+          },
+          {
+            "id": "grid-responsividade-densidade",
+            "title": "Grid, escala de espaçamento e responsividade"
+          },
+          {
+            "id": "header-top-app-bar",
+            "title": "Header e top app bar: orientação e ações"
+          },
+          {
+            "id": "navegacao-tabs-back-home",
+            "title": "Navegação, tab bar, voltar e Home"
+          },
+          {
+            "id": "sheets-modais-dialogos",
+            "title": "Sheets, modais e diálogos"
+          },
+          {
+            "id": "menus-sidebar-drawer",
+            "title": "Menus, sidebar e navigation drawer"
+          },
+          {
+            "id": "teclado-toque-gestos",
+            "title": "Teclado, toque e gestos: interação executável"
+          }
+        ]
+      },
+      {
+        "id": "tipos-telas",
+        "lessons": [
+          {
+            "id": "splash-onboarding",
+            "title": "Splash e onboarding: abrir, orientar e entregar valor"
+          },
+          {
+            "id": "home-dashboard",
+            "title": "Home e dashboard: escolher o que merece a primeira tela"
+          },
+          {
+            "id": "listas-cards",
+            "title": "Listas e cards: facilitar comparação e escolha"
+          },
+          {
+            "id": "tela-detalhe",
+            "title": "Tela de detalhe: dar segurança para a próxima ação"
+          },
+          {
+            "id": "busca-filtros",
+            "title": "Busca, filtros e ordenação: reduzir alternativas com clareza"
+          },
+          {
+            "id": "formularios",
+            "title": "Formulários: pedir o necessário e ajudar a concluir"
+          },
+          {
+            "id": "estados-interface",
+            "title": "Vazio, carregando, erro, sucesso e offline: projetar continuidade"
+          }
+        ]
+      }
+    ],
+    "part-project.json": [
+      {
+        "id": "construcao-completa",
+        "lessons": [
+          {
+            "id": "projeto-enquadrar-problema",
+            "title": "1. Enquadrar o problema e definir o fluxo"
+          },
+          {
+            "id": "projeto-estrutura-componentes",
+            "title": "2. Construir a estrutura e o sistema visual"
+          },
+          {
+            "id": "projeto-prototipo-estados",
+            "title": "3. Prototipar o fluxo e suas falhas"
+          },
+          {
+            "id": "projeto-revisar-entregar",
+            "title": "4. Revisar, testar e entregar com critérios"
+          }
+        ]
+      }
+    ],
+    "part-foundations.json": [
+      {
+        "id": "fundamentos",
+        "lessons": [
+          {
+            "id": "ux-ui-problema-objetivos",
+            "title": "UX, UI e a definição do problema"
+          },
+          {
+            "id": "pesquisa-hipotese-teste",
+            "title": "Do problema à hipótese e ao teste"
+          },
+          {
+            "id": "usabilidade-modelos-mentais",
+            "title": "Usabilidade e modelos mentais"
+          }
+        ]
+      },
+      {
+        "id": "arquitetura-informacao",
+        "lessons": [
+          {
+            "id": "organizacao-taxonomia-rotulos",
+            "title": "Organização, taxonomia e rótulos"
+          },
+          {
+            "id": "mapa-estrutura-fluxo",
+            "title": "Mapa de estrutura e fluxo de tarefas"
+          },
+          {
+            "id": "navegacao-encontrabilidade",
+            "title": "Navegação e encontrabilidade"
+          }
+        ]
+      },
+      {
+        "id": "principios-visuais",
+        "lessons": [
+          {
+            "id": "hierarquia-visual",
+            "title": "Hierarquia: decidir o que merece atenção"
+          },
+          {
+            "id": "composicao-grid-espacamento",
+            "title": "Composição, grid, alinhamento e espaço"
+          },
+          {
+            "id": "contraste-visual-legibilidade",
+            "title": "Contraste visual e legibilidade"
+          },
+          {
+            "id": "gestalt-agrupamento",
+            "title": "Gestalt e agrupamento: o que parece pertencer junto"
+          },
+          {
+            "id": "consistencia-ritmo",
+            "title": "Consistência e ritmo: uma linguagem que se aprende"
+          }
+        ]
+      }
+    ]
+  }
+}

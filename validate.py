@@ -1,7 +1,7 @@
 from html.parser import HTMLParser
 from pathlib import Path
 import re,xml.etree.ElementTree as ET
-p=Path(__file__).parent/'dist';text=(p/'index.html').read_text()
+p=Path(__file__).parent/'guide-dist';text=(p/'index.html').read_text()
 class Check(HTMLParser):
  def __init__(self):super().__init__();self.ids=[];self.refs=[];self.imgs=[];self.links=[];self.topic=0
  def handle_starttag(self,tag,attrs):
