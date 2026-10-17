@@ -26,7 +26,7 @@ function errorPage(message,status,back='/login',extra={}){return response(page('
 function form(admin){
  const token=randomToken();
  return response(page(admin?'Definir acesso dos alunos':'Seu guia de UI mobile',
- `<p>${admin?passwordNotice+' Use pelo menos 8 caracteres. A alteração encerra os acessos existentes.':'Use a senha compartilhada pelo professor para continuar.'}</p><form method="post" action="${admin?'/admin/password':'/login'}"><input type="hidden" name="csrf" value="${token}"><label>${admin?'Nova senha compartilhada':'Senha compartilhada'}<input type="password" name="password" autocomplete="${admin?'new-password':'current-password'}" required minlength="8" maxlength="256"></label>${admin?'<label>Confirme a nova senha compartilhada<input type="password" name="confirm" autocomplete="new-password" required minlength="8" maxlength="256"></label><label><input type="checkbox" name="acknowledge" value="yes" required>Confirmo definir a senha compartilhada dos alunos e vincular esta conta ChatGPT como administradora deste acesso.</label>':''}<button>${admin?'Salvar senha':'Entrar'}</button></form>`),200,{'Set-Cookie':setCookie(CSRF,token,1800)});
+ `<p>${admin?passwordNotice+' Use pelo menos 8 caracteres. A alteração encerra os acessos existentes.':'Use a senha compartilhada pelo professor para continuar.'}</p><form method="post" action="${admin?'/admin/password':'/login'}"><input type="hidden" name="csrf" value="${token}"><label>${admin?'Nova senha compartilhada':'Senha compartilhada'}<input type="password" name="password" autocomplete="${admin?'new-password':'current-password'}" required minlength="8" maxlength="256"></label>${admin?'<label>Confirme a nova senha compartilhada<input type="password" name="confirm" autocomplete="new-password" required minlength="8" maxlength="256"></label><label><input type="checkbox" name="acknowledge" value="yes" required>Confirmo definir a senha compartilhada dos alunos e vincular esta conta ChatGPT como administradora deste acesso.</label>':''}<button>${admin?'Salvar senha':'Entrar'}</button></form>`),200,{'Set-Cookie':setCookie(CSRF,token,1800),'Referrer-Policy':'same-origin'});
 }
 async function readForm(req){
  if(!req.headers.get('content-type')?.startsWith('application/x-www-form-urlencoded')||Number(req.headers.get('content-length'))>2048)return null;
@@ -101,7 +101,7 @@ export function createGate({db,assets,getIdentity,setupEnabled=false,now=()=>Mat
    }
    if(url.pathname==='/logout'){
     if(req.method==='GET'){
-     const token=randomToken();return response(page('Sair do guia',`<p>Ao sair, você encerra o acesso neste navegador. Seu progresso salvo não será apagado.</p><form method="post"><input type="hidden" name="csrf" value="${token}"><button>Sair</button></form><p><a href="/">Continuar estudando</a></p>`),200,{'Set-Cookie':setCookie(CSRF,token,1800)});
+     const token=randomToken();return response(page('Sair do guia',`<p>Ao sair, você encerra o acesso neste navegador. Seu progresso salvo não será apagado.</p><form method="post"><input type="hidden" name="csrf" value="${token}"><button>Sair</button></form><p><a href="/">Continuar estudando</a></p>`),200,{'Set-Cookie':setCookie(CSRF,token,1800),'Referrer-Policy':'same-origin'});
     }
     if(req.method!=='POST')return response('Método não permitido.',405);
     const data=await readForm(req);if(!data||!validCsrf(req,data))return errorPage('Reabra o formulário.',403,'/logout');
