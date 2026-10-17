@@ -1581,12 +1581,6 @@
           ],
           "examples": [
             {
-              "title": "GOV.UK: erro de data de emissão do passaporte",
-              "url": "https://design-system.service.gov.uk/components/error-message/",
-              "source": "GOV.UK Design System, Error message",
-              "analysis": "<p>O exemplo oficial separa a pergunta, a orientação de formato e a mensagem sobre uma data de emissão que precisa estar no passado. A análise útil é a divisão de trabalho: o rótulo identifica o dado; a orientação ajuda a preenchê-lo; o erro explica a restrição violada. A mensagem permite corrigir sem adivinhar uma regra interna. O padrão também preserva as respostas e associa o erro ao grupo de campos. Não copie a frase para uma falha do serviço: ali a pessoa não conseguiria resolver alterando a data. Abra o exemplo oficial para observar texto, código e associação semântica juntos.</p>"
-            },
-            {
               "title": "GOV.UK: escolher o idioma sem abandonar a tarefa",
               "url": "https://design-system.service.gov.uk/components/language-navigation/after-h1/",
               "source": "GOV.UK Design System · Language navigation · 2026",
@@ -1601,6 +1595,12 @@
               "versionUrl": "https://design-system.service.gov.uk/components/language-navigation/#recent-changes",
               "originalImageUrl": null,
               "image": "real-assets/govuk-language-navigation-2026.png"
+            },
+            {
+              "title": "GOV.UK: erro de data de emissão do passaporte",
+              "url": "https://design-system.service.gov.uk/components/error-message/",
+              "source": "GOV.UK Design System, Error message",
+              "analysis": "<p>O exemplo oficial separa a pergunta, a orientação de formato e a mensagem sobre uma data de emissão que precisa estar no passado. A análise útil é a divisão de trabalho: o rótulo identifica o dado; a orientação ajuda a preenchê-lo; o erro explica a restrição violada. A mensagem permite corrigir sem adivinhar uma regra interna. O padrão também preserva as respostas e associa o erro ao grupo de campos. Não copie a frase para uma falha do serviço: ali a pessoa não conseguiria resolver alterando a data. Abra o exemplo oficial para observar texto, código e associação semântica juntos.</p>"
             }
           ],
           "exercise": {
