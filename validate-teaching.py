@@ -5,6 +5,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 ROOT=Path(__file__).resolve().parent
 ORDER=['fundamentos','principios-visuais','densidade-espacamento','design-mobile','tipografia','cores','profundidade-superficies','refinamento-optico','identidade-interface','arquitetura-informacao','tipos-telas','usabilidade-acessibilidade','construcao-completa']
+EXPECTED_IDS={'densidade-ritmo-escaneabilidade', 'typography-adaptation-localization-writing', 'kerning-tracking-curvas', 'expressividade-contexto', 'cor-percepcao-paleta', 'marca-legibilidade', 'organizacao-taxonomia-rotulos', 'navegacao-encontrabilidade', 'materiais-blur-translucidez', 'camadas-ordem-superficies', 'whitespace-relacoes', 'usabilidade-modelos-mentais', 'typography-anatomy-selection-reading', 'mapa-estrutura-fluxo', 'cor-acessibilidade-verificacao', 'safe-areas-insets-edge-to-edge', 'navegacao-tabs-back-home', 'acessibilidade-plano-verificacao', 'consistencia-ritmo', 'contraste-visual-legibilidade', 'ux-ui-problema-objetivos', 'menus-sidebar-drawer', 'tela-detalhe', 'icones-imagens-significado', 'alinhamento-optico', 'busca-filtros', 'typography-scale-hierarchy-rhythm', 'teclado-toque-gestos', 'grid-responsividade-densidade', 'listas-cards', 'hierarquia-visual', 'cor-semantica-estados-temas', 'icones-peso-optico', 'heuristicas-estado-linguagem-controle', 'pixels-densidades', 'projeto-estrutura-componentes', 'projeto-prototipo-estados', 'splash-onboarding', 'composicao-grid-espacamento', 'sheets-modais-dialogos', 'header-top-app-bar', 'ilustracao-coerencia', 'heuristicas-consistencia-prevencao-reconhecimento', 'home-dashboard', 'elevacao-sombras', 'estados-interface', 'heuristicas-eficiencia-recuperacao-ajuda', 'projeto-revisar-entregar', 'gestalt-agrupamento', 'projeto-enquadrar-problema', 'formularios'}
 NEW={'profundidade-superficies','refinamento-optico','identidade-interface','densidade-espacamento'}
 VOID={'area','base','br','col','hr','img','input','link','meta','param','source','track','wbr'}
 class Markup(HTMLParser):
@@ -26,11 +27,6 @@ class Markup(HTMLParser):
   self.stack.pop()
 def markup(text,label):
  p=Markup(label);p.feed(text);p.close();assert not p.stack,(label,p.stack)
-def criteria(items,label):
- assert isinstance(items,list) and 3<=len(items)<=5,(label,'expected 3–5 observable criteria')
- for item in items:
-  assert isinstance(item,str) and len(item.strip())>=20,(label,item)
-  assert not re.match(r'^(?:entende|compreende|conhece|aprende|sabe)(?:\s|$)',item,re.I),(label,'unobservable criterion',item)
 def prose(value):
  if isinstance(value,dict):return ' '.join(prose(v) for k,v in value.items() if k not in {'id','url','visualHtml','image','localImagePath'})
  if isinstance(value,list):return ' '.join(map(prose,value))
@@ -43,16 +39,22 @@ lessons=[];examples=0
 for m in modules:
  assert isinstance(m.get('objective'),str) and len(m['objective'])>=30,(m['id'],'objective')
  assert isinstance(m.get('rationale'),str) and len(m['rationale'])>=30,(m['id'],'rationale')
- criteria(m.get('criteria'),m['id'])
+ assert not m.get('criteria'),(m['id'],'evaluative module checklist should be removed')
  refs=m.get('references');assert isinstance(refs,list) and 2<=len(refs)<=4,(m['id'],'references count')
  for ref in refs:assert ref.get('title') and ref.get('url','').startswith('https://'),(m['id'],ref)
  assert len({r['url'] for r in refs})==len(refs),(m['id'],'duplicate references')
  if m['id'] in NEW:assert 3<=len(m['lessons'])<=4,(m['id'],'new lesson count')
  for l in m['lessons']:
   lessons.append(l);assert l['title'] and l['summary'] and l['objectives'],l['id']
-  if m['id'] in NEW:assert ':' in l['title'],(l['id'],'title must state concept and purpose')
   assert l['sections'] and l['examples'] and l['sources'],l['id']
-  ex=l['exercise'];assert ex['brief'] and ex['steps'] and ex['deliverable'],l['id'];criteria(ex['criteria'],l['id'])
+  assert not l.get('exercise'),(l['id'],'exercises removed by explicit request')
+  titles=[x['title'].strip().casefold().rstrip('?:') for x in l['sections']]
+  assert len(titles)==4,(l['id'],'exactly four didactic sections required',titles)
+  assert titles[:2]==['o que é','para que serve'],(l['id'],'definition and purpose must lead',titles)
+  assert any(t in ['onde usar','onde se usa','onde usa'] for t in titles),(l['id'],'usage context missing')
+  assert any(t in ['melhores práticas','boas práticas'] for t in titles),(l['id'],'best practices missing')
+  assert all(len(re.sub('<[^>]+>',' ',x['body']).strip())>=40 for x in l['sections']),(l['id'],'empty didactic section')
+  assert not re.search(r'Exercício orientado|O que entregar|ficha obrigatória|checklist de domínio',prose(l),re.I),(l['id'],'retired exercise text')
   for section in l['sections']:assert section['title'];markup(section['body'],l['id']+' section')
   for e in l['examples']:
    examples+=1;assert e.get('scenario') and e.get('comparisonFocus') and e.get('analysis'),l['id']
@@ -67,7 +69,11 @@ for m in modules:
   # Gestalt's established shared-motion perceptual demonstration is deliberately retained.
   if l['id']!='gestalt-agrupamento':assert not re.search(r'\b(?:motion|microinteraç(?:ão|ões)|animaç(?:ão|ões))\b',text,re.I),(l['id'],'out-of-scope motion teaching')
 ids=[l['id'] for l in lessons];assert len(ids)==len(set(ids)),'Duplicate lesson IDs'
+assert set(ids)==EXPECTED_IDS and len(ids)==51,'Revision must preserve all 51 current lesson IDs'
+opening=next(l for l in lessons if l['id']=='ux-ui-problema-objetivos')
+opening_text=prose(opening).casefold()
+for concept in ['ux','ui','problema','público','requisit']:assert concept in opening_text,('opening must explain UX/problem/audience/requirements',concept)
 built=json.loads((ROOT/'guide-dist/course.json').read_text())
 assert [m['id'] for m in built['modules']]==ORDER,'Published progression differs from approved sequence'
 assert {l['id'] for m in built['modules'] for l in m['lessons']}==set(ids),'Build/source mismatch'
-print(json.dumps({'modules':len(modules),'lessons':len(lessons),'examples':examples,'checks':['13 unique ordered blocks','4 new blocks with 3–4 lessons each','objectives, rationale, 3–5 observable criteria and 2–4 references','lesson exercise criteria','balanced nonexecutable HTML','no forbidden curriculum topics outside preserved Gestalt demonstration','source/build IDs match'],'limits':['Observable criteria still require editorial judgment.','Runtime figures and progress are checked by test-app.cjs.','No visual, AA contrast or real-browser certification.']},ensure_ascii=False,indent=2))
+print(json.dumps({'modules':len(modules),'lessons':len(lessons),'examples':examples,'checks':['13 unique ordered blocks','4 new blocks with 3–4 lessons each','clear objectives, rationale and 2–4 references','definition, purpose, usage and best practices without exercises','51 existing IDs preserved','opening addresses UX, problem, audience and requirements','balanced nonexecutable HTML','no forbidden curriculum topics outside preserved Gestalt demonstration','source/build IDs match'],'limits':['Clarity and didactic quality still require editorial judgment.','Runtime figures and progress are checked by test-app.cjs.','No visual, AA contrast or real-browser certification.']},ensure_ascii=False,indent=2))

@@ -18,3 +18,13 @@
 
 ## Limites
 Não houve inspeção visual em navegador nesta etapa. Validação visual e screenshots dependem de preview legítimo com proteção preservada. Não alegar revisão visual aprovada apenas por testes de DOM/CSS. Composições Rota preexistentes mantêm escala e expansão originais; figuras novas não dependem de reduzir um celular completo.
+
+## Revisão de linguagem para iniciantes — 21/10/2026
+- Removidas a seção de exercício, entregáveis, critérios de domínio e chamadas de avaliação do renderer. Os dados de progresso não foram alterados.
+- Visão geral começa por problema, público e requisitos; apresenta UX antes do desenho de UI.
+- Nova figura inicial explica problema → público/contexto → requisitos → interface usando o Rota, sem pedir atividade ao leitor.
+- Cada lição mantém as explicações e figuras abertas, com referências e marcação opcional de leitura. Os quatro títulos didáticos vêm do conteúdo editorial.
+- Rota é apresentado como exemplo explicado, não como projeto obrigatório.
+- Legendas simplificadas: padding, blur, serifa, kerning, CSSpx, raios e contraste recebem explicações junto do uso.
+- Diagramas Gestalt e controles existentes preservados. Nenhuma alteração no armazenamento, migração, autenticação ou publicação.
+- Verificação desta etapa: sintaxe JavaScript passou; inspeção em navegador não executada por este agente.

@@ -1,4 +1,24 @@
-# QA independente da revisão do roteiro de UI
+# QA da revisão v17: conteúdo direto, sem exercícios
+
+## Escopo atual, posterior à revisão anterior
+
+O usuário retirou os exercícios e pediu explicações simples para iniciantes: o que é, para que serve, onde usar e melhores práticas. A abertura deve explicar UX, o problema, o público e os requisitos antes do trabalho visual. A versão mantém os mesmos 51 IDs de lição, 13 blocos, exemplos, progresso e a demonstração Gestalt aprovada.
+
+As exigências anteriores de exercício, entrega obrigatória e checklist avaliativo não se aplicam à v17. Os testes foram alterados para verificar as quatro partes didáticas, objetivos claros e ausência da interface antiga de exercícios. Não foram removidas as verificações de figuras, estrutura segura, controles, contraste ou preservação de progresso.
+
+## Estado v17
+
+Primeira execução v17 em 21/10/2026, 21:27 UTC: build e toda a suite passaram. Resultado: 13 blocos, os mesmos 51 IDs, 12.652 palavras e 93 termos no glossário. Cada lição tem quatro seções didáticas abertas; não existem campos de exercício ou checklist avaliativo por módulo, nem os antigos rótulos de exercício/entrega na interface.
+
+O teste de progresso agora também carrega e exporta todas as 51 lições atuais concluídas com posições distintas, além de testar o histórico de 40 IDs antigos. Todos sobrevivem; as duas lições históricas removidas continuam arquivadas sem concluir outras automaticamente.
+
+Amostra editorial independente: abertura UX/UI, enquadramento e revisão do exemplo Rota, transparência/desfoque, kerning/curvas e acessibilidade. As explicações definem termos e usam exemplos concretos. A densidade do parágrafo de exceções de alvos acessíveis foi apontada para simplificação sem apagar a referência técnica.
+
+Execução final após congelamento, 21/10/2026, 21:28 UTC (12.663 palavras finais): `python build.py`, `python validate-teaching.py` e os cinco `test-*.cjs` passaram novamente. O parágrafo de alvos acessíveis foi simplificado, com regra e exceções preservadas e detalhes remetidos à fonte. Nenhum bloqueio encontrado pela suite. Build de produção e gate ficam na integração. O histórico abaixo refere-se à revisão anterior.
+
+---
+
+# Histórico: QA da revisão anterior
 
 ## Escopo e critérios
 

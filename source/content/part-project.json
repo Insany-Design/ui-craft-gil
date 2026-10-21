@@ -2,55 +2,47 @@
   "modules": [
     {
       "id": "construcao-completa",
-      "title": "Projeto integrado: Rota",
-      "description": "Consolidar as telas em uma proposta visual coerente, revisada e explicada por decisões.",
+      "title": "Exemplo completo: Rota",
+      "description": "Acompanhe as decisões de um aplicativo fictício, do problema às telas e seus estados.",
       "lessons": [
         {
           "id": "projeto-enquadrar-problema",
-          "title": "1. Retomar a tarefa e seus limites",
-          "summary": "Consolide o recorte do Rota em uma ficha que oriente todas as telas.",
-          "minutes": 3,
+          "title": "Rota: entender o problema antes de desenhar",
+          "summary": "Veja como público, objetivo e requisitos orientam um exemplo completo.",
+          "minutes": 2,
           "objectives": [
-            "A tarefa está descrita sem depender de um botão.",
-            "Nome, duração, custo e horário têm lugar definido.",
-            "Salvar permanece distinto de reservar entrada."
+            "Rota é um aplicativo fictício para descobrir visitas culturais e organizar um passeio.",
+            "Começar pelo problema ajuda a escolher o conteúdo da tela."
           ],
           "sections": [
             {
-              "title": "Uma tarefa, um projeto",
-              "body": "<p>O Rota é um estudo fictício para comparar visitas culturais, escolher horário e reencontrar o plano. Salvar não compra ingresso nem garante entrada. Retome as telas e decisões acumuladas; não comece outro aplicativo.</p><p>A ficha deve listar nome da visita, duração, custo, horário e condições conhecidas. Informação ausente permanece explícita; não invente disponibilidade nem acessibilidade do local.</p>"
+              "title": "O que é",
+              "body": "<p>Rota é um aplicativo fictício para descobrir visitas culturais e organizar um passeio. Este bloco mostra como as decisões das lições anteriores aparecem juntas. Não é uma atividade para entregar.</p><p>O exemplo usa pessoas que querem escolher um passeio para uma tarde. Os dados e as condições são inventados para explicar as decisões de UI.</p>"
             },
             {
-              "title": "Feche o recorte",
-              "body": "<p>Use Descobrir → Detalhe → Escolher horário → Meu plano. Inclua voltar, corrigir horário e uma condição sem resultado. Esses caminhos delimitam as composições necessárias.</p><p>Escolha o que será verificável na proposta: dados comparáveis, horário associado à visita e plano reencontrável. O desenho não comprova compreensão por pessoas reais.</p>"
+              "title": "Para que serve",
+              "body": "<p>Começar pelo problema ajuda a escolher o conteúdo da tela. A pessoa precisa saber se a visita cabe no tempo disponível e como reencontrar a escolha depois.</p><p>O objetivo do produto é facilitar a organização desse passeio. Uma tela bonita que não mostra duração ou horário não resolve esse problema.</p>"
+            },
+            {
+              "title": "Onde usar",
+              "body": "<p>Forma & luz acontece na Galeria Horizonte, tem duração estimada de 1h30 e uma opção de horário às 14h. A entrada é gratuita no exemplo. A pessoa pode comparar visitas, abrir o detalhe e salvar um plano.</p><p>Requisitos: mostrar nome, local, duração, custo e horário; permitir escolher e reencontrar a visita. Restrições: o aplicativo não vende ingresso, não reserva entrada e não confirma disponibilidade real.</p>"
+            },
+            {
+              "title": "Boas práticas",
+              "body": "<p>As decisões visuais partem dessas informações. A lista destaca dados comparáveis. O detalhe dá espaço às condições. O plano facilita reencontrar data e horário.</p><p>Quando uma informação não existe, o exemplo não inventa um valor para completar a tela. Quando a ação apenas salva, sua apresentação não sugere uma reserva. Assim, aparência e funcionamento previsto continuam coerentes.</p>"
             }
           ],
           "examples": [
             {
               "title": "O resultado corresponde ao problema do produto",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Resultado</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-success-symbol\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 12 4 4L19 6\"/></svg></div><div class=\"rx-eyebrow\">PLANO SALVO</div><h2>Seu sábado está no plano</h2><p class=\"rx-subtitle\">Reencontre os detalhes quando precisar.</p><div class=\"rx-box \"><h3>Forma &amp; luz</h3><p>Sábado, 24 out · 15h<br>Galeria Horizonte · Centro</p></div><div class=\"rx-box \"><h3>Endereço da visita</h3><p>Rua das Oficinas, 120<br>Cidade demonstrativa</p></div><p class=\"rx-help\">Entrada gratuita. Salvar o plano não garante acesso.</p></div><div class=\"rx-footer\"><div class=\"rx-primary\">Ver meu plano</div><p>Sem compra ou reserva.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">CONSTRUÇÃO COMPLETA DE INTERFACES</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Escopo cumprido</h4><p>O briefing é organizar uma tarde e reencontrar os dados. O resultado entrega esse planejamento.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Sem promessa indevida</h4><p>A tela não anuncia ingresso, disponibilidade ou entrada garantida.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Entidades estáveis</h4><p>Exposição, local e horário mantêm os mesmos significados entre descoberta, detalhe e plano.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Conectar o resultado da interface à tarefa e ao escopo definidos no projeto.</p><p><strong>Como testar:</strong> Peça para reencontrar horário e endereço depois de salvar e explicar se houve reserva.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>Forma & luz acontece na Galeria Horizonte, tem duração estimada de 1h30 e uma opção de horário às 14h. A entrada é gratuita no exemplo. A pessoa pode comparar visitas, abrir o detalhe e salvar um plano.</p><p>Requisitos: mostrar nome, local, duração, custo e horário; permitir escolher e reencontrar a visita. Restrições: o aplicativo não vende ingresso, não reserva entrada e não confirma disponibilidade real.</p>",
               "alt": "O resultado corresponde ao problema do produto. Você tem uma tarde livre e escolheu Forma & luz, uma visita gratuita de 1h30. Salve o passeio das 15h para reencontrar horário e endereço depois.",
               "source": "Rota · estudo original",
-              "scenario": "Você tem uma tarde livre e escolheu Forma & luz, uma visita gratuita de 1h30. Salve o passeio das 15h para reencontrar horário e endereço depois.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Veja como público, objetivo e requisitos orientam um exemplo completo.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Consolide o recorte do Rota em uma ficha que oriente todas as telas.",
-            "steps": [
-              "Reúna sua ficha e as telas já produzidas.",
-              "Marque conteúdo essencial e exclusões.",
-              "Desenhe o percurso principal e uma alternativa."
-            ],
-            "deliverable": "Ficha do Rota com tarefa, conteúdo, percurso e limites.",
-            "criteria": [
-              "A tarefa está descrita sem depender de um botão.",
-              "Nome, duração, custo e horário têm lugar definido.",
-              "Salvar permanece distinto de reservar entrada.",
-              "O percurso e suas exclusões estão explícitos."
-            ]
-          },
           "sources": [
             {
               "title": "Apple · layout",
@@ -69,54 +61,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 119
+          "wordCount": 227
         },
         {
           "id": "projeto-estrutura-componentes",
-          "title": "2. Integrar estrutura e linguagem visual",
-          "summary": "Una suas telas com relações coerentes de espaço, texto, cor e superfície.",
-          "minutes": 3,
+          "title": "Rota: organizar lista, detalhe e plano",
+          "summary": "Entenda por que cada tela mostra os mesmos dados de um jeito diferente.",
+          "minutes": 2,
           "objectives": [
-            "Repete papéis equivalentes sem uniformizar tarefas diferentes.",
-            "Mantém dados essenciais nas variações.",
-            "Justifica cor, espaço e superfície pela função."
+            "O conjunto tem três funções: a lista permite comparar, o detalhe permite conhecer uma visita e o plano reúne a escolha feita.",
+            "A lista precisa deixar nome, duração e custo fáceis de comparar."
           ],
           "sections": [
             {
-              "title": "Compare o conjunto",
-              "body": "<p>Coloque Descobrir, Detalhe e Meu plano lado a lado. O conteúdo muda, mas título, dado, ação e seleção devem manter relações reconhecíveis. Não copie toda a composição quando a tarefa muda.</p><p>Revise alinhamentos e densidade antes de aplicar refinamentos. Um título longo precisa crescer; uma condição de entrada não deve desaparecer para preservar a altura do cartão.</p>"
+              "title": "O que é",
+              "body": "<p>O conjunto tem três funções: a lista permite comparar, o detalhe permite conhecer uma visita e o plano reúne a escolha feita. As telas usam a mesma linguagem visual, mas não a mesma composição.</p><p>Consistência está nos papéis reconhecíveis, não em copiar toda a tela.</p>"
             },
             {
-              "title": "Aplique o craft com função",
-              "body": "<p>Escolha os papéis tipográficos, os pares de cor e a função das superfícies. Acrescente a identidade do Rota onde ela apoia reconhecimento. Faça a marca recuar em escolhas e condições importantes.</p><p>Compare ícones e curvas no tamanho de uso. Corrija diferenças ópticas sem deslocar o grid nem reduzir os alvos. Guarde as versões anteriores para explicar cada melhoria.</p>"
+              "title": "Para que serve",
+              "body": "<p>A lista precisa deixar nome, duração e custo fáceis de comparar. O detalhe precisa apresentar condições com mais espaço. O plano precisa tornar data e horário fáceis de reencontrar.</p><p>Essas diferenças explicam onde há mais imagem, mais texto ou mais destaque para um dado.</p>"
+            },
+            {
+              "title": "Onde usar",
+              "body": "<p>No Rota, títulos têm aparência consistente, dados secundários ficam em um nível de apoio e a ação principal usa destaque próprio. Espaços menores reúnem informações da mesma visita; espaços maiores separam grupos.</p><p>As imagens geométricas dão identidade. Elas ocupam menos espaço onde a pessoa está conferindo uma escolha. A sombra fica reservada a uma sobreposição, não a todos os itens.</p>"
+            },
+            {
+              "title": "Boas práticas",
+              "body": "<p>O conjunto considera nomes longos, imagem ausente e pouco espaço. Blocos de texto crescem em vez de manter altura fixa. A organização muda quando duas colunas deixam de caber.</p><p>Ícones, letras e cantos recebem ajuste depois da estrutura. O cuidado com esses detalhes visuais é chamado craft: melhora o acabamento sem substituir conteúdo, legibilidade e organização.</p>"
             }
           ],
           "examples": [
             {
               "title": "O componente respeita o dado que recebeu",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Descobrir</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">ROTA · CULTURA PERTO DE VOCÊ</div><h2>Visitas no Centro</h2><p class=\"rx-subtitle\">Confira as informações antes de escolher.</p><div class=\"rx-search\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 4 4\"/></svg><span>Exposição, lugar ou bairro</span></div><div class=\"rx-plan-card\"><div class=\"rx-art\" aria-label=\"Ilustração autoral de uma galeria com esculturas abstratas\"><div class=\"rx-art-sun\"></div><div class=\"rx-art-arch\"></div><div class=\"rx-art-block\"></div></div><div class=\"rx-plan-info\"><span class=\"rx-neutral-chip\">Preço não informado</span><h3>Forma &amp; luz</h3><p>Galeria Horizonte · Centro</p><div class=\"rx-plan-bottom\"><span>1h30 de visita</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></div></div></div><p class=\"rx-help\">Consulte o local para confirmar o preço.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">CONSTRUÇÃO COMPLETA DE INTERFACES</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Ausência não significa zero</h4><p>Sem dado de preço, o componente mostra desconhecido. Não inventa gratuidade.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Variante semântica</h4><p>O tratamento neutro distingue preço ausente de entrada gratuita confirmada.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Contrato reutilizável</h4><p>Lista, detalhe e plano precisam interpretar o mesmo dado da mesma forma.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Documentar regras de conteúdo junto dos tratamentos visuais e variações de conteúdo.</p><p><strong>Como testar:</strong> Renderize preço conhecido, gratuito e ausente. Peça para identificar quais visitas são comprovadamente gratuitas.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>No Rota, títulos têm aparência consistente, dados secundários ficam em um nível de apoio e a ação principal usa destaque próprio. Espaços menores reúnem informações da mesma visita; espaços maiores separam grupos.</p><p>As imagens geométricas dão identidade. Elas ocupam menos espaço onde a pessoa está conferindo uma escolha. A sombra fica reservada a uma sobreposição, não a todos os itens.</p>",
               "alt": "O componente respeita o dado que recebeu. Você só pode escolher uma visita gratuita. Na lista do Rota, encontre o custo de Forma & luz; neste cenário, a fonte não informou o preço.",
               "source": "Rota · estudo original",
-              "scenario": "Você só pode escolher uma visita gratuita. Na lista do Rota, encontre o custo de Forma & luz; neste cenário, a fonte não informou o preço.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Entenda por que cada tela mostra os mesmos dados de um jeito diferente.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Una suas telas com relações coerentes de espaço, texto, cor e superfície.",
-            "steps": [
-              "Reúna lista, detalhe e plano em uma prancha.",
-              "Anote relações repetidas de espaço, texto, cor e camadas.",
-              "Inclua um título longo e uma imagem ausente."
-            ],
-            "deliverable": "Prancha de três telas com decisões visuais e variações de conteúdo.",
-            "criteria": [
-              "Repete papéis equivalentes sem uniformizar tarefas diferentes.",
-              "Mantém dados essenciais nas variações.",
-              "Justifica cor, espaço e superfície pela função.",
-              "Aplica identidade sem reduzir legibilidade."
-            ]
-          },
           "sources": [
             {
               "title": "Apple · layout",
@@ -135,54 +119,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 127
+          "wordCount": 205
         },
         {
           "id": "projeto-prototipo-estados",
-          "title": "3. Compor caminhos e estados",
-          "summary": "Mostre como a mesma tarefa permanece reconhecível entre telas e condições.",
-          "minutes": 3,
+          "title": "Rota: mostrar escolhas e estados entre telas",
+          "summary": "Acompanhe como a mesma visita continua reconhecível durante o uso.",
+          "minutes": 2,
           "objectives": [
-            "Cada quadro mantém a visita reconhecível.",
-            "A próxima ação e a saída são localizáveis.",
-            "Espera, falha e conclusão não têm a mesma prioridade visual."
+            "Uma sequência de telas mostra como uma pessoa passa de uma ação para a próxima.",
+            "A sequência ajuda a perceber se título, dados e ações continuam coerentes."
           ],
           "sections": [
             {
-              "title": "Mostre a sequência",
-              "body": "<p>Organize os quadros do Rota na ordem comparar → escolher → salvar → reencontrar. Indique a ação que liga cada quadro, o que permanece e para onde se retorna. Não é necessário construir uma aplicação para explicar essa sequência visual.</p><p>Uma imagem estática especifica o esperado; não comprova foco, teclado ou persistência. Mantenha essas pendências separadas da qualidade da composição.</p>"
+              "title": "O que é",
+              "body": "<p>Uma sequência de telas mostra como uma pessoa passa de uma ação para a próxima. Estados mostram condições diferentes da mesma etapa, como espera e conclusão.</p><p>O exemplo é uma explicação visual, não um aplicativo de reservas funcionando.</p>"
             },
             {
-              "title": "Mude a condição sem perder o contexto",
-              "body": "<p>Acrescente uma busca sem resultado e uma falha de salvamento. Preserve nome, horário e localização na estrutura. O estado deve ter prioridade suficiente sem apagar toda a tela desnecessariamente.</p><p>Se o resultado de salvar for desconhecido, a composição deve representar essa incerteza, não uma conclusão. Compare a versão de espera, a de falha conhecida e a de plano confirmado usando os mesmos dados.</p>"
+              "title": "Para que serve",
+              "body": "<p>A sequência ajuda a perceber se título, dados e ações continuam coerentes. Um botão pode fazer sentido sozinho, mas ficar ambíguo depois de outra tela.</p><p>Preservar informações relevantes evita que a pessoa precise lembrar tudo para continuar.</p>"
+            },
+            {
+              "title": "Onde usar",
+              "body": "<p>O caminho principal é comparar visitas, abrir Forma & luz, escolher um horário, salvar e reencontrar no plano. A figura de estados mantém nome e horário antes, durante e depois do salvamento.</p><p>“Salvando” indica espera. “Plano salvo” só corresponde a resultado confirmado. Se a resposta não chegar, o resultado pode estar desconhecido, e a apresentação deve refletir essa incerteza.</p>"
+            },
+            {
+              "title": "Boas práticas",
+              "body": "<p>Em cada etapa, ficam claros o contexto atual, a ação disponível e a saída. Voltar não deve parecer salvar. Fechar uma escolha temporária não deve parecer confirmação.</p><p>Busca sem resultados preserva consulta e filtros. Uma falha não apaga a visita sem necessidade. A imagem descreve essas decisões; foco, persistência e recuperação dependem de implementação e verificação próprias.</p>"
             }
           ],
           "examples": [
             {
               "title": "Falha antes do envio: retomar sem reconstruir",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Salvar plano</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">SEU PLANO FOI PRESERVADO NESTA TELA</div><h2>Seu plano ainda não foi enviado.</h2><p class=\"rx-subtitle\">A falta de conexão foi detectada antes do envio.</p><div class=\"rx-error-banner\">⚠ Nenhum pedido de salvamento foi enviado.</div><div class=\"rx-box \"><h3>Forma &amp; luz</h3><p>Sábado, 24 out · 15h<br>Galeria Horizonte</p></div><div class=\"rx-field \"><span class=\"rx-field-label\">Nota pessoal</span><div class=\"rx-input\">Levar um caderno</div><p class=\"rx-field-help\">Você não precisa preencher novamente.</p></div><div class=\"rx-notice\">Reconecte para enviar este mesmo preenchimento.</div></div><div class=\"rx-footer\"><div class=\"rx-primary\">Tentar enviar</div><p>O plano será confirmado depois da resposta.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">CONSTRUÇÃO COMPLETA DE INTERFACES</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Estado escolhido: falha</h4><p>Esta tela assume uma falha local confirmada antes de qualquer envio. O sistema sabe que não há uma operação pendente no servidor.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Dados não desaparecem</h4><p>Visita, horário e nota permanecem no contexto da recuperação.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Fluxo completo no protótipo</h4><p>Implemente edição → verificação local → bloqueio sem envio → conexão restaurada → envio → confirmação. Se o pedido já tiver saído, trate o resultado incerto em outro estado.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> mostrar uma falha local conhecida: o pedido não saiu do aparelho. Quando a conexão voltar, o preenchimento pode ser enviado sem reconstrução.</p><p><strong>Como testar:</strong> bloqueie a conexão antes do envio e confirme que nenhum pedido saiu. Reconecte, envie e aguarde a confirmação. Em outro teste, perca a resposta depois de enviar: esse caso precisa de verificação de resultado, não deste estado.</p><p><strong>Limite:</strong> só use esta mensagem se a implementação souber que o envio não ocorreu. A aparência da falha não autoriza presumir esse diagnóstico.</p>",
+              "analysis": "<p>O caminho principal é comparar visitas, abrir Forma & luz, escolher um horário, salvar e reencontrar no plano. A figura de estados mantém nome e horário antes, durante e depois do salvamento.</p><p>“Salvando” indica espera. “Plano salvo” só corresponde a resultado confirmado. Se a resposta não chegar, o resultado pode estar desconhecido, e a apresentação deve refletir essa incerteza.</p>",
               "alt": "Falha antes do envio: retomar sem reconstruir. Tentar salvar Forma & luz para sábado às 15h com uma nota. O envio é impedido antes de sair do aparelho; recuperar sem preencher novamente.",
               "source": "Rota · estudo original",
-              "scenario": "Tentar salvar Forma & luz para sábado às 15h com uma nota. O envio é impedido antes de sair do aparelho; recuperar sem preencher novamente.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Acompanhe como a mesma visita continua reconhecível durante o uso.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Mostre como a mesma tarefa permanece reconhecível entre telas e condições.",
-            "steps": [
-              "Disponha os quadros e ligue cada ação ao próximo estado.",
-              "Acrescente uma saída e uma interrupção.",
-              "Compare as prioridades da tela em espera, falha e conclusão."
-            ],
-            "deliverable": "Sequência anotada de telas e estados, com retorno ao contexto.",
-            "criteria": [
-              "Cada quadro mantém a visita reconhecível.",
-              "A próxima ação e a saída são localizáveis.",
-              "Espera, falha e conclusão não têm a mesma prioridade visual.",
-              "Pendências de comportamento não são apresentadas como resolvidas."
-            ]
-          },
           "sources": [
             {
               "title": "Apple · layout",
@@ -201,54 +177,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 134
+          "wordCount": 191
         },
         {
           "id": "projeto-revisar-entregar",
-          "title": "4. Revisar e apresentar as decisões",
-          "summary": "Consolide uma versão revisada com evidências visuais e limites explícitos.",
-          "minutes": 3,
+          "title": "Rota: revisar o conjunto e explicar as decisões",
+          "summary": "Veja o que conferir antes de considerar a proposta visual pronta.",
+          "minutes": 2,
           "objectives": [
-            "Cada correção aponta um critério e uma evidência visual.",
-            "A mesma condição é repetida depois da mudança.",
-            "O conjunto preserva hierarquia e navegação coerentes."
+            "Revisar uma interface é conferir se conteúdo, aparência e ações previstas continuam coerentes.",
+            "A revisão encontra problemas que aparecem no conjunto: uma ação diferente entre telas, um título longo cortado ou uma condição importante escondida pelo rodapé."
           ],
           "sections": [
             {
-              "title": "Confira condições concretas",
-              "body": "<p>Revise o percurso antes do acabamento final. Confira contraste real, conteúdo ampliado, nomes longos, alvos e sobreposições. Registre a tela e a condição em que cada verificação foi feita.</p><p>Inspeção visual identifica riscos e incoerências. Comprovar teclado, foco ou leitura assistiva depende da implementação; declare o que ainda precisa ser verificado.</p>"
+              "title": "O que é",
+              "body": "<p>Revisar uma interface é conferir se conteúdo, aparência e ações previstas continuam coerentes. Não é apenas procurar desalinhamentos.</p><p>O exemplo Rota reúne verificações de hierarquia, espaço, tipografia, cor, camadas e navegação.</p>"
             },
             {
-              "title": "Entregue o raciocínio",
-              "body": "<p>Apresente tarefa, telas, sequência, decisões de craft e revisão. Para três mudanças importantes, mostre antes e depois com o mesmo conteúdo. Diga qual critério motivou a correção e como você conferiu o resultado.</p><p>Finalize com pendências específicas, como validar a área de toque no dispositivo ou conferir texto ampliado na plataforma. Uma tela bonita não é prova de conformidade completa.</p>"
+              "title": "Para que serve",
+              "body": "<p>A revisão encontra problemas que aparecem no conjunto: uma ação diferente entre telas, um título longo cortado ou uma condição importante escondida pelo rodapé.</p><p>Ela também separa uma decisão de desenho de algo que só pode ser comprovado no produto funcionando.</p>"
+            },
+            {
+              "title": "Onde usar",
+              "body": "<p>No Rota, a revisão confere se lista e detalhe mostram os mesmos dados, se o plano mantém a visita reconhecível e se salvar continua distinto de reservar entrada.</p><p>As comparações visuais mostram mudanças com o mesmo conteúdo. Assim, fica claro se a melhoria veio de espaço, peso do texto ou outra decisão específica.</p>"
+            },
+            {
+              "title": "Boas práticas",
+              "body": "<p>Confira largura menor, texto ampliado, imagem ausente, estados e contraste. Quando uma mudança resolver um problema, observe também as telas relacionadas para evitar outro.</p><p>Não declare resolvidos foco, teclado ou leitor de tela apenas porque o desenho parece correto. Uma proposta bem explicada mostra o que foi conferido e o que ainda depende da implementação, sem prometer conformidade completa.</p>"
             }
           ],
           "examples": [
             {
               "title": "Uma regra de adaptação que pode ser verificada",
               "visualHtml": "<div class=\"rx-study\" data-demo-control=\"type-width\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Meu plano</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content\" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">MEU PLANO</div><div class=\"rx-component-zone rx-type-zone\"><section class=\"rx-type-card\"><span class=\"rx-type-kicker\">EXPOSIÇÃO</span><h2>Memórias da cidade: caminhos, encontros e transformações</h2><p class=\"rx-type-place\">Galeria Municipal de Arte e Memória</p><section class=\"rx-type-visit\"><h3>Sua visita</h3><p class=\"rx-type-date\">Sábado, às 15h</p><p class=\"rx-type-support\">Duração estimada: 1h30</p></section><div class=\"rx-type-action\">Editar horário</div><p class=\"rx-type-support\">Salvar um plano não reserva entrada.</p></section></div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Interface ilustrada; controles didáticos externos.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TEXTO ADAPTÁVEL · TESTE REAL</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Baseline declarado</h4><p>A 100%: título 24/32px, local 16/24px, rótulo 12/18px, horário 20/28px, ação 16/24px. Título, rótulo e ação usam peso 500; corpo e dados usam 400.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Texto do componente:100% ou130%</h4><p>O controle multiplica font-size e line-height de todos os papéis desse cartão. O botão cresce em altura com o texto; o restante do aparelho não é ampliado.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Largura do componente:340 ou260px</h4><p>O conteúdo é o mesmo. Linhas e altura se ajustam sem truncamento. Role o conteúdo da tela para alcançar a ação ao final.</p></div></li><li><span class=\"rx-note-number\">4</span><div><h4>Uma regra verificável</h4><p>Neste cartão, a ação segue o conteúdo no fluxo; não é footer fixo. O teste didático não simula Dynamic Type, zoom 200% ou escala global do sistema.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> manter título, dados e ação no fluxo do cartão, com crescimento por conteúdo. Os controles mudam largura e métricas de texto reais, sem reescrever ou truncar o nome.</p><p><strong>Como testar:</strong> combine 260 CSSpx com 130% de texto. Confira o nome inteiro, role o conteúdo e alcance Editar horário. Volte ao baseline e confirme que os mesmos dados permanecem.</p><p><strong>Limite:</strong> este é um teste didático de componente, não uma simulação de Dynamic Type, zoom 200% ou conformidade WCAG. A entrega deve testar também os mecanismos reais de ampliação e as tecnologias assistivas de cada plataforma.</p>",
+              "analysis": "<p>No Rota, a revisão confere se lista e detalhe mostram os mesmos dados, se o plano mantém a visita reconhecível e se salvar continua distinto de reservar entrada.</p><p>As comparações visuais mostram mudanças com o mesmo conteúdo. Assim, fica claro se a melhoria veio de espaço, peso do texto ou outra decisão específica.</p>",
               "alt": "Uma regra de adaptação que pode ser verificada. Alterar a largura e o tamanho do texto do componente de visita, ler o nome completo e alcançar Editar horário.",
               "source": "Rota · estudo original",
-              "scenario": "Alterar a largura e o tamanho do texto do componente de visita, ler o nome completo e alcançar Editar horário.",
-              "comparisonFocus": "Use os controles externos para alterar o componente. A escala uniforme da moldura serve apenas para apresentar o exemplo no curso."
+              "scenario": "Veja o que conferir antes de considerar a proposta visual pronta.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Consolide uma versão revisada com evidências visuais e limites explícitos.",
-            "steps": [
-              "Percorra a proposta e registre achados por critério.",
-              "Corrija os bloqueios e repita a mesma condição.",
-              "Escolha três comparações antes/depois e liste pendências."
-            ],
-            "deliverable": "Apresentação do Rota com telas finais, três correções explicadas e verificações pendentes.",
-            "criteria": [
-              "Cada correção aponta um critério e uma evidência visual.",
-              "A mesma condição é repetida depois da mudança.",
-              "O conjunto preserva hierarquia e navegação coerentes.",
-              "Separa o que foi conferido no desenho do que exige implementação."
-            ]
-          },
           "sources": [
             {
               "title": "Apple · layout",
@@ -267,17 +235,11 @@
             }
           ],
           "videos": [],
-          "wordCount": 121
+          "wordCount": 184
         }
       ],
-      "objective": "Consolidar as telas em uma proposta visual coerente, revisada e explicada por decisões.",
-      "rationale": "O projeto final reúne as versões acumuladas; não reinicia o trabalho nem acrescenta funcionalidades.",
-      "criteria": [
-        "Une tarefa, telas e caminhos sem contradições.",
-        "Aplica espaçamento, texto, cor e superfície com funções claras.",
-        "Apresenta adaptações e estados essenciais.",
-        "Entrega comparação antes/depois e pendências verificáveis."
-      ],
+      "objective": "Acompanhe as decisões de um aplicativo fictício, do problema às telas e seus estados.",
+      "rationale": "O exemplo reúne os assuntos anteriores e explica como eles funcionam juntos, sem atividades para entregar.",
       "references": [
         {
           "title": "Apple · layout",

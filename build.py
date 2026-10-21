@@ -14,7 +14,7 @@ for m in modules:
     assert m['id'] in ORDER, ('Unknown module',m['id'])
     for l in m['lessons']:
         assert l['id'] not in ids, ('Duplicate',l['id']);ids.add(l['id'])
-        for k in ['title','summary','objectives','sections','examples','exercise','sources']: assert k in l,(l['id'],k)
+        for k in ['title','summary','objectives','sections','examples','sources']: assert k in l,(l['id'],k)
         assert l['sections'] and l['examples'] and l['sources'],l['id']
         for s in l['sections']:
             assert '<script' not in s['body'].lower() and not re.search(r'\bon\w+\s*=',s['body'],re.I),l['id']
@@ -39,7 +39,7 @@ for m in modules:
         l['wordCount']=words
 glossary_path=CONTENT/'glossary.json'
 glossary=json.loads(glossary_path.read_text())['glossary'] if glossary_path.exists() else []
-course={'title':'Fundamentos de UI — Do fundamento à interface','edition':'2026-10-craft','modules':modules,'glossary':glossary}
+course={'title':'Fundamentos de UI para iniciantes','edition':'2026-10-craft','modules':modules,'glossary':glossary}
 (GUIDE_DIST).mkdir(exist_ok=True)
 for name in ['index.html','styles.css','examples.css','realistic-examples.css','app.js']:shutil.copy2(ROOT/'source'/name,GUIDE_DIST/name)
 (GUIDE_DIST/'course.js').write_text('window.COURSE = '+json.dumps(course,ensure_ascii=False).replace('</','<\\/')+';\n')

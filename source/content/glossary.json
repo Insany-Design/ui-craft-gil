@@ -46,7 +46,7 @@
     },
     {
       "term": "Card",
-      "definition": "Cartão: contêiner que reúne informações de uma entidade ou tarefa. Sua utilidade está no agrupamento, não na moldura."
+      "definition": "Cartão: contêiner que reúne informações de uma item ou ação. Sua utilidade está no agrupamento, não na moldura."
     },
     {
       "term": "Chunks",
@@ -63,6 +63,10 @@
     {
       "term": "Contraste",
       "definition": "Diferença perceptível entre elementos. O contraste de luminância usado na WCAG tem cálculo e requisitos específicos."
+    },
+    {
+      "term": "Craft",
+      "definition": "Cuidado com detalhes visuais da interface, como texto, espaço, alinhamento, ícones e consistência. Não substitui clareza nem funcionamento."
     },
     {
       "term": "CSS px, pt, dp e sp",
@@ -110,7 +114,7 @@
     },
     {
       "term": "Expressividade",
-      "definition": "Intensidade com que a identidade aparece por cor, forma, tipografia e imagem. Deve variar conforme a tarefa."
+      "definition": "Intensidade com que a identidade aparece por cor, forma, tipografia e imagem. Deve variar conforme a ação."
     },
     {
       "term": "Fallback",
@@ -130,7 +134,7 @@
     },
     {
       "term": "Flow",
-      "definition": "Fluxo: sequência de passos e condições para realizar uma tarefa, incluindo retorno, alternativas e interrupções."
+      "definition": "Fluxo: sequência de passos e condições para realizar uma ação, incluindo retorno, alternativas e interrupções."
     },
     {
       "term": "Foco",
@@ -206,7 +210,7 @@
     },
     {
       "term": "Onboarding",
-      "definition": "Introdução ao uso que ajuda a realizar a primeira tarefa; não é necessariamente uma sequência obrigatória de telas."
+      "definition": "Introdução ao uso que ajuda a realizar a primeira ação; não é necessariamente uma sequência obrigatória de telas."
     },
     {
       "term": "Padding",
@@ -225,12 +229,20 @@
       "definition": "Elemento físico de formação da imagem em uma tela. Não equivale necessariamente a uma unidade de layout."
     },
     {
+      "term": "Placeholder",
+      "definition": "Exemplo ou dica dentro de um campo ainda vazio. Não substitui o rótulo que identifica o campo durante o preenchimento."
+    },
+    {
       "term": "Progressive disclosure",
       "definition": "Apresentação progressiva de detalhes quando necessários. Não justifica esconder informação essencial à decisão atual."
     },
     {
       "term": "Proximidade",
       "definition": "Tendência a perceber elementos próximos como relacionados; o intervalo precisa ser comparado com o espaço ao redor."
+    },
+    {
+      "term": "Público",
+      "definition": "Pessoas para as quais o produto é pensado, considerando suas necessidades, contexto e condições de uso."
     },
     {
       "term": "Raio de canto",
@@ -253,8 +265,16 @@
       "definition": "Princípio perceptivo pelo qual elementos dentro de uma mesma área delimitada tendem a ser associados."
     },
     {
+      "term": "Requisito",
+      "definition": "Algo que o produto precisa oferecer ou respeitar, como mostrar o horário da visita ou permitir salvar um plano."
+    },
+    {
       "term": "Responsive / adaptive",
       "definition": "Estratégias para reorganizar a interface conforme espaço, dispositivo e contexto. Não se resumem a encolher uma tela."
+    },
+    {
+      "term": "Restrição",
+      "definition": "Limite que precisa ser considerado, como uma função indisponível, um prazo ou uma condição técnica."
     },
     {
       "term": "Ritmo visual",
@@ -319,6 +339,14 @@
     {
       "term": "Transparência / opacidade",
       "definition": "Quanto o fundo participa da composição de uma superfície. O contraste deve considerar o resultado efetivo dessa combinação."
+    },
+    {
+      "term": "UI",
+      "definition": "Interface do usuário. É a parte com a qual a pessoa interage, como telas, botões, campos e estados. O design de UI organiza esses elementos para facilitar leitura e uso."
+    },
+    {
+      "term": "UX",
+      "definition": "Experiência do usuário. Considera como uma pessoa entende, usa e percebe um produto ou serviço. O trabalho inclui entender problemas e público, organizar caminhos e verificar o uso."
     },
     {
       "term": "Vetor",

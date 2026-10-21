@@ -2,62 +2,47 @@
   "modules": [
     {
       "id": "tipografia",
-      "title": "Tipografia em contexto",
-      "description": "Escolher e organizar texto legível que cresça sem perder a hierarquia.",
+      "title": "Tipografia",
+      "description": "Entenda como escolher e organizar texto legível em tamanhos e conteúdos diferentes.",
       "lessons": [
         {
           "id": "typography-anatomy-selection-reading",
-          "title": "Tipografia: escolher para o conteúdo real",
-          "summary": "Avalie letras, números e acentos no tamanho de uso e confirme os recursos de fonte que a interface precisa.",
-          "minutes": 5,
+          "title": "Tipografia: escolher uma fonte para o conteúdo",
+          "summary": "Compare letras, números e acentos no tamanho em que serão lidos.",
+          "minutes": 2,
           "objectives": [
-            "Identificar detalhes das letras que podem causar confusão.",
-            "Verificar a fonte e sua alternativa com o mesmo conteúdo, sem depender apenas do gosto."
+            "Tipografia é a organização e a aparência do texto.",
+            "A tipografia ajuda a ler, reconhecer informações e perceber hierarquia."
           ],
           "sections": [
             {
-              "title": "Entenda o problema de leitura",
-              "body": "<p><strong>Tipografia torna a linguagem localizável e legível.</strong> Separe reconhecer um caractere, como zero ou O, de acompanhar um texto inteiro. Letras distintas podem formar um parágrafo difícil quando o espaço, a largura ou o peso não ajudam.</p><p>Uma <strong>família tipográfica</strong> reúne desenhos relacionados; <strong>peso</strong> descreve a espessura dos traços. O mesmo número de peso não garante a mesma aparência em famílias diferentes. Serifas são prolongamentos dos traços; ter ou não ter serifas, isoladamente, não define qualidade de leitura em tela. Escolha pela tarefa: conferir horário, reconhecer um código ou ler uma instrução pedem observações diferentes.</p>"
+              "title": "O que é",
+              "body": "<p>Tipografia é a organização e a aparência do texto. Inclui escolha da fonte, tamanho, peso, espaçamento e largura de leitura. Uma família tipográfica reúne variações relacionadas, como regular e negrito.</p><p>Fontes do mesmo tamanho numérico podem parecer diferentes por causa do desenho e da altura das letras.</p>"
             },
             {
-              "title": "Use a anatomia para encontrar uma causa",
-              "body": "<p>A <strong>linha de base</strong> é a referência em que as letras se apoiam. <strong>Altura-x</strong> descreve a altura aproximada de minúsculas como x; ascendentes sobem, como em b, e descendentes descem abaixo da base, como em p. <strong>Contraformas</strong> são os espaços internos das letras. Em tamanho pequeno, confira se esses espaços e os sinais parecidos continuam distinguíveis.</p><p>O tamanho nominal não é a altura visível das letras. Duas fontes em 16 px podem parecer maiores ou menores; altura-x maior não garante melhor leitura em toda situação. Observe também largura, acentos e pontuação. Não é preciso memorizar um catálogo de anatomia: associe cada termo a uma dificuldade que você consegue apontar.</p>"
+              "title": "Para que serve",
+              "body": "<p>A tipografia ajuda a ler, reconhecer informações e perceber hierarquia. Na interface, números, acentos e nomes longos importam tanto quanto um título bonito.</p><p>Uma fonte adequada para uma marca pode não funcionar bem em textos pequenos.</p>"
             },
             {
-              "title": "Compare no tamanho em que será usado",
-              "body": "<p>No exemplo, a referência fictícia <strong>Il1O0</strong> usa <strong>16 px/24 px, peso 400</strong>. A amostra ampliada fora do aparelho permite inspecionar o desenho, mas a leitura precisa ser verificada primeiro no tamanho de uso. Já o controle “Ampliar tela” apenas desfaz a redução da moldura na página; não é a ampliação tipográfica da amostra. O código não é uma credencial. Nos horários, algarismos tabulares têm larguras iguais quando a fonte oferece esse recurso; isso não torna toda a família monoespaçada.</p><ol><li><strong>Mantenha o contexto.</strong> Compare o mesmo conteúdo, largura e contraste na fonte principal e numa candidata ou alternativa.</li><li><strong>Observe as formas.</strong> Confira I/l/1, O/0, “Sábado”, “às” e os horários. Se ajustar a escala para aproximar a altura aparente, registre esse ajuste.</li><li><strong>Veja a composição.</strong> Examine quebras, espaços e altura de controles antes de culpar a família por um texto mal composto.</li></ol>"
+              "title": "Onde usar",
+              "body": "<p>No Rota, aparecem nomes de exposições, datas, horários, duração e custo. Compare combinações como “Ilha 01”, “Sala 10” e “14h”: I maiúsculo, l minúsculo, 1, O e 0 precisam ser distinguíveis.</p><p>A figura amplia essas formas, mas a decisão também precisa considerar o tamanho real de leitura.</p>"
             },
             {
-              "title": "Confira recursos e limites da escolha",
-              "body": "<p>Confirme licença, idiomas, caracteres e pesos disponíveis. Este exemplo usa Inter estática nos pesos 400 e 500; não pressupõe outros pesos ou eixos variáveis. Defina <em>fallback</em>, a fonte alternativa quando a principal não carregar, e confira se a substituição muda quebras ou corta rótulos. Uma família pode resolver toda a tela; acrescente outra apenas quando houver função clara.</p><p>Não há mínimo universal de 16 px imposto pela WCAG. O tamanho inicial depende de fonte, papel e contexto; <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html\">o critério de ampliação</a> verifica a possibilidade de crescer. No aparelho de destino, luz, distância e ajustes pessoais também importam. Autoinspeção revela candidatos a problema; observar leituras de outras pessoas pode trazer evidência adicional, sem transformar uma amostra pequena em garantia.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Escolha com conteúdo plausível, incluindo acentos e valores. Observe aberturas das letras, espessura e separação entre caracteres. Evite pesos muito finos em texto pequeno.</p><p>Confira a fonte alternativa, chamada fallback, usada quando a principal não estiver disponível. Ela pode mudar largura e quebras de linha. Não trate a aparência de um único título como prova de boa leitura do conjunto.</p>"
             }
           ],
           "examples": [
             {
               "title": "Escolher uma fonte olhando o conteúdo real",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Meu plano</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">SEU PASSEIO</div><h2>Sábado cultural</h2><p class=\"rx-subtitle\">Uma tarde na Galeria Horizonte.</p><div class=\"rx-box \"><h3>Forma &amp; luz</h3><p>Sábado, às 14h30<br>Galeria Horizonte · Centro</p></div><div class=\"rx-code-card\"><span class=\"rx-eyebrow\">REFERÊNCIA DO PLANO</span><div class=\"rx-reference-value\">Il1O0</div><p>Use esta referência para identificar o plano.</p></div><div class=\"rx-box\"><h3>Horários da galeria</h3><div class=\"rx-tabular\"><div class=\"rx-data-row\"><span>Abertura</span><strong>10:00</strong></div><div class=\"rx-data-row\"><span>Última entrada</span><strong>17:00</strong></div><div class=\"rx-data-row\"><span>Fechamento</span><strong>18:00</strong></div></div></div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TIPOGRAFIA QUE SUSTENTA A EXPERIÊNCIA</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Caracteres que podem confundir</h4><p>O código reúne formas parecidas. Ele serve para avaliar leitura, não representa uma credencial.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Conteúdo em português</h4><p>Acentos e pontuação fazem parte da avaliação, junto de corpo e títulos.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Números previsíveis</h4><p>Algarismos tabulares ajudam a alinhar horários. Isso não torna toda a fonte monoespaçada.</p></div></li></ol><div class=\"rx-external-specimen\"><span>Il1O0</span><p>Ampliação didática das formas. Na tela, a referência usa 16px/24px, peso 400. Código fictício, sem função de autenticação.</p></div></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> avaliar a família no tamanho real de uso de um identificador do plano e em horários. A referência usa 16px/24px, peso 400; a ampliação externa serve apenas para inspecionar formas.</p><p><strong>Como testar:</strong> peça a transcrição da referência e a leitura dos horários no aparelho, sem mostrar primeiro a ampliação. Registre confusões entre I, l, 1, O e 0. Confira também acentos e fallback.</p><p><strong>Limite:</strong> o código é fictício e não é uma credencial. A aparência sozinha não determina desempenho; comparar famílias exige contexto e avaliação de leitura, não uma regra universal de serifa ou sem serifa.</p>",
+              "analysis": "<p>No Rota, aparecem nomes de exposições, datas, horários, duração e custo. Compare combinações como “Ilha 01”, “Sala 10” e “14h”: I maiúsculo, l minúsculo, 1, O e 0 precisam ser distinguíveis.</p><p>A figura amplia essas formas, mas a decisão também precisa considerar o tamanho real de leitura.</p>",
               "alt": "Escolher uma fonte olhando o conteúdo real. Ler a referência fictícia Il1O0 de um plano salvo e localizar os horários da visita e da galeria.",
               "source": "Rota · estudo original",
-              "scenario": "Ler a referência fictícia Il1O0 de um plano salvo e localizar os horários da visita e da galeria.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Compare letras, números e acentos no tamanho em que serão lidos.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Continue a tipografia da ficha do Rota. Se começou aqui, use a amostra do plano: “Sábado cultural”, “Forma & luz”, “Sábado, às 14h30”, “Galeria Horizonte · Centro”, referência Il1O0 e horários 10:00, 17:00 e 18:00. Essa referência é fictícia.",
-            "steps": [
-              "Aplique a fonte principal no tamanho de uso. Observe acentos, I/l/1 e O/0, sem começar pela ampliação didática.",
-              "Mostre o mesmo conteúdo na fonte de fallback mantendo largura e contraste. Compare caracteres, quebras e alinhamento dos horários; se aproximar a altura aparente, anote o ajuste.",
-              "Registre família, pesos realmente disponíveis, alternativa e duas observações que justificam manter ou ajustar a escolha."
-            ],
-            "deliverable": "A mesma ficha com uma pequena amostra principal/fallback e suas observações. Guarde os papéis que serão organizados na aula de escala.",
-            "criteria": [
-              "Acentos e sinais aparecem sem substituições inesperadas nas duas fontes.",
-              "A referência é inspecionada a 16/24 px, peso 400, ou com a alteração explicitamente registrada.",
-              "A alternativa preserva conteúdo e permite conferir horários sem corte.",
-              "A decisão cita observações do conteúdo e identifica o limite da autoinspeção."
-            ]
-          },
           "sources": [
             {
               "title": "Microsoft — OpenType BASE",
@@ -81,61 +66,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 483
+          "wordCount": 190
         },
         {
           "id": "typography-scale-hierarchy-rhythm",
-          "title": "Escala tipográfica: organizar papéis e ritmo",
-          "summary": "Defina poucos papéis de texto, aplique-os com consistência e confira se sobrevivem a conteúdo maior e ajustes de espaço.",
-          "minutes": 5,
+          "title": "Escala tipográfica: diferenciar títulos, texto e apoio",
+          "summary": "Use um conjunto pequeno de estilos com funções claras.",
+          "minutes": 2,
           "objectives": [
-            "Distinguir tamanho visual, função do texto e estrutura de títulos.",
-            "Especificar papéis e verificar sua adaptação sem exigir uma fórmula universal."
+            "Escala tipográfica é o conjunto de tamanhos e estilos usados para organizar texto.",
+            "Papéis claros ajudam a entender a estrutura e a encontrar informações."
           ],
           "sections": [
             {
-              "title": "Comece pelo papel do texto",
-              "body": "<p><strong>Escala tipográfica é um conjunto de tamanhos e entrelinhas; hierarquia é a importância percebida.</strong> Uma lista de números não decide o que precisa de destaque. Nomeie as funções: título da página, título de seção, dado, corpo, rótulo e apoio, usando apenas as que o conteúdo precisar.</p><p>No Rota, “Forma & luz” identifica a exposição. <strong>“Sua visita” é título de seção; “Sábado, às 14h” é um dado.</strong> O dado pode ser maior sem se tornar título. A estrutura de leitura e os títulos acessíveis precisam expressar essas relações na implementação; aparência sozinha não as cria.</p>"
+              "title": "O que é",
+              "body": "<p>Escala tipográfica é o conjunto de tamanhos e estilos usados para organizar texto. Título, seção, conteúdo e apoio têm papéis diferentes. Tamanho, peso e entrelinha trabalham juntos.</p><p>Uma escala não precisa seguir uma fórmula matemática para funcionar.</p>"
             },
             {
-              "title": "Ajuste ritmo no texto completo",
-              "body": "<p><strong>Entrelinha</strong> é o espaço entre linhas de texto; espaço entre parágrafos separa unidades de pensamento. <em>Tracking</em> ajusta o espaço geral entre letras; <em>kerning</em> ajusta pares específicos. Use esses recursos para resolver a composição, sem aumentar tudo indiscriminadamente: letras afastadas demais fragmentam palavras, e entrelinha excessiva pode desfazer o grupo.</p><p>Confira a largura com o conteúdo e o idioma previstos. Linhas curtas demais interrompem a leitura; longas demais dificultam reencontrar o início. Não reduza a fonte num celular para atingir uma contagem fixa de caracteres. Um título deve ficar próximo do conteúdo que apresenta, e não parecer a conclusão do bloco anterior.</p>"
+              "title": "Para que serve",
+              "body": "<p>Papéis claros ajudam a entender a estrutura e a encontrar informações. Também evitam que cada trecho use um tamanho diferente sem necessidade.</p><p>Criar muitos estilos pode enfraquecer a diferença entre o que é principal e secundário.</p>"
             },
             {
-              "title": "Especifique poucos estilos que se repetem",
-              "body": "<p>Escolha o corpo pelo texto representativo e derive os outros papéis. Para cada um, registre tamanho, entrelinha, peso, unidade e regra de crescimento. Nomeie os papéis para distinguir título, conteúdo e apoio antes de escolher seus valores. Não é obrigatório usar uma progressão matemática entre tamanhos nem criar um estilo novo para cada ocorrência.</p><p>No exemplo, o título usa <strong>30/38 CSS px, peso 500</strong>; o horário, <strong>22/30 CSS px, peso 500</strong>. São valores locais, não receita universal. Peso 500 não autoriza aplicar automaticamente a exceção de negrito do contraste: o horário de 22 px continua sujeito ao requisito de texto comum. Informação de apoio, como “Salvar não reserva entrada”, deve continuar legível.</p><p>Leve a regra para outro contexto do Rota, como lista ou campo. Se a função for a mesma, corrija o estilo compartilhado; se for diferente, explique a diferença. Não acrescente um tamanho só para fazer uma ocorrência caber.</p>"
+              "title": "Onde usar",
+              "body": "<p>A figura mostra título em 28/36, seção em 20/28, corpo em 16/24 e apoio em 14/20 CSS px. O primeiro número é o tamanho; o segundo, a altura de linha.</p><p>São escolhas do exemplo. No Rota, um horário pode receber destaque por ajudar a decisão, sem virar título de seção.</p>"
             },
             {
-              "title": "Confira conteúdo longo e espaço personalizado",
-              "body": "<p>Use um título em mais de uma linha e confira as associações. Na web, <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html\">WCAG 2.2, 1.4.12 AA</a> exige ausência de perda de conteúdo ou função com <strong>os quatro ajustes simultâneos</strong>, sem alterar outras propriedades: entrelinha de pelo menos 1,5 vezes o tamanho da fonte; espaço após parágrafos de pelo menos 2 vezes; entreletras de pelo menos 0,12 vezes; entrepalavras de pelo menos 0,16 vezes. Consulte as exceções de escrita e idioma no critério.</p><p>Esses valores são um teste de tolerância a ajustes do usuário, não o estilo inicial obrigatório. Caixas de altura fixa e recortes costumam ser pontos de atenção. Uma composição estática pode mostrar a adaptação esperada; o teste operacional exige a implementação. Registre o que você realmente conseguiu verificar.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Comece com poucos papéis. Compare tamanho, peso e entrelinha em uma tela completa, não apenas em palavras isoladas. Mantenha o texto de apoio legível.</p><p>Dê espaço suficiente entre linhas e blocos. Se um título quebrar em duas linhas, a relação com o conteúdo deve continuar clara. Não use tracking, o espaçamento do trecho inteiro, para corrigir um problema de escala ou largura.</p>"
             }
           ],
           "examples": [
             {
               "title": "Uma escala com funções claras",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Visita</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">EXPOSIÇÃO</div><h2>Forma &amp; luz</h2><p class=\"rx-subtitle\">Galeria Horizonte · Centro</p><div class=\"rx-art\" aria-label=\"Ilustração autoral de uma galeria com esculturas abstratas\"><div class=\"rx-art-sun\"></div><div class=\"rx-art-arch\"></div><div class=\"rx-art-block\"></div></div><div class=\"rx-visit-card\"><h3 class=\"rx-visit-section-heading\">Sua visita</h3><p class=\"rx-visit-value\">Sábado, às 14h</p><p>Duração estimada: 1h30</p></div><p class=\"rx-help\">Você pode alterar o dia e o horário depois.</p></div><div class=\"rx-footer\"><div class=\"rx-primary\">Salvar plano</div><p>Salvar não reserva entrada.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TIPOGRAFIA QUE SUSTENTA A EXPERIÊNCIA</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Título identifica</h4><p>O nome da exposição usa 30 px/38 px, peso 500, para estabelecer a prioridade principal.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Dado em destaque</h4><p>O horário usa 22 px/30 px, peso 500. Não precisa competir com o nome para continuar encontrável.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Apoio mantém ritmo</h4><p>Linhas menores explicam contexto e consequência. Os tamanhos são escolhas deste exemplo, não receita universal.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Relacionar tamanho, peso e entrelinha à função de cada trecho.</p><p><strong>Como testar:</strong> Pergunte qual exposição e para quando. Depois teste nomes longos, zoom e espaçamento de texto personalizado.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p><p><strong>Papel e aparência:</strong> “Sua visita” é o título da seção; “Sábado, às 14h” é o dado em destaque. A escala visual do dado não o transforma em heading. A composição sugere prioridades, mas não garante a ordem do olhar de cada pessoa.</p>",
+              "analysis": "<p>A figura mostra título em 28/36, seção em 20/28, corpo em 16/24 e apoio em 14/20 CSS px. O primeiro número é o tamanho; o segundo, a altura de linha.</p><p>São escolhas do exemplo. No Rota, um horário pode receber destaque por ajudar a decisão, sem virar título de seção.</p>",
               "alt": "Uma escala com funções claras. Conferir a exposição e o horário antes de salvar a visita.",
               "source": "Rota · estudo original",
-              "scenario": "Conferir a exposição e o horário antes de salvar a visita.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Use um conjunto pequeno de estilos com funções claras.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Organize os papéis da sua ficha do Rota. Se chegou por busca, use Forma & luz, Galeria Horizonte · Centro, seção “Sua visita”, sábado às 14h, duração estimada de 1h30, ação “Salvar plano” e aviso “Salvar não reserva entrada”.",
-            "steps": [
-              "Marque título, título de seção, dado e apoio. Registre tamanho/entrelinha/peso de cada papel e reaproveite a fonte escolhida.",
-              "Use “Forma & luz: um novo olhar para o cotidiano” como variação de teste. Confira crescimento e proximidade sem transformar o horário em título.",
-              "Aplique os quatro ajustes de espaçamento simultaneamente na versão web, ou desenhe o comportamento esperado e marque a execução como pendente. Reaproveite o papel de apoio no local de um cartão da lista e confira a transferência."
-            ],
-            "deliverable": "A ficha existente com papéis anotados, uma variação longa e o resultado ou a pendência do teste de espaçamento.",
-            "criteria": [
-              "Título de seção e dado destacado têm funções distintas, independentemente do tamanho.",
-              "Papéis equivalentes são reutilizados; uma diferença entre lista e detalhe tem justificativa funcional.",
-              "Título longo e aviso sobre reserva permanecem completos e associados ao contexto.",
-              "O registro identifica os quatro ajustes simultâneos e distingue resultado executado de comportamento apenas desenhado."
-            ]
-          },
           "sources": [
             {
               "title": "GOV.UK — Type scale",
@@ -154,65 +124,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 489
+          "wordCount": 185
         },
         {
           "id": "typography-adaptation-localization-writing",
-          "title": "Texto adaptável: crescer sem perder a tarefa",
-          "summary": "Preserve conteúdo, dados em edição e acesso à ação quando texto, largura ou idioma mudarem.",
-          "minutes": 6,
+          "title": "Texto adaptável: crescer sem esconder informação",
+          "summary": "Prepare a interface para nomes longos e preferências de leitura.",
+          "minutes": 2,
           "objectives": [
-            "Adaptar o conteúdo sem esconder informação necessária à decisão.",
-            "Separar testes didáticos de componente, requisitos web e comportamentos nativos."
+            "Texto adaptável é texto que pode aumentar, quebrar linha e ocupar mais espaço sem perder conteúdo importante.",
+            "A adaptação permite ler sem depender de uma única combinação de fonte, largura e conteúdo."
           ],
           "sections": [
             {
-              "title": "Entenda o que pode mudar",
-              "body": "<p><strong>Texto é variável.</strong> Nomes reais crescem, uma tradução ocupa mais espaço e a pessoa pode preferir letras maiores. Localização adapta linguagem e convenções, como datas, números e direção de escrita. Escrita de interface escolhe palavras que explicam o estado e ajudam a agir. Ambas precisam participar do desenho desde o início.</p><p>Permita novas linhas, maior altura e outra disposição antes de reduzir a fonte. Truncar pode servir a uma prévia com acesso claro ao conteúdo completo; não deve esconder a única identificação de opções semelhantes, uma consequência ou a recuperação de um erro. Crescimento e rolagem podem ser respostas corretas.</p>"
+              "title": "O que é",
+              "body": "<p>Texto adaptável é texto que pode aumentar, quebrar linha e ocupar mais espaço sem perder conteúdo importante. O mesmo componente pode receber um nome curto ou um nome longo.</p><p>Traduções e preferências de tamanho também mudam o espaço necessário.</p>"
             },
             {
-              "title": "Escreva para preservar significado e ação",
-              "body": "<p>“Salvar plano”, “Enviar solicitação” e “Reservar horário” não prometem a mesma coisa. Use verbo e objeto quando ajudam a distinguir a consequência. Um texto curto só é melhor se continuar dizendo o que a pessoa precisa saber antes de agir.</p><p>Na falha, informe o problema conhecido e o próximo passo possível, junto do contexto, preservando entrada válida. Não atribua uma causa à conexão sem evidência. Falha confirmada antes de enviar pode permitir nova tentativa; ausência de resposta depois do envio deixa o resultado incerto e pede verificar a mesma tentativa antes de repetir. Um estado vazio também precisa dizer o que falta e como começar, quando houver uma ação útil.</p><p>Na tradução, entregue frases completas, evitando concatenar pedaços. Prepare nomes longos, plural, ausência de dados e formatos locais. <a href=\"https://developer.android.com/guide/topics/resources/pseudolocales\">Pseudolocalização</a> simula expansão e características de outros idiomas para achar problemas; não substitui revisão por falantes. Um limite real de armazenamento deve ser explicado; um limite criado só para caber no desenho merece revisão.</p>"
+              "title": "Para que serve",
+              "body": "<p>A adaptação permite ler sem depender de uma única combinação de fonte, largura e conteúdo. Evita cortes em títulos, rótulos e condições importantes.</p><p>Reduzir a fonte toda vez que falta espaço pode tornar a tela difícil de usar.</p>"
             },
             {
-              "title": "Veja o alcance dos controles do exemplo",
-              "body": "<p>No cartão abaixo, os controles externos mudam a largura entre <strong>340 e 260 CSS px</strong> e o texto entre <strong>100% e 130%</strong>. O conteúdo permanece o mesmo; tamanho de fonte e entrelinha dos papéis desse cartão são multiplicados. O restante do aparelho não é ampliado.</p><p>Combine 260 px e 130%, leia o nome completo e role o conteúdo até “Editar horário”. A ação acompanha o conteúdo no fluxo e cresce com ele, sem rodapé fixo. Volte ao início e confira os mesmos dados. Isso demonstra uma adaptação real do componente; não executa Dynamic Type, ampliação web a 200% ou a escala global do sistema.</p>"
+              "title": "Onde usar",
+              "body": "<p>Na figura, os mesmos dados do Rota aparecem em uma coluna larga e outra estreita. O texto quebra em novas linhas, e o bloco cresce.</p><p>No produto real, mudanças de tamanho do sistema, como Dynamic Type no contexto Apple, exigem suporte da implementação. Uma ampliação didática não comprova esse funcionamento.</p>"
             },
             {
-              "title": "Escolha os testes da plataforma",
-              "body": "<p><strong>Web:</strong> <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html\">1.4.4 AA</a> trata de ampliar texto até 200% sem perda de conteúdo ou função, ressalvadas legendas e imagens de texto. <a href=\"https://www.w3.org/WAI/WCAG22/Understanding/reflow.html\">1.4.10 AA</a> verifica redistribuição para largura equivalente a 320 CSS px em conteúdo de rolagem vertical, sem exigir rolagem nas duas dimensões, salvo partes essencialmente bidimensionais. São testes separados, e diferentes do teste de espaçamento da aula anterior.</p><p><strong>iOS:</strong> use estilos e suporte a <a href=\"https://developer.apple.com/design/human-interface-guidelines/typography\">Dynamic Type</a>, inclusive com fontes próprias, e teste tamanhos de acessibilidade. <strong>Android:</strong> texto usa sp; desde Android 14, a escala pode ser não linear até 200%. Não multiplique tudo manualmente pelo mesmo fator nem use sp indiscriminadamente em margens. Consulte a <a href=\"https://developer.android.com/about/versions/14/features#non-linear-font-scaling\">documentação da plataforma</a>. CSS px, pontos lógicos Apple e sp não são intercambiáveis.</p><p>WCAG é normativa para web; <a href=\"https://www.w3.org/TR/wcag2ict-22/\">WCAG2ICT</a> orienta sua aplicação a software não web, sem equivalência automática de conformidade. Registre plataforma, largura, mecanismo e tamanho efetivamente testados.</p>"
-            },
-            {
-              "title": "Confira a continuidade durante a edição",
-              "body": "<p>Uma captura maior não mostra o que acontece com trabalho em andamento. Na implementação do Rota, comece a renomear um plano e deixe uma alteração ainda não salva. Registre texto, seleção e ação pendente; mude o tamanho pelo mecanismo real da plataforma e volte à tarefa. Confira preservação dos dados, associação campo–rótulo, instruções e acesso a salvar. Não exija a mesma coordenada ou altura anterior.</p><p>Se a tela reiniciar ou for reconstruída, registre o ocorrido e a recuperação, sem atribuir uma causa técnica que você não verificou. Teste ainda teclado aberto quando houver campo. Sem implementação, documente o comportamento esperado e deixe a execução pendente; o exemplo abaixo não possui edição real nem comprova continuidade de dados.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Evite alturas fixas para blocos de texto variável. Deixe títulos crescerem e reorganize elementos quando necessário. Use truncamento apenas quando a informação completa continuar disponível de forma adequada.</p><p>Confira números, acentos e palavras longas. Na web, texto ampliado e reflow, a reorganização em largura menor, são verificações diferentes. A legibilidade precisa continuar sem sobreposição ou perda de ações.</p>"
             }
           ],
           "examples": [
             {
               "title": "Texto e largura mudam; o conteúdo continua disponível",
               "visualHtml": "<div class=\"rx-study\" data-demo-control=\"type-width\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Meu plano</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content\" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">MEU PLANO</div><div class=\"rx-component-zone rx-type-zone\"><section class=\"rx-type-card\"><span class=\"rx-type-kicker\">EXPOSIÇÃO</span><h2>Memórias da cidade: caminhos, encontros e transformações</h2><p class=\"rx-type-place\">Galeria Municipal de Arte e Memória</p><section class=\"rx-type-visit\"><h3>Sua visita</h3><p class=\"rx-type-date\">Sábado, às 15h</p><p class=\"rx-type-support\">Duração estimada: 1h30</p></section><div class=\"rx-type-action\">Editar horário</div><p class=\"rx-type-support\">Salvar um plano não reserva entrada.</p></section></div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Interface ilustrada; controles didáticos externos.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TEXTO ADAPTÁVEL · TESTE REAL</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Baseline declarado</h4><p>A 100%: título 24/32px, local 16/24px, rótulo 12/18px, horário 20/28px, ação 16/24px. Título, rótulo e ação usam peso 500; corpo e dados usam 400.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Texto do componente:100% ou130%</h4><p>O controle multiplica font-size e line-height de todos os papéis desse cartão. O botão cresce em altura com o texto; o restante do aparelho não é ampliado.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Largura do componente:340 ou260px</h4><p>O conteúdo é o mesmo. Linhas e altura se ajustam sem truncamento. Role o conteúdo da tela para alcançar a ação ao final.</p></div></li><li><span class=\"rx-note-number\">4</span><div><h4>Uma regra verificável</h4><p>Neste cartão, a ação segue o conteúdo no fluxo; não é footer fixo. O teste didático não simula Dynamic Type, zoom 200% ou escala global do sistema.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> manter título, dados e ação no fluxo do cartão, com crescimento por conteúdo. Os controles mudam largura e métricas de texto reais, sem reescrever ou truncar o nome.</p><p><strong>Como testar:</strong> combine 260 CSSpx com 130% de texto. Confira o nome inteiro, role o conteúdo e alcance Editar horário. Volte ao baseline e confirme que os mesmos dados permanecem.</p><p><strong>Limite:</strong> este é um teste didático de componente, não uma simulação de Dynamic Type, zoom 200% ou conformidade WCAG. A entrega deve testar também os mecanismos reais de ampliação e as tecnologias assistivas de cada plataforma.</p>",
+              "analysis": "<p>Na figura, os mesmos dados do Rota aparecem em uma coluna larga e outra estreita. O texto quebra em novas linhas, e o bloco cresce.</p><p>No produto real, mudanças de tamanho do sistema, como Dynamic Type no contexto Apple, exigem suporte da implementação. Uma ampliação didática não comprova esse funcionamento.</p>",
               "alt": "Texto e largura mudam; o conteúdo continua disponível. Alterar a largura e o tamanho do texto do componente de visita, ler o nome completo e alcançar Editar horário.",
               "source": "Rota · estudo original",
-              "scenario": "Alterar a largura e o tamanho do texto do componente de visita, ler o nome completo e alcançar Editar horário.",
-              "comparisonFocus": "Use os controles externos para alterar o componente. A escala uniforme da moldura serve apenas para apresentar o exemplo no curso."
+              "scenario": "Prepare a interface para nomes longos e preferências de leitura.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Continue seu estudo do Rota verificando a variação longa já pronta. Se chegou por busca, os dados são: “Memórias da cidade: caminhos, encontros e transformações”, Galeria Municipal de Arte e Memória, sábado às 15h, duração de 1h30, “Editar horário” e “Salvar um plano não reserva entrada”.",
-            "steps": [
-              "No exemplo, combine largura de 260 CSS px e texto a 130%. Leia o nome completo, role até a ação e o aviso, e retorne a 340 px/100% para conferir os mesmos dados.",
-              "Aplique à sua ficha a regra de crescimento que observou. Registre a falha encontrada e a correção, ou o que permaneceu disponível.",
-              "Na implementação, deixe uma edição de nome ainda não salva e altere o tamanho de texto pela plataforma. Confira dados, rótulo e ação; se não puder executar, anote esse teste como pendente e especifique a preservação esperada."
-            ],
-            "deliverable": "A mesma ficha com o resultado do ensaio de componente e um registro separado de continuidade durante a edição, executado ou pendente.",
-            "criteria": [
-              "O nome completo, horário, duração, ação e aviso continuam disponíveis na combinação 260 px/130%.",
-              "A ação acompanha o conteúdo; crescimento não é resolvido ocultando dados ou diminuindo a fonte.",
-              "O registro distingue o ensaio de componente dos testes web de 200%/320 CSS px e dos mecanismos nativos.",
-              "A continuidade identifica dados e ação antes/depois da mudança real, ou permanece explicitamente pendente."
-            ]
-          },
           "sources": [
             {
               "title": "W3C — Understanding 1.4.4 Resize Text",
@@ -260,23 +211,17 @@
               "note": "Componente introduzido em agosto de 2026, versão 6.5.0, e marcado como experimental (trial) na documentação consultada. Referência complementar; a tela original do Rota não implementa um seletor de idiomas."
             },
             {
-              "title": "GOV.UK: escolher o idioma sem abandonar a tarefa",
+              "title": "GOV.UK: escolher o idioma e continuar o uso",
               "url": "https://design-system.service.gov.uk/components/language-navigation/after-h1/",
               "note": "Referência complementar de análise. O exemplo visual desta lição é uma composição original do Rota."
             }
           ],
           "videos": [],
-          "wordCount": 646
+          "wordCount": 185
         }
       ],
-      "objective": "Escolher e organizar texto legível que cresça sem perder a hierarquia.",
-      "rationale": "Com a estrutura definida, a tipografia estabelece a leitura antes da expressão cromática.",
-      "criteria": [
-        "Compara fontes com nomes, números e acentos reais.",
-        "Define papéis de texto distinguíveis sem criar estilos desnecessários.",
-        "Mostra título longo e texto ampliado sem corte de conteúdo essencial.",
-        "Justifica tamanho, peso e entrelinha como conjunto."
-      ],
+      "objective": "Entenda como escolher e organizar texto legível em tamanhos e conteúdos diferentes.",
+      "rationale": "A leitura precisa funcionar antes de acrescentar cor, efeitos e detalhes de identidade.",
       "references": [
         {
           "title": "Apple · tipografia",
@@ -297,62 +242,47 @@
     },
     {
       "id": "cores",
-      "title": "Cor com função",
-      "description": "Construir e verificar uma paleta que mantenha papéis, estados e legibilidade.",
+      "title": "Cor na interface",
+      "description": "Veja como escolher cores por função e manter contraste nos diferentes estados.",
       "lessons": [
         {
           "id": "cor-percepcao-paleta",
           "title": "Paleta: dar uma função a cada cor",
-          "summary": "Escolha cores pelos papéis de superfície, conteúdo, ação e seleção, e confira os pares onde serão usados.",
-          "minutes": 5,
+          "summary": "Escolha cores para fundo, texto, ação e estados.",
+          "minutes": 2,
           "objectives": [
-            "Distinguir diferença de matiz de contraste suficiente para o papel da cor.",
-            "Aplicar papéis de cor sem confundir uma seleção com a ação de salvar."
+            "Paleta é o conjunto de cores usado na interface.",
+            "Uma paleta com funções claras ajuda a distinguir conteúdo, ações e condições."
           ],
           "sections": [
             {
-              "title": "Entenda o que a cor acrescenta",
-              "body": "<p><strong>Cor ajuda a reconhecer papéis e mudanças.</strong> Também expressa identidade. Se todas as áreas usam a maior intensidade da marca, essa diferença deixa de ajudar a localizar a ação. Pergunte primeiro o que a pessoa precisa distinguir.</p><p><strong>Matiz</strong> é a família cromática, como azul ou verde; <strong>saturação</strong> descreve a intensidade cromática; <strong>luminosidade percebida</strong> é o quanto a cor parece clara ou escura. A luminância relativa usada no cálculo WCAG é uma grandeza definida: não pode ser deduzida pelo nome ou pela vivacidade de uma cor. Duas cores diferentes podem ter contraste insuficiente.</p>"
+              "title": "O que é",
+              "body": "<p>Paleta é o conjunto de cores usado na interface. Matiz é a família da cor, como azul ou verde. Saturação é sua intensidade cromática. Contraste depende da relação entre cores, especialmente da diferença de luminosidade.</p><p>Uma cor forte não é necessariamente uma cor legível.</p>"
             },
             {
-              "title": "Defina papéis antes dos valores",
-              "body": "<p>Comece por superfícies, texto principal, texto de apoio, contornos, ação e seleção. Acrescente estados quando eles existirem. Isso não exige uma cor inédita para cada papel nem uma quantidade fixa de tons neutros. Um nome como “texto de apoio” expressa melhor a intenção do que usar um cinza onde quer que sobre espaço.</p><p>Associações de vermelho com falha e verde com confirmação dependem de convenções e contexto; palavras e outros sinais continuam necessários. A cor de marca pode aparecer em mais de uma função se forma, posição e rótulo distinguirem esses usos. Não crie cores para categorias que a tarefa não precisa diferenciar.</p>"
+              "title": "Para que serve",
+              "body": "<p>Uma paleta com funções claras ajuda a distinguir conteúdo, ações e condições. Também mantém a identidade visual sem fazer todas as áreas competirem.</p><p>Se todo texto, borda e ícone usa o maior destaque, a ação principal perde sua diferença.</p>"
             },
             {
-              "title": "Veja seleção e ação trabalhando juntas",
-              "body": "<p>No exemplo abaixo, o horário <strong>“14h escolhido”</strong> recebe azul suave, check e texto. O botão <strong>“Salvar plano”</strong> usa azul sólido e um verbo de ação. A cor reforça uma diferença que também existe no conteúdo e na forma: escolher um horário ainda não salva o plano.</p><ol><li><strong>Mantenha a hierarquia.</strong> Primeiro organize conteúdo com posição, espaço e peso.</li><li><strong>Atribua os papéis.</strong> Use os neutros na estrutura e reserve ênfase para as distinções necessárias.</li><li><strong>Registre pares permitidos.</strong> Texto de apoio sobre superfície, texto sobre ação e conteúdo sobre seleção precisam de combinações próprias.</li></ol><p>Uma paleta agradável ou uma harmonia de cores não verifica leitura. Fotografias e gradientes variam atrás das letras; para uma informação indispensável, uma superfície estável pode ser a escolha mais simples.</p>"
+              "title": "Onde usar",
+              "body": "<p>No Rota, branco pode ser a superfície, cinza escuro o texto e azul a ação. Uma cor de erro aparece junto de informação sobre a condição, não sozinha.</p><p>As amostras da figura mostram essas funções. É preciso conferir também as combinações dentro da tela, onde uma cor aparece sobre outra.</p>"
             },
             {
-              "title": "Confira antes de ampliar a paleta",
-              "body": "<p>Meça os pares no contexto final. Para texto comum, a base AA é 4,5:1; o limiar de 3:1 só se aplica ao texto que satisfaz a definição de grande. <a href=\"#contraste-visual-legibilidade\">A lição de contraste explica a classificação, as exceções e a medição</a>. Texto funcional não ganha dispensa porque usa a cor da marca.</p><p>Se um par falhar, você pode mudar o tom, trocar a superfície ou reservar a cor para outra função. Confira o componente inteiro depois: uma troca que melhora o texto pode prejudicar um ícone. Documente onde o par pode ser usado e reteste quando mudar estado ou tema. Nenhuma cor isolada é “acessível”.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Comece pelos papéis e depois escolha os valores. Reserve maior intensidade para o que precisa se distinguir. Mantenha informação importante compreensível sem depender apenas da cor.</p><p>Confira contraste dos pares reais. Não escolha só pela aparência de amostras lado a lado: um azul adequado para fundo de botão pode não funcionar como texto pequeno sobre outro fundo.</p>"
             }
           ],
           "examples": [
             {
               "title": "Cor ajuda a distinguir papéis",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Revisar</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">SÁBADO CULTURAL</div><h2>Revise seu plano</h2><p class=\"rx-subtitle\">Confira o horário antes de salvar.</p><div class=\"rx-box \"><h3>Forma &amp; luz</h3><p>Galeria Horizonte · Centro</p></div><div class=\"rx-chips\"><span class=\"rx-filter rx-filter-selected\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 12 4 4L19 6\"/></svg>14h escolhido</span><span class=\"rx-filter \">15h</span><span class=\"rx-filter \">16h</span></div><div class=\"rx-notice\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"3\"/><path d=\"M9 3v3m6-3v3M9 11h6m-6 4h4\"/></svg><p>Seu horário pode ser alterado depois.</p></div></div><div class=\"rx-footer\"><div class=\"rx-primary\">Salvar plano</div><p>Salvar não reserva entrada.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">COR QUE ORIENTA E INCLUI</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Neutros para estrutura</h4><p>Superfícies claras e texto escuro sustentam os dados sem competir com a ação.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Azul tonal para seleção</h4><p>O horário escolhido usa fundo suave e check. A indicação não depende só da cor.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Azul sólido para ação</h4><p>Salvar plano concentra a ênfase de ação. Contrastes precisam ser medidos em cada par.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Atribuir papéis consistentes à paleta, em vez de colorir todos os elementos com igual intensidade.</p><p><strong>Como testar:</strong> Pergunte qual horário está escolhido e qual é a próxima ação. Confira também a compreensão sem distinguir as cores.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>No Rota, branco pode ser a superfície, cinza escuro o texto e azul a ação. Uma cor de erro aparece junto de informação sobre a condição, não sozinha.</p><p>As amostras da figura mostram essas funções. É preciso conferir também as combinações dentro da tela, onde uma cor aparece sobre outra.</p>",
               "alt": "Cor ajuda a distinguir papéis. Escolher um horário e identificar a ação que salva o plano, distinguindo seleção de ação principal.",
               "source": "Rota · estudo original",
-              "scenario": "Escolher um horário e identificar a ação que salva o plano, distinguindo seleção de ação principal.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Escolha cores para fundo, texto, ação e estados.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Aplique papéis de cor à sua ficha do Rota. Para começar por esta aula, use a revisão do exemplo: Forma & luz, Galeria Horizonte · Centro, opções 14h, 15h e 16h, com 14h escolhido, ação “Salvar plano” e aviso “Salvar não reserva entrada”.",
-            "steps": [
-              "Nomeie superfície, texto de apoio, seleção e ação. Use os mesmos papéis da sua ficha anterior ou os valores do exemplo: apoio #5C5C5C sobre #FFFFFF, seleção #2547D0 sobre #EBEFFF e ação #FFFFFF sobre #335CFF.",
-              "Aplique os papéis e meça esses três pares para os textos comuns. Registre a função junto dos valores, sem aprovar uma amostra isolada. A lição de contraste mostra como usar o verificador WebAIM; o link também está nas fontes desta aula.",
-              "Confira se “14h escolhido”, o check e “Salvar plano” ainda distinguem escolha e ação quando você ignora o matiz. Se mudar um par, justifique o que a mudança melhora."
-            ],
-            "deliverable": "A mesma ficha com papéis de cor anotados e três pares registrados. Guarde os nomes para trabalhar estados e temas.",
-            "criteria": [
-              "Os nomes expressam funções e indicam os fundos em que os conteúdos podem aparecer.",
-              "Os três pares de texto têm resultado registrado e atendem ao requisito aplicável.",
-              "A escolha de 14h permanece explícita sem depender apenas da cor.",
-              "“Salvar plano” continua distinto da seleção e o aviso sobre reserva permanece legível."
-            ]
-          },
           "sources": [
             {
               "title": "W3C: contraste mínimo",
@@ -371,61 +301,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 440
+          "wordCount": 190
         },
         {
           "id": "cor-semantica-estados-temas",
-          "title": "Estados e temas: preservar o significado",
-          "summary": "Diferencie seleção, foco e salvamento e faça os papéis de cor sobreviverem à mudança de tema.",
-          "minutes": 5,
+          "title": "Cor nos estados: manter o significado em temas diferentes",
+          "summary": "Diferencie ação, seleção, erro e conteúdo sem depender só da cor.",
+          "minutes": 2,
           "objectives": [
-            "Distinguir estados simultâneos sem depender só da cor.",
-            "Especificar pares por função e verificar o alcance de uma mudança compartilhada."
+            "Estado é a condição de um elemento: disponível, selecionado, em foco ou desabilitado, por exemplo.",
+            "Uma pessoa precisa distinguir uma opção escolhida de um botão que ainda pode acionar."
           ],
           "sections": [
             {
-              "title": "Dê nome à função, não só ao valor",
-              "body": "<p>Separe função e valor: “texto principal” descreve um papel; um código de cor descreve um valor. Compare a mesma função nos temas claro e escuro. A combinação precisa preservar significado e contraste no fundo em que aparece.</p><p>No Rota, ação, seleção e erro têm papéis diferentes. O tema pode mudar seus valores, mas não deve trocar sua função. Confira texto, borda e indicador juntos.</p>"
+              "title": "O que é",
+              "body": "<p>Estado é a condição de um elemento: disponível, selecionado, em foco ou desabilitado, por exemplo. Tema claro e tema escuro mudam os fundos e os valores usados para apresentar esses elementos.</p><p>A função precisa continuar clara mesmo quando a aparência muda.</p>"
             },
             {
-              "title": "Diferencie os estados que coexistem",
-              "body": "<ul><li><strong>Selecionado:</strong> uma escolha que permanece.</li><li><strong>Pressionado:</strong> um contato em andamento.</li><li><strong>Foco:</strong> onde teclado ou outro mecanismo de entrada atua.</li><li><strong>Desabilitado:</strong> uma ação indisponível.</li><li><strong>Carregando:</strong> uma operação em andamento.</li></ul><p>Uma opção pode estar selecionada e focada ao mesmo tempo. No exemplo, <strong>15h está escolhido</strong>, enquanto o <strong>campo de nota tem foco</strong>. A frase “A edição ainda não foi salva” e a ação “Salvar alterações” distinguem escolha de conclusão. O contorno é uma representação visual do foco; a tela estática não executa a edição.</p><p>Use palavras e formas além de cor. “Salvando” e “Salvo” descrevem momentos diferentes. Uma ação desabilitada também precisa de motivo compreensível; decidir entre bloquear e explicar a pendência ao acionar depende do risco e da possibilidade de recuperação.</p>"
+              "title": "Para que serve",
+              "body": "<p>Uma pessoa precisa distinguir uma opção escolhida de um botão que ainda pode acionar. Também precisa reconhecer um erro sem depender de enxergar uma cor específica.</p><p>Trocar apenas o fundo claro pelo escuro pode fazer texto, borda e ícones perderem contraste.</p>"
             },
             {
-              "title": "Troque o tema preservando os pares",
-              "body": "<p>Tema escuro exige revisar superfície, texto, seleção, foco e demais estados. Não é uma inversão automática. Imagens, mapas, sombras e separação entre camadas podem precisar de outro tratamento. Preserve significado e destaque, sem exigir intensidade visual idêntica.</p><p>O <a href=\"https://developer.android.com/develop/ui/compose/designsystems/material3\">Material 3 em Compose</a> documenta papéis com conteúdos correspondentes e temas claro, escuro e dinâmico. A cor dinâmica, disponível a partir do Android 12, precisa de alternativa quando indisponível. É uma orientação daquela plataforma; o exemplo do Rota não implementa essa função nem mostra tema escuro.</p>"
+              "title": "Onde usar",
+              "body": "<p>Na escolha de horário do Rota, a opção das 14h pode ter borda, indicador e cor de seleção. A ação “Salvar plano” tem outro papel. As duas não devem parecer o mesmo tipo de elemento.</p><p>No tema escuro, os valores podem mudar, mas a seleção e a ação continuam distinguíveis.</p>"
             },
             {
-              "title": "Confira a mudança na origem",
-              "body": "<ol><li><strong>Preveja o alcance.</strong> Antes de trocar a cor de ação, liste quais usos devem mudar e quais têm outra função.</li><li><strong>Altere a regra compartilhada.</strong> Não retoque cada tela para esconder um vínculo incorreto. Salvar plano e Editar plano podem acompanhar a identidade; uma falha não deve mudar só por ter compartilhado o mesmo hexadecimal.</li><li><strong>Compare e meça.</strong> Verifique os usos previstos nos estados e temas existentes. Vínculo errado e contraste insuficiente são problemas diferentes: um pede separar funções; o outro, corrigir o par.</li></ol><p>Na implementação, troque o tema durante uma edição e confira nota, seleção e foco. Se só houver desenhos, documente o comportamento esperado e marque esse teste como pendente. Uma matriz bem desenhada não demonstra preservação dos dados em execução.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Use mais de uma pista: indicador, forma, posição ou texto, além da cor. Confira o conjunto de fundo, texto, borda e ícone em cada estado.</p><p>Não trate o tema escuro como inversão automática. Também não use um estilo apagado para esconder uma ação importante sem explicar por que está indisponível. Preserve a lógica entre telas.</p>"
             }
           ],
           "examples": [
             {
               "title": "Seleção e foco representam coisas diferentes",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Editar plano</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">FORMA & LUZ</div><h2>Ajuste seu horário</h2><p class=\"rx-subtitle\">A edição ainda não foi salva.</p><div class=\"rx-section-label\">HORÁRIOS DISPONÍVEIS</div><div class=\"rx-chips\"><span class=\"rx-filter \">14h</span><span class=\"rx-filter rx-filter-selected\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 12 4 4L19 6\"/></svg>15h escolhido</span><span class=\"rx-filter \">16h</span></div><div class=\"rx-field rx-field-focus\"><span class=\"rx-field-label\">Nota pessoal</span><div class=\"rx-input\">Levar um caderno<span class=\"rx-caret\"></span></div><p class=\"rx-field-help\">A nota aparece apenas no seu plano.</p></div><div class=\"rx-notice\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"3\"/><path d=\"M9 3v3m6-3v3M9 11h6m-6 4h4\"/></svg><p>15h está selecionado.<br>Salvar ainda é o próximo passo.</p></div></div><div class=\"rx-footer\"><div class=\"rx-primary\">Salvar alterações</div><p>Salvar não reserva entrada.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">COR QUE ORIENTA E INCLUI</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Seleção descreve uma escolha</h4><p>15h tem check, texto e preenchimento. Isso não significa que a alteração foi salva.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Foco descreve a entrada</h4><p>O contorno do campo de nota indica onde o teclado atua.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Tema precisa preservar relações</h4><p>Ao criar tema escuro, revise pares de superfície, texto, foco e seleção; não faça uma inversão automática.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> diferenciar o horário selecionado, o campo com foco e a edição ainda não salva. Os três significados coexistem nesta tela.</p><p><strong>Como testar:</strong> na implementação, mude o tema durante a edição e confira seleção, nota e foco. Se houver apenas este estudo estático, registre o comportamento esperado e mantenha o teste pendente.</p><p><strong>Limite:</strong> a tela mostra um tema e uma representação de foco; não executa a troca de tema nem demonstra preservação de dados.</p>",
+              "analysis": "<p>Na escolha de horário do Rota, a opção das 14h pode ter borda, indicador e cor de seleção. A ação “Salvar plano” tem outro papel. As duas não devem parecer o mesmo tipo de elemento.</p><p>No tema escuro, os valores podem mudar, mas a seleção e a ação continuam distinguíveis.</p>",
               "alt": "Seleção e foco representam coisas diferentes. Distinguir o horário selecionado do campo com foco antes de salvar a edição do plano.",
               "source": "Rota · estudo original",
-              "scenario": "Distinguir o horário selecionado do campo com foco antes de salvar a edição do plano.",
-              "comparisonFocus": "O horário selecionado e o campo com foco aparecem ao mesmo tempo, antes de salvar. A troca de tema é um teste adicional proposto, não mostrado nesta tela."
+              "scenario": "Diferencie ação, seleção, erro e conteúdo sem depender só da cor.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Continue o plano do Rota no estado de edição. Se chegou por busca, use Forma & luz, opções 14h/15h/16h, 15h escolhido, nota “Levar um caderno” com foco, edição ainda não salva e ação “Salvar alterações”.",
-            "steps": [
-              "Anote o que está escolhido, onde está o foco e o que ainda precisa ser salvo. Registre para cada um o sinal visível e o significado.",
-              "Faça uma variação de tema desse mesmo estado. Defina pares para texto, seleção, foco e ação, mantendo horário, nota e aviso sobre reserva; meça os pares que mudou.",
-              "Mude provisoriamente a cor de ação pela regra compartilhada. Compare os usos com uma lista prévia do que deveria mudar. Se não houver implementação, registre a troca durante a edição como teste pendente."
-            ],
-            "deliverable": "O estado de edição do Rota em dois temas, com pares e resultado da mudança compartilhada anotados. Nenhuma nova visita ou pesquisa precisa ser criada.",
-            "criteria": [
-              "Seleção, foco e edição não salva são distinguíveis e podem coexistir sem sinais contraditórios.",
-              "Horário, nota e aviso mantêm o significado nos dois temas; os pares alterados foram medidos.",
-              "A mudança de ação atinge os usos previstos; um vínculo indevido é separado de um problema de contraste.",
-              "Preservação de dados e foco aparece como observada na implementação ou pendente, nunca como conclusão da tela estática."
-            ]
-          },
           "sources": [
             {
               "title": "Android: Material Design 3 em Compose",
@@ -439,61 +354,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 408
+          "wordCount": 187
         },
         {
           "id": "cor-acessibilidade-verificacao",
-          "title": "Verificação de cor: registrar evidência",
-          "summary": "Confirme o par efetivo, verifique se o significado depende de cor e registre o alcance real do resultado.",
-          "minutes": 5,
+          "title": "Contraste de cor: conferir os pares usados na tela",
+          "summary": "Veja como verificar texto, controles e fundos sem aprovar uma cor isolada.",
+          "minutes": 2,
           "objectives": [
-            "Reproduzir uma medição de contraste com método, contexto e requisito identificados.",
-            "Separar contraste, significado visual e verificações que dependem da implementação."
+            "A verificação de contraste compara a cor de um elemento com o fundo em que ele aparece.",
+            "A verificação evita aprovar combinações que parecem boas em uma tela, mas dificultam a leitura."
           ],
           "sections": [
             {
-              "title": "Separe três perguntas",
-              "body": "<p><strong>Consigo perceber o elemento? Distinguir o estado? Compreender o significado?</strong> Texto contrastante responde apenas parte da primeira pergunta. Uma seleção pode estar visível, mas continuar inexplicável se só muda de vermelho para verde.</p><p><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html\">WCAG 1.4.1</a> exige que cor não seja o único meio visual de transmitir informação. Use palavras, forma ou outro sinal compreensível. Em um gráfico, rótulos diretos e marcadores podem ajudar; num mapa, nome, ícone ou filtro podem revelar a categoria sem transformar todos os pontos em blocos de texto. Trocar uma cor arbitrária por uma forma que ninguém entende não resolve o significado.</p>"
+              "title": "O que é",
+              "body": "<p>A verificação de contraste compara a cor de um elemento com o fundo em que ele aparece. O cálculo WCAG usa luminância relativa para produzir uma razão, como 4,5:1.</p><p>Essa razão não mede se uma paleta é bonita nem se todas as decisões de acessibilidade estão corretas.</p>"
             },
             {
-              "title": "Registre o par efetivo e o método",
-              "body": "<p>Para cada verificação, anote <strong>elemento, estado, tema, cores efetivas, tamanho e peso, método de cálculo e resultado</strong>. Identifique como o cálculo foi feito. Na implementação, confira estilos computados, opacidade e fundo. Sobre fotos ou gradientes, procure o trecho menos favorável atrás do conteúdo.</p><p>O exemplo abaixo mede o texto dos cartões: <strong>#5C5C5C sobre #FFFFFF, 6,6869:1</strong> no cálculo sRGB da WCAG. É texto comum, com requisito de 4,5:1. Esse par difere de #525866 sobre branco, usado na aula de contraste. Não copie um resultado para outra cor só porque ambas parecem cinza.</p><p>Uma medição complementar por <em>APCA</em>, um algoritmo de contraste perceptual, usa outra escala: registre-a separadamente e não a apresente como atendimento à WCAG 2.2. A <a href=\"https://www.w3.org/TR/2026/WD-wcag-3.0-20260910/\">WCAG 3 publicada em 10/09/2026</a> é um rascunho de trabalho, não a base normativa desta trilha. Se cálculos divergirem, investigue fundo, transparência e modelo antes de escolher uma conclusão.</p>"
+              "title": "Para que serve",
+              "body": "<p>A verificação evita aprovar combinações que parecem boas em uma tela, mas dificultam a leitura. É especialmente importante em textos pequenos e informações secundárias.</p><p>Também ajuda a comparar temas e estados sem depender apenas de impressão visual.</p>"
             },
             {
-              "title": "Verifique a informação necessária",
-              "body": "<p><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html\">WCAG 1.4.11 AA</a> exige 3:1 para as partes visuais necessárias à identificação de controles, estados e gráficos, nos casos aplicáveis. Pergunte o que deixaria de ser reconhecível se um detalhe desaparecesse. Uma borda decorativa de cartão é diferente do contorno que identifica um campo.</p><p>Não exija mecanicamente 3:1 de toda superfície de botão. A identificação pode vir da combinação de texto, contorno e contexto; o texto continua sujeito ao próprio critério. Inclua foco, seleção, erro e indisponibilidade quando existirem. Registre a razão de qualquer exceção, sem tratar informação secundária como dispensável.</p>"
+              "title": "Onde usar",
+              "body": "<p>A figura compara #A3A3A3 sobre branco, cerca de 2,52:1, com #525866 sobre branco, cerca de 7,13:1. O primeiro não atende ao mínimo de texto comum; o segundo supera 4,5:1.</p><p>Esses resultados valem para os pares sólidos indicados. Transparências e imagens precisam considerar o fundo efetivo.</p>"
             },
             {
-              "title": "Corrija e confira o alcance",
-              "body": "<p>Se o par falhar, mude tom, superfície ou forma de comunicar a função. Revise todo o componente: escurecer o fundo pode favorecer texto branco e prejudicar um ícone escuro. Corrija a origem compartilhada e repita o teste nas ocorrências afetadas.</p><p>Uma versão monocromática e simuladores de visão de cores ajudam a encontrar problemas; não representam todas as pessoas nem certificam a interface. A observação de tarefas com participantes, incluindo quem usa recursos de acessibilidade, é uma etapa distinta. Registre a autoinspeção como autoinspeção.</p><p>Esta revisão também não confirma teclado, ordem de leitura, nome acessível, alvos ou conclusão da tarefa. Um ícone pode oferecer um sinal visual e ainda faltar à pessoa que navega por leitor de tela. Declare o que foi verificado e o que permanece pendente.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Identifique elemento, tamanho, peso, estado, tema e cores realmente usadas. Compare com o requisito aplicável, sem arredondar um valor insuficiente.</p><p>Não misture cálculos de métodos diferentes como se fossem o mesmo critério. A trilha usa WCAG 2.2; APCA é outro método. Depois de corrigir uma cor, confira os outros lugares em que a combinação aparece.</p>"
             }
           ],
           "examples": [
             {
               "title": "Contraste verificado no par certo",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Informações</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">ANTES DA VISITA</div><h2>Informações práticas</h2><p class=\"rx-subtitle\">Forma & luz · Galeria Horizonte</p><div class=\"rx-measured-copy\"><div class=\"rx-box \"><h3>Última entrada</h3><p>17h · A galeria fecha às 18h</p></div><div class=\"rx-box \"><h3>Endereço</h3><p>Rua das Oficinas, 120<br>Centro · Cidade demonstrativa</p></div></div><p class=\"rx-help\">Confira o horário antes de sair de casa.</p></div><div class=\"rx-footer\"><div class=\"rx-primary\">Ver meu plano</div><p>Endereço fictício.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">COR QUE ORIENTA E INCLUI</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Par completo</h4><p>A relação depende do texto e do fundo efetivo, não só da cor isolada.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Critério específico</h4><p>Este par de texto normal supera 4,5:1 no cálculo sRGB. Não arredonde um valor abaixo do limite para aprová-lo.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Outros elementos, outros testes</h4><p>Ícones, bordas necessárias, foco e estados exigem suas próprias verificações.</p></div></li></ol><div class=\"rx-pair\"><span class=\"rx-swatch\"></span><div><b>#5C5C5C / #FFFFFF</b><p>Contraste calculado: 6,6869:1</p></div></div><p class=\"rx-control-caption\">Medição do texto dos cartões sobre branco; não é uma certificação da tela.</p></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Especificar e medir um par real de cores para informação necessária.</p><p><strong>Como testar:</strong> Confirme estilos computados, opacidade e fundo no produto. Peça para localizar a última entrada e o endereço.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>A figura compara #A3A3A3 sobre branco, cerca de 2,52:1, com #525866 sobre branco, cerca de 7,13:1. O primeiro não atende ao mínimo de texto comum; o segundo supera 4,5:1.</p><p>Esses resultados valem para os pares sólidos indicados. Transparências e imagens precisam considerar o fundo efetivo.</p>",
               "alt": "Contraste verificado no par certo. Descobrir a última entrada e o endereço da galeria antes de sair de casa.",
               "source": "Rota · estudo original",
-              "scenario": "Descobrir a última entrada e o endereço da galeria antes de sair de casa.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Veja como verificar texto, controles e fundos sem aprovar uma cor isolada.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Complete o registro de cor da sua ficha do Rota. Se chegou por busca, use “Informações práticas”: última entrada às 17h, fechamento às 18h e Rua das Oficinas, 120, Centro · Cidade demonstrativa. Nos cartões, o texto #5C5C5C está sobre #FFFFFF. A especificação dos parágrafos é 16 px, entrelinha 25 px e peso 400; isso descreve o CSS, não uma nova medição de navegador.",
-            "steps": [
-              "Reproduza a medição do par e registre contexto, tamanho/peso, cores, método WCAG 2.2 e requisito de texto comum. Use os estilos da sua implementação; se estiver só desenhando, identifique os valores como especificados.",
-              "Confira se horário e endereço continuam compreensíveis sem distinguir matizes. Acrescente ao mesmo registro a seleção “14h escolhido”, com check e texto, se você já a desenhou.",
-              "Se encontrar uma falha, corrija o papel compartilhado e confira as ocorrências afetadas. Separe medição, autoinspeção e testes ainda pendentes."
-            ],
-            "deliverable": "Um registro reproduzível ligado à ficha existente, com resultado, eventual correção e limites. Ele se soma aos pares das aulas anteriores.",
-            "criteria": [
-              "O resultado corresponde a #5C5C5C/#FFFFFF ou ao par efetivamente usado, com a diferença explicitada.",
-              "Método e requisito estão identificados; outro algoritmo não substitui a aprovação WCAG 2.2.",
-              "Informação essencial continua reconhecível sem depender apenas do matiz.",
-              "O registro distingue valores especificados de observados e não declara testes operacionais que não foram feitos."
-            ]
-          },
           "sources": [
             {
               "title": "W3C: Uso de cor",
@@ -532,17 +432,11 @@
             }
           ],
           "videos": [],
-          "wordCount": 479
+          "wordCount": 184
         }
       ],
-      "objective": "Construir e verificar uma paleta que mantenha papéis, estados e legibilidade.",
-      "rationale": "A cor reforça a hierarquia tipográfica já resolvida, sem substituí-la.",
-      "criteria": [
-        "Atribui função a cada cor da paleta.",
-        "Distingue seleção, ação e condição sem depender só de matiz.",
-        "Registra contraste dos pares reais com contexto e requisito.",
-        "Confere as combinações nos temas usados."
-      ],
+      "objective": "Veja como escolher cores por função e manter contraste nos diferentes estados.",
+      "rationale": "A cor reforça as diferenças já construídas por posição, espaço e tipografia.",
       "references": [
         {
           "title": "W3C · contraste de texto",
@@ -563,62 +457,47 @@
     },
     {
       "id": "usabilidade-acessibilidade",
-      "title": "Revisão visual e acessibilidade",
-      "description": "Inspecionar a proposta com critérios observáveis e separar desenho de comportamento ainda não verificado.",
+      "title": "Usabilidade e acessibilidade",
+      "description": "Conheça princípios para encontrar problemas de orientação, leitura e operação.",
       "lessons": [
         {
           "id": "heuristicas-estado-linguagem-controle",
-          "title": "Heurísticas 1–3: explicar estado e oferecer controle",
-          "summary": "Decida se cada mensagem descreve o que aconteceu e se a pessoa consegue corrigir ou sair com previsibilidade.",
-          "minutes": 5,
+          "title": "Heurísticas 1–3: mostrar o estado e permitir voltar",
+          "summary": "Use princípios simples para reconhecer problemas de orientação e controle.",
+          "minutes": 2,
           "objectives": [
-            "Inspecionar estado, linguagem e saídas de uma mesma tarefa.",
-            "Separar uma conclusão confirmada de uma tentativa sem resposta."
+            "Heurísticas são princípios gerais para revisar uma interface.",
+            "Esses princípios ajudam a evitar dúvidas como “o aplicativo recebeu meu toque?”, “isso foi salvo?” e “como saio daqui?”."
           ],
           "sections": [
             {
-              "title": "Inspecione um problema concreto",
-              "body": "<p><strong>Heurísticas são orientações amplas para encontrar riscos de uso.</strong> As dez heurísticas de Nielsen ajudam a revisar uma tarefa; não certificam usabilidade e não substituem uma avaliação com pessoas. As três primeiras perguntam: o que aconteceu, o que isso significa e como mudar de direção?</p><p>Use a mesma ficha e o mesmo fluxo do Rota. Registre um problema como estado, evidência, consequência possível e correção. “O estado não está claro” é vago; “o texto afirma Plano salvo antes de a gravação ser confirmada” permite localizar e verificar a falha.</p>"
+              "title": "O que é",
+              "body": "<p>Heurísticas são princípios gerais para revisar uma interface. As três primeiras de Nielsen tratam de mostrar o estado do sistema, usar referências compreensíveis e permitir controle e saída.</p><p>Elas ajudam a identificar problemas, mas não são uma norma técnica nem garantem que toda pessoa entenderá a tela.</p>"
             },
             {
-              "title": "1. Mostre o estado que o sistema conhece",
-              "body": "<p>Separe ação recebida, salvamento em andamento e resultado confirmado. No exemplo, “Plano salvo” é um estado posterior à confirmação. Nome, local, dia e horário permitem conferir qual visita foi guardada. O indicador de espera não prova conclusão, e uma porcentagem só faz sentido quando existe uma medida real de progresso.</p><p>Se o envio aconteceu, mas a resposta não chegou, não mostre sucesso nem falha certa. Informe a incerteza e consulte a tentativa anterior. Se uma falha foi confirmada antes de qualquer envio, uma nova tentativa pode ser oferecida. São situações diferentes e não devem receber a mesma ação automaticamente.</p>"
+              "title": "Para que serve",
+              "body": "<p>Esses princípios ajudam a evitar dúvidas como “o aplicativo recebeu meu toque?”, “isso foi salvo?” e “como saio daqui?”.</p><p>Na UI, a resposta aparece em títulos, estados de controles, posição das ações e indicação clara do que aconteceu.</p>"
             },
             {
-              "title": "2. Use a linguagem da tarefa",
-              "body": "<p>“Plano salvo” descreve um resultado reconhecível. Um código de operação interna não explica o que a pessoa poderá consultar depois. A correspondência com o mundo da pessoa inclui nomes, unidades, sequência e consequência, não apenas trocar palavras difíceis.</p><p>O aviso “Não reserva entrada” precisa concordar com a ação e com a confirmação. Familiaridade não autoriza uma promessa falsa. Caso a informação seja incerta, diga qual parte falta confirmar, sem inventar uma causa técnica.</p>"
+              "title": "Onde usar",
+              "body": "<p>No Rota, “Salvando” e “Plano salvo” representam condições diferentes. O nome da visita permanece visível para deixar claro qual item está sendo alterado. Um controle de voltar ou cancelar precisa corresponder ao momento atual.</p><p>Fechar o painel de horário não deve parecer uma confirmação se a escolha ainda não foi salva.</p>"
             },
             {
-              "title": "3. Explique como corrigir e sair",
-              "body": "<p>Voltar muda de lugar; cancelar interrompe uma tarefa; desfazer reverte um efeito quando isso é possível; fechar pode apenas ocultar uma superfície. Escreva o destino e o efeito nos dados, em vez de tratar esses verbos como equivalentes.</p><p>No exemplo, “Editar visita” oferece correção depois do salvamento e “Ver meu plano” leva à consulta. A imagem não executa nenhum deles. No ensaio do seu fluxo, confira o que acontece com a visita salva se a edição é abandonada. Não prometa desfazer uma operação que o sistema não consegue reverter, nem interrompa toda ação trivial com uma confirmação.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Mostre o estado conhecido, sem antecipar sucesso. Use termos e relações que façam sentido para o público, não nomes internos do sistema.</p><p>Mantenha saída e retorno localizáveis. Deixe claro quando cancelar preserva ou descarta uma alteração. A apresentação deve combinar com o comportamento real; uma mensagem desenhada não comprova que a operação aconteceu.</p>"
             }
           ],
           "examples": [
             {
               "title": "Um resultado claro, com caminho de volta",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Meu plano</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-success-symbol\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 12 4 4L19 6\"/></svg></div><div class=\"rx-eyebrow\">RESULTADO CONFIRMADO</div><h2>Plano salvo</h2><p class=\"rx-subtitle\">Sua visita está pronta para consultar depois.</p><div class=\"rx-box \"><h3>Forma &amp; luz</h3><p>Sábado, 24 out · 14h<br>Galeria Horizonte · Centro</p></div><div class=\"rx-notice\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"3\"/><path d=\"M9 3v3m6-3v3M9 11h6m-6 4h4\"/></svg><p>Salvar organiza seu passeio.<br>Não reserva entrada.</p></div></div><div class=\"rx-footer\"><div class=\"rx-secondary\">Editar visita</div><div class=\"rx-primary\">Ver meu plano</div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">AVALIAR USABILIDADE E ACESSIBILIDADE</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Resultado depois da confirmação</h4><p>Plano salvo representa uma gravação confirmada, e não apenas uma tentativa.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Objeto reconhecível</h4><p>Nome, local e horário conectam o estado à visita certa.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Controle continua disponível</h4><p>Editar permite corrigir o plano. Uma remoção posterior deve ter política de recuperação definida.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Comunicar estado e consequência usando a linguagem da tarefa, com possibilidade de correção.</p><p><strong>Como testar:</strong> Simule atraso e falha antes do sucesso. Pergunte quando o plano ficou salvo e como corrigir o horário.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>No Rota, “Salvando” e “Plano salvo” representam condições diferentes. O nome da visita permanece visível para deixar claro qual item está sendo alterado. Um controle de voltar ou cancelar precisa corresponder ao momento atual.</p><p>Fechar o painel de horário não deve parecer uma confirmação se a escolha ainda não foi salva.</p>",
               "alt": "Um resultado claro, com caminho de volta. Reconhecer que o plano foi salvo, conferir a visita e localizar como corrigir o horário.",
               "source": "Rota · estudo original",
-              "scenario": "Reconhecer que o plano foi salvo, conferir a visita e localizar como corrigir o horário.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Use princípios simples para reconhecer problemas de orientação e controle.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Inspecione o salvamento do seu Rota. Se chegou aqui pela busca, use a confirmação de Forma & luz, sábado 24 de outubro às 14h, Galeria Horizonte, e as ações Editar visita e Ver meu plano.",
-            "steps": [
-              "Anote três momentos do fluxo: antes de enviar, aguardando resposta e salvamento confirmado. Escreva o que o sistema sabe em cada um.",
-              "Confira se as mensagens concordam com esses momentos e com o efeito de guardar um plano pessoal.",
-              "Escolha a saída Editar visita e defina como retornar ao plano sem alterar os dados já salvos quando a edição for abandonada. Registre uma pendência ou correção encontrada."
-            ],
-            "deliverable": "O fluxo existente com estado, linguagem e saída revisados, mais um registro de inspeção para a revisão final.",
-            "criteria": [
-              "A mensagem de sucesso só aparece após confirmação do resultado.",
-              "O estado sem resposta não se transforma em falha certa nem dispara novo envio às cegas.",
-              "A mensagem identifica a visita e não promete reserva ou ingresso.",
-              "O caminho de correção informa o destino dos dados e separa especificação de comportamento já verificado."
-            ]
-          },
           "sources": [
             {
               "title": "Nielsen: dez heurísticas",
@@ -642,61 +521,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 376
+          "wordCount": 189
         },
         {
           "id": "heuristicas-consistencia-prevencao-reconhecimento",
-          "title": "Heurísticas 4–6: comparar, corrigir e reconhecer",
-          "summary": "Decida que contexto precisa ficar visível para conferir escolhas e corrigir um engano sem refazer o trabalho.",
-          "minutes": 5,
+          "title": "Heurísticas 4–6: manter padrões e evitar dúvidas",
+          "summary": "Facilite reconhecer opções e corrigir escolhas antes de concluir.",
+          "minutes": 2,
           "objectives": [
-            "Relacionar consistência de nomes e comportamento à expectativa da pessoa.",
-            "Escolher uma prevenção proporcional e reduzir memorização desnecessária."
+            "As heurísticas 4, 5 e 6 tratam de consistência, prevenção de erros e reconhecimento em vez de memorização.",
+            "Uma pessoa não deveria precisar lembrar o horário de outra tela para conferir sua escolha."
           ],
           "sections": [
             {
-              "title": "4. Mantenha previsível o significado das ações",
-              "body": "<p><strong>Consistência é conservar relações compreensíveis entre sinais e efeitos.</strong> Compare aparência, nomes e comportamento. Dois botões iguais podem executar ações diferentes; copiar a aparência não resolve essa surpresa.</p><p>No Rota, salvar deve continuar significando guardar o plano pessoal. Na revisão, “Alterar visita” aponta para a exposição e “Alterar horário” para a escolha de tempo. Confira se esses nomes continuam coerentes ao entrar, editar e voltar. Diferenças intencionais podem ser necessárias quando a consequência muda; não mantenha um padrão prejudicial só porque já existe.</p>"
+              "title": "O que é",
+              "body": "<p>As heurísticas 4, 5 e 6 tratam de consistência, prevenção de erros e reconhecimento em vez de memorização. Em termos simples: repetir uma lógica útil, evitar enganos previsíveis e mostrar a informação necessária.</p><p>São princípios de revisão, não uma fórmula de quantidade de botões ou itens.</p>"
             },
             {
-              "title": "5. Previna o erro que realmente importa",
-              "body": "<p>Um toque no controle vizinho é um deslize de execução. Entender “salvar” como comprar um ingresso é um erro de interpretação. Separar os alvos pode ajudar no primeiro; explicar a consequência ajuda no segundo. Defina o risco antes de escolher a proteção.</p><p>A revisão do exemplo permite conferir exposição, local, dia e horário antes de salvar. Ela só se justifica se ajuda a detectar um engano relevante. “Tem certeza?” sem mostrar os dados acrescenta uma interrupção sem apoiar a decisão. Não transforme essa tela em etapa obrigatória para toda ação simples.</p>"
+              "title": "Para que serve",
+              "body": "<p>Uma pessoa não deveria precisar lembrar o horário de outra tela para conferir sua escolha. Também não deveria encontrar aparências diferentes para a mesma ação sem motivo.</p><p>Esses cuidados reduzem dúvidas e ajudam a perceber erros antes de concluir.</p>"
             },
             {
-              "title": "6. Mostre o contexto necessário à decisão",
-              "body": "<p>Reconhecer uma escolha visível exige menos reconstrução do que lembrar o que estava na tela anterior. O resumo mostra “Forma &amp; luz” e “Sábado, 24 out · 14h”, em vez de apenas “visita selecionada”. A ação de alteração fica próxima do dado que corrige.</p><p>Isso não significa exibir tudo ao mesmo tempo. Preserve o que ajuda a conferir agora e mantenha acesso claro ao restante. Ao alterar só o horário, a exposição e o dia devem permanecer. Se a correção exigir preencher novamente dados válidos, a revisão transferiu trabalho para a pessoa.</p>"
+              "title": "Onde usar",
+              "body": "<p>No Rota, o resumo da visita mantém nome, data e horário próximos da confirmação. O horário selecionado continua visível e pode ser alterado.</p><p>Opções equivalentes usam a mesma aparência. Um horário indisponível precisa ser distinguido de um horário apenas não selecionado.</p>"
             },
             {
-              "title": "Memória não define uma quantidade mágica de itens",
-              "body": "<p><strong>Miller:</strong> o estudo histórico sobre processamento e memória discute limites e agrupamentos com significado, às vezes chamados de <em>chunks</em>. Ele não estabelece que um menu deva ter sete itens. Uma lista visível e familiar não é a mesma tarefa que recordar uma sequência retirada da vista.</p><p>No Rota, o critério útil é conseguir conferir e corrigir sem memorizar a etapa anterior. Um resumo pode reduzir memória e aumentar leitura; avalie essa troca pela tarefa. Na autoinspeção, percorra uma única mudança de horário e registre onde falta contexto. Registre como pendência o que não pode ser comprovado pela inspeção visual.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Mantenha controles e convenções consistentes. Mostre a informação necessária perto da decisão, sem repetir tudo em todas as telas.</p><p>Evite depender só da memória ou de uma cor sutil. Quando um erro previsível puder ser evitado, prefira uma escolha clara a uma correção tardia. Não bloqueie a ação sem tornar o motivo compreensível.</p>"
             }
           ],
           "examples": [
             {
               "title": "Reconhecer escolhas é melhor que reconstruí-las",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Revisar</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">REVISAR PLANO</div><h2>Tudo certo para sábado?</h2><p class=\"rx-subtitle\">Confira seus dados antes de salvar.</p><div class=\"rx-review-item\"><span>EXPOSIÇÃO</span><h3>Forma &amp; luz</h3><p>Galeria Horizonte · Centro</p><b>Alterar visita</b></div><div class=\"rx-review-item\"><span>DIA E HORÁRIO</span><h3>Sábado, 24 out · 14h</h3><p>Duração estimada: 1h30</p><b>Alterar horário</b></div></div><div class=\"rx-footer\"><div class=\"rx-primary\">Salvar plano</div><p>Salvar não reserva entrada.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">AVALIAR USABILIDADE E ACESSIBILIDADE</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Escolhas reais</h4><p>O resumo mostra os valores escolhidos, em vez de dizer apenas “visita selecionada”.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Correção localizada</h4><p>Cada ação de alteração fica junto do dado correspondente.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Confirmação com propósito</h4><p>Uma revisão é útil quando reduz um risco relevante. Não a acrescente automaticamente a toda ação trivial.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Expor decisões anteriores no momento de conferir, sem depender da memória da pessoa.</p><p><strong>Como testar:</strong> Peça para detectar e corrigir somente um horário errado, preservando a exposição e o dia escolhidos.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>No Rota, o resumo da visita mantém nome, data e horário próximos da confirmação. O horário selecionado continua visível e pode ser alterado.</p><p>Opções equivalentes usam a mesma aparência. Um horário indisponível precisa ser distinguido de um horário apenas não selecionado.</p>",
               "alt": "Reconhecer escolhas é melhor que reconstruí-las. Verificar se Forma & luz está marcada para sábado às 14h antes de confirmar o plano.",
               "source": "Rota · estudo original",
-              "scenario": "Verificar se Forma & luz está marcada para sábado às 14h antes de confirmar o plano.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Facilite reconhecer opções e corrigir escolhas antes de concluir.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Continue a revisão da mesma visita. Se esta for sua primeira prática, copie os dados do exemplo: Forma & luz, Galeria Horizonte, Centro, sábado 24 de outubro às 14h, duração 1h30. Salvar não reserva entrada.",
-            "steps": [
-              "Confira se exposição, dia e horário aparecem como valores reconhecíveis, com a ação de alteração junto do dado correspondente.",
-              "Simule mudar apenas o horário de 14h para 15h e voltar à revisão. Indique os dados que precisam permanecer.",
-              "Explique qual engano a revisão ajuda a detectar e se o esforço dessa etapa se justifica no seu fluxo."
-            ],
-            "deliverable": "A mesma tela de revisão e seu caminho de alteração, com uma justificativa curta de risco e esforço.",
-            "criteria": [
-              "O mesmo verbo mantém um efeito coerente entre revisão e edição.",
-              "É possível conferir valores concretos sem reconstruir as escolhas pela memória.",
-              "A alteração do horário preserva exposição e dia; não pede de novo dados válidos.",
-              "A revisão tem um risco específico como justificativa, sem regras de sete itens ou de confirmação obrigatória."
-            ]
-          },
           "sources": [
             {
               "title": "NN/g: consistência",
@@ -725,65 +589,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 382
+          "wordCount": 179
         },
         {
           "id": "heuristicas-eficiencia-recuperacao-ajuda",
-          "title": "Heurísticas 7–10: reduzir esforço e permitir recuperação",
-          "summary": "Decida como a pessoa pode continuar após um problema sem perder dados nem receber uma explicação inventada.",
-          "minutes": 5,
+          "title": "Heurísticas 7–10: simplificar e ajudar a continuar",
+          "summary": "Priorize conteúdo útil, recuperação de erros e orientação no contexto.",
+          "minutes": 2,
           "objectives": [
-            "Manter ações essenciais disponíveis sem depender de atalhos.",
-            "Relacionar erro, informação preservada, próxima ação e ajuda."
+            "As heurísticas 7 a 10 tratam de eficiência, apresentação sem excesso, recuperação de erros e ajuda.",
+            "Esses princípios ajudam a reduzir procura desnecessária e a retomar o uso quando algo dá errado."
           ],
           "sections": [
             {
-              "title": "7. Facilite o uso repetido sem esconder o básico",
-              "body": "<p>Flexibilidade e eficiência permitem caminhos adequados a diferentes experiências. Retomar uma visita por “Meu plano” pode poupar uma nova busca. Um atalho é útil quando reduz um trabalho recorrente; um gesto escondido não deve ser o único caminho para uma função essencial.</p><p>Antes de acrescentar um atalho ao Rota, confira se o percurso visível continua disponível e se a pessoa consegue revisar a ação. Compare esforço total, incluindo erros e recuperação, em vez de contar só toques.</p>"
+              "title": "O que é",
+              "body": "<p>As heurísticas 7 a 10 tratam de eficiência, apresentação sem excesso, recuperação de erros e ajuda. Simplificar não é retirar toda explicação: é manter o que ajuda a realizar a ação.</p><p>Uma interface pode ser visualmente limpa e ainda esconder informações essenciais.</p>"
             },
             {
-              "title": "8. Retire competição, preserve o que muda a decisão",
-              "body": "<p>Design minimalista concentra a atenção no necessário. Não significa eliminar o máximo de texto. No exemplo, “Escolha um horário entre 10h e 17h” é essencial para corrigir 08h. Apagá-lo para deixar o campo limpo transferiria o problema para quem está preenchendo.</p><p>Marque a função de cada informação: identificar a visita, orientar entrada, explicar o erro ou agir. Retire repetição sem utilidade, mas preserve condições de entrada, consequências e contexto da correção. “Salvar não reserva entrada” continua relevante mesmo quando ocupa espaço.</p>"
+              "title": "Para que serve",
+              "body": "<p>Esses princípios ajudam a reduzir procura desnecessária e a retomar o uso quando algo dá errado. Também evitam que uma tela de erro vire um caminho sem saída.</p><p>A ajuda é mais útil quando aparece perto da dúvida, em vez de depender sempre de uma página separada.</p>"
             },
             {
-              "title": "9. Diga o problema conhecido e a próxima ação segura",
-              "body": "<p>Na tela, 08h está fora da faixa aceita de chegada, das 10h às 17h. A mensagem junto do campo explica a correção, usando texto e símbolo além da cor. Dia e nota “Levar um caderno” continuam preenchidos. Esta é uma validação local de horário, não evidência de falha na internet.</p><p>Em outro estado, uma falha confirmada antes de enviar pode permitir tentar novamente. Depois de enviar, falta de resposta deixa o resultado incerto: consulte a mesma tentativa antes de permitir outra gravação. Preserve os dados válidos e não atribua a causa à conexão se ela não foi identificada. A mensagem só ajuda quando o caminho de recuperação funciona.</p>"
+              "title": "Onde usar",
+              "body": "<p>No Rota, uma busca sem resultados mantém consulta e filtros visíveis, permitindo remover uma condição. Uma falha de salvamento preserva os dados da visita e oferece uma saída coerente com o que se sabe.</p><p>Se o resultado estiver incerto, a interface não deve afirmar que é seguro repetir a operação.</p>"
             },
             {
-              "title": "10. Ofereça ajuda no ponto da dúvida",
-              "body": "<p>Ajuda deve responder a uma pergunta concreta e permitir retomar a tarefa. Para este campo, uma orientação curta sobre a faixa de chegada pode aparecer antes da entrada, e o erro pode explicar o que corrigir depois. Não é preciso enviar a pessoa a um tutorial longo para descobrir uma restrição simples.</p><p>Se uma regra depende de outro serviço ou permanece desconhecida, diga esse limite. Informação ainda não confirmada não é automaticamente erro do usuário ou defeito técnico. A ajuda não deve prometer o que o Rota não sabe.</p>"
-            },
-            {
-              "title": "Inspecione a recuperação completa",
-              "body": "<p>Ensaie corrigir o horário para 14h, mantendo dia e nota. Depois confira o estado posterior ao salvamento confirmado. No protótipo funcional, a revisão precisa incluir foco, anúncio do erro e acesso ao campo por teclado e leitor de tela. A imagem não comprova essas operações.</p><p>Registre onde o caminho quebra e qual consequência isso teria. Não invente um achado se a autoinspeção não encontrar falha; você pode registrar uma verificação concluída ou um comportamento pendente. Reúna esse registro aos das outras heurísticas.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Priorize informações necessárias e mantenha apoio acessível. Não confunda simplicidade com texto pequeno ou informação escondida.</p><p>Associe o problema à região afetada e deixe a próxima ação clara. Preserve dados que a pessoa já informou. Um atalho para uso frequente não deve tornar o caminho básico mais difícil de encontrar.</p>"
             }
           ],
           "examples": [
             {
               "title": "Um erro explica como seguir",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Planejar</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">MEU PLANO</div><h2>Organizar visita</h2><p class=\"rx-subtitle\">Forma & luz · Galeria Horizonte</p><div class=\"rx-field \"><span class=\"rx-field-label\">Dia</span><div class=\"rx-input\">Sábado, 24 de outubro</div><p class=\"rx-field-help\">Você pode mudar depois.</p></div><div class=\"rx-field rx-field-error\"><span class=\"rx-field-label\">Horário</span><div class=\"rx-input\">08:00</div><p class=\"rx-field-help\">⚠ Escolha um horário entre 10h e 17h.</p></div><div class=\"rx-field \"><span class=\"rx-field-label\">Nota pessoal</span><div class=\"rx-input\">Levar um caderno</div><p class=\"rx-field-help\">Só aparece no seu plano.</p></div></div><div class=\"rx-footer\"><div class=\"rx-primary\">Salvar plano</div><p>Corrija o horário antes de concluir.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">AVALIAR USABILIDADE E ACESSIBILIDADE</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>A causa é específica</h4><p>08h está fora do intervalo aceito. A mensagem informa qual faixa usar.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Erro junto do campo</h4><p>Texto, símbolo e borda localizam o problema sem depender apenas de vermelho.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Trabalho preservado</h4><p>Dia e nota continuam preenchidos; a pessoa não precisa começar do zero.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Dar uma orientação acionável para corrigir a validação, sem culpar a pessoa.</p><p><strong>Como testar:</strong> Peça para corrigir 08h e concluir sem explicar a regra. Verifique foco, anúncio do erro e preservação da nota.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>No Rota, uma busca sem resultados mantém consulta e filtros visíveis, permitindo remover uma condição. Uma falha de salvamento preserva os dados da visita e oferece uma saída coerente com o que se sabe.</p><p>Se o resultado estiver incerto, a interface não deve afirmar que é seguro repetir a operação.</p>",
               "alt": "Um erro explica como seguir. Salvar uma visita após informar 08h; a galeria aceita chegada entre 10h e 17h.",
               "source": "Rota · estudo original",
-              "scenario": "Salvar uma visita após informar 08h; a galeria aceita chegada entre 10h e 17h.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Priorize conteúdo útil, recuperação de erros e orientação no contexto.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Revise a recuperação no seu Rota. Se chegou pela busca, use Forma & luz, sábado 24 de outubro, horário preenchido 08h e nota “Levar um caderno”. A galeria aceita chegada entre 10h e 17h.",
-            "steps": [
-              "Mantenha o erro junto do horário e escreva uma orientação curta para a faixa aceita. Preserve dia e nota.",
-              "Ensaie corrigir 08h para 14h e salvar. Marque o que depende de implementação, como foco, anúncio do erro e confirmação.",
-              "Acrescente ao registro uma distinção: nova tentativa após falha conhecida antes do envio versus consulta da tentativa anterior quando o envio ficou sem resposta. Confira também se corrigir e salvar têm caminhos visíveis, sem exigir atalhos."
-            ],
-            "deliverable": "A tela existente com recuperação anotada e uma regra curta para resultado incerto, junto do registro de inspeção.",
-            "criteria": [
-              "A mensagem identifica a faixa de horário e uma correção possível sem depender apenas de cor.",
-              "A correção mantém dia e nota preenchidos.",
-              "A ajuda é acessível no ponto da dúvida, e uma ação essencial não depende só de um atalho.",
-              "Ausência de resposta não vira diagnóstico inventado nem autoriza reenvio cego."
-            ]
-          },
           "sources": [
             {
               "title": "NN/g: flexibilidade e eficiência",
@@ -807,65 +652,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 454
+          "wordCount": 189
         },
         {
           "id": "acessibilidade-plano-verificacao",
-          "title": "Acessibilidade: verificar o que a tarefa exige",
-          "summary": "Decida o que pode ser verificado no desenho e quais comportamentos precisam de uma implementação acessível.",
-          "minutes": 7,
+          "title": "Acessibilidade: conferir leitura, alcance e operação",
+          "summary": "Separe o que é possível avaliar no desenho do que depende do produto funcionando.",
+          "minutes": 2,
           "objectives": [
-            "Montar um registro de verificação com escopo, evidência e pendências.",
-            "Distinguir requisito web, orientação de plataforma e hipótese de experiência."
+            "Acessibilidade é permitir que pessoas com diferentes condições e formas de interação consigam usar o conteúdo e os controles.",
+            "Esses cuidados ampliam o acesso e evitam barreiras concretas: texto que some ao aumentar, botão difícil de tocar ou controle que não pode ser alcançado."
           ],
           "sections": [
             {
-              "title": "Defina o que você está avaliando",
-              "body": "<p><strong>Acessibilidade precisa ser verificada na tarefa, incluindo seus estados e saídas.</strong> Uma captura legível pode representar controles sem nome acessível ou um fluxo impossível por teclado. Registre plataforma, versão, tela, estado e método antes de dizer que algo foi aprovado.</p><p>WCAG 2.2 é uma referência normativa para conteúdo web. Seus documentos Understanding explicam critérios, mas não são a norma. Para software não web, WCAG2ICT oferece orientação informativa de aplicação. Recomendações da Apple e do Android são orientações de plataforma, com unidades próprias. Uma heurística de usabilidade ou uma intenção visual não substitui nenhuma dessas verificações.</p><p>No Rota, reúna o que já foi conferido em cor, texto, estados e navegação. Esta lição organiza evidências e pendências; não recomeça todo o projeto nem certifica a interface com poucos itens.</p>"
+              "title": "O que é",
+              "body": "<p>Acessibilidade é permitir que pessoas com diferentes condições e formas de interação consigam usar o conteúdo e os controles. Na UI, envolve leitura, contraste, ampliação, áreas acionáveis e indicação de foco, entre outros pontos.</p><p>Uma imagem legível não comprova que o produto funciona por teclado ou leitor de tela.</p>"
             },
             {
-              "title": "Confira a alternativa ao gesto no exemplo",
-              "body": "<p>A tela permite especificar a mudança de ordem por “Mover para baixo” e “Mover para cima”. Jardim das Esculturas, no Parque Aurora, dura 45 minutos e deve passar à frente de Forma &amp; luz, na Galeria Horizonte, com 1h30. A sequência muda; os horários não são ajustados automaticamente.</p><p>Na web, o critério 2.5.7, nível AA, pede alternativa por ponteiro simples a operações de arrastar, salvo suas exceções. Os botões desenhados mostram uma proposta dessa alternativa. Ainda será necessário implementar a ação, indicar a nova posição e manter um foco compreensível. Teclado e leitor de tela também precisam de verificação; a alternativa ao arraste não aprova o restante da tarefa.</p>"
+              "title": "Para que serve",
+              "body": "<p>Esses cuidados ampliam o acesso e evitam barreiras concretas: texto que some ao aumentar, botão difícil de tocar ou controle que não pode ser alcançado.</p><p>WCAG 2.2 define requisitos para conteúdo web. Orientações Apple e Android têm contextos e unidades próprios. Não são números intercambiáveis.</p>"
             },
             {
-              "title": "Meça alvos com a referência correta",
-              "body": "<p>Para web, 2.5.8, AA, estabelece alvos de pelo menos 24 × 24 CSS px, com exceções. A exceção de espaçamento usa círculos de 24 CSS px centrados nos alvos pequenos: eles não podem interceptar outro alvo nem o círculo de outro alvo pequeno. Também existem exceções de equivalência, conteúdo em linha, controle pelo navegador e apresentação essencial. O critério 2.5.5, AAA, usa 44 × 44 CSS px e suas próprias exceções.</p><p>A HIG de botões da Apple orienta, como regra geral, região acionável de pelo menos 44 × 44 pt. A tabela de acessibilidade para iOS/iPadOS descreve tamanho de controle padrão de 44 × 44 pt e mínimo de 28 × 28 pt: isso não é uma autorização geral para reduzir a região acionável a 28 pt. Android recomenda alvos de 48 × 48 dp. CSS px, pt da Apple e dp são unidades lógicas diferentes.</p><p>Meça separadamente o desenho visível, a área que responde ao toque e a distância para vizinhos. Uma região invisível maior pode ajudar, mas não deve sobrepor a ação ao lado. Nesta composição ilustrativa, valores em CSS px não comprovam medidas de um aplicativo nativo.</p>"
+              "title": "Onde usar",
+              "body": "<p>No exemplo do Rota, uma visita pode ser reordenada por comandos de mover, além do arraste. Na web, o critério 2.5.7 pede alternativa por ponteiro simples a ações de arrastar, salvo exceções.</p><p>Na web, o critério WCAG 2.5.8, nível AA, pede alvos de pelo menos 24 × 24 CSS px ou uma das exceções previstas. Alguns alvos menores podem atender por terem espaço suficiente ao redor; outros casos dependem do contexto. A fonte explica como verificar cada exceção. Isso não é uma autorização geral para fazer botões pequenos.</p>"
             },
             {
-              "title": "Percorra leitura, operação e mudança de estado",
-              "body": "<ul><li><strong>Percepção:</strong> confira informação sem depender só de cor e alternativas contextuais para imagens relevantes. No critério 1.4.3, AA, texto exige 4,5:1; texto grande admite 3:1 a partir de 24 CSS px, ou 18⅔ CSS px em negrito. Peso 500 não satisfaz automaticamente essa condição. Considere as exceções do critério e não arredonde uma razão insuficiente para aprová-la.</li><li><strong>Texto e espaço:</strong> procure cortes, sobreposição e perda de conteúdo ao ampliar. O controle didático de 130% não equivale a Dynamic Type, ao teste web de texto a 200% nem ao de reorganização do conteúdo, conhecido como reflow. Planeje cada verificação aplicável; não use uma captura como resultado operacional.</li><li><strong>Teclado:</strong> confira se alcança, identifica e aciona os controles, sem prender o foco. Após mover uma visita, a pessoa deve continuar orientada. O critério web 2.4.11, AA, impede que conteúdo criado pelo autor oculte inteiramente o componente focado; manter o foco totalmente visível é uma meta mais confortável.</li><li><strong>Leitor de tela:</strong> confira nome, função, estado, ordem de leitura e comunicação das mudanças. “Mover para cima” precisa identificar qual visita será movida quando houver dúvida. Ouvir palavras isoladas não demonstra que a tarefa faz sentido.</li></ul>"
-            },
-            {
-              "title": "Registre evidência e reteste",
-              "body": "<p>Para cada item, anote ambiente, passos, resultado esperado, resultado observado e evidência. Separe requisito normativo, orientação de plataforma e melhoria de experiência. Marque “pendente” quando não executou o teste; ausência de evidência não significa aprovação nem falha comprovada.</p><p>Uma inspeção automática não cobre todos os problemas. Inspeção com tecnologia assistiva ajuda a verificar operação; não substitui a participação de pessoas com deficiência quando a pergunta pede experiência real. Ao corrigir, repita o caminho afetado e confira outros usos do mesmo componente. Declare o escopo realmente verificado, sem prometer conformidade de todo o produto.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Confira contraste e informação que não dependa só de cor. Texto comum pede 4,5:1; texto grande admite 3:1 nas condições do critério. Confira ampliação sem corte ou sobreposição. Reflow verifica reorganização na web, incluindo largura equivalente a 320 CSS px para conteúdo de rolagem vertical, salvo exceções.</p><p>Meça o alvo separado do desenho do ícone. Apple orienta, em geral, região acionável de botão de 44 × 44 pt; Android recomenda 48 × 48 dp. Na implementação, confira teclado, foco, nomes acessíveis e comunicação dos estados. Uma revisão visual não certifica o produto completo.</p>"
             }
           ],
           "examples": [
             {
               "title": "Reordenar sem depender de arrastar",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Ordenar visitas</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">MEU PLANO</div><h2>Organize a sequência</h2><p class=\"rx-subtitle\">Escolha a ordem do seu passeio.</p><div class=\"rx-reorder\"><span class=\"rx-order\">1</span><h3>Forma &amp; luz</h3><p>Galeria Horizonte · 1h30</p><div class=\"rx-secondary\">↓ Mover para baixo</div></div><div class=\"rx-reorder\"><span class=\"rx-order\">2</span><h3>Jardim das Esculturas</h3><p>Parque Aurora · 45 min</p><div class=\"rx-secondary\">↑ Mover para cima</div></div><p class=\"rx-help\">A ordem não altera automaticamente os horários.</p></div><div class=\"rx-footer\"><div class=\"rx-primary\">Concluir organização</div><p>Confira também os horários do plano.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">AVALIAR USABILIDADE E ACESSIBILIDADE</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Alternativa ao gesto</h4><p>Ações explícitas permitem especificar reordenação por toque simples, sem arraste.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Limites compreensíveis</h4><p>O primeiro item só pode descer; o último só pode subir.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Verificação operacional</h4><p>Nomes acessíveis, foco após mover e anúncio da nova posição ainda precisam ser implementados e testados.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Oferecer um caminho de operação que não dependa de um gesto complexo.</p><p><strong>Como testar:</strong> Mova Jardim das Esculturas para o primeiro lugar por toque simples, teclado e leitor de tela. Registre ordem, foco e anúncio.</p><p><strong>Limite:</strong> A captura não prova conformidade. Para web, a alternativa se relaciona ao critério 2.5.7, mas a tela inteira exige outras verificações.</p>",
+              "analysis": "<p>No exemplo do Rota, uma visita pode ser reordenada por comandos de mover, além do arraste. Na web, o critério 2.5.7 pede alternativa por ponteiro simples a ações de arrastar, salvo exceções.</p><p>Na web, o critério WCAG 2.5.8, nível AA, pede alvos de pelo menos 24 × 24 CSS px ou uma das exceções previstas. Alguns alvos menores podem atender por terem espaço suficiente ao redor; outros casos dependem do contexto. A fonte explica como verificar cada exceção. Isso não é uma autorização geral para fazer botões pequenos.</p>",
               "alt": "Reordenar sem depender de arrastar. Mover a visita Jardim das Esculturas para antes de Forma & luz, sem arrastar os cartões.",
               "source": "Rota · estudo original",
-              "scenario": "Mover a visita Jardim das Esculturas para antes de Forma & luz, sem arrastar os cartões.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Separe o que é possível avaliar no desenho do que depende do produto funcionando.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Acrescente a verificação de reordenação ao mesmo Rota. Se chegou pela busca, use a tela do exemplo: Forma & luz primeiro, Jardim das Esculturas segundo, com ações para mover sem arrastar. A mudança de ordem não altera os horários.",
-            "steps": [
-              "Escolha o ambiente e escreva o resultado esperado ao colocar Jardim das Esculturas em primeiro. Inclua nova posição, foco e comunicação da mudança.",
-              "Faça a inspeção possível: ações explícitas, contexto dos nomes e dimensões quando mensuráveis. Com uma implementação disponível, percorra também por toque simples, teclado e leitor de tela; sem ela, marque esses testes como pendentes.",
-              "Registre uma evidência ou pendência por item e defina o que será repetido depois de uma correção. Junte o registro às verificações anteriores do projeto."
-            ],
-            "deliverable": "Um registro curto de acessibilidade para a reordenação, ligado às evidências já reunidas e às pendências de implementação.",
-            "criteria": [
-              "A ordem muda pelo caminho de ponteiro simples previsto, ou sua execução permanece explicitamente pendente; os horários não são alterados automaticamente.",
-              "O registro distingue tamanho visível e região acionável, usando unidade, nível e exceções da referência correta.",
-              "Nome, foco e comunicação da nova posição têm evidência operacional ou pendência explícita.",
-              "A declaração final diz o que foi realmente verificado e como retestar, sem usar 130% ou um scanner como aprovação geral."
-            ]
-          },
           "sources": [
             {
               "title": "W3C: WCAG 2.2",
@@ -909,17 +735,11 @@
             }
           ],
           "videos": [],
-          "wordCount": 725
+          "wordCount": 271
         }
       ],
-      "objective": "Inspecionar a proposta com critérios observáveis e separar desenho de comportamento ainda não verificado.",
-      "rationale": "Revisar antes de integrar permite corrigir os critérios mais importantes sem confundir acabamento com conformidade.",
-      "criteria": [
-        "Relaciona cada achado a uma tela e a um critério.",
-        "Verifica contraste, ampliação de texto e tamanho de alvo no contexto correto.",
-        "Distingue inspeção visual de comprovação na implementação.",
-        "Repete a condição afetada depois de corrigir."
-      ],
+      "objective": "Conheça princípios para encontrar problemas de orientação, leitura e operação.",
+      "rationale": "Esses cuidados ajudam a revisar a interface sem confundir aparência correta com funcionamento comprovado.",
       "references": [
         {
           "title": "NN/G · dez heurísticas",

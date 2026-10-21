@@ -1,39 +1,30 @@
-# Revisão editorial — UI iniciantes
+# Revisão editorial v17 — UI para iniciantes
 
-## Entrega
-- 13 blocos e 51 lições: 39 IDs existentes preservados, 12 lições novas e duas aulas de pesquisa removidas do percurso.
-- Quatro blocos de craft: espaçamento/densidade (4 aulas, duas redistribuídas), profundidade (3), refinamento óptico (4) e identidade (3).
-- Cada módulo possui objetivo, justificativa de posição, 3–5 critérios observáveis e 2–4 referências gratuitas.
-- Cada lição mantém objetivos, explicação, exemplo, exercício, entregável, 3–5 critérios e fontes.
-- Glossário separado com 86 termos; sem trilhas de ferramentas, sistemas de design ou processos de crítica.
-- Projeto Rota preservado como trabalho cumulativo e reescrito em quatro etapas focadas em decisões visuais.
-- Atlas Gestalt preservado integralmente, incluindo demonstração perceptiva de destino comum, conforme preferência explícita do usuário. Não constitui ensino de animação de interface.
+## Pedido atendido
+Revisão integral para designers iniciantes, com linguagem direta e exemplos concretos. Exercícios, entregáveis e critérios de avaliação do aprendizado foram removidos dos dados, não apenas escondidos na interface.
 
-## Ordem final
-fundamentos → principios-visuais → densidade-espacamento → design-mobile → tipografia → cores → profundidade-superficies → refinamento-optico → identidade-interface → arquitetura-informacao → tipos-telas → usabilidade-acessibilidade → construcao-completa.
+## Estrutura
+- 13 blocos e 51 lições, com todos os IDs da v16 preservados.
+- Cada lição tem quatro partes: O que é; Para que serve; Onde usar; Boas práticas.
+- Cada parte explica o assunto com exemplos e cuidados específicos, normalmente em dois parágrafos.
+- Objetivos dos módulos e introduções foram simplificados. module.criteria e lesson.exercise não existem mais.
+- O bloco final é um exemplo completo explicado em quatro lições, sem atividade para preencher ou entregar.
+- Rota é um produto fictício usado para ilustrar decisões; não é um projeto obrigatório do leitor.
+- Glossário atualizado com 93 termos, incluindo UX, UI, público, requisito, restrição, craft e placeholder.
 
-## Compatibilidade
-IDs removidos: pesquisa-hipotese-teste e teste-usabilidade-evidencia. Arquivar histórico sem transformar conclusão dessas aulas em conclusão automática de outra. Redirecionamentos de leitura podem apontar para ux-ui-problema-objetivos e acessibilidade-plano-verificacao, respectivamente.
+## Abertura
+Comece pelo problema explica UX como experiência e trabalho de entender público, contexto e dificuldades, organizar caminhos e verificar o uso. UI trata das telas, conteúdo, controles e estados, não apenas de beleza. Antes do desenho, aparecem problema, público, objetivo, requisitos e restrições. O exemplo distingue mostrar horário e salvar plano de vender ou reservar ingressos. Craft é definido como cuidado com detalhes visuais.
 
-Exemplos Rota são obras originais: não possuem URL externa de atribuição. Referências de estudo permanecem em lesson.sources; o renderer deve aceitar examples.url ausente. Exemplos novos contêm fallback textual coerente com as composições próprias renderizadas pelo app. Não são capturas de aplicativos comerciais.
+## Conteúdo e exemplos
+As 51 explicações foram reescritas, mantendo os assuntos técnicos, as referências e a sequência pedagógica. Expressões abstratas e convites para executar atividades foram retirados. As análises dos exemplos foram alinhadas à explicação da respectiva lição. O atlas de Gestalt foi preservado integralmente dentro de Onde usar, conforme preferência explícita do usuário.
 
-## Fontes verificadas em 21/10/2026
-- W3C Understanding WCAG 2.2: contraste mínimo, contraste não textual, reflow e tamanho mínimo de alvo.
-- Android Developers: edge-to-edge e densidades de tela.
-- Apple HIG: materiais, layout, tipografia, imagens, ícones e acessibilidade. Conteúdo Markdown oficial recuperado para superar a dependência de JavaScript da página HTML.
-- IBM Carbon: Spacing, seção de relações e desenho com espaço; não se transfere sua escala como regra universal.
-- MDN: font-kerning e letter-spacing.
-- NN/G: dez heurísticas.
+O conteúdo mantém a distinção entre unidades de layout e pixels físicos; desenho do ícone e área de toque; requisitos WCAG e orientações nativas; aparência estática e comportamento implementado. A escala de 8 continua sendo exemplo local, não regra universal.
 
-Nenhuma transcrição longa dessas fontes foi incorporada. Explicações, exercícios e exemplos são autorais. Referências anteriores relevantes foram mantidas; livros pagos e vídeos foram retirados do roteiro principal para concentrar o aprofundamento gratuito nas decisões estudadas.
+## Fontes
+Foram reaproveitadas as fontes oficiais verificadas na revisão anterior em 21/10/2026: W3C/WCAG 2.2, Android Developers, Apple HIG, MDN, IBM Carbon e NN/G. Não foram adicionadas novas afirmações técnicas que exigissem outra base normativa. Links de aprofundamento permanecem nas lições e nos módulos.
 
-## Cuidados conceituais
-- Escala de 8 é convenção local, não exigência universal.
-- CSS px, pt Apple, dp, sp e pixel físico permanecem distintos.
-- Área de toque não equivale ao contorno visível do ícone.
-- WCAG e recomendações de plataforma não são requisitos intercambiáveis.
-- Desenho estático não comprova foco, teclado, tecnologia assistiva, persistência nem conformidade completa.
-- Fontes Apple atuais podem mudar materiais e convenções: o texto evita transformar efeito específico em receita permanente.
+## Integração
+O renderer deve apresentar objetivos como introdução, não como avaliação, e não acessar exercise ou module.criteria. Progresso registra leitura. Todos os 51 IDs continuam estáveis. Exemplos autorais podem omitir URL externa; referências estão em sources.
 
-## Limites desta revisão
-A validação estrutural do conteúdo passou localmente. Build, screenshots, testes de interação e publicação pertencem à integração. Não houve edição de autenticação, audiência, credenciais ou configuração de publicação por este trabalho editorial.
+## Verificações
+Conferência editorial: 13 módulos; 51 lições; quatro seções em todas; nenhum campo exercise; nenhum module.criteria; 93 termos; um atlas Gestalt preservado. Build, screenshots e testes de interação ficam com a integração. Esta revisão não alterou autenticação, audiência ou publicação.

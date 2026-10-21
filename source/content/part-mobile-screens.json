@@ -2,63 +2,47 @@
   "modules": [
     {
       "id": "design-mobile",
-      "title": "Estrutura mobile",
-      "description": "Posicionar conteúdo, cabeçalho e ações respeitando sistema, teclado e áreas de interação.",
+      "title": "Estrutura de uma interface mobile",
+      "description": "Conheça os cuidados com barras do sistema, cabeçalho, teclado e áreas de toque.",
       "lessons": [
         {
           "id": "safe-areas-insets-edge-to-edge",
-          "title": "Safe areas, insets e edge-to-edge",
-          "summary": "Projete a relação entre conteúdo, recortes físicos, barras do sistema e teclado sem esconder ações.",
-          "minutes": 4,
+          "title": "Área segura: proteger conteúdo das barras do sistema",
+          "summary": "Diferencie o fundo da tela da área em que texto e controles podem aparecer.",
+          "minutes": 2,
           "objectives": [
-            "Distinguir área segura, fundo desenhável e área de gestos do sistema.",
-            "Especificar comportamento com teclado, rotação e navegação por gestos.",
-            "Testar sobreposição real em vez de adotar margens fixas."
+            "Safe area, ou área segura, é uma referência para proteger conteúdo de barras e recortes do sistema.",
+            "Esses cuidados evitam que título, conteúdo e ação sejam encobertos pelo sistema."
           ],
           "sections": [
             {
-              "title": "Separe fundo, conteúdo e interação",
-              "body": "<p><strong>Safe area</strong> é uma região de referência para proteger conteúdo de elementos do sistema. <strong>Insets</strong> são medidas de recuo; <strong>edge-to-edge</strong> permite desenhar até as bordas. Uma imagem pode ocupar toda a janela enquanto texto e controles ficam protegidos.</p><p>Faça três perguntas: onde o fundo aparece, onde o conteúdo precisa ser legível e onde o toque deve funcionar? Um botão pode estar visível e ainda competir com um gesto do sistema. A barra inferior desenhada neste exemplo representa o sistema; não é um novo botão do Rota.</p>"
+              "title": "O que é",
+              "body": "<p>Safe area, ou área segura, é uma referência para proteger conteúdo de barras e recortes do sistema. Insets são os recuos informados para essas regiões. Edge-to-edge significa desenhar de borda a borda, inclusive atrás de barras.</p><p>O fundo pode ocupar uma região em que texto e controles não devem ficar.</p>"
             },
             {
-              "title": "Use regras dinâmicas, não medidas copiadas",
-              "body": "<p>As regiões ocupadas mudam com aparelho, orientação, barras e janela. O padding lateral do conteúdo é uma escolha editorial; não é sinônimo de safe area. Os números do desenho são ilustrativos, não valores universais.</p><p>O teclado exige tratamento específico de cada plataforma ou framework. Não suponha que a área segura já resolveu sua sobreposição. Combine quem aplica cada recuo: dois contêineres protegendo a mesma borda podem duplicar o espaço.</p>"
+              "title": "Para que serve",
+              "body": "<p>Esses cuidados evitam que título, conteúdo e ação sejam encobertos pelo sistema. Também permitem aproveitar a tela sem criar margens fixas que só funcionam em um aparelho.</p><p>As regiões disponíveis mudam com plataforma, orientação, modo de janela e teclado.</p>"
             },
             {
-              "title": "Especifique início, fim e teclado",
-              "body": "<ol><li>Marque fundo, conteúdo rolável, cabeçalho e ação. Diga quais podem passar atrás das barras.</li><li>Confira o primeiro título e o último item: ambos devem chegar a uma posição legível e acionável.</li><li>Abra o teclado no último campo, com erro e texto ampliado. Campo, ajuda e ação precisam continuar alcançáveis.</li><li>Anote se a ação acompanha o teclado ou entra na rolagem. Teste também pouca altura e orientação horizontal.</li></ol>"
+              "title": "Onde usar",
+              "body": "<p>No Rota, a imagem ou o fundo pode chegar até a borda. O título e a ação de salvar precisam ficar em posições legíveis e alcançáveis. Uma barra inferior não deve cobrir a última informação da visita.</p><p>No Android 15 ou superior, aplicativos que miram SDK 35 ou superior usam edge-to-edge. É necessário tratar sobreposições, não apenas estender o fundo.</p>"
             },
             {
-              "title": "Verifique a transição na implementação",
-              "body": "<p>Uma captura não demonstra gestos, foco ou sobreposição do teclado. Na implementação ou simulador adequado, percorra abrir → rolar → editar → fechar teclado → voltar. Registre a etapa exata em que algo fica coberto ou perde o toque.</p><p>Se você só tem papel ou protótipo visual, entregue essas verificações como pendências. Não apresente o desenho de quatro estados como prova de funcionamento nativo.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Separe no desenho fundo, conteúdo e áreas de interação. Não use um número fixo como área segura universal. A implementação deve considerar as medidas fornecidas pelo sistema.</p><p>Confira também o teclado: não presuma que a área segura resolve sua sobreposição automaticamente. Campo, orientação e ação precisam continuar acessíveis, por rolagem ou reorganização.</p>"
             }
           ],
           "examples": [
             {
               "title": "Safe area: sistema e conteúdo têm espaços diferentes",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone rx-safe\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Visita</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content\"><div class=\"rx-art\" aria-label=\"Ilustração autoral de uma galeria com esculturas abstratas\"><div class=\"rx-art-sun\"></div><div class=\"rx-art-arch\"></div><div class=\"rx-art-block\"></div></div><div class=\"rx-eyebrow\">EXPOSIÇÃO · ENTRADA GRATUITA</div><h2>Forma &amp; luz</h2><p class=\"rx-subtitle\">Um novo olhar para o cotidiano.</p><div class=\"rx-location\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z\"/><circle cx=\"12\" cy=\"10\" r=\"2\"/></svg><span>Galeria Horizonte<br><small>Centro · Cidade demonstrativa</small></span></div><div class=\"rx-visit-card\"><h3 class=\"rx-visit-section-heading\">Sua visita</h3><p class=\"rx-visit-value\">Sábado, às 14h</p><p><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg>Duração estimada: 1h30</p></div></div><div class=\"rx-footer\"><div class=\"rx-primary\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 4h12v17l-6-4-6 4Z\"/></svg>Salvar plano</div><p>Salvar não reserva entrada.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">LAYOUT · ÁREAS PROTEGIDAS</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Topo protegido</h4><p>A faixa azul superior destaca a região de status e o recorte do aparelho. A barra do app começa abaixo dela.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Padding não é safe area</h4><p>As guias pontilhadas laterais mostram os 24 px escolhidos para alinhar o conteúdo neste layout. Essa margem editorial não representa um inset do sistema.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Base protegida</h4><p>A faixa azul inferior contém o indicador de início do sistema. O botão fica acima dela; o fundo pode continuar até a borda.</p></div></li><li><span class=\"rx-note-number\">4</span><div><h4>Valores dependem do contexto</h4><p>Este é um iPhone ilustrativo em retrato, sem teclado. Consulte os insets do ambiente; aparelho, rotação, barras e teclado podem mudar a área disponível.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> separar regiões protegidas pelo sistema do espaçamento editorial. As faixas azuis são anotações didáticas, não barras para copiar no app.</p><p><strong>Benefício esperado:</strong> manter texto e ações utilizáveis sem abandonar um fundo edge-to-edge. Safe areas também podem refletir barras e sobreposições do contêiner, além dos recortes físicos.</p><p><strong>Teste:</strong> valide a implementação em retrato, paisagem, com texto ampliado e teclado aberto. Verifique o último item, o foco e a ação fixa. Não fixe estes insets ilustrativos como números universais.</p>",
+              "analysis": "<p>No Rota, a imagem ou o fundo pode chegar até a borda. O título e a ação de salvar precisam ficar em posições legíveis e alcançáveis. Uma barra inferior não deve cobrir a última informação da visita.</p><p>No Android 15 ou superior, aplicativos que miram SDK 35 ou superior usam edge-to-edge. É necessário tratar sobreposições, não apenas estender o fundo.</p>",
               "alt": "Safe area: sistema e conteúdo têm espaços diferentes. Conferir e salvar uma visita em um celular com navegação por gestos.",
               "source": "Rota · estudo original",
-              "scenario": "Conferir e salvar uma visita em um celular com navegação por gestos.",
-              "comparisonFocus": "Uma tela completa mostra as regiões do sistema no topo e na base. As guias laterais indicam apenas padding do conteúdo."
+              "scenario": "Diferencie o fundo da tela da área em que texto e controles podem aparecer.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Use o detalhe do Rota mostrado nesta lição ou sua ficha existente. Anote como o conteúdo deve conviver com as barras do sistema.",
-            "steps": [
-              "Separe as regiões de fundo, leitura e toque.",
-              "Desenhe a edição da nota com teclado aberto e indique como alcançar o último campo e a ação.",
-              "Registre quem aplica os recuos e o que precisa ser conferido na plataforma."
-            ],
-            "deliverable": "A ficha e um estado de teclado anotados, acrescentados ao mesmo projeto.",
-            "criteria": [
-              "Padding editorial e recuos do sistema têm funções distintas.",
-              "Último campo, ajuda e ação têm caminho de acesso definido.",
-              "Nenhum recuo é aplicado duas vezes sem intenção.",
-              "Comportamentos não executados aparecem como pendências, não como testes aprovados."
-            ]
-          },
           "sources": [
             {
               "title": "Android: edge-to-edge",
@@ -77,62 +61,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 301
+          "wordCount": 201
         },
         {
           "id": "header-top-app-bar",
-          "title": "Header e top app bar: orientação e ações",
-          "summary": "Construa cabeçalhos que expliquem onde a pessoa está e deixem claras as ações relevantes.",
-          "minutes": 4,
+          "title": "Cabeçalho: mostrar onde a pessoa está",
+          "summary": "Use o topo para identificar a tela e apresentar ações relacionadas a ela.",
+          "minutes": 2,
           "objectives": [
-            "Diferenciar cabeçalho editorial, barra de navegação e barra do sistema.",
-            "Priorizar ações sem transformar a barra em um menu de tudo.",
-            "Especificar comportamento com rolagem e títulos longos."
+            "Header é cabeçalho.",
+            "O cabeçalho ajuda a reconhecer o contexto e encontrar caminhos importantes, como voltar à lista."
           ],
           "sections": [
             {
-              "title": "Oriente a pessoa no contexto atual",
-              "body": "<p><strong>Header</strong> é o cabeçalho; <strong>top app bar</strong> é a barra superior do aplicativo. A barra de status, com hora e bateria, pertence ao sistema. Separar essas funções evita responsabilidades e espaços duplicados.</p><p>O cabeçalho deve ajudar a responder: onde estou, como saio e o que posso fazer aqui? No detalhe do Rota, “Resultados” comunica a origem do retorno. A preservação daquela busca é um comportamento a implementar, não uma propriedade provada pela captura.</p>"
+              "title": "O que é",
+              "body": "<p>Header é cabeçalho. Top app bar é uma barra superior do aplicativo. Pode reunir título, retorno e ações locais. Não é a barra de status do sistema, que mostra informações como hora e bateria.</p><p>Nem toda tela precisa ter todos esses elementos.</p>"
             },
             {
-              "title": "Dê nome às ações e às saídas",
-              "body": "<p>Voltar, fechar e cancelar podem ter consequências diferentes. Especifique destino e tratamento de dados não salvos antes de escolher o ícone. Não acrescente três saídas só porque cabem na barra.</p><p>Um título deve distinguir a tela das vizinhas. Ação textual ajuda quando um símbolo não explica a consequência. Reserve espaço para nomes longos e traduções; uma informação essencial truncada precisa continuar acessível.</p>"
+              "title": "Para que serve",
+              "body": "<p>O cabeçalho ajuda a reconhecer o contexto e encontrar caminhos importantes, como voltar à lista. Uma posição estável facilita o reconhecimento entre telas.</p><p>Colocar todas as funções no topo torna os elementos menores e mais difíceis de distinguir.</p>"
             },
             {
-              "title": "Escolha como a barra acompanha a leitura",
-              "body": "<p>Uma barra pode permanecer, recolher ou mudar ao selecionar itens. Escolha pelo contexto necessário durante a tarefa. Em uma edição curta com teclado, um cabeçalho muito alto pode atrapalhar mais que orientar.</p><p>Se houver transparência sobre imagem, confira o contraste com o fundo real. Se o título muda durante a rolagem, a orientação precisa continuar clara com movimento reduzido. Estado de processamento não deve desaparecer antes de haver um resultado.</p>"
+              "title": "Onde usar",
+              "body": "<p>Na tela de detalhe do Rota, o cabeçalho pode indicar “Visita” e oferecer voltar. O nome completo da exposição pode aparecer no conteúdo, com mais espaço.</p><p>Na lista, a busca ou um filtro pode fazer sentido no topo porque atua sobre o conjunto de visitas.</p>"
             },
             {
-              "title": "Confira entrada direta e retorno",
-              "body": "<ol><li>Abra a tela sem mostrar o caminho anterior. O título identifica o contexto?</li><li>Role até o fim e confira se a saída continua reconhecível.</li><li>Inclua título longo e texto ampliado. Verifique nome dos ícones, foco, contraste e região acionável na implementação.</li></ol>"
+              "title": "Boas práticas",
+              "body": "<p>Escolha um título que identifique a tela. Diferencie voltar de fechar uma apresentação temporária. Use apenas ações relacionadas ao contexto atual.</p><p>Confira títulos longos, texto ampliado e áreas de toque. Se a barra for fixa, não deixe que cubra conteúdo ou foco. Considere as barras do sistema e a orientação da plataforma.</p>"
             }
           ],
           "examples": [
             {
               "title": "A barra superior orienta o retorno",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Resultados</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-art\" aria-label=\"Ilustração autoral de uma galeria com esculturas abstratas\"><div class=\"rx-art-sun\"></div><div class=\"rx-art-arch\"></div><div class=\"rx-art-block\"></div></div><div class=\"rx-eyebrow\">EXPOSIÇÃO</div><h2>Forma &amp; luz</h2><p class=\"rx-subtitle\">Galeria Horizonte · Centro</p><div class=\"rx-box \"><h3>Uma visita para o sábado</h3><p>Esculturas, formas e luz natural em uma exposição gratuita.</p></div><div class=\"rx-data-row\"><span>Duração estimada</span><strong>1h30</strong></div></div><div class=\"rx-footer\"><div class=\"rx-primary\">Planejar visita</div><p>O filtro Centro será preservado ao voltar.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">DESIGN MOBILE: ESTRUTURA, NAVEGAÇÃO E INTERAÇÃO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Retorno contextual</h4><p>A seta e o rótulo “Resultados” indicam a origem desta navegação.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Título vive no conteúdo</h4><p>O nome da exposição tem espaço no corpo, sem competir com controles da barra.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Estado precisa continuar</h4><p>Voltar deve recuperar o filtro e a posição da lista. Entrada por link externo exige uma regra própria.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Separar a orientação da navegação do título e da ação principal da visita.</p><p><strong>Como testar:</strong> Abra a visita a partir de uma lista filtrada, volte e confira filtro, posição e compreensão do destino.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>Na tela de detalhe do Rota, o cabeçalho pode indicar “Visita” e oferecer voltar. O nome completo da exposição pode aparecer no conteúdo, com mais espaço.</p><p>Na lista, a busca ou um filtro pode fazer sentido no topo porque atua sobre o conjunto de visitas.</p>",
               "alt": "A barra superior orienta o retorno. Voltar do detalhe para a lista de visitas sem perder o filtro Centro.",
               "source": "Rota · estudo original",
-              "scenario": "Voltar do detalhe para a lista de visitas sem perder o filtro Centro.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Use o topo para identificar a tela e apresentar ações relacionadas a ela.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Use o cabeçalho do detalhe do Rota como ponto de partida; não é necessário criar uma nova tela.",
-            "steps": [
-              "Escreva o destino de Resultados e quais filtros ou posição devem ser preservados.",
-              "Substitua o nome da visita no corpo por um título longo e confira se o retorno Resultados continua identificável na barra.",
-              "Anote o comportamento após rolar e durante uma eventual edição."
-            ],
-            "deliverable": "O cabeçalho anotado com origem, saída e regra de rolagem.",
-            "criteria": [
-              "Cada saída tem destino e efeito sobre dados explícitos.",
-              "Ações importantes não dependem de símbolo ambíguo.",
-              "Texto longo mantém orientação e acesso às ações.",
-              "Preservação e foco estão especificados para verificação real."
-            ]
-          },
           "sources": [
             {
               "title": "Android: App bars",
@@ -151,62 +119,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 260
+          "wordCount": 177
         },
         {
           "id": "teclado-toque-gestos",
-          "title": "Teclado, toque e gestos: interação executável",
-          "summary": "Projete entradas e movimentos que funcionem com precisão, alternativas acessíveis e estados reais.",
-          "minutes": 5,
+          "title": "Toque e teclado: deixar os controles utilizáveis",
+          "summary": "Considere a área acionável, o teclado aberto e as alternativas aos gestos.",
+          "minutes": 2,
           "objectives": [
-            "Diferenciar desenho visível e alvo real de toque.",
-            "Especificar o fluxo com teclado aberto, foco e validação.",
-            "Oferecer alternativas a gestos complexos ou ocultos."
+            "Área de toque é a região que recebe a interação, não apenas o desenho do ícone.",
+            "Áreas pequenas ou muito próximas aumentam a dificuldade de acionar o controle certo."
           ],
           "sections": [
             {
-              "title": "Projete a região acionável",
-              "body": "<p><strong>Alvo de toque</strong> é a região que recebe a interação, não só o ícone visível. Um símbolo pode ser menor que seu alvo, desde que as áreas vizinhas não se sobreponham indevidamente.</p><p>A Apple recomenda, como regra geral para botões, região acionável de pelo menos 44 × 44 pt; a tabela de tamanho de controle em Accessibility tem contexto próprio. Android recomenda 48 × 48 dp. Na web, WCAG 2.2 usa CSSpx e exceções específicas. Consulte a <a href=\"#acessibilidade-plano-verificacao\">verificação de acessibilidade</a> antes de tratar números de plataformas diferentes como equivalentes.</p><p><strong>Fitts</strong> modela tempo de movimentos dirigidos em função de distância e largura do alvo, sob condições definidas. Ajuda a investigar esforço de aquisição; não fornece sozinho um mínimo acessível nem diz que o maior botão sempre é melhor.</p>"
+              "title": "O que é",
+              "body": "<p>Área de toque é a região que recebe a interação, não apenas o desenho do ícone. Foco indica qual controle está sendo usado por teclado ou outra entrada compatível. Seleção é uma escolha que permanece.</p><p>Essas condições podem coexistir e precisam ser distinguíveis.</p>"
             },
             {
-              "title": "Mantenha campo, ajuda e ação alcançáveis",
-              "body": "<p>Escolha o tipo de entrada pelos caracteres aceitos. Não force teclado numérico quando sinais ou letras são válidos, nem bloqueie colagem sem razão. Defina o efeito de Próximo, Buscar ou Concluir e a ordem do foco.</p><p>Abra o teclado no último campo, com erro e texto ampliado. Use as medidas fornecidas pelo sistema; a altura desenhada no exemplo é apenas ilustrativa. Campo, mensagem e ação devem continuar acessíveis por rolagem ou reorganização.</p>"
+              "title": "Para que serve",
+              "body": "<p>Áreas pequenas ou muito próximas aumentam a dificuldade de acionar o controle certo. O teclado também pode reduzir bastante o espaço da tela.</p><p>Um controle desenhado corretamente ainda precisa funcionar na implementação; aparência não comprova alcance ou operação.</p>"
             },
             {
-              "title": "Diferencie estados e ofereça alternativas",
-              "body": "<ul><li><strong>Pressionado:</strong> resposta transitória durante o acionamento.</li><li><strong>Selecionado:</strong> escolha que permanece depois dele.</li><li><strong>Foco:</strong> posição atual de navegação por uma entrada compatível; pode coexistir com seleção.</li><li><strong>Processando:</strong> operação aceita, ainda sem resultado confirmado.</li></ul><p>Ao salvar, comunique processamento e defina o efeito de um segundo acionamento para evitar duplicação. Uma aparência desabilitada sozinha não explica a espera. Hover, quando há ponteiro, não pode ser requisito para usar a tela por toque.</p><p>Um gesto importante precisa de alternativa adequada: reordenar pode oferecer comandos de mover, além de arraste. WCAG 2.5.7 trata de alternativas a arrastar na web, com exceções próprias. A condição do controle deve permanecer perceptível na composição, sem depender de uma resposta sensorial isolada.</p>"
+              "title": "Onde usar",
+              "body": "<p>Em uma escolha de horário no Rota, um símbolo pequeno pode ter área de toque maior. Ao editar um campo, teclado, campo e ação precisam conviver sem sobreposição.</p><p>A Apple orienta, como regra geral para botões, região acionável de pelo menos 44 × 44 pt. Android recomenda 48 × 48 dp. Na web, WCAG usa CSS px e condições próprias; os números não são equivalentes.</p>"
             },
             {
-              "title": "Verifique com formas reais de entrada",
-              "body": "<p>Desenhe os limites dos alvos e confira os nomes dos controles. Depois teste toque, teclado externo quando suportado e leitor de tela na implementação. Mouse não valida sozinho precisão do toque.</p><p>Dispense o teclado, interrompa e retorne: texto, seleção e contexto precisam seguir a regra definida. Alcance do polegar varia com pessoa, aparelho e postura; não use uma zona ilustrada como regra universal.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Não sobreponha áreas de toque vizinhas. Ofereça alternativa clara quando um gesto for necessário, como botões de mover além do arraste. Hover, o estado de ponteiro sobre um elemento, não pode ser necessário para usar por toque.</p><p>Com teclado aberto, mantenha o campo atual e a ação alcançáveis. Preserve o conteúdo ao interromper e voltar. Confira a operação no contexto real, não apenas com mouse.</p>"
             }
           ],
           "examples": [
             {
               "title": "A ação continua alcançável com teclado aberto",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Nota pessoal</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">EDITAR PLANO</div><h2>Uma nota para lembrar</h2><p class=\"rx-subtitle\">Forma & luz · Sábado, 14h</p><div class=\"rx-field rx-field-focus\"><span class=\"rx-field-label\">Nota pessoal</span><div class=\"rx-input\">Levar um caderno<span class=\"rx-caret\"></span></div><p class=\"rx-field-help\">Só aparece no seu plano.</p></div></div><div class=\"rx-keyboard-action\"><div class=\"rx-primary\">Salvar nota</div></div><div class=\"rx-keyboard\" aria-label=\"Representação simplificada de teclado\"><div><span>Q</span><span>W</span><span>E</span><span>R</span><span>T</span><span>Y</span><span>U</span><span>I</span><span>O</span><span>P</span></div><div><span>A</span><span>S</span><span>D</span><span>F</span><span>G</span><span>H</span><span>J</span><span>K</span><span>L</span></div><div><span>Z</span><span>X</span><span>C</span><span>V</span><span>B</span><span>N</span><span>M</span></div><div><span class=\"rx-key-wide\">123</span><span class=\"rx-key-space\">espaço</span><span class=\"rx-key-wide\">concluir</span></div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">DESIGN MOBILE: ESTRUTURA, NAVEGAÇÃO E INTERAÇÃO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Foco reconhecível</h4><p>O campo ativo tem contorno e cursor; o texto continua visível acima do teclado.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Ação acompanha a área disponível</h4><p>Salvar nota fica antes do teclado, em vez de permanecer escondido sob ele.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>A captura é só um estado</h4><p>Abertura, fechamento, rolagem, teclado externo e texto grande precisam de teste executável.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Projetar o espaço disponível durante a entrada de texto, mantendo campo e próximo passo alcançáveis.</p><p><strong>Como testar:</strong> Foque o último campo, digite, amplie o texto e salve sem fechar o teclado.</p><p><strong>Limite:</strong> O teclado desenhado é esquemático. Insets do teclado e do sistema devem ser tratados conforme a plataforma, sem somas cegas.</p>",
+              "analysis": "<p>Em uma escolha de horário no Rota, um símbolo pequeno pode ter área de toque maior. Ao editar um campo, teclado, campo e ação precisam conviver sem sobreposição.</p><p>A Apple orienta, como regra geral para botões, região acionável de pelo menos 44 × 44 pt. Android recomenda 48 × 48 dp. Na web, WCAG usa CSS px e condições próprias; os números não são equivalentes.</p>",
               "alt": "A ação continua alcançável com teclado aberto. Escrever uma nota e salvá-la sem precisar adivinhar como fechar o teclado.",
               "source": "Rota · estudo original",
-              "scenario": "Escrever uma nota e salvá-la sem precisar adivinhar como fechar o teclado.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Considere a área acionável, o teclado aberto e as alternativas aos gestos.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Use a edição da Nota pessoal mostrada no Rota. Se começar aqui, desenhe o campo, sua ajuda e Salvar nota.",
-            "steps": [
-              "Marque região visível e região acionável dos controles na unidade da plataforma.",
-              "Escreva o percurso de foco e o acesso à ação com teclado aberto.",
-              "Especifique pressionado, foco e processamento do salvar, incluindo um acionamento repetido."
-            ],
-            "deliverable": "Um estado com teclado e um contrato curto do controle.",
-            "criteria": [
-              "Campo, ajuda e ação permanecem alcançáveis.",
-              "Alvos têm unidade declarada e não se sobrepõem indevidamente.",
-              "Foco, seleção e processamento não são confundidos.",
-              "O segundo acionamento tem consequência definida, sem presumir que a captura prova prevenção de duplicatas."
-            ]
-          },
           "sources": [
             {
               "title": "Apple: Accessibility",
@@ -255,17 +207,11 @@
             }
           ],
           "videos": [],
-          "wordCount": 385
+          "wordCount": 211
         }
       ],
-      "objective": "Posicionar conteúdo, cabeçalho e ações respeitando sistema, teclado e áreas de interação.",
-      "rationale": "A estrutura mobile oferece o contexto real em que texto, cor e acabamento serão aplicados.",
-      "criteria": [
-        "Distingue fundo de borda a borda e conteúdo protegido.",
-        "Mantém título, conteúdo e ação alcançáveis com teclado.",
-        "Separa o desenho do ícone de sua área de toque.",
-        "Anota unidades e recomendações da plataforma escolhida."
-      ],
+      "objective": "Conheça os cuidados com barras do sistema, cabeçalho, teclado e áreas de toque.",
+      "rationale": "A estrutura do aparelho muda o espaço disponível para texto, conteúdo e controles.",
       "references": [
         {
           "title": "Android · conteúdo de borda a borda",
@@ -286,63 +232,47 @@
     },
     {
       "id": "tipos-telas",
-      "title": "Tipos de tela em contexto",
-      "description": "Aplicar a linguagem visual a descoberta, comparação, escolha e estados da mesma tarefa.",
+      "title": "Tipos de tela",
+      "description": "Conheça o papel de listas, detalhes, busca, formulários e estados da interface.",
       "lessons": [
         {
           "id": "splash-onboarding",
-          "title": "Splash e onboarding: abrir, orientar e entregar valor",
-          "summary": "Separe a abertura técnica da orientação inicial e transforme a primeira experiência em uma tarefa útil, curta e recuperável.",
-          "minutes": 4,
+          "title": "Abertura e introdução: chegar ao conteúdo sem espera desnecessária",
+          "summary": "Diferencie a inicialização do aplicativo da orientação de primeiro uso.",
+          "minutes": 2,
           "objectives": [
-            "Distinguir abertura técnica, apresentação e configuração inicial.",
-            "Decidir o que precisa acontecer antes da primeira tarefa útil.",
-            "Projetar primeira visita, retorno e recusa de permissões."
+            "Tela de abertura aparece durante a inicialização.",
+            "A abertura oferece continuidade enquanto o aplicativo inicia."
           ],
           "sections": [
             {
-              "title": "Separe lançamento e orientação",
-              "body": "<p>No Android, <strong>SplashScreen</strong> é o mecanismo de abertura do sistema. A Apple chama a fase transitória de <strong>launch screen</strong> e distingue uma eventual splash de marca posterior. Não transplante automaticamente a mesma composição entre plataformas.</p><p><strong>Onboarding</strong> é orientação para começar a usar. Pode ensinar uma interação, explicar uma decisão necessária ou ajudar uma configuração. Não precisa existir como sequência separada nem compensar controles incompreensíveis.</p>"
+              "title": "O que é",
+              "body": "<p>Tela de abertura aparece durante a inicialização. Android usa SplashScreen; Apple tem orientações próprias para launch screen. Onboarding é a introdução que ajuda alguém a começar a usar o produto.</p><p>Não são a mesma coisa nem precisam formar uma sequência longa.</p>"
             },
             {
-              "title": "Chegue à primeira tarefa útil",
-              "body": "<p>No Rota, o objetivo inicial é encontrar uma visita e salvar um plano, não terminar um tutorial. Para cada etapa, pergunte o que a pessoa deixaria de conseguir fazer sem ela. Conhecer todos os recursos não é uma dependência necessária.</p><p>Ofereça um caminho de pular quando a orientação for opcional. Recusar localização pode levar à escolha manual de cidade, se o produto oferecer isso. Peça permissões no contexto do benefício e respeite a recusa.</p>"
+              "title": "Para que serve",
+              "body": "<p>A abertura oferece continuidade enquanto o aplicativo inicia. A introdução pode explicar uma função essencial ou ajudar em uma primeira escolha.</p><p>Mostrar muitas instruções antes do conteúdo pode criar uma barreira desnecessária.</p>"
             },
             {
-              "title": "Especifique começo, interrupção e retorno",
-              "body": "<ol><li>Nomeie a plataforma e a fase de cada quadro: sistema, marca, orientação ou uso.</li><li>Faça a saída do lançamento depender de prontidão real; não imponha espera para exibir marca.</li><li>Defina o que permanece se a pessoa interromper a configuração.</li><li>Na reabertura, permita retomar sem repetir uma orientação já dispensada.</li></ol><p>O indicador “1 de 3” do exemplo é um estado ilustrativo, não uma sequência funcional implementada.</p>"
+              "title": "Onde usar",
+              "body": "<p>No Rota, uma introdução pode mostrar que o plano organiza visitas, mas não reserva entrada. Essa orientação precisa aparecer também onde a decisão acontece; não deve depender de ter sido lida uma única vez.</p><p>Uma tela de marca não precisa prolongar artificialmente a inicialização.</p>"
             },
             {
-              "title": "Confira a conquista, não a conclusão do tutorial",
-              "body": "<p>Ensaie o caminho completo e o caminho de pular. Ambos devem chegar a conteúdo utilizável. No teste posterior, observe se a pessoa consegue realizar e repetir a tarefa sem depender de instrução verbal.</p><p>Concluir uma sequência obrigatória não comprova valor ou compreensão. Na revisão, retire uma etapa e veja qual informação necessária realmente se perde.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Priorize acesso ao conteúdo. Mostre orientações quando forem relevantes e permita pular o que não for obrigatório. Evite pedir permissões antes de existir contexto para entender seu uso.</p><p>Siga as convenções de abertura da plataforma. Confira se imagens e textos cabem com ampliação. Não trate uma ilustração bonita como motivo suficiente para acrescentar mais uma etapa.</p>"
             }
           ],
           "examples": [
             {
               "title": "Uma introdução que deixa a pessoa explorar",
-              "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Boas-vindas</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-onboarding\"><div class=\"rx-art\" aria-label=\"Ilustração autoral de uma galeria com esculturas abstratas\"><div class=\"rx-art-sun\"></div><div class=\"rx-art-arch\"></div><div class=\"rx-art-block\"></div></div><span class=\"rx-eyebrow\">BEM-VINDO AO ROTA</span><h2>Seu próximo passeio começa com uma ideia.</h2><p>Descubra exposições e organize uma tarde do seu jeito.</p><div class=\"rx-dots\"><b></b><span></span><span></span></div><small>1 de 3 · Introdução opcional</small></div></div><div class=\"rx-footer\"><div class=\"rx-secondary\">Explorar agora</div><div class=\"rx-primary\">Continuar</div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TIPOS DE TELAS E DECISÕES DE USO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Valor em linguagem concreta</h4><p>Descobrir e organizar explicam o que a pessoa poderá fazer.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Saída explícita</h4><p>Explorar agora permite chegar à tarefa sem percorrer toda a apresentação.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Não é splash</h4><p>Esta é uma tela de onboarding opcional. A abertura técnica do app não deve usar uma espera artificial para exibir marca.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Apresentar o valor sem transformar uma introdução dispensável em barreira.</p><p><strong>Como testar:</strong> Peça a alguém que encontre uma visita na primeira abertura. Observe se chega à busca sem ajuda.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Boas-vindas</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-onboarding\"><div class=\"rx-art\" aria-label=\"Ilustração autoral de uma galeria com esculturas abstratas\"><div class=\"rx-art-sun\"></div><div class=\"rx-art-arch\"></div><div class=\"rx-art-block\"></div></div><span class=\"rx-eyebrow\">BEM-VINDO AO ROTA</span><h2>Seu próximo passeio começa com uma ideia.</h2><p>Descubra exposições e organize uma tarde do seu jeito.</p><div class=\"rx-dots\"><b></b><span></span><span></span></div><small>1 de 3 · Introdução opcional</small></div></div><div class=\"rx-footer\"><div class=\"rx-secondary\">Explorar agora</div><div class=\"rx-primary\">Continuar</div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TIPOS DE TELAS E DECISÕES DE USO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Valor em linguagem concreta</h4><p>Descobrir e organizar explicam o que a pessoa poderá fazer.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Saída explícita</h4><p>Explorar agora permite chegar ao conteúdo sem percorrer toda a apresentação.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Não é splash</h4><p>Esta é uma tela de onboarding opcional. A abertura técnica do app não deve usar uma espera artificial para exibir marca.</p></div></li></ol></aside></div>",
+              "analysis": "<p>No Rota, uma introdução pode mostrar que o plano organiza visitas, mas não reserva entrada. Essa orientação precisa aparecer também onde a decisão acontece; não deve depender de ter sido lida uma única vez.</p><p>Uma tela de marca não precisa prolongar artificialmente a inicialização.</p>",
               "alt": "Uma introdução que deixa a pessoa explorar. Abrir o Rota pela primeira vez para encontrar uma visita no Centro.",
               "source": "Rota · estudo original",
-              "scenario": "Abrir o Rota pela primeira vez para encontrar uma visita no Centro.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Diferencie a inicialização do aplicativo da orientação de primeiro uso.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Use a abertura do Rota mostrada aqui. Acrescente ao seu fluxo a opção Explorar agora.",
-            "steps": [
-              "Indique o que a orientação ensina e por que isso seria necessário.",
-              "Desenhe o caminho que pula a orientação e uma escolha manual de cidade após recusa de localização.",
-              "Anote como a reabertura retoma a tarefa."
-            ],
-            "deliverable": "Dois caminhos de entrada ligados à mesma exploração de visitas.",
-            "criteria": [
-              "Pular leva a conteúdo utilizável.",
-              "A recusa de permissão tem alternativa real especificada.",
-              "Lançamento do sistema e orientação têm funções e plataformas declaradas.",
-              "Não existe espera artificial nem repetição obrigatória de orientação dispensada."
-            ]
-          },
           "sources": [
             {
               "title": "Splash screens",
@@ -371,62 +301,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 277
+          "wordCount": 173
         },
         {
           "id": "home-dashboard",
-          "title": "Home e dashboard: escolher o que merece a primeira tela",
-          "summary": "Organize acesso, continuidade e resumo sem transformar a entrada do aplicativo em um catálogo de tudo que ele faz.",
-          "minutes": 4,
+          "title": "Tela inicial e painel: escolher o que aparece primeiro",
+          "summary": "Organize a entrada do produto conforme o que a pessoa precisa encontrar.",
+          "minutes": 2,
           "objectives": [
-            "Distinguir home, painel de acompanhamento e fluxo direto.",
-            "Priorizar blocos por tarefas e decisões do usuário.",
-            "Relacionar cada indicador a contexto, atualização e ação."
+            "Home é a tela inicial de um aplicativo.",
+            "A primeira tela ajuda a começar uma ação, retomar algo ou entender uma situação."
           ],
           "sections": [
             {
-              "title": "Escolha a pergunta que abre a tela",
-              "body": "<p><strong>Home</strong> orienta e dá acesso às áreas do aplicativo. <strong>Dashboard</strong> reúne informações para acompanhar uma situação e decidir. Uma mesma tela pode cumprir ambos os papéis, mas cada bloco precisa ajudar uma tarefa.</p><p>No Rota, uma visita planejada para hoje pode merecer mais atenção que uma recomendação. No primeiro uso, esse bloco ainda não existe. A prioridade vem da situação de abertura, não de um modelo fixo de cartões.</p><p>Se o produto resolve uma tarefa única e a pessoa pode começá-la diretamente, uma home intermediária talvez só acrescente uma etapa. Abra a tarefa quando não houver uma decisão útil de orientação a fazer.</p>"
+              "title": "O que é",
+              "body": "<p>Home é a tela inicial de um aplicativo. Dashboard, ou painel, reúne informações para acompanhamento. Uma tela inicial não precisa ser um painel de números.</p><p>O conteúdo deve corresponder ao objetivo do produto e ao momento de uso.</p>"
             },
             {
-              "title": "Defina quando cada bloco aparece",
-              "body": "<p>Para cada região, anote condição de aparição, informação necessária, prioridade e condição de retirada. Uma orientação inicial pode desaparecer após começar; um rascunho permite continuar; o plano de hoje destaca a próxima visita.</p><p>Se rascunho e visita de hoje coexistirem, explique qual aparece antes e por quê. Ter algo no plano não comprova ingresso reservado nem funcionamento do local. Ao terminar o dia, a mensagem não pode continuar afirmando urgência por inércia.</p>"
+              "title": "Para que serve",
+              "body": "<p>A primeira tela ajuda a começar uma ação, retomar algo ou entender uma situação. Sua organização orienta o restante da navegação.</p><p>Colocar todas as funções na entrada pode dificultar reconhecer o que importa agora.</p>"
             },
             {
-              "title": "Mostre dados com contexto",
-              "body": "<p>Um indicador precisa de significado, unidade, período e origem relevantes. Zero é um valor; dado ainda não recebido é outra condição. Se a atualização falhar, comunique a limitação sem apagar o que permanece válido.</p><p>Uma falha na recomendação não deve bloquear o plano salvo. Um gráfico só merece espaço se responde algo útil, como mudança no tempo ou distribuição. Não acrescente números apenas para a tela parecer analítica.</p>"
+              "title": "Onde usar",
+              "body": "<p>No Rota, uma pessoa pode querer descobrir uma exposição ou reencontrar a visita de hoje. A tela inicial pode destacar um desses caminhos conforme o contexto disponível.</p><p>Um resumo de plano tem outra função que uma lista de sugestões. A diferença deve aparecer em títulos, grupos e ações.</p>"
             },
             {
-              "title": "Confira prioridade e continuidade",
-              "body": "<p>Compare primeiro acesso, retorno com plano e retorno com atualização indisponível. Em cada um, a pessoa consegue identificar a próxima tarefa e o que pode confiar?</p><p>Uma observação breve de captura investiga compreensão inicial. Concluir a tarefa requer protótipo ou implementação. Lembrar de um bloco chamativo não comprova que ele seja útil.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Escolha prioridades claras e mantenha caminhos secundários acessíveis. Não transforme cada informação em um cartão com o mesmo destaque.</p><p>Considere primeiro uso, ausência de dados e retorno frequente. Se uma informação não estiver disponível, não invente um resumo preenchido. Use conteúdo plausível para conferir se o conjunto continua legível.</p>"
             }
           ],
           "examples": [
             {
               "title": "A home prioriza o que importa hoje",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"3\"/><path d=\"M9 3v3m6-3v3M9 11h6m-6 4h4\"/></svg><b>Descobrir</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">SÁBADO, 24 OUTUBRO</div><h2>Bom dia. Vamos sair?</h2><p class=\"rx-subtitle\">Seu sábado já tem uma boa ideia.</p><div class=\"rx-box rx-featured\"><span class=\"rx-eyebrow\">SEU PRÓXIMO PASSEIO</span><h3>Forma &amp; luz</h3><p>Hoje, às 14h · Galeria Horizonte</p><div class=\"rx-primary\">Ver meu plano</div></div><div class=\"rx-section-label\">PARA OUTRO DIA</div><div class=\"rx-list-item\"><div class=\"rx-thumb rx-thumb-0\"><span></span></div><div><h3>Jardim das Esculturas</h3><p>Parque Aurora</p><span class=\"rx-list-meta\">45 min · Gratuita</span></div><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></div><div class=\"rx-secondary\">Descobrir outras visitas</div></div><div class=\"rx-tabs\"><div class=\"rx-tab rx-active\" aria-label=\"Descobrir, destino atual\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 4 4\"/></svg></span><b>Descobrir</b></div><div class=\"rx-tab \"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"3\"/><path d=\"M9 3v3m6-3v3M9 11h6m-6 4h4\"/></svg></span><b>Meu plano</b></div><div class=\"rx-tab \"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21v-2a8 8 0 0 1 16 0v2\"/></svg></span><b>Perfil</b></div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TIPOS DE TELAS E DECISÕES DE USO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Prioridade da situação</h4><p>Na manhã da visita, reencontrar o plano é mais útil do que reiniciar a descoberta.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Uma ação principal</h4><p>Ver meu plano recebe o maior destaque; explorar continua disponível como alternativa.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Não é a mesma home para sempre</h4><p>Uma pessoa sem plano precisa de outro estado. Prioridade depende de contexto, não de uma grade fixa.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Hierarquizar a home em torno de uma tarefa provável, preservando rotas alternativas.</p><p><strong>Como testar:</strong> Dê o cenário de saída para o passeio e observe a primeira ação escolhida.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>No Rota, uma pessoa pode querer descobrir uma exposição ou reencontrar a visita de hoje. A tela inicial pode destacar um desses caminhos conforme o contexto disponível.</p><p>Um resumo de plano tem outra função que uma lista de sugestões. A diferença deve aparecer em títulos, grupos e ações.</p>",
               "alt": "A home prioriza o que importa hoje. Na manhã da visita, consultar o plano que já foi salvo.",
               "source": "Rota · estudo original",
-              "scenario": "Na manhã da visita, consultar o plano que já foi salvo.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Organize a entrada do produto conforme o que a pessoa precisa encontrar.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Use a home do Rota como base. Mantenha a mesma visita e os dados fictícios do exemplo.",
-            "steps": [
-              "Escreva a tarefa prioritária de quem tem plano para hoje.",
-              "Indique o que aparece no primeiro acesso, sem plano, e o que sai ao terminar o dia.",
-              "Acrescente uma falha apenas na recomendação e preserve o acesso ao plano."
-            ],
-            "deliverable": "Três regras de aparição anotadas na mesma home.",
-            "criteria": [
-              "Cada bloco responde a uma pergunta e oferece continuidade pertinente.",
-              "Plano salvo não é apresentado como reserva ou funcionamento confirmado.",
-              "Dado ausente não vira zero.",
-              "Uma falha secundária não impede a tarefa principal."
-            ]
-          },
           "sources": [
             {
               "title": "Resumo de atividade no Fitness",
@@ -439,68 +353,52 @@
               "note": "Referência de organização em lista e grade, sem prescrever a hierarquia da home."
             },
             {
-              "title": "Reply: iniciar diretamente na tarefa principal",
+              "title": "Reply: acesso ao conteúdo principal",
               "url": "https://github.com/android/compose-samples/tree/main/Reply",
-              "note": "Aplicativo de exemplo oficial para comparar navegação e prioridade da tarefa. O exemplo visual desta lição é uma composição original do Rota; não é uma captura do Reply."
+              "note": "Aplicativo de exemplo oficial para comparar navegação e prioridade do conteúdo. O exemplo visual desta lição é uma composição original do Rota; não é uma captura do Reply."
             }
           ],
           "videos": [],
-          "wordCount": 314
+          "wordCount": 169
         },
         {
           "id": "listas-cards",
-          "title": "Listas e cards: facilitar comparação e escolha",
-          "summary": "Escolha a estrutura de coleção pela informação que precisa ser comparada e pelo comportamento de cada item.",
-          "minutes": 4,
+          "title": "Listas e cartões: facilitar a comparação",
+          "summary": "Use uma estrutura repetida para informações equivalentes.",
+          "minutes": 2,
           "objectives": [
-            "Decidir entre linhas, cartões e grade.",
-            "Definir um contrato de conteúdo para itens repetidos.",
-            "Projetar ações secundárias e retorno sem perder contexto."
+            "Lista apresenta uma sequência de itens.",
+            "Uma estrutura repetida ajuda a localizar o mesmo dado em vários itens."
           ],
           "sections": [
             {
-              "title": "Escolha pela comparação necessária",
-              "body": "<p>Uma <strong>lista</strong> organiza itens em sequência. Um <strong>card</strong> reúne conteúdo em uma unidade. Uma <strong>grade</strong> distribui unidades em linhas e colunas. Cartões podem formar uma lista; esses nomes não são opções mutuamente exclusivas.</p><p>No Rota, nome, duração, custo e bairro ajudam a escolher uma visita. Posições estáveis facilitam comparar esses atributos. Uma imagem maior só merece espaço se contribuir para reconhecimento ou decisão.</p>"
+              "title": "O que é",
+              "body": "<p>Lista apresenta uma sequência de itens. Card, ou cartão, reúne informações em um contêiner visual. Um cartão pode fazer parte de uma lista, mas nem toda linha precisa de uma moldura.</p><p>A escolha depende da relação entre os dados e da forma de comparação.</p>"
             },
             {
-              "title": "Defina o contrato de cada item",
-              "body": "<p>Separe identidade, atributos decisivos, condição e ação. Escolha a ordem e o tratamento de dados ausentes. “Preço não informado” não significa gratuito. Texto longo pode aumentar a altura; consistência não exige cortar a informação para deixar todos os cartões iguais.</p><p>Se o corpo abre o detalhe e outro controle salva, especifique regiões e nomes distintos. Não crie interações aninhadas ou sobrepostas que tornem o toque ambíguo. Na leitura assistiva, evite repetir a mesma informação em imagem, título e nome do cartão.</p>"
+              "title": "Para que serve",
+              "body": "<p>Uma estrutura repetida ajuda a localizar o mesmo dado em vários itens. Nome, local e horário em posições consistentes facilitam comparar visitas.</p><p>Imagens grandes ou muitas bordas podem dificultar essa comparação quando não acrescentam informação útil.</p>"
             },
             {
-              "title": "Inclua extremos sem mudar o significado",
-              "body": "<p>Confira nome longo, imagem ausente, item indisponível e texto ampliado. Para imagens, use os critérios de <a href=\"#icones-imagens-significado\">propósito e alternativa</a>. Não reduza tudo a uma miniatura para caber em duas colunas.</p><p>Ao voltar do detalhe, posição, consulta e filtros precisam seguir uma regra. Em coleções longas, defina carregamento adicional, fim da lista e retorno. Esses comportamentos não são demonstrados por uma captura.</p>"
+              "title": "Onde usar",
+              "body": "<p>A figura do Rota mostra as mesmas três visitas com espaços diferentes. Fonte, alinhamento e conteúdo não mudam. A diferença permite observar quando a lista parece compacta ou mais espaçada.</p><p>No produto, duração e custo também podem ser importantes para escolher entre opções.</p>"
             },
             {
-              "title": "Confira se os dados permitem escolher",
-              "body": "<p>Na tela do exemplo, procure uma visita gratuita de até uma hora, considerando os bairros exibidos. Jardim das Esculturas atende ao tempo de 45 minutos e à gratuidade; o bairro é Jardins. Não acrescente a restrição Centro, pois isso tornaria a tarefa incompatível com os dados.</p><p>Se a escolha exige abrir todos os detalhes, investigue qual atributo falta ou está difícil de comparar. Não conclua que uma lista mais densa é melhor apenas porque mostra mais itens.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Mantenha dados equivalentes na mesma posição e deixe nomes longos crescerem. Use cartão quando a delimitação ajudar o agrupamento, não apenas para decorar.</p><p>Diferencie abrir o item de uma ação secundária dentro dele. Não crie regiões de toque sobrepostas. Preserve as informações essenciais quando faltar imagem, preço ou outro dado.</p>"
             }
           ],
           "examples": [
             {
               "title": "Comparar antes de abrir o detalhe",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Descobrir</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">ROTA · CULTURA PERTO DE VOCÊ</div><h2>Exposições</h2><p class=\"rx-subtitle\">Três opções para o fim de semana.</p><div class=\"rx-search\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 4 4\"/></svg><span>Exposição, lugar ou bairro</span></div><div class=\"rx-list-item\"><div class=\"rx-thumb rx-thumb-0\"><span></span></div><div><h3>Forma &amp; luz</h3><p>Galeria Horizonte · Centro</p><span class=\"rx-list-meta\">1h30 · Gratuita</span></div><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></div><div class=\"rx-list-item\"><div class=\"rx-thumb rx-thumb-1\"><span></span></div><div><h3>Jardim das Esculturas</h3><p>Parque Aurora · Jardins</p><span class=\"rx-list-meta\">45 min · Gratuita</span></div><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></div><div class=\"rx-list-item\"><div class=\"rx-thumb rx-thumb-2\"><span></span></div><div><h3>Cidade em cartaz</h3><p>Casa do Bairro · Centro</p><span class=\"rx-list-meta\">2h · R$20</span></div><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TIPOS DE TELAS E DECISÕES DE USO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Dados que apoiam a escolha</h4><p>Local, duração e preço aparecem antes de abrir o detalhe.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Estrutura consistente</h4><p>Imagem à esquerda, conteúdo no centro e pista de navegação à direita se repetem.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Uma unidade de navegação</h4><p>Na implementação, defina a área acionável e evite ações aninhadas ambíguas no mesmo cartão.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Usar uma lista para apoiar comparação rápida entre alternativas com atributos comuns.</p><p><strong>Como testar:</strong> Peça para encontrar uma visita gratuita de até 1 hora e observe se precisa abrir todos os detalhes.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>A figura do Rota mostra as mesmas três visitas com espaços diferentes. Fonte, alinhamento e conteúdo não mudam. A diferença permite observar quando a lista parece compacta ou mais espaçada.</p><p>No produto, duração e custo também podem ser importantes para escolher entre opções.</p>",
               "alt": "Comparar antes de abrir o detalhe. Entre as visitas gratuitas da lista, encontrar uma que caiba em até uma hora, considerando os bairros apresentados.",
               "source": "Rota · estudo original",
-              "scenario": "Entre as visitas gratuitas da lista, encontrar uma que caiba em até uma hora, considerando os bairros apresentados.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Use uma estrutura repetida para informações equivalentes.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Use os três itens da lista Rota mostrada aqui. Você não precisa inventar doze novos lugares nem comparar dois layouts completos.",
-            "steps": [
-              "Marque os dados que permitem encontrar uma opção gratuita de até uma hora.",
-              "Faça o nome de um item crescer e retire sua imagem, mantendo os atributos decisivos.",
-              "Escreva o efeito de abrir o detalhe e voltar."
-            ],
-            "deliverable": "Um item com conteúdo extremo e o contrato da coleção.",
-            "criteria": [
-              "A escolha pedida pode ser respondida pelos dados exibidos.",
-              "Nome, custo e duração permanecem compreensíveis com texto longo.",
-              "Imagem ausente não impede identificar a visita.",
-              "Abrir o detalhe e voltar têm consequências especificadas, incluindo preservação de contexto."
-            ]
-          },
           "sources": [
             {
               "title": "Card — Jetpack Compose",
@@ -514,62 +412,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 300
+          "wordCount": 173
         },
         {
           "id": "tela-detalhe",
-          "title": "Tela de detalhe: dar segurança para a próxima ação",
-          "summary": "Organize identidade, evidência, condições e ação para que uma pessoa consiga decidir sem perder o contexto de origem.",
-          "minutes": 4,
+          "title": "Tela de detalhe: reunir o que falta para decidir",
+          "summary": "Apresente informações completas sem perder a próxima ação.",
+          "minutes": 2,
           "objectives": [
-            "Construir uma hierarquia de perguntas para o detalhe.",
-            "Preservar contexto de navegação e seleção.",
-            "Relacionar ação principal, disponibilidade e informações obrigatórias."
+            "Tela de detalhe aprofunda um item escolhido em uma lista ou busca.",
+            "O detalhe ajuda a confirmar se uma opção atende ao que a pessoa procura."
           ],
           "sections": [
             {
-              "title": "Responda antes do compromisso",
-              "body": "<p>O detalhe precisa esclarecer qual é o item, o que afeta a decisão e o que a ação fará. Não é uma cópia de todos os campos disponíveis no sistema.</p><p>No Rota, identificação, horário, duração, endereço e custo ajudam a planejar. O aviso sobre reserva evita interpretar salvar como ingresso garantido. Informações decisivas devem estar disponíveis antes da ação, sem depender de expansões vagas.</p>"
+              "title": "O que é",
+              "body": "<p>Tela de detalhe aprofunda um item escolhido em uma lista ou busca. Pode mostrar descrição, imagens, condições e ações relacionadas àquele item.</p><p>Ela não precisa repetir todas as informações com o mesmo destaque.</p>"
             },
             {
-              "title": "Funcione também por entrada direta",
-              "body": "<p>Um <strong>deep link</strong> abre um conteúdo específico sem passar pela home. Título e contexto precisam bastar para orientar quem não viu a lista anterior.</p><p>Defina Voltar e Subir por origem e plataforma. No Android, uma entrada externa pode usar uma pilha interna sintética para Subir. Não prometa restaurar uma lista que a pessoa nunca percorreu. O mesmo item deve continuar selecionado quando a composição muda entre lista-detalhe e tela única.</p>"
+              "title": "Para que serve",
+              "body": "<p>O detalhe ajuda a confirmar se uma opção atende ao que a pessoa procura. Também apresenta condições que não cabiam na comparação inicial.</p><p>Uma imagem atraente não substitui horário, custo, duração ou restrições relevantes.</p>"
             },
             {
-              "title": "Planeje ação, ausência e mudança de espaço",
-              "body": "<p>Um botão persistente pode facilitar a ação, mas não pode cobrir o fim do conteúdo. Se precisa de uma escolha prévia, explique o que falta. Uma aparência desabilitada sem motivo não orienta.</p><p>Inclua imagem ausente, descrição longa, dado desatualizado e item removido. Não ofereça uma ação com base em informação sabidamente inválida. O detalhe não deve inventar uma disponibilidade para preencher a tela.</p>"
+              "title": "Onde usar",
+              "body": "<p>Em Forma & luz, o detalhe reúne exposição, local, duração, horário e condição de entrada. A ação de salvar permanece relacionada a esses dados.</p><p>“Salvar plano” organiza a visita no exemplo; não compra ingresso nem garante entrada. Essa diferença deve continuar clara perto da decisão.</p>"
             },
             {
-              "title": "Confira a decisão com uma restrição concreta",
-              "body": "<p>Para avaliar se uma visita cabe numa tarde, declare a janela de tempo e se deslocamentos estão incluídos. “Cabe na tarde” sozinho não é um critério reproduzível.</p><p>Peça que a pessoa explique o efeito de salvar antes de acioná-lo. Depois confira retorno, interrupção e texto ampliado no ambiente adequado. A imagem ensina organização, mas não executa esses comportamentos.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Organize o conteúdo em grupos: identificação, informações para decidir, condições e ação. Evite esconder condições importantes em texto pequeno ou distante.</p><p>Confira nome longo, imagem ausente e texto ampliado. Se houver uma ação fixa, reserve espaço para que ela não cubra o fim do conteúdo. O retorno deve manter relação com a origem.</p>"
             }
           ],
           "examples": [
             {
               "title": "Detalhes que sustentam a próxima decisão",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Visita</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-art\" aria-label=\"Ilustração autoral de uma galeria com esculturas abstratas\"><div class=\"rx-art-sun\"></div><div class=\"rx-art-arch\"></div><div class=\"rx-art-block\"></div></div><div class=\"rx-eyebrow\">EXPOSIÇÃO</div><h2>Forma &amp; luz</h2><p class=\"rx-subtitle\">Galeria Horizonte · Centro</p><div class=\"rx-facts\"><div class=\"rx-data-row\"><span>Entrada</span><strong>Gratuita</strong></div><div class=\"rx-data-row\"><span>Visita estimada</span><strong>1h30</strong></div><div class=\"rx-data-row\"><span>Última entrada</span><strong>17h</strong></div></div><p class=\"rx-help\">Esculturas e instalações sobre as formas do cotidiano.</p></div><div class=\"rx-footer\"><div class=\"rx-primary\">Planejar visita</div><p>Planejar não garante entrada.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TIPOS DE TELAS E DECISÕES DE USO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Identidade sem ambiguidade</h4><p>Forma & luz é a exposição. Galeria Horizonte é o local.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Informações antes do compromisso</h4><p>Preço, duração e última entrada ajudam a avaliar a visita antes de planejar.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Próxima ação honesta</h4><p>Planejar visita corresponde ao escopo do Rota e não sugere compra ou reserva.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Organizar os dados que reduzem incerteza na decisão, mantendo o próximo passo explícito.</p><p><strong>Como testar:</strong> Peça para avaliar se a visita cabe na tarde e explicar o que acontece ao planejar.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>Em Forma & luz, o detalhe reúne exposição, local, duração, horário e condição de entrada. A ação de salvar permanece relacionada a esses dados.</p><p>“Salvar plano” organiza a visita no exemplo; não compra ingresso nem garante entrada. Essa diferença deve continuar clara perto da decisão.</p>",
               "alt": "Detalhes que sustentam a próxima decisão. Conferir a visita antes de salvar e entender se isso reserva entrada.",
               "source": "Rota · estudo original",
-              "scenario": "Conferir a visita antes de salvar e entender se isso reserva entrada.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Apresente informações completas sem perder a próxima ação.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Use o detalhe de Forma & luz do exemplo e mantenha sua duração e horário publicados.",
-            "steps": [
-              "Defina uma janela de visita e diga se ela inclui deslocamento. Confira quais dados permitem decidir.",
-              "Anote o efeito de salvar e de voltar por lista ou por link externo.",
-              "Inclua um título longo e confira como alcançar o último conteúdo."
-            ],
-            "deliverable": "O detalhe anotado com restrição de tempo e caminhos de retorno.",
-            "criteria": [
-              "A janela de tempo e o uso da duração estão explícitos.",
-              "Salvar não é confundido com compra ou reserva.",
-              "Entrada direta mantém identificação e saída compreensíveis.",
-              "Informação essencial e ação não se encobrem com conteúdo longo."
-            ]
-          },
           "sources": [
             {
               "title": "Reply sample",
@@ -588,62 +470,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 273
+          "wordCount": 165
         },
         {
           "id": "busca-filtros",
-          "title": "Busca, filtros e ordenação: reduzir alternativas com clareza",
-          "summary": "Desenhe a consulta como um processo completo, com sugestões, refinamento, resultados e recuperação quando nada corresponde.",
-          "minutes": 4,
+          "title": "Busca e filtros: reduzir opções sem perder o contexto",
+          "summary": "Diferencie procurar por texto, limitar resultados e mudar a ordem.",
+          "minutes": 2,
           "objectives": [
-            "Distinguir consulta, filtro e ordenação.",
-            "Definir a lógica de combinação dos filtros.",
-            "Projetar resultados, ausência de resultados e falha sem confundi-los."
+            "Busca encontra conteúdo a partir de uma consulta.",
+            "Esses recursos ajudam quando há opções suficientes para tornar a procura difícil."
           ],
           "sections": [
             {
-              "title": "Separe consulta, condição e ordem",
-              "body": "<p><strong>Busca</strong> procura a partir de uma consulta. <strong>Filtro</strong> restringe um conjunto. <strong>Ordenação</strong> muda a sequência. Alterar apenas a ordem não deve remover itens silenciosamente.</p><p>No Rota, nome pode ser consulta; gratuidade e duração são condições. A interface precisa mostrar o que está ativo e permitir rever a intenção, não apenas exibir uma contagem de filtros.</p>"
+              "title": "O que é",
+              "body": "<p>Busca encontra conteúdo a partir de uma consulta. Filtro limita o conjunto por uma condição, como entrada gratuita. Ordenação muda a sequência, como horário mais próximo.</p><p>São funções diferentes, embora possam aparecer na mesma tela.</p>"
             },
             {
-              "title": "Escreva a regra antes do componente",
-              "body": "<p>Defina escopo, seleção única ou múltipla, padrão e forma de limpar cada condição. Não presuma a lógica de combinação. Por exemplo: gratuito <em>e</em> até duas horas precisa ser atendido pelo mesmo resultado.</p><p>Escolha aplicação imediata ou por confirmação. Se houver rascunho no painel, Cancelar preserva o conjunto anteriormente aplicado. Uma sugestão pode preencher o campo ou executar a busca; declare qual comportamento existe.</p>"
+              "title": "Para que serve",
+              "body": "<p>Esses recursos ajudam quando há opções suficientes para tornar a procura difícil. A pessoa consegue refinar o conjunto sem percorrer cada item.</p><p>Um filtro escondido ou pouco claro pode fazer parecer que o conteúdo desapareceu.</p>"
             },
             {
-              "title": "Diferencie ausência de resultado e falha",
-              "body": "<p>“Nenhum resultado” significa que uma busca concluída não encontrou correspondências. Falta de conexão e falha de serviço são outras causas. Preserve consulta e filtros e ofereça uma saída capaz de mudar a situação.</p><p>Se corrigir uma palavra, informe o que foi pesquisado e permita recuperar a consulta original. Histórico de busca pode expor informações em aparelho compartilhado; não o use como decoração sem considerar contexto.</p>"
+              "title": "Onde usar",
+              "body": "<p>No Rota, alguém pode buscar uma exposição, filtrar visitas gratuitas e ordenar por horário. A tela deve deixar claro quais condições estão ativas.</p><p>Nenhum resultado não significa necessariamente falta de visitas: a combinação de busca e filtros pode ter excluído todas.</p>"
             },
             {
-              "title": "Confira conjuntos pequenos e conhecidos",
-              "body": "<p>Use poucos dados que você consiga conferir manualmente. Escreva o resultado esperado de cada combinação antes de desenhar. Na tela desta lição, o resultado é compatível com gratuidade e duração de até duas horas.</p><p>Depois verifique remover só uma condição, limpar todas e voltar do detalhe. A contagem deve corresponder ao conjunto atual; a captura não prova essa atualização.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Mostre filtros aplicados e uma forma de removê-los. Preserve a consulta quando não houver resultados. Diferencie limpar um filtro de apagar tudo.</p><p>Mantenha resultado, quantidade e estado da busca coerentes. Evite acrescentar busca a uma coleção muito pequena sem necessidade. Confira como as opções aparecem com teclado aberto e texto ampliado.</p>"
             }
           ],
           "examples": [
             {
               "title": "Filtros visíveis, resultado explicável",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Buscar</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">BUSCA</div><h2>Encontre seu passeio</h2><p class=\"rx-subtitle\">1 visita combina com seus critérios.</p><div class=\"rx-search\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 4 4\"/></svg><span>Centro</span></div><div class=\"rx-chips\"><span class=\"rx-filter rx-filter-selected\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 12 4 4L19 6\"/></svg>Gratuita ×</span><span class=\"rx-filter \">Até 2h ×</span></div><div class=\"rx-sort\">Ordenar: menor duração <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></div><div class=\"rx-list-item\"><div class=\"rx-thumb rx-thumb-0\"><span></span></div><div><h3>Forma &amp; luz</h3><p>Galeria Horizonte</p><span class=\"rx-list-meta\">1h30 · Gratuita</span></div><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></div><p class=\"rx-help\">Os resultados refletem os filtros acima.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TIPOS DE TELAS E DECISÕES DE USO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Busca e filtro têm papéis diferentes</h4><p>Centro é a consulta. Gratuita e Até 2h restringem as alternativas.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Ordenação não filtra</h4><p>Menor duração organiza os mesmos resultados; não elimina visitas por si só.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Estado permanece visível</h4><p>A pessoa consegue reconhecer e remover critérios sem reconstruir a busca.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Separar consulta, restrições e ordem para tornar a lista compreensível.</p><p><strong>Como testar:</strong> Peça para explicar por que há 1 resultado e como ampliar a busca sem mudar o bairro.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>No Rota, alguém pode buscar uma exposição, filtrar visitas gratuitas e ordenar por horário. A tela deve deixar claro quais condições estão ativas.</p><p>Nenhum resultado não significa necessariamente falta de visitas: a combinação de busca e filtros pode ter excluído todas.</p>",
               "alt": "Filtros visíveis, resultado explicável. Encontrar uma visita gratuita de até duas horas no Centro e compreender os filtros e a ordenação atuais.",
               "source": "Rota · estudo original",
-              "scenario": "Encontrar uma visita gratuita de até duas horas no Centro e compreender os filtros e a ordenação atuais.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Diferencie procurar por texto, limitar resultados e mudar a ordem.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Use Forma & luz (Centro, gratuita, 1h30), Jardim das Esculturas (Jardins, gratuita, 45min) e Cidade em cartaz (Centro, R$20, 2h) como conjunto de treino do Rota.",
-            "steps": [
-              "Liste o resultado esperado para gratuito; gratuito e até 1h; gratuito e Centro.",
-              "Mostre as condições ativas de uma combinação e como remover apenas uma.",
-              "Escreva mensagens distintas para nenhum resultado e falha de conexão."
-            ],
-            "deliverable": "Três conjuntos esperados e uma tela de refinamento anotada.",
-            "criteria": [
-              "Cada conjunto corresponde exatamente às condições declaradas.",
-              "As condições ativas podem ser identificadas e removidas.",
-              "Falha de comunicação não aparece como ausência de correspondência.",
-              "Retorno do detalhe preserva consulta e filtros segundo uma regra explícita."
-            ]
-          },
           "sources": [
             {
               "title": "Search bar — Jetpack Compose",
@@ -662,62 +528,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 258
+          "wordCount": 162
         },
         {
           "id": "formularios",
-          "title": "Formulários: pedir o necessário e ajudar a concluir",
-          "summary": "Transforme uma sequência de campos em uma conversa clara sobre finalidade, preenchimento, revisão e resultado.",
-          "minutes": 4,
+          "title": "Formulários: organizar campos e ajudar no preenchimento",
+          "summary": "Agrupe informações relacionadas e mantenha rótulos e ações visíveis.",
+          "minutes": 2,
           "objectives": [
-            "Justificar cada campo antes de desenhá-lo.",
-            "Projetar rótulos, ajuda, teclado e validação.",
-            "Preservar trabalho e oferecer correção acessível."
+            "Formulário é um conjunto de campos para receber informações.",
+            "Uma boa organização ajuda a preencher sem perder o contexto."
           ],
           "sections": [
             {
-              "title": "Peça apenas o que produz o resultado",
-              "body": "<p>Cada campo pede esforço e, às vezes, confiança. Antes de escolher o controle, escreva por que a informação é necessária, quem a usa e o que acontece se faltar. Um rótulo melhor não justifica uma pergunta desnecessária.</p><p>No Rota, editar o plano pede dados relacionados à visita e uma nota opcional. Não acrescente informações pessoais sem necessidade. Use os valores válidos da tela do exemplo; o caso de horário 08h fora da faixa está na <a href=\"#heuristicas-eficiencia-recuperacao-ajuda\">lição de recuperação</a>.</p>"
+              "title": "O que é",
+              "body": "<p>Formulário é um conjunto de campos para receber informações. Cada campo precisa mostrar o que deve ser preenchido e sua condição atual.</p><p>Rótulo identifica o campo. Placeholder é um exemplo ou dica dentro dele e não substitui um rótulo que precisa continuar visível.</p>"
             },
             {
-              "title": "Mantenha rótulo e ajuda disponíveis",
-              "body": "<p>O rótulo identifica o campo; a ajuda explica formato ou condição. O placeholder desaparece durante o preenchimento e não deve ser o único identificador. Associe campo, rótulo e erro também na implementação.</p><p>Escolha o controle pela tarefa. Digitar pode ser adequado para uma data conhecida; um calendário ajuda a explorar datas próximas. Não trate texto livre como erro por definição. Ofereça teclado e formatos compatíveis e não bloqueie colagem sem razão.</p>"
+              "title": "Para que serve",
+              "body": "<p>Uma boa organização ajuda a preencher sem perder o contexto. Grupos claros também facilitam encontrar o que precisa ser corrigido.</p><p>Pedir dados sem necessidade aumenta o esforço e ocupa espaço que poderia ser evitado.</p>"
             },
             {
-              "title": "Corrija no momento útil",
-              "body": "<p>Um campo ainda não preenchido não precisa começar em vermelho. Explique requisitos antes quando ajudam a evitar erro; valide em um momento coerente, como saída ou envio, e atualize a mensagem após correção.</p><p>A mensagem deve dizer o que precisa mudar e preservar respostas válidas. “Inválido” não basta. Desabilitar Enviar até tudo estar perfeito pode esconder o caminho de correção; não é a opção padrão obrigatória.</p>"
+              "title": "Onde usar",
+              "body": "<p>No Rota, escolher dia e horário pede campos diferentes de escrever uma observação pessoal. As informações relacionadas à visita podem ficar próximas.</p><p>Um erro de formato deve aparecer associado ao campo correspondente, sem apagar os dados que já foram preenchidos.</p>"
             },
             {
-              "title": "Mostre envio e resultado sem inventar certeza",
-              "body": "<p>Ao aceitar uma operação, comunique processamento e defina o efeito de acionamentos repetidos. Confirme apenas o resultado conhecido. Se a resposta se perdeu depois do envio, consulte a tentativa anterior antes de incentivar outro envio; veja <a href=\"#estados-interface\">estados da interface</a>.</p><p>Confira último campo, mensagem e ação com teclado e texto ampliado. Decida o que permanece ao voltar, interromper ou falhar. Um rascunho persistente exige implementação e atenção à privacidade; não existe só porque foi desenhado.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Use rótulos visíveis e uma ordem de leitura clara. Escolha o tipo de entrada pelos caracteres realmente aceitos. Não force teclado numérico se letras ou sinais forem válidos.</p><p>Confira último campo, indicação de erro e ação com o teclado aberto. Não use apenas vermelho para indicar problema. Ao enviar, diferencie processamento de resultado confirmado e preserve os dados quando houver uma falha.</p>"
             }
           ],
           "examples": [
             {
               "title": "Um formulário que ajuda a concluir",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Planejar</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">MEU PLANO</div><h2>Organizar visita</h2><p class=\"rx-subtitle\">Forma & luz · Galeria Horizonte</p><div class=\"rx-field \"><span class=\"rx-field-label\">Dia</span><div class=\"rx-input\">Sábado, 24 de outubro</div><p class=\"rx-field-help\">Você pode mudar depois.</p></div><div class=\"rx-field \"><span class=\"rx-field-label\">Horário</span><div class=\"rx-input\">15:00</div><p class=\"rx-field-help\">Chegada entre 10h e 17h.</p></div><div class=\"rx-field \"><span class=\"rx-field-label\">Nota pessoal</span><div class=\"rx-input\">Levar um caderno</div><p class=\"rx-field-help\">Só aparece no seu plano.</p></div></div><div class=\"rx-footer\"><div class=\"rx-primary\">Salvar plano</div><p>Salvar não reserva entrada.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TIPOS DE TELAS E DECISÕES DE USO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Rótulos persistentes</h4><p>Dia, Horário e Nota pessoal continuam nomeados com valores preenchidos.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Ajuda no contexto</h4><p>A faixa de horário aceita aparece junto ao campo correspondente.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Consequência clara</h4><p>Salvar plano explica a ação; o aviso distingue planejamento de reserva.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Pedir somente os dados necessários e manter rótulos, valores e ajuda associados.</p><p><strong>Como testar:</strong> Preencha no protótipo com teclado aberto, depois teste erro, correção e preservação de dados.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p>No Rota, escolher dia e horário pede campos diferentes de escrever uma observação pessoal. As informações relacionadas à visita podem ficar próximas.</p><p>Um erro de formato deve aparecer associado ao campo correspondente, sem apagar os dados que já foram preenchidos.</p>",
               "alt": "Um formulário que ajuda a concluir. Preencher dia, horário válido e uma nota pessoal para salvar o plano de visita.",
               "source": "Rota · estudo original",
-              "scenario": "Preencher dia, horário válido e uma nota pessoal para salvar o plano de visita.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Agrupe informações relacionadas e mantenha rótulos e ações visíveis.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Use o formulário preenchido do Rota como base. Mantenha os campos existentes, sem criar uma nova coleta.",
-            "steps": [
-              "Explique a finalidade de cada campo e marque a nota opcional.",
-              "Escreva uma mensagem para horário fora da faixa permitida sem apagar os outros valores.",
-              "Anote o caminho do envio até confirmação ou resultado ainda desconhecido."
-            ],
-            "deliverable": "Um formulário anotado e sua regra de correção e envio.",
-            "criteria": [
-              "Rótulos e obrigatoriedade permanecem compreensíveis durante o preenchimento.",
-              "O erro informa como corrigir e a qual campo pertence.",
-              "Respostas válidas têm preservação definida.",
-              "Resultado incerto não é anunciado como falha confirmada nem incentiva reenvio cego."
-            ]
-          },
           "sources": [
             {
               "title": "Forms Tutorial — W3C WAI",
@@ -742,7 +592,7 @@
             {
               "title": "GOV.UK: Date input",
               "url": "https://design-system.service.gov.uk/components/date-input/",
-              "note": "Exemplo de entrada digitável para datas conhecidas; escolha depende da tarefa."
+              "note": "Exemplo de entrada digitável para datas conhecidas; escolha depende da informação a preencher."
             },
             {
               "title": "GOV.UK: Button",
@@ -751,62 +601,46 @@
             }
           ],
           "videos": [],
-          "wordCount": 306
+          "wordCount": 179
         },
         {
           "id": "estados-interface",
-          "title": "Vazio, carregando, erro, sucesso e offline: projetar continuidade",
-          "summary": "Trate estados como partes da tarefa, com causa, alcance, informação preservada e próximo passo definido.",
-          "minutes": 4,
+          "title": "Estados da interface: mostrar espera, vazio, erro e conclusão",
+          "summary": "Mantenha a pessoa informada sem apagar o contexto.",
+          "minutes": 2,
           "objectives": [
-            "Distinguir ausência de conteúdo, processamento e falha.",
-            "Projetar estados locais e de tela inteira.",
-            "Separar salvamento local, sincronização e conclusão confirmada."
+            "Estado é a condição atual do conteúdo ou de uma operação.",
+            "Os estados ajudam a entender o que está acontecendo e quais ações ainda são possíveis."
           ],
           "sections": [
             {
-              "title": "Comece pela causa e pelo que ainda funciona",
-              "body": "<p><strong>Estado</strong> é a condição da tarefa e do sistema em um momento. A ausência de conteúdo pode significar primeiro uso, busca sem correspondências, falta de acesso ou falha. Essas causas pedem mensagens e saídas diferentes.</p><p>Defina o alcance: uma imagem indisponível não precisa apagar o plano inteiro. Rede, conteúdo e operação são dimensões distintas; dados salvos podem continuar úteis enquanto uma atualização falha.</p>"
+              "title": "O que é",
+              "body": "<p>Estado é a condição atual do conteúdo ou de uma operação. Uma lista pode estar vazia; uma busca pode estar carregando; um salvamento pode ter concluído ou falhado.</p><p>Condições diferentes precisam de apresentações diferentes.</p>"
             },
             {
-              "title": "Diferencie espera, conclusão e incerteza",
-              "body": "<p>Carregamento indica trabalho em andamento. Progresso determinado usa quantidade conhecida; indicador indeterminado não afirma quanto falta. Skeleton antecipa estrutura conhecida, sem fingir dados disponíveis ou substituir indefinidamente uma resposta.</p><p>Sucesso confirma uma mudança realmente concluída. “Salvo no aparelho” e “Sincronizado” dizem coisas diferentes. Se a resposta da gravação não chegou, o servidor pode ter concluído a operação: a tela do Rota oferece <strong>Verificar salvamento</strong> da mesma tentativa, sem mandar repetir às cegas.</p>"
+              "title": "Para que serve",
+              "body": "<p>Os estados ajudam a entender o que está acontecendo e quais ações ainda são possíveis. Evitam que uma área vazia pareça um defeito ou que uma espera pareça conclusão.</p><p>Uma falha secundária, como uma imagem ausente, não precisa apagar toda a tela.</p>"
             },
             {
-              "title": "Ligue cada causa a uma saída possível",
-              "body": "<ul><li><strong>Plano sem visitas:</strong> preserve o nome do plano e ofereça explorar.</li><li><strong>Busca sem correspondências:</strong> preserve consulta e filtros e permita remover uma condição.</li><li><strong>Localização recusada:</strong> ofereça escolha manual quando essa capacidade existir; não afirme que não há lugares.</li><li><strong>Falha conhecida antes do envio:</strong> preserve preenchimento e permita tentar novamente.</li><li><strong>Resultado desconhecido após envio:</strong> preserve dados e consulte a tentativa anterior para descobrir o resultado.</li></ul><p>Para cada linha, registre causa conhecida, informação preservada, mensagem, ação e condição de saída. Não prometa uso offline, consulta ou sincronização sem capacidade real do produto.</p>"
+              "title": "Onde usar",
+              "body": "<p>A sequência do Rota mostra os mesmos dados antes de salvar, durante a tentativa e depois da confirmação. Nome e horário permanecem, enquanto a condição da ação muda.</p><p>Se a resposta não chegar, o resultado pode ser desconhecido. Não mostre sucesso nem ofereça repetir às cegas como se a falha estivesse confirmada.</p>"
             },
             {
-              "title": "Confira transições, não só mensagens",
-              "body": "<p>Percorra a mesma tarefa com uma interrupção específica. Pergunte o que já aconteceu, o que permanece incerto e qual saída faz sentido. Uma mensagem clara isolada pode ficar incoerente na sequência.</p><p>Na implementação, mudanças importantes precisam ser percebidas também sem visão, usando anúncios apropriados e preservando foco. Evite porcentagens inventadas, sucesso antecipado e bloqueio de toda a tela por uma falha secundária.</p>"
+              "title": "Boas práticas",
+              "body": "<p>Diferencie primeiro uso de busca sem resultados. Preserve consulta e filtros quando não houver correspondências. Mantenha os dados importantes durante espera e erro.</p><p>Confirme apenas resultados conhecidos. Um skeleton, estrutura provisória de carregamento, não deve parecer dado disponível. Na implementação, estados importantes também precisam ser comunicados sem depender apenas da visão.</p>"
             }
           ],
           "examples": [
             {
               "title": "Resultado incerto: verificar antes de reenviar",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Salvar plano</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">CONEXÃO INTERROMPIDA</div><h2>Seu plano continua aqui</h2><p class=\"rx-subtitle\">Ainda não sabemos se o plano foi salvo.</p><div class=\"rx-error-banner\">⚠ A conexão caiu antes da resposta.</div><div class=\"rx-box \"><h3>Forma &amp; luz</h3><p>Sábado, 24 out · 15h<br>Galeria Horizonte</p></div><div class=\"rx-field \"><span class=\"rx-field-label\">Nota pessoal</span><div class=\"rx-input\">Levar um caderno</div><p class=\"rx-field-help\">Seu preenchimento permanece nesta tela.</p></div><p class=\"rx-help\">Vamos consultar o resultado desta mesma tentativa antes de oferecer um novo envio.</p></div><div class=\"rx-footer\"><div class=\"rx-primary\">Verificar salvamento</div><p>A verificação não cria um novo plano.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">TIPOS DE TELAS E DECISÕES DE USO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Estado nomeado</h4><p>A falha é comunicada com texto e símbolo, sem depender apenas de vermelho.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Contexto preservado</h4><p>Visita, horário e nota continuam disponíveis para retomar.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Verificação antes de novo envio</h4><p>O controle consulta a tentativa anterior. Só depois o sistema decide se mostra o plano salvo ou oferece uma nova tentativa segura.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> tratar uma resposta perdida como resultado desconhecido. A ação principal verifica a mesma operação antes de considerar outro envio.</p><p><strong>Como testar:</strong> interrompa a resposta depois de o servidor salvar. Use Verificar salvamento: o sistema deve recuperar o plano existente, sem duplicá-lo. Repita com falha confirmada.</p><p><strong>Limite:</strong> a interface especifica a recuperação; a implementação precisa identificar a operação, consultar seu resultado e usar as garantias adequadas de idempotência. A responsabilidade não é da pessoa adivinhar se deve criar outra cópia.</p>",
+              "analysis": "<p>A sequência do Rota mostra os mesmos dados antes de salvar, durante a tentativa e depois da confirmação. Nome e horário permanecem, enquanto a condição da ação muda.</p><p>Se a resposta não chegar, o resultado pode ser desconhecido. Não mostre sucesso nem ofereça repetir às cegas como se a falha estivesse confirmada.</p>",
               "alt": "Resultado incerto: verificar antes de reenviar. Recuperar uma tentativa de salvamento cuja resposta se perdeu, sem criar outro plano.",
               "source": "Rota · estudo original",
-              "scenario": "Recuperar uma tentativa de salvamento cuja resposta se perdeu, sem criar outro plano.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
+              "scenario": "Mantenha a pessoa informada sem apagar o contexto.",
+              "comparisonFocus": "Observe como os elementos visuais ajudam a entender este exemplo."
             }
           ],
-          "exercise": {
-            "brief": "Use o salvamento do Rota. Compare duas causas com os mesmos dados de plano: falha conhecida antes do envio e falta de resposta depois do envio.",
-            "steps": [
-              "Preencha uma linha de causa, dados preservados, mensagem, ação e saída para cada caso.",
-              "No resultado incerto, especifique a consulta à tentativa anterior.",
-              "Acrescente ao fluxo a confirmação encontrada ou a falha conhecida, sem duplicar o plano."
-            ],
-            "deliverable": "Duas linhas da matriz de estados ligadas ao mesmo fluxo.",
-            "criteria": [
-              "As mensagens correspondem ao que o sistema realmente sabe.",
-              "Dados preservados não são confundidos com gravação confirmada.",
-              "A saída pode resolver a causa e não incentiva duplicação.",
-              "Capacidades ainda não implementadas estão declaradas como requisitos."
-            ]
-          },
           "sources": [
             {
               "title": "Progress indicators",
@@ -835,17 +669,11 @@
             }
           ],
           "videos": [],
-          "wordCount": 302
+          "wordCount": 179
         }
       ],
-      "objective": "Aplicar a linguagem visual a descoberta, comparação, escolha e estados da mesma tarefa.",
-      "rationale": "Tipos de tela combinam hierarquia e navegação em problemas concretos do Rota.",
-      "criteria": [
-        "Distingue o papel de lista, detalhe e plano.",
-        "Mantém campos comparáveis em listas e cartões.",
-        "Mostra busca sem resultado sem apagar o contexto.",
-        "Representa vazio, espera, falha e conclusão com prioridades distintas."
-      ],
+      "objective": "Conheça o papel de listas, detalhes, busca, formulários e estados da interface.",
+      "rationale": "Os fundamentos visuais aparecem em situações frequentes, cada uma com informações e ações próprias.",
       "references": [
         {
           "title": "Apple · layout",
