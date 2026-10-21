@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 GUIDE_DIST=ROOT/'guide-dist'
 CONTENT=ROOT/'source'/'content'
-ORDER=['fundamentos','principios-visuais','tipografia','cores','arquitetura-informacao','design-mobile','tipos-telas','usabilidade-acessibilidade','construcao-completa']
+ORDER=['fundamentos','principios-visuais','densidade-espacamento','design-mobile','tipografia','cores','profundidade-superficies','refinamento-optico','identidade-interface','arquitetura-informacao','tipos-telas','usabilidade-acessibilidade','construcao-completa']
 modules=[]
 for f in sorted(CONTENT.glob('part-*.json')):
     d=json.loads(f.read_text()); modules.extend(d['modules'])
@@ -21,7 +21,7 @@ for m in modules:
             assert '<details' not in s['body'].lower(), l['id']
         for e in l['examples']:
             e.pop('designNote',None)
-            assert e['url'].startswith('https://'),l['id']
+            if e.get('url'): assert e['url'].startswith('https://'),l['id']
             if e.get('visualHtml'):
                 assert '<script' not in e['visualHtml'].lower() and not re.search(r'\bon\w+\s*=',e['visualHtml'],re.I),l['id']
                 assert not re.search(r'<(?:button|input|a|iframe|details|style)\b', e['visualHtml'], re.I),l['id']
@@ -37,7 +37,9 @@ for m in modules:
         words=len(re.findall(r'\S+',re.sub('<[^>]+>',' ',text)))
         l['minutes']=max(4,round(words/180))
         l['wordCount']=words
-course={'title':'Fundamentos de UI — Do fundamento à interface','edition':'2026-10','modules':modules}
+glossary_path=CONTENT/'glossary.json'
+glossary=json.loads(glossary_path.read_text())['glossary'] if glossary_path.exists() else []
+course={'title':'Fundamentos de UI — Do fundamento à interface','edition':'2026-10-craft','modules':modules,'glossary':glossary}
 (GUIDE_DIST).mkdir(exist_ok=True)
 for name in ['index.html','styles.css','examples.css','realistic-examples.css','app.js']:shutil.copy2(ROOT/'source'/name,GUIDE_DIST/name)
 (GUIDE_DIST/'course.js').write_text('window.COURSE = '+json.dumps(course,ensure_ascii=False).replace('</','<\\/')+';\n')

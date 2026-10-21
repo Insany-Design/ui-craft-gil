@@ -1,0 +1,348 @@
+{
+  "glossary": [
+    {
+      "term": "@1x, @2x e @3x",
+      "definition": "Fatores de escala de recursos de imagem. Um recurso de 24 unidades pode usar 24, 48 ou 72 pixels por lado sem mudar sua dimensão de layout."
+    },
+    {
+      "term": "Alinhamento óptico",
+      "definition": "Ajuste da posição pela massa visível de uma forma, depois de estabelecer sua referência geométrica."
+    },
+    {
+      "term": "Altura-x / x-height",
+      "definition": "Altura aproximada de letras minúsculas sem ascendentes ou descendentes. Influencia o tamanho percebido mesmo entre fontes com o mesmo corpo."
+    },
+    {
+      "term": "Anti-aliasing",
+      "definition": "Suavização das bordas de letras e formas durante a rasterização. Ajuda a representar curvas com pixels; não é necessariamente falta de nitidez."
+    },
+    {
+      "term": "APCA",
+      "definition": "Método de avaliação perceptual de contraste distinto do cálculo usado pela WCAG 2.2. Não substitui os critérios normativos adotados nesta trilha."
+    },
+    {
+      "term": "App bar / header",
+      "definition": "Barra do aplicativo ou cabeçalho que apresenta contexto, título e ações da tela."
+    },
+    {
+      "term": "Arquitetura da informação",
+      "definition": "Organização e relação entre conteúdos para que seus grupos e caminhos sejam compreensíveis."
+    },
+    {
+      "term": "Back / Up",
+      "definition": "Voltar e subir na hierarquia. Voltar costuma percorrer o histórico; subir leva ao nível pai. Confira a convenção da plataforma."
+    },
+    {
+      "term": "Baseline",
+      "definition": "Linha de base que serve de referência para posicionar caracteres. Letras curvas podem ultrapassá-la ligeiramente por ajuste óptico."
+    },
+    {
+      "term": "Blur",
+      "definition": "Desfoque que reduz o detalhe visível do fundo. Não garante contraste nem legibilidade."
+    },
+    {
+      "term": "Bottom sheet",
+      "definition": "Painel apresentado a partir da borda inferior. Pode ser modal ou não; sua forma não determina sozinha o comportamento."
+    },
+    {
+      "term": "Card",
+      "definition": "Cartão: contêiner que reúne informações de uma entidade ou tarefa. Sua utilidade está no agrupamento, não na moldura."
+    },
+    {
+      "term": "Chunks",
+      "definition": "Grupos de informação apresentados como unidades reconhecíveis. Não existe quantidade fixa que resolva qualquer tela."
+    },
+    {
+      "term": "Composição",
+      "definition": "Organização de elementos em uma área, estabelecendo relações de alinhamento, peso, proximidade e espaço."
+    },
+    {
+      "term": "Continuidade",
+      "definition": "Tendência perceptiva a acompanhar alinhamentos e trajetórias contínuas."
+    },
+    {
+      "term": "Contraste",
+      "definition": "Diferença perceptível entre elementos. O contraste de luminância usado na WCAG tem cálculo e requisitos específicos."
+    },
+    {
+      "term": "CSS px, pt, dp e sp",
+      "definition": "Unidades de contextos diferentes: CSS px é referência na web; pt é usado no layout Apple; dp considera densidade no Android; sp acrescenta escalonamento de texto. Não iguale os números automaticamente."
+    },
+    {
+      "term": "Densidade de pixels",
+      "definition": "Quantidade de pixels físicos em uma área da tela. É diferente de densidade visual de conteúdo."
+    },
+    {
+      "term": "Densidade visual",
+      "definition": "Concentração percebida de conteúdo e marcas na área disponível. Depende de quantidade, repetição, espaço e ênfase."
+    },
+    {
+      "term": "Destino comum",
+      "definition": "Princípio perceptivo em que elementos que se deslocam juntos tendem a formar um grupo. O exemplo de Gestalt demonstra percepção, não uma técnica de acabamento."
+    },
+    {
+      "term": "Drawer / sidebar",
+      "definition": "Gaveta de navegação e barra lateral. A gaveta aparece temporariamente; a barra lateral pode permanecer visível quando há espaço."
+    },
+    {
+      "term": "Dynamic Type",
+      "definition": "Recurso Apple de adaptação tipográfica à preferência de tamanho de texto. Uma ampliação visual de exemplo não comprova seu funcionamento."
+    },
+    {
+      "term": "Edge-to-edge",
+      "definition": "Apresentação de borda a borda, inclusive atrás de barras do sistema. Conteúdo e ações precisam considerar os recuos relevantes."
+    },
+    {
+      "term": "Elevação",
+      "definition": "Pista visual de distância entre superfícies, comunicada por recursos como sombra e diferença de fundo."
+    },
+    {
+      "term": "Empty state",
+      "definition": "Estado vazio: condição em que não há conteúdo a apresentar. Primeiro uso, busca sem correspondência e falta de acesso não são a mesma causa."
+    },
+    {
+      "term": "Escala tipográfica",
+      "definition": "Conjunto de tamanhos e papéis que organiza títulos, dados, conteúdo e apoio sem exigir uma progressão matemática fixa."
+    },
+    {
+      "term": "Escaneabilidade",
+      "definition": "Facilidade de localizar pistas e informações relevantes pela organização da tela. Não pressupõe um percurso ocular obrigatório."
+    },
+    {
+      "term": "Expressividade",
+      "definition": "Intensidade com que a identidade aparece por cor, forma, tipografia e imagem. Deve variar conforme a tarefa."
+    },
+    {
+      "term": "Fallback",
+      "definition": "Fonte alternativa usada quando a fonte pretendida não está disponível ou não contém um caractere. Pode mudar largura, quebras e aparência."
+    },
+    {
+      "term": "Família tipográfica",
+      "definition": "Conjunto de fontes relacionadas por um mesmo desenho, com variações como peso e estilo."
+    },
+    {
+      "term": "Fechamento",
+      "definition": "Tendência perceptiva a reconhecer uma forma completa mesmo com partes de seu contorno ausentes."
+    },
+    {
+      "term": "Figura-fundo",
+      "definition": "Relação perceptiva que separa uma forma em destaque do campo ao redor; ambiguidades podem mudar o que parece figura."
+    },
+    {
+      "term": "Flow",
+      "definition": "Fluxo: sequência de passos e condições para realizar uma tarefa, incluindo retorno, alternativas e interrupções."
+    },
+    {
+      "term": "Foco",
+      "definition": "Indicação do elemento que recebe a interação por teclado ou outra entrada compatível; pode coexistir com seleção."
+    },
+    {
+      "term": "Gestalt",
+      "definition": "Conjunto de princípios perceptivos úteis para compreender como organizamos formas e relações, como proximidade, similaridade e continuidade."
+    },
+    {
+      "term": "Grid",
+      "definition": "Grade de alinhamentos, colunas e intervalos. Organiza a composição, mas não decide a classificação do conteúdo."
+    },
+    {
+      "term": "Gutter",
+      "definition": "Intervalo entre colunas ou regiões de uma grade. Não é sinônimo de margem externa."
+    },
+    {
+      "term": "Heurística",
+      "definition": "Princípio amplo usado para inspecionar riscos e incoerências. Não comprova comportamento de pessoas nem certifica acessibilidade."
+    },
+    {
+      "term": "Hierarquia visual",
+      "definition": "Diferença de importância percebida na composição, construída por posição, espaço, tamanho, peso, cor e imagem."
+    },
+    {
+      "term": "Hit area / touch target",
+      "definition": "Região que recebe a interação. Pode ser maior que o ícone visível; tamanho e unidade dependem do contexto e da plataforma."
+    },
+    {
+      "term": "Home",
+      "definition": "Tela inicial do aplicativo ou comando de início do sistema operacional. São funções diferentes."
+    },
+    {
+      "term": "Hover",
+      "definition": "Estado associado à presença de um ponteiro sobre um elemento. Não deve ser condição para usar uma interface por toque."
+    },
+    {
+      "term": "Identidade visual",
+      "definition": "Conjunto de escolhas que torna uma marca reconhecível, incluindo formas, cores, tipografia e imagens, além do logotipo."
+    },
+    {
+      "term": "Insets / safe area",
+      "definition": "Recuos e áreas de referência para proteger conteúdo de barras, recortes e gestos do sistema. Não presuma que resolvam automaticamente o teclado."
+    },
+    {
+      "term": "Kerning",
+      "definition": "Ajuste de espaçamento entre pares específicos de caracteres, diferente de espaçar um trecho inteiro."
+    },
+    {
+      "term": "Line height / leading",
+      "definition": "Altura de linha ou entrelinha: distância vertical entre linhas de texto, ajustada junto de fonte, tamanho e largura de leitura."
+    },
+    {
+      "term": "Luminância relativa",
+      "definition": "Medida de luminosidade relativa usada, entre outros fins, no cálculo de contraste WCAG. Não é o mesmo que matiz ou saturação."
+    },
+    {
+      "term": "Margem",
+      "definition": "Espaço externo ao conteúdo ou contêiner, que o separa de outras áreas ou das bordas disponíveis."
+    },
+    {
+      "term": "Material",
+      "definition": "Tratamento de superfície que pode combinar cor, transparência, desfoque e outras propriedades. Seu resultado depende do contexto."
+    },
+    {
+      "term": "Matiz",
+      "definition": "Família cromática, como azul ou verde. Uma diferença de matiz não garante contraste de luminância suficiente."
+    },
+    {
+      "term": "Modal",
+      "definition": "Apresentação que exige encerrar uma interação antes de voltar ao contexto anterior. Pode assumir diferentes formas visuais."
+    },
+    {
+      "term": "Onboarding",
+      "definition": "Introdução ao uso que ajuda a realizar a primeira tarefa; não é necessariamente uma sequência obrigatória de telas."
+    },
+    {
+      "term": "Padding",
+      "definition": "Espaço interno entre o conteúdo e os limites de seu contêiner."
+    },
+    {
+      "term": "Peso tipográfico",
+      "definition": "Espessura relativa dos traços de uma fonte, como regular ou negrito; seu efeito depende do desenho e do tamanho."
+    },
+    {
+      "term": "Peso óptico",
+      "definition": "Força percebida de uma forma, influenciada por preenchimento, espessura de traço, área e espaço interno."
+    },
+    {
+      "term": "Pixel físico",
+      "definition": "Elemento físico de formação da imagem em uma tela. Não equivale necessariamente a uma unidade de layout."
+    },
+    {
+      "term": "Progressive disclosure",
+      "definition": "Apresentação progressiva de detalhes quando necessários. Não justifica esconder informação essencial à decisão atual."
+    },
+    {
+      "term": "Proximidade",
+      "definition": "Tendência a perceber elementos próximos como relacionados; o intervalo precisa ser comparado com o espaço ao redor."
+    },
+    {
+      "term": "Raio de canto",
+      "definition": "Medida que influencia a curvatura de um canto arredondado. Sua proporção deve ser avaliada junto do tamanho e do recuo da forma."
+    },
+    {
+      "term": "Raster / bitmap",
+      "definition": "Imagem descrita por uma grade de pixels, cuja resolução precisa ser adequada ao tamanho e à escala de exibição."
+    },
+    {
+      "term": "Rasterização",
+      "definition": "Conversão de formas e letras em pixels para exibição. Pode alterar a aparência de detalhes finos."
+    },
+    {
+      "term": "Reflow",
+      "definition": "Reorganização do conteúdo ao mudar o espaço disponível ou ampliar a visualização, preservando informação e funcionalidade."
+    },
+    {
+      "term": "Região comum",
+      "definition": "Princípio perceptivo pelo qual elementos dentro de uma mesma área delimitada tendem a ser associados."
+    },
+    {
+      "term": "Responsive / adaptive",
+      "definition": "Estratégias para reorganizar a interface conforme espaço, dispositivo e contexto. Não se resumem a encolher uma tela."
+    },
+    {
+      "term": "Ritmo visual",
+      "definition": "Repetição de posições, tamanhos e intervalos que cria continuidade e ajuda a comparar elementos equivalentes."
+    },
+    {
+      "term": "Saturação",
+      "definition": "Intensidade cromática percebida. Uma cor mais saturada não é necessariamente mais legível."
+    },
+    {
+      "term": "Scrim",
+      "definition": "Camada de escurecimento ou atenuação entre o contexto e uma superfície sobreposta, usada para reduzir competição visual."
+    },
+    {
+      "term": "Seleção",
+      "definition": "Estado de uma opção escolhida. Precisa ser distinguível de uma ação disponível e não deve depender apenas de cor."
+    },
+    {
+      "term": "Signifier",
+      "definition": "Pista perceptível de onde ou como agir, como forma, posição, rótulo ou indicador."
+    },
+    {
+      "term": "Similaridade",
+      "definition": "Tendência a agrupar elementos por semelhanças como forma, tamanho ou cor."
+    },
+    {
+      "term": "Skeleton",
+      "definition": "Estrutura provisória durante carregamento que sugere organização, sem representar dados já disponíveis."
+    },
+    {
+      "term": "Sombra",
+      "definition": "Pista de separação ou elevação cuja aparência depende de deslocamento, desfoque e intensidade."
+    },
+    {
+      "term": "Splash screen",
+      "definition": "Superfície de abertura. Android SplashScreen e Apple launch screen seguem convenções próprias; não prolongue a espera para exibir marca."
+    },
+    {
+      "term": "Superfície",
+      "definition": "Região visual sobre a qual conteúdo ou controles são apresentados. Seu papel pode ser base, agrupamento ou sobreposição."
+    },
+    {
+      "term": "Swatch",
+      "definition": "Amostra de cor. Na interface, deve ser acompanhada de sua função e da combinação de fundo/conteúdo em que será usada."
+    },
+    {
+      "term": "Tab bar / navigation bar",
+      "definition": "Barra de acesso a destinos principais de mesmo nível. Terminologia e comportamento variam por plataforma."
+    },
+    {
+      "term": "Taxonomia",
+      "definition": "Regra de classificação que define por que um item pertence a um grupo."
+    },
+    {
+      "term": "Tracking",
+      "definition": "Ajuste do espaçamento de um trecho inteiro de texto; diferente do kerning entre pares específicos."
+    },
+    {
+      "term": "Translucidez",
+      "definition": "Aparência de passagem parcial de luz que mantém parte da relação visual com o fundo."
+    },
+    {
+      "term": "Transparência / opacidade",
+      "definition": "Quanto o fundo participa da composição de uma superfície. O contraste deve considerar o resultado efetivo dessa combinação."
+    },
+    {
+      "term": "Vetor",
+      "definition": "Imagem descrita por formas e caminhos. Pode ser escalada sem depender de uma resolução raster fixa, mas ainda é rasterizada na tela."
+    },
+    {
+      "term": "Viewport",
+      "definition": "Área disponível para exibir o conteúdo, diferente das dimensões físicas totais do aparelho."
+    },
+    {
+      "term": "WCAG",
+      "definition": "Diretrizes de acessibilidade de conteúdo web, com critérios e níveis de conformidade. A trilha usa WCAG 2.2 como referência, sem confundi-la com recomendações nativas."
+    },
+    {
+      "term": "Whitespace",
+      "definition": "Espaço sem conteúdo entre e dentro dos elementos. Pode ter qualquer cor e participa do agrupamento e da hierarquia."
+    },
+    {
+      "term": "Wireframe",
+      "definition": "Esboço estrutural usado para organizar conteúdo, prioridade e relações antes do acabamento."
+    },
+    {
+      "term": "Z-depth",
+      "definition": "Profundidade sugerida perpendicularmente à tela, usada para pensar a ordem de superfícies e sobreposições."
+    }
+  ]
+}

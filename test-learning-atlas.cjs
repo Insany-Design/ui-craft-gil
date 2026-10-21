@@ -18,5 +18,6 @@ const button={textContent:'Reproduzir movimento',closest(){return demo}};
 handler({target:{closest(){return button}}});assert(playing);assert.equal(button.textContent,'Pausar movimento');assert(status.textContent.startsWith('Em movimento'));
 handler({target:{closest(){return button}}});assert(!playing);assert.equal(button.textContent,'Reproduzir movimento');assert(status.textContent.startsWith('Pausado'));
 assert.equal(lessons[0].id,'ux-ui-problema-objetivos');assert.equal(lessons[1].id,'hierarquia-visual');
-assert.equal(lessons.length,41);assert.equal(new Set(lessons.map(l=>l.id)).size,41);
-console.log('PASS: 8 atlas cards, 6 moving points, zero initial displacement, explicit play/pause command, isolated SVG stroke, one 41-lesson sequence. Structural/unit checks; not visual or assistive-technology validation.');
+assert.equal(course.modules.length,13);assert.equal(new Set(lessons.map(l=>l.id)).size,lessons.length);
+assert(lessons.length>41,'Expanded roadmap must add meaningful lessons');
+console.log('PASS: 8 atlas cards, 6 moving points, zero initial displacement, explicit play/pause command, isolated SVG stroke, one expanded 13-block sequence. Structural/unit checks; not visual or assistive-technology validation.');

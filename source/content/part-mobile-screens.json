@@ -2,8 +2,8 @@
   "modules": [
     {
       "id": "design-mobile",
-      "title": "Design mobile: estrutura, navegação e interação",
-      "description": "Construa interfaces executáveis em diferentes janelas, métodos de entrada e estados do sistema. Sete aulas com critérios, procedimentos, exemplos oficiais e exercícios do projeto Rota.",
+      "title": "Estrutura mobile",
+      "description": "Posicionar conteúdo, cabeçalho e ações respeitando sistema, teclado e áreas de interação.",
       "lessons": [
         {
           "id": "safe-areas-insets-edge-to-edge",
@@ -30,7 +30,7 @@
             },
             {
               "title": "Verifique a transição na implementação",
-              "body": "<p>Uma captura não demonstra gestos, foco ou animação do teclado. Na implementação ou simulador adequado, percorra abrir → rolar → editar → fechar teclado → voltar. Registre a etapa exata em que algo fica coberto ou perde o toque.</p><p>Se você só tem papel ou protótipo visual, entregue essas verificações como pendências. Não apresente o desenho de quatro estados como prova de funcionamento nativo.</p>"
+              "body": "<p>Uma captura não demonstra gestos, foco ou sobreposição do teclado. Na implementação ou simulador adequado, percorra abrir → rolar → editar → fechar teclado → voltar. Registre a etapa exata em que algo fica coberto ou perde o toque.</p><p>Se você só tem papel ou protótipo visual, entregue essas verificações como pendências. Não apresente o desenho de quatro estados como prova de funcionamento nativo.</p>"
             }
           ],
           "examples": [
@@ -40,7 +40,6 @@
               "analysis": "<p><strong>Decisão:</strong> separar regiões protegidas pelo sistema do espaçamento editorial. As faixas azuis são anotações didáticas, não barras para copiar no app.</p><p><strong>Benefício esperado:</strong> manter texto e ações utilizáveis sem abandonar um fundo edge-to-edge. Safe areas também podem refletir barras e sobreposições do contêiner, além dos recortes físicos.</p><p><strong>Teste:</strong> valide a implementação em retrato, paisagem, com texto ampliado e teclado aberto. Verifique o último item, o foco e a ação fixa. Não fixe estes insets ilustrativos como números universais.</p>",
               "alt": "Safe area: sistema e conteúdo têm espaços diferentes. Conferir e salvar uma visita em um celular com navegação por gestos.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Conferir e salvar uma visita em um celular com navegação por gestos.",
               "comparisonFocus": "Uma tela completa mostra as regiões do sistema no topo e na base. As guias laterais indicam apenas padding do conteúdo."
             }
@@ -77,90 +76,8 @@
               "note": "Referência de implementação a revisar com desenvolvimento."
             }
           ],
-          "videos": [
-            {
-              "title": "Insets in Compose",
-              "url": "https://developer.android.com/develop/ui/compose/quick-guides/content/video/insets-in-compose",
-              "source": "Android Developers",
-              "note": "Vídeo oficial, cerca de seis minutos. Observe a mudança dos insets com teclado e barras; a página explica o objetivo e os pontos centrais."
-            }
-          ],
-          "wordCount": 668
-        },
-        {
-          "id": "grid-responsividade-densidade",
-          "title": "Grid, escala de espaçamento e responsividade",
-          "summary": "Use relações e regras adaptáveis em vez de transformar uma tela desenhada em coordenadas rígidas.",
-          "minutes": 4,
-          "objectives": [
-            "Diferenciar unidades lógicas de pixels físicos.",
-            "Usar uma escala de espaçamento como ferramenta, sem torná-la dogma.",
-            "Definir adaptações por espaço disponível e conteúdo."
-          ],
-          "sections": [
-            {
-              "title": "Adapte a relação, não só a escala",
-              "body": "<p><strong>Responsividade</strong> ajusta medidas ao espaço; uma adaptação também pode mudar a organização. Um cartão com imagem ao lado pode empilhar imagem e texto quando falta largura. O objetivo é preservar a tarefa, não produzir uma miniatura.</p><p>Grid de colunas e escala de espaçamento resolvem problemas diferentes, vistos em <a href=\"#composicao-grid-espacamento\">composição</a>. Uma escala 4/8 pode ajudar, mas não determina quantidade de colunas, tamanho de fonte ou área acionável.</p>"
-            },
-            {
-              "title": "Declare a unidade e o espaço disponível",
-              "body": "<p><strong>CSS px</strong> é a unidade de referência da web; <strong>pt</strong> é uma unidade lógica usada nas interfaces Apple; <strong>dp</strong> trata densidade no Android e <strong>sp</strong> incorpora escalonamento de texto. Não são números automaticamente intercambiáveis nem pixels físicos da imagem exportada.</p><p>No exemplo, o controle muda a largura real de um componente de 340 para 260 CSSpx. Com 300 CSSpx ou menos, imagem e dados passam para uma pilha. O aparelho ilustrado continua 390 × 844: isso não simula uma classe de janela nativa nem um dispositivo diferente.</p>"
-            },
-            {
-              "title": "Encontre o ponto em que o conteúdo pede mudança",
-              "body": "<ol><li>Use nome longo, dado ausente e texto ampliado desde o começo.</li><li>Defina o que cresce, quebra linha, rola ou muda de posição. Evite altura fixa para texto variável.</li><li>Reduza o espaço até a composição deixar de atender à tarefa. Esse problema justifica um ponto de mudança.</li><li>Confira antes e depois dele. Nome, duração, custo e ação não podem desaparecer.</li></ol><p>Considere altura também: teclado, paisagem e multitarefa reduzem a área disponível. A identidade “tablet” não basta para decidir duas colunas.</p>"
-            },
-            {
-              "title": "Preserve a tarefa ao redimensionar",
-              "body": "<p>Seleção, filtros, posição e dados editados precisam de regras de preservação. Trocar o arranjo não deve reiniciar a tarefa. Densidade visual é quantidade percebida de informação; densidade de pixels é outra propriedade.</p><p>Os controles desta lição demonstram uma mudança local de layout. Preservação de estado no produto e adaptação nativa exigem implementação e teste próprios.</p>"
-            }
-          ],
-          "examples": [
-            {
-              "title": "O mesmo cartão se adapta à largura disponível",
-              "visualHtml": "<div class=\"rx-study\" data-demo-control=\"width\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Descobrir</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content\" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">DESCOBRIR</div><h2>Exposições</h2><p class=\"rx-subtitle\">Nomes completos para escolher com segurança.</p><div class=\"rx-component-zone rx-responsive-zone\"><div class=\"rx-adaptive-card\"><div class=\"rx-responsive-art\" aria-hidden=\"true\"><span></span></div><div class=\"rx-adaptive-data\"><h3>Galeria Municipal de Arte e Memória da Cidade</h3><p>Caminhos que se cruzam</p><p>Centro · 1h30</p><span class=\"rx-neutral-chip\">Entrada gratuita</span></div><div class=\"rx-secondary\">Ver visita</div></div></div><p class=\"rx-help\">Escolha uma visita para conhecer os detalhes.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Interface ilustrada; controles didáticos externos.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">RESPONSIVIDADE · TESTE DO COMPONENTE</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>A largura muda de verdade</h4><p>O controle altera o cartão entre 340 e 260 CSSpx. Fonte, conteúdo e escala da moldura não mudam.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Uma regra estrutural observável</h4><p>Acima de 300px, imagem e dados ficam em duas colunas. Até 300px, passam para uma pilha. A ação ocupa toda a largura nos dois estados.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Conteúdo preservado</h4><p>Nome, exposição, duração e gratuidade continuam disponíveis. O texto quebra e a altura cresce conforme o espaço.</p></div></li><li><span class=\"rx-note-number\">4</span><div><h4>O recorte é um componente</h4><p>Este teste não redimensiona o aparelho nem prova todos os breakpoints de um aplicativo.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> implementar uma mudança de duas colunas para uma pilha quando o componente tem 300 CSSpx ou menos. A regra responde à legibilidade do conteúdo.</p><p><strong>Como testar:</strong> alterne 340 e 260 CSSpx. Confirme que a imagem muda de posição, o título reflui e nenhum dado some. Teste também valores ao redor do ponto de mudança na implementação.</p><p><strong>Limite:</strong> o breakpoint é deste componente autoral. Não é uma categoria universal de aparelho nem uma simulação de rotação.</p>",
-              "alt": "O mesmo cartão se adapta à largura disponível. Ler o nome completo da galeria e reconhecer a mesma visita ao alterar a largura do cartão.",
-              "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
-              "scenario": "Ler o nome completo da galeria e reconhecer a mesma visita ao alterar a largura do cartão.",
-              "comparisonFocus": "O controle externo muda a largura real do componente. A moldura mantém 390×844 e sua escala de apresentação continua separada."
-            }
-          ],
-          "exercise": {
-            "brief": "Use o cartão da demonstração como base, mesmo se ainda não tiver um projeto. Observe a mesma visita nas duas larguras.",
-            "steps": [
-              "Compare 340 e 260 CSSpx e anote o que muda de posição.",
-              "Na sua versão, escreva uma regra de crescimento ou empilhamento para nome longo.",
-              "Indique quais dados e estados precisam permanecer ao mudar a largura."
-            ],
-            "deliverable": "Uma regra de adaptação e duas condições do mesmo cartão.",
-            "criteria": [
-              "A unidade e o elemento que muda de largura estão declarados.",
-              "Nome, duração, gratuidade e ação permanecem disponíveis.",
-              "O ponto de mudança responde a um problema do conteúdo.",
-              "Preservação de estado está especificada sem ser confundida com a demonstração estática."
-            ]
-          },
-          "sources": [
-            {
-              "title": "Android: densidades de pixels",
-              "url": "https://developer.android.com/training/multiscreen/screendensities",
-              "note": "Fundamenta dp, sp e recursos em diferentes densidades."
-            },
-            {
-              "title": "Android: classes de janela",
-              "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
-              "note": "Explica adaptação à janela disponível, não apenas ao tipo de aparelho."
-            },
-            {
-              "title": "Apple: Layout",
-              "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
-              "note": "Referência nativa para revisão específica da plataforma; consulte a versão atual."
-            }
-          ],
           "videos": [],
-          "wordCount": 691
+          "wordCount": 301
         },
         {
           "id": "header-top-app-bar",
@@ -197,7 +114,6 @@
               "analysis": "<p><strong>Decisão:</strong> Separar a orientação da navegação do título e da ação principal da visita.</p><p><strong>Como testar:</strong> Abra a visita a partir de uma lista filtrada, volte e confira filtro, posição e compreensão do destino.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
               "alt": "A barra superior orienta o retorno. Voltar do detalhe para a lista de visitas sem perder o filtro Centro.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Voltar do detalhe para a lista de visitas sem perder o filtro Centro.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
@@ -235,291 +151,7 @@
             }
           ],
           "videos": [],
-          "wordCount": 689
-        },
-        {
-          "id": "navegacao-tabs-back-home",
-          "title": "Navegação, tab bar, voltar e Home",
-          "summary": "Organize destinos e histórico sem confundir navegação do aplicativo com controles do sistema.",
-          "minutes": 4,
-          "objectives": [
-            "Distinguir destino, ação e histórico de navegação.",
-            "Separar Home interno, Home do sistema, voltar e subir na hierarquia.",
-            "Desenhar troca de abas e entrada por links sem perda de contexto."
-          ],
-          "sections": [
-            {
-              "title": "Desenhe os destinos antes da barra",
-              "body": "<p><strong>Destino</strong> é um lugar do aplicativo; <strong>ação</strong> muda algo. Descobrir e Meu plano são destinos. Salvar e excluir são ações. Misturá-los na mesma barra enfraquece o significado da navegação.</p><p>Abas ajudam a alternar entre poucas áreas estáveis. A orientação Android para janelas compactas apresenta três a cinco destinos, mas isso não é um limite universal de arquitetura. Uma tarefa simples pode funcionar sem barra permanente.</p>"
-            },
-            {
-              "title": "Diferencie Voltar, Subir e Início",
-              "body": "<p><strong>Voltar</strong> segue o histórico ou fecha a camada ativa conforme a plataforma. <strong>Subir</strong>, ou Up no Android, navega dentro da hierarquia do app. Dentro da tarefa Android, ambos normalmente coincidem; por entrada externa, Subir pode usar uma pilha interna sintética e Voltar pode retornar ao app de origem.</p><p><strong>Início do aplicativo</strong> é um destino do produto. <strong>Home do sistema</strong> sai para a tela inicial do aparelho. A barra gestual inferior pertence ao sistema e não deve virar uma aba redesenhada.</p>"
-            },
-            {
-              "title": "Mantenha o mapa e o contexto compreensíveis",
-              "body": "<p>Use rótulos visíveis quando ícones sozinhos forem ambíguos. A seleção precisa de pista visual além de cor e de estado acessível na implementação. No exemplo, texto, ícone e indicador de seleção trabalham juntos.</p><p>Defina o que permanece ao trocar de área: consulta, rolagem, seleção e rascunho. Não faça destinos estáveis sumirem só porque estão vazios. Evite enviar toda ação de voltar ao Início, apagando o percurso da pessoa.</p>"
-            },
-            {
-              "title": "Percorra mais de uma entrada",
-              "body": "<ol><li>Abra o detalhe pela lista e registre o retorno esperado.</li><li>Abra o mesmo detalhe por um link externo e especifique Voltar e Subir para a plataforma escolhida.</li><li>Troque de área no meio de uma consulta e retorne. Compare o estado esperado com o observado.</li></ol><p>Na implementação Android com voltar preditivo, a prévia precisa corresponder ao destino real. A captura desta lição não executa esse histórico.</p>"
-            }
-          ],
-          "examples": [
-            {
-              "title": "Uma tab bar que mostra onde você está",
-              "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"3\"/><path d=\"M9 3v3m6-3v3M9 11h6m-6 4h4\"/></svg><b>Meu plano</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content\"><div class=\"rx-eyebrow\">SEU FIM DE SEMANA</div><h2>Meu plano</h2><p class=\"rx-subtitle\">Um passeio para sair da rotina.</p><div class=\"rx-date\">SÁBADO, 24 OUT <span>1 visita</span></div><div class=\"rx-plan-card\"><div class=\"rx-art\" aria-label=\"Ilustração autoral de uma galeria com esculturas abstratas\"><div class=\"rx-art-sun\"></div><div class=\"rx-art-arch\"></div><div class=\"rx-art-block\"></div></div><div class=\"rx-plan-info\"><span class=\"rx-chip\">14h · Entrada gratuita</span><h3>Forma &amp; luz</h3><p>Galeria Horizonte · Centro</p><div class=\"rx-plan-bottom\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg>1h30 de visita</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></div></div></div><div class=\"rx-tip\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 12 4 4L19 6\"/></svg><p>Seu plano está salvo.<br><span>Você pode ajustar o horário depois.</span></p></div></div><div class=\"rx-tabs\"><div class=\"rx-tab \"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 4 4\"/></svg></span><b>Descobrir</b></div><div class=\"rx-tab rx-active\" aria-label=\"Meu plano, destino atual\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"3\"/><path d=\"M9 3v3m6-3v3M9 11h6m-6 4h4\"/></svg></span><b>Meu plano</b></div><div class=\"rx-tab \"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21v-2a8 8 0 0 1 16 0v2\"/></svg></span><b>Perfil</b></div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">NAVEGAÇÃO · DESTINO ATUAL</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Três destinos estáveis</h4><p>Descobrir, Meu plano e Perfil são áreas do aplicativo. A barra não mistura navegação com ações como salvar ou compartilhar.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Ícone e rótulo juntos</h4><p>Busca, calendário e pessoa ajudam a reconhecer os destinos. O texto evita depender de uma interpretação do ícone.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Seleção além da cor</h4><p>Meu plano tem um indicador em forma de cápsula e um pequeno traço abaixo do rótulo. A indicação também precisa ser exposta às tecnologias assistivas na implementação.</p></div></li><li><span class=\"rx-note-number\">4</span><div><h4>Voltar e Home são diferentes</h4><p>Esta é a raiz de Meu plano, por isso não há seta de voltar. O indicador preto na base pertence ao sistema; ele não é uma aba do Rota.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> usar a tab bar para destinos principais, com indicação de seleção que combina forma e cor. No produto, cada destino deve preservar um estado de navegação definido.</p><p><strong>Limite:</strong> esta composição autoral não reproduz um componente de uma versão específica do iOS. Ela demonstra a estrutura de navegação; gestos e preservação de estado exigem protótipo funcional.</p><p><strong>Teste:</strong> pergunte onde a pessoa está e como procuraria uma nova visita. Na implementação, alterne abas e verifique título, seleção, anúncio acessível e rolagem.</p>",
-              "alt": "Uma tab bar que mostra onde você está. Consultar uma visita salva e reconhecer em qual área do aplicativo está.",
-              "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
-              "scenario": "Consultar uma visita salva e reconhecer em qual área do aplicativo está.",
-              "comparisonFocus": "Uma tela de raiz com barra inferior persistente, ícones e rótulos. A seleção corresponde ao título e ao conteúdo."
-            }
-          ],
-          "exercise": {
-            "brief": "Use Descobrir, Meu plano e Perfil da proposta Rota. Se começar aqui, desenhe três caixas com esses nomes e o detalhe de Forma & luz.",
-            "steps": [
-              "Escreva o propósito de cada destino e mantenha Salvar fora dessa lista.",
-              "Desenhe as entradas do detalhe por lista e por link externo.",
-              "Defina retorno e preservação ao trocar de área."
-            ],
-            "deliverable": "Um mapa pequeno com dois caminhos de entrada para o mesmo detalhe.",
-            "criteria": [
-              "Destinos e ações têm papéis distintos.",
-              "Voltar, Subir e Início têm resultados definidos no contexto.",
-              "A área selecionada é reconhecível sem depender só da cor.",
-              "Consulta e rascunho têm regras explícitas de preservação."
-            ]
-          },
-          "sources": [
-            {
-              "title": "Android: Navigation bar",
-              "url": "https://developer.android.com/develop/ui/compose/components/navigation-bar",
-              "note": "Destinos principais em janelas compactas."
-            },
-            {
-              "title": "Android: Principles of navigation",
-              "url": "https://developer.android.com/guide/navigation/principles",
-              "note": "Histórico, Up e entradas por deep links, isto é, links para telas internas."
-            },
-            {
-              "title": "Android: Predictive back",
-              "url": "https://developer.android.com/design/ui/mobile/guides/patterns/predictive-back",
-              "note": "Prévia e cancelamento do gesto de retorno."
-            },
-            {
-              "title": "Apple: Explore navigation design for iOS",
-              "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
-              "note": "Referência audiovisual histórica com exemplo real Slopes."
-            },
-            {
-              "title": "Material Components: atualização Material 3 Expressive",
-              "url": "https://github.com/material-components/material-components-android/blob/master/docs/components/BottomNavigation.md",
-              "note": "Documentação oficial da variante Expressive; distinguir o sistema de design da versão da API usada na implementação."
-            },
-            {
-              "title": "Apple: exemplos contemporâneos de navegação e identidade, WWDC26",
-              "url": "https://developer.apple.com/videos/play/wwdc2026/251/",
-              "note": "Sessão oficial de 2026; complementa o caso histórico Slopes da WWDC22."
-            }
-          ],
-          "videos": [
-            {
-              "title": "Communicate your brand identity on iOS",
-              "url": "https://developer.apple.com/videos/play/wwdc2026/251/",
-              "source": "Apple Developer — WWDC26 (2026)",
-              "note": "Referência oficial de 2026. No capítulo Components, a partir de 2:24, compare a navegação familiar de Gentler Streak com a identidade visual do conteúdo. A sessão não informa a versão exata do app."
-            },
-            {
-              "title": "Explore navigation design for iOS",
-              "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
-              "source": "Apple Developer — WWDC22",
-              "note": "Vídeo oficial verificado. Observe o exemplo Slopes e a diferença entre navegação hierárquica e apresentação modal. Interface apresentada em 2022."
-            }
-          ],
-          "wordCount": 707
-        },
-        {
-          "id": "sheets-modais-dialogos",
-          "title": "Sheets, modais e diálogos",
-          "summary": "Escolha uma interrupção proporcional à tarefa e explicite como entrar, concluir, cancelar e retornar.",
-          "minutes": 4,
-          "objectives": [
-            "Distinguir formato visual de comportamento modal.",
-            "Escolher entre conteúdo na página, painel e diálogo.",
-            "Especificar foco, cancelamento, teclado e dados não salvos."
-          ],
-          "sections": [
-            {
-              "title": "Separe forma e comportamento",
-              "body": "<p><strong>Sheet</strong> é um painel; um bottom sheet aparece junto à borda inferior. <strong>Modal</strong> descreve uma interação que precisa ser encerrada ou dispensada antes de voltar ao conteúdo atrás. Um painel pode ser modal ou não; sua forma não decide isso sozinha.</p><p>Use uma camada quando ela mantém uma tarefa curta perto de seu contexto. Uma leitura longa ou uma edição complexa pode funcionar melhor numa página. Um diálogo interrompe: reserve essa atenção para decisões que a justificam.</p>"
-            },
-            {
-              "title": "Defina o efeito de concluir e cancelar",
-              "body": "<p>No painel Alterar horário do Rota, 15h é uma escolha em edição. O plano anterior permanece às 14h até acionar Aplicar. Cancelar descarta essa escolha e mantém o horário anterior. A seleção visual sozinha não significa que o plano foi salvo.</p><p>Escreva o que cada saída salva, preserva ou descarta. Botão, gesto, toque fora e retorno do sistema, quando existirem, precisam seguir o mesmo contrato. Um X não comunica sozinho essas consequências. Confirmações para ações triviais e reversíveis podem interromper sem ajudar; decisões destrutivas exigem avaliar consequência e recuperação.</p>"
-            },
-            {
-              "title": "Planeje foco, teclado e saída acessível",
-              "body": "<p>No padrão de diálogo modal web, o foco entra na camada, permanece nela durante a navegação por teclado e retorna a um lugar lógico ao fechar. O conteúdo de fundo fica indisponível à interação. APIs e convenções nativas precisam de verificação própria.</p><p>Não dependa de arrastar uma pequena alça para fechar. Mantenha saída identificável e acesso à última ação com teclado e texto ampliado. A camada visualmente modal e sua semântica precisam concordar; a captura não prova contenção ou retorno de foco.</p>"
-            },
-            {
-              "title": "Confira também a desistência",
-              "body": "<p>Abra, selecione outro horário e cancele. Depois abra de novo e aplique. Compare os horários encontrados com o contrato definido. Repita sem fazer alterações: um aviso de perda de trabalho não faz sentido se nada mudou.</p><p>Fechar o painel não comprova que a operação concluiu. O contexto de origem deve refletir um resultado confirmado, com uma mensagem quando necessária.</p>"
-            }
-          ],
-          "examples": [
-            {
-              "title": "Uma sheet para uma edição curta",
-              "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Meu plano</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">SEU FIM DE SEMANA</div><h2>Meu plano</h2><p class=\"rx-subtitle\">Sábado, 24 de outubro</p><div class=\"rx-list-item\"><div class=\"rx-thumb rx-thumb-0\"><span></span></div><div><h3>Forma &amp; luz</h3><p>Galeria Horizonte</p><span class=\"rx-list-meta\">14h · 1h30 · Gratuita</span></div><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></div></div><div class=\"rx-scrim\"></div><div class=\"rx-sheet\"><div class=\"rx-sheet-handle\"></div><h2>Alterar horário</h2><p>Forma & luz · Sábado, 24 out</p><div class=\"rx-field \"><span class=\"rx-field-label\">Novo horário</span><div class=\"rx-input\">15:00</div><p class=\"rx-field-help\">Chegada entre 10h e 17h.</p></div><div class=\"rx-notice\">As mudanças só são salvas ao aplicar.</div><div class=\"rx-primary\">Aplicar horário</div><div class=\"rx-secondary\">Cancelar</div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">DESIGN MOBILE: ESTRUTURA, NAVEGAÇÃO E INTERAÇÃO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Contexto ao fundo</h4><p>O plano continua reconhecível, enquanto a sheet recebe a atenção.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Contrato de confirmação</h4><p>Aplicar salva o novo horário. Cancelar deve manter o horário anterior.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Modalidade é comportamento</h4><p>Impedir interação com o fundo, gerenciar foco e restaurá-lo ao fechar são tarefas da implementação.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Usar uma superfície temporária para uma alteração curta, com consequências explícitas.</p><p><strong>Como testar:</strong> Mude 14h para 15h e cancele. Reabra e confira 14h; depois aplique 15h.</p><p><strong>Limite:</strong> Arrastar a sheet ou tocar fora deve seguir uma política de descarte definida. Tarefas longas podem pedir uma tela completa.</p>",
-              "alt": "Uma sheet para uma edição curta. Alterar o horário de uma visita em uma sheet sem salvar por engano.",
-              "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
-              "scenario": "Alterar o horário de uma visita em uma sheet sem salvar por engano.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
-            }
-          ],
-          "exercise": {
-            "brief": "Use o painel Alterar horário mostrado no Rota: o plano está às 14h e o rascunho seleciona 15h. Acrescente esse contrato ao seu fluxo.",
-            "steps": [
-              "Escreva quando 15h passa a valer no plano e o que acontece ao cancelar.",
-              "Anote o efeito das demais saídas previstas, sem mudar silenciosamente o contrato de Aplicar.",
-              "Esboce texto maior e indique como verificar foco e acesso à última ação."
-            ],
-            "deliverable": "O painel anotado com os caminhos aplicar e cancelar.",
-            "criteria": [
-              "Aplicar confirma 15h; Cancelar mantém o plano anterior às 14h.",
-              "Seleção em edição não é confundida com horário já salvo.",
-              "A operação não depende de arrastar a alça.",
-              "Foco, fundo bloqueado e retorno são requisitos verificáveis, não conclusões da captura."
-            ]
-          },
-          "sources": [
-            {
-              "title": "Android: Bottom sheets",
-              "url": "https://developer.android.com/develop/ui/compose/components/bottom-sheets",
-              "note": "Estrutura e estado de apresentação de painéis inferiores."
-            },
-            {
-              "title": "Android: Dialog",
-              "url": "https://developer.android.com/develop/ui/compose/components/dialog",
-              "note": "Diálogos como superfícies de interrupção e decisão."
-            },
-            {
-              "title": "W3C: Modal Dialog Pattern",
-              "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
-              "note": "Referência web para foco, teclado e semântica; não é especificação nativa iOS/Android."
-            },
-            {
-              "title": "Android: Common layouts",
-              "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/common-layouts",
-              "note": "Referência oficial complementar de painéis inferiores e sua relação com o conteúdo de fundo. O exemplo visual desta lição é uma composição original do Rota."
-            }
-          ],
-          "videos": [],
-          "wordCount": 670
-        },
-        {
-          "id": "menus-sidebar-drawer",
-          "title": "Menus, sidebar e navigation drawer",
-          "summary": "Escolha o lugar certo para destinos e comandos secundários sem esconder o essencial.",
-          "minutes": 5,
-          "objectives": [
-            "Diferenciar menu de ações e navegação lateral.",
-            "Escolher entre lateral persistente e drawer modal.",
-            "Organizar opções por contexto e frequência de uso."
-          ],
-          "sections": [
-            {
-              "title": "Classifique o que a lista oferece",
-              "body": "<p>Um <strong>menu de ações</strong> oferece comandos. Uma <strong>sidebar</strong> pode manter destinos visíveis. Um <strong>navigation drawer</strong> apresenta navegação lateral, temporária ou junto ao conteúdo. O ícone que abre a lista não é a arquitetura.</p><p>Antes de esconder opções, separe destino, ação e configuração. Uma gaveta economiza largura, mas exige descobrir e abrir seu conteúdo. A tarefa principal precisa de um acesso compreensível.</p>"
-            },
-            {
-              "title": "Escolha pela tarefa e pelo espaço",
-              "body": "<p>Uma lateral persistente pode ajudar quando há muitos destinos e espaço suficiente. Uma gaveta modal evita comprimir conteúdo em uma janela estreita. Um menu ancorado ao item mantém ações ocasionais próximas do objeto afetado.</p><p>Em Material 3 Expressive, avalie a faixa de navegação expandida em lugar do drawer. Essa orientação de versão não proíbe gavetas em outros sistemas ou interfaces existentes. Não importe o padrão sem declarar contexto.</p>"
-            },
-            {
-              "title": "Explique alcance, seleção e saída",
-              "body": "<p>Rótulos devem antecipar o efeito. Ajustar aparência, sair da sessão e excluir uma conta têm alcances e consequências diferentes. Para uma configuração, escreva “muda o quê, para quem e onde?”. Não use apenas vermelho para comunicar risco nem esconda uma opção necessária para impedir que seja encontrada.</p><p>O destino atual precisa de pista visual além de cor e estado acessível. Na gaveta modal, foco e fundo acompanham a mudança de contexto. Na lateral persistente, a pessoa circula entre navegação e conteúdo; as regras não são idênticas.</p>"
-            },
-            {
-              "title": "Confira descoberta e retorno",
-              "body": "<p>Defina como abrir, escolher e fechar sem depender apenas de gesto na borda. Depois, tente encontrar um destino e uma ação sem explicar a estrutura antes. Registre o primeiro lugar procurado e a interpretação do rótulo.</p><p>Ao adaptar a apresentação, preserve nomes, ordem lógica e seleção. Se uma tarefa frequente exige abrir a gaveta repetidamente, investigue um acesso mais direto antes de polir sua sombra.</p>"
-            }
-          ],
-          "examples": [
-            {
-              "title": "Destinos reconhecíveis em um menu",
-              "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Navegação</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">ROTA · CULTURA PERTO DE VOCÊ</div><h2>Meu plano</h2><p class=\"rx-subtitle\">Seu sábado está organizado.</p><div class=\"rx-list-item\"><div class=\"rx-thumb rx-thumb-0\"><span></span></div><div><h3>Forma &amp; luz</h3><p>Galeria Horizonte</p><span class=\"rx-list-meta\">1h30 · Gratuita</span></div><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></div></div><div class=\"rx-scrim\"></div><div class=\"rx-drawer\"><span class=\"rx-brand\">rota<span>●</span></span><p>Seu próximo passeio começa aqui.</p><div class=\"rx-menu-item\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 4 4\"/></svg>Descobrir</div><div class=\"rx-menu-item rx-menu-selected\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"3\"/><path d=\"M9 3v3m6-3v3M9 11h6m-6 4h4\"/></svg>Meu plano<span>Atual</span></div><div class=\"rx-menu-item\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21v-2a8 8 0 0 1 16 0v2\"/></svg>Preferências</div><div class=\"rx-menu-foot\">Visitas organizadas, sem pressa.<br>Conteúdo demonstrativo.</div></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">DESIGN MOBILE: ESTRUTURA, NAVEGAÇÃO E INTERAÇÃO</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Nome igual ao destino</h4><p>Meu plano é o mesmo nome usado no título da tela correspondente.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Seleção legível</h4><p>Fundo, peso e texto “Atual” ajudam a reconhecer o destino selecionado.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Drawer é uma escolha, não padrão obrigatório</h4><p>Este estudo isola o menu aberto. Destinos frequentes podem funcionar melhor em navegação sempre visível.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Manter os rótulos consistentes entre menu e destino, com indicação de localização atual.</p><p><strong>Como testar:</strong> Peça para identificar o destino atual e escolher Descobrir. No protótipo, confira se o título após a navegação corresponde ao escolhido.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
-              "alt": "Destinos reconhecíveis em um menu. Reconhecer o destino atual no menu aberto e escolher outra área pelo nome.",
-              "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
-              "scenario": "Reconhecer o destino atual no menu aberto e escolher outra área pelo nome.",
-              "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
-            }
-          ],
-          "exercise": {
-            "brief": "Use a navegação lateral do exemplo do Rota como base. A área Meu plano já está selecionada; escolha outra área para ensaiar a navegação.",
-            "steps": [
-              "Classifique as opções mostradas em destinos e ações.",
-              "Acrescente uma preferência de aparência e indique se vale só no aparelho ou na conta hipotética.",
-              "Anote abertura, seleção, fechamento e retorno de foco para uma apresentação modal."
-            ],
-            "deliverable": "Um inventário curto de opções com efeito e saída.",
-            "criteria": [
-              "Rótulos antecipam o destino ou a ação.",
-              "Seleção tem indicação visual além de cor.",
-              "O alcance da preferência e a reversibilidade estão explícitos.",
-              "A pessoa pode sair sem executar uma mudança que não escolheu."
-            ]
-          },
-          "sources": [
-            {
-              "title": "Android: Navigation drawer",
-              "url": "https://developer.android.com/develop/ui/compose/quick-guides/content/create-navigation-drawer",
-              "note": "Demonstração oficial das apresentações padrão e modal."
-            },
-            {
-              "title": "Android: Menus",
-              "url": "https://developer.android.com/develop/ui/compose/components/menu",
-              "note": "Menu temporário associado a um acionador."
-            },
-            {
-              "title": "Android: Window size classes",
-              "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
-              "note": "Espaço disponível como referência de adaptação, não apenas modelo do aparelho."
-            },
-            {
-              "title": "Material Components: atualização Material 3 Expressive",
-              "url": "https://github.com/material-components/material-components-android/blob/master/docs/components/NavigationRail.md",
-              "note": "Documentação oficial da variante Expressive; distinguir o sistema de design da versão da API usada na implementação."
-            },
-            {
-              "title": "Material Components: contexto do navigation drawer",
-              "url": "https://github.com/material-components/material-components-android/blob/master/docs/components/NavigationDrawer.md",
-              "note": "A recomendação de substituição por faixa expandida é específica da atualização Material 3 Expressive."
-            }
-          ],
-          "videos": [],
-          "books": [
-            {
-              "title": "The UI Professional’s Design Manual: the Ultimate Guide to Master Mobile Design",
-              "authors": "AdrianK; colaboração de Natalie apresentada no exemplar",
-              "edition": "Exemplar © 2022, em desenvolvimento; sem número de edição declarado",
-              "pages": "Páginas físicas do PDF: 286–287",
-              "note": "Apoio para categorias e configurações. A análise de alcance, consequência e reversibilidade é extensão autoral, sem importar fluxos financeiros ou exigências de conta do exemplo histórico."
-            },
-            {
-              "title": "Ergodesign e Arquitetura de Informação: Trabalhando com o Usuário",
-              "authors": "Luiz Agner",
-              "edition": "2ª edição, Quartet, 2009",
-              "pages": "Páginas físicas do PDF: 100–103, 135",
-              "note": "Apoio para nomeação, organização e compreensão de opções. A edição consultada é de 2009; padrões de plataforma permanecem nas referências atuais da lição."
-            }
-          ],
-          "wordCount": 961
+          "wordCount": 260
         },
         {
           "id": "teclado-toque-gestos",
@@ -542,7 +174,7 @@
             },
             {
               "title": "Diferencie estados e ofereça alternativas",
-              "body": "<ul><li><strong>Pressionado:</strong> resposta transitória durante o acionamento.</li><li><strong>Selecionado:</strong> escolha que permanece depois dele.</li><li><strong>Foco:</strong> posição atual de navegação por uma entrada compatível; pode coexistir com seleção.</li><li><strong>Processando:</strong> operação aceita, ainda sem resultado confirmado.</li></ul><p>Ao salvar, comunique processamento e defina o efeito de um segundo acionamento para evitar duplicação. Uma aparência desabilitada sozinha não explica a espera. Hover, quando há ponteiro, não pode ser requisito para usar a tela por toque.</p><p>Um gesto importante precisa de alternativa adequada: reordenar pode oferecer comandos de mover, além de arraste. WCAG 2.5.7 trata de alternativas a arrastar na web, com exceções próprias. Vibração e movimento podem apoiar o retorno, mas não ser seu único sinal.</p>"
+              "body": "<ul><li><strong>Pressionado:</strong> resposta transitória durante o acionamento.</li><li><strong>Selecionado:</strong> escolha que permanece depois dele.</li><li><strong>Foco:</strong> posição atual de navegação por uma entrada compatível; pode coexistir com seleção.</li><li><strong>Processando:</strong> operação aceita, ainda sem resultado confirmado.</li></ul><p>Ao salvar, comunique processamento e defina o efeito de um segundo acionamento para evitar duplicação. Uma aparência desabilitada sozinha não explica a espera. Hover, quando há ponteiro, não pode ser requisito para usar a tela por toque.</p><p>Um gesto importante precisa de alternativa adequada: reordenar pode oferecer comandos de mover, além de arraste. WCAG 2.5.7 trata de alternativas a arrastar na web, com exceções próprias. A condição do controle deve permanecer perceptível na composição, sem depender de uma resposta sensorial isolada.</p>"
             },
             {
               "title": "Verifique com formas reais de entrada",
@@ -556,7 +188,6 @@
               "analysis": "<p><strong>Decisão:</strong> Projetar o espaço disponível durante a entrada de texto, mantendo campo e próximo passo alcançáveis.</p><p><strong>Como testar:</strong> Foque o último campo, digite, amplie o texto e salve sem fechar o teclado.</p><p><strong>Limite:</strong> O teclado desenhado é esquemático. Insets do teclado e do sistema devem ser tratados conforme a plataforma, sem somas cegas.</p>",
               "alt": "A ação continua alcançável com teclado aberto. Escrever uma nota e salvá-la sem precisar adivinhar como fechar o teclado.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Escrever uma nota e salvá-la sem precisar adivinhar como fechar o teclado.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
@@ -624,43 +255,45 @@
             }
           ],
           "videos": [],
-          "books": [
-            {
-              "title": "UI Design Systems Mastery",
-              "authors": "Marina Budarina",
-              "edition": "Versão 3.0; atualização de 08/07/2023",
-              "pages": "Páginas físicas do PDF: 228–230, 247–252",
-              "note": "Apoio para composição, propriedades e verificação de componentes. O contrato e o exemplo de salvamento apresentados na aula são elaboração autoral."
-            },
-            {
-              "title": "Guia de Boas Práticas Aplicáveis para a Criação de Interfaces",
-              "authors": "Andrey Knabbenn",
-              "edition": "Versão 2.0, 2022",
-              "pages": "Páginas físicas do PDF: 73–74",
-              "note": "Referência histórica sobre estados. A ausência de hover deve ser entendida no contexto do toque direto, não como proibição de suporte a ponteiro em dispositivos móveis."
-            },
-            {
-              "title": "Design Systems: A Practical Guide to Creating Design Languages for Digital Products",
-              "authors": "Alla Kholmatova",
-              "edition": "Smashing Media, 2017; sem número de edição declarado",
-              "pages": "Páginas físicas do PDF: 64–68, 257–260",
-              "note": "Apoio ao propósito compartilhado e à documentação dos padrões, sem reprodução de páginas ou exemplos da obra."
-            }
-          ],
-          "wordCount": 884
+          "wordCount": 385
+        }
+      ],
+      "objective": "Posicionar conteúdo, cabeçalho e ações respeitando sistema, teclado e áreas de interação.",
+      "rationale": "A estrutura mobile oferece o contexto real em que texto, cor e acabamento serão aplicados.",
+      "criteria": [
+        "Distingue fundo de borda a borda e conteúdo protegido.",
+        "Mantém título, conteúdo e ação alcançáveis com teclado.",
+        "Separa o desenho do ícone de sua área de toque.",
+        "Anota unidades e recomendações da plataforma escolhida."
+      ],
+      "references": [
+        {
+          "title": "Android · conteúdo de borda a borda",
+          "url": "https://developer.android.com/develop/ui/views/layout/edge-to-edge",
+          "note": "Leitura gratuita de referência."
+        },
+        {
+          "title": "Apple · layout",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+          "note": "Leitura gratuita de referência."
+        },
+        {
+          "title": "W3C · tamanho mínimo de alvo",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+          "note": "24 × 24 CSS px ou exceções previstas; não confundir com recomendações nativas."
         }
       ]
     },
     {
       "id": "tipos-telas",
-      "title": "Tipos de telas e decisões de uso",
-      "description": "Sete lições para desenhar telas móveis a partir de tarefas, conteúdo e estados: entrada, início, coleções, detalhe, busca, formulários e continuidade. Os exemplos são referências reais e as atividades práticas utilizam um aplicativo fictício.",
+      "title": "Tipos de tela em contexto",
+      "description": "Aplicar a linguagem visual a descoberta, comparação, escolha e estados da mesma tarefa.",
       "lessons": [
         {
           "id": "splash-onboarding",
           "title": "Splash e onboarding: abrir, orientar e entregar valor",
           "summary": "Separe a abertura técnica da orientação inicial e transforme a primeira experiência em uma tarefa útil, curta e recuperável.",
-          "minutes": 5,
+          "minutes": 4,
           "objectives": [
             "Distinguir abertura técnica, apresentação e configuração inicial.",
             "Decidir o que precisa acontecer antes da primeira tarefa útil.",
@@ -691,7 +324,6 @@
               "analysis": "<p><strong>Decisão:</strong> Apresentar o valor sem transformar uma introdução dispensável em barreira.</p><p><strong>Como testar:</strong> Peça a alguém que encontre uma visita na primeira abertura. Observe se chega à busca sem ajuda.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
               "alt": "Uma introdução que deixa a pessoa explorar. Abrir o Rota pela primeira vez para encontrar uma visita no Centro.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Abrir o Rota pela primeira vez para encontrar uma visita no Centro.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
@@ -738,30 +370,14 @@
               "note": "Distingue launch screen transitória e eventual splash de marca posterior; orientação própria de plataforma."
             }
           ],
-          "videos": [
-            {
-              "title": "Discoverable design",
-              "url": "https://developer.apple.com/videos/play/wwdc2021/10126/",
-              "source": "Apple Developer",
-              "note": "Sessão oficial WWDC21 (2021), mantida como fundamento de descoberta de ações. As interfaces pertencem ao contexto da apresentação; não são evidência de aparência atual."
-            }
-          ],
-          "books": [
-            {
-              "title": "The UI Professional’s Design Manual: the Ultimate Guide to Master Mobile Design",
-              "authors": "AdrianK; colaboração de Natalie apresentada no exemplar",
-              "edition": "Exemplar © 2022, em desenvolvimento; sem número de edição declarado",
-              "pages": "Páginas físicas do PDF: 122–137",
-              "note": "Referência histórica para lançamento e orientação inicial. A distinção de fases e as regras de plataforma são atualizadas pelas fontes oficiais indicadas na seção; não se adota espera artificial de duração fixa."
-            }
-          ],
-          "wordCount": 946
+          "videos": [],
+          "wordCount": 277
         },
         {
           "id": "home-dashboard",
           "title": "Home e dashboard: escolher o que merece a primeira tela",
           "summary": "Organize acesso, continuidade e resumo sem transformar a entrada do aplicativo em um catálogo de tudo que ele faz.",
-          "minutes": 5,
+          "minutes": 4,
           "objectives": [
             "Distinguir home, painel de acompanhamento e fluxo direto.",
             "Priorizar blocos por tarefas e decisões do usuário.",
@@ -792,7 +408,6 @@
               "analysis": "<p><strong>Decisão:</strong> Hierarquizar a home em torno de uma tarefa provável, preservando rotas alternativas.</p><p><strong>Como testar:</strong> Dê o cenário de saída para o passeio e observe a primeira ação escolhida.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
               "alt": "A home prioriza o que importa hoje. Na manhã da visita, consultar o plano que já foi salvo.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Na manhã da visita, consultar o plano que já foi salvo.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
@@ -829,38 +444,8 @@
               "note": "Aplicativo de exemplo oficial para comparar navegação e prioridade da tarefa. O exemplo visual desta lição é uma composição original do Rota; não é uma captura do Reply."
             }
           ],
-          "videos": [
-            {
-              "title": "How to personalize the Summary tab in the Fitness app on iPhone and iPad",
-              "url": "https://www.youtube.com/watch?v=-RSUkzo1cnI",
-              "source": "Apple Support",
-              "note": "Publicado pelo Apple Support em 02/01/2025; título, autoria e data confirmados nos metadados oficiais do vídeo. Compare a organização e a personalização dos cartões. O vídeo não deve ser tratado como captura da versão mais recente do Fitness.",
-              "publishedDate": "2025-01-02"
-            },
-            {
-              "title": "Design foundations from idea to interface",
-              "url": "https://developer.apple.com/videos/play/wwdc2025/359/",
-              "source": "Apple Developer",
-              "note": "Sessão oficial WWDC25 (2025). Os capítulos Structure, Navigation e Content ajudam a revisar estrutura, navegação e conteúdo. É uma referência datada de fundamentos, não comprovação da última versão dos apps mostrados."
-            }
-          ],
-          "books": [
-            {
-              "title": "The UI Professional’s Design Manual: the Ultimate Guide to Master Mobile Design",
-              "authors": "AdrianK; colaboração de Natalie apresentada no exemplar",
-              "edition": "Exemplar © 2022, em desenvolvimento; sem número de edição declarado",
-              "pages": "Páginas físicas do PDF: 246–253",
-              "note": "Apoio para home conforme momento de uso. As regras de aparição e expiração de blocos do Rota são elaboração autoral; o caso didático do livro não é evidência de desempenho de um produto real."
-            },
-            {
-              "title": "Refactoring UI",
-              "authors": "Adam Wathan e Steve Schoger",
-              "edition": "Edição e ano não declarados nas páginas bibliográficas do exemplar",
-              "pages": "Páginas físicas do PDF: 36–46",
-              "note": "Leitura complementar sobre priorização visual. Edição e ano permanecem não confirmados no exemplar; não se atribuem métricas de resultado à organização proposta."
-            }
-          ],
-          "wordCount": 935
+          "videos": [],
+          "wordCount": 314
         },
         {
           "id": "listas-cards",
@@ -897,7 +482,6 @@
               "analysis": "<p><strong>Decisão:</strong> Usar uma lista para apoiar comparação rápida entre alternativas com atributos comuns.</p><p><strong>Como testar:</strong> Peça para encontrar uma visita gratuita de até 1 hora e observe se precisa abrir todos os detalhes.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
               "alt": "Comparar antes de abrir o detalhe. Entre as visitas gratuitas da lista, encontrar uma que caiba em até uma hora, considerando os bairros apresentados.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Entre as visitas gratuitas da lista, encontrar uma que caiba em até uma hora, considerando os bairros apresentados.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
@@ -930,7 +514,7 @@
             }
           ],
           "videos": [],
-          "wordCount": 688
+          "wordCount": 300
         },
         {
           "id": "tela-detalhe",
@@ -967,7 +551,6 @@
               "analysis": "<p><strong>Decisão:</strong> Organizar os dados que reduzem incerteza na decisão, mantendo o próximo passo explícito.</p><p><strong>Como testar:</strong> Peça para avaliar se a visita cabe na tarde e explicar o que acontece ao planejar.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
               "alt": "Detalhes que sustentam a próxima decisão. Conferir a visita antes de salvar e entender se isso reserva entrada.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Conferir a visita antes de salvar e entender se isso reserva entrada.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
@@ -1005,7 +588,7 @@
             }
           ],
           "videos": [],
-          "wordCount": 723
+          "wordCount": 273
         },
         {
           "id": "busca-filtros",
@@ -1042,7 +625,6 @@
               "analysis": "<p><strong>Decisão:</strong> Separar consulta, restrições e ordem para tornar a lista compreensível.</p><p><strong>Como testar:</strong> Peça para explicar por que há 1 resultado e como ampliar a busca sem mudar o bairro.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
               "alt": "Filtros visíveis, resultado explicável. Encontrar uma visita gratuita de até duas horas no Centro e compreender os filtros e a ordenação atuais.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Encontrar uma visita gratuita de até duas horas no Centro e compreender os filtros e a ordenação atuais.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
@@ -1080,7 +662,7 @@
             }
           ],
           "videos": [],
-          "wordCount": 675
+          "wordCount": 258
         },
         {
           "id": "formularios",
@@ -1117,7 +699,6 @@
               "analysis": "<p><strong>Decisão:</strong> Pedir somente os dados necessários e manter rótulos, valores e ajuda associados.</p><p><strong>Como testar:</strong> Preencha no protótipo com teclado aberto, depois teste erro, correção e preservação de dados.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
               "alt": "Um formulário que ajuda a concluir. Preencher dia, horário válido e uma nota pessoal para salvar o plano de visita.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Preencher dia, horário válido e uma nota pessoal para salvar o plano de visita.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
@@ -1170,13 +751,13 @@
             }
           ],
           "videos": [],
-          "wordCount": 675
+          "wordCount": 306
         },
         {
           "id": "estados-interface",
           "title": "Vazio, carregando, erro, sucesso e offline: projetar continuidade",
           "summary": "Trate estados como partes da tarefa, com causa, alcance, informação preservada e próximo passo definido.",
-          "minutes": 6,
+          "minutes": 4,
           "objectives": [
             "Distinguir ausência de conteúdo, processamento e falha.",
             "Projetar estados locais e de tela inteira.",
@@ -1207,7 +788,6 @@
               "analysis": "<p><strong>Decisão:</strong> tratar uma resposta perdida como resultado desconhecido. A ação principal verifica a mesma operação antes de considerar outro envio.</p><p><strong>Como testar:</strong> interrompa a resposta depois de o servidor salvar. Use Verificar salvamento: o sistema deve recuperar o plano existente, sem duplicá-lo. Repita com falha confirmada.</p><p><strong>Limite:</strong> a interface especifica a recuperação; a implementação precisa identificar a operação, consultar seu resultado e usar as garantias adequadas de idempotência. A responsabilidade não é da pessoa adivinhar se deve criar outra cópia.</p>",
               "alt": "Resultado incerto: verificar antes de reenviar. Recuperar uma tentativa de salvamento cuja resposta se perdeu, sem criar outro plano.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Recuperar uma tentativa de salvamento cuja resposta se perdeu, sem criar outro plano.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
@@ -1255,30 +835,32 @@
             }
           ],
           "videos": [],
-          "books": [
-            {
-              "title": "Refactoring UI",
-              "authors": "Adam Wathan e Steve Schoger",
-              "edition": "Edição e ano não declarados nas páginas bibliográficas do exemplar",
-              "pages": "Páginas físicas do PDF: 234–236",
-              "note": "Ponto de partida para estados vazios úteis. A matriz de causas, permissões e resultado incerto é elaboração autoral, não reprodução ou classificação atribuída à obra."
-            },
-            {
-              "title": "Guia de Boas Práticas Aplicáveis para a Criação de Interfaces",
-              "authors": "Andrey Knabbenn",
-              "edition": "Versão 2.0, 2022",
-              "pages": "Páginas físicas do PDF: 163–164",
-              "note": "Leitura complementar sobre ausência de conteúdo e orientação de continuidade; as mensagens apresentadas são originais."
-            },
-            {
-              "title": "The UI Professional’s Design Manual: the Ultimate Guide to Master Mobile Design",
-              "authors": "AdrianK; colaboração de Natalie apresentada no exemplar",
-              "edition": "Exemplar © 2022, em desenvolvimento; sem número de edição declarado",
-              "pages": "Páginas físicas do PDF: 248–249, 300–301",
-              "note": "Referência histórica de estados de home e exceções. Não se importam exemplos financeiros, tempos fixos ou garantias de recuperação do caso didático."
-            }
-          ],
-          "wordCount": 1023
+          "wordCount": 302
+        }
+      ],
+      "objective": "Aplicar a linguagem visual a descoberta, comparação, escolha e estados da mesma tarefa.",
+      "rationale": "Tipos de tela combinam hierarquia e navegação em problemas concretos do Rota.",
+      "criteria": [
+        "Distingue o papel de lista, detalhe e plano.",
+        "Mantém campos comparáveis em listas e cartões.",
+        "Mostra busca sem resultado sem apagar o contexto.",
+        "Representa vazio, espera, falha e conclusão com prioridades distintas."
+      ],
+      "references": [
+        {
+          "title": "Apple · layout",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+          "note": "Leitura gratuita de referência."
+        },
+        {
+          "title": "NN/G · dez heurísticas",
+          "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+          "note": "Princípios de inspeção, não certificação de acessibilidade."
+        },
+        {
+          "title": "W3C · reorganização do conteúdo",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+          "note": "Leitura gratuita de referência."
         }
       ]
     }

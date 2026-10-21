@@ -2,35 +2,27 @@
   "modules": [
     {
       "id": "construcao-completa",
-      "title": "Construção completa de interfaces",
-      "description": "Una a trilha em um projeto: problema, arquitetura, sistema visual, protótipo, revisão e entrega.",
+      "title": "Projeto integrado: Rota",
+      "description": "Consolidar as telas em uma proposta visual coerente, revisada e explicada por decisões.",
       "lessons": [
         {
           "id": "projeto-enquadrar-problema",
-          "title": "1. Enquadrar o problema e definir o fluxo",
-          "summary": "Consolide tarefa, conteúdo e limites em um briefing curto que oriente o fluxo já desenvolvido.",
-          "minutes": 6,
+          "title": "1. Retomar a tarefa e seus limites",
+          "summary": "Consolide o recorte do Rota em uma ficha que oriente todas as telas.",
+          "minutes": 3,
           "objectives": [
-            "Separar fatos, hipóteses e decisões no briefing.",
-            "Definir uma tarefa principal com começo, fim e caminhos de recuperação.",
-            "Organizar conteúdo e prioridades antes de desenhar telas."
+            "A tarefa está descrita sem depender de um botão.",
+            "Nome, duração, custo e horário têm lugar definido.",
+            "Salvar permanece distinto de reservar entrada."
           ],
           "sections": [
             {
-              "title": "Retome o problema, sem começar outro projeto",
-              "body": "<p>O Rota é um estudo fictício para descobrir visitas culturais e organizar um passeio. O recorte desta trilha é comparar opções, escolher horário e reencontrar o plano. Salvar não compra ingresso nem garante entrada.</p><p>Reúna a frase de problema e os dados trabalhados nas lições anteriores. O pedido “um app bonito para conhecer lugares” ainda precisa ser traduzido em tarefa e resultado. Não acrescente pagamento, chat ou localização real só para o projeto parecer completo.</p>"
+              "title": "Uma tarefa, um projeto",
+              "body": "<p>O Rota é um estudo fictício para comparar visitas culturais, escolher horário e reencontrar o plano. Salvar não compra ingresso nem garante entrada. Retome as telas e decisões acumuladas; não comece outro aplicativo.</p><p>A ficha deve listar nome da visita, duração, custo, horário e condições conhecidas. Informação ausente permanece explícita; não invente disponibilidade nem acessibilidade do local.</p>"
             },
             {
-              "title": "Separe fatos, hipóteses e decisões",
-              "body": "<p>Fato é o que foi confirmado; hipótese é o que precisa ser investigado; decisão provisória é uma escolha com motivo. Os dados do Rota são fornecidos para o exercício, não descobertas sobre pessoas reais.</p><p>Separe também objetivo da organização, resultado para a pessoa e hipótese de solução. Facilitar a retomada pode motivar um resumo persistente, mas esse desenho não comprova retenção ou retorno financeiro. Registre qual observação ajudaria a avaliar a escolha.</p>"
-            },
-            {
-              "title": "Feche conteúdo e caminhos",
-              "body": "<p>Confira nome, duração, custo, horários, endereço, origem e atualização da informação. “Não informado” não significa “não disponível”. Sem informação sobre entrada sem degraus, não invente um selo de acessibilidade.</p><p>Una Descobrir → Detalhe → Definir horário → Revisar → Meu plano. Acrescente saídas pertinentes: não encontrar opção, corrigir horário, desistir e lidar com falha. Para cada transição, diga o que permanece e o que pode ser descartado. A regra de voltar deve ser explícita e consistente dentro do seu fluxo.</p>"
-            },
-            {
-              "title": "Defina o que contará como resultado",
-              "body": "<p>A pessoa deve conseguir escolher uma visita compatível com as restrições, entender o que foi salvo e reencontrar horário e endereço. A tela desta lição mostra esse resultado pretendido; não executa a tarefa nem comprova que participantes a concluíram.</p><p>Um briefing pode caber em uma página: tarefa, dados, hipóteses, fluxo, exclusões e perguntas abertas. Mudança de escopo, como vender ingressos, altera responsabilidade e dependências; não é apenas acrescentar um botão.</p>"
+              "title": "Feche o recorte",
+              "body": "<p>Use Descobrir → Detalhe → Escolher horário → Meu plano. Inclua voltar, corrigir horário e uma condição sem resultado. Esses caminhos delimitam as composições necessárias.</p><p>Escolha o que será verificável na proposta: dados comparáveis, horário associado à visita e plano reencontrável. O desenho não comprova compreensão por pessoas reais.</p>"
             }
           ],
           "examples": [
@@ -40,186 +32,129 @@
               "analysis": "<p><strong>Decisão:</strong> Conectar o resultado da interface à tarefa e ao escopo definidos no projeto.</p><p><strong>Como testar:</strong> Peça para reencontrar horário e endereço depois de salvar e explicar se houve reserva.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
               "alt": "O resultado corresponde ao problema do produto. Você tem uma tarde livre e escolheu Forma & luz, uma visita gratuita de 1h30. Salve o passeio das 15h para reencontrar horário e endereço depois.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Você tem uma tarde livre e escolheu Forma & luz, uma visita gratuita de 1h30. Salve o passeio das 15h para reencontrar horário e endereço depois.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
           ],
           "exercise": {
-            "brief": "Reúna o que você já produziu no Rota. Se chegou diretamente a esta aula, use os dados do exemplo e registre o que ainda precisa construir; não invente pesquisa realizada.",
+            "brief": "Consolide o recorte do Rota em uma ficha que oriente todas as telas.",
             "steps": [
-              "Atualize sua frase de problema e separe fatos fornecidos, hipóteses e decisões.",
-              "Confira inventário de conteúdo e um caminho de sucesso com uma saída alternativa.",
-              "Escreva o resultado observável e a evidência que ainda falta."
+              "Reúna sua ficha e as telas já produzidas.",
+              "Marque conteúdo essencial e exclusões.",
+              "Desenhe o percurso principal e uma alternativa."
             ],
-            "deliverable": "Um briefing curto consolidando os marcos de tarefa e arquitetura.",
+            "deliverable": "Ficha do Rota com tarefa, conteúdo, percurso e limites.",
             "criteria": [
-              "Fatos, hipóteses e decisões estão identificados.",
-              "O fluxo tem resultado, retorno e efeito sobre dados definidos.",
-              "Salvar não é apresentado como reserva.",
-              "Escopo e evidências pendentes estão explícitos, sem métricas inventadas."
+              "A tarefa está descrita sem depender de um botão.",
+              "Nome, duração, custo e horário têm lugar definido.",
+              "Salvar permanece distinto de reservar entrada.",
+              "O percurso e suas exclusões estão explícitos."
             ]
           },
           "sources": [
             {
-              "title": "GOV.UK: How the discovery phase works",
-              "url": "https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works",
-              "note": "Referência de processo; adapte a profundidade ao risco do projeto."
+              "title": "Apple · layout",
+              "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+              "note": "Leitura gratuita de referência."
             },
             {
-              "title": "GOV.UK: Using in-depth interviews",
-              "url": "https://www.gov.uk/service-manual/user-research/using-in-depth-interviews",
-              "note": "Orientação para investigar contexto e experiência, sem tratar entrevista como levantamento estatístico."
+              "title": "W3C · reorganização do conteúdo",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+              "note": "Leitura gratuita de referência."
             },
             {
-              "title": "GOV.UK: Complete multiple tasks",
-              "url": "https://design-system.service.gov.uk/patterns/complete-multiple-tasks/",
-              "note": "Exemplo real de agrupamento, dependência e estado de tarefas."
+              "title": "W3C · contraste de texto",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+              "note": "Requisito WCAG 2.2 e exceções; não é uma receita de paleta."
             }
           ],
           "videos": [],
-          "books": [
-            {
-              "title": "Briefing: a Gestão do Projeto de Design",
-              "authors": "Peter L. Phillips",
-              "edition": "Edição brasileira Blücher; ficha 2007, direitos 2008, 1ª reimpressão 2009.",
-              "pages": "PDF, páginas físicas 57–60.",
-              "note": "Objetivos, estratégia, escopo e critérios de avaliação."
-            },
-            {
-              "title": "O Design como Diferencial Competitivo: o Processo de Design Desenvolvido sob o Enfoque da Qualidade e da Gestão Estratégica",
-              "authors": "Flávio Anthero dos Santos",
-              "edition": "Editora da Univali, 2000.",
-              "pages": "PDF, páginas físicas 22–23 e 53–55.",
-              "note": "Necessidades, planejamento e registro das decisões; não transplantar a estrutura de gestão para qualquer equipe."
-            }
-          ],
-          "wordCount": 1007
+          "wordCount": 119
         },
         {
           "id": "projeto-estrutura-componentes",
-          "title": "2. Construir a estrutura e o sistema visual",
-          "summary": "Transforme suas telas em poucas regras reutilizáveis de conteúdo, aparência e comportamento.",
-          "minutes": 5,
+          "title": "2. Integrar estrutura e linguagem visual",
+          "summary": "Una suas telas com relações coerentes de espaço, texto, cor e superfície.",
+          "minutes": 3,
           "objectives": [
-            "Montar a anatomia de uma tela a partir da prioridade da tarefa.",
-            "Definir componentes e tokens com responsabilidades claras.",
-            "Projetar adaptação, texto ampliado e estados antes do acabamento."
+            "Repete papéis equivalentes sem uniformizar tarefas diferentes.",
+            "Mantém dados essenciais nas variações.",
+            "Justifica cor, espaço e superfície pela função."
           ],
           "sections": [
             {
-              "title": "Reúna as telas que já resolvem a tarefa",
-              "body": "<p>Use Descobrir, Detalhe e Meu plano produzidos ao longo da trilha. No Rota, a lista permite comparar nome, duração e custo; o detalhe acrescenta condições; o plano permite reencontrar a escolha. Essa relação deve continuar clara antes do acabamento.</p><p>Se precisar de um esboço, use conteúdo plausível desde o começo. Um wireframe não precisa ser cinza, mas deve permitir discutir estrutura sem a decoração dominar. Nome longo e dado ausente revelam problemas que texto genérico esconde.</p><p>Para começar por aqui, use <a href=\"#listas-cards\">a lista de visitas</a>, <a href=\"#tela-detalhe\">o detalhe</a> e <a href=\"#navegacao-tabs-back-home\">Meu plano e a navegação</a> como bases. As práticas dessas lições fornecem dados e decisões para reconstruir o conjunto.</p>"
+              "title": "Compare o conjunto",
+              "body": "<p>Coloque Descobrir, Detalhe e Meu plano lado a lado. O conteúdo muda, mas título, dado, ação e seleção devem manter relações reconhecíveis. Não copie toda a composição quando a tarefa muda.</p><p>Revise alinhamentos e densidade antes de aplicar refinamentos. Um título longo precisa crescer; uma condição de entrada não deve desaparecer para preservar a altura do cartão.</p>"
             },
             {
-              "title": "Dê nome às decisões repetidas",
-              "body": "<p><strong>Tokens</strong> nomeiam escolhas reutilizáveis, como texto principal, ação, erro e espaço entre grupos. <strong>Componentes</strong> têm um trabalho: cartão apresenta uma visita; campo recebe um dado; aviso comunica uma condição.</p><p>Crie apenas as regras que reaparecem ou evitam uma incoerência real. Uma escala 4/8 é opcional, não mede automaticamente texto ou alvos. Reutilizar a mesma borda não garante o mesmo significado e comportamento.</p>"
-            },
-            {
-              "title": "Especifique conteúdo, extremos e interação",
-              "body": "<ul><li><strong>Nome:</strong> pode crescer em linhas, sem esconder informação decisiva.</li><li><strong>Duração e custo:</strong> posições e rótulos ajudam a comparar; ausência tem tratamento próprio.</li><li><strong>Imagem:</strong> propósito, recorte e alternativa estão definidos; a visita continua reconhecível sem ela.</li><li><strong>Ação:</strong> abrir detalhe e salvar têm nomes, regiões e efeitos distintos.</li></ul><p>No exemplo, “preço não informado” é uma variante de conteúdo, não uma afirmação de gratuidade. Especifique ordem de leitura, nomes acessíveis e estados na implementação; aparência não resolve semântica.</p>"
-            },
-            {
-              "title": "Registre a mudança e confira onde ela chega",
-              "body": "<p>Se um título longo rompe o cartão, investigue se o contrato existente deve crescer antes de criar “Cartão 2”. Registre problema, regra anterior, regra nova, telas afetadas e forma de conferir.</p><p>Teste a alteração na lista, no detalhe relacionado e no plano, incluindo largura estreita e texto ampliado. Uma correção pode resolver corte e criar outro problema. Uma página com regras e versões é suficiente para este exercício; uma biblioteca extensa não é a meta.</p>"
+              "title": "Aplique o craft com função",
+              "body": "<p>Escolha os papéis tipográficos, os pares de cor e a função das superfícies. Acrescente a identidade do Rota onde ela apoia reconhecimento. Faça a marca recuar em escolhas e condições importantes.</p><p>Compare ícones e curvas no tamanho de uso. Corrija diferenças ópticas sem deslocar o grid nem reduzir os alvos. Guarde as versões anteriores para explicar cada melhoria.</p>"
             }
           ],
           "examples": [
             {
               "title": "O componente respeita o dado que recebeu",
               "visualHtml": "<div class=\"rx-study\"><div class=\"rx-device-column\"><div class=\"rx-device-slot\"><div class=\"rx-phone\"><div class=\"rx-status\" aria-hidden=\"true\"><span>9:41</span><span class=\"rx-camera\"></span><span>▮▮▮ <svg viewBox=\"0 0 28 14\"><rect x=\"1\" y=\"2\" width=\"23\" height=\"10\" rx=\"3\"/><path d=\"M27 5v4\"/><path d=\"M4 5h16v4H4z\" fill=\"currentColor\"/></svg></span></div><div class=\"rx-appbar\"><span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 6-6 6 6 6\"/></svg><b>Descobrir</b></span><span class=\"rx-brand\">rota<span>●</span></span></div><div class=\"rx-content \" tabindex=\"0\" role=\"region\" aria-label=\"Conteúdo da tela demonstrativa\"><div class=\"rx-eyebrow\">ROTA · CULTURA PERTO DE VOCÊ</div><h2>Visitas no Centro</h2><p class=\"rx-subtitle\">Confira as informações antes de escolher.</p><div class=\"rx-search\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"m16 16 4 4\"/></svg><span>Exposição, lugar ou bairro</span></div><div class=\"rx-plan-card\"><div class=\"rx-art\" aria-label=\"Ilustração autoral de uma galeria com esculturas abstratas\"><div class=\"rx-art-sun\"></div><div class=\"rx-art-arch\"></div><div class=\"rx-art-block\"></div></div><div class=\"rx-plan-info\"><span class=\"rx-neutral-chip\">Preço não informado</span><h3>Forma &amp; luz</h3><p>Galeria Horizonte · Centro</p><div class=\"rx-plan-bottom\"><span>1h30 de visita</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m9 5 7 7-7 7\"/></svg></div></div></div><p class=\"rx-help\">Consulte o local para confirmar o preço.</p></div><div class=\"rx-home\" aria-hidden=\"true\"><span></span></div></div></div><p class=\"rx-scale-caption\">Viewport ilustrativo · 390 × 844<br>Composição estática; dados fictícios.</p></div><aside class=\"rx-notes\"><span class=\"rx-kicker\">CONSTRUÇÃO COMPLETA DE INTERFACES</span><h3>O que observar</h3><ol><li><span class=\"rx-note-number\">1</span><div><h4>Ausência não significa zero</h4><p>Sem dado de preço, o componente mostra desconhecido. Não inventa gratuidade.</p></div></li><li><span class=\"rx-note-number\">2</span><div><h4>Variante semântica</h4><p>O tratamento neutro distingue preço ausente de entrada gratuita confirmada.</p></div></li><li><span class=\"rx-note-number\">3</span><div><h4>Contrato reutilizável</h4><p>Lista, detalhe e plano precisam interpretar o mesmo dado da mesma forma.</p></div></li></ol></aside></div>",
-              "analysis": "<p><strong>Decisão:</strong> Documentar regras de conteúdo junto dos tokens e variantes do componente.</p><p><strong>Como testar:</strong> Renderize preço conhecido, gratuito e ausente. Peça para identificar quais visitas são comprovadamente gratuitas.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
+              "analysis": "<p><strong>Decisão:</strong> Documentar regras de conteúdo junto dos tratamentos visuais e variações de conteúdo.</p><p><strong>Como testar:</strong> Renderize preço conhecido, gratuito e ausente. Peça para identificar quais visitas são comprovadamente gratuitas.</p><p><strong>Limite:</strong> Este é um estudo estático. Comportamento, acessibilidade e resultado precisam ser verificados na implementação.</p>",
               "alt": "O componente respeita o dado que recebeu. Você só pode escolher uma visita gratuita. Na lista do Rota, encontre o custo de Forma & luz; neste cenário, a fonte não informou o preço.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Você só pode escolher uma visita gratuita. Na lista do Rota, encontre o custo de Forma & luz; neste cenário, a fonte não informou o preço.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
           ],
           "exercise": {
-            "brief": "Reúna o que você já produziu no Rota. Se chegou diretamente a esta aula, use os dados do exemplo e registre o que ainda precisa construir; não invente pesquisa realizada.",
+            "brief": "Una suas telas com relações coerentes de espaço, texto, cor e superfície.",
             "steps": [
-              "Escolha um componente que já aparece em mais de uma tela e nomeie suas partes.",
-              "Especifique nome longo, preço não informado e imagem ausente sem mudar a função da ação.",
-              "Registre uma mudança de regra e quais telas devem ser revistas."
+              "Reúna lista, detalhe e plano em uma prancha.",
+              "Anote relações repetidas de espaço, texto, cor e camadas.",
+              "Inclua um título longo e uma imagem ausente."
             ],
-            "deliverable": "Uma página de componente e regras vinculada às telas já produzidas.",
+            "deliverable": "Prancha de três telas com decisões visuais e variações de conteúdo.",
             "criteria": [
-              "As mesmas informações mantêm significado entre lista, detalhe e plano.",
-              "Ausência de preço não vira gratuidade nem erro sem causa.",
-              "Texto cresce e ações continuam alcançáveis.",
-              "A mudança identifica telas afetadas e uma verificação de regressão."
+              "Repete papéis equivalentes sem uniformizar tarefas diferentes.",
+              "Mantém dados essenciais nas variações.",
+              "Justifica cor, espaço e superfície pela função.",
+              "Aplica identidade sem reduzir legibilidade."
             ]
           },
           "sources": [
             {
-              "title": "O’Reilly: Designing Interfaces, 3rd Edition",
-              "url": "https://www.oreilly.com/library/view/designing-interfaces-3rd/9781492051954/",
-              "note": "Livro de referência sobre padrões. Link da editora; conteúdo integral pode exigir compra ou assinatura."
+              "title": "Apple · layout",
+              "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+              "note": "Leitura gratuita de referência."
             },
             {
-              "title": "NNGroup: Content Standards in Design Systems",
-              "url": "https://www.nngroup.com/articles/content-design-systems/",
-              "note": "Integração de regras editoriais e componentes."
+              "title": "W3C · reorganização do conteúdo",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+              "note": "Leitura gratuita de referência."
             },
             {
-              "title": "GOV.UK: Check answers",
-              "url": "https://design-system.service.gov.uk/patterns/check-answers/",
-              "note": "Exemplo de revisão e correção localizada."
+              "title": "W3C · contraste de texto",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+              "note": "Requisito WCAG 2.2 e exceções; não é uma receita de paleta."
             }
           ],
           "videos": [],
-          "books": [
-            {
-              "title": "Design Systems: A Practical Guide to Creating Design Languages for Digital Products",
-              "authors": "Alla Kholmatova",
-              "edition": "Smashing Media, 2017.",
-              "pages": "PDF, páginas físicas 19–22, 185–190 e 255–260.",
-              "note": "Padrões compartilhados, inventário e documentação usados proporcionalmente ao projeto."
-            },
-            {
-              "title": "Dive into UI Design Systems: Theory and Practice",
-              "authors": "Dima Groshev",
-              "edition": "Amostra gratuita, versão 0.5, 24/10/2024.",
-              "pages": "PDF, páginas físicas 12–13 e 36–37.",
-              "note": "Escopo proporcional; a amostra não equivale à leitura do livro integral."
-            },
-            {
-              "title": "UI Design Systems Mastery",
-              "authors": "Marina Budarina",
-              "edition": "Versão 3.0; atualização 08/07/2023.",
-              "pages": "PDF, páginas físicas 58–70 e 229–230.",
-              "note": "Inventário e composição; ferramentas e integrações devem ser conferidas na versão atual."
-            }
-          ],
-          "wordCount": 932
+          "wordCount": 127
         },
         {
           "id": "projeto-prototipo-estados",
-          "title": "3. Prototipar o fluxo e suas falhas",
-          "summary": "Ligue o fluxo existente e escolha a fidelidade necessária para investigar a dúvida prioritária.",
-          "minutes": 5,
+          "title": "3. Compor caminhos e estados",
+          "summary": "Mostre como a mesma tarefa permanece reconhecível entre telas e condições.",
+          "minutes": 3,
           "objectives": [
-            "Escolher a fidelidade do protótipo pela pergunta de pesquisa.",
-            "Definir uma matriz de estados e transições verificáveis.",
-            "Preparar tarefas de teste sem indicar os controles corretos."
+            "Cada quadro mantém a visita reconhecível.",
+            "A próxima ação e a saída são localizáveis.",
+            "Espera, falha e conclusão não têm a mesma prioridade visual."
           ],
           "sections": [
             {
-              "title": "Escolha a ferramenta pela pergunta",
-              "body": "<p>Imagens podem investigar interpretação de conteúdo. Um protótipo clicável pode investigar caminhos e expectativas. Teclado, foco e adaptação exigem um ambiente que represente esses comportamentos com fidelidade suficiente.</p><p>No Rota, comece ligando comparar → escolher → salvar → reencontrar. Não acrescente animação refinada se a dúvida ainda é o significado da ação. Aparência realista não transforma protótipo em produto funcionando.</p>"
+              "title": "Mostre a sequência",
+              "body": "<p>Organize os quadros do Rota na ordem comparar → escolher → salvar → reencontrar. Indique a ação que liga cada quadro, o que permanece e para onde se retorna. Não é necessário construir uma aplicação para explicar essa sequência visual.</p><p>Uma imagem estática especifica o esperado; não comprova foco, teclado ou persistência. Mantenha essas pendências separadas da qualidade da composição.</p>"
             },
             {
-              "title": "Ligue ações a resultados e saídas",
-              "body": "<p>Para cada passo, registre entrada, dados disponíveis, ação, resposta e destino. Abrir a edição do horário ainda não significa salvar. Fechar uma camada não prova que a operação concluiu.</p><p>Use a matriz de <a href=\"#estados-interface\">estados</a> já construída. Escolha uma falha relevante e uma interrupção. Defina se dados ficam apenas na tela, em rascunho persistente ou confirmados no serviço; são capacidades distintas.</p>"
-            },
-            {
-              "title": "Recupere conforme o que o sistema sabe",
-              "body": "<p>O exemplo desta aula mostra falha local conhecida antes do envio. Por isso oferece tentar novamente com preenchimento preservado. Se a operação saiu e só a resposta se perdeu, o resultado é incerto: consulte a tentativa anterior antes de enviar outra.</p><p>Especifique também toque repetido, retorno, cancelamento e retomada. Uma ação não deve duplicar gravações nem prender a pessoa numa espera indefinida. O desenho descreve esse contrato; não comprova sua implementação.</p>"
-            },
-            {
-              "title": "Faça um ensaio antes da rodada de observação",
-              "body": "<p>Escreva uma tarefa com contexto e resultado, sem ditar os nomes dos botões. Por exemplo, escolher uma visita de até duas horas e deixar o plano pronto para consulta. Declare restrições necessárias, como janela de horário e uso de deslocamento.</p><p>Percorra o protótipo para encontrar ligações ausentes e dados incoerentes. Isso é ensaio, não resultado com participantes. Reaproveite o roteiro de <a href=\"#teste-usabilidade-evidencia\">teste de usabilidade</a>; não inicie outra pesquisa só por chegar a esta aula.</p><p>Declare o Rota fictício e suas limitações: sem compra, localização real ou verificação de disponibilidade. Não peça dados pessoais reais para simular essas tarefas.</p>"
+              "title": "Mude a condição sem perder o contexto",
+              "body": "<p>Acrescente uma busca sem resultado e uma falha de salvamento. Preserve nome, horário e localização na estrutura. O estado deve ter prioridade suficiente sem apagar toda a tela desnecessariamente.</p><p>Se o resultado de salvar for desconhecido, a composição deve representar essa incerteza, não uma conclusão. Compare a versão de espera, a de falha conhecida e a de plano confirmado usando os mesmos dados.</p>"
             }
           ],
           "examples": [
@@ -229,88 +164,63 @@
               "analysis": "<p><strong>Decisão:</strong> mostrar uma falha local conhecida: o pedido não saiu do aparelho. Quando a conexão voltar, o preenchimento pode ser enviado sem reconstrução.</p><p><strong>Como testar:</strong> bloqueie a conexão antes do envio e confirme que nenhum pedido saiu. Reconecte, envie e aguarde a confirmação. Em outro teste, perca a resposta depois de enviar: esse caso precisa de verificação de resultado, não deste estado.</p><p><strong>Limite:</strong> só use esta mensagem se a implementação souber que o envio não ocorreu. A aparência da falha não autoriza presumir esse diagnóstico.</p>",
               "alt": "Falha antes do envio: retomar sem reconstruir. Tentar salvar Forma & luz para sábado às 15h com uma nota. O envio é impedido antes de sair do aparelho; recuperar sem preencher novamente.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Tentar salvar Forma & luz para sábado às 15h com uma nota. O envio é impedido antes de sair do aparelho; recuperar sem preencher novamente.",
               "comparisonFocus": "Uma composição completa mostra a decisão aplicada. Leia as anotações ao lado da tela."
             }
           ],
           "exercise": {
-            "brief": "Reúna o que você já produziu no Rota. Se chegou diretamente a esta aula, use os dados do exemplo e registre o que ainda precisa construir; não invente pesquisa realizada.",
+            "brief": "Mostre como a mesma tarefa permanece reconhecível entre telas e condições.",
             "steps": [
-              "Ligue as telas existentes e escreva o efeito de voltar ou cancelar.",
-              "Inclua falha conhecida antes do envio e resultado incerto após envio, com saídas diferentes.",
-              "Ensaie a tarefa e registre limitações do protótipo para a rodada de observação."
+              "Disponha os quadros e ligue cada ação ao próximo estado.",
+              "Acrescente uma saída e uma interrupção.",
+              "Compare as prioridades da tela em espera, falha e conclusão."
             ],
-            "deliverable": "Um fluxo navegável ou em papel, acompanhado de contratos e pendências.",
+            "deliverable": "Sequência anotada de telas e estados, com retorno ao contexto.",
             "criteria": [
-              "Cada ação ligada produz um resultado coerente e tem saída.",
-              "Dados preservados e dados confirmados são distinguidos.",
-              "A tarefa não ensina a sequência de botões.",
-              "Limites de foco, teclado, rede e persistência permanecem explícitos."
+              "Cada quadro mantém a visita reconhecível.",
+              "A próxima ação e a saída são localizáveis.",
+              "Espera, falha e conclusão não têm a mesma prioridade visual.",
+              "Pendências de comportamento não são apresentadas como resolvidas."
             ]
           },
           "sources": [
             {
-              "title": "GOV.UK: Making prototypes",
-              "url": "https://www.gov.uk/service-manual/design/making-prototypes",
-              "note": "Tipos de protótipo e limites de código experimental."
+              "title": "Apple · layout",
+              "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+              "note": "Leitura gratuita de referência."
             },
             {
-              "title": "GOV.UK: Confirmation pages",
-              "url": "https://design-system.service.gov.uk/patterns/confirmation-pages/",
-              "note": "Referência real para consequência e próximos passos."
+              "title": "W3C · reorganização do conteúdo",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+              "note": "Leitura gratuita de referência."
             },
             {
-              "title": "GOV.UK: Plan user research for your service",
-              "url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
-              "note": "Planejamento de perguntas, métodos e atividades de pesquisa."
+              "title": "W3C · contraste de texto",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+              "note": "Requisito WCAG 2.2 e exceções; não é uma receita de paleta."
             }
           ],
           "videos": [],
-          "books": [
-            {
-              "title": "Guia de Boas Práticas Aplicáveis para a Criação de Interfaces",
-              "authors": "Andrey Knabbenn",
-              "edition": "Versão 2.0, 2022.",
-              "pages": "PDF, páginas físicas 73–74 e 163–164.",
-              "note": "Estados e vazio como ponto de partida; contrato de dados e recuperação são aplicação autoral ampliada."
-            },
-            {
-              "title": "Refactoring UI",
-              "authors": "Adam Wathan e Steve Schoger",
-              "edition": "Edição e ano não declarados nas páginas bibliográficas do exemplar consultado.",
-              "pages": "PDF, páginas físicas 234–236.",
-              "note": "Estados vazios; causas e transições do Rota foram elaboradas para este curso."
-            }
-          ],
-          "wordCount": 966
+          "wordCount": 134
         },
         {
           "id": "projeto-revisar-entregar",
-          "title": "4. Revisar, testar e entregar com critérios",
-          "summary": "Reúna evidências, corrija o problema prioritário e entregue regras que outra pessoa consiga verificar.",
-          "minutes": 5,
+          "title": "4. Revisar e apresentar as decisões",
+          "summary": "Consolide uma versão revisada com evidências visuais e limites explícitos.",
+          "minutes": 3,
           "objectives": [
-            "Separar revisão heurística, teste com pessoas e verificação técnica.",
-            "Priorizar problemas por consequência e contexto.",
-            "Entregar comportamento, conteúdo, estados e critérios de aceite."
+            "Cada correção aponta um critério e uma evidência visual.",
+            "A mesma condição é repetida depois da mudança.",
+            "O conjunto preserva hierarquia e navegação coerentes."
           ],
           "sections": [
             {
-              "title": "Reúna as três formas de avaliação",
-              "body": "<p><strong>Inspeção heurística</strong> aponta riscos por princípios; <strong>teste de usabilidade</strong> observa pessoas em tarefas; <strong>verificação técnica</strong> examina implementação e requisitos. Uma não substitui nem autoriza afirmar que as demais ocorreram.</p><p>Use os registros já produzidos. Revise primeiro a continuidade da tarefa e as interpretações de maior consequência, depois o acabamento. Para cada evidência, anote versão, ambiente, tamanho de texto e condição relevante.</p><p>Se ainda falta uma base, retome <a href=\"#projeto-enquadrar-problema\">o briefing</a>, <a href=\"#projeto-estrutura-componentes\">as telas e componentes</a>, <a href=\"#projeto-prototipo-estados\">o fluxo</a>, <a href=\"#teste-usabilidade-evidencia\">o roteiro de observação</a> e <a href=\"#acessibilidade-plano-verificacao\">o plano de acessibilidade</a>. Esta entrega consolida esses materiais; não exige que tenham sido produzidos antes de você encontrar a trilha.</p>"
+              "title": "Confira condições concretas",
+              "body": "<p>Revise o percurso antes do acabamento final. Confira contraste real, conteúdo ampliado, nomes longos, alvos e sobreposições. Registre a tela e a condição em que cada verificação foi feita.</p><p>Inspeção visual identifica riscos e incoerências. Comprovar teclado, foco ou leitura assistiva depende da implementação; declare o que ainda precisa ser verificado.</p>"
             },
             {
-              "title": "Escreva critérios que possam reprovar",
-              "body": "<ul><li>A pessoa entende que salvar não reserva ingresso.</li><li>Existe saída e tratamento de dados em cada etapa.</li><li>Informação ausente não vira valor inventado.</li><li>Mensagens e ações correspondem ao estado conhecido.</li><li>Conteúdo essencial e ação permanecem alcançáveis com pouco espaço e texto maior.</li><li>Nomes, relações, foco e alvos são verificados na plataforma pertinente.</li></ul><p>O controle de largura/texto desta lição demonstra adaptação local. Ele não executa Dynamic Type nem a avaliação completa WCAG. Registre os testes ainda necessários.</p>"
-            },
-            {
-              "title": "Priorize e repita o cenário afetado",
-              "body": "<p>Registre tarefa, observação, consequência, evidência, hipótese de causa e proposta. “Risco em inspeção” é diferente de “ocorreu nesta sessão”. Não transforme ocorrências de uma amostra pequena em estatística da população.</p><p>Priorize bloqueios, perda de informação e interpretações de alto impacto. Considere frequência e alcance sem produzir certeza artificial com uma nota numérica. Depois de corrigir, repita o cenário e confira regressões nas partes relacionadas.</p>"
-            },
-            {
-              "title": "Entregue relações, não apenas capturas",
-              "body": "<p>Organize os seis marcos: problema, ficha visual, arquitetura, fluxo, avaliação e versão revisada. Inclua conteúdo, estados, regras de crescimento e rolagem, nomes acessíveis e preservação de contexto.</p><p>Uma pessoa deve conseguir reconstruir uma condição não desenhada sem adivinhar. Exemplo: nome maior em largura intermediária, com a ação ainda alcançável. Perguntas nessa reconstrução revelam lacunas na especificação.</p><p>Declare pendências de dispositivo, tecnologia assistiva e participantes. Ferramenta automática sem alertas não é certificação. Entregar bem inclui tornar o que falta visível e permitir continuar a revisão.</p>"
+              "title": "Entregue o raciocínio",
+              "body": "<p>Apresente tarefa, telas, sequência, decisões de craft e revisão. Para três mudanças importantes, mostre antes e depois com o mesmo conteúdo. Diga qual critério motivou a correção e como você conferiu o resultado.</p><p>Finalize com pendências específicas, como validar a área de toque no dispositivo ou conferir texto ampliado na plataforma. Uma tela bonita não é prova de conformidade completa.</p>"
             }
           ],
           "examples": [
@@ -320,66 +230,74 @@
               "analysis": "<p><strong>Decisão:</strong> manter título, dados e ação no fluxo do cartão, com crescimento por conteúdo. Os controles mudam largura e métricas de texto reais, sem reescrever ou truncar o nome.</p><p><strong>Como testar:</strong> combine 260 CSSpx com 130% de texto. Confira o nome inteiro, role o conteúdo e alcance Editar horário. Volte ao baseline e confirme que os mesmos dados permanecem.</p><p><strong>Limite:</strong> este é um teste didático de componente, não uma simulação de Dynamic Type, zoom 200% ou conformidade WCAG. A entrega deve testar também os mecanismos reais de ampliação e as tecnologias assistivas de cada plataforma.</p>",
               "alt": "Uma regra de adaptação que pode ser verificada. Alterar a largura e o tamanho do texto do componente de visita, ler o nome completo e alcançar Editar horário.",
               "source": "Rota · estudo original",
-              "url": "https://alignui.com/docs/v1.2/introduction",
               "scenario": "Alterar a largura e o tamanho do texto do componente de visita, ler o nome completo e alcançar Editar horário.",
               "comparisonFocus": "Use os controles externos para alterar o componente. A escala uniforme da moldura serve apenas para apresentar o exemplo no curso."
             }
           ],
           "exercise": {
-            "brief": "Reúna o que você já produziu no Rota. Se chegou diretamente a esta aula, use os dados do exemplo e registre o que ainda precisa construir; não invente pesquisa realizada.",
+            "brief": "Consolide uma versão revisada com evidências visuais e limites explícitos.",
             "steps": [
-              "Classifique suas evidências e pendências: inspeção, observação ou verificação técnica.",
-              "Escolha o problema de maior consequência, corrija e repita seu cenário quando o ambiente permitir.",
-              "Organize os seis marcos e acrescente regras para uma condição que não foi desenhada."
+              "Percorra a proposta e registre achados por critério.",
+              "Corrija os bloqueios e repita a mesma condição.",
+              "Escolha três comparações antes/depois e liste pendências."
             ],
-            "deliverable": "Uma entrega consolidada do mesmo projeto, com decisão revisada e limites verificáveis.",
+            "deliverable": "Apresentação do Rota com telas finais, três correções explicadas e verificações pendentes.",
             "criteria": [
-              "Cada conclusão identifica sua origem e a versão avaliada.",
-              "A correção tem cenário e resultado esperado que outra pessoa pode repetir.",
-              "A entrega inclui estados, adaptação e comportamento, além das telas.",
-              "Pendências permanecem visíveis, sem alegação de teste ou conformidade não realizados."
+              "Cada correção aponta um critério e uma evidência visual.",
+              "A mesma condição é repetida depois da mudança.",
+              "O conjunto preserva hierarquia e navegação coerentes.",
+              "Separa o que foi conferido no desenho do que exige implementação."
             ]
           },
           "sources": [
             {
-              "title": "W3C: Easy Checks",
-              "url": "https://www.w3.org/WAI/test-evaluate/preliminary/",
-              "note": "Verificações iniciais de acessibilidade; não equivalem a avaliação completa."
+              "title": "Apple · layout",
+              "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+              "note": "Leitura gratuita de referência."
             },
             {
-              "title": "W3C: Planning and Policies",
-              "url": "https://www.w3.org/WAI/planning/",
-              "note": "Acessibilidade como atividade contínua no processo."
+              "title": "W3C · reorganização do conteúdo",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+              "note": "Leitura gratuita de referência."
             },
             {
-              "title": "GOV.UK: Plan user research for your service",
-              "url": "https://www.gov.uk/service-manual/user-research/plan-user-research-for-your-service",
-              "note": "Referência de planejamento e continuidade da pesquisa."
-            },
-            {
-              "title": "Um erro que precisa passar pela revisão técnica",
-              "url": "https://design-system.service.gov.uk/components/error-summary/linking/",
-              "note": "Referência complementar de análise. O exemplo visual desta lição é uma composição original do Rota."
+              "title": "W3C · contraste de texto",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+              "note": "Requisito WCAG 2.2 e exceções; não é uma receita de paleta."
             }
           ],
           "videos": [],
-          "books": [
-            {
-              "title": "The UI Professional’s Design Manual: the Ultimate Guide to Master Mobile Design",
-              "authors": "AdrianK; colaboração de Natalie apresentada no exemplar",
-              "edition": "Exemplar © 2022, em desenvolvimento; sem número de edição declarado.",
-              "pages": "PDF, páginas físicas 302–305.",
-              "note": "Relações e entrega; medidas e convenções do exemplar precisam de atualização por plataforma."
-            },
-            {
-              "title": "UI Design Systems Mastery",
-              "authors": "Marina Budarina",
-              "edition": "Versão 3.0; atualização 08/07/2023.",
-              "pages": "PDF, páginas físicas 247–252 e 269–270.",
-              "note": "Teste de componentes com conteúdo variável e documentação."
-            }
-          ],
-          "wordCount": 959
+          "wordCount": 121
+        }
+      ],
+      "objective": "Consolidar as telas em uma proposta visual coerente, revisada e explicada por decisões.",
+      "rationale": "O projeto final reúne as versões acumuladas; não reinicia o trabalho nem acrescenta funcionalidades.",
+      "criteria": [
+        "Une tarefa, telas e caminhos sem contradições.",
+        "Aplica espaçamento, texto, cor e superfície com funções claras.",
+        "Apresenta adaptações e estados essenciais.",
+        "Entrega comparação antes/depois e pendências verificáveis."
+      ],
+      "references": [
+        {
+          "title": "Apple · layout",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+          "note": "Leitura gratuita de referência."
+        },
+        {
+          "title": "W3C · reorganização do conteúdo",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+          "note": "Leitura gratuita de referência."
+        },
+        {
+          "title": "W3C · contraste de texto",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+          "note": "Requisito WCAG 2.2 e exceções; não é uma receita de paleta."
+        },
+        {
+          "title": "NN/G · dez heurísticas",
+          "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+          "note": "Princípios de inspeção, não certificação de acessibilidade."
         }
       ]
     }
