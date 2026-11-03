@@ -17,6 +17,7 @@ const click=(app,selector,node={})=>app.handlers['document:click']({target:{clos
 const importFile=(app,data,size=100)=>app.handlers['document:change']({target:{id:'progress-file',files:[{size,text:async()=>typeof data==='string'?data:JSON.stringify(data)}],value:'x'}});
 (async()=>{
  assert.equal(course.chapters.length,14);const ids=new Set(course.chapters.map(c=>c.id));assert.equal(ids.size,14);
+ const fontApp=setup();const initialProgress=fontApp.storage.get(KEY);for(let n=0;n<10;n++)click(fontApp,'#font-increase');assert.equal(fontApp.storage.get('ui-craft-font-size-v1'),'20');assert.equal(fontApp.elements.get('#font-increase').disabled,true);assert.equal(fontApp.storage.get(KEY),initialProgress);const fontReload=setup('#inicio',fontApp.storage);assert.equal(fontReload.elements.get('html').style.fontSize,'20px');for(let n=0;n<10;n++)click(fontReload,'#font-decrease');assert.equal(fontReload.storage.get('ui-craft-font-size-v1'),'14');assert.equal(fontReload.elements.get('#font-decrease').disabled,true);
  const app=setup();let html=app.elements.get('#main').innerHTML;assert(html.includes('O detalhe'));
  assert.equal(course.chapters.reduce((n,c)=>n+c.concepts.length,0),120);
  const rendered=[];
@@ -43,6 +44,7 @@ const importFile=(app,data,size=100)=>app.handlers['document:change']({target:{i
  const storage=new Map([[OLD,JSON.stringify(previous)]]);const migrated=setup('#progresso',storage);click(migrated,'#export-progress');const exported=JSON.parse(await migrated.getBlob().text());assert.deepEqual(exported.completed,[]);assert.deepEqual(exported.previousEdition,previous);assert.equal(storage.get(OLD),JSON.stringify(previous),'Original progress overwritten');
  const fresh=setup('#progresso');await importFile(fresh,exported);click(fresh,'#export-progress');assert.deepEqual(JSON.parse(await fresh.getBlob().text()).previousEdition,previous);
  const blocked={get(){throw Error('unavailable')},set(){throw Error('unavailable')}};const ephemeral=setup('#cor',blocked);click(ephemeral,'[data-complete]',{dataset:{complete:'cor'}});assert.equal(ephemeral.elements.get('#storage-warning').hidden,false);go(ephemeral,'progresso');click(ephemeral,'#export-progress');assert(JSON.parse(await ephemeral.getBlob().text()).completed.includes('cor'));
+ const allVideos=course.chapters.flatMap(c=>c.videos||[]);assert.equal(allVideos.length,8);for(const v of allVideos){assert(/^[A-Za-z0-9_-]{11}$/.test(v.id));assert(v.source.startsWith('https://'));}for(const c of course.chapters.filter(c=>c.videos?.length)){const vhtml=go(app,c.id);assert(!vhtml.includes('<iframe'));assert(vhtml.includes('data-video='));assert(vhtml.includes('Abrir no YouTube'));}assert(go(app,'progresso').includes('localStorage'));
  const {spawnSync}=require('node:child_process');const check=spawnSync('python3',['-c',`import sys,json
 from html.parser import HTMLParser
 class Check(HTMLParser):

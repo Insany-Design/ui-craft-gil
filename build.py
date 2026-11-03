@@ -5,6 +5,12 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 OUT=ROOT/'guide-dist'
 course=json.loads((ROOT/'source/content/craft.json').read_text())
+videos=json.loads((ROOT/'source/content/videos.json').read_text())
+for chapter in course['chapters']:
+ chapter['videos']=videos.get(chapter['id'],[])
+ for video in chapter['videos']:
+  assert re.fullmatch(r'[A-Za-z0-9_-]{11}',video['id']),video
+  assert video['source'].startswith('https://'),video
 ids=set()
 for c in course['chapters']:
  assert c['id'] not in ids,c['id']
