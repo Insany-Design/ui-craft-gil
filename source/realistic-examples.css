@@ -20,3 +20,8 @@
 
 /* Numbered notes are linked to the exact illustrated region. */
 .rx-annotated{position:relative!important;outline:1px dashed #335cff;outline-offset:3px}.rx-annotated:before{content:attr(data-callout);position:absolute;z-index:9;left:-12px;top:-12px;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#2547d0;color:#fff;border:2px solid #fff;font:500 12px/16px RotaInter,system-ui,sans-serif;box-shadow:0 0 0 1px #2547d0}.rx-callout-link{display:grid;place-items:center;flex-shrink:0;width:32px;height:32px;padding:0;border:1px solid #2547d0;border-radius:50%;background:#ebefff;color:#2547d0;font:500 14px/20px RotaInter,system-ui,sans-serif;cursor:pointer}.rx-callout-link:hover,.rx-callout-link:focus-visible{background:#2547d0;color:#fff;outline:2px solid #171717;outline-offset:3px}.rx-callout-active{outline:3px solid #2547d0!important;outline-offset:4px!important}
+
+/* Original principle illustrations: preserve legibility on small screens. */
+.principle-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;width:100%;padding:24px}
+.principle-panel{min-width:0}.principle-panel h4{font-size:16px;margin:0 0 16px}.principle-panel>svg{display:block;width:100%;height:auto;stroke:none;max-height:none}.principle-panel p{font-size:14px;line-height:1.65;margin:16px 0 0;color:#525866}
+@media(max-width:1000px){.principle-comparison{grid-template-columns:1fr;padding:16px;gap:32px}.principle-panel>svg{max-width:420px;margin:auto}}

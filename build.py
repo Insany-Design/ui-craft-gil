@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 GUIDE_DIST=ROOT/'guide-dist'
 CONTENT=ROOT/'source'/'content'
-ORDER=['fundamentos','principios-visuais','densidade-espacamento','design-mobile','tipografia','cores','profundidade-superficies','refinamento-optico','identidade-interface','arquitetura-informacao','tipos-telas','usabilidade-acessibilidade','construcao-completa']
+ORDER=['fundamentos','principios-visuais','percepcao-acao-memoria','densidade-espacamento','design-mobile','tipografia','cores','profundidade-superficies','refinamento-optico','identidade-interface','arquitetura-informacao','tipos-telas','usabilidade-acessibilidade','construcao-completa']
 modules=[]
 for f in sorted(CONTENT.glob('part-*.json')):
     d=json.loads(f.read_text()); modules.extend(d['modules'])

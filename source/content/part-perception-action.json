@@ -1,0 +1,188 @@
+{
+  "modules": [
+    {
+      "id": "percepcao-acao-memoria",
+      "title": "Percepção, ação e memória",
+      "description": "Do que percebemos ao que escolhemos e conseguimos tocar.",
+      "objective": "Entender Fitts, Miller e Hick–Hyman e usar seus conceitos sem transformar estudos em regras rígidas de interface.",
+      "rationale": "Depois da organização visual, observe o esforço de agir, lembrar e escolher. Esses conceitos complementam a Gestalt e as heurísticas estudadas no guia.",
+      "references": [
+        {
+          "title": "Fitts (1954) · estudo original",
+          "url": "https://doi.org/10.1037/h0055392",
+          "note": "Relação entre amplitude, largura do alvo e tempo de movimento em tarefas motoras controladas."
+        },
+        {
+          "title": "Miller (1956) · estudo original",
+          "url": "https://cse.buffalo.edu/~rapaport/575/F01/miller56.html",
+          "note": "Julgamento absoluto, memória imediata e recodificação em unidades significativas."
+        },
+        {
+          "title": "Hick (1952) · estudo original",
+          "url": "https://doi.org/10.1080/17470215208416600",
+          "note": "Tempo de reação de escolha em condições experimentais. Não define um limite de itens de menu."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "lei-fitts-alvos",
+          "title": "Fitts: facilitar o alcance e o acerto",
+          "summary": "Distância e tamanho do alvo influenciam o esforço de apontar.",
+          "objectives": [
+            "Facilitar a ação de salvar um passeio.",
+            "Distinguir o ícone visível da área que realmente recebe o toque."
+          ],
+          "sections": [
+            {
+              "title": "O que é",
+              "body": "<p>Em 1954, Paul Fitts investigou movimentos rápidos e precisos entre alvos. Em condições comparáveis, alvos mais distantes ou estreitos tendem a exigir mais tempo para serem atingidos. É uma relação entre velocidade e precisão, não uma preferência estética por botões grandes.</p><p>A largura relevante é a medida do alvo na direção do movimento. A aplicação em interfaces orienta hipóteses; dedos, mouse, postura e contexto alteram o desempenho.</p>"
+            },
+            {
+              "title": "Para que serve",
+              "body": "<p>Use essa relação para reduzir a precisão exigida em ações frequentes. Um ícone pequeno pode estar dentro de uma área clicável maior. Essa área não deve invadir a de outro controle.</p><p>Também considere a distância entre ações consecutivas. Aproximar uma ação do conteúdo relacionado pode evitar deslocamentos desnecessários, desde que a organização continue clara.</p>"
+            },
+            {
+              "title": "Onde usar",
+              "body": "<p>Botões de continuar, controles de reprodução, seletores e ações em listas são bons lugares para observar alvos e distâncias. No mobile, confira o alcance em diferentes mãos e modos de segurar o aparelho. Não existe uma zona de polegar universal.</p><p>O exemplo mantém a distância e amplia o alvo. Assim é possível enxergar uma variável por vez. Para estrutura mobile, continue em <a href=\"#teclado-toque-gestos\">Toque e teclado</a>.</p>"
+            },
+            {
+              "title": "Boas práticas",
+              "body": "<p>Não transforme a lei em um número fixo de pixels. Para conteúdo web, a WCAG 2.2 no critério 2.5.8 estabelece 24 × 24 CSSpx ou condições alternativas, com exceções. Isso é um requisito de acessibilidade, não uma medida derivada por Fitts. Plataformas nativas têm suas próprias orientações e unidades.</p><p>Evite juntar ações destrutivas e frequentes. Amplie a área real, deixe separação suficiente e teste a tarefa com o método de entrada esperado.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "A mesma tarefa, duas composições",
+              "visualHtml": "<div class=\"principle-comparison\"><div class=\"principle-panel\"><h4>01 · Alvo pequeno</h4><svg viewBox=\"0 0 360 390\" role=\"img\" aria-label=\"Mesma distância até Salvar; alvo menor\" xmlns=\"http://www.w3.org/2000/svg\"><title>Mesma distância até Salvar; alvo menor</title><g font-family=\"Inter, Arial, sans-serif\"><rect x=\"1\" y=\"1\" width=\"358\" height=\"388\" rx=\"18\" fill=\"#ffffff\" stroke=\"#d9dee8\"/><text x=\"24\" y=\"36\" font-size=\"20\" fill=\"#335cff\" font-weight=\"700\">rota ●</text><text x=\"24\" y=\"72\" font-size=\"20\" fill=\"#1b2435\" font-weight=\"600\">Adicionar ao plano</text><rect x=\"24\" y=\"96\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"123\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Exposição Forma &amp; Luz</text><rect x=\"24\" y=\"148\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"175\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Sábado · 14:00</text><path d=\"M180 290 V250\" stroke=\"#687184\" stroke-width=\"2\" stroke-dasharray=\"5 5\"/><text x=\"195\" y=\"282\" font-size=\"13\" fill=\"#687184\" font-weight=\"400\">mesma distância</text><circle cx=\"180\" cy=\"300\" r=\"7\" fill=\"#1b2435\"/><text x=\"24\" y=\"356\" font-size=\"14\" fill=\"#525866\" font-weight=\"400\">Ponto de partida do movimento</text><rect x=\"150.0\" y=\"222.0\" width=\"60\" height=\"24\" rx=\"8\" fill=\"#335cff\" stroke=\"none\"/><text x=\"180\" y=\"239\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ffffff\" font-weight=\"600\">Salvar</text><path d=\"M142 222 v24\" stroke=\"#335cff\" stroke-width=\"2\"/><text x=\"24\" y=\"325\" font-size=\"12\" fill=\"#525866\" font-weight=\"400\">W = largura do alvo na direção do movimento</text></g></svg><p>Com a mesma distância, um alvo pequeno exige mais precisão. O ponto escuro representa o início do movimento.</p></div><div class=\"principle-panel\"><h4>02 · Alvo mais amplo</h4><svg viewBox=\"0 0 360 390\" role=\"img\" aria-label=\"Mesma distância até Salvar; alvo maior\" xmlns=\"http://www.w3.org/2000/svg\"><title>Mesma distância até Salvar; alvo maior</title><g font-family=\"Inter, Arial, sans-serif\"><rect x=\"1\" y=\"1\" width=\"358\" height=\"388\" rx=\"18\" fill=\"#ffffff\" stroke=\"#d9dee8\"/><text x=\"24\" y=\"36\" font-size=\"20\" fill=\"#335cff\" font-weight=\"700\">rota ●</text><text x=\"24\" y=\"72\" font-size=\"20\" fill=\"#1b2435\" font-weight=\"600\">Adicionar ao plano</text><rect x=\"24\" y=\"96\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"123\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Exposição Forma &amp; Luz</text><rect x=\"24\" y=\"148\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"175\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Sábado · 14:00</text><path d=\"M180 290 V250\" stroke=\"#687184\" stroke-width=\"2\" stroke-dasharray=\"5 5\"/><text x=\"195\" y=\"282\" font-size=\"13\" fill=\"#687184\" font-weight=\"400\">mesma distância</text><circle cx=\"180\" cy=\"300\" r=\"7\" fill=\"#1b2435\"/><text x=\"24\" y=\"356\" font-size=\"14\" fill=\"#525866\" font-weight=\"400\">Ponto de partida do movimento</text><rect x=\"114.0\" y=\"208.0\" width=\"132\" height=\"52\" rx=\"8\" fill=\"#335cff\" stroke=\"none\"/><text x=\"180\" y=\"239\" text-anchor=\"middle\" font-size=\"14\" fill=\"#ffffff\" font-weight=\"600\">Salvar</text><path d=\"M106 208 v52\" stroke=\"#335cff\" stroke-width=\"2\"/><text x=\"24\" y=\"325\" font-size=\"12\" fill=\"#525866\" font-weight=\"400\">W = largura do alvo na direção do movimento</text></g></svg><p>O alvo maior oferece mais tolerância para acertar. O desenho é esquemático; não determina sozinho o tamanho do componente.</p></div></div>",
+              "analysis": "<p><strong>O que mudou:</strong> apenas o tamanho do alvo. A origem e o centro da ação permanecem no mesmo lugar. A imagem não mede ganho de tempo e não representa uma recomendação dimensional pronta para produção.</p>",
+              "source": "Rota · diagramas originais",
+              "alt": "Distância e tamanho do alvo influenciam o esforço de apontar.",
+              "scenario": "Facilitar a ação de salvar um passeio.",
+              "comparisonFocus": "Compare apenas a mudança indicada. As imagens são explicativas, não resultados de um teste com pessoas."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Fitts (1954) · estudo original",
+              "url": "https://doi.org/10.1037/h0055392",
+              "note": "Relação entre amplitude, largura do alvo e tempo de movimento em tarefas motoras controladas."
+            },
+            {
+              "title": "W3C · Target Size (Minimum)",
+              "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+              "note": "Critério 2.5.8: tamanho, espaçamento, alternativas e exceções para conteúdo web."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "miller-memoria-agrupamento",
+          "title": "Miller: organizar para não depender da memória",
+          "summary": "Agrupe informações com significado e deixe o necessário à vista.",
+          "objectives": [
+            "Revisar um passeio sem decorar dados de outras telas.",
+            "Entender por que 7 ± 2 não é um limite universal de opções."
+          ],
+          "sections": [
+            {
+              "title": "O que é",
+              "body": "<p>George Miller publicou, em 1956, uma discussão sobre limites do processamento de informação. Seu conhecido “7 ± 2” descreve resultados de tarefas específicas, não uma regra de composição de interfaces. O artigo distingue julgamento absoluto e memória imediata.</p><p>A contribuição útil aqui é o <em>chunking</em>: recodificar informações em unidades com significado. Uma data conhecida pode ser um grupo; uma sequência desconhecida pode exigir lembrar cada parte.</p>"
+            },
+            {
+              "title": "Para que serve",
+              "body": "<p>Uma interface pode reduzir o que precisa ser mantido na memória: mostrar um resumo, conservar escolhas e reunir dados relacionados. Isso ajuda a retomar o raciocínio entre etapas.</p><p>A memória depende da tarefa, da familiaridade e do material. Pesquisas posteriores encontraram limites menores em certas condições. Trocar sete por quatro como regra universal repetiria o mesmo erro.</p>"
+            },
+            {
+              "title": "Onde usar",
+              "body": "<p>Use grupos como “Visita”, “Ingressos” e “Local” em resumos; títulos claros em formulários; escolhas anteriores visíveis na confirmação. O exemplo preserva todos os dados e muda somente sua organização.</p><p><a href=\"#gestalt-agrupamento\">Gestalt</a> explica o agrupamento percebido; Miller trata da codificação e da memória. Uma caixa visual não cria automaticamente um grupo mental útil.</p>"
+            },
+            {
+              "title": "Boas práticas",
+              "body": "<p>Não corte menus em sete itens por causa do artigo. Opções visíveis podem ser consultadas; recordar uma lista sem vê-la é outra tarefa. Organize conforme o conteúdo e as necessidades reais.</p><p>Prefira reconhecer a recordar: mantenha rótulos, contexto e um resumo acessível. Categorias precisam fazer sentido para o público, não apenas para a equipe. Veja também <a href=\"#heuristicas-consistencia-prevencao-reconhecimento\">Reconhecimento e prevenção de erros</a>.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "A mesma tarefa, duas composições",
+              "visualHtml": "<div class=\"principle-comparison\"><div class=\"principle-panel\"><h4>01 · Dados sem categorias</h4><svg viewBox=\"0 0 360 390\" role=\"img\" aria-label=\"Seis informações do passeio em uma lista sem títulos de grupo\" xmlns=\"http://www.w3.org/2000/svg\"><title>Seis informações do passeio em uma lista sem títulos de grupo</title><g font-family=\"Inter, Arial, sans-serif\"><rect x=\"1\" y=\"1\" width=\"358\" height=\"388\" rx=\"18\" fill=\"#ffffff\" stroke=\"#d9dee8\"/><text x=\"24\" y=\"36\" font-size=\"20\" fill=\"#335cff\" font-weight=\"700\">rota ●</text><text x=\"24\" y=\"72\" font-size=\"20\" fill=\"#1b2435\" font-weight=\"600\">Revise seu passeio</text><rect x=\"24\" y=\"98\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"125\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Forma &amp; Luz</text><rect x=\"24\" y=\"142\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"169\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Sábado · 14:00</text><rect x=\"24\" y=\"186\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"213\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">2 adultos</text><rect x=\"24\" y=\"230\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"257\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">R$ 80,00 no total</text><rect x=\"24\" y=\"274\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"301\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Museu Central</text><rect x=\"24\" y=\"318\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"345\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Rua das Flores, 120</text></g></svg><p>Cada linha pede uma nova interpretação. Nada informa explicitamente quais dados descrevem visita, ingresso ou local.</p></div><div class=\"principle-panel\"><h4>02 · Grupos com significado</h4><svg viewBox=\"0 0 360 390\" role=\"img\" aria-label=\"Seis informações do passeio agrupadas em visita, ingressos e local\" xmlns=\"http://www.w3.org/2000/svg\"><title>Seis informações do passeio agrupadas em visita, ingressos e local</title><g font-family=\"Inter, Arial, sans-serif\"><rect x=\"1\" y=\"1\" width=\"358\" height=\"388\" rx=\"18\" fill=\"#ffffff\" stroke=\"#d9dee8\"/><text x=\"24\" y=\"36\" font-size=\"20\" fill=\"#335cff\" font-weight=\"700\">rota ●</text><text x=\"24\" y=\"72\" font-size=\"20\" fill=\"#1b2435\" font-weight=\"600\">Revise seu passeio</text><rect x=\"18\" y=\"94\" width=\"324\" height=\"88\" rx=\"10\" fill=\"#f2f5ff\" stroke=\"none\"/><text x=\"30\" y=\"116\" font-size=\"12\" fill=\"#335cff\" font-weight=\"700\">VISITA</text><text x=\"30\" y=\"140\" font-size=\"16\" fill=\"#1b2435\" font-weight=\"600\">Forma &amp; Luz</text><text x=\"30\" y=\"163\" font-size=\"15\" fill=\"#525866\" font-weight=\"400\">Sábado · 14:00</text><rect x=\"18\" y=\"190\" width=\"324\" height=\"88\" rx=\"10\" fill=\"#f2f5ff\" stroke=\"none\"/><text x=\"30\" y=\"212\" font-size=\"12\" fill=\"#335cff\" font-weight=\"700\">INGRESSOS</text><text x=\"30\" y=\"236\" font-size=\"16\" fill=\"#1b2435\" font-weight=\"600\">2 adultos</text><text x=\"30\" y=\"259\" font-size=\"15\" fill=\"#525866\" font-weight=\"400\">R$ 80,00 no total</text><rect x=\"18\" y=\"286\" width=\"324\" height=\"88\" rx=\"10\" fill=\"#f2f5ff\" stroke=\"none\"/><text x=\"30\" y=\"308\" font-size=\"12\" fill=\"#335cff\" font-weight=\"700\">LOCAL</text><text x=\"30\" y=\"332\" font-size=\"16\" fill=\"#1b2435\" font-weight=\"600\">Museu Central</text><text x=\"30\" y=\"355\" font-size=\"15\" fill=\"#525866\" font-weight=\"400\">Rua das Flores, 120</text></g></svg><p>Os mesmos seis dados ficam reunidos por significado. O resumo permanece visível: a pessoa não precisa decorar a etapa anterior.</p></div></div>",
+              "analysis": "<p><strong>O que mudou:</strong> seis dados passam a formar três categorias sem remover informação. Os títulos apoiam a compreensão; manter o resumo visível evita exigir memorização. O desenho ilustra uma aplicação, não prova um aumento de capacidade.</p>",
+              "source": "Rota · diagramas originais",
+              "alt": "Agrupe informações com significado e deixe o necessário à vista.",
+              "scenario": "Revisar um passeio sem decorar dados de outras telas.",
+              "comparisonFocus": "Compare apenas a mudança indicada. As imagens são explicativas, não resultados de um teste com pessoas."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Miller (1956) · estudo original",
+              "url": "https://cse.buffalo.edu/~rapaport/575/F01/miller56.html",
+              "note": "Julgamento absoluto, memória imediata e recodificação em unidades significativas."
+            },
+            {
+              "title": "Cowan (2001) · revisão e modelo de capacidade",
+              "url": "https://doi.org/10.1017/S0140525X01003922",
+              "note": "Discute capacidade próxima de quatro unidades sob condições específicas. Não estabelece máximo de itens visíveis em UI."
+            }
+          ],
+          "videos": []
+        },
+        {
+          "id": "hick-hyman-escolhas",
+          "title": "Hick–Hyman: tornar as escolhas compreensíveis",
+          "summary": "Organize alternativas e reduza incerteza, sem esconder o que importa.",
+          "objectives": [
+            "Encontrar uma categoria de passeio com clareza.",
+            "Diferenciar tempo de reação experimental de decisão real em uma interface."
+          ],
+          "sections": [
+            {
+              "title": "O que é",
+              "body": "<p>William Hick, em 1952, e Ray Hyman, em 1953, estudaram o tempo de reação diante de alternativas. O tempo cresce com a informação envolvida na escolha em determinadas condições. Quantidade, probabilidade e aprendizagem importam.</p><p>Esses experimentos usam respostas controladas a estímulos. Escolher um produto ou navegar por um menu também envolve leitura, significado, experiência e intenção. Não é correto prometer uma redução exata de tempo apenas retirando opções.</p>"
+            },
+            {
+              "title": "Para que serve",
+              "body": "<p>A aplicação prática é tornar o espaço de escolha compreensível. Categorias, rótulos específicos e uma ordem reconhecível ajudam a localizar alternativas relevantes.</p><p>Menos opções nem sempre significa uma tarefa melhor. Esconder uma opção necessária pode acrescentar busca, retornos e etapas. Reduza ruído, não a capacidade de decidir.</p>"
+            },
+            {
+              "title": "Onde usar",
+              "body": "<p>Use em filtros, seleção de categorias e menus de ações. No Rota, os mesmos seis passeios aparecem em grupos reconhecíveis. A comparação mantém o conteúdo e evidencia a organização.</p><p>Para situações com muitas alternativas, busca e filtros podem ser mais úteis que uma sequência de menus pequenos. Continue em <a href=\"#busca-filtros\">Busca e filtros</a>.</p>"
+            },
+            {
+              "title": "Boas práticas",
+              "body": "<p>Mostre primeiro as decisões relevantes para a tarefa. Detalhes avançados podem aparecer quando necessários, mas custos, condições e alternativas importantes precisam continuar encontráveis.</p><p>Divulgação progressiva é uma estratégia de interação, não uma lei experimental de Hick. Padrões familiares e reconhecimento também ajudam: consulte <a href=\"#consistencia-ritmo\">Consistência</a> e <a href=\"#usabilidade-modelos-mentais\">Pistas visuais</a>. Avalie o caminho completo, incluindo erros e voltas.</p>"
+            }
+          ],
+          "examples": [
+            {
+              "title": "A mesma tarefa, duas composições",
+              "visualHtml": "<div class=\"principle-comparison\"><div class=\"principle-panel\"><h4>01 · Opções sem organização</h4><svg viewBox=\"0 0 360 390\" role=\"img\" aria-label=\"Seis tipos de passeio misturados numa lista\" xmlns=\"http://www.w3.org/2000/svg\"><title>Seis tipos de passeio misturados numa lista</title><g font-family=\"Inter, Arial, sans-serif\"><rect x=\"1\" y=\"1\" width=\"358\" height=\"388\" rx=\"18\" fill=\"#ffffff\" stroke=\"#d9dee8\"/><text x=\"24\" y=\"36\" font-size=\"20\" fill=\"#335cff\" font-weight=\"700\">rota ●</text><text x=\"24\" y=\"72\" font-size=\"20\" fill=\"#1b2435\" font-weight=\"600\">Que passeio procurar?</text><rect x=\"24\" y=\"98\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"125\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Jardins</text><rect x=\"24\" y=\"142\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"169\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Cinema</text><rect x=\"24\" y=\"186\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"213\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Trilhas</text><rect x=\"24\" y=\"230\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"257\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Exposições</text><rect x=\"24\" y=\"274\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"301\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Parques</text><rect x=\"24\" y=\"318\" width=\"312\" height=\"42\" rx=\"10\" fill=\"#f6f7f9\" stroke=\"none\"/><text x=\"38\" y=\"345\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Teatro</text></g></svg><p>A pessoa precisa examinar a lista para entender o conjunto. A ordem não oferece uma pista sobre sua intenção.</p></div><div class=\"principle-panel\"><h4>02 · Escolha orientada</h4><svg viewBox=\"0 0 360 390\" role=\"img\" aria-label=\"Seis tipos de passeio organizados em arte e cultura e ao ar livre\" xmlns=\"http://www.w3.org/2000/svg\"><title>Seis tipos de passeio organizados em arte e cultura e ao ar livre</title><g font-family=\"Inter, Arial, sans-serif\"><rect x=\"1\" y=\"1\" width=\"358\" height=\"388\" rx=\"18\" fill=\"#ffffff\" stroke=\"#d9dee8\"/><text x=\"24\" y=\"36\" font-size=\"20\" fill=\"#335cff\" font-weight=\"700\">rota ●</text><text x=\"24\" y=\"72\" font-size=\"20\" fill=\"#1b2435\" font-weight=\"600\">Que passeio procurar?</text><text x=\"24\" y=\"100\" font-size=\"12\" fill=\"#335cff\" font-weight=\"700\">ARTE E CULTURA</text><rect x=\"24\" y=\"112\" width=\"312\" height=\"30\" rx=\"10\" fill=\"#f2f5ff\" stroke=\"none\"/><text x=\"36\" y=\"133\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Exposições</text><rect x=\"24\" y=\"146\" width=\"312\" height=\"30\" rx=\"10\" fill=\"#f2f5ff\" stroke=\"none\"/><text x=\"36\" y=\"167\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Cinema</text><rect x=\"24\" y=\"180\" width=\"312\" height=\"30\" rx=\"10\" fill=\"#f2f5ff\" stroke=\"none\"/><text x=\"36\" y=\"201\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Teatro</text><text x=\"24\" y=\"244\" font-size=\"12\" fill=\"#335cff\" font-weight=\"700\">AO AR LIVRE</text><rect x=\"24\" y=\"256\" width=\"312\" height=\"30\" rx=\"10\" fill=\"#f2f5ff\" stroke=\"none\"/><text x=\"36\" y=\"277\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Parques</text><rect x=\"24\" y=\"290\" width=\"312\" height=\"30\" rx=\"10\" fill=\"#f2f5ff\" stroke=\"none\"/><text x=\"36\" y=\"311\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Trilhas</text><rect x=\"24\" y=\"324\" width=\"312\" height=\"30\" rx=\"10\" fill=\"#f2f5ff\" stroke=\"none\"/><text x=\"36\" y=\"345\" font-size=\"15\" fill=\"#1b2435\" font-weight=\"400\">Jardins</text></g></svg><p>As mesmas seis opções continuam visíveis. Os rótulos ajudam a localizar a família procurada; não criam telas extras.</p></div></div>",
+              "analysis": "<p><strong>O que mudou:</strong> a ordem e os rótulos de grupo. As seis opções permanecem na mesma tela. A classificação é uma hipótese adequada ao exemplo, que precisaria ser verificada com o público; não é uma medição da lei.</p>",
+              "source": "Rota · diagramas originais",
+              "alt": "Organize alternativas e reduza incerteza, sem esconder o que importa.",
+              "scenario": "Encontrar uma categoria de passeio com clareza.",
+              "comparisonFocus": "Compare apenas a mudança indicada. As imagens são explicativas, não resultados de um teste com pessoas."
+            }
+          ],
+          "sources": [
+            {
+              "title": "Hick (1952) · estudo original",
+              "url": "https://doi.org/10.1080/17470215208416600",
+              "note": "Tempo de reação de escolha em condições experimentais. Não define um limite de itens de menu."
+            },
+            {
+              "title": "Hyman (1953) · estudo original",
+              "url": "https://doi.org/10.1037/h0056940",
+              "note": "Investiga a relação entre tempo de reação e informação do estímulo."
+            },
+            {
+              "title": "Nielsen Norman Group · Progressive Disclosure",
+              "url": "https://www.nngroup.com/articles/progressive-disclosure/",
+              "note": "Orientação profissional do autor sobre apresentar complexidade de forma gradual."
+            }
+          ],
+          "videos": []
+        }
+      ]
+    }
+  ]
+}

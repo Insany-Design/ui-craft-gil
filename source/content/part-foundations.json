@@ -164,7 +164,7 @@
           "sections": [
             {
               "title": "O que é",
-              "body": "<p>Gestalt é o nome de um conjunto de princípios sobre como percebemos formas e relações. Em uma interface, eles ajudam a entender por que alguns elementos parecem fazer parte do mesmo grupo.</p><p>Na proximidade, elementos próximos parecem relacionados. Na similaridade, formas parecidas sugerem uma relação. Uma área delimitada, como um cartão, também pode reunir informações.</p>"
+              "body": "<p>Gestalt é o nome de um conjunto de princípios sobre como percebemos formas e relações. Em uma interface, eles ajudam a entender por que alguns elementos parecem fazer parte do mesmo grupo.</p><p>Na proximidade, elementos próximos parecem relacionados. Na similaridade, formas parecidas sugerem uma relação. Uma área delimitada, como um cartão, também pode reunir informações.</p><p>A psicologia da Gestalt se desenvolveu no início do século XX com pesquisadores como Max Wertheimer, Wolfgang Köhler e Kurt Koffka. “Gestalt” se aproxima de forma ou configuração: percebemos relações e conjuntos, não apenas elementos isolados. Os princípios foram investigados em épocas diferentes; região comum e conexão uniforme também receberam formulações posteriores.</p>"
             },
             {
               "title": "Para que serve",
@@ -176,7 +176,7 @@
             },
             {
               "title": "Boas práticas",
-              "body": "<p>Dê menos espaço entre informações do mesmo grupo e mais espaço entre grupos diferentes, quando essa diferença ajudar a leitura. Evite deixar um rótulo mais perto do próximo item do que do seu próprio valor.</p><p>Não dependa apenas da cor para associar informações. Tamanho, posição, forma e texto também ajudam. Um agrupamento visual deve corresponder à organização do conteúdo, e não criar uma relação que não existe.</p>"
+              "body": "<p>Dê menos espaço entre informações do mesmo grupo e mais espaço entre grupos diferentes, quando essa diferença ajudar a leitura. Evite deixar um rótulo mais perto do próximo item do que do seu próprio valor.</p><p>Não dependa apenas da cor para associar informações. Tamanho, posição, forma e texto também ajudam. Um agrupamento visual deve corresponder à organização do conteúdo, e não criar uma relação que não existe.</p><p>Para continuar: <a href=\"#lei-fitts-alvos\">Fitts explica o esforço de alcançar um alvo</a>; <a href=\"#miller-memoria-agrupamento\">Miller ajuda a pensar a memória</a>; <a href=\"#hick-hyman-escolhas\">Hick–Hyman discute a informação envolvida na escolha</a>. São perspectivas complementares, não leis criadas pelos mesmos autores.</p>"
             }
           ],
           "examples": [
@@ -191,6 +191,11 @@
             }
           ],
           "sources": [
+            {
+              "title": "Wertheimer (1923) · Laws of Organization in Perceptual Forms",
+              "url": "https://psychclassics.yorku.ca/Wertheimer/Forms/forms.htm",
+              "note": "Texto original em tradução: organização perceptiva e fatores de agrupamento."
+            },
             {
               "title": "A Century of Gestalt Psychology in Visual Perception I",
               "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3482144/",

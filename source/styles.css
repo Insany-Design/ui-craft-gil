@@ -29,3 +29,5 @@
 @media(max-width:1000px){.craft-roadmap{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.craft-roadmap{grid-template-columns:1fr}.craft-roadmap a{gap:6px;padding:16px}.lesson-module-contract{padding:16px}}
 /* Keep the four parts in semantic DOM order at every viewport. */
 .module-grid .module-contract{display:block}.module-grid .module-contract>*{order:initial}.module-grid .module-card-footer{order:initial}.module-contract .module-lessons{padding-left:0}.module-contract .module-lessons li{list-style:none}.module-contract .module-lessons a{display:flex;font-size:15px}
+
+.principles-shortcuts{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:28px}.principles-shortcuts span{font-size:13px;width:100%;color:#525866;margin-bottom:2px}.principles-shortcuts a{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border:1px solid #d9dee8;border-radius:9px;color:#335cff;font-size:14px;text-decoration:none}.principles-shortcuts a:hover{background:#f2f5ff}.principles-shortcuts a:focus-visible{outline:3px solid #335cff;outline-offset:3px}
