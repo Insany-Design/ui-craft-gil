@@ -2,6 +2,7 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const course=JSON.parse(fs.readFileSync('guide-dist/course.json','utf8'));
 const code=fs.readFileSync('guide-dist/app.js','utf8');
+const escape=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('\"','&quot;').replaceAll("'",'&#39;');
 const KEY='ui-craft-study-v1',OLD='ui-mobile-study-v2';
 function setup(hash='#inicio',storage=new Map()){
  const handlers={},elements=new Map(),downloads=[];let blob;
@@ -17,13 +18,14 @@ const importFile=(app,data,size=100)=>app.handlers['document:change']({target:{i
 (async()=>{
  assert.equal(course.chapters.length,14);const ids=new Set(course.chapters.map(c=>c.id));assert.equal(ids.size,14);
  const app=setup();let html=app.elements.get('#main').innerHTML;assert(html.includes('O detalhe'));
+ assert.equal(course.chapters.reduce((n,c)=>n+c.concepts.length,0),120);
  const rendered=[];
  for(const c of course.chapters){
   html=go(app,c.id);rendered.push([c.id,html]);
-  for(const text of [c.title,c.subtitle,c.callout,c.application,...c.sections.map(s=>s.body)])assert(html.includes(text),c.id);
-  assert.equal((html.match(/<h1\b/g)||[]).length,1);assert(html.includes('<figure'));assert(html.includes('<figcaption>'));assert(html.includes('Continue estudando'));
+  for(const text of [c.title,c.subtitle,c.callout,c.introduction])assert(html.includes(text),c.id);
+  assert.equal((html.match(/<h1\b/g)||[]).length,1);assert.equal((html.match(/<figure\b/g)||[]).length,c.concepts.length);for(const item of c.concepts){for(const text of [item.title,item.context,item.observation,item.application])assert(html.includes(escape(text)),c.id+' / '+item.title);assert(html.includes(item.visualHtml),'Missing concept visual '+item.title);assert(item.context.split(/\s+/).length>=25,'Missing context '+item.title);assert(item.observation.split(/\s+/).length>=15,'Missing observation '+item.title);assert(item.application.split(/\s+/).length>=15,'Missing application '+item.title);}assert(html.includes('<figcaption>'));assert(html.includes('Continue estudando'));
   assert(!/O assunto desta lição|O roteiro deste bloco|Nesta lição|undefined|NaN|Exercício orientado/.test(html),c.id);
-  assert(c.sections.length>=3);assert(c.sources.length>=2);assert(new Set(c.sources.map(r=>r.url)).size===c.sources.length);
+  assert(c.concepts.length>=8);assert.equal(new Set(c.concepts.map(i=>i.id)).size,c.concepts.length);assert(c.sources.length>=2);assert(new Set(c.sources.map(r=>r.url)).size===c.sources.length);
   assert(c.sections.reduce((n,s)=>n+s.body.replace(/<[^>]*>/g,' ').split(/\s+/).length,0)>250,c.id+' lacks explanation');
   for(const r of c.sources)assert(/^https:\/\//.test(r.url));
   for(const match of html.matchAll(/href="#([^"]+)"/g))assert(ids.has(match[1].split('--')[0])||['inicio','biblioteca','progresso'].includes(match[1]),c.id+' broken route');
@@ -60,5 +62,5 @@ for label,html in json.load(sys.stdin):
  try:p.feed(html);assert not p.stack,p.stack
  except AssertionError as e:raise AssertionError((label,str(e)))
 `],{input:JSON.stringify(rendered),encoding:'utf8'});assert.equal(check.status,0,check.stderr);
- console.log(JSON.stringify({chapters:14,legacyLinks:Object.keys(course.aliases).length,checks:['all chapters render full prose, application, visual comparison and resources','valid markup and unique IDs','legacy deep links','accent-insensitive search and no-results state','mark/unmark and reload','imports reject malformed, foreign and oversized files','older progress remains untouched and survives export/import','session export works when storage is unavailable']}));
+ console.log(JSON.stringify({chapters:14,concepts:120,legacyLinks:Object.keys(course.aliases).length,checks:['120 distinct concepts render their context, visual, observation and application','valid markup and unique IDs','legacy deep links','accent-insensitive search and no-results state','mark/unmark and reload','imports reject malformed, foreign and oversized files','older progress remains untouched and survives export/import','session export works when storage is unavailable']}));
 })().catch(e=>{console.error(e);process.exit(1)});

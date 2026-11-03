@@ -10,7 +10,7 @@ try{
  for(const migration of readdirSync('drizzle').filter(p=>p.endsWith('.sql')).sort())for(const statement of readFileSync('drizzle/'+migration,'utf8').split('--> statement-breakpoint'))if(statement.trim())await db.prepare(statement.trim()).run();
  const login=await mf.dispatchFetch(origin+'/login',{redirect:'manual'});const loginHtml=await login.text();assert(loginHtml.includes('Acesso em preparação'));assert(!loginHtml.includes('<form'));assert.equal(login.headers.get('set-cookie'),null);
  const route=readdirSync('dist/server/_next/static').find(p=>p.startsWith('route-'));
- for(const path of ['/','/login','/course.js','/course.json','/index.html','/app.js','/real-assets/inter-regular.woff2','/source/course.js','/dist/course.json','/server/private-assets.mjs','/_next/static/'+route]){
+ for(const path of ['/','/login','/course.js','/course.json','/index.html','/app.js','/atlas.js','/atlas.css','/real-assets/inter-regular.woff2','/source/course.js','/dist/course.json','/server/private-assets.mjs','/_next/static/'+route]){
   const r=await mf.dispatchFetch(origin+path,{redirect:'manual'});assert.equal(r.status,path==='/'?303:path==='/login'?200:401);assert(r.headers.get('cache-control')?.includes('no-store'));console.log(JSON.stringify({path,status:r.status,noStore:true}));
  }
  assert.equal((await mf.dispatchFetch(origin+'/admin/password',{redirect:'manual'})).status,303);

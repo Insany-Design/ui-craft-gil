@@ -9,12 +9,12 @@ ids=set()
 for c in course['chapters']:
  assert c['id'] not in ids,c['id']
  ids.add(c['id'])
- text=c['application']+' '.join(s['body'] for s in c['sections'])
+ text=c['introduction']+' '.join(' '.join([v['title'],v['context'],v['observation'],v['application']]) for v in c['concepts'])
  c['minutes']=max(2,round(len(re.sub('<[^>]+>',' ',text).split())/180))
 for alias,target in course['aliases'].items():assert target in ids,(alias,target)
 OUT.mkdir(exist_ok=True)
-expected={'index.html','styles.css','app.js','course.js','course.json'}
-for name in ['index.html','styles.css','app.js']:shutil.copy2(ROOT/'source'/name,OUT/name)
+expected={'index.html','styles.css','atlas.css','app.js','atlas.js','course.js','course.json'}
+for name in ['index.html','styles.css','atlas.css','app.js','atlas.js']:shutil.copy2(ROOT/'source'/name,OUT/name)
 (OUT/'course.js').write_text('window.COURSE = '+json.dumps(course,ensure_ascii=False).replace('</','<\\/')+';\n')
 (OUT/'course.json').write_text(json.dumps(course,ensure_ascii=False,indent=2)+'\n')
 assets=['design-boost-logo.svg','inter-regular.woff2','inter-medium.woff2','Inter-OFL.txt']

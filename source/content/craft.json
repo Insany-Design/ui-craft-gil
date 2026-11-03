@@ -1,6 +1,6 @@
 {
   "title": "Craft de UI",
-  "edition": "2026-11-craft",
+  "edition": "2026-11-craft-visual",
   "chapters": [
     {
       "id": "antes-da-tela",
@@ -47,7 +47,74 @@
           "kind": "Vídeo",
           "note": "Apple · em inglês, com transcrição"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "UI ≠ UX",
+          "context": "Uma tela de entrada pode ter cor, sombra e cantos bem resolvidos e ainda deixar dúvidas sobre o serviço ou a próxima etapa. UI organiza a apresentação dos controles; UX considera se o caminho ajuda a pessoa a concluir o que veio fazer. As duas decisões se encontram na mesma tela.",
+          "observation": "Compare a ausência de contexto da versão A com o título e o campo identificado da versão B. A diferença útil está na orientação, não na quantidade de decoração.",
+          "application": "Em um acesso ao Rota, explique qual conta será usada e o que acontece ao continuar. Refinar a aparência do botão vem junto de esclarecer sua função.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-card\" style=\"text-align:center\"><i class=\"k-av\" style=\"width:26px;height:26px;display:inline-block;margin-bottom:6px\"></i><input class=\"k-input\" style=\"margin-bottom:6px\" value=\"••••••••\" readonly><span class=\"k-btn acc sm\" style=\"display:block\">Entrar</span><span class=\"mono\" style=\"display:block;margin-top:6px\">bonito… mas entrar onde?</span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-card\"><b style=\"font-size:11.5px\">Entrar na conta</b><span class=\"mono\" style=\"display:block;margin:4px 0 2px\">E-MAIL</span><input class=\"k-input\" style=\"margin-bottom:6px\"><span class=\"k-btn sm\" style=\"display:block\">Continuar</span></div></div></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "As perguntas certas",
+          "context": "Um briefing se torna útil quando muda o desenho. Saber que a pessoa vai comprar um ingresso no celular, poucos minutos antes de entrar, dá prioridade à disponibilidade, ao preço total e ao acesso ao ingresso. Perguntas genéricas precisam chegar a decisões concretas de conteúdo.",
+          "observation": "O fluxo reúne cinco perguntas antes de chegar à tela. Cada pergunta representa informação que precisa orientar alguma escolha, não uma etapa burocrática para preencher.",
+          "application": "Antes de desenhar a reserva de uma visita, registre o que já se sabe sobre público, objetivo e contexto. Transforme as respostas em requisitos visíveis na interface.",
+          "visualHtml": "<div class=\"k-col\"><div class=\"k-flow\"><span class=\"k-chip\">quem?</span><span class=\"k-chip\">o quê?</span><span class=\"k-chip\">por quê?</span><span class=\"k-chip\">onde?</span><span class=\"k-chip\">quando?</span></div><span class=\"arr\">↓</span><span class=\"k-btn acc sm\">a tela certa</span></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Usuário, objetivo, contexto",
+          "context": "A mesma tarefa muda quando o ambiente muda. Pagar uma conta sentado em casa é diferente de conferir o valor em pé, no transporte, usando uma mão. Atenção, alcance, conectividade e familiaridade influenciam quanto detalhe pode aparecer e como as ações devem ser apresentadas.",
+          "observation": "Leia a sequência como uma situação: uma pessoa, um objetivo e uma condição de uso. O último bloco modifica as decisões tomadas a partir dos dois primeiros.",
+          "application": "Em um ingresso digital, deixe o código fácil de abrir e evite exigir uma sequência longa de ações na entrada. Confirme essas hipóteses com pessoas reais.",
+          "visualHtml": "<div class=\"k-flow\"><span class=\"k-chip\">Maria, 34</span><span class=\"arr\">→</span><span class=\"k-chip\">pagar a conta</span><span class=\"arr\">→</span><span class=\"k-chip acc\">no ônibus, 1 mão</span></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Rams como filosofia",
+          "context": "Os princípios de Dieter Rams ajudam a questionar escolhas de acabamento: o detalhe torna o produto mais útil, compreensível, honesto e duradouro? Redução tem valor quando elimina ruído; retirar uma instrução necessária só para deixar a tela vazia pode piorar a experiência. Os dez princípios abordam inovação, utilidade, estética, compreensão, discrição, honestidade, duração, cuidado com detalhes, responsabilidade ambiental e redução do desnecessário.",
+          "observation": "A amostra relaciona quatro princípios ao mesmo card: função da ação, compreensão do conteúdo, informação honesta e cuidado nas relações visuais. Os demais princípios ampliam a revisão do produto.",
+          "application": "Em uma tela de detalhe, remova um selo decorativo que compete com a informação de horário. Preserve o aviso que explica uma restrição real de entrada.",
+          "visualHtml": "<div class=\"principle-sample\"><div class=\"principle-ticket\"><span class=\"mono\">VISITA CULTURAL</span><strong>Forma &amp; luz</strong><span>Hoje, 14h · Entrada gratuita</span><span class=\"k-btn\">Ver detalhes da visita</span></div><div class=\"principle-notes\"><span><b>Útil</b> · a ação tem um propósito</span><span><b>Compreensível</b> · conteúdo e ação explícitos</span><span><b>Honesto</b> · a condição de entrada aparece</span><span><b>Cuidadoso</b> · alinhamentos e intervalos consistentes</span></div></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Affordance — a porta de Norman",
+          "context": "Affordance é uma possibilidade de ação na relação entre uma pessoa e um objeto. O desenho de uma porta pode permitir pegar uma alça; sua forma também fornece pistas sobre puxar ou empurrar. Nas telas, o que se percebe com frequência é uma pista visual da ação, chamada signifier.",
+          "observation": "A placa e a alça sugerem ações diferentes. A figura ilustra a relação entre forma e uso; não afirma que toda pessoa interpretará uma porta sem contexto.",
+          "application": "Ao desenhar um botão, pense tanto na possibilidade real de acioná-lo quanto nos sinais que tornam essa ação reconhecível: área, rótulo e resposta.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><div class=\"k-col\"><div style=\"width:40px;height:68px;background:var(--paper-2);border:1.5px solid var(--ink);border-radius:3px;position:relative\"><i style=\"position:absolute;right:5px;top:30px;width:11px;height:9px;background:var(--ink);border-radius:2px\"></i></div><span class=\"mono\">placa → empurrar</span></div></div><div class=\"side\"><div class=\"k-col\"><div style=\"width:40px;height:68px;background:var(--paper-2);border:1.5px solid var(--ink);border-radius:3px;position:relative\"><i style=\"position:absolute;right:4px;top:22px;width:5px;height:24px;background:var(--ink);border-radius:3px\"></i></div><span class=\"mono\">alça → puxar</span></div></div></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Signifier",
+          "context": "Um signifier é um sinal perceptível que indica onde ou como agir. No ambiente digital, texto sublinhado, aparência de botão, posição e linguagem podem comunicar uma ação. A pista precisa corresponder ao comportamento: algo que parece um link deve funcionar como link.",
+          "observation": "As duas versões mostram o mesmo texto. Sublinhado e tratamento visual acrescentam uma convenção de interação sem mudar o significado das palavras.",
+          "application": "Em uma confirmação de compra, deixe o link para baixar o ingresso reconhecível. Não dependa apenas de uma mudança que aparece quando o ponteiro passa por cima.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><span style=\"font-size:12.5px;color:var(--ink-2)\">Baixar relatório</span></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><span style=\"font-size:12.5px;color:#1D4FA3;text-decoration:underline;text-underline-offset:3px;font-weight:500\">Baixar relatório</span></div></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Como se sabe que é clicável?",
+          "context": "As pessoas reconhecem controles a partir de convenções aprendidas e do contexto da tela. Um link inserido em um parágrafo costuma precisar de uma pista diferente de uma ação principal em um rodapé. A consistência do produto reforça o aprendizado a cada repetição.",
+          "observation": "Entre as quatro linhas, o link tem uma diferença perceptível além da posição. Procure o sinal que permite antecipar a interação antes de clicar.",
+          "application": "Ao revisar uma lista de visitas, escolha um tratamento estável para links e para ações. Evite usar a mesma aparência em um texto estático e em um controle.",
+          "visualHtml": "<div class=\"k-card\"><div class=\"k-col\" style=\"align-items:flex-start;gap:5px;color:var(--ink-2);font-size:11.5px\"><span>Baixar relatório</span><span style=\"color:#1D4FA3;text-decoration:underline\">Baixar relatório</span><span>Baixar relatório</span><span>Baixar relatório</span></div></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Erro clássico: visual primeiro",
+          "context": "Começar pela aparência pode levar a uma tela cuja hierarquia ainda não acompanha a tarefa. Um wireframe anotado ajuda a definir o papel de cada elemento antes de ajustar cor, tipografia e profundidade. Ele não precisa ser feio; precisa tornar as decisões discutíveis.",
+          "observation": "A versão B explicita o papel da foto, do nome e da ação. As anotações justificam a estrutura que depois receberá acabamento visual.",
+          "application": "Na área de perfil, decida primeiro o que identifica a pessoa e qual ação é prioritária. Depois refine o tamanho do avatar, o alinhamento e os pesos tipográficos.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-card\"><div class=\"k-flow\" style=\"justify-content:flex-start;flex-wrap:nowrap\"><i class=\"k-av\" style=\"width:20px;height:20px;display:block\"></i><div class=\"k-col\" style=\"gap:3px;flex:1;align-items:stretch\"><div class=\"k-line\"></div><div class=\"k-line\" style=\"width:60%\"></div></div></div><div class=\"k-line\" style=\"margin-top:6px\"></div><div class=\"k-line\" style=\"width:80%;margin-top:4px\"></div></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-card mono\" style=\"font-size:9.5px\"><div style=\"border:1px dashed var(--ink-2);border-radius:4px;padding:3px 6px;margin-bottom:4px\">foto → identifica quem</div><div style=\"border:1px dashed var(--ink-2);border-radius:4px;padding:3px 6px;margin-bottom:4px\">nome → confirma</div><div style=\"border:1px dashed var(--accent);color:var(--accent);border-radius:4px;padding:3px 6px\">ação → o objetivo da tela</div></div></div></div>"
+        }
+      ],
+      "introduction": "<p>UX considera a experiência inteira: a necessidade, o caminho até a solução e o que acontece depois. UI dá forma à parte dessa experiência com a qual a pessoa interage. Ao escolher um botão, você também decide o que será percebido como ação e qual opção parece mais importante.</p><p>Uma tela pode ter boa composição e ainda esconder a informação necessária para decidir. Por isso, o acabamento começa pelo conteúdo. Antes de desenhar, esclareça quem usa, o que quer fazer e em qual situação. A interface precisa tornar essa intenção visível.</p>"
     },
     {
       "id": "principios-visuais",
@@ -88,7 +155,74 @@
           "kind": "Vídeo",
           "note": "Apple · em inglês, com transcrição"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "Hierarquia",
+          "context": "Hierarquia define a sequência provável de atenção. Em um card de exposição, nome, contexto e ação não precisam disputar o mesmo nível. Tamanho, peso, contraste e espaço ajudam a indicar o que apresenta o assunto e o que apenas complementa a leitura.",
+          "observation": "Observe a ordem em que você lê as três frases. O título combina tamanho e peso, enquanto o texto de apoio mantém presença com menor intensidade.",
+          "application": "Em uma página de produto, destaque o nome e as informações que sustentam a decisão. Deixe metadados em um nível secundário sem reduzir sua legibilidade.",
+          "visualHtml": "<div style=\"text-align:center;line-height:1.35\"><div class=\"spec\" style=\"font-size:21px;font-weight:700\">Visto em 1º</div><div style=\"font-size:13.5px;color:var(--ink-2)\">depois em 2º</div><div class=\"mono\">e o detalhe por último</div></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Contraste",
+          "context": "Contraste é diferença perceptível entre elementos. Pode vir de tamanho, forma, peso ou cor; quando envolve leitura, também precisa ser medido entre frente e fundo. Uma legenda discreta não deve ficar tão clara que desapareça para parte das pessoas.",
+          "observation": "O exemplo altera a intensidade do texto sobre o mesmo fundo. A versão A demonstra deliberadamente um contraste fraco; o significado das palavras não muda.",
+          "application": "Em um painel, diferencie o valor principal da descrição usando peso e escala. Confira o contraste real dos textos secundários em vez de tratá-los como decoração.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><span style=\"color:#BDB7AA;font-size:12.5px\">quase some no fundo</span></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><span style=\"font-size:12.5px;font-weight:600\">se distingue na hora</span></div></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Equilíbrio",
+          "context": "Equilíbrio trata da distribuição de peso visual. Uma forma maior, mais escura ou mais saturada pode atrair mais atenção que outra. Simetria distribui elementos de forma espelhada; assimetria pode equilibrar pesos diferentes sem repetir exatamente a mesma posição.",
+          "observation": "À esquerda, os pesos são equivalentes. À direita, tamanho e distância variam. A comparação apresenta duas estratégias, sem transformar uma delas em solução universal.",
+          "application": "Em uma tela de boas-vindas, uma imagem expressiva pode ser equilibrada por uma coluna de texto mais contida. Revise o conjunto antes de centralizar tudo automaticamente.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><div class=\"k-col\"><div class=\"k-flow\" style=\"gap:16px;flex-wrap:nowrap\"><i style=\"width:15px;height:15px;background:var(--ink);border-radius:3px\"></i><i style=\"width:15px;height:15px;background:var(--ink);border-radius:3px\"></i></div><div style=\"width:76px;border-top:2px solid var(--ink-2)\"></div><span class=\"mono\">simétrico</span></div></div><div class=\"side\"><div class=\"k-col\"><div class=\"k-flow\" style=\"gap:24px;flex-wrap:nowrap\"><i style=\"width:21px;height:21px;background:var(--accent);border-radius:3px\"></i><i style=\"width:10px;height:10px;background:var(--ink);border-radius:3px\"></i></div><div style=\"width:76px;border-top:2px solid var(--ink-2)\"></div><span class=\"mono\">assimétrico</span></div></div></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Proximidade",
+          "context": "Proximidade sugere que elementos pertencem ao mesmo grupo. Quando o rótulo fica tão distante do próprio valor quanto do próximo campo, a relação se torna ambígua. O intervalo interno deve ser distinguível do intervalo entre assuntos diferentes.",
+          "observation": "Na versão B, duas linhas próximas formam uma unidade e um intervalo maior separa o grupo seguinte. As linhas são iguais; só o ritmo do espaço muda.",
+          "application": "Em um resumo de compra, mantenha cada rótulo próximo ao seu valor. Separe dados de pagamento, endereço e entrega com um intervalo mais amplo.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-col\" style=\"align-items:stretch;gap:7px;width:100%\"><div class=\"k-line\" style=\"width:40%;height:4px\"></div><div class=\"k-line\"></div><div class=\"k-line\" style=\"width:40%;height:4px\"></div><div class=\"k-line\"></div></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-col\" style=\"align-items:stretch;width:100%\"><div class=\"k-line\" style=\"width:40%;height:4px\"></div><div class=\"k-line\"></div><div class=\"k-line\" style=\"width:40%;height:4px;margin-top:9px\"></div><div class=\"k-line\" style=\"margin-top:1px\"></div></div></div></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Alinhamento",
+          "context": "Alinhamento cria eixos compartilhados para guiar a leitura. Pequenos deslocamentos sem uma razão visível fazem a tela parecer composta por decisões independentes. Alinhar não significa dar a todos os elementos a mesma largura, mas esclarecer as relações entre eles.",
+          "observation": "A guia vertical da versão B evidencia um único ponto de partida. Na versão A, cada linha começa em um lugar e cria um eixo diferente.",
+          "application": "Ao revisar cards, confira se título, descrição e ação partem da mesma margem. Preserve exceções apenas quando ajudarem a organização ou a percepção.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-col\" style=\"align-items:stretch;width:100%;gap:6px\"><div class=\"k-line\" style=\"width:55%\"></div><div class=\"k-line\" style=\"width:70%;margin-left:18px\"></div><div class=\"k-line\" style=\"width:45%;margin-left:8px\"></div></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div style=\"position:relative;width:100%\"><div class=\"k-col\" style=\"align-items:stretch;width:100%;gap:6px\"><div class=\"k-line\" style=\"width:55%\"></div><div class=\"k-line\" style=\"width:70%\"></div><div class=\"k-line\" style=\"width:45%\"></div></div><i style=\"position:absolute;left:-4px;top:-4px;bottom:-4px;width:1.5px;background:var(--accent)\"></i></div></div></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Repetição e consistência",
+          "context": "Repetição facilita reconhecer papéis equivalentes. Se filtros do mesmo tipo mudam de formato, fundo e fonte sem motivo, a interface pode sugerir diferenças inexistentes. Consistência inclui aparência e comportamento: o padrão visual ensina uma expectativa sobre o uso.",
+          "observation": "Compare os três rótulos de cada lado. A versão B mantém forma, tipografia e preenchimento, estabelecendo uma família para itens com a mesma função.",
+          "application": "Em um catálogo, use a mesma estrutura para tags de categoria. Reserve uma variação explícita para seleção, indisponibilidade ou outro significado necessário.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-flow\"><span class=\"k-chip\">tag</span><span class=\"k-chip\" style=\"border-radius:3px;background:var(--accent-soft)\">tag</span><span class=\"k-chip\" style=\"font-family:var(--font-body)\">tag</span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-flow\"><span class=\"k-chip\">tag</span><span class=\"k-chip\">tag</span><span class=\"k-chip\">tag</span></div></div></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Espaço negativo",
+          "context": "Espaço negativo é a área não ocupada pelos elementos principais. Ele permite separar grupos e tornar um conteúdo mais presente. Aumentar espaço indiscriminadamente também pode quebrar relações; o objetivo é criar respiro sem afastar informações que precisam ser lidas juntas.",
+          "observation": "A versão B aumenta a distância entre o conteúdo e a borda, além de organizar as linhas. Observe como o bloco fica mais definido sem receber mais cor ou efeitos.",
+          "application": "Em um card compacto, ajuste primeiro o padding e os intervalos internos. Só depois avalie se ainda é necessário acrescentar uma borda ou uma sombra.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-card\" style=\"padding:4px\"><div class=\"k-line\"></div><div class=\"k-line\" style=\"margin-top:3px\"></div><div class=\"k-line\" style=\"margin-top:3px;width:70%\"></div></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-card\" style=\"padding:16px\"><div class=\"k-line\"></div><div class=\"k-line\" style=\"margin-top:10px\"></div><div class=\"k-line\" style=\"margin-top:10px;width:70%\"></div></div></div></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Unidade e variedade",
+          "context": "Unidade cria uma base coerente; variedade introduz diferenças com intenção. Quando cada card tem um estilo próprio, falta referência para perceber o destaque. Quando todos são idênticos em todos os aspectos, pode faltar uma indicação útil sobre o que merece atenção.",
+          "observation": "Os seis elementos compartilham proporção e raio. A variação de preenchimento e borda destaca apenas um deles, sem romper a estrutura comum.",
+          "application": "Em uma lista de planos, mantenha a base dos cards estável e use uma diferença pontual para um estado selecionado. O destaque precisa ter um significado claro.",
+          "visualHtml": "<div style=\"display:grid;grid-template-columns:repeat(3,1fr);gap:5px;width:100%\"><i style=\"height:24px;border:1px solid var(--line);border-radius:5px;background:#fff\"></i><i style=\"height:24px;border:1px solid var(--line);border-radius:5px;background:#fff\"></i><i style=\"height:24px;border:1px solid var(--line);border-radius:5px;background:#fff\"></i><i style=\"height:24px;border:1px solid var(--line);border-radius:5px;background:#fff\"></i><i style=\"height:24px;border:1.5px solid var(--accent);border-radius:5px;background:var(--accent-soft)\"></i><i style=\"height:24px;border:1px solid var(--line);border-radius:5px;background:#fff\"></i></div>"
+        }
+      ],
+      "introduction": "<p>Hierarquia visual é a diferença de importância percebida entre elementos. Tamanho, peso, posição, cor e espaço influenciam essa percepção. Uma boa tela permite reconhecer o assunto, encontrar a informação necessária e perceber o próximo passo.</p><p>Comece com poucos níveis. Um título identifica o conteúdo; um texto de apoio explica; metadados complementam. O botão principal pode usar contraste sem precisar competir em tamanho com o título. Destaque deve acompanhar prioridade, não a vontade de preencher espaços.</p>"
     },
     {
       "id": "leis-de-ux",
@@ -135,7 +269,74 @@
           "kind": "Artigo",
           "note": "Em inglês"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "Leis vêm da psicologia",
+          "context": "As chamadas leis de UX reúnem modelos e observações de origens diferentes. Algumas vêm de experimentos controlados; outras resumem tendências e princípios de projeto. Elas ajudam a formular hipóteses sobre esforço e compreensão, mas não substituem avaliar a tarefa real e o público específico.",
+          "observation": "O esquema conecta uma observação sobre comportamento a uma decisão de interface. O último passo ainda precisa ser confrontado com o uso do produto.",
+          "application": "Use uma lei para explicar o problema que pretende reduzir. Depois observe se a mudança ajuda alguém a localizar, entender e acionar o controle.",
+          "visualHtml": "<div class=\"k-flow\"><span class=\"k-chip\">mente</span><span class=\"arr\">→</span><span class=\"k-chip\">comportamento</span><span class=\"arr\">→</span><span class=\"k-chip\">lei</span><span class=\"arr\">→</span><span class=\"k-chip acc\">decisão de UI</span></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Lei de Fitts",
+          "context": "A lei de Fitts relaciona tempo de alcance à distância e ao tamanho do alvo. Na interface, um ícone pequeno pode ter uma área interativa maior. A decisão envolve precisão e separação entre ações, além de considerar o ponto de partida e o meio de entrada.",
+          "observation": "O ponto inicial é comum aos dois alvos. O alvo pequeno está mais distante; o maior, mais perto. O desenho apresenta a relação, não uma previsão numérica de tempo.",
+          "application": "Em uma ação recorrente, ofereça uma região de toque confortável e espaço para evitar acionamentos vizinhos. Confira o comportamento em aparelhos e posturas de uso diferentes.",
+          "visualHtml": "<div style=\"position:relative;width:100%;height:104px;background:var(--paper);border:1px dashed var(--line);border-radius:8px\"><i class=\"k-dot\" style=\"position:absolute;left:10px;bottom:10px;background:var(--paper-2);border:1px solid var(--ink-2)\"></i><i style=\"position:absolute;right:12px;top:12px;width:12px;height:12px;border-radius:50%;background:var(--accent)\"></i><i style=\"position:absolute;left:46px;bottom:24px;width:34px;height:34px;border-radius:50%;background:var(--accent)\"></i><span class=\"mono\" style=\"position:absolute;right:8px;top:32px\">longe + pequeno = lento</span><span class=\"mono\" style=\"position:absolute;left:56px;bottom:66px\">perto + grande = rápido</span></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Lei de Hick",
+          "context": "Hick–Hyman descreve uma relação entre tempo de escolha e quantidade de alternativas em determinadas condições. Em uma interface, familiaridade, organização e qualidade dos rótulos também interferem. Reduzir opções pode ajudar, mas esconder um destino necessário pode aumentar o trabalho total.",
+          "observation": "Na versão B, opções são agrupadas em categorias mais amplas. A comparação mostra redução na primeira camada; não elimina a necessidade de encontrar os itens agrupados.",
+          "application": "Em configurações, reúna preferências relacionadas sob nomes claros. Verifique se a pessoa reconhece em qual grupo está a opção que procura.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><ul class=\"k-menu\"><li>Perfil</li><li>Conta</li><li>Privacidade</li><li>Notificações</li><li>Aparência</li><li>Idioma</li><li>Ajuda</li><li>Sair</li></ul></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><ul class=\"k-menu\"><li>Conta</li><li>Preferências</li><li>Sair</li></ul></div></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Lei de Miller",
+          "context": "Memória de trabalho é limitada, mas a pesquisa de Miller não determina um número obrigatório de itens em um menu. Agrupar informação em unidades com sentido pode reduzir esforço. Reconhecer opções visíveis na tela também é diferente de precisar guardá-las temporariamente na memória.",
+          "observation": "O telefone recebe uma separação familiar por DDD e blocos numéricos. A sequência de dígitos permanece igual; a estrutura ajuda a reconhecer as partes.",
+          "application": "Mantenha o resumo de uma escolha visível na próxima etapa de um fluxo. Não use o número sete como justificativa automática para cortar itens de navegação.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><span class=\"mono\" style=\"font-size:13px\">11987654321</span></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><span class=\"mono\" style=\"font-size:13px;font-weight:600;color:var(--ink)\">11 98765-4321</span></div></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Lei de Jakob",
+          "context": "A lei de Jakob resume o valor das expectativas que as pessoas trazem de outros produtos. Um padrão conhecido reduz a necessidade de descobrir novamente o significado de cada controle. Isso não impede inovação; apenas exige que uma mudança compense o aprendizado que acrescenta.",
+          "observation": "O símbolo de compra aparece associado a conta na versão A e a uma estrutura de loja na versão B. O contexto muda a coerência do significado sugerido.",
+          "application": "Ao criar uma loja, mantenha busca, carrinho e retorno reconhecíveis. Use personalidade em tipografia, cor e imagens sem renomear ações comuns de forma ambígua.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-nav\"><span style=\"display:inline-flex\"><svg aria-hidden=\"true\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:14px;height:14px\"><path d=\"M5 8h14l-1.2 12H6.2L5 8z\"/><path d=\"M9 8a3 3 0 0 1 6 0\"/></svg></span><span>conta</span><i class=\"k-logo\" style=\"margin-left:auto\"></i></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-nav\"><i class=\"k-logo\"></i><span>Início</span><span>Loja</span><span style=\"margin-left:auto;display:inline-flex\"><svg aria-hidden=\"true\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:14px;height:14px\"><path d=\"M5 8h14l-1.2 12H6.2L5 8z\"/><path d=\"M9 8a3 3 0 0 1 6 0\"/></svg></span></div></div></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Lei de Tesler",
+          "context": "O princípio de Tesler lembra que parte da complexidade de uma tarefa precisa ser resolvida por alguém. Automação pode transferir trabalho para o sistema, desde que ele tenha dados confiáveis e ofereça correção. Simplesmente esconder campos não resolve os dados que continuam necessários.",
+          "observation": "A versão B usa uma entrada para recuperar parte do endereço. O exemplo é esquemático: número, complemento e eventual correção ainda precisam ser tratados.",
+          "application": "Em um formulário de endereço, preencha o que puder a partir do CEP e permita editar os resultados. Explique quando a busca não encontra os dados necessários.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-col\" style=\"align-items:stretch;width:100%;gap:4px\"><input class=\"k-input\" placeholder=\"cep\"><input class=\"k-input\" placeholder=\"rua\"><input class=\"k-input\" placeholder=\"número\"><input class=\"k-input\" placeholder=\"bairro\"><input class=\"k-input\" placeholder=\"cidade\"></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-col\" style=\"align-items:stretch;width:100%;gap:5px\"><input class=\"k-input\" placeholder=\"cep\"><span class=\"k-chip acc\" style=\"align-self:center\">parte do endereço preenchida</span></div></div></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Lei de Postel",
+          "context": "O princípio da robustez de Postel veio do contexto de protocolos. Em formulários, uma aplicação cuidadosa pode aceitar variações razoáveis e normalizar a apresentação. Essa tolerância não deve interpretar silenciosamente dados ambíguos nem relaxar validações de segurança.",
+          "observation": "Três formatos de telefone levam a uma representação consistente. A transformação remove variações de espaços e pontuação, preservando os dígitos que compõem o número.",
+          "application": "Aceite um telefone com ou sem separadores e apresente o formato reconhecível. Se faltar informação necessária, explique o que precisa ser corrigido.",
+          "visualHtml": "<div class=\"k-col\" style=\"align-items:stretch;width:100%;gap:3px\"><span class=\"mono\">(11) 98765-4321</span><span class=\"mono\">11 9 8765 4321</span><span class=\"mono\">11987654321</span><span class=\"arr\" style=\"align-self:center\">↓ normaliza</span><span class=\"k-chip acc\" style=\"align-self:center\">11 98765-4321</span></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Efeito estética-usabilidade",
+          "context": "O efeito estética-usabilidade descreve uma influência da aparência sobre a percepção de facilidade. Uma composição cuidada pode aumentar confiança e tolerância a dificuldades. Isso não comprova que o fluxo ficou mais rápido, acessível ou livre de erros; esses aspectos precisam ser avaliados separadamente.",
+          "observation": "As duas amostras alteram também a linguagem do controle, além da aparência. A comparação provoca uma percepção; não representa um experimento capaz de isolar o efeito estético.",
+          "application": "Ao refinar uma busca, avalie o acabamento e a conclusão da tarefa. Uma preferência visual é um achado diferente de conseguir encontrar o resultado correto.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-card\" style=\"background:#D8D2C2;border-style:dashed\"><span class=\"mono\" style=\"font-size:10px\">buscar_voos( )</span><div class=\"k-line\" style=\"margin-top:6px;background:#C6BFAE\"></div></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-card\" style=\"border-radius:12px;box-shadow:0 2px 10px rgba(35,31,25,.1)\"><b style=\"font-size:11.5px\">Buscar voos</b><div class=\"k-line\" style=\"margin-top:6px\"></div></div></div></div>"
+        }
+      ],
+      "introduction": "<p>A lei de Fitts relaciona o tempo para alcançar um alvo à distância até ele e ao seu tamanho. Em uma interface, um controle pequeno e distante tende a exigir mais precisão. A área clicável pode ser maior do que o ícone desenhado.</p><p>A consequência para o craft é direta: preserve espaço para os alvos, afaste ações que podem ser confundidas e considere o alcance no aparelho. O mínimo de uma norma não define sozinho uma boa experiência. As unidades e recomendações mudam entre web, iOS e Android.</p>"
     },
     {
       "id": "gestalt",
@@ -182,7 +383,74 @@
           "kind": "Vídeo",
           "note": "Apple · em inglês, com transcrição"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "O todo e as relações entre as partes",
+          "context": "A percepção organiza relações entre partes, em vez de registrar apenas uma coleção de elementos independentes. Uma forma pode emergir dos intervalos e da disposição de outras. Essa ideia ajuda a entender por que uma composição comunica algo que nenhum elemento isolado explica.",
+          "observation": "As três formas escuras sugerem os limites de um triângulo branco, embora não exista um contorno traçado entre elas. Observe a região vazia no centro.",
+          "application": "Em uma lista, alinhamentos e intervalos podem fazer uma área parecer um grupo antes de receber um container. Avalie o conjunto sem começar pela borda.",
+          "visualHtml": "<div class=\"illusion-sample\"><svg aria-hidden=\"true\" width=\"280\" height=\"190\" viewBox=\"0 0 200 165\" style=\"width:280px;height:190px\"><circle cx=\"50\" cy=\"40\" r=\"25\" fill=\"var(--ink)\"/><circle cx=\"150\" cy=\"40\" r=\"25\" fill=\"var(--ink)\"/><circle cx=\"100\" cy=\"126\" r=\"25\" fill=\"var(--ink)\"/><path d=\"M50 40H150L100 126Z\" fill=\"#fff\"/></svg><span class=\"mono\">Observe a forma branca sugerida no centro.</span></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Proximidade",
+          "context": "Elementos próximos tendem a ser percebidos como relacionados. Essa associação depende da distância relativa: não basta escolher um valor pequeno isolado. A separação entre grupos precisa ser maior que a separação entre os elementos que pertencem ao mesmo grupo.",
+          "observation": "Alterne a proximidade e acompanhe os mesmos nove pontos. O número, a cor e a forma permanecem; a distância passa a sugerir três conjuntos.",
+          "application": "Em um formulário, aproxime rótulo e campo e separe o próximo campo com mais espaço. A associação precisa continuar clara em diferentes larguras.",
+          "visualHtml": "<div class=\"k-col\"><div class=\"gz\" id=\"gz1\" style=\"display:flex\"><div class=\"gg\"><i class=\"k-dot\"></i><i class=\"k-dot\"></i><i class=\"k-dot\"></i></div><div class=\"gg\"><i class=\"k-dot\"></i><i class=\"k-dot\"></i><i class=\"k-dot\"></i></div><div class=\"gg\"><i class=\"k-dot\"></i><i class=\"k-dot\"></i><i class=\"k-dot\"></i></div></div><button class=\"k-chip\" data-toggle=\"gz1\" style=\"cursor:pointer\">alternar proximidade</button></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Similaridade",
+          "context": "Similaridade agrupa por atributos compartilhados, como cor, tamanho, orientação e forma. A aparência pode conectar elementos que estão distantes. Se o mesmo tratamento representar coisas diferentes no produto, esse agrupamento perceptivo pode induzir uma associação incorreta.",
+          "observation": "As cores sugerem famílias verticais na mesma malha. O espaçamento é constante; é a semelhança visual que organiza a leitura neste caso.",
+          "application": "Use o mesmo tratamento para filtros equivalentes e outro para o estado selecionado. Preserve também um sinal que não dependa exclusivamente da cor.",
+          "visualHtml": "<div class=\"k-col\" style=\"gap:7px\"><div class=\"k-flow\" style=\"gap:7px;flex-wrap:nowrap\"><i class=\"k-dot\"></i><i class=\"k-dot\" style=\"background:var(--accent)\"></i><i class=\"k-dot\"></i><i class=\"k-dot\" style=\"background:var(--accent)\"></i></div><div class=\"k-flow\" style=\"gap:7px;flex-wrap:nowrap\"><i class=\"k-dot\"></i><i class=\"k-dot\" style=\"background:var(--accent)\"></i><i class=\"k-dot\"></i><i class=\"k-dot\" style=\"background:var(--accent)\"></i></div><div class=\"k-flow\" style=\"gap:7px;flex-wrap:nowrap\"><i class=\"k-dot\"></i><i class=\"k-dot\" style=\"background:var(--accent)\"></i><i class=\"k-dot\"></i><i class=\"k-dot\" style=\"background:var(--accent)\"></i></div></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Fechamento",
+          "context": "Fechamento descreve a tendência de completar formas a partir de partes visíveis. Na interface, limites não precisam ser sempre contínuos para sugerir uma unidade. Ainda assim, informação funcional não pode depender de alguém adivinhar um conteúdo que ficou oculto ou incompleto.",
+          "observation": "O círculo e o triângulo continuam reconhecíveis apesar das interrupções nos traços. As lacunas permitem observar a diferença entre o contorno físico e a forma percebida.",
+          "application": "Uma seção pode ser separada por divisores leves e espaço sem receber uma caixa fechada. Preserve pistas suficientes para identificar o início e o fim do conteúdo.",
+          "visualHtml": "<div class=\"k-flow\" style=\"gap:18px\"><svg aria-hidden=\"true\" width=\"56\" height=\"56\" viewBox=\"0 0 56 56\" style=\"width:56px;height:56px\"><circle cx=\"28\" cy=\"28\" r=\"22\" fill=\"none\" stroke=\"var(--ink)\" stroke-width=\"2.5\" stroke-dasharray=\"7 8\"/></svg><svg aria-hidden=\"true\" width=\"60\" height=\"56\" viewBox=\"0 0 60 56\" style=\"width:60px;height:56px\"><path d=\"M30 8 L54 48 L6 48 Z\" fill=\"none\" stroke=\"var(--accent)\" stroke-width=\"2.5\" stroke-dasharray=\"8 7\"/></svg></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Continuidade",
+          "context": "Continuidade favorece acompanhar trajetórias e alinhamentos suaves. Em uma composição, o olho pode seguir um eixo mesmo quando ele cruza outra forma. Uma interrupção ou mudança brusca de direção exige mais interpretação e pode desviar a atenção sem intenção.",
+          "observation": "As duas curvas se cruzam, mas ainda podem ser acompanhadas como percursos contínuos. Observe a direção de cada linha antes e depois do encontro.",
+          "application": "Em uma sequência de etapas, mantenha conectores e alinhamentos coerentes. Use uma quebra quando houver uma mudança real no processo, não por falta de espaço.",
+          "visualHtml": "<svg aria-hidden=\"true\" width=\"112\" height=\"60\" viewBox=\"0 0 112 60\" style=\"width:112px;height:60px\"><path d=\"M5 50 C 35 5, 77 55, 107 10\" fill=\"none\" stroke=\"var(--ink)\" stroke-width=\"2.5\"/><path d=\"M5 10 C 35 55, 77 5, 107 50\" fill=\"none\" stroke=\"var(--accent)\" stroke-width=\"2.5\"/></svg>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Figura-fundo",
+          "context": "Figura-fundo é a relação entre uma forma percebida como assunto e uma região que funciona como suporte. Essa relação pode se alternar em imagens ambíguas. Na interface, porém, controles e conteúdos essenciais precisam manter distinção suficiente para serem encontrados.",
+          "observation": "A forma central clara e as laterais escuras podem sugerir interpretações diferentes. A região vazia também participa do desenho, em vez de funcionar como ausência neutra.",
+          "application": "Ao abrir um diálogo sobre uma tela, separe a camada temporária do contexto. Confira leitura e foco sem depender apenas de uma sombra sutil.",
+          "visualHtml": "<div class=\"illusion-sample\"><svg aria-hidden=\"true\" width=\"260\" height=\"185\" viewBox=\"0 0 220 150\" style=\"width:260px;height:185px\"><rect width=\"220\" height=\"150\" rx=\"9\" fill=\"var(--ink)\"/><path d=\"M67 15H153C149 27 138 35 139 45L149 54 140 61 146 69 138 75C142 88 140 101 128 117L143 135H77L92 117C80 101 78 88 82 75L74 69 80 61 71 54 81 45C82 35 71 27 67 15Z\" fill=\"#fff\"/></svg><span class=\"mono\">Qual área você percebe como figura?</span></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Região comum",
+          "context": "Uma região compartilhada pode sugerir pertencimento mesmo quando seus elementos não estão tão próximos. Um fundo ou contorno cria uma fronteira perceptiva. O efeito deve reforçar relações reais do conteúdo; acrescentar caixas sem necessidade cria grupos que talvez não façam sentido.",
+          "observation": "Os pontos dentro de cada contorno são percebidos como conjuntos. O ponto fora das caixas não participa da mesma fronteira, apesar de manter aparência semelhante.",
+          "application": "Em uma tela de preferências, use uma superfície para reunir controles do mesmo assunto. Evite colocar todos os campos em cartões separados se isso fragmentar a leitura.",
+          "visualHtml": "<div class=\"k-flow\" style=\"gap:10px;flex-wrap:nowrap\"><span style=\"border:1.5px solid var(--ink-2);border-radius:8px;padding:8px;display:flex;gap:7px\"><i class=\"k-dot\"></i><i class=\"k-dot\"></i></span><span style=\"border:1.5px solid var(--ink-2);border-radius:8px;padding:8px;display:flex;gap:7px\"><i class=\"k-dot\"></i><i class=\"k-dot\"></i></span><i class=\"k-dot\"></i></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Simetria (Prägnanz)",
+          "context": "Prägnanz está associada à organização perceptiva em formas simples e estáveis. Simetria pode favorecer uma leitura regular, mas não explica sozinha toda percepção de ordem. Uma interface assimétrica também pode ser clara quando os alinhamentos e as relações estão bem definidos.",
+          "observation": "Compare a regularidade das formas à esquerda com as curvas menos previsíveis à direita. A amostra apresenta uma diferença de organização, não um julgamento universal de beleza.",
+          "application": "Em um painel, mantenha uma estrutura estável para informações equivalentes. Introduza assimetria onde ela ajude a prioridade do conteúdo e não apenas para variar a composição.",
+          "visualHtml": "<svg aria-hidden=\"true\" width=\"110\" height=\"50\" viewBox=\"0 0 110 50\" style=\"width:110px;height:50px\"><path d=\"M20 8 C8 8 8 42 20 42\" fill=\"none\" stroke=\"var(--ink)\" stroke-width=\"2.5\"/><path d=\"M34 8 C46 8 46 42 34 42\" fill=\"none\" stroke=\"var(--ink)\" stroke-width=\"2.5\"/><path d=\"M66 8 C56 14 78 30 64 42\" fill=\"none\" stroke=\"var(--accent)\" stroke-width=\"2.5\"/><path d=\"M92 8 C80 22 100 30 90 42\" fill=\"none\" stroke=\"var(--accent)\" stroke-width=\"2.5\"/></svg>"
+        }
+      ],
+      "introduction": "<p>A Gestalt estuda como organizamos o que percebemos. Em uma interface, não enxergamos somente textos, ícones e linhas independentes: percebemos uma lista, uma área de filtros ou um conjunto de ações. O todo produz uma interpretação que não está em cada parte isolada.</p><p>Essas tendências ajudam a entender por que uma composição parece clara ou confusa. Não são uma garantia sobre todas as pessoas e contextos. Uma mesma tela pode combinar vários princípios, e uma pista forte pode competir com outra.</p>"
     },
     {
       "id": "heuristicas",
@@ -223,7 +491,98 @@
           "kind": "Vídeo",
           "note": "Apple · em inglês, com transcrição"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "Visibilidade do status",
+          "context": "Depois de acionar um controle, a pessoa precisa saber se o sistema recebeu a ação e o que está acontecendo. Um processo sem resposta perceptível convida a clicar novamente ou abandonar a tarefa. O feedback deve distinguir espera, conclusão e falha.",
+          "observation": "A barra e a frase comunicam o mesmo andamento. Uma porcentagem só deve ser usada quando o sistema consegue estimar o progresso de maneira confiável.",
+          "application": "Ao enviar um formulário, mostre um estado de processamento e depois o resultado. Se a duração for indeterminada, prefira uma indicação de espera sem porcentagem fictícia.",
+          "visualHtml": "<div class=\"k-col\" style=\"align-items:stretch;width:100%;gap:6px\"><div class=\"k-prog\"><i style=\"width:62%\"></i></div><span class=\"mono\">Salvando alterações… 62%</span></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Falar a língua do usuário",
+          "context": "A linguagem da interface deve se aproximar dos conceitos conhecidos pelo público. Termos internos, códigos e símbolos inventados podem exigir que a pessoa aprenda a organização do sistema antes de realizar uma tarefa simples. Familiaridade depende de contexto e repertório.",
+          "observation": "Um símbolo sem associação clara é comparado a uma lixeira reconhecível no contexto de excluir. Um rótulo pode esclarecer a ação quando o desenho sozinho não basta.",
+          "application": "Em uma área de arquivos, use verbos claros como mover ou excluir. Confira se nomes de etapas descrevem o trabalho da pessoa, e não o nome de um serviço interno.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-col\"><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><path d=\"M3 13c3-7 5 6 8 0s4 5 5-1 3-4 5-2\"/></svg></span><span class=\"mono\">???</span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-col\"><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13\"/></svg></span><span class=\"mono\">lixeira = excluir</span></div></div></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Controle e liberdade",
+          "context": "Controle e liberdade incluem poder sair de um caminho, cancelar e recuperar uma ação quando isso for possível. A proteção adequada depende do impacto e da reversibilidade. Um desfazer útil pode reduzir o peso de confirmações repetidas, mas não torna toda operação recuperável.",
+          "observation": "O aviso de exclusão mantém uma ação de desfazer próxima ao resultado. A mensagem precisa permanecer tempo suficiente e não depender apenas de uma notificação passageira.",
+          "application": "Ao remover uma visita de uma lista, ofereça recuperação quando o produto suportar essa operação. Em ações irreversíveis, explique as consequências antes da confirmação.",
+          "visualHtml": "<div class=\"k-col\" style=\"width:100%\"><div class=\"k-toast\">Item excluído <b>Desfazer</b></div><span class=\"mono\" style=\"margin-top:6px\">o undo vale mais que mil confirmações</span></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Consistência e padrões",
+          "context": "Consistência permite reconhecer uma lógica aprendida em outras telas. A posição de cancelar e confirmar deve seguir as convenções relevantes e o padrão do produto. Não existe uma única ordem correta para todas as plataformas, idiomas e contextos.",
+          "observation": "A amostra contrapõe dois arranjos para as mesmas ações. Use-a para observar a posição e o destaque; a versão B não define uma regra universal de ordem.",
+          "application": "Ao criar diálogos de confirmação, mantenha a mesma lógica dentro do produto e respeite a plataforma. A ação destrutiva deve se distinguir pelo significado e pelo texto.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-card\"><div class=\"k-line\" style=\"width:60%\"></div><div class=\"k-flow\" style=\"justify-content:flex-start;margin-top:8px;flex-wrap:nowrap\"><span class=\"k-btn sm acc\">OK</span><span class=\"k-chip\">Cancelar</span></div></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-card\"><div class=\"k-line\" style=\"width:60%\"></div><div class=\"k-flow\" style=\"justify-content:flex-end;margin-top:8px;flex-wrap:nowrap\"><span class=\"k-chip\">Cancelar</span><span class=\"k-btn sm acc\">OK</span></div></div></div></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Prevenção de erros",
+          "context": "Prevenir um erro significa reduzir a chance de ele acontecer e explicar requisitos antes da falha. Um campo com instrução adequada e validação localizada pode ajudar mais que uma mensagem genérica depois do envio. Desabilitar um botão não é a única estratégia disponível.",
+          "observation": "As duas versões usam um e-mail incompleto. A versão B explica a condição antes do envio, mas um botão indisponível só é útil se o motivo estiver compreensível.",
+          "application": "Mostre um exemplo de formato perto do campo e permita corrigir sem perder os outros dados. Avalie se validar ao sair do campo ou ao enviar ajuda mais à tarefa.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-card\"><input class=\"k-input\" value=\"ana@\" readonly><span class=\"k-btn sm\" style=\"display:block;margin-top:6px\">Enviar</span><span class=\"mono\" style=\"color:var(--err);display:block;margin-top:4px\">Erro: e-mail inválido</span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-card\"><input class=\"k-input\" value=\"ana@\" readonly><span class=\"k-btn sm dis\" style=\"display:block;margin-top:6px\">Enviar</span><span class=\"mono\" style=\"display:block;margin-top:4px\">complete o e-mail para liberar</span></div></div></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Reconhecimento > memória",
+          "context": "Reconhecimento aproveita informação visível; memorização exige recuperar algo que não está disponível naquele momento. Símbolos pouco familiares aumentam essa exigência. A combinação de ícone e texto costuma tornar alternativas mais compreensíveis sem depender de treinamento prévio.",
+          "observation": "A versão B associa nomes aos ícones. O rótulo permite confirmar o significado em vez de deduzi-lo somente pela forma.",
+          "application": "Em uma barra com funções específicas do produto, preserve labels ou nomes acessíveis. Não esconda uma ação essencial atrás de um símbolo que só a equipe reconhece.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.5-4.5\"/></svg></span><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M12 20.5C7 16.5 3 13.3 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3 1 4.3 2.6 1-1.6 2.6-2.6 4.3-2.6 2.5 0 4.7 1.9 4.7 4.8 0 4-4 7.2-9 11.2z\"/></svg></span><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M18 16v-5a6 6 0 1 0-12 0v5l-1.8 3h15.6L18 16z\"/><path d=\"M10 21a2 2 0 0 0 4 0\"/></svg></span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><span class=\"k-chip\" style=\"display:inline-flex;align-items:center;gap:5px\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.5-4.5\"/></svg>Busca</span><span class=\"k-chip\" style=\"display:inline-flex;align-items:center;gap:5px\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M12 20.5C7 16.5 3 13.3 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3 1 4.3 2.6 1-1.6 2.6-2.6 4.3-2.6 2.5 0 4.7 1.9 4.7 4.8 0 4-4 7.2-9 11.2z\"/></svg>Salvos</span></div></div></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Flexibilidade e eficiência",
+          "context": "Pessoas experientes podem se beneficiar de atalhos e caminhos mais diretos. Esses recursos precisam conviver com uma apresentação compreensível para quem está começando. Eficiência não exige ocultar o caminho convencional nem transformar o primeiro uso em um aprendizado de comandos.",
+          "observation": "O botão mantém um nome claro e acrescenta a combinação de teclas como apoio. A ação continua disponível para quem não conhece ou não usa o atalho.",
+          "application": "Em uma ferramenta de trabalho, apresente atalhos nas ações recorrentes e preserve o acesso por menus. Evite combinações que conflitem com o navegador ou o sistema.",
+          "visualHtml": "<div class=\"k-flow\"><span class=\"k-btn sm\">Salvar</span><span class=\"k-kbd\">⌘ S</span></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Estética minimalista",
+          "context": "Minimalismo considera a relevância da informação para a tarefa. Uma tela com poucos elementos ainda pode ser confusa; outra mais densa pode funcionar bem quando há uma hierarquia clara. Retirar conteúdo útil apenas para aumentar o vazio não melhora automaticamente a experiência.",
+          "observation": "A versão A acumula selos e rótulos com pesos semelhantes. A versão B reduz sinais concorrentes, permitindo que o título defina o assunto principal.",
+          "application": "Em um card, questione cada selo promocional e cada metadado. Preserve a informação que realmente permite comparar as opções ou decidir o próximo passo.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-card\" style=\"border:2px solid var(--accent);position:relative\"><span class=\"k-chip acc\" style=\"position:absolute;top:-9px;right:6px\">NOVO!</span><b style=\"font-size:11px\">Título!!!</b><div class=\"k-line\" style=\"margin-top:4px\"></div><div class=\"k-flow\" style=\"margin-top:5px;gap:4px\"><span class=\"k-chip\">tag</span><span class=\"k-chip\">tag</span><span class=\"k-chip acc\">promo</span></div></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-card\"><b style=\"font-size:11.5px\">Título</b><div class=\"k-line\" style=\"margin-top:6px\"></div><div class=\"k-line\" style=\"width:70%;margin-top:5px\"></div></div></div></div>"
+        },
+        {
+          "id": "conceito-09",
+          "title": "Recuperação de erros",
+          "context": "Uma mensagem de erro deve explicar o problema em linguagem compreensível e indicar uma saída possível. Códigos técnicos podem ser úteis para suporte, mas não devem ser a única orientação. O tom precisa respeitar o momento e a sensibilidade dos dados envolvidos.",
+          "observation": "Compare o código isolado com a mensagem que identifica o campo e oferece recuperação. Informações como tentativas restantes só devem aparecer quando forem úteis e adequadas à segurança do fluxo.",
+          "application": "Em uma falha de formulário, mantenha os dados preenchidos e aproxime a explicação do ponto que precisa de correção. Ofereça uma ação de recuperação real.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-card mono\">ERR_0x8004<br>falha na operação</div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-card\"><b style=\"font-size:11.5px\">Senha incorreta</b><div class=\"mono\" style=\"margin:4px 0\">restam 2 tentativas</div><span class=\"k-chip acc\">Recuperar senha</span></div></div></div>"
+        },
+        {
+          "id": "conceito-10",
+          "title": "Ajuda e documentação",
+          "context": "Ajuda contextual reduz a distância entre a dúvida e a resposta. Uma explicação curta perto do campo pode evitar uma saída para uma página de documentação. Quando o assunto é mais complexo, um link de aprofundamento pode complementar a instrução local.",
+          "observation": "A amostra situa a orientação junto do código de convite. O texto precisa esclarecer de onde o código vem e se ele é obrigatório para continuar.",
+          "application": "Em um cadastro, explique um identificador desconhecido no próprio formulário. Não use um placeholder como único lugar para uma instrução que precisa continuar visível durante a digitação.",
+          "visualHtml": "<div class=\"k-card\"><span class=\"mono\">CÓDIGO CONVITE <span class=\"k-chip\" style=\"padding:2px 7px;margin-left:4px\">?</span></span><input class=\"k-input\" style=\"margin-top:5px\"><div class=\"mono\" style=\"margin-top:5px\">enviado por quem te indicou</div></div>"
+        },
+        {
+          "id": "conceito-11",
+          "title": "Avaliação heurística",
+          "context": "A avaliação heurística percorre uma tarefa e registra problemas a partir de princípios de usabilidade. A lista não representa uma certificação da interface. O resultado útil inclui evidência, consequência e prioridade, além do nome da heurística relacionada.",
+          "observation": "As marcações sugerem pontos de revisão. Um item negativo precisa indicar em qual tela aparece e qual dificuldade pode causar, e não apenas receber um sinal de alerta.",
+          "application": "Percorra o fluxo de salvar uma visita, incluindo espera, erro e retorno. Descreva o problema observado e priorize pelo impacto, pela frequência e pela possibilidade de recuperação.",
+          "visualHtml": "<div class=\"k-card\"><div class=\"mono\" style=\"display:flex;flex-direction:column;gap:5px\"><span>✓ status visível</span><span>✓ padrões consistentes</span><span>✓ erros prevenidos</span><span style=\"color:var(--err)\">✗ saída de emergência</span></div></div>"
+        }
+      ],
+      "introduction": "<p>As dez heurísticas de Nielsen são orientações gerais de usabilidade. Elas ajudam a revisar uma interface, mas uma avaliação heurística não substitui observar pessoas usando o produto. A aparência de qualidade pode esconder dificuldades reais.</p><ul><li><strong>1. Visibilidade do estado:</strong> mostre o resultado de uma ação e o andamento de processos.</li><li><strong>2. Correspondência com o mundo real:</strong> use termos e sequências que façam sentido para quem usa.</li><li><strong>3. Controle e liberdade:</strong> ofereça saída, cancelamento e desfazer quando apropriado.</li></ul><p>No craft, isso aparece em uma confirmação próxima do botão, uma ação de voltar previsível e um título que descreve o conteúdo da tela.</p>"
     },
     {
       "id": "marca-na-interface",
@@ -264,7 +623,82 @@
           "kind": "Artigo",
           "note": "Em inglês"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "UI como ponto de contato",
+          "context": "Em produtos usados com frequência, a interface pode se tornar um contato cotidiano com a marca. Mais que repetir o logotipo, ela expressa escolhas de ritmo, linguagem, imagem e comportamento. A presença da marca se acumula ao longo das interações.",
+          "observation": "A marca aparece em diferentes superfícies de um mesmo sistema. Observe a continuidade entre os elementos, em vez de procurar apenas uma assinatura no cabeçalho.",
+          "application": "Em um aplicativo de serviços, mantenha tipografia, tom e padrões de resposta coerentes entre consulta, ação e confirmação. A rotina também comunica identidade.",
+          "visualHtml": "<div class=\"k-frame\"><div class=\"scr\" style=\"display:grid;grid-template-columns:repeat(3,1fr);gap:5px;align-content:start\"><i style=\"height:14px;border-radius:4px;background:var(--paper-2)\"></i><i style=\"height:14px;border-radius:4px;background:var(--paper-2)\"></i><i style=\"height:14px;border-radius:4px;background:var(--paper-2)\"></i><i style=\"height:14px;border-radius:4px;background:var(--paper-2)\"></i><i style=\"height:14px;border-radius:4px;background:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)\"></i><i style=\"height:14px;border-radius:4px;background:var(--paper-2)\"></i><i style=\"height:14px;border-radius:4px;background:var(--paper-2)\"></i><i style=\"height:14px;border-radius:4px;background:var(--paper-2)\"></i><i style=\"height:14px;border-radius:4px;background:var(--paper-2)\"></i></div></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Personalidade traduzida",
+          "context": "Personalidade precisa ser traduzida em decisões verificáveis. Uma marca sóbria pode usar tipografia editorial, contraste contido e poucos acentos; uma marca enérgica pode preferir cor intensa e formas mais arredondadas. São direções possíveis, não fórmulas fixas para um adjetivo.",
+          "observation": "Alterne Meridian e Pulse. Conteúdo e função permanecem, enquanto tipo, cor, raio e proporção alteram a personalidade percebida do mesmo card.",
+          "application": "Ao levar uma identidade para o produto, teste mais de um componente. Uma direção precisa funcionar também em formulários, mensagens e telas densas.",
+          "visualHtml": "<div class=\"k-col\" style=\"width:100%\"><div class=\"seg\" style=\"margin-bottom:4px\"><button id=\"skinA\" aria-pressed=\"true\">Meridian</button><button id=\"skinB\" aria-pressed=\"false\">Pulse</button></div><div class=\"brand-card skin-a\" id=\"brandCard\"><span class=\"b-eyebrow\">Saldo disponível</span><p class=\"b-value\">R$ 4.250,00</p><p class=\"b-sub\">conta corrente · agora</p><span class=\"b-btn\">Transferir</span></div></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Da identidade ao componente",
+          "context": "Uma identidade visual se torna um sistema de interface quando suas características chegam a componentes recorrentes. A cor de marca pode orientar uma ação; uma linguagem de formas pode orientar cantos e imagens. A adaptação precisa preservar o reconhecimento dos controles.",
+          "observation": "A sequência conecta os elementos de identidade ao botão. O resultado deve manter aparência de ação, mesmo carregando uma assinatura visual própria.",
+          "application": "Defina como a marca aparece em botões, campos e navegação. Documente quais decisões são consistentes e quais dependem do contexto de uso.",
+          "visualHtml": "<div class=\"k-flow\"><i class=\"k-sw\" style=\"background:#FF5C39;border-radius:9px\"></i><span class=\"arr\">→</span><span class=\"k-btn sm\" style=\"background:#FF5C39;border-color:#FF5C39;border-radius:14px\">Começar</span></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Voz e tom",
+          "context": "Voz é uma personalidade relativamente constante; tom muda conforme a situação. Humor e informalidade podem funcionar em uma apresentação e soar inadequados diante de uma falha importante. Uma mensagem precisa orientar antes de buscar uma frase memorável.",
+          "observation": "As duas frases têm tons diferentes. A versão informal não é automaticamente melhor: o contexto, a gravidade do problema e a expectativa do público decidem sua adequação.",
+          "application": "Em uma falha de pagamento, priorize explicar o ocorrido e o próximo passo. Reserve brincadeiras para situações em que não minimizem a dificuldade de quem usa.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-card mono\">Não foi possível concluir a operação. Tente novamente.</div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-card\">Ops — algo saiu do eixo. <b>Bora tentar de novo?</b></div></div></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Marca vs padrão da plataforma",
+          "context": "Uma interface pode ser reconhecível como marca sem reinventar comportamentos conhecidos. Convenções de navegação, seleção e retorno reduzem esforço de aprendizado. A expressão pode aparecer na proporção, na cor e no conteúdo enquanto o controle mantém seu significado.",
+          "observation": "Compare a previsibilidade dos controles nas duas versões. A intenção é perceber quando uma intervenção de estilo começa a dificultar o reconhecimento da ação.",
+          "application": "Ao aplicar identidade em uma tela mobile, respeite os padrões de navegação e mantenha rótulos claros. Teste se a pessoa entende o comportamento sem uma explicação externa.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><span style=\"width:40px;height:22px;border-radius:4px;background:var(--accent);display:inline-block;position:relative;transform:rotate(-8deg)\"><i style=\"position:absolute;top:3px;right:3px;width:14px;height:14px;border-radius:2px;background:#fff\"></i></span></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><span style=\"width:38px;height:22px;border-radius:999px;background:var(--ok);display:inline-block;position:relative\"><i style=\"position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:50%;background:#fff\"></i></span></div></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Momentos de marca",
+          "context": "Momentos de descoberta, boas-vindas e conclusão podem acomodar uma presença maior da marca. Estados vazios também oferecem espaço para uma ilustração útil. A expressão precisa acompanhar uma informação que ajude a pessoa a entender o momento e continuar.",
+          "observation": "A imagem aparece junto de um título e de um convite para começar. O estado vazio não depende apenas da ilustração para explicar por que a área está sem conteúdo.",
+          "application": "Quando uma lista de favoritos estiver vazia, explique como adicionar o primeiro item e ofereça o caminho para explorar. Use personalidade sem esconder essa orientação.",
+          "visualHtml": "<div class=\"k-card\" style=\"text-align:center\"><svg aria-hidden=\"true\" width=\"42\" height=\"30\" viewBox=\"0 0 42 30\" style=\"width:42px;height:30px\"><path d=\"M4 26 C4 12 14 4 21 4 C28 4 38 12 38 26 Z\" fill=\"var(--accent-soft)\" stroke=\"var(--accent)\"/></svg><b style=\"display:block;font-size:11.5px;margin-top:6px\">Nada por aqui ainda</b><span class=\"mono\">que tal começar algo?</span></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Momentos neutros",
+          "context": "Tarefas repetitivas e delicadas costumam pedir mais discrição visual. Um formulário não precisa reforçar o logotipo entre todos os campos. A marca continua presente na qualidade da tipografia, no tom e na consistência, mesmo quando sua expressão é mais contida.",
+          "observation": "A versão B dá prioridade aos campos e aos rótulos. A redução de estímulos libera atenção para o preenchimento, sem exigir que o produto perca sua identidade.",
+          "application": "Em uma edição de cadastro, mantenha os controles previsíveis e as instruções próximas. Avalie se algum elemento promocional interrompe o ritmo da tarefa.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-card\" style=\"position:relative;overflow:hidden\"><span style=\"position:absolute;right:-6px;bottom:-18px;font:700 52px var(--font-display);color:var(--accent-soft)\">B</span><input class=\"k-input\"><input class=\"k-input\" style=\"margin-top:5px\"></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-card\"><span class=\"mono\">NOME</span><input class=\"k-input\" style=\"margin:3px 0 6px\"><span class=\"mono\">E-MAIL</span><input class=\"k-input\" style=\"margin-top:3px\"></div></div></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Consistência como marca",
+          "context": "Repetições bem executadas criam reconhecimento. Margens, cantos, imagens e estados que compartilham a mesma lógica podem se tornar uma assinatura tão forte quanto uma cor. A marca também aparece na confiabilidade de um sistema que responde de maneira estável.",
+          "observation": "Os elementos repetidos pertencem à mesma família visual. Procure a relação comum que permite reconhecê-los como partes do mesmo produto.",
+          "application": "Revise componentes equivalentes em telas diferentes. Corrigir pequenas divergências de padding, ícones e estados reforça a identidade do conjunto.",
+          "visualHtml": "<div class=\"k-flow\" style=\"align-items:flex-start;gap:6px\"><div class=\"k-frame\" style=\"width:56px\"><div class=\"scr\"><div style=\"height:8px;border-radius:3px;background:var(--accent)\"></div><div class=\"k-line\"></div><div class=\"k-line\" style=\"width:60%\"></div></div></div><div class=\"k-frame\" style=\"width:56px\"><div class=\"scr\"><div style=\"height:8px;border-radius:3px;background:var(--accent)\"></div><div class=\"k-line\" style=\"width:70%\"></div><div class=\"k-line\"></div></div></div><div class=\"k-frame\" style=\"width:56px\"><div class=\"scr\"><div style=\"height:8px;border-radius:3px;background:var(--accent)\"></div><div class=\"k-line\" style=\"width:50%\"></div><div class=\"k-line\" style=\"width:80%\"></div></div></div></div>"
+        },
+        {
+          "id": "conceito-09",
+          "title": "Erro clássico: os dois extremos",
+          "context": "Expressividade pode se perder em dois extremos: transformar cada área em uma afirmação de marca ou remover toda característica reconhecível. O ajuste depende do momento e do objetivo da tela. Uma tarefa operacional e uma apresentação editorial podem pedir intensidades diferentes.",
+          "observation": "As duas versões mostram extremos deliberados. O objetivo não é escolher uma delas, mas perceber o que se perde com excesso de estímulo ou ausência de identidade.",
+          "application": "Defina momentos de maior expressão e mantenha uma base funcional estável. Compare o percurso inteiro para evitar que cada tela tenha uma personalidade desconectada.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-card\" style=\"background:var(--accent);color:#fff;text-align:center\"><b class=\"spec\">MINHA MARCA</b><span class=\"mono\" style=\"color:#F8D9CE;display:block;margin-top:4px\">logo e slogan em tudo</span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-card\" style=\"text-align:center\"><div class=\"k-line\"></div><div class=\"k-line\" style=\"margin-top:5px\"></div><span class=\"mono\" style=\"display:block;margin-top:6px\">poderia ser de qualquer empresa</span></div></div></div>"
+        }
+      ],
+      "introduction": "<p>Uma identidade chega à interface como um conjunto de escolhas: tipografia, cor, imagens, formas e linguagem. Dizer que uma marca é “premium” ainda não orienta o trabalho. É preciso traduzir essa intenção em proporções, contraste, densidade e ritmo.</p><p>Uma marca técnica pode usar uma estrutura precisa e vocabulário direto. Uma marca acolhedora pode trabalhar imagens próximas e um tom de apoio. Nenhuma dessas escolhas determina automaticamente um raio de borda ou uma fonte. São hipóteses visuais que precisam formar um conjunto.</p>"
     },
     {
       "id": "cor",
@@ -311,7 +745,74 @@
           "kind": "Artigo",
           "note": "Em inglês"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "Por que HSL engana",
+          "context": "HSL e HSV organizam valores de cor, mas não são modelos perceptualmente uniformes. Um passo numérico igual não garante uma diferença visual igual entre matizes. Por isso, a paleta precisa ser avaliada em contexto, com áreas, contrastes e tamanhos de uso reais.",
+          "observation": "Os dois matizes compartilham o mesmo valor de luminosidade HSL, mas não parecem ter o mesmo brilho. O número do seletor não descreve sozinho a percepção.",
+          "application": "Ao criar uma escala, compare os degraus lado a lado e teste texto, ícones e fundos. Não assuma que manter o mesmo L produz equivalência visual.",
+          "visualHtml": "<div class=\"k-flow\" style=\"gap:18px\"><div class=\"k-col\"><i class=\"k-sw\" style=\"width:32px;height:32px;background:hsl(230 70% 60%)\"></i><span class=\"mono\">L 60%</span></div><div class=\"k-col\"><i class=\"k-sw\" style=\"width:32px;height:32px;background:hsl(50 95% 60%)\"></i><span class=\"mono\">L 60%</span></div></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Harmonia cromática",
+          "context": "Harmonias cromáticas ajudam a explorar relações entre matizes. Uma direção monocromática usa variações de uma família; análogas, complementares e triádicas exploram outras posições no círculo cromático. Essas relações não definem sozinhas o papel de cada cor na interface.",
+          "observation": "Compare como as famílias variam em proximidade e contraste de matiz. As amostras apresentam direções de exploração, não uma aprovação automática de legibilidade.",
+          "application": "Escolha uma direção de paleta e depois distribua funções: base, texto, ação e feedback. Confira cada combinação que realmente aparecerá no produto.",
+          "visualHtml": "<div class=\"k-col\" style=\"align-items:stretch;gap:6px;width:100%\"><div class=\"k-flow\" style=\"justify-content:flex-start;gap:4px\"><span class=\"mono\" style=\"width:86px\">mono</span><i class=\"k-sw\" style=\"background:#F2A174\"></i><i class=\"k-sw\" style=\"background:#E0723A\"></i><i class=\"k-sw\" style=\"background:#B44A1B\"></i></div><div class=\"k-flow\" style=\"justify-content:flex-start;gap:4px\"><span class=\"mono\" style=\"width:86px\">análogo</span><i class=\"k-sw\" style=\"background:#C2451E\"></i><i class=\"k-sw\" style=\"background:#D9822B\"></i><i class=\"k-sw\" style=\"background:#E0B53A\"></i></div><div class=\"k-flow\" style=\"justify-content:flex-start;gap:4px\"><span class=\"mono\" style=\"width:86px\">complementar</span><i class=\"k-sw\" style=\"background:#C2451E\"></i><i class=\"k-sw\" style=\"background:#2E6FA3\"></i></div><div class=\"k-flow\" style=\"justify-content:flex-start;gap:4px\"><span class=\"mono\" style=\"width:86px\">triádico</span><i class=\"k-sw\" style=\"background:#C2451E\"></i><i class=\"k-sw\" style=\"background:#3E8E5A\"></i><i class=\"k-sw\" style=\"background:#5A54A3\"></i></div></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Regra 60-30-10",
+          "context": "A proporção 60–30–10 é uma referência de distribuição visual, não uma exigência matemática para interfaces. Uma ferramenta de trabalho pode usar quase só neutros e reservar uma cor para ações. O importante é a relação entre áreas e o destaque necessário para a tarefa.",
+          "observation": "As faixas mostram base, suporte e acento em áreas diferentes. O acento chama atenção por ocupar menos espaço, não por existir uma porcentagem obrigatória.",
+          "application": "Em um dashboard, distribua cor de acordo com a hierarquia dos dados. Evite colorir todos os cartões para tentar atingir uma proporção fixa.",
+          "visualHtml": "<div style=\"width:100%\"><div style=\"display:flex;height:22px;border-radius:6px;overflow:hidden\"><i style=\"width:60%;background:var(--paper-2)\"></i><i style=\"width:30%;background:#B9AE9C\"></i><i style=\"width:10%;background:var(--accent)\"></i></div><div class=\"mono\" style=\"margin-top:5px\">60% neutro · 30% suporte · 10% acento</div></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Cores semânticas",
+          "context": "Cores semânticas comunicam estados como sucesso, erro, aviso e informação. O significado precisa ser consistente dentro do produto e acompanhado de texto ou símbolos. Convenções culturais e setoriais podem mudar a interpretação, então a cor não deve trabalhar sozinha.",
+          "observation": "Cada mensagem combina um símbolo e uma frase com o tratamento cromático. Mesmo sem distinguir os matizes, ainda existe uma pista sobre o estado.",
+          "application": "Em uma confirmação, use a cor de sucesso de forma estável. Reserve o tratamento de erro para problemas reais, em vez de utilizá-lo como destaque promocional.",
+          "visualHtml": "<div class=\"k-col\" style=\"align-items:stretch;width:100%;gap:5px\"><span class=\"k-alert\" style=\"background:var(--ok-soft);color:var(--ok)\"><b>✓</b>Pagamento aprovado</span><span class=\"k-alert\" style=\"background:var(--err-soft);color:var(--err)\"><b>✕</b>Cartão recusado</span><span class=\"k-alert\" style=\"background:#FDF3D7;color:#8A6116\"><b>!</b>Saldo quase no limite</span><span class=\"k-alert\" style=\"background:#E3ECF5;color:#2E5A87\"><b>i</b>Nova versão disponível</span></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Contraste WCAG (calculado ao vivo)",
+          "context": "Contraste depende do par entre frente e fundo. A WCAG 2.2 usa normalmente 4,5:1 para texto e 3:1 para texto grande, com definições e exceções específicas. A classificação deve considerar o tamanho real do texto e não apenas a intensidade que parece confortável ao designer.",
+          "observation": "As razões são calculadas a partir dos valores de cor de cada amostra. A versão com pouco contraste recebe uma classificação diferente, mesmo usando a mesma palavra e o mesmo fundo.",
+          "application": "Meça títulos, legendas e estados no fundo em que serão usados. No tema escuro, refaça a avaliação dos pares em vez de reutilizar o resultado do tema claro.",
+          "visualHtml": "<div class=\"k-flow\" style=\"gap:10px\"><div class=\"ccard\" data-fg=\"#9A948A\" data-bg=\"#FCFBF7\" style=\"background:#FCFBF7;border:1px solid var(--line);border-radius:8px;padding:10px;text-align:center\"><span style=\"color:#9A948A;font-size:13px;font-weight:600\">Aa</span><div class=\"mono\">razão <b class=\"ratio\"></b><br><b class=\"badge\"></b></div></div><div class=\"ccard\" data-fg=\"#5B554A\" data-bg=\"#FCFBF7\" style=\"background:#FCFBF7;border:1px solid var(--line);border-radius:8px;padding:10px;text-align:center\"><span style=\"color:#5B554A;font-size:13px;font-weight:600\">Aa</span><div class=\"mono\">razão <b class=\"ratio\"></b><br><b class=\"badge\"></b></div></div></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Nunca só cor",
+          "context": "Pessoas percebem cor de formas diferentes. Uma borda vermelha sem texto pode não explicar qual campo está com problema ou o que deve ser corrigido. Sinais redundantes também ajudam em condições de luminosidade ruim e em telas com reprodução diferente de cor.",
+          "observation": "A versão B acrescenta um símbolo e uma descrição ao campo. O significado continua disponível mesmo quando a cor da borda não é reconhecida.",
+          "application": "Em um formulário, identifique o erro com texto específico e associe a mensagem ao campo. Use a cor como reforço dessa informação.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><input class=\"k-input\" style=\"border-color:var(--err)\" value=\"ana@\" readonly></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div><input class=\"k-input\" style=\"border-color:var(--err)\" value=\"ana@\" readonly><span class=\"k-chip\" style=\"border-color:var(--err);color:var(--err);margin-top:5px\">! formato inválido</span></div></div></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Dark mode não é inverter",
+          "context": "Um tema escuro precisa de uma hierarquia própria de superfícies, texto e estados. Inverter valores pode produzir brilho excessivo ou apagar limites entre áreas. A seleção de tons depende do sistema visual e das condições de leitura, não de uma proibição a branco ou preto puros.",
+          "observation": "A versão B usa diferenças de superfície para sugerir camadas. Observe também a intensidade dos textos e a separação entre conteúdo e suporte.",
+          "application": "Ao adaptar uma tela, reveja bordas, sombras, ícones e cores semânticas. Confira se o foco e os estados de interação continuam perceptíveis no novo fundo.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div style=\"background:#0A0A0A;border-radius:8px;padding:9px;width:100%\"><div style=\"background:#EFEFEF;border-radius:5px;height:11px\"></div><div class=\"mono\" style=\"color:#777;margin-top:5px\">branco puro grita</div></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div style=\"background:#16150F;border-radius:8px;padding:9px;width:100%\"><div style=\"background:#26231C;border-radius:5px;height:11px;box-shadow:inset 0 1px 0 rgba(255,255,255,.07)\"></div><div class=\"mono\" style=\"color:#8A8478;margin-top:5px\">superfícies em degraus</div></div></div></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Tokens e escalas",
+          "context": "Escalas organizam variações de uma família; tokens dão nomes aos papéis usados na interface. Um valor de escala não garante contraste por si só. Papéis como texto secundário ou fundo de ação permitem trocar valores entre temas mantendo a intenção do sistema.",
+          "observation": "Os degraus criam variação de intensidade dentro de um matiz. A amostra mostra uma base para escolhas; cada uso ainda precisa ser validado no seu par de cores.",
+          "application": "Mapeie os estados de um botão para papéis consistentes e documente seus valores. Evite escolher uma cor nova isoladamente em cada componente.",
+          "visualHtml": "<div class=\"k-col\" style=\"gap:6px\"><div class=\"k-flow\" style=\"gap:4px;flex-wrap:nowrap\"><i class=\"k-sw\" style=\"background:#FDF0E8\"></i><i class=\"k-sw\" style=\"background:#F9DCC9\"></i><i class=\"k-sw\" style=\"background:#F3C2A4\"></i><i class=\"k-sw\" style=\"background:#ECA27B\"></i><i class=\"k-sw\" style=\"background:#E2824F\"></i><i class=\"k-sw\" style=\"background:#D35F2A\"></i><i class=\"k-sw\" style=\"background:#C2451E\"></i><i class=\"k-sw\" style=\"background:#9E3715\"></i><i class=\"k-sw\" style=\"background:#75270E\"></i></div><span class=\"mono\">escala 50 → 900 · estados derivam da escala</span></div>"
+        }
+      ],
+      "introduction": "<p>Matiz indica a família da cor; saturação descreve sua intensidade em um modelo; valor ou luminosidade se relaciona a quão clara ou escura ela aparece. HSV e HSL são úteis para editar, mas passos numéricos iguais não garantem diferenças visuais iguais.</p><p>Um amarelo e um azul com a mesma luminosidade HSL podem parecer muito diferentes em brilho. Por isso, avalie as cores lado a lado e no tamanho em que serão usadas. A cor de um pequeno ícone pode parecer mais fraca do que a mesma cor em uma área grande.</p>"
     },
     {
       "id": "tipografia",
@@ -358,7 +859,90 @@
           "kind": "Artigo",
           "note": "Em inglês"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "Anatomia",
+          "context": "Altura-x, ascendentes, descendentes e forma dos traços influenciam como uma fonte ocupa a linha. Duas famílias no mesmo tamanho nominal podem parecer muito diferentes. Observar a anatomia ajuda a entender por que uma opção funciona melhor em labels pequenos ou em leitura contínua.",
+          "observation": "As guias relacionam a forma das letras à altura-x, à linha de base e às extensões. Não confunda o corpo da fonte com a altura visível de cada caractere.",
+          "application": "Ao comparar famílias para um produto, use palavras com acentos, números e caracteres parecidos. Avalie no tamanho em que eles realmente aparecerão.",
+          "visualHtml": "<div style=\"position:relative;padding:2px 64px 2px 10px;text-align:left\"><span style=\"font:600 46px/1.1 var(--font-serif)\">Ag</span><i style=\"position:absolute;left:0;right:0;top:8px;border-top:1.5px dashed var(--accent)\"></i><i style=\"position:absolute;left:0;right:0;top:27px;border-top:1.5px dashed #3A6EA5\"></i><i style=\"position:absolute;left:0;right:0;top:45px;border-top:2px solid var(--ink)\"></i><i style=\"position:absolute;left:0;right:0;top:56px;border-top:1.5px dashed #3E8E5A\"></i><span class=\"mono\" style=\"position:absolute;right:0;top:2px\">ascendente</span><span class=\"mono\" style=\"position:absolute;right:0;top:21px\">altura-x</span><span class=\"mono\" style=\"position:absolute;right:0;top:39px\">base</span><span class=\"mono\" style=\"position:absolute;right:0;top:50px\">descendente</span></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Classificações",
+          "context": "Serifadas, sem serifa e monoespaçadas oferecem características diferentes, mas não determinam um uso único. Uma monoespaçada pode ajudar a comparar códigos; uma serifada pode trazer uma intenção editorial. A escolha precisa funcionar com conteúdo, marca e condições de leitura.",
+          "observation": "O mesmo par de letras muda de estrutura entre as famílias. Observe largura, terminais e ritmo antes de associar um estilo a uma personalidade.",
+          "application": "Em uma ferramenta técnica, reserve a monoespaçada para conteúdo que se beneficie dela. Teste a fonte de corpo em parágrafos, formulários e mensagens.",
+          "visualHtml": "<div class=\"k-flow\" style=\"gap:16px\"><div class=\"k-col\"><span class=\"serif\" style=\"font-size:24px\">Ag</span><span class=\"mono\">serifada</span></div><div class=\"k-col\"><span style=\"font-size:24px;font-family:var(--font-body)\">Ag</span><span class=\"mono\">sem serifa</span></div><div class=\"k-col\"><span style=\"font-size:24px;font-family:var(--font-mono)\">Ag</span><span class=\"mono\">mono</span></div></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Text vs display",
+          "context": "Fontes display costumam ser desenhadas para maior presença em tamanhos grandes. Versões text podem favorecer a leitura em corpos menores. A distinção depende da família; reduzir um título expressivo nem sempre produz um texto confortável para um formulário ou artigo.",
+          "observation": "Compare a intenção expressiva do título com o ritmo do parágrafo. A amostra apresenta papéis diferentes, não uma escala em que um estilo substitui o outro.",
+          "application": "Use uma fonte de apoio adequada à leitura contínua e teste a combinação com o título. Verifique também se a família oferece tamanho óptico ou variantes específicas.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><span class=\"spec\" style=\"font-size:24px;line-height:1.1\">Título de impacto</span></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><span style=\"font-size:10.5px;line-height:1.55;text-align:left\">Texto corrido pede conforto: entrelinha generosa, medida curta e contraste de traço baixo.</span></div></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Critérios de escolha",
+          "context": "Uma fonte para UI precisa resolver mais que a palavra usada na apresentação. Acentos, algarismos, idiomas, pesos e renderização afetam a experiência diária. Hinting e ajustes de desenho podem influenciar a nitidez em pequenos tamanhos, mas o resultado deve ser observado no ambiente real.",
+          "observation": "Os critérios lembram dimensões diferentes da escolha. Uma família bonita em uma amostra curta ainda pode ter lacunas de idioma ou caracteres difíceis de distinguir.",
+          "application": "Monte uma amostra com nomes longos, preços, datas e mensagens de erro. Confira licença, cobertura e desempenho no produto antes de adotar a família.",
+          "visualHtml": "<div class=\"type-proof\"><div><span class=\"mono\">DISTINÇÃO</span><strong>Il1 · O0</strong></div><div><span class=\"mono\">IDIOMAS</span><strong>ç ã é ü</strong></div><div><span class=\"mono\">DADOS</span><strong>R$ 123,45</strong></div><div><span class=\"mono\">PESOS</span><strong><span style=\"font-weight:400\">Aa</span> <span style=\"font-weight:600\">Aa</span></strong></div></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Escala modular (1.25)",
+          "context": "Uma escala modular propõe relações proporcionais entre tamanhos. A razão 1,25 cria saltos progressivos, mas os valores precisam de papéis e ajustes para o conteúdo. Uma sequência matemática não define automaticamente qual tamanho serve a um label, a uma tabela ou a um título.",
+          "observation": "A palavra permanece enquanto o tamanho cresce por degraus. Os valores indicam uma escala aproximada; o papel de cada degrau precisa ser definido no sistema.",
+          "application": "Nomeie estilos por função, como título de seção e corpo. Ajuste os pontos em que a escala não atende à legibilidade ou à densidade necessária.",
+          "visualHtml": "<div class=\"k-col\" style=\"align-items:flex-start;gap:4px\"><div style=\"display:flex;align-items:baseline;gap:8px\"><span class=\"mono\" style=\"width:26px\">11</span><span class=\"spec\" style=\"font-size:11px\">Interface</span></div><div style=\"display:flex;align-items:baseline;gap:8px\"><span class=\"mono\" style=\"width:26px\">14</span><span class=\"spec\" style=\"font-size:14px\">Interface</span></div><div style=\"display:flex;align-items:baseline;gap:8px\"><span class=\"mono\" style=\"width:26px\">17</span><span class=\"spec\" style=\"font-size:17px\">Interface</span></div><div style=\"display:flex;align-items:baseline;gap:8px\"><span class=\"mono\" style=\"width:26px\">22</span><span class=\"spec\" style=\"font-size:22px\">Interface</span></div><div style=\"display:flex;align-items:baseline;gap:8px\"><span class=\"mono\" style=\"width:26px\">27</span><span class=\"spec\" style=\"font-size:27px\">Interface</span></div></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Line-height",
+          "context": "Entrelinha ajuda o olho a passar de uma linha à próxima. A relação adequada depende de tamanho, largura da coluna e desenho da fonte. Títulos curtos podem usar um ritmo mais compacto; blocos extensos precisam de separação suficiente para não confundir as linhas.",
+          "observation": "Leia o mesmo tipo de conteúdo nos dois blocos. A diferença mais importante está na continuidade da leitura e no espaço entre uma linha e outra.",
+          "application": "Em um texto de ajuda, teste a entrelinha com vários parágrafos. Não aprove um valor apenas porque um trecho curto parece bem encaixado no card.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><span style=\"font-size:10.5px;line-height:1.15;text-align:left\">Entrelinha curta demais sufoca o texto corrido e cola uma linha na outra.</span></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><span style=\"font-size:10.5px;line-height:1.68;text-align:left\">Entrelinha generosa guia o olho de volta para o início da próxima linha.</span></div></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Medida de linha",
+          "context": "A medida da linha influencia a distância percorrida pelo olhar. Linhas muito largas podem dificultar encontrar o começo da próxima; linhas muito curtas quebram demais o texto. A faixa de 45–75 caracteres é uma referência de texto contínuo em contextos maiores, não um limite para toda tela.",
+          "observation": "Compare duas colunas com o mesmo conteúdo. A versão estreita tem quebras mais frequentes; a larga exige um retorno visual maior. No celular, as duas se adaptam ao espaço disponível.",
+          "application": "Em uma página de leitura, limite a coluna mesmo que o monitor tenha espaço sobrando. Valide a medida com a fonte e o tamanho reais.",
+          "visualHtml": "<div class=\"reading-width-demo\"><div><span class=\"comparison-tag\">Coluna ampla</span><p>Uma visita para olhar a cidade de outro jeito. Conheça os horários, escolha seu percurso e encontre as informações de que precisa para aproveitar a exposição com calma.</p></div><div class=\"reading-narrow\"><span class=\"comparison-tag\">Coluna controlada</span><p>Uma visita para olhar a cidade de outro jeito. Conheça os horários, escolha seu percurso e encontre as informações de que precisa para aproveitar a exposição com calma.</p></div></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Peso e cor de texto",
+          "context": "Peso e intensidade do texto ajudam a distinguir papéis. Um cinza secundário pode reduzir competição com o título, mas ainda precisa ter contraste suficiente. Preto e branco puros não são proibidos; a qualidade depende do par de cores e do contexto de uso.",
+          "observation": "Os três níveis combinam função, peso e cor. Avalie se a legenda continua legível, em vez de considerar qualquer redução de intensidade como refinamento.",
+          "application": "Em um resumo de compra, deixe total, descrição e metadados distintos. Meça os textos secundários que continuam necessários para decidir.",
+          "visualHtml": "<div class=\"k-col\" style=\"align-items:flex-start;gap:3px\"><b style=\"font-size:13px\">Título — #231F19</b><span style=\"font-size:12px;color:var(--ink-2)\">Texto — #5B554A</span><span class=\"mono\" style=\"color:#8A8478\">legenda — #8A8478</span></div>"
+        },
+        {
+          "id": "conceito-09",
+          "title": "Quantas fontes?",
+          "context": "Uma família com estilos bem escolhidos pode resolver muitos papéis da interface. Acrescentar fontes aumenta o número de relações que precisam ser mantidas. Duas ou mais famílias podem funcionar, desde que cada uma tenha uma função clara e uma razão para estar ali.",
+          "observation": "A versão B mantém uma base comum entre título, subtítulo e corpo. A hierarquia vem das relações internas, não da necessidade de trocar de família a cada nível.",
+          "application": "Comece definindo papéis com a família principal. Acrescente outra fonte quando ela trouxer uma contribuição clara à marca ou ao tipo de conteúdo.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-col\" style=\"align-items:flex-start;gap:2px\"><span class=\"serif\" style=\"font-size:12px\">Título A</span><span style=\"font-size:12px;font-family:var(--font-mono)\">Título B</span><span class=\"spec\" style=\"font-size:12px\">Título C</span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-col\" style=\"align-items:flex-start;gap:2px\"><span style=\"font:700 13px var(--font-body)\">Título</span><span style=\"font:500 12px var(--font-body)\">Subtítulo</span><span style=\"font:400 12px var(--font-body)\">Corpo</span></div></div></div>"
+        },
+        {
+          "id": "conceito-10",
+          "title": "Telas pequenas vs grandes",
+          "context": "Tipografia responsiva considera espaço, distância de uso e preferências de tamanho de texto. No celular, linhas menores e ações próximas mudam a composição. No desktop, a área maior não exige parágrafos que ocupem toda a largura disponível.",
+          "observation": "Os dois dispositivos mostram o mesmo papel de leitura com medidas diferentes. O tamanho ideal precisa ser validado; 16 px não é uma regra universal para todos os textos.",
+          "application": "Teste aumento de texto, títulos longos e zoom. Preserve a informação e a operação sem depender de uma altura fixa que só serve ao conteúdo de exemplo.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><div class=\"k-frame\"><div class=\"scr\"><div style=\"font-size:8.5px;line-height:1.45;text-align:left\">No mobile, 16px e linhas curtas seguram a leitura em movimento.</div></div></div></div><div class=\"side\"><div class=\"k-win\" style=\"width:108px\"><div class=\"k-winbar\"><i class=\"k-wdot\"></i><i class=\"k-wdot\"></i></div><div style=\"padding:6px;font-size:7.5px;line-height:1.5;text-align:left\">No desktop, a mesma fonte trabalha com medida controlada e mais ar ao redor.</div></div></div></div>"
+        }
+      ],
+      "introduction": "<p>Uma fonte para UI precisa funcionar em números, labels, botões e parágrafos. Antes de julgar pelo título grande, observe caracteres pequenos, acentos, pesos e pares como I, l e 1. Confira suporte aos idiomas do produto e a licença de uso.</p><p>Altura-x, aberturas e contraste dos traços influenciam como uma fonte aparece na tela. Duas famílias em 16 px podem parecer ter tamanhos diferentes. Hinting e renderização também afetam a nitidez; a avaliação precisa acontecer no aparelho e no navegador reais.</p>"
     },
     {
       "id": "espacamento-grid",
@@ -399,7 +983,74 @@
           "kind": "Vídeo",
           "note": "Apple · em inglês, com transcrição"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "Sistema, não palpite",
+          "context": "Uma escala de espaçamento reduz escolhas arbitrárias e torna relações equivalentes mais consistentes. O objetivo não é substituir julgamento por números, mas evitar que cada card invente seu próprio ritmo. Exceções podem existir quando resolvem uma necessidade concreta.",
+          "observation": "A comparação coloca valores sem relação aparente ao lado de uma sequência recorrente. O ganho vem da repetição intencional, não da superioridade de um número isolado.",
+          "application": "Ao revisar uma tela, compare intervalos com a mesma função. Padronize primeiro o que deveria ser equivalente, preservando diferenças que explicam grupos distintos.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><span class=\"mono\">13px · 7px · 22px · 9px</span></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><span class=\"mono\">8 · 16 · 24 · 32</span></div></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "O grid de 8pt",
+          "context": "Uma base de oito pode organizar dimensões e distâncias recorrentes. Passos intermediários, como quatro, ajudam nos detalhes. A malha é uma ferramenta para compor, não uma obrigação de fazer todo texto, ícone e altura ocupar um múltiplo rígido.",
+          "observation": "A grade torna visíveis as referências usadas para posicionar os elementos. Observe a relação entre alinhamentos e intervalos, além da coincidência com as linhas.",
+          "application": "Em um sistema de componentes, escolha uma escala coerente e registre onde ajustes menores são necessários. Não sacrifique alinhamento óptico para obedecer à malha.",
+          "visualHtml": "<div style=\"position:relative;background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;width:100%\"><div class=\"k-line\" style=\"width:50%\"></div><div class=\"k-line\" style=\"margin-top:8px\"></div><div class=\"k-line\" style=\"margin-top:8px;width:70%\"></div><i style=\"position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(194,69,30,.16) 0 1px,transparent 1px 8px),repeating-linear-gradient(90deg,rgba(194,69,30,.16) 0 1px,transparent 1px 8px);pointer-events:none;border-radius:8px\"></i><span class=\"mono\" style=\"position:absolute;top:2px;right:6px;color:var(--accent)\">grid 8px</span></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Padding vs margin",
+          "context": "Espaço interno e externo resolvem relações diferentes. Padding separa o conteúdo do limite do componente; margin ou gap ajudam a organizar componentes entre si. Distinguir essas funções facilita manter o mesmo card em composições diferentes sem refazer suas medidas internas.",
+          "observation": "As áreas coloridas distinguem conteúdo, respiro interno e distância externa. A legenda aponta para regiões diferentes que não devem ser tratadas como um único intervalo.",
+          "application": "Defina o padding de um card no componente e o espaço entre cards na lista. Assim, mudar a composição não exige alterar todos os itens.",
+          "visualHtml": "<div class=\"k-flow\" style=\"gap:8px;flex-wrap:nowrap\"><span class=\"mono\">margin</span><span style=\"border:1.5px dashed var(--accent);border-radius:6px;padding:8px\"><span style=\"display:block;background:#fff;border:1px solid var(--line);border-radius:4px;padding:6px 10px;font-size:10.5px\">padding<span style=\"display:block;background:var(--paper-2);border-radius:3px;margin-top:4px;padding:4px 8px\">conteúdo</span></span></span></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Proximidade no formulário",
+          "context": "Rótulo e campo formam uma unidade de leitura e interação. Se o rótulo fica equidistante de dois campos, sua associação pode ficar ambígua. A proximidade precisa continuar clara quando mensagens de ajuda ou erro aumentarem a altura do grupo.",
+          "observation": "Na versão B, o rótulo se aproxima do campo correspondente e o próximo grupo recebe mais distância. O conteúdo permanece equivalente dos dois lados.",
+          "application": "Em um formulário, defina espaçamento interno do grupo e intervalo entre grupos. Confira o resultado também com erros e instruções em mais de uma linha.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-col\" style=\"align-items:stretch;gap:8px;width:100%\"><span class=\"mono\">NOME</span><input class=\"k-input\" readonly><span class=\"mono\">E-MAIL</span><input class=\"k-input\" readonly></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-col\" style=\"align-items:stretch;width:100%\"><span class=\"mono\">NOME</span><input class=\"k-input\" style=\"margin:2px 0 10px\" readonly><span class=\"mono\">E-MAIL</span><input class=\"k-input\" style=\"margin-top:2px\" readonly></div></div></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Grid de 12 colunas",
+          "context": "Colunas, gutters e margens oferecem eixos para organizar uma composição. Doze colunas permitem divisões variadas em telas maiores, mas não são obrigatórias. O grid precisa ajudar a relacionar conteúdo e responder ao espaço disponível, em vez de existir apenas como uma sobreposição no arquivo.",
+          "observation": "Os blocos ocupam conjuntos de colunas e mantêm os intervalos comuns. Observe como diferentes larguras ainda compartilham pontos de alinhamento.",
+          "application": "Em um dashboard, relacione os blocos principais à mesma estrutura. Em larguras menores, reduza colunas quando isso tornar a leitura e o dimensionamento mais claros.",
+          "visualHtml": "<div style=\"display:grid;grid-template-columns:repeat(12,1fr);gap:3px;width:100%\"><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"height:14px;background:var(--accent-soft);border-radius:2px\"></i><i style=\"grid-column:span 8;height:11px;background:var(--ink);border-radius:3px\"></i><i style=\"grid-column:span 4;height:11px;background:var(--accent);border-radius:3px\"></i></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Breakpoints",
+          "context": "Um breakpoint responde a uma mudança de necessidade do layout. Ele pode surgir quando uma coluna fica estreita, um rótulo deixa de caber ou a navegação precisa de outra apresentação. Números tradicionais de dispositivos são pontos de partida, não provas de que o conteúdo funciona.",
+          "observation": "As três representações reorganizam os mesmos blocos em quantidades diferentes de colunas. O sistema muda a composição, sem simplesmente encolher toda a tela.",
+          "application": "Redimensione uma lista de cards e identifique o ponto em que a leitura piora. Use esse comportamento para decidir quando empilhar ou redistribuir os elementos.",
+          "visualHtml": "<div class=\"k-flow\" style=\"align-items:flex-end;gap:6px;flex-wrap:nowrap\"><div class=\"k-frame\" style=\"width:44px\"><div class=\"scr\"><div class=\"k-line\"></div><div class=\"k-line\"></div></div></div><div class=\"k-frame\" style=\"width:70px\"><div class=\"scr\"><div class=\"k-line\"></div><div class=\"k-line\" style=\"width:60%\"></div></div></div><div class=\"k-win\" style=\"width:104px\"><div class=\"k-winbar\"><i class=\"k-wdot\"></i><i class=\"k-wdot\"></i></div><div style=\"padding:5px\"><div class=\"k-line\"></div><div class=\"k-line\" style=\"width:60%;margin-top:4px\"></div></div></div></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Ritmo vertical",
+          "context": "Ritmo vertical mantém uma sequência consistente entre linhas e blocos. Um baseline grid pode apoiar alinhamentos, mas não precisa forçar todo conteúdo à mesma altura. Entrelinha, títulos e espaçamentos devem continuar adequados quando o conteúdo muda.",
+          "observation": "As guias ajudam a comparar onde as linhas assentam. A versão regular demonstra continuidade; isso não obriga todos os elementos da interface a compartilhar a mesma malha.",
+          "application": "Em uma página editorial, defina relações estáveis entre título, parágrafo e próxima seção. Confira trechos curtos e longos antes de fixar o ritmo.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div style=\"width:100%;font-size:11px;line-height:15px;background:repeating-linear-gradient(0deg,transparent 0 15px,rgba(194,69,30,.3) 15px 16px);text-align:left\">Linha um do texto<br>Linha dois do texto<br>Linha três do texto</div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div style=\"width:100%;font-size:11px;line-height:16px;background:repeating-linear-gradient(0deg,transparent 0 15px,rgba(194,69,30,.3) 15px 16px);text-align:left\">Linha um do texto<br>Linha dois do texto<br>Linha três do texto</div></div></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Densidade",
+          "context": "Densidade é a quantidade de informação por área e precisa acompanhar a tarefa. Uma tabela de trabalho pode se beneficiar de uma apresentação compacta; uma seleção de experiências pode pedir mais respiro. Mais espaço não é sinônimo automático de melhor qualidade visual.",
+          "observation": "As listas mantêm itens equivalentes e mudam a altura das linhas. A compacta favorece visão do conjunto; a confortável oferece mais separação entre alvos e informações.",
+          "application": "Escolha densidade conforme comparação, frequência e meio de entrada. Em dispositivos de toque, preserve tamanho e separação adequados das ações.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><div class=\"k-col\" style=\"width:100%;gap:3px\"><ul class=\"k-menu\"><li>Linha</li><li>Linha</li><li>Linha</li></ul><span class=\"mono\">compacto</span></div></div><div class=\"side\"><div class=\"k-col\" style=\"width:100%;gap:3px\"><ul class=\"k-menu\"><li style=\"padding:9px 10px\">Linha</li><li style=\"padding:9px 10px\">Linha</li><li style=\"padding:9px 10px\">Linha</li></ul><span class=\"mono\">confortável</span></div></div></div>"
+        }
+      ],
+      "introduction": "<p>Quando cada distância é escolhida isoladamente, elementos equivalentes acabam usando medidas diferentes. Uma escala oferece valores recorrentes para aproximar informações, separar grupos e criar margens.</p><p>Uma base de 8 pode organizar 8, 16, 24 e 32. Passos menores, como 4 e 12, ajudam no detalhe. A escala deve servir às relações do conteúdo. Forçar um ícone a ficar visualmente desalinhado só para obedecer ao múltiplo não melhora o sistema.</p>"
     },
     {
       "id": "profundidade",
@@ -440,7 +1091,82 @@
           "kind": "Vídeo",
           "note": "Apple · em inglês, com transcrição"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "Elevação = hierarquia",
+          "context": "Elevação sugere que uma superfície está acima de outra. Essa relação ajuda a reconhecer conteúdo temporário, como menus e painéis, desde que exista uma base mais estável. Quando tudo parece flutuar, a altura deixa de comunicar uma prioridade ou um estado específico.",
+          "observation": "As superfícies representam níveis diferentes. Procure qual delas parece mais próxima e quais características visuais produzem essa impressão.",
+          "application": "Em um menu aberto sobre uma lista, reserve a elevação para a camada temporária. Mantenha os itens de conteúdo com uma separação mais discreta.",
+          "visualHtml": "<div class=\"k-flow\" style=\"gap:12px;flex-wrap:nowrap\"><i class=\"dbox\" style=\"border:1px solid var(--line)\"></i><i class=\"dbox\" style=\"box-shadow:0 1px 3px rgba(35,31,25,.12)\"></i><i class=\"dbox\" style=\"box-shadow:0 3px 8px rgba(35,31,25,.14)\"></i><i class=\"dbox\" style=\"box-shadow:0 10px 24px rgba(35,31,25,.18)\"></i></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Anatomia da sombra",
+          "context": "Uma sombra combina deslocamento, difusão, expansão e opacidade. Essas variáveis podem sugerir contato ou afastamento da superfície. O uso de preto com baixa opacidade pode ser apropriado; o problema é uma intensidade ou uma dureza que não combina com a relação pretendida.",
+          "observation": "Compare o contorno duro e deslocado da primeira sombra com a transição mais suave da segunda. A escolha depende também do fundo em que o componente aparece.",
+          "application": "Defina níveis de sombra para papéis concretos e teste no tamanho de uso. Evite aplicar um efeito forte apenas porque ele parece interessante em um objeto isolado.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><i class=\"dbox\" style=\"box-shadow:0 3px 0 rgba(0,0,0,.6);border:1px solid #000\"></i></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><i class=\"dbox\" style=\"box-shadow:0 3px 6px rgba(35,31,25,.08),0 10px 24px rgba(35,31,25,.12)\"></i></div></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Uma única fonte de luz",
+          "context": "Uma lógica comum de iluminação ajuda a manter coerência entre superfícies. Não é necessário simular física com precisão, mas sombras que sugerem direções incompatíveis podem fazer componentes equivalentes parecerem de sistemas diferentes. A consistência do conjunto pesa mais que um efeito individual sofisticado.",
+          "observation": "As sombras da versão B seguem uma direção compartilhada. Na versão A, os deslocamentos competem e tornam a relação entre os elementos menos estável.",
+          "application": "Ao revisar cards e menus, compare direção e intensidade dos níveis de sombra. Preserve uma lógica mesmo quando componentes têm tamanhos diferentes.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><i class=\"dbox\" style=\"box-shadow:0 4px 8px rgba(35,31,25,.15)\"></i><i class=\"dbox\" style=\"box-shadow:0 -4px 8px rgba(35,31,25,.15)\"></i></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><i class=\"dbox\" style=\"box-shadow:0 4px 8px rgba(35,31,25,.15)\"></i><i class=\"dbox\" style=\"box-shadow:0 4px 8px rgba(35,31,25,.15)\"></i></div></div></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Sombra vs borda",
+          "context": "Borda marca um limite; sombra sugere separação espacial. As duas podem coexistir quando ajudam a leitura, mas também podem acrescentar peso desnecessário. Em algumas composições, espaço e preenchimento bastam para separar as áreas.",
+          "observation": "As três amostras usam borda, sombra e combinação. Compare a sensação de limite e de elevação sem assumir que a versão com mais efeitos é a mais refinada.",
+          "application": "Em uma lista densa, teste uma linha ou um fundo sutil. Em um painel temporário sobre conteúdo, avalie se a elevação esclarece a sobreposição.",
+          "visualHtml": "<div class=\"k-flow\" style=\"gap:12px;flex-wrap:nowrap\"><div class=\"k-col\"><i class=\"dbox\" style=\"border:1px solid var(--line)\"></i><span class=\"mono\">borda</span></div><div class=\"k-col\"><i class=\"dbox\" style=\"box-shadow:0 2px 8px rgba(35,31,25,.12)\"></i><span class=\"mono\">sombra</span></div><div class=\"k-col\"><i class=\"dbox\" style=\"border:1px solid var(--line);box-shadow:0 1px 4px rgba(35,31,25,.08)\"></i><span class=\"mono\">os dois</span></div></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Sobreposição (z-index)",
+          "context": "A ordem de sobreposição precisa acompanhar o modelo da interface. Fundo, conteúdo e elementos temporários têm papéis distintos. Z-index controla a pilha na implementação, mas a percepção também depende de contraste, recorte e da possibilidade de retornar ao contexto anterior.",
+          "observation": "A superfície da frente cobre parte das outras, oferecendo uma pista espacial direta. A sombra reforça uma ordem que a própria sobreposição já sugere.",
+          "application": "Ao desenhar um diálogo, estabeleça o que fica indisponível por trás e como fechar ou voltar. A aparência da camada precisa combinar com seu comportamento.",
+          "visualHtml": "<div style=\"position:relative;width:96px;height:64px\"><i class=\"dbox\" style=\"position:absolute;left:0;top:10px;width:42px;height:42px;box-shadow:0 2px 6px rgba(35,31,25,.1)\"></i><i class=\"dbox\" style=\"position:absolute;left:26px;top:5px;width:42px;height:42px;box-shadow:0 4px 10px rgba(35,31,25,.13)\"></i><i style=\"position:absolute;left:52px;top:0;width:42px;height:42px;background:var(--accent);border-radius:10px;box-shadow:0 8px 20px rgba(35,31,25,.18)\"></i></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Blur e vidro",
+          "context": "Vidro e blur deixam o conteúdo de fundo participar da superfície. A leitura varia conforme a imagem ou a área que passa por trás, por isso o efeito precisa ser testado em cenários diferentes. Uma alternativa mais opaca pode ser necessária para preservar contraste e previsibilidade.",
+          "observation": "A forma do fundo continua parcialmente perceptível através da área fosca. Observe se o texto permanece separado dos detalhes que aparecem por trás.",
+          "application": "Em uma barra sobre fotos, teste imagens claras, escuras e movimentadas. Não aprove o material apenas com a imagem que favorece o contraste.",
+          "visualHtml": "<div style=\"position:relative;width:112px;height:58px;border-radius:10px;overflow:hidden;background:linear-gradient(120deg,#E8B04A,#C2451E 55%,#3A6EA5)\"><span style=\"position:absolute;left:8px;right:8px;bottom:8px;background:rgba(255,255,255,.38);backdrop-filter:blur(4px);border-radius:6px;padding:3px 8px;font-size:10px;color:#3A2418\">vidro fosco</span></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Gradiente e volume",
+          "context": "Gradientes podem sugerir volume e direção de luz ou funcionar como expressão de marca. Sua intensidade precisa combinar com a linguagem do produto. Um efeito intenso não é errado por lembrar uma época; ele precisa ter uma função e permanecer coerente no conjunto.",
+          "observation": "Compare a presença do gradiente nas duas amostras. A diferença altera a percepção de volume e também o quanto o elemento chama atenção.",
+          "application": "Em um controle recorrente, use volume apenas se ele ajudar o reconhecimento ou a personalidade pretendida. Confira consistência em repouso e na interação.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><span class=\"k-btn sm\" style=\"background:linear-gradient(#8ED0FF,#1B6FB8);border-color:#155A94\">2010</span></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><span class=\"k-btn sm acc\" style=\"background:linear-gradient(#CE5330,#B03E18)\">sutil</span></div></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Motion como profundidade",
+          "context": "Movimento pode explicar uma mudança de camada ou uma resposta à interação. Distância, duração e curva de aceleração precisam trabalhar juntas. Tempos como 200 ms são pontos de partida; preferências de movimento reduzido e meios de entrada também precisam ser considerados.",
+          "observation": "Passe o ponteiro ou foque o card para perceber a mudança de posição e sombra. A transição comunica uma resposta local e não envia dados.",
+          "application": "Em um elemento clicável, use feedback de elevação quando fizer sentido ao sistema. Ofereça uma resposta equivalente ao foco de teclado e respeite movimento reduzido.",
+          "visualHtml": "<div class=\"k-card liftcard\" style=\"text-align:center\"><b style=\"font-size:11.5px\">passe o mouse</b><div class=\"mono\">elevação responde em 200ms</div></div>"
+        },
+        {
+          "id": "conceito-09",
+          "title": "Erros comuns",
+          "context": "Distribuir sombras em todos os elementos pode criar uma hierarquia espacial sem significado. A revisão começa por identificar qual superfície precisa se separar de qual. Retirar efeitos redundantes pode dar mais clareza ao estado que realmente precisa aparecer.",
+          "observation": "A comparação contrasta múltiplas sombras fortes com um tratamento mais contido. Observe como a redução de estímulos muda a leitura do conjunto.",
+          "application": "Em uma tela com cards, campos e menus, reserve níveis de elevação para relações claras. Use outros recursos para separar elementos que continuam no mesmo plano.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-flow\" style=\"gap:8px;flex-wrap:nowrap\"><i class=\"dbox\" style=\"width:24px;height:24px;box-shadow:0 4px 10px rgba(0,0,0,.35)\"></i><i class=\"dbox\" style=\"width:24px;height:24px;box-shadow:0 4px 10px rgba(0,0,0,.35)\"></i><i class=\"dbox\" style=\"width:24px;height:24px;box-shadow:0 4px 10px rgba(0,0,0,.35)\"></i></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-flow\" style=\"gap:8px;flex-wrap:nowrap\"><i class=\"dbox\" style=\"width:24px;height:24px;border:1px solid var(--line)\"></i><i class=\"dbox\" style=\"width:24px;height:24px;box-shadow:0 3px 10px rgba(35,31,25,.14)\"></i><i class=\"dbox\" style=\"width:24px;height:24px;border:1px solid var(--line)\"></i></div></div></div>"
+        }
+      ],
+      "introduction": "<p>Uma superfície elevada sugere que está acima de outra. Isso pode ajudar a reconhecer um menu aberto, um painel flutuante ou uma ação fixa. Se todo elemento recebe a mesma sombra, a relação entre as camadas perde força.</p><p>Antes de escolher um efeito, defina a estrutura: fundo, conteúdo, navegação e elementos temporários. Nem todo card precisa parecer flutuar. Às vezes, espaçamento, um preenchimento discreto ou uma borda já estabelecem a separação necessária.</p>"
     },
     {
       "id": "iconografia",
@@ -487,7 +1213,74 @@
           "kind": "Vídeo",
           "note": "Apple · em inglês, com transcrição"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "Reconhecimento rápido",
+          "context": "Um ícone ajuda quando a pessoa reconhece sua relação com a função. Desenhos pouco familiares podem exigir rótulo e contexto. O objetivo é economizar interpretação, não retirar texto a qualquer custo; um símbolo original pode aumentar o esforço sem acrescentar uma vantagem real.",
+          "observation": "Compare o símbolo ambíguo com a lupa acompanhada de nome. O texto confirma o significado em vez de deixar toda a explicação para a forma.",
+          "application": "Em funções específicas do produto, mantenha ícone e label juntos quando houver dúvida. Avalie compreensão com quem usa, e não apenas com a equipe que desenhou.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-col\"><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><path d=\"M3 13c3-7 5 6 8 0s4 5 5-1 3-4 5-2\"/></svg></span><span class=\"mono\">???</span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-col\"><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.5-4.5\"/></svg></span><span class=\"mono\">busca</span></div></div></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Grid e formas-base",
+          "context": "Um grid oferece referências para construir ícones com proporção consistente. Formas-base ajudam a comparar área, espaços internos e limites. Equivalência visual não significa ocupar exatamente a mesma quantidade de pixels em todos os desenhos.",
+          "observation": "Círculo, quadrado e triângulo usam referências comuns, mas distribuem massa de formas diferentes. Observe os intervalos e os limites visíveis de cada um.",
+          "application": "Ao adaptar um símbolo, compare-o com outros ícones do mesmo set no tamanho final. Preserve grid, terminais e proporção do conjunto.",
+          "visualHtml": "<span class=\"k-ic\" style=\"position:relative;width:38px;height:38px\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.5-4.5\"/></svg><i style=\"position:absolute;inset:5px;border:1px dashed var(--accent);border-radius:2px\"></i><i style=\"position:absolute;inset:9px;border:1px dashed var(--accent);border-radius:50%\"></i></span>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Peso de traço consistente",
+          "context": "A espessura do traço influencia o peso percebido e a relação com a tipografia. Misturar traços muito finos e muito grossos pode dar importância desigual a ações equivalentes. Em tamanhos menores, aberturas e detalhes também precisam continuar reconhecíveis.",
+          "observation": "A segunda linha usa um peso comum. Na primeira, a diferença de traço faz cada símbolo parecer ter um nível diferente de presença.",
+          "application": "Ao escolher um set, teste vários ícones lado a lado em uma barra real. Ajuste a família de uma vez, em vez de corrigir cada arquivo isoladamente.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.5-4.5\"/></svg></span><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.5\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M12 20.5C7 16.5 3 13.3 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3 1 4.3 2.6 1-1.6 2.6-2.6 4.3-2.6 2.5 0 4.7 1.9 4.7 4.8 0 4-4 7.2-9 11.2z\"/></svg></span><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M18 16v-5a6 6 0 1 0-12 0v5l-1.8 3h15.6L18 16z\"/><path d=\"M10 21a2 2 0 0 0 4 0\"/></svg></span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.5-4.5\"/></svg></span><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M12 20.5C7 16.5 3 13.3 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3 1 4.3 2.6 1-1.6 2.6-2.6 4.3-2.6 2.5 0 4.7 1.9 4.7 4.8 0 4-4 7.2-9 11.2z\"/></svg></span><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M18 16v-5a6 6 0 1 0-12 0v5l-1.8 3h15.6L18 16z\"/><path d=\"M10 21a2 2 0 0 0 4 0\"/></svg></span></div></div></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Estilos e consistência",
+          "context": "Outline, filled e duotone podem fazer parte de um sistema, desde que a mudança de tratamento tenha uma lógica. Uma variante preenchida pode indicar seleção, por exemplo. O problema é alternar estilos sem um significado ou uma relação de peso consistente.",
+          "observation": "As versões permitem comparar alternância arbitrária e tratamento estável. A amostra não proíbe misturas planejadas para comunicar estado ou função.",
+          "application": "Defina quando cada variante aparece e verifique o equilíbrio de peso. Acrescente outro sinal para estados que não devem depender apenas do preenchimento.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.5-4.5\"/></svg></span><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"currentColor\" style=\"width:15px;height:15px\"><path d=\"M12 20.5C7 16.5 3 13.3 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3 1 4.3 2.6 1-1.6 2.6-2.6 4.3-2.6 2.5 0 4.7 1.9 4.7 4.8 0 4-4 7.2-9 11.2z\"/></svg></span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.5-4.5\"/></svg></span><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M12 20.5C7 16.5 3 13.3 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3 1 4.3 2.6 1-1.6 2.6-2.6 4.3-2.6 2.5 0 4.7 1.9 4.7 4.8 0 4-4 7.2-9 11.2z\"/></svg></span></div></div></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Tamanho óptico",
+          "context": "A bounding box mede o arquivo; o olho percebe a forma visível. Um círculo pode parecer menor que um quadrado de limites equivalentes e precisar de compensação. A proporção adequada depende da família e do tamanho de uso, não de um aumento universal.",
+          "observation": "A segunda amostra amplia a forma circular para buscar equivalência percebida. O objetivo é comparar área e presença, além de observar a medida nominal.",
+          "application": "Revise ícones lado a lado no componente final. Mantenha o alvo de toque estável enquanto ajusta o desenho dentro da área disponível.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><div class=\"k-col\"><div class=\"k-flow\" style=\"gap:8px;flex-wrap:nowrap\"><i style=\"width:20px;height:20px;border-radius:50%;background:var(--ink)\"></i><i style=\"width:20px;height:20px;border-radius:4px;background:var(--accent)\"></i></div><span class=\"mono\">mesmos 20px</span></div></div><div class=\"side\"><div class=\"k-col\"><div class=\"k-flow\" style=\"gap:8px;flex-wrap:nowrap\"><i style=\"width:23px;height:23px;border-radius:50%;background:var(--ink)\"></i><i style=\"width:20px;height:20px;border-radius:4px;background:var(--accent)\"></i></div><span class=\"mono\">círculo compensado</span></div></div></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Ícone + label",
+          "context": "Rótulos ajudam a reconhecer ações que um símbolo sozinho não explica. Essa combinação é especialmente útil em recursos pouco familiares ou usados com baixa frequência. O texto também pode reduzir diferenças de interpretação entre repertórios culturais e profissionais.",
+          "observation": "A versão B torna busca e alertas explícitos. Observe como o significado deixa de depender de decifrar uma sequência de símbolos.",
+          "application": "Em uma navegação principal, preserve os labels quando forem necessários à compreensão. Ícones sem texto ainda precisam de um nome acessível na implementação.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.5-4.5\"/></svg></span><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M12 20.5C7 16.5 3 13.3 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3 1 4.3 2.6 1-1.6 2.6-2.6 4.3-2.6 2.5 0 4.7 1.9 4.7 4.8 0 4-4 7.2-9 11.2z\"/></svg></span><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M18 16v-5a6 6 0 1 0-12 0v5l-1.8 3h15.6L18 16z\"/><path d=\"M10 21a2 2 0 0 0 4 0\"/></svg></span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><span class=\"k-chip\" style=\"display:inline-flex;align-items:center;gap:5px\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" style=\"width:15px;height:15px\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M21 21l-4.5-4.5\"/></svg>Busca</span><span class=\"k-chip\" style=\"display:inline-flex;align-items:center;gap:5px\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M18 16v-5a6 6 0 1 0-12 0v5l-1.8 3h15.6L18 16z\"/><path d=\"M10 21a2 2 0 0 0 4 0\"/></svg>Alertas</span></div></div></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "O ícone universal não existe",
+          "context": "O mesmo conceito pode ter símbolos diferentes entre plataformas. Compartilhar é um exemplo recorrente: há convenções distintas que podem ser reconhecidas em ambientes diferentes. Um rótulo e um comportamento consistente ajudam a fazer essa ponte sem inventar um símbolo supostamente universal.",
+          "observation": "Os dois desenhos representam a mesma intenção em convenções diferentes. O nome da ação esclarece o significado compartilhado.",
+          "application": "Ao criar uma ação de compartilhar, respeite o ambiente em que ela aparece e deixe o resultado previsível. Verifique se o público reconhece o símbolo escolhido.",
+          "visualHtml": "<div class=\"k-flow\" style=\"flex-wrap:nowrap\"><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M12 15V3M7 7l5-5 5 5M5 12v8h14v-8\"/></svg></span><span class=\"k-ic\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" style=\"width:15px;height:15px\"><circle cx=\"6\" cy=\"12\" r=\"2.5\"/><circle cx=\"17\" cy=\"5\" r=\"2.5\"/><circle cx=\"17\" cy=\"19\" r=\"2.5\"/><path d=\"M8.3 10.8l6.4-4.6M8.3 13.2l6.4 4.6\"/></svg></span><span class=\"arr\">→</span><span class=\"k-chip\">Compartilhar</span></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Sets prontos vs custom",
+          "context": "Uma biblioteca pronta pode oferecer consistência e cobertura, mas precisa atender ao produto e à licença necessária. Customizar um ícone exige seguir a linguagem do set. Um arquivo isolado pode parecer bom e ainda destoar de todos os outros na mesma tela.",
+          "observation": "Os critérios mostram que a escolha envolve traço, grid, licença e cobertura. Estilo é uma parte da avaliação, não a única.",
+          "application": "Teste os ícones mais usados e os específicos do domínio antes de adotar um set. Se faltar um, adapte dentro do mesmo sistema visual.",
+          "visualHtml": "<div class=\"k-flow\"><span class=\"k-chip\">traço único</span><span class=\"k-chip\">mesmo grid</span><span class=\"k-chip\">licença</span><span class=\"k-chip\">cobertura</span></div>"
+        }
+      ],
+      "introduction": "<p>Um ícone condensa uma ideia em pouco espaço. Isso só ajuda quando a pessoa reconhece a relação entre o símbolo e a ação. Uma lupa costuma sugerir busca; um símbolo inventado para um recurso novo pode não explicar nada sozinho.</p><p>Quando houver dúvida, combine ícone e rótulo. A interface não precisa virar um teste de adivinhação. Ícones sem texto também precisam de nomes acessíveis na implementação. Uma legenda que aparece só no hover não resolve o uso no celular.</p>"
     },
     {
       "id": "refinamento-optico",
@@ -528,7 +1321,74 @@
           "kind": "Artigo",
           "note": "Em inglês"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "Alinhamento óptico",
+          "context": "Centralizar a caixa do ícone não garante centralizar o peso percebido do desenho. Formas assimétricas podem parecer deslocadas mesmo com medidas iguais dos dois lados. O refinamento óptico parte de uma estrutura objetiva e faz uma compensação pequena, observada no contexto final.",
+          "observation": "Alterne entre geométrico e óptico e acompanhe o play dentro do mesmo botão. O container permanece fixo; o desenho muda de posição.",
+          "application": "Ao revisar um botão com ícone, compare o equilíbrio visual no tamanho real. Preserve o alvo interativo e documente ajustes que precisam se repetir.",
+          "visualHtml": "<div class=\"k-col\"><button class=\"playbtn\" id=\"playBtn\" aria-label=\"Alternar alinhamento óptico do ícone de play\"><svg aria-hidden=\"true\" width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"#fff\" style=\"width:22px;height:22px\"><path d=\"M8 5v14l11-7z\"/></svg></button><div class=\"seg\"><button data-opt=\"playBtn\" data-on=\"0\" aria-pressed=\"true\">geométrico</button><button data-opt=\"playBtn\" data-on=\"1\" aria-pressed=\"false\">óptico</button></div></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Overshoot",
+          "context": "Curvas e pontas podem parecer menores ou mais baixas que formas com limites retos. Overshoot compensa essa percepção no desenho de letras e em relações semelhantes entre formas. A compensação depende da família e da escala, não de uma porcentagem válida para todos os casos.",
+          "observation": "Alterne a amostra e compare as formas com a guia. O aumento é enfatizado para tornar a compensação perceptível na demonstração.",
+          "application": "Ao desenhar um set, compare círculos e pontas com formas retas. Confira se a equivalência continua funcionando em tamanhos menores.",
+          "visualHtml": "<div class=\"k-col\"><div class=\"shapes-row\" id=\"shapesRow\"><i class=\"shape-tr\"></i><i class=\"shape-ci\"></i><i class=\"shape-sq\"></i></div><div style=\"width:100%;max-width:210px;border-top:1.5px dashed var(--accent);margin-top:-2px\"></div><div class=\"seg\"><button data-opt=\"shapesRow\" data-on=\"0\" aria-pressed=\"true\">matemático</button><button data-opt=\"shapesRow\" data-on=\"1\" aria-pressed=\"false\">óptico</button></div></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Centro geométrico e centro percebido",
+          "context": "Centro óptico depende da distribuição de massa e do contexto. Não existe uma regra de que todo conteúdo deva subir em relação ao centro geométrico. Uma imagem com muito peso embaixo pode pedir outra posição que uma forma simétrica.",
+          "observation": "As guias permitem comparar duas posições do mesmo elemento. Leia a mudança como uma hipótese de compensação para aquela forma, não como uma correção automática para qualquer botão.",
+          "application": "Comece pelo alinhamento matemático e teste pequenos deslocamentos. Observe dentro do componente completo, junto da tipografia e dos limites do controle.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><div class=\"k-col\"><div style=\"position:relative;width:50px;height:50px;border:1.5px solid var(--ink);border-radius:8px\"><i class=\"k-dot\" style=\"position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--accent)\"></i></div><span class=\"mono\">geométrico</span></div></div><div class=\"side\"><div class=\"k-col\"><div style=\"position:relative;width:50px;height:50px;border:1.5px solid var(--ink);border-radius:8px\"><i class=\"k-dot\" style=\"position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);background:var(--accent)\"></i></div><span class=\"mono\">óptico</span></div></div></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Ícone + texto no botão",
+          "context": "Um botão combina texto, ícone e espaços laterais. A aparência de desequilíbrio pode vir do próprio arquivo do símbolo, de sua altura ou do espaço entre os elementos. Alterar o padding do componente antes de verificar essas relações pode espalhar uma correção desnecessária pelo sistema.",
+          "observation": "O mesmo rótulo permite comparar o assentamento do ícone em relação à linha do texto. A compensação mostrada é específica deste par de formas.",
+          "application": "Confira botões com rótulos curtos e longos. Se o problema estiver no espaço interno do arquivo, prefira corrigi-lo na fonte do ícone.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><span class=\"k-btn sm\" style=\"display:inline-flex;align-items:center;gap:6px\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M12 20.5C7 16.5 3 13.3 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3 1 4.3 2.6 1-1.6 2.6-2.6 4.3-2.6 2.5 0 4.7 1.9 4.7 4.8 0 4-4 7.2-9 11.2z\"/></svg>Curtir</span></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><span class=\"k-btn sm\" style=\"display:inline-flex;align-items:center;gap:6px\"><span style=\"display:inline-flex;transform:translateY(-1px)\"><svg aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"round\" style=\"width:15px;height:15px\"><path d=\"M12 20.5C7 16.5 3 13.3 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3 1 4.3 2.6 1-1.6 2.6-2.6 4.3-2.6 2.5 0 4.7 1.9 4.7 4.8 0 4-4 7.2-9 11.2z\"/></svg></span>Curtir</span></div></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "O play e o centro percebido",
+          "context": "O triângulo de play concentra massa em um dos lados da sua caixa. Um deslocamento discreto pode melhorar o equilíbrio percebido dentro de um círculo. A quantidade varia conforme o triângulo, sua proporção e o container usado.",
+          "observation": "A guia marca o centro geométrico do botão. O desenho recebe uma compensação visível, sem alterar a posição ou o tamanho do alvo de interação.",
+          "application": "Use o ajuste como referência de raciocínio. Não aplique dois pixels a todos os plays sem comparar a forma concreta e o tamanho de uso.",
+          "visualHtml": "<div class=\"k-flow\" style=\"flex-wrap:nowrap\"><span style=\"position:relative;width:42px;height:42px;border-radius:50%;border:1.5px solid var(--ink);display:inline-block\"><svg aria-hidden=\"true\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"var(--ink)\" style=\"position:absolute;left:13px;top:12px;width:16px;height:16px\"><path d=\"M8 5v14l11-7z\"/></svg><i style=\"position:absolute;left:50%;top:-5px;bottom:-5px;width:1px;background:var(--accent)\"></i></span><span class=\"mono\">a régua marca o centro</span></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Tracking em caixa alta",
+          "context": "Tracking altera o espaçamento de um trecho de texto. Em caixa alta, um pequeno aumento pode ajudar determinadas fontes e tamanhos; em excesso, ele fragmenta as palavras. A decisão precisa manter legibilidade e combinar com o papel do texto.",
+          "observation": "Compare a palavra com dois intervalos entre letras. Observe o ritmo interno e a largura ocupada, além da impressão inicial de mais respiro.",
+          "application": "Em um overline ou label curto, teste a configuração no tamanho final. Evite aumentar o tracking indiscriminadamente em todos os textos em caixa alta.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><b style=\"font-size:13px;letter-spacing:0\">MENU</b></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><b style=\"font-size:13px;letter-spacing:.2em\">MENU</b></div></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Kerning em títulos",
+          "context": "Kerning ajusta a relação entre pares específicos de letras. Em títulos grandes, intervalos irregulares podem aparecer com mais força. Uma boa fonte já inclui ajustes; alterações manuais devem resolver um caso observado sem destruir o ritmo geral da palavra.",
+          "observation": "O par T e o permite observar o espaço formado pelas letras. Compare o intervalo visual, em vez de medir apenas as caixas externas.",
+          "application": "Em um título de destaque, confira pares que parecem criar buracos ou colisões. Não use um ajuste de kerning pontual como substituto de escolher uma fonte adequada.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><span class=\"serif\" style=\"font-size:26px;font-kerning:none\">To.</span></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><span class=\"serif\" style=\"font-size:26px\">To.</span></div></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Conferir no tamanho de uso",
+          "context": "A observação visual orienta o acabamento, mas precisa conviver com leitura, consistência e acesso. Um ajuste pode parecer agradável em um print ampliado e falhar no aparelho real. Julgamento visual ganha qualidade quando é comparado em contexto e sustentado por critérios claros.",
+          "observation": "Compare o controle ampliado e em tamanho de uso. Um detalhe que parece confortável em zoom alto pode ficar apertado ou perder presença quando volta à escala em que será utilizado.",
+          "application": "Revise a interface em tamanho de uso e em diferentes condições. Registre por que a compensação ajuda, para que ela possa se manter coerente no sistema.",
+          "visualHtml": "<div class=\"size-proof\"><div class=\"proof-enlarged\"><span class=\"comparison-tag\">Ampliado no arquivo</span><span class=\"proof-save\">Salvar visita <svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"28\" height=\"28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" style=\"width:28px;height:28px\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></span></div><div class=\"proof-actual\"><span class=\"comparison-tag\">No tamanho de uso</span><span class=\"k-btn\">Salvar visita →</span><span class=\"mono\">Confira proporção, leitura e espaço.</span></div></div>"
+        }
+      ],
+      "introduction": "<p>O centro de uma caixa não descreve necessariamente o peso do desenho dentro dela. Um triângulo de play tem mais área de um lado. Se for centralizado apenas pela caixa, pode parecer deslocado.</p><p>O ajuste óptico compensa essa percepção. Comece com o alinhamento matemático e faça pequenas correções no tamanho de uso. Não existe um deslocamento universal para todos os ícones. Forma, preenchimento, contexto e escala mudam a decisão.</p>"
     },
     {
       "id": "estados",
@@ -569,7 +1429,74 @@
           "kind": "Artigo",
           "note": "Em inglês"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "Os cinco estados de interação",
+          "context": "Um componente passa por situações de disponibilidade e interação. Default, hover, pressed, focus e disabled precisam compartilhar uma identidade enquanto comunicam diferenças. Nem todos os dispositivos oferecem os mesmos meios de entrada, e um estado não deve tentar substituir outro.",
+          "observation": "As cinco amostras mantêm forma e rótulo, alterando tratamentos específicos. A linha é uma documentação visual; o estado real de interação também pode ser observado no exemplo de feedback.",
+          "application": "Defina cada estado no componente antes de replicá-lo em telas. Confira teclado, ponteiro e toque conforme o contexto do produto.",
+          "visualHtml": "<div class=\"k-col\" style=\"gap:7px\"><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><button class=\"sbtn\">Default</button><button class=\"sbtn\" style=\"background:#A93A17\">Hover</button><button class=\"sbtn\" style=\"background:#8F3212;transform:scale(.95)\">Pressed</button></div><div class=\"k-flow\" style=\"flex-wrap:nowrap\"><button class=\"sbtn\" style=\"outline:2px solid var(--accent);outline-offset:2px\">Focus</button><button class=\"sbtn\" style=\"background:#CFC9BC;cursor:not-allowed\">Disabled</button></div></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Focus visível",
+          "context": "Foco visível indica qual elemento receberá uma ação de teclado. Ele precisa permanecer perceptível mesmo sem hover e não deve ser cortado pelo container. Retirar o contorno padrão exige oferecer uma alternativa que continue distinguível.",
+          "observation": "Compare os campos sem pista e com anel de foco. A amostra com contorno mostra uma região que pode continuar visível mesmo sem alterar o preenchimento do campo.",
+          "application": "Percorra o formulário com Tab e Shift+Tab. Confira se a ordem é coerente e se cada controle focado pode ser identificado sem esforço.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><input class=\"k-input\" value=\"sem foco visível\" readonly></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><input class=\"k-input\" value=\"anel de foco\" readonly style=\"outline:2px solid var(--accent);outline-offset:1px\"></div></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Feedback de ação",
+          "context": "Feedback distingue o acionamento de um controle da conclusão da tarefa. Loading comunica processamento; sucesso confirma o resultado; erro indica uma falha e uma possibilidade de continuar. A mudança não deve apagar contexto ou deslocar o layout de maneira desnecessária.",
+          "observation": "Acione Enviar pedido e acompanhe espera e confirmação. O exemplo é local e fictício; nenhum pedido é transmitido. Observe a estabilidade do botão durante a mudança.",
+          "application": "Em um envio real, evite duplicações durante o processamento e anuncie o resultado de forma acessível. Preserve os dados se a operação falhar.",
+          "visualHtml": "<div class=\"k-col\"><button class=\"sbtn\" id=\"liveBtn\" style=\"min-width:150px;display:inline-flex;align-items:center;gap:8px;justify-content:center\">Enviar pedido</button><span class=\"mono\" id=\"liveHint\">clique para testar</span></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Derivar da cor base",
+          "context": "Uma cor base pode dar origem a variações de interação, mas isso não significa apenas somar ou subtrair luminosidade. Cada estado precisa manter contraste e funcionar no fundo real. Borda, preenchimento e elevação também podem participar da diferenciação.",
+          "observation": "A escala sugere uma família comum de estados. A intensidade muda sem transformar cada interação em uma cor sem relação com a anterior.",
+          "application": "Defina tokens para os estados recorrentes e teste seus pares de contraste. Revise a mesma lógica no tema claro e no tema escuro.",
+          "visualHtml": "<div class=\"k-col\" style=\"gap:6px\"><div class=\"k-flow\" style=\"gap:5px;flex-wrap:nowrap\"><i class=\"k-sw\" style=\"background:#C2451E\"></i><i class=\"k-sw\" style=\"background:#A93A17\"></i><i class=\"k-sw\" style=\"background:#8F3212\"></i><i class=\"k-sw\" style=\"background:#CFC9BC\"></i></div><span class=\"mono\">base → hover → pressed → disabled</span></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Coerência entre estados",
+          "context": "Coerência entre estados é compartilhar uma intenção, não impor um efeito idêntico a componentes diferentes. Um botão e um card podem responder de maneiras próprias, desde que as mudanças expliquem interatividade e mantenham a hierarquia do sistema.",
+          "observation": "As versões contrastam comportamentos sem relação aparente com uma resposta mais coordenada. A escolha final depende do papel de cada componente.",
+          "application": "Documente o que muda ao focar, pressionar e passar o ponteiro. Evite que componentes equivalentes clareiem e escureçam sem um motivo reconhecível.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-col\"><span class=\"k-btn sm\" style=\"filter:brightness(1.5)\">hover clareia</span><span class=\"k-card\" style=\"transform:scale(.93);text-align:center;font-size:10.5px\">card encolhe</span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-col\"><span class=\"k-btn sm\" style=\"background:#A93A17;border-color:#A93A17\">hover escurece</span><span class=\"k-card\" style=\"box-shadow:0 3px 10px rgba(35,31,25,.12);text-align:center;font-size:10.5px\">card eleva</span></div></div></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Disabled legível",
+          "context": "Um controle indisponível ainda pode precisar ser reconhecido e compreendido. Reduzir tanto o contraste que ele desaparece não ajuda a explicar a condição. Em alguns fluxos, é melhor manter a ação disponível e mostrar o que falta quando alguém tenta continuar.",
+          "observation": "Compare a amostra quase invisível com a que mantém presença reduzida. A legibilidade do estado e a explicação do motivo são decisões relacionadas.",
+          "application": "Se desabilitar uma ação, deixe o requisito compreensível. Avalie a alternativa de orientar a correção após a tentativa, conforme a tarefa.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><span class=\"k-btn sm\" style=\"background:#F0ECE2;border-color:#F0ECE2;color:#D8D1C0\">Sublimou</span></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><span class=\"k-btn sm dis\">Indisponível</span></div></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Estados e profundidade",
+          "context": "Mudanças de elevação podem reforçar uma resposta física percebida: pressionar parece aproximar ou recuar uma superfície, conforme a linguagem adotada. Essa metáfora deve ser consistente e não precisa existir em todos os componentes. Cor e contorno podem ser suficientes.",
+          "observation": "A amostra contrapõe repouso e pressão usando sombra e posição. Observe a diferença de profundidade e o que ela sugere sobre a resposta do controle.",
+          "application": "Use essa relação quando ela ajudar a comunicar o acionamento. Confira se o estado permanece claro com movimento reduzido e sem depender apenas da animação.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><div class=\"k-col\"><span class=\"k-btn sm acc\" style=\"box-shadow:0 3px 0 #8F3212\">solto</span><span class=\"mono\">em repouso</span></div></div><div class=\"side\"><div class=\"k-col\"><span class=\"k-btn sm acc\" style=\"transform:translateY(2px);background:#A93A17;border-color:#A93A17\">pressionado</span><span class=\"mono\">afunda</span></div></div></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Documentar estados",
+          "context": "Documentar estados torna explícitas as decisões que precisam chegar à implementação. Um componente mostrado só no estado ideal deixa lacunas de foco, erro e espera. A documentação precisa combinar aparência, comportamento, conteúdo e condições de transição.",
+          "observation": "A matriz reúne variações de um mesmo botão. Considere também os estados de feedback e as restrições do contexto, além das cinco amostras de interação.",
+          "application": "Ao entregar um componente, explique o que dispara cada estado e o que permanece estável. Valide o resultado implementado com conteúdo e condições reais.",
+          "visualHtml": "<div class=\"k-card mono\" style=\"font-size:9.5px\"><b style=\"font-size:10.5px;font-family:var(--font-body)\">Button / primary</b><div class=\"k-flow\" style=\"justify-content:flex-start;gap:4px;margin-top:6px\"><span class=\"k-chip\">default</span><span class=\"k-chip\">hover</span><span class=\"k-chip\">pressed</span><span class=\"k-chip\">focus</span><span class=\"k-chip\">disabled</span></div><div style=\"margin-top:6px\">✓ componente completo</div></div>"
+        }
+      ],
+      "introduction": "<p>Default mostra o controle disponível. Hover responde à presença de um ponteiro. Pressed indica o momento de acionamento. Focus mostra onde a pessoa está ao navegar por teclado. Disabled comunica uma ação indisponível, quando usar esse padrão faz sentido.</p><p>Esses estados não precisam de efeitos intensos, mas precisam ser distinguíveis. Hover não substitui foco; no celular, nem sempre existe hover. Projete para os meios de entrada que o produto realmente oferece.</p>"
     },
     {
       "id": "navegacao",
@@ -616,7 +1543,82 @@
           "kind": "Artigo",
           "note": "Em inglês"
         }
-      ]
+      ],
+      "concepts": [
+        {
+          "id": "conceito-01",
+          "title": "Wayfinding",
+          "context": "Wayfinding é manter orientação no percurso: localização atual, origem e caminhos possíveis. Título, seleção e retorno precisam contar uma história coerente. Um menu visualmente refinado não resolve uma arquitetura em que nomes ou relações entre telas continuam ambíguos.",
+          "observation": "O caminho e o título apontam para Perfil dentro de Configurações. Os elementos reforçam a mesma localização em vez de oferecer sinais conflitantes.",
+          "application": "Em uma estrutura de conteúdo, mostre o contexto necessário e ofereça um retorno previsível. Não use breadcrumbs quando eles acrescentarem uma hierarquia que o produto não tem.",
+          "visualHtml": "<div class=\"k-win\"><div class=\"k-winbar\"><i class=\"k-wdot\"></i><i class=\"k-wdot\"></i></div><div style=\"padding:8px;text-align:left\"><span class=\"mono\">Início › Configurações › <b style=\"color:var(--accent)\">Perfil</b></span><b style=\"display:block;font-size:12px;margin-top:5px\">Perfil</b><div class=\"k-line\" style=\"margin-top:6px\"></div></div></div>"
+        },
+        {
+          "id": "conceito-02",
+          "title": "Padrões de navegação",
+          "context": "Padrões de navegação organizam relações diferentes. Tab bars alternam destinos principais; navegação em pilha abre detalhes; abas locais dividem um contexto; drawers e sidebars acomodam conjuntos de opções. O padrão deve acompanhar a arquitetura e o meio de entrada.",
+          "observation": "As miniaturas representam estruturas diferentes, não versões intercambiáveis de um único menu. Observe o tipo de relação que cada uma sugere entre conteúdo e destino.",
+          "application": "Escolha o padrão a partir do percurso que precisa ser realizado. Mantenha nomes e significado dos destinos quando adaptar a apresentação do mobile ao desktop.",
+          "visualHtml": "<div class=\"k-flow\" style=\"align-items:flex-start;gap:6px\"><div class=\"k-col\"><div class=\"k-frame\" style=\"width:52px\"><div class=\"scr\" style=\"justify-content:space-between\"><div class=\"k-line\"></div><div style=\"display:flex;gap:2px\"><i class=\"k-line\" style=\"height:8px;background:var(--accent)\"></i><i class=\"k-line\" style=\"height:8px\"></i><i class=\"k-line\" style=\"height:8px\"></i></div></div></div><span class=\"mono\">tab bar</span></div><div class=\"k-col\"><div class=\"k-frame\" style=\"width:52px\"><div class=\"scr\" style=\"flex-direction:row;align-items:stretch\"><div style=\"width:14px;background:var(--paper-2);border-radius:3px\"></div><div class=\"k-line\" style=\"height:8px;flex:1;margin:2px\"></div></div></div><span class=\"mono\">drawer</span></div><div class=\"k-col\"><div class=\"k-frame\" style=\"width:52px\"><div class=\"scr\"><div style=\"display:flex;gap:3px;align-items:center\"><span class=\"mono\" style=\"color:var(--accent)\">‹</span><div class=\"k-line\" style=\"height:7px;width:55%\"></div></div><div class=\"k-line\"></div></div></div><span class=\"mono\">pilha</span></div><div class=\"k-col\"><div class=\"k-frame\" style=\"width:52px\"><div class=\"scr\"><div style=\"display:flex;gap:2px\"><i class=\"k-line\" style=\"height:7px;background:var(--accent)\"></i><i class=\"k-line\" style=\"height:7px\"></i></div><div class=\"k-line\"></div></div></div><span class=\"mono\">abas</span></div></div>"
+        },
+        {
+          "id": "conceito-03",
+          "title": "Fitts: alvos de toque",
+          "context": "A dimensão de um alvo e sua separação influenciam precisão. Ícone visível e área interativa não são necessariamente a mesma coisa. Referências de tamanho mudam entre plataformas e normas; pontos, dp e CSS pixels não devem ser tratados como unidades equivalentes.",
+          "observation": "A região maior ao redor do desenho oferece mais área para o acionamento. O exemplo compara proporções e não define um mínimo único para todos os ambientes.",
+          "application": "No iOS, considere a referência de 44 pt; no Android, 48 dp. Para web, confira os critérios e exceções de tamanho de alvo da WCAG aplicáveis ao produto.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-flow\" style=\"gap:4px;flex-wrap:nowrap\"><i class=\"k-dot\" style=\"width:13px;height:13px;background:var(--accent)\"></i><i class=\"k-dot\" style=\"width:13px;height:13px;background:var(--accent)\"></i><i class=\"k-dot\" style=\"width:13px;height:13px;background:var(--accent)\"></i></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-flow\" style=\"gap:6px;flex-wrap:nowrap\"><i style=\"width:30px;height:30px;border-radius:8px;background:var(--accent)\"></i><i style=\"width:30px;height:30px;border-radius:8px;background:var(--accent)\"></i></div></div></div>"
+        },
+        {
+          "id": "conceito-04",
+          "title": "Hick: enxugar menus",
+          "context": "Agrupar opções e revelar detalhes progressivamente pode reduzir a complexidade da primeira camada. Isso funciona quando as categorias são compreensíveis e os destinos continuam fáceis de encontrar. Ocultar itens sem uma lógica clara apenas muda o lugar em que a pessoa terá dificuldade.",
+          "observation": "A versão B mantém poucos destinos em destaque e oferece um caminho para o conjunto completo. Verifique se os itens escondidos pertencem a um agrupamento reconhecível.",
+          "application": "Em um aplicativo com muitos serviços, destaque os recorrentes e nomeie o acesso aos demais com clareza. Avalie descoberta e tempo total de navegação.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><ul class=\"k-menu\"><li>Início</li><li>Extrato</li><li>Cartões</li><li>Pix</li><li>Investir</li><li>Seguros</li><li>Ajuda</li><li>Mais</li></ul></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><ul class=\"k-menu\"><li>Início</li><li>Pix</li><li>Cartões</li><li><b>Ver tudo ›</b></li></ul></div></div>"
+        },
+        {
+          "id": "conceito-05",
+          "title": "Jakob: não reinventar",
+          "context": "Convenções conhecidas ajudam a prever como chegar a um destino. Rótulos e ícones devem se apoiar, em vez de trocar familiaridade por originalidade gratuita. Uma navegação pode ter personalidade sem exigir que alguém decifre símbolos próprios antes de começar.",
+          "observation": "A versão B usa nomes explícitos onde a primeira apresenta apenas formas abstratas. O significado fica disponível para quem não conhece o produto.",
+          "application": "Em uma navegação principal, teste os rótulos com o público. Mantenha o padrão de retorno e os comportamentos comuns ao ambiente em que o produto funciona.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-nav\"><span>◈</span><span>◉</span><i class=\"k-logo\" style=\"margin:0 auto\"></i><span>▣</span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-nav\"><i class=\"k-logo\"></i><span>Início</span><span>Loja</span><span style=\"margin-left:auto\">Busca</span></div></div></div>"
+        },
+        {
+          "id": "conceito-06",
+          "title": "Quantos destinos mostrar?",
+          "context": "A capacidade de memória não determina um limite universal para menus ou barras de navegação. A escolha do número de destinos depende da arquitetura, do espaço e da clareza dos rótulos. Reconhecer itens visíveis é diferente de ter que memorizá-los fora da tela.",
+          "observation": "As duas barras mostram quantidades diferentes para discutir distribuição. As letras não sustentam um julgamento de usabilidade, e a versão com cinco não prova uma regra de Miller.",
+          "application": "Escolha destinos pela necessidade e pela frequência de uso. Depois avalie se eles cabem, são distinguíveis e permitem encontrar a informação necessária.",
+          "visualHtml": "<div class=\"pair\"><div class=\"side\"><span class=\"comparison-tag\">Versão A</span><div class=\"k-tabs\"><span class=\"k-tab on\">A</span><span class=\"k-tab\">B</span><span class=\"k-tab\">C</span><span class=\"k-tab\">D</span><span class=\"k-tab\">E</span><span class=\"k-tab\">F</span><span class=\"k-tab\">G</span></div></div><div class=\"side\"><span class=\"comparison-tag\">Versão B</span><div class=\"k-tabs\"><span class=\"k-tab on\">A</span><span class=\"k-tab\">B</span><span class=\"k-tab\">C</span><span class=\"k-tab\">D</span><span class=\"k-tab\">E</span></div></div></div>"
+        },
+        {
+          "id": "conceito-07",
+          "title": "Níveis de navegação",
+          "context": "Navegação principal, secundária e contextual precisam de hierarquias distintas. A principal conecta áreas recorrentes; a secundária organiza uma área; a contextual se relaciona ao item atual. Se todas recebem o mesmo destaque, fica difícil saber o alcance de cada caminho.",
+          "observation": "A amostra diferencia uma estrutura principal, uma divisão local e um menu contextual. Observe posição e intensidade como pistas sobre o papel de cada uma.",
+          "application": "Em uma tela de projeto, separe trocar de área, alternar uma seção e agir sobre um item. Não apresente ações temporárias como se fossem destinos principais.",
+          "visualHtml": "<div class=\"k-win\"><div class=\"k-winbar\"><i class=\"k-logo\"></i><span class=\"mono\">principal</span></div><div style=\"display:flex;gap:6px;padding:8px\"><div style=\"width:26px;border-right:1px dashed var(--line);padding-right:4px\"><span class=\"mono\">sec.</span><div class=\"k-line\" style=\"margin-top:4px\"></div><div class=\"k-line\" style=\"margin-top:4px\"></div></div><div style=\"flex:1\"><div class=\"k-line\"></div><div class=\"k-line\" style=\"width:70%;margin-top:5px\"></div><span class=\"k-chip\" style=\"margin-top:6px\">⋯ contextual</span></div></div></div>"
+        },
+        {
+          "id": "conceito-08",
+          "title": "Estados de navegação",
+          "context": "Estados de navegação indicam localização e disponibilidade. Ativo, normal, visitado e indisponível têm papéis distintos, e nem todos fazem sentido em qualquer produto. A indicação do destino atual deve funcionar sem depender somente da cor.",
+          "observation": "A amostra usa diferenças de preenchimento e intensidade. Confira também peso, marcador e linguagem para que o estado ativo permaneça identificável.",
+          "application": "Na sidebar de um guia, mantenha o capítulo atual destacado e os destinos acessíveis. Evite desabilitar itens apenas por serem menos prioritários.",
+          "visualHtml": "<div class=\"k-tabs\"><span class=\"k-tab on\">Ativa</span><span class=\"k-tab\">Normal</span><span class=\"k-tab\" style=\"opacity:.4\">Inativa</span></div>"
+        },
+        {
+          "id": "conceito-09",
+          "title": "Mobile: zona do polegar",
+          "context": "Alcance do polegar varia com aparelho, tamanho da mão, postura e uso de uma ou duas mãos. Mapas de zona fácil são esquemas para discutir a posição das ações, não medições universais. Gestos e áreas reservadas do sistema também influenciam o espaço disponível.",
+          "observation": "As faixas apresentam uma hipótese de alcance em uma situação simplificada. A barra inferior aparece perto de uma região potencialmente mais acessível, sem garantir conforto para todas as pessoas.",
+          "application": "Teste ações recorrentes em aparelhos reais e com diferentes posturas. Preserve as áreas do sistema e não exija gestos complexos como único caminho para uma função.",
+          "visualHtml": "<div class=\"k-flow\" style=\"flex-wrap:nowrap;gap:10px\"><div class=\"k-frame\" style=\"width:104px\"><div class=\"scr\" style=\"position:relative;padding:0;overflow:hidden;min-height:120px\"><i style=\"position:absolute;top:0;left:0;right:0;height:36%;background:rgba(179,38,30,.2)\"></i><i style=\"position:absolute;top:36%;left:0;right:0;height:34%;background:rgba(214,158,46,.22)\"></i><i style=\"position:absolute;bottom:0;left:0;right:0;height:30%;background:rgba(31,122,77,.22)\"></i><div style=\"position:absolute;bottom:4px;left:4px;right:4px;display:flex;gap:2px\"><i class=\"k-line\" style=\"height:9px;background:var(--accent)\"></i><i class=\"k-line\" style=\"height:9px;background:#fff\"></i><i class=\"k-line\" style=\"height:9px;background:#fff\"></i></div></div></div><div class=\"k-col\" style=\"gap:3px;align-items:flex-start\"><span class=\"mono\" style=\"color:var(--err)\">difícil</span><span class=\"mono\" style=\"color:#8A6116\">esforço</span><span class=\"mono\" style=\"color:var(--ok)\">fácil</span></div></div>"
+        }
+      ],
+      "introduction": "<p>Wayfinding é a construção dessa orientação. Títulos, seleção ativa, caminho de retorno e consistência entre telas ajudam a formar um modelo do produto. Um menu bonito não resolve a ausência de uma estrutura compreensível.</p><p>Separe navegação principal, secundária e contextual. A principal reúne destinos recorrentes. A secundária organiza áreas dentro de um destino. A contextual oferece caminhos relacionados ao conteúdo atual. Se todas parecem igualmente importantes, a tela não explica sua própria estrutura.</p>"
     }
   ],
   "aliases": {
