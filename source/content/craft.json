@@ -1,0 +1,680 @@
+{
+  "title": "Craft de UI",
+  "edition": "2026-11-craft",
+  "chapters": [
+    {
+      "id": "antes-da-tela",
+      "title": "Antes da tela",
+      "subtitle": "Uma boa interface começa com uma decisão clara sobre o que precisa ser resolvido.",
+      "callout": "Craft é a qualidade das decisões visuais a serviço de uma tarefa.",
+      "sections": [
+        {
+          "title": "UI e UX trabalham juntas",
+          "body": "<p>UX considera a experiência inteira: a necessidade, o caminho até a solução e o que acontece depois. UI dá forma à parte dessa experiência com a qual a pessoa interage. Ao escolher um botão, você também decide o que será percebido como ação e qual opção parece mais importante.</p><p>Uma tela pode ter boa composição e ainda esconder a informação necessária para decidir. Por isso, o acabamento começa pelo conteúdo. Antes de desenhar, esclareça quem usa, o que quer fazer e em qual situação. A interface precisa tornar essa intenção visível.</p>"
+        },
+        {
+          "title": "Um briefing que orienta o desenho",
+          "body": "<p>Imagine um aplicativo para descobrir exposições. “Mostrar eventos” é amplo demais. “Ajudar alguém a escolher uma visita para esta tarde, pelo celular” já orienta o que deve aparecer primeiro: horário, localização, preço e disponibilidade.</p><ul><li><strong>Quem:</strong> quais conhecimentos, necessidades e limitações essa pessoa tem?</li><li><strong>O quê e por quê:</strong> qual resultado ela procura e por que isso importa?</li><li><strong>Onde e quando:</strong> em que aparelho, ambiente e momento a interface será usada?</li><li><strong>O que precisa estar resolvido:</strong> quais dados e condições permitem concluir a tarefa?</li></ul><p>Uma hipótese de público ainda precisa ser investigada. O briefing registra o que se sabe e o que falta confirmar; ele não substitui conversar com quem usa.</p>"
+        },
+        {
+          "title": "A ação precisa parecer possível",
+          "body": "<p><em>Affordance</em> é uma possibilidade de ação na relação entre uma pessoa e um objeto. <em>Signifier</em> é a pista perceptível que comunica essa possibilidade. Na tela, preenchimento, borda, posição e texto ajudam a reconhecer um botão; o desenho é uma pista, não a ação em si.</p><p>“Salvar visita” comunica mais do que um símbolo isolado. A área de toque, o feedback e a resposta do sistema completam a experiência. Se um cartão parece clicável, ele deve responder de maneira coerente com essa aparência.</p>"
+        },
+        {
+          "title": "Uma filosofia para o acabamento",
+          "body": "<p>Os dez princípios de Dieter Rams oferecem uma lente útil: inovação com propósito, utilidade, qualidade estética, compreensão, discrição, honestidade, duração, cuidado com os detalhes, responsabilidade ambiental e redução do desnecessário. Eles vieram do design de produtos; aqui funcionam como perguntas para avaliar escolhas.</p><p>Uma sombra torna a camada mais clara? Uma animação explica uma mudança? Uma cor indica prioridade? Quando a justificativa é só “fica bonito”, vale voltar à tarefa. Estética tem valor, mas precisa conversar com uso e conteúdo.</p>"
+        }
+      ],
+      "application": "<p>No aplicativo fictício Rota, a pessoa precisa decidir se consegue visitar uma exposição hoje. O card coloca o título primeiro, aproxima horário e local e deixa uma ação explícita. A mesma lógica pode orientar uma página de produto, uma agenda ou um painel de trabalho.</p><p>O acabamento vem depois dessa organização: proporção do título, ritmo entre as informações e contraste do botão. Assim, as decisões visuais têm uma razão concreta.</p>",
+      "visual": "intent",
+      "caption": "O mesmo conteúdo ganha uma ordem: primeiro a visita, depois as informações para decidir e, por fim, a ação.",
+      "sources": [
+        {
+          "title": "Os dez princípios de Dieter Rams · Vitsœ",
+          "url": "https://www.vitsoe.com/us/about/good-design",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Signifiers, not affordances · Don Norman",
+          "url": "https://jnd.org/signifiers-not-affordances/",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Design foundations from idea to interface",
+          "url": "https://developer.apple.com/videos/play/wwdc2025/359/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        }
+      ]
+    },
+    {
+      "id": "principios-visuais",
+      "title": "Princípios visuais",
+      "subtitle": "Hierarquia, contraste e ritmo transformam elementos soltos em uma composição.",
+      "callout": "Quando tudo recebe destaque, a ordem de leitura fica por conta de quem olha.",
+      "sections": [
+        {
+          "title": "Hierarquia é uma sequência de atenção",
+          "body": "<p>Hierarquia visual é a diferença de importância percebida entre elementos. Tamanho, peso, posição, cor e espaço influenciam essa percepção. Uma boa tela permite reconhecer o assunto, encontrar a informação necessária e perceber o próximo passo.</p><p>Comece com poucos níveis. Um título identifica o conteúdo; um texto de apoio explica; metadados complementam. O botão principal pode usar contraste sem precisar competir em tamanho com o título. Destaque deve acompanhar prioridade, não a vontade de preencher espaços.</p>"
+        },
+        {
+          "title": "Contraste e equilíbrio",
+          "body": "<p>Contraste é diferença: grande e pequeno, escuro e claro, cheio e vazio, regular e semibold. Se título e legenda têm quase o mesmo tamanho, a diferença pode parecer um erro em vez de uma relação intencional. Prefira distinções perceptíveis e use a mesma lógica nas outras telas.</p><p>Equilíbrio é a distribuição do peso visual. Um bloco escuro pequeno pode chamar mais atenção do que uma área clara maior. Simetria traz estabilidade; assimetria pode criar direção. As duas funcionam quando o conjunto parece sustentado, sem um lado concentrar atenção por acidente.</p>"
+        },
+        {
+          "title": "Alinhamento, proximidade e repetição",
+          "body": "<p>Alinhar cria uma estrutura compartilhada. Título, descrição e ação podem partir da mesma margem, mesmo tendo larguras diferentes. Cada novo eixo acrescenta uma relação que a pessoa precisa interpretar.</p><ul><li><strong>Proximidade:</strong> informações relacionadas ficam mais próximas entre si do que de outros grupos.</li><li><strong>Repetição:</strong> papéis equivalentes usam a mesma aparência.</li><li><strong>Consistência:</strong> padrões visuais mantêm também o mesmo comportamento.</li><li><strong>Espaço negativo:</strong> o vazio separa assuntos e dá presença ao que importa.</li></ul>"
+        },
+        {
+          "title": "Unidade sem monotonia",
+          "body": "<p>Unidade não exige que tudo seja igual. Uma lista pode manter margens e tipografia consistentes e variar as imagens. Uma área editorial pode ter um título mais expressivo sem mudar a aparência dos controles.</p><p>O problema aparece quando cada card inventa seu próprio raio, alinhamento ou estilo de título. A variedade fica mais fácil de perceber quando existe uma base estável. Antes de acrescentar um novo recurso visual, veja se o sistema atual já consegue criar a diferença necessária.</p>"
+        }
+      ],
+      "application": "<p>Na comparação, os dados são iguais. Na primeira versão, título, local e horário quase não têm diferenças. Na segunda, o título ganha peso e espaço; os metadados ficam mais silenciosos; a ação recebe uma área própria.</p><p>Esse raciocínio serve para cards, telas de detalhe e dashboards. Em um painel denso, por exemplo, o número principal pode se destacar sem transformar todas as métricas em grandes cartões coloridos.</p>",
+      "visual": "hierarchy",
+      "caption": "Compare onde seu olhar começa. O conteúdo é o mesmo; mudam tamanho, peso, espaço e contraste.",
+      "sources": [
+        {
+          "title": "Hierarquia visual · Nielsen Norman Group",
+          "url": "https://www.nngroup.com/articles/visual-hierarchy-ux-definition/",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Design foundations from idea to interface",
+          "url": "https://developer.apple.com/videos/play/wwdc2025/359/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        }
+      ]
+    },
+    {
+      "id": "leis-de-ux",
+      "title": "Leis de UX",
+      "subtitle": "Entenda o esforço de alcançar, escolher, lembrar e reconhecer.",
+      "callout": "Uma lei ajuda a formular uma decisão. O contexto de uso ajuda a verificar se ela funciona.",
+      "sections": [
+        {
+          "title": "Tamanho e distância: Fitts",
+          "body": "<p>A lei de Fitts relaciona o tempo para alcançar um alvo à distância até ele e ao seu tamanho. Em uma interface, um controle pequeno e distante tende a exigir mais precisão. A área clicável pode ser maior do que o ícone desenhado.</p><p>A consequência para o craft é direta: preserve espaço para os alvos, afaste ações que podem ser confundidas e considere o alcance no aparelho. O mínimo de uma norma não define sozinho uma boa experiência. As unidades e recomendações mudam entre web, iOS e Android.</p>"
+        },
+        {
+          "title": "Escolha e memória: Hick e Miller",
+          "body": "<p>Hick–Hyman descreve uma relação entre tempo de escolha e quantidade de alternativas em condições específicas. Em produtos, semelhança, familiaridade e organização também importam. Agrupar opções e nomeá-las bem pode ajudar mais do que simplesmente retirar itens.</p><p>O trabalho de Miller trata de limites de processamento e agrupamento na memória. Não significa que todo menu deva ter sete opções. Memória e reconhecimento na tela são coisas diferentes. Evite fazer a pessoa decorar um código de uma etapa para usá-lo na próxima; mantenha o contexto visível.</p><p><em>Chunks</em> são unidades com sentido. “Rua, número e complemento” formam um grupo de endereço; três campos aleatórios não se tornam um grupo apenas por estarem dentro do mesmo retângulo.</p>"
+        },
+        {
+          "title": "Familiaridade e complexidade",
+          "body": "<ul><li><strong>Jakob:</strong> as pessoas trazem expectativas de outros produtos. Uma seta de voltar ou um campo de busca reconhecível economiza aprendizado.</li><li><strong>Tesler:</strong> parte da complexidade da tarefa precisa ser resolvida em algum lugar. Esconder todos os controles pode transferir trabalho para a pessoa, em vez de simplificar o sistema.</li><li><strong>Postel:</strong> aceitar variações razoáveis de entrada pode reduzir esforço. Um telefone digitado com ou sem espaços pode receber a mesma formatação.</li></ul><p>Postel exige cuidado: tolerância não deve aceitar dados ambíguos silenciosamente nem reduzir validação de segurança. Quando o sistema precisa decidir entre interpretações diferentes, peça esclarecimento.</p>"
+        },
+        {
+          "title": "Beleza muda a percepção",
+          "body": "<p>O efeito estética-usabilidade descreve como uma aparência agradável pode aumentar a percepção de facilidade de uso. Isso ajuda a entender o valor de um sistema visual coerente, mas não comprova que uma tarefa ficou mais rápida ou acessível.</p><p>Uma tela refinada pode fazer alguém tolerar um problema por mais tempo. Por isso, avalie percepção e uso separadamente: o controle parece claro, a pessoa o encontra e consegue concluir a ação? A composição e a interação precisam sustentar a mesma promessa.</p>"
+        }
+      ],
+      "application": "<p>No Rota, a lista de categorias pode mostrar grupos reconhecíveis em vez de uma sequência de rótulos sem relação. O botão de salvar mantém uma área confortável, e a confirmação repete o nome da visita para evitar depender da memória.</p><p>Na figura, observe a relação entre área visível e área de toque. O ícone não precisa crescer até ocupar todo o alvo; é a região interativa que deve oferecer espaço e separação.</p>",
+      "visual": "targets",
+      "caption": "O desenho do ícone é pequeno; a área de interação tem espaço próprio. Os contornos mostram a diferença, sem representar uma medida universal.",
+      "sources": [
+        {
+          "title": "Agrupamento e memória · Nielsen Norman Group",
+          "url": "https://www.nngroup.com/articles/chunking/",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Tamanho mínimo de alvo · WCAG 2.2",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Efeito estética-usabilidade · Nielsen Norman Group",
+          "url": "https://www.nngroup.com/articles/aesthetic-usability-effect/",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        }
+      ]
+    },
+    {
+      "id": "gestalt",
+      "title": "Gestalt",
+      "subtitle": "O olho encontra grupos e padrões antes de examinar cada detalhe.",
+      "callout": "Um grupo precisa parecer um grupo antes de receber uma borda.",
+      "sections": [
+        {
+          "title": "A leitura começa pelo conjunto",
+          "body": "<p>A Gestalt estuda como organizamos o que percebemos. Em uma interface, não enxergamos somente textos, ícones e linhas independentes: percebemos uma lista, uma área de filtros ou um conjunto de ações. O todo produz uma interpretação que não está em cada parte isolada.</p><p>Essas tendências ajudam a entender por que uma composição parece clara ou confusa. Não são uma garantia sobre todas as pessoas e contextos. Uma mesma tela pode combinar vários princípios, e uma pista forte pode competir com outra.</p>"
+        },
+        {
+          "title": "Proximidade e similaridade",
+          "body": "<p>Proximidade sugere relação espacial. Um rótulo próximo do campo costuma parecer pertencer àquele campo. Se a distância até o campo seguinte é igual, a associação fica ambígua. A diferença entre o espaço interno de um grupo e o espaço entre grupos precisa ser percebida.</p><p>Similaridade agrupa por aparência: forma, cor, tamanho ou tratamento. Botões com a mesma função devem compartilhar uma linguagem. Se filtros selecionados e alertas usam o mesmo preenchimento, o sistema pode sugerir uma equivalência que não existe.</p>"
+        },
+        {
+          "title": "Fechamento, continuidade e figura-fundo",
+          "body": "<p>No fechamento, interpretamos formas mesmo quando parte do contorno falta. Na continuidade, tendemos a acompanhar alinhamentos e trajetórias. Essas ideias ajudam a criar divisões leves, sequências e listas sem contornar cada informação.</p><p>Figura-fundo separa o que se destaca do que serve de suporte. Um painel sobre um fundo atenuado sugere uma camada temporária. Se os dois têm o mesmo contraste e peso, a relação pode desaparecer. O conteúdo importante precisa manter leitura mesmo quando o fundo inclui imagens.</p>"
+        },
+        {
+          "title": "Região comum e ordem",
+          "body": "<p>Uma área compartilhada também agrupa. Um fundo sutil pode reunir opções que estão mais afastadas. Porém, inserir containers dentro de containers cria níveis extras para interpretar. Antes de acrescentar um card, teste se distância e alinhamento já resolvem a relação.</p><p>Simetria e a tendência a formas simples, associadas à Prägnanz, ajudam a perceber ordem. Isso não obriga a centralizar tudo. Um formulário alinhado à esquerda pode ser muito mais claro do que vários grupos centralizados sem uma estrutura comum.</p>"
+        }
+      ],
+      "application": "<p>Na figura, os mesmos quatro dados aparecem com dois ritmos. À esquerda, intervalos iguais deixam “dia” e “horário” pouco definidos. À direita, rótulo e valor se aproximam, enquanto os grupos se separam.</p><p>Aplique a mesma lógica a cards, menus e seções de configuração. Um bom agrupamento visual deve acompanhar o significado do conteúdo. Agrupar itens sem relação só porque cabem juntos cria uma ordem aparente que não ajuda a tarefa.</p>",
+      "visual": "grouping",
+      "caption": "O espaço faz o trabalho da borda: distância menor dentro de cada grupo, maior entre grupos.",
+      "sources": [
+        {
+          "title": "Proximidade no design visual · Nielsen Norman Group",
+          "url": "https://www.nngroup.com/articles/gestalt-proximity/",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Similaridade no design visual · Nielsen Norman Group",
+          "url": "https://www.nngroup.com/articles/gestalt-similarity/",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Design foundations from idea to interface",
+          "url": "https://developer.apple.com/videos/play/wwdc2025/359/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        }
+      ]
+    },
+    {
+      "id": "heuristicas",
+      "title": "Heurísticas de Nielsen",
+      "subtitle": "Uma lente para encontrar atritos que o acabamento sozinho não resolve.",
+      "callout": "Uma interface parece mais cuidada quando deixa claro o que aconteceu e como continuar.",
+      "sections": [
+        {
+          "title": "Estado, linguagem e controle",
+          "body": "<p>As dez heurísticas de Nielsen são orientações gerais de usabilidade. Elas ajudam a revisar uma interface, mas uma avaliação heurística não substitui observar pessoas usando o produto. A aparência de qualidade pode esconder dificuldades reais.</p><ul><li><strong>1. Visibilidade do estado:</strong> mostre o resultado de uma ação e o andamento de processos.</li><li><strong>2. Correspondência com o mundo real:</strong> use termos e sequências que façam sentido para quem usa.</li><li><strong>3. Controle e liberdade:</strong> ofereça saída, cancelamento e desfazer quando apropriado.</li></ul><p>No craft, isso aparece em uma confirmação próxima do botão, uma ação de voltar previsível e um título que descreve o conteúdo da tela.</p>"
+        },
+        {
+          "title": "Padrões, prevenção e reconhecimento",
+          "body": "<ul><li><strong>4. Consistência e padrões:</strong> o mesmo significado deve manter linguagem e comportamento.</li><li><strong>5. Prevenção de erros:</strong> ajude a evitar enganos antes de precisar explicá-los.</li><li><strong>6. Reconhecimento em vez de memorização:</strong> mantenha informações e alternativas necessárias visíveis.</li></ul><p>Um formulário pode mostrar o formato esperado antes da digitação. Uma exclusão pode explicar o que será removido e permitir recuperação. Não esconda instruções indispensáveis em um ícone de ajuda que talvez nunca seja aberto.</p>"
+        },
+        {
+          "title": "Eficiência, clareza e recuperação",
+          "body": "<ul><li><strong>7. Flexibilidade e eficiência:</strong> ofereça atalhos para quem já conhece o produto sem dificultar a primeira experiência.</li><li><strong>8. Estética e minimalismo:</strong> retire informação irrelevante para que o necessário tenha espaço.</li><li><strong>9. Reconhecer e recuperar erros:</strong> explique o problema em linguagem clara e indique uma saída possível.</li><li><strong>10. Ajuda e documentação:</strong> ofereça orientação localizada quando a tarefa exigir.</li></ul><p>Minimalismo não é reduzir todo texto até deixar apenas símbolos. Uma frase que evita um erro pode tornar a tela mais simples de usar, mesmo acrescentando uma linha.</p>"
+        },
+        {
+          "title": "Como fazer uma revisão útil",
+          "body": "<p>Percorra uma tarefa concreta, como salvar uma visita. Observe entrada, carregamento, resultado e retorno. Para cada problema, registre onde aparece, qual princípio está envolvido e qual consequência pode ter. Um print sem explicação raramente orienta uma boa correção.</p><p>Depois, priorize por frequência, impacto e possibilidade de recuperação. Um botão desalinhado e uma confirmação que perde dados não têm a mesma gravidade. Revisores diferentes podem encontrar problemas diferentes; comparar os achados melhora a avaliação.</p>"
+        }
+      ],
+      "application": "<p>No Rota, “Falha” não orienta uma pessoa que tentou salvar a visita. “Não foi possível salvar. Sua visita continua nesta tela” explica o resultado e permite tentar novamente. A mensagem usa ícone, texto e contraste, sem depender só do vermelho.</p><p>O acabamento alinha a mensagem ao componente, mantém o texto legível e evita que o layout salte de forma inesperada quando o feedback aparece.</p>",
+      "visual": "feedback",
+      "caption": "O feedback deixa de ser um aviso isolado: explica o problema, preserva o contexto e oferece uma próxima ação.",
+      "sources": [
+        {
+          "title": "As dez heurísticas de usabilidade · Nielsen Norman Group",
+          "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "The Life of a Button",
+          "url": "https://developer.apple.com/videos/play/wwdc2018/804/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        }
+      ]
+    },
+    {
+      "id": "marca-na-interface",
+      "title": "Marca na interface",
+      "subtitle": "Personalidade aparece na repetição das escolhas, do título ao estado vazio.",
+      "callout": "A marca pode ter presença sem disputar atenção com a tarefa.",
+      "sections": [
+        {
+          "title": "Da personalidade à decisão visual",
+          "body": "<p>Uma identidade chega à interface como um conjunto de escolhas: tipografia, cor, imagens, formas e linguagem. Dizer que uma marca é “premium” ainda não orienta o trabalho. É preciso traduzir essa intenção em proporções, contraste, densidade e ritmo.</p><p>Uma marca técnica pode usar uma estrutura precisa e vocabulário direto. Uma marca acolhedora pode trabalhar imagens próximas e um tom de apoio. Nenhuma dessas escolhas determina automaticamente um raio de borda ou uma fonte. São hipóteses visuais que precisam formar um conjunto.</p>"
+        },
+        {
+          "title": "Expressão e padrões compartilham a tela",
+          "body": "<p>Identidade forte não exige controles inéditos. A pessoa pode reconhecer um campo, entender uma aba e encontrar o botão de voltar enquanto percebe uma marca particular no título, na paleta e na direção de arte.</p><p>Quanto maior o esforço da tarefa, mais valioso é um sistema previsível. Em formulários longos, pagamentos e configurações, a marca pode recuar. Na apresentação de um produto, em um estado vazio ou em uma confirmação importante, existe mais espaço para expressão.</p>"
+        },
+        {
+          "title": "Voz também é acabamento",
+          "body": "<p>A interface fala em títulos, labels, erros e confirmações. Voz é uma personalidade relativamente constante; tom se ajusta ao momento. Uma marca bem-humorada pode ser objetiva quando alguém precisa recuperar um acesso.</p><ul><li><strong>Botões:</strong> nomeie o resultado da ação: “Salvar visita”.</li><li><strong>Erros:</strong> explique o que aconteceu sem culpar a pessoa.</li><li><strong>Confirmações:</strong> diga o que foi concluído e o que vem depois.</li><li><strong>Estados vazios:</strong> esclareça por que a área está vazia e como começar, quando houver uma ação útil.</li></ul>"
+        },
+        {
+          "title": "Consistência é uma assinatura",
+          "body": "<p>Um produto pode ser reconhecível pela qualidade constante de suas relações: alinhamentos, imagens, tipografia e comportamento. A marca não precisa aparecer como um logotipo repetido a cada bloco.</p><p>Marca demais pode transformar ações rotineiras em uma sequência de estímulos. Marca de menos pode apagar características importantes. O ajuste depende do contexto: preserve uma base consistente e escolha momentos específicos para aumentar a expressão.</p>"
+        }
+      ],
+      "application": "<p>As duas versões usam o mesmo conteúdo e a mesma estrutura. A primeira é sóbria, com cor contida e pouco contraste de estilo. A segunda usa um fundo quente e tipografia editorial no título. O botão continua reconhecível nas duas.</p><p>O exemplo mostra uma variação de personalidade, não uma competição entre certo e errado. Ao aplicar uma identidade real, confira se títulos, imagens e textos de apoio compartilham a mesma intenção.</p>",
+      "visual": "brand",
+      "caption": "A estrutura permanece reconhecível enquanto cor, tipo e proporção mudam a personalidade da composição.",
+      "sources": [
+        {
+          "title": "Communicate your brand identity on iOS",
+          "url": "https://developer.apple.com/videos/play/wwdc2026/251/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        },
+        {
+          "title": "Escrita para interfaces · Apple",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/writing",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        }
+      ]
+    },
+    {
+      "id": "cor",
+      "title": "Cor",
+      "subtitle": "Uma paleta funciona quando cada cor sabe qual papel precisa cumprir.",
+      "callout": "Primeiro defina a função. Depois escolha a cor.",
+      "sections": [
+        {
+          "title": "Perceber cor além do código",
+          "body": "<p>Matiz indica a família da cor; saturação descreve sua intensidade em um modelo; valor ou luminosidade se relaciona a quão clara ou escura ela aparece. HSV e HSL são úteis para editar, mas passos numéricos iguais não garantem diferenças visuais iguais.</p><p>Um amarelo e um azul com a mesma luminosidade HSL podem parecer muito diferentes em brilho. Por isso, avalie as cores lado a lado e no tamanho em que serão usadas. A cor de um pequeno ícone pode parecer mais fraca do que a mesma cor em uma área grande.</p>"
+        },
+        {
+          "title": "Paleta e hierarquia",
+          "body": "<p>Harmonias monocromáticas usam variações de uma família. Análogas aproximam matizes vizinhos; complementares trabalham oposição; triádicas distribuem três regiões no círculo cromático. São formas de explorar uma direção, não receitas que tornam qualquer interface boa.</p><p>A proporção 60–30–10 pode sugerir uma distribuição entre base, apoio e destaque, mas não deve ser medida como uma obrigação. Em uma ferramenta de trabalho, quase toda a tela pode ser neutra. A cor de ação continua funcionando justamente por aparecer menos.</p>"
+        },
+        {
+          "title": "Papéis, escalas e estados",
+          "body": "<p>Separe cores por função: fundo, superfície, texto, borda, ação e feedback. Um token como “texto secundário” descreve um papel; “cinza 600” descreve um valor de uma escala. O papel permite trocar o valor entre temas mantendo a intenção.</p><ul><li><strong>Ação:</strong> contraste suficiente para reconhecer o controle.</li><li><strong>Semântica:</strong> sucesso, erro, aviso e informação mantêm significados consistentes.</li><li><strong>Interação:</strong> hover, pressionado e foco precisam de tratamentos próprios.</li><li><strong>Tema escuro:</strong> superfícies, intensidade e contraste devem ser revistos em conjunto.</li></ul><p>Escalas 50–900 são uma convenção de organização. Não garantem contraste por si mesmas. Dark mode também não é uma inversão automática dos valores do tema claro.</p>"
+        },
+        {
+          "title": "Contraste é uma relação",
+          "body": "<p>Na WCAG 2.2, o contraste mínimo de texto é normalmente 4,5:1. Para texto grande, o limite é 3:1: pelo menos 18 pt, ou 14 pt em negrito, equivalentes a cerca de 24 e 18,7 CSS px. Existem exceções; texto menor e secundário não fica dispensado por ser discreto.</p><p>O critério de contraste não textual trata, em determinadas condições, de partes necessárias para identificar controles e informação gráfica. Não confunda com o limite de texto. Meça os pares reais de frente e fundo, incluindo estados e imagens.</p><p>Cor sozinha não deve carregar o significado. Um erro também precisa de texto ou outro sinal; um gráfico pode usar rótulos e padrões. Isso ajuda pessoas com diferentes formas de perceber cor.</p>"
+        }
+      ],
+      "application": "<p>No Rota, o fundo permanece neutro, o botão usa a cor de ação e uma mensagem de sucesso combina ícone e texto. A figura compara uma paleta sem papéis claros com outra organizada por função.</p><p>Na revisão, observe o conjunto em escala reduzida para perceber os focos e depois confira cada par de contraste no tamanho de uso. Uma paleta bonita fora de contexto ainda não é um sistema de cor para interface.</p>",
+      "visual": "color",
+      "caption": "A cor de ação se concentra no próximo passo. Texto e superfícies sustentam a leitura sem competir com ele.",
+      "sources": [
+        {
+          "title": "Contraste mínimo de texto · WCAG 2.2",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Contraste não textual · WCAG 2.2",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Cor · Apple Human Interface Guidelines",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/color",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        }
+      ]
+    },
+    {
+      "id": "tipografia",
+      "title": "Tipografia",
+      "subtitle": "A fonte chama atenção. As relações entre os textos sustentam a leitura.",
+      "callout": "Uma família bem escolhida pode resolver uma interface inteira.",
+      "sections": [
+        {
+          "title": "Escolha pelo comportamento",
+          "body": "<p>Uma fonte para UI precisa funcionar em números, labels, botões e parágrafos. Antes de julgar pelo título grande, observe caracteres pequenos, acentos, pesos e pares como I, l e 1. Confira suporte aos idiomas do produto e a licença de uso.</p><p>Altura-x, aberturas e contraste dos traços influenciam como uma fonte aparece na tela. Duas famílias em 16 px podem parecer ter tamanhos diferentes. Hinting e renderização também afetam a nitidez; a avaliação precisa acontecer no aparelho e no navegador reais.</p>"
+        },
+        {
+          "title": "Famílias, estilos e papéis",
+          "body": "<p>Serifadas podem trazer caráter editorial; sem serifa são comuns em UI; monoespaçadas ajudam a alinhar códigos e certos dados. Essas associações não são proibições. A escolha depende do conteúdo, da marca e das condições de leitura.</p><p>Uma versão display costuma ser desenhada para tamanhos maiores. Uma versão text pode favorecer leitura contínua. Fontes variáveis oferecem eixos como peso e, em algumas famílias, tamanho óptico. Use os recursos disponíveis com intenção, sem transformar cada título em uma combinação diferente.</p>"
+        },
+        {
+          "title": "Escala é relação, não fórmula",
+          "body": "<p>Uma escala modular parte de um valor e aplica uma razão: 1,125 cria passos próximos; 1,25 separa mais; 1,333 cria diferenças maiores. É um ponto de partida. A necessidade de um label ou de uma tabela pode pedir valores fora dessa sequência.</p><p>Defina estilos por função: título de página, título de seção, corpo, apoio e label. Use tamanho, peso e espaço para diferenciá-los. Se o texto só parece hierárquico porque a legenda ficou quase invisível, a relação precisa de outro ajuste.</p>"
+        },
+        {
+          "title": "Entrelinha, largura e contraste",
+          "body": "<p>Parágrafos precisam de espaço para o olho passar de uma linha à próxima. Títulos curtos podem ter entrelinha mais compacta; títulos com várias linhas precisam de cuidado para não encostar acentos ou parecer um bloco comprimido.</p><p>A faixa de 45 a 75 caracteres por linha é uma referência comum para texto contínuo em telas maiores, não um limite universal. No celular a linha tende a ser menor. Em telas largas, limite a coluna de leitura em vez de esticar o texto por toda a área disponível.</p><p>Texto de apoio pode usar um cinza diferente sem perder contraste. Nem preto nem branco puros são proibidos: o que importa é o par de cores, o ambiente e o tamanho de uso. Evite multiplicar fontes quando pesos e proporções já resolvem a composição.</p>"
+        }
+      ],
+      "application": "<p>A comparação mantém a mesma família e o mesmo texto. A versão refinada organiza título, descrição e metadados em papéis diferentes, aumenta o respiro do parágrafo e reduz a competição entre informações.</p><p>Em um projeto real, confira títulos longos, zoom, aumento de texto e traduções. Um sistema tipográfico está pronto quando as relações continuam claras com conteúdo diferente do exemplo ideal.</p>",
+      "visual": "type",
+      "caption": "A família não muda. A diferença está na escala, na entrelinha, no peso e na largura de leitura.",
+      "sources": [
+        {
+          "title": "The details of UI typography",
+          "url": "https://developer.apple.com/videos/play/wwdc2020/10175/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        },
+        {
+          "title": "Tipografia · Apple Human Interface Guidelines",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/typography",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Reorganização do conteúdo · WCAG 2.2",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        }
+      ]
+    },
+    {
+      "id": "espacamento-grid",
+      "title": "Espaçamento e grid",
+      "subtitle": "Ritmo visual é a relação entre o espaço dentro dos grupos e o espaço entre eles.",
+      "callout": "Não é sobre usar sempre 8. É sobre repetir relações que fazem sentido.",
+      "sections": [
+        {
+          "title": "Uma escala reduz decisões arbitrárias",
+          "body": "<p>Quando cada distância é escolhida isoladamente, elementos equivalentes acabam usando medidas diferentes. Uma escala oferece valores recorrentes para aproximar informações, separar grupos e criar margens.</p><p>Uma base de 8 pode organizar 8, 16, 24 e 32. Passos menores, como 4 e 12, ajudam no detalhe. A escala deve servir às relações do conteúdo. Forçar um ícone a ficar visualmente desalinhado só para obedecer ao múltiplo não melhora o sistema.</p>"
+        },
+        {
+          "title": "Espaço interno e externo",
+          "body": "<p>Padding é o espaço interno de um elemento. Margin é uma forma de criar espaço externo; layouts também podem controlar a distância com gap. Para desenhar, a distinção importante é quem organiza a relação: o próprio componente ou o conjunto em que ele aparece.</p><p>Um card pode ter 24 de espaço interno, 8 entre título e descrição e 24 até a ação. Esses números ilustram três relações. Se todos os intervalos fossem iguais, seria mais difícil perceber quais informações pertencem ao mesmo grupo.</p>"
+        },
+        {
+          "title": "Grid dá estrutura ao conjunto",
+          "body": "<p>Colunas definem áreas de alinhamento. Gutters separam as colunas; margens separam o conteúdo das bordas da área disponível. Um grid de 12 colunas é útil para várias composições de desktop, mas não é obrigatório para todo produto ou para toda largura.</p><p>No celular, menos colunas podem tornar o raciocínio mais simples. O objetivo é manter eixos reconhecíveis e comportamento previsível. Um grid que existe só no arquivo e não aparece nas relações da tela tem pouco efeito na percepção.</p>"
+        },
+        {
+          "title": "Densidade e adaptação",
+          "body": "<p>Um layout compacto não é necessariamente ruim, e um layout espaçoso não é automaticamente sofisticado. Densidade depende da tarefa: comparar muitas linhas pede outra composição que escolher uma experiência com calma.</p><p>Breakpoints devem responder a mudanças reais de espaço e conteúdo. À medida que a área diminui, colunas podem se empilhar e margens mudar de passo na escala. Evite apenas reduzir a tela inteira, pois texto e alvos podem ficar pequenos demais.</p><p>Ritmo vertical ajuda a manter sequência entre blocos. Um baseline grid pode apoiar alinhamentos, mas não precisa forçar todas as alturas a uma malha rígida. Legibilidade, conteúdo e adaptação têm prioridade sobre a grade.</p>"
+        }
+      ],
+      "application": "<p>No exemplo, as anotações distinguem 8 entre rótulo e valor de 24 entre os grupos. A regularidade fica perceptível porque cada intervalo tem uma função, não porque todos os números são iguais.</p><p>Ao revisar uma tela, compare elementos equivalentes: cards do mesmo tipo, títulos do mesmo nível, linhas da mesma lista. Ajustar essas repetições costuma melhorar o conjunto antes de qualquer novo efeito visual.</p>",
+      "visual": "spacing",
+      "caption": "As guias indicam relações diferentes: 8 dentro de um grupo e 24 entre grupos. As medidas são escolhas deste exemplo.",
+      "sources": [
+        {
+          "title": "Espaçamento · Carbon Design System",
+          "url": "https://www.carbondesignsystem.com/building-blocks/foundations/spacing/overview",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Design foundations from idea to interface",
+          "url": "https://developer.apple.com/videos/play/wwdc2025/359/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        }
+      ]
+    },
+    {
+      "id": "profundidade",
+      "title": "Profundidade e superfícies",
+      "subtitle": "Bordas, sombras e sobreposições explicam o que está na frente e o que pertence ao fundo.",
+      "callout": "Uma sombra precisa esclarecer uma relação entre superfícies.",
+      "sections": [
+        {
+          "title": "Elevação não é decoração distribuída",
+          "body": "<p>Uma superfície elevada sugere que está acima de outra. Isso pode ajudar a reconhecer um menu aberto, um painel flutuante ou uma ação fixa. Se todo elemento recebe a mesma sombra, a relação entre as camadas perde força.</p><p>Antes de escolher um efeito, defina a estrutura: fundo, conteúdo, navegação e elementos temporários. Nem todo card precisa parecer flutuar. Às vezes, espaçamento, um preenchimento discreto ou uma borda já estabelecem a separação necessária.</p>"
+        },
+        {
+          "title": "Desenhar sombras coerentes",
+          "body": "<p>Deslocamento sugere direção; difusão influencia a percepção de distância; opacidade muda a intensidade. Sombras pequenas podem dar definição de contato. Sombras mais difusas podem ajudar a destacar um painel, dependendo do fundo e da composição.</p><p>Use uma lógica de iluminação comum entre componentes. Isso não significa reproduzir física com precisão, mas evitar que cada sombra sugira uma luz diferente. Preto com baixa opacidade pode ser adequado; a qualidade depende do resultado sobre a superfície, não de uma proibição do código da cor.</p>"
+        },
+        {
+          "title": "Borda, camada e contraste",
+          "body": "<p>Bordas marcam limites. Sombras sugerem separação espacial. Usar as duas ao mesmo tempo pode fazer sentido, mas aumenta o peso visual. Em uma lista densa, linhas e espaço talvez sejam suficientes; em um menu sobre conteúdo, elevação pode ajudar a entender a sobreposição.</p><p>Z-index controla ordem de empilhamento na implementação. No desenho, estabeleça também quais conteúdos ficam cobertos e como a pessoa volta ao contexto anterior. Um diálogo não pode depender somente da sombra para comunicar sua presença.</p>"
+        },
+        {
+          "title": "Vidro, gradientes e movimento",
+          "body": "<p>Transparência e blur deixam parte do fundo participar da superfície. O efeito muda com a imagem ou com o conteúdo que passa por trás. Confira leitura em fundos claros, escuros e com detalhes; considere uma alternativa mais opaca quando necessário.</p><p>Gradientes podem sugerir volume ou direção de luz. Quanto mais sutis, mais importante verificar se permanecem consistentes entre componentes. Se o efeito não ajuda a composição, uma superfície simples pode ser suficiente.</p><p>Uma transição pode revelar de onde veio um painel. Durações como 200–300 ms são pontos de partida, não uma regra universal. Distância, dispositivo e preferência por movimento reduzido precisam orientar a decisão final.</p>"
+        }
+      ],
+      "application": "<p>Na figura, a primeira versão distribui sombras fortes entre vários elementos. A segunda reserva a elevação para o menu que está aberto e mantém o conteúdo no plano de base.</p><p>Essa seleção cria uma relação legível entre camadas. No Rota, a lista continua como contexto enquanto o menu aparece acima dela. O acabamento reforça o estado de interação sem transformar toda a tela em uma coleção de objetos flutuantes.</p>",
+      "visual": "depth",
+      "caption": "A elevação passa a indicar uma única camada temporária. Os elementos de base permanecem visualmente estáveis.",
+      "sources": [
+        {
+          "title": "Materiais · Apple Human Interface Guidelines",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/materials",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "The Life of a Button",
+          "url": "https://developer.apple.com/videos/play/wwdc2018/804/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        }
+      ]
+    },
+    {
+      "id": "iconografia",
+      "title": "Iconografia",
+      "subtitle": "Um bom conjunto de ícones mantém significado, peso e proporção no tamanho de uso.",
+      "callout": "A caixa do ícone pode estar alinhada enquanto o desenho ainda parece fora do lugar.",
+      "sections": [
+        {
+          "title": "Reconhecimento vem antes do estilo",
+          "body": "<p>Um ícone condensa uma ideia em pouco espaço. Isso só ajuda quando a pessoa reconhece a relação entre o símbolo e a ação. Uma lupa costuma sugerir busca; um símbolo inventado para um recurso novo pode não explicar nada sozinho.</p><p>Quando houver dúvida, combine ícone e rótulo. A interface não precisa virar um teste de adivinhação. Ícones sem texto também precisam de nomes acessíveis na implementação. Uma legenda que aparece só no hover não resolve o uso no celular.</p>"
+        },
+        {
+          "title": "Um conjunto precisa falar a mesma língua",
+          "body": "<p>Outline, filled e duotone são tratamentos diferentes. Misturá-los sem uma lógica pode gerar desequilíbrio. Uma variação preenchida pode indicar seleção, por exemplo, quando isso faz parte do sistema e o estado também recebe outros sinais.</p><p>Observe espessura de traço, terminais, cantos e nível de detalhe. Um ícone de linha fina ao lado de outro muito pesado parece ter outra importância, mesmo que ambos representem ações equivalentes.</p>"
+        },
+        {
+          "title": "Grid e tamanho óptico",
+          "body": "<p>O grid ajuda a construir o conjunto. Formas-base, como círculo, quadrado e triângulo, oferecem referências de proporção. Elas não precisam ocupar a mesma quantidade de pixels para parecer ter o mesmo tamanho.</p><p>Um círculo pode precisar avançar um pouco além de um quadrado para parecer equivalente. Um triângulo cheio pode concentrar peso em outra região. Por isso, compare o desenho visível e o espaço vazio, não só a bounding box.</p><p>Uma família pode oferecer variantes para tamanhos menores. Reduzir um ícone detalhado indiscriminadamente pode fechar aberturas e borrar traços. A avaliação deve acontecer em 16, 20 ou 24, conforme o sistema, e não apenas com zoom ampliado.</p>"
+        },
+        {
+          "title": "Escolher e adaptar uma biblioteca",
+          "body": "<p>Um set pronto economiza trabalho quando oferece cobertura, licença adequada, arquivos consistentes e pesos compatíveis com a tipografia. Antes de adotar, teste ícones frequentes e também os específicos do produto.</p><p>Se faltar um símbolo, adaptar um existente exige seguir o mesmo grid, traço e linguagem. Substituir só aquele ícone por outro set pode parecer rápido, mas cria uma diferença visível que se repete a cada uso.</p>"
+        }
+      ],
+      "application": "<p>Na comparação, a primeira linha combina traços e preenchimentos com pesos diferentes. A segunda usa o mesmo tratamento e mantém área de respiro semelhante entre os símbolos.</p><p>No Rota, uma ação ambígua permanece acompanhada de texto. O refinamento do desenho melhora a coerência, enquanto o rótulo sustenta a compreensão. Os dois cuidados fazem parte do mesmo acabamento.</p>",
+      "visual": "icons",
+      "caption": "O conteúdo dos símbolos permanece; o peso do traço e o tratamento passam a formar uma família.",
+      "sources": [
+        {
+          "title": "Ícones · Apple Human Interface Guidelines",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/icons",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "SF Symbols · Apple",
+          "url": "https://developer.apple.com/sf-symbols/",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Design foundations from idea to interface",
+          "url": "https://developer.apple.com/videos/play/wwdc2025/359/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        }
+      ]
+    },
+    {
+      "id": "refinamento-optico",
+      "title": "Refinamento óptico",
+      "subtitle": "O alinhamento certo é o que funciona para o olho, no contexto em que será visto.",
+      "callout": "Meça para organizar. Observe para refinar.",
+      "sections": [
+        {
+          "title": "Centro matemático e centro percebido",
+          "body": "<p>O centro de uma caixa não descreve necessariamente o peso do desenho dentro dela. Um triângulo de play tem mais área de um lado. Se for centralizado apenas pela caixa, pode parecer deslocado.</p><p>O ajuste óptico compensa essa percepção. Comece com o alinhamento matemático e faça pequenas correções no tamanho de uso. Não existe um deslocamento universal para todos os ícones. Forma, preenchimento, contexto e escala mudam a decisão.</p>"
+        },
+        {
+          "title": "Formas diferentes pedem compensações",
+          "body": "<p>Curvas e pontas podem parecer menores do que formas com limites retos. O overshoot é uma compensação usada, por exemplo, no desenho de letras para que curvas e pontas ultrapassem ligeiramente uma referência e pareçam alinhadas.</p><p>O mesmo raciocínio ajuda a comparar ícones e controles, mas não autoriza deslocar cada elemento por intuição isolada. Faça a correção dentro de uma lógica repetível. O conjunto precisa continuar coerente quando aparecer em outros tamanhos.</p>"
+        },
+        {
+          "title": "Botões com texto e ícone",
+          "body": "<p>O equilíbrio de um botão envolve o peso do ícone, a largura do texto e o espaço dos dois lados. Padding numericamente igual pode produzir uma impressão desigual se o ícone tiver muito espaço vazio dentro do arquivo.</p><p>Confira o desenho visível antes de mudar o container. Um ajuste no próprio ícone pode resolver vários botões de uma vez. Depois, avalie pares com rótulos curtos e longos para não corrigir apenas a palavra usada na amostra.</p>"
+        },
+        {
+          "title": "Letras, cantos e nitidez",
+          "body": "<p>Tracking altera o espaçamento de um trecho de texto. Em caixa alta, um pequeno aumento pode ajudar em certos tamanhos e fontes. Kerning ajusta relações entre pares de letras; em títulos grandes, alguns pares podem chamar atenção demais.</p><p>Raios de cantos precisam considerar tamanho e encaixe. Um card pequeno com o mesmo raio de uma área grande pode parecer excessivamente arredondado. Em elementos aninhados, procure uma relação visual coerente entre o canto externo e o interno.</p><p>Observe também linhas finas e posicionamento em relação à escala de pixels do dispositivo. O arquivo ampliado não mostra sozinho como tudo será rasterizado. “Parece certo” precisa incluir leitura, consistência e funcionamento no tamanho final, não apenas gosto pessoal.</p>"
+        }
+      ],
+      "application": "<p>A figura amplia um play dentro de um botão circular. As guias mostram o centro geométrico do container; a segunda versão desloca o triângulo ligeiramente para equilibrar o peso percebido.</p><p>O exemplo é uma comparação de uma forma específica. Em um produto, mantenha o alvo interativo alinhado à estrutura e refine o desenho dentro dele. O ajuste visual não deve reduzir a área de toque nem alterar a localização esperada da ação.</p>",
+      "visual": "optical",
+      "caption": "O triângulo se desloca 2 px neste exemplo. A guia continua no centro do botão; ela permite ver a compensação.",
+      "sources": [
+        {
+          "title": "The details of UI typography",
+          "url": "https://developer.apple.com/videos/play/wwdc2020/10175/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        },
+        {
+          "title": "Ícones · Apple Human Interface Guidelines",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/icons",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        }
+      ]
+    },
+    {
+      "id": "estados",
+      "title": "Estados de componentes",
+      "subtitle": "Um componente só está resolvido quando continua claro antes, durante e depois da ação.",
+      "callout": "O estado muda. A identidade do componente permanece.",
+      "sections": [
+        {
+          "title": "Uma família de situações",
+          "body": "<p>Default mostra o controle disponível. Hover responde à presença de um ponteiro. Pressed indica o momento de acionamento. Focus mostra onde a pessoa está ao navegar por teclado. Disabled comunica uma ação indisponível, quando usar esse padrão faz sentido.</p><p>Esses estados não precisam de efeitos intensos, mas precisam ser distinguíveis. Hover não substitui foco; no celular, nem sempre existe hover. Projete para os meios de entrada que o produto realmente oferece.</p>"
+        },
+        {
+          "title": "Derivar sem perder contraste",
+          "body": "<p>Escurecer ou clarear a cor base pode iniciar uma variação. Também é possível mudar borda, elevação ou preenchimento. Verifique o resultado no contexto: uma alteração sutil na paleta pode desaparecer sobre determinado fundo.</p><p>O foco precisa continuar visível. Um anel externo pode funcionar bem sem deslocar o layout. Preserve contraste e evite que containers cortem esse contorno. Se um botão e um card seguem a mesma intenção de interação, seus estados devem compartilhar uma lógica.</p>"
+        },
+        {
+          "title": "Espera, sucesso e erro",
+          "body": "<p>Loading comunica que o sistema recebeu a ação. Se repetir o envio causar problemas, evite duplicação enquanto o processo acontece. Mantenha espaço estável no botão e forneça um nome acessível para o novo estado.</p><p>Sucesso confirma o resultado, não apenas o clique. Erro explica o que falhou e como continuar. Quando possível, preserve os dados já informados. Uma falha de rede não deve obrigar alguém a reconstruir o que havia acabado de preencher.</p><p>Feedback pode aparecer perto da ação ou em uma região de status. A posição e a duração precisam permitir leitura; leitores de tela também devem receber as mudanças relevantes.</p>"
+        },
+        {
+          "title": "Indisponível não é invisível",
+          "body": "<p>Um botão disabled com contraste muito baixo pode desaparecer. Mesmo quando determinado critério de contraste prevê exceções para controles inativos, a pessoa ainda precisa compreender a tela.</p><p>Às vezes é melhor manter a ação disponível e explicar o que falta ao tentar continuar. Em outros casos, um estado indisponível com motivo visível faz mais sentido. Escolha conforme a tarefa, em vez de desabilitar por padrão qualquer formulário incompleto.</p><p>Documente as relações: qual cor muda, quando a sombra aparece, como o foco é desenhado e onde o feedback entra. Assim, os estados permanecem coerentes em mais de uma tela.</p>"
+        }
+      ],
+      "application": "<p>A amostra reúne estados do mesmo botão. No botão de demonstração, passe o ponteiro, pressione ou use Tab para observar as diferenças. Ao acioná-lo, aparece uma espera curta e depois uma confirmação fictícia.</p><p>Esse comportamento não salva visitas: serve para observar estabilidade, contraste e feedback. A aparência do controle continua reconhecível enquanto o estado comunica o que está acontecendo.</p>",
+      "visual": "states",
+      "caption": "Default, hover, pressionado, foco e indisponível compartilham a mesma forma. A demonstração permite experimentar o feedback.",
+      "sources": [
+        {
+          "title": "The Life of a Button",
+          "url": "https://developer.apple.com/videos/play/wwdc2018/804/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        },
+        {
+          "title": "Foco visível · WCAG 2.2",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        }
+      ]
+    },
+    {
+      "id": "navegacao",
+      "title": "Navegação",
+      "subtitle": "É onde hierarquia, padrões e acabamento se encontram para orientar o próximo passo.",
+      "callout": "A pessoa precisa saber onde está, como chegou e como pode continuar.",
+      "sections": [
+        {
+          "title": "Navegar é manter orientação",
+          "body": "<p>Wayfinding é a construção dessa orientação. Títulos, seleção ativa, caminho de retorno e consistência entre telas ajudam a formar um modelo do produto. Um menu bonito não resolve a ausência de uma estrutura compreensível.</p><p>Separe navegação principal, secundária e contextual. A principal reúne destinos recorrentes. A secundária organiza áreas dentro de um destino. A contextual oferece caminhos relacionados ao conteúdo atual. Se todas parecem igualmente importantes, a tela não explica sua própria estrutura.</p>"
+        },
+        {
+          "title": "Escolher um padrão familiar",
+          "body": "<p>Tab bars ajudam a alternar entre destinos principais. Navegação em pilha abre detalhes e permite voltar. Abas locais alternam áreas relacionadas dentro de um contexto. Breadcrumbs podem mostrar ancestralidade em estruturas maiores, principalmente no desktop.</p><p>Drawers e sidebars acomodam mais opções, mas opções escondidas podem ser menos descobertas. No desktop, uma sidebar persistente pode ajudar uma ferramenta complexa; no celular, o espaço reduzido pede outra apresentação.</p><p>Diálogos e painéis temporários precisam de uma saída clara. Eles não devem se tornar um labirinto paralelo à navegação principal. Uma ação de criar ou salvar também não é automaticamente um destino e não precisa ocupar uma aba.</p>"
+        },
+        {
+          "title": "As leis aparecem no desenho",
+          "body": "<p>Fitts ajuda a considerar tamanho, separação e alcance dos alvos. Hick lembra que a organização das escolhas influencia o esforço. Jakob favorece padrões reconhecíveis. A memória limitada reforça a importância de mostrar contexto e manter rótulos estáveis.</p><p>Isso não determina um número universal de itens. Escolha destinos pela arquitetura e pelo uso, depois avalie se os rótulos cabem e continuam compreensíveis. Não use o “sete” de Miller como limite automático para menus.</p>"
+        },
+        {
+          "title": "Estados e comportamento por aparelho",
+          "body": "<p>O estado ativo deve ser identificável sem depender apenas da cor. Texto, peso e um marcador podem trabalhar juntos. Um estado visitado faz sentido em certos links de conteúdo; nem toda navegação de aplicativo precisa desse tratamento.</p><p>No iOS, 44 × 44 pt é uma referência comum de alvo; no Android, 48 × 48 dp. Na web, a WCAG 2.2 AA usa 24 × 24 CSS px com condições e exceções, enquanto 44 × 44 CSS px aparece no critério ampliado. São unidades e contextos diferentes, não uma medida única para copiar.</p><p>No mobile, considere alcance, gestos do sistema e áreas seguras. No desktop, considere teclado e ponteiro. Uma mudança de largura pode alterar a apresentação sem mudar os nomes e o significado dos destinos.</p>"
+        }
+      ],
+      "application": "<p>Na comparação, os destinos ficam em posições equivalentes. A versão refinada usa ícones da mesma família, rótulos claros e um marcador de seleção além da cor. A ação de salvar permanece no conteúdo, ligada à visita atual.</p><p>A sidebar deste guia segue a mesma ideia: capítulos em uma sequência estável e o assunto atual destacado. No celular, o índice abre sob demanda e pode ser fechado sem perder o ponto da leitura.</p>",
+      "visual": "navigation",
+      "caption": "A seleção ganha forma, texto e posição previsível. Destinos permanecem separados das ações do conteúdo.",
+      "sources": [
+        {
+          "title": "Explore navigation design for iOS",
+          "url": "https://developer.apple.com/videos/play/wwdc2022/10001/",
+          "kind": "Vídeo",
+          "note": "Apple · em inglês, com transcrição"
+        },
+        {
+          "title": "Barras de abas · Apple Human Interface Guidelines",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/tab-bars",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        },
+        {
+          "title": "Tamanho de alvo · WCAG 2.2",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+          "kind": "Artigo",
+          "note": "Em inglês"
+        }
+      ]
+    }
+  ],
+  "aliases": {
+    "typography-anatomy-selection-reading": "tipografia",
+    "typography-scale-hierarchy-rhythm": "tipografia",
+    "typography-adaptation-localization-writing": "tipografia",
+    "cor-percepcao-paleta": "cor",
+    "cor-semantica-estados-temas": "cor",
+    "cor-acessibilidade-verificacao": "cor",
+    "heuristicas-estado-linguagem-controle": "heuristicas",
+    "heuristicas-consistencia-prevencao-reconhecimento": "heuristicas",
+    "heuristicas-eficiencia-recuperacao-ajuda": "heuristicas",
+    "acessibilidade-plano-verificacao": "heuristicas",
+    "safe-areas-insets-edge-to-edge": "navegacao",
+    "header-top-app-bar": "navegacao",
+    "teclado-toque-gestos": "navegacao",
+    "splash-onboarding": "principios-visuais",
+    "home-dashboard": "principios-visuais",
+    "listas-cards": "principios-visuais",
+    "tela-detalhe": "principios-visuais",
+    "busca-filtros": "principios-visuais",
+    "formularios": "principios-visuais",
+    "estados-interface": "estados",
+    "ux-ui-problema-objetivos": "antes-da-tela",
+    "hierarquia-visual": "principios-visuais",
+    "gestalt-agrupamento": "gestalt",
+    "contraste-visual-legibilidade": "principios-visuais",
+    "consistencia-ritmo": "principios-visuais",
+    "icones-imagens-significado": "iconografia",
+    "composicao-grid-espacamento": "espacamento-grid",
+    "whitespace-relacoes": "espacamento-grid",
+    "grid-responsividade-densidade": "espacamento-grid",
+    "densidade-ritmo-escaneabilidade": "espacamento-grid",
+    "elevacao-sombras": "profundidade",
+    "camadas-ordem-superficies": "profundidade",
+    "materiais-blur-translucidez": "profundidade",
+    "alinhamento-optico": "refinamento-optico",
+    "icones-peso-optico": "iconografia",
+    "kerning-tracking-curvas": "refinamento-optico",
+    "pixels-densidades": "refinamento-optico",
+    "marca-legibilidade": "marca-na-interface",
+    "ilustracao-coerencia": "marca-na-interface",
+    "expressividade-contexto": "marca-na-interface",
+    "usabilidade-modelos-mentais": "navegacao",
+    "organizacao-taxonomia-rotulos": "navegacao",
+    "mapa-estrutura-fluxo": "navegacao",
+    "navegacao-encontrabilidade": "navegacao",
+    "navegacao-tabs-back-home": "navegacao",
+    "sheets-modais-dialogos": "navegacao",
+    "menus-sidebar-drawer": "navegacao",
+    "projeto-enquadrar-problema": "antes-da-tela",
+    "projeto-estrutura-componentes": "antes-da-tela",
+    "projeto-prototipo-estados": "estados",
+    "projeto-revisar-entregar": "antes-da-tela",
+    "lei-fitts-alvos": "leis-de-ux",
+    "miller-memoria-agrupamento": "leis-de-ux",
+    "hick-hyman-escolhas": "leis-de-ux",
+    "pesquisa-hipotese-teste": "antes-da-tela",
+    "teste-usabilidade-evidencia": "heuristicas"
+  }
+}
