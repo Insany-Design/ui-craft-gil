@@ -35,7 +35,7 @@
   const done=id=>state.completed.includes(id);
   function persist(){try{localStorage.setItem(KEY,JSON.stringify({schemaVersion:1,course:'ui-craft',...state}));}catch{storageWorks=false;}document.querySelector('#storage-warning').hidden=storageWorks;}
   function savePosition(){if(byId.has(active)){state.positions[active]=window.scrollY;persist();}}
-  const footer=()=>'<footer class="page-footer"><span>Design Boost · Craft de UI</span><span>Exemplos autorais · Novembro de 2026</span><p>Seu progresso fica neste navegador. Rota é um aplicativo fictício usado nas comparações.</p></footer>';
+  const footer=()=>'<footer class="page-footer"><span>Insany · Craft de UI</span><span>Exemplos autorais · Novembro de 2026</span><p>Seu progresso fica neste navegador. Rota é um aplicativo fictício usado nas comparações.</p></footer>';
   function syncBreadcrumb(){
     const chapter=byId.get(active);
     const current=chapter?.title||({inicio:'Guia de craft',progresso:'Meu progresso',biblioteca:'Referências e vídeos'})[active];
@@ -61,7 +61,7 @@
   }
   function overview(){
     const resume=state.lastChapter||chapters[0].id;
-    return `<div class="overview"><p class="eyebrow">DESIGN BOOST · GUIA DE CRAFT</p><h1>O detalhe<br>muda tudo<span class="accent">.</span></h1><p class="intro">Um olhar mais atento para a qualidade visual das interfaces. Do fundamento ao acabamento, entenda o que faz uma tela parecer mais clara, coerente e bem resolvida.</p><a class="text-link start-link" href="#${resume}">${state.lastChapter?'Continuar a leitura':'Começar pelo fundamento'} ${icon('arrow')}</a><div class="overview-note"><span>14 capítulos</span><span>120 exemplos comentados</span><span>Exemplos visuais</span></div><section class="about-guide"><h2>Aprender a ver. Aprender a decidir.</h2><p>Craft é o cuidado com a execução. É perceber quando um título compete com outro, quando um espaço rompe o ritmo ou quando um ícone parece pesado demais. E saber o que ajustar.</p><p>Cada conceito reúne contexto de uso, uma demonstração visual e uma aplicação na interface. As legendas indicam o que observar; as referências ajudam a continuar estudando. Leia na ordem ou abra um assunto pelo índice.</p></section><section class="chapter-index" aria-label="Percurso de leitura">${chapters.map((c,i)=>`${groups[i]?`<h2 class="index-group">${groups[i]}</h2>`:''}<a href="#${c.id}" class="index-row"><span class="index-number">${String(i+1).padStart(2,'0')}</span><span><strong>${esc(c.title)}</strong><small>${esc(c.subtitle)}</small></span>${icon(done(c.id)?'check':'arrow')}</a>`).join('')}</section>${footer()}</div>`;
+    return `<div class="overview"><p class="eyebrow">INSANY · GUIA DE CRAFT</p><h1>O detalhe<br>muda tudo<span class="accent">.</span></h1><p class="intro">Um olhar mais atento para a qualidade visual das interfaces. Do fundamento ao acabamento, entenda o que faz uma tela parecer mais clara, coerente e bem resolvida.</p><a class="text-link start-link" href="#${resume}">${state.lastChapter?'Continuar a leitura':'Começar pelo fundamento'} ${icon('arrow')}</a><div class="overview-note"><span>14 capítulos</span><span>120 exemplos comentados</span><span>Exemplos visuais</span></div><section class="about-guide"><h2>Aprender a ver. Aprender a decidir.</h2><p>Craft é o cuidado com a execução. É perceber quando um título compete com outro, quando um espaço rompe o ritmo ou quando um ícone parece pesado demais. E saber o que ajustar.</p><p>Cada conceito reúne contexto de uso, uma demonstração visual e uma aplicação na interface. As legendas indicam o que observar; as referências ajudam a continuar estudando. Leia na ordem ou abra um assunto pelo índice.</p></section><section class="chapter-index" aria-label="Percurso de leitura">${chapters.map((c,i)=>`${groups[i]?`<h2 class="index-group">${groups[i]}</h2>`:''}<a href="#${c.id}" class="index-row"><span class="index-number">${String(i+1).padStart(2,'0')}</span><span><strong>${esc(c.title)}</strong><small>${esc(c.subtitle)}</small></span>${icon(done(c.id)?'check':'arrow')}</a>`).join('')}</section>${footer()}</div>`;
   }
   function conceptFigure(chapter,item,index){
     const interactive=/data-toggle|data-opt|id="(?:liveBtn|skinA|playBtn)"|liftcard/.test(item.visualHtml);
@@ -86,7 +86,7 @@
     active=byId.has(id)||['inicio','biblioteca','progresso'].includes(id)?id:'inicio';
     closeNav();const c=byId.get(active);
     if(c){state.lastChapter=c.id;persist();main.innerHTML=article(c);}else main.innerHTML=active==='biblioteca'?library():active==='progresso'?progress():overview();
-    document.title=(c?.title||(active==='inicio'?'Craft de UI':active==='biblioteca'?'Referências e vídeos':'Meu progresso'))+' · Design Boost';
+    document.title=(c?.title||(active==='inicio'?'Craft de UI':active==='biblioteca'?'Referências e vídeos':'Meu progresso'))+' · Insany';
     syncBreadcrumb();syncProgress();if(!initial)main.focus({preventScroll:true});
     requestAnimationFrame(()=>{if(section)document.getElementById(active+'--'+section)?.scrollIntoView({block:'start'});else window.scrollTo({top:initial&&c?state.positions[c.id]||0:0,behavior:'instant'});});
     if(window.mountCraftAtlas)disposeAtlas=window.mountCraftAtlas(main);

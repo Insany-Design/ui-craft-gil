@@ -23,7 +23,7 @@ expected={'index.html','styles.css','atlas.css','app.js','atlas.js','course.js',
 for name in ['index.html','styles.css','atlas.css','app.js','atlas.js']:shutil.copy2(ROOT/'source'/name,OUT/name)
 (OUT/'course.js').write_text('window.COURSE = '+json.dumps(course,ensure_ascii=False).replace('</','<\\/')+';\n')
 (OUT/'course.json').write_text(json.dumps(course,ensure_ascii=False,indent=2)+'\n')
-assets=['design-boost-logo.svg','inter-regular.woff2','inter-medium.woff2','Inter-OFL.txt']
+assets=['insany-logo.svg','inter-regular.woff2','inter-medium.woff2','inter-semibold.woff2','Inter-OFL.txt']
 (OUT/'real-assets').mkdir(exist_ok=True)
 for name in assets:
  shutil.copy2(ROOT/'source/real-assets'/name,OUT/'real-assets'/name)
