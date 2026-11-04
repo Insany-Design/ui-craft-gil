@@ -36,8 +36,17 @@
   function persist(){try{localStorage.setItem(KEY,JSON.stringify({schemaVersion:1,course:'ui-craft',...state}));}catch{storageWorks=false;}document.querySelector('#storage-warning').hidden=storageWorks;}
   function savePosition(){if(byId.has(active)){state.positions[active]=window.scrollY;persist();}}
   const footer=()=>'<footer class="page-footer"><span>Design Boost · Craft de UI</span><span>Exemplos autorais · Novembro de 2026</span><p>Seu progresso fica neste navegador. Rota é um aplicativo fictício usado nas comparações.</p></footer>';
+  function syncBreadcrumb(){
+    const chapter=byId.get(active);
+    const current=chapter?.title||({inicio:'Guia de craft',progresso:'Meu progresso',biblioteca:'Referências e vídeos'})[active];
+    document.querySelector('#header-breadcrumb').innerHTML=active==='inicio'?'<li><span aria-current="page">Guia de craft</span></li>':`<li class="breadcrumb-root"><a href="#inicio">Guia de craft</a></li><li class="breadcrumb-current"><span class="breadcrumb-divider" aria-hidden="true">/</span><span aria-current="page" title="${esc(current)}">${esc(current)}</span></li>`;
+  }
   function syncProgress(){
-    document.querySelector('#total-label').textContent=`${state.completed.length} de ${chapters.length} capítulos`;
+    const count=state.completed.length,percent=Math.round(count/chapters.length*100);
+    document.querySelector('#total-label').textContent=`${count} de ${chapters.length} capítulos`;
+    document.querySelector('#completion-percent').textContent=percent+'%';
+    document.querySelector('#completion-fill').style.width=percent+'%';
+    document.querySelector('#progress-link').setAttribute('aria-label',`${percent}% concluído · ${count} de ${chapters.length} capítulos lidos. Ver meu progresso.`);
     document.querySelectorAll('[data-complete]').forEach(el=>{el.setAttribute('aria-pressed',String(done(el.dataset.complete)));el.innerHTML=(done(el.dataset.complete)?icon('check'):'')+(done(el.dataset.complete)?'Capítulo lido':'Marcar como lido');});
     renderNav(document.querySelector('#course-search').value);
   }
@@ -78,7 +87,7 @@
     closeNav();const c=byId.get(active);
     if(c){state.lastChapter=c.id;persist();main.innerHTML=article(c);}else main.innerHTML=active==='biblioteca'?library():active==='progresso'?progress():overview();
     document.title=(c?.title||(active==='inicio'?'Craft de UI':active==='biblioteca'?'Referências e vídeos':'Meu progresso'))+' · Design Boost';
-    syncProgress();if(!initial)main.focus({preventScroll:true});
+    syncBreadcrumb();syncProgress();if(!initial)main.focus({preventScroll:true});
     requestAnimationFrame(()=>{if(section)document.getElementById(active+'--'+section)?.scrollIntoView({block:'start'});else window.scrollTo({top:initial&&c?state.positions[c.id]||0:0,behavior:'instant'});});
     if(window.mountCraftAtlas)disposeAtlas=window.mountCraftAtlas(main);
   }
