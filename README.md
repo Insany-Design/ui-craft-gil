@@ -17,7 +17,7 @@ npm run dev
 npm run build
 ```
 
-O build executa as verificações de conteúdo, navegação, progresso e proteção de acesso antes de gerar o Worker. A publicação usa a configuração existente em `.openai/hosting.json`.
+O build executa as verificações de conteúdo, navegação, progresso e acesso público antes de gerar o Worker. A publicação usa a configuração existente em `.openai/hosting.json`.
 
 ## Estrutura atual
 
@@ -25,8 +25,8 @@ O build executa as verificações de conteúdo, navegação, progresso e proteç
 - `source/content/videos.json`: referências em vídeo.
 - `source/index.html`, `app.js`, `styles.css`, `atlas.js` e `atlas.css`: guia e interações.
 - `source/real-assets/`: logo oficial, fontes e licenças.
-- `server/`: acesso por senha compartilhada e entrega dos arquivos protegidos.
-- `tests/password-gate/`: testes de acesso.
+- `server/public-guide.mjs`: entrega pública dos arquivos do guia, sem login ou consulta ao banco.
+- `tests/public-guide.test.mjs`: testes de acesso público. `tests/password-gate/` guarda os testes do gate anterior, hoje desativado.
 
 A edição atual é gerada por `build.py` em `guide-dist/`, que é um intermediário ignorado pelo Git. Materiais de edições anteriores permanecem no histórico e nos arquivos editoriais; não são publicados automaticamente.
 
@@ -34,7 +34,7 @@ A edição atual é gerada por `build.py` em `guide-dist/`, que é um intermedi�
 
 Leituras e tamanho de texto são salvos no navegador, sem conta pessoal. O progresso pode ser exportado e importado na página Meu progresso. Limpar os dados do navegador pode apagar essas preferências.
 
-A senha compartilhada é configurada no armazenamento do serviço, fora do código. Não inclua senhas, tokens ou arquivos `.env` em commits.
+O guia abre diretamente, sem senha ou login. Links antigos de entrada e saída redirecionam ao início. As rotas administrativas anteriores estão desativadas. Não inclua senhas, tokens ou arquivos `.env` em commits.
 
 ## Identidade e direitos
 
