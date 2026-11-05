@@ -17,7 +17,28 @@ npm run dev
 npm run build
 ```
 
-O build executa as verificações de conteúdo, navegação, progresso e acesso público antes de gerar o Worker. A publicação usa a configuração existente em `.openai/hosting.json`.
+O build executa as verificações de conteúdo, navegação, progresso e acesso público antes de gerar o Worker. A publicação no ChatGPT Sites usa a configuração existente em `.openai/hosting.json`.
+
+## Publicação na Vercel
+
+Conecte este repositório à Vercel usando a raiz do repositório como **Root Directory**. O `vercel.json` versionado define:
+
+- **Framework Preset:** Other (`framework: null`).
+- **Build Command:** `npm run build:guide`.
+- **Output Directory:** `guide-dist`.
+- **Install Command:** vazio, para pular a instalação de dependências.
+
+O guia público é HTML, CSS e JavaScript com progresso salvo no navegador. Esse build usa apenas Node.js e Python 3, disponíveis no ambiente de build da Vercel; não precisa instalar os pacotes do Worker. Ele executa as mesmas verificações de conteúdo, navegação, progresso e acesso público, e publica somente os arquivos gerados em `guide-dist/`. Os redirecionamentos de `/login` e `/logout` e os cabeçalhos do guia público também estão no `vercel.json`.
+
+Para verificar o build da Vercel localmente, sem instalar dependências:
+
+```sh
+npm run build:guide
+```
+
+O comando `npm run build` continua dedicado ao Worker do ChatGPT Sites/Cloudflare. Não use o adaptador Next.js na Vercel com esse comando: Vinext não gera `.next/routes-manifest.json`. As opções do `vercel.json` substituem as configurações de build do painel; após integrar a alteração, faça um novo deploy do commit atualizado, sem reutilizar o cache do build anterior.
+
+Referências: [configuração da Vercel](https://vercel.com/docs/project-configuration/vercel-json) e [ambiente de build](https://vercel.com/docs/builds/build-image).
 
 ## Estrutura atual
 
